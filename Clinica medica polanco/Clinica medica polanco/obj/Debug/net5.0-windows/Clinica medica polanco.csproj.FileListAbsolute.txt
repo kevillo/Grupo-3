@@ -1,0 +1,22 @@
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.exe
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.deps.json
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.runtimeconfig.json
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.runtimeconfig.dev.json
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.dll
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\ref\Clinica medica polanco.dll
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.pdb
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.csproj.AssemblyReference.cache
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.g.cs
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco_MarkupCompile.cache
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco_MarkupCompile.lref
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.baml
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.g.resources
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.AssemblyInfoInputs.cache
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.AssemblyInfo.cs
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.csproj.CoreCompileInputs.cache
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.dll
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ref\Clinica medica polanco.dll
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.pdb
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.genruntimeconfig.cache
