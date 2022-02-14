@@ -7,4 +7,36 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="aa.png" />
+    <None Remove="holis.png" />
+    <None Remove="icons8-cent-50.png" />
+    <None Remove="icons8-configuration-60.png" />
+    <None Remove="icons8-databases-98.png" />
+    <None Remove="icons8-man-100.png" />
+    <None Remove="icons8-medical-doctor-100.png" />
+    <None Remove="icons8-report-64.png" />
+    <None Remove="icons8-treatment-50.png" />
+    <None Remove="output-onlinepngtools%281%29.png" />
+    <None Remove="output-onlinepngtools%282%29.png" />
+    <None Remove="output-onlinepngtools%283%29.png" />
+    <None Remove="output-onlinepngtools.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="aa.png" />
+    <Resource Include="holis.png" />
+    <Resource Include="icons8-cent-50.png" />
+    <Resource Include="icons8-configuration-60.png" />
+    <Resource Include="icons8-databases-98.png" />
+    <Resource Include="icons8-man-100.png" />
+    <Resource Include="icons8-medical-doctor-100.png" />
+    <Resource Include="icons8-report-64.png" />
+    <Resource Include="icons8-treatment-50.png" />
+    <Resource Include="output-onlinepngtools(1).png" />
+    <Resource Include="output-onlinepngtools(2).png" />
+    <Resource Include="output-onlinepngtools(3).png" />
+    <Resource Include="output-onlinepngtools.png" />
+  </ItemGroup>
+
 </Project>
