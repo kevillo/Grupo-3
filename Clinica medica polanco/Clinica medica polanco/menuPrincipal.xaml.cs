@@ -26,6 +26,17 @@ namespace Clinica_medica_polanco
             this.Height = 620;
         }
 
-      
+        private void btn_Examenes_medicos_Click(object sender, RoutedEventArgs e)
+        {
+            menuPrincipalExamenes nuevo = new();
+            panel_Menu_Principal.Children.Clear();
+            panel_Menu_Principal.Children.Add(nuevo);
+
+        }
+
+        private void btn_Pacientes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
