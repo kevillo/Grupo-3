@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
-41302055255
+5-838528208
 
-81420669446
+9-326464202
 193-1891726104
-Login.xaml;menuPrincipal.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalExamenes.xaml;
+Login.xaml;menuPacientes.xaml;menuPrincipal.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalExamenes.xaml;
 
-True
+False
 
