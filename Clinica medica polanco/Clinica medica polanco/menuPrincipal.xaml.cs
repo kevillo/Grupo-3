@@ -33,10 +33,11 @@ namespace Clinica_medica_polanco
             panel_Menu_Principal.Children.Add(nuevo);
 
         }
-
-        private void btn_Pacientes_Click(object sender, RoutedEventArgs e)
+        private void btn_Configuracion_Click(object sender, RoutedEventArgs e)
         {
-
+            menuPrincipalConfiguracion conf = new();
+            panel_Menu_Principal.Children.Clear();
+            panel_Menu_Principal.Children.Add(conf);
         }
     }
 }

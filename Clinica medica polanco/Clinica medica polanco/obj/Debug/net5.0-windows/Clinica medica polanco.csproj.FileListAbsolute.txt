@@ -48,3 +48,31 @@ C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyec
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.baml
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalExamenes.g.cs
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalExamenes.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.csproj.AssemblyReference.cache
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.dll
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ref\Clinica medica polanco.dll
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.pdb
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipal.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalConfiguracion.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalExamenes.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco_MarkupCompile.cache
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco_MarkupCompile.lref
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.exe
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.deps.json
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.runtimeconfig.json
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.runtimeconfig.dev.json
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.dll
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\ref\Clinica medica polanco.dll
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.pdb
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipal.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalConfiguracion.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalExamenes.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.g.resources
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.AssemblyInfoInputs.cache
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.AssemblyInfo.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.csproj.CoreCompileInputs.cache
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.genruntimeconfig.cache
