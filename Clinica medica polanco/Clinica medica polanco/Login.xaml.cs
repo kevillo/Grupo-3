@@ -24,5 +24,7 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -49,13 +49,71 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="Background" TargetName="border" Value="#FF5454"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="btn_Style_Olvidaste_Contra" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
+            <Setter Property="Foreground" Value="red"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#FF97A3BA"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF97A3BA"/>
+                                
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FF97A3BA"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF97A3BA"/>
+                                
+                                
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -69,12 +127,12 @@
         <Grid Background="#FF97A3BA" Margin="0,1,0,-14">
             <PasswordBox x:Name="pwb_Login_Contraseña" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,384,0,0" VerticalAlignment="Top" Width="282" Height="50" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="15"/>
             <TextBox x:Name="txt_Usuario" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" Height="50" Background="#FF0D2D6F" Foreground="White" SelectionBrush="#FF0D2D6F" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Margin="0,308,0,0"/>
-            <Label x:Name="lbl_MensajeBienvenida" Content="Bienvenido. Por favor, inicie sesión." HorizontalAlignment="Center" Margin="0,254,0,0" VerticalAlignment="Top" Width="284" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" FontSize="15"/>
-            <Button Style="{DynamicResource btn_Style_Login_IniciarSesion}"  x:Name="btn_Login_IniciarSesion" Content="INICIAR SESIÓN" HorizontalAlignment="Center" Margin="0,476,0,0" VerticalAlignment="Top" Height="49" Width="282" Background="#FF0D2D6F" Foreground="#FFF7F7F7" BorderBrush="#FF001540"  FontFamily="Tahoma"/>
-            <Label x:Name="lbl_MensajeContraseña" Content="¿Olvidaste la contraseña?" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontSize="11" FontFamily="Tahoma"/>
+            <Label x:Name="lbl_MensajeBienvenida" Content="Bienvenido. Por favor, inicie sesión." HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" Width="284" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" FontSize="15"/>
+            <Button Style="{DynamicResource btn_Style_Login_IniciarSesion}"   Cursor="Hand" x:Name="btn_Login_IniciarSesion" Content="INICIAR SESIÓN" HorizontalAlignment="Center" Margin="0,476,0,0" VerticalAlignment="Top" Height="49" Width="282" Background="#FF0D2D6F" Foreground="#FFF7F7F7" BorderBrush="#FF001540"  FontFamily="Tahoma" />
+            <Button Style="{DynamicResource btn_Style_Olvidaste_Contra}" x:Name="btn_Contraseña_Olvidada" Content="¿Olvidaste la contraseña?" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Cursor="Hand"  Background="#FF97A3BA" BorderBrush="#FF97A3BA" Foreground="#FF020202" FontWeight="Bold" FontSize="11" FontFamily="Tahoma" />
             <Label x:Name="lbl_Login_Usuario" Content="USUARIO" HorizontalAlignment="Left" Margin="396,284,0,0" VerticalAlignment="Top" Width="229" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" Height="24"/>
             <Label x:Name="lbl_Login_Contraseña" Content="CONTRASEÑA" HorizontalAlignment="Left" Margin="395,359,0,0" VerticalAlignment="Top" Width="229" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" Height="24"/>
-            <Image HorizontalAlignment="Left" Height="138" Margin="440,93,0,0" VerticalAlignment="Top" Width="124" Source="/logo.png"/>
+            <Image HorizontalAlignment="Left" Height="163" Margin="410,27,0,0" VerticalAlignment="Top" Width="244" Source="/logo.png"/>
         </Grid>
 
     </Grid>

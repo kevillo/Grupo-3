@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OYK4qQ72TE2UeVyG7K39wxBjGsZgv56CXOLGnTCenlZjuseit7Z/17Eda3EPL3jDjF/i3vUb43f6wHtd7ZwmSw==",
+  "dgSpecHash": "wnBS1B1Gga3swEJxaJVgAfWnoFA2awhrV3otQG2iBiz+qKhbrsnnnBIcS0Q3TVCZI3MxEoELR5wrplt5DK5OGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\kevin\\Documents\\Clases IP 2022\\Desarrollo de Software\\Ejercicios\\proyecto\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
   "logs": []
 }
