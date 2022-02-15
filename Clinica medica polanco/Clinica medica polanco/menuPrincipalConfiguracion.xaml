@@ -64,8 +64,9 @@
         </Style>
     </UserControl.Resources>
     <Grid Background="White">
-        <Button Style="{DynamicResource btn_Efecto}" Content="Cerrar Sesión" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29" Margin="38,94,0,0" VerticalAlignment="Top" Height="108" Width="286"/>
-        <Button Content="Acerca de" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29" Height="108" Width="286" Margin="400,94,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_Efecto}"/>
-        <Button Content="Salir del sistema" HorizontalAlignment="Center"  Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29" Height="108" Width="286" Margin="0,248,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_Efecto}"/>
+
+        <Button Style="{DynamicResource btn_Efecto}" Content="Cerrar Sesión" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" VerticalAlignment="Top" Height="108" Width="286" Margin="63,103,0,0"/>
+        <Button Content="Acerca de" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" Height="108" Width="286" VerticalAlignment="Top" Style="{DynamicResource btn_Efecto}" Margin="218,270,0,0"/>
+        <Button Content="Salir del sistema" HorizontalAlignment="Left"  Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" Height="108" Width="286" VerticalAlignment="Top" Style="{DynamicResource btn_Efecto}" Margin="400,103,0,0"/>
     </Grid>
 </UserControl>

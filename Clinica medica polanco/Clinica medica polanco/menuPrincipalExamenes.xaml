@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Clinica_medica_polanco"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="497" d:DesignWidth="741">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -65,9 +65,9 @@
     </UserControl.Resources>
     <Grid Background="White">
 
-        <Button Style="{DynamicResource btn_style_menuPrincipal}" Content="Nuevo examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29" Margin="84,90,0,0" VerticalAlignment="Top" Height="108" Width="219"/>
-        <Button Content="Entregar examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" Height="108" Width="219" Margin="446,90,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
-        <Button Content="Consultar examen" HorizontalAlignment="Left"  Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" Height="108" Width="219" Margin="84,262,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
-        <Button Content="Analizar examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="27"  Height="108" Width="219" Margin="446,262,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
+        <Button Style="{DynamicResource btn_style_menuPrincipal}" Content="Nuevo examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Margin="32,72,0,0" VerticalAlignment="Top" Height="152" Width="292"/>
+        <Button Content="Entregar examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="37" Height="152" Width="292" Margin="408,72,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
+        <Button Content="Consultar examen" HorizontalAlignment="Left"  Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" Height="152" Width="292" Margin="32,273,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
+        <Button Content="Analizar examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35"  Height="152" Width="292" Margin="408,273,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
     </Grid>
 </UserControl>
