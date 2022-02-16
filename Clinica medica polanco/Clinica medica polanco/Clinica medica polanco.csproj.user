@@ -16,10 +16,16 @@
     <Compile Update="menuPrincipal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="menuPrincipalArqueo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="menuPrincipalConfiguracion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="menuPrincipalInformes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="menuPrincipal_Inventario.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,10 +39,16 @@
     <Page Update="menuPrincipal.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="menuPrincipalArqueo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="menuPrincipalConfiguracion.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="menuPrincipalInformes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="menuPrincipal_Inventario.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

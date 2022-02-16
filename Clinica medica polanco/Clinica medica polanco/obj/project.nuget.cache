@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wnBS1B1Gga3swEJxaJVgAfWnoFA2awhrV3otQG2iBiz+qKhbrsnnnBIcS0Q3TVCZI3MxEoELR5wrplt5DK5OGw==",
+  "dgSpecHash": "e9fmYQCB7QTb9Sa1ve6xR8cTVBJdT9IMj5zm0vT3Kz4s7k6BaKpoAFWtPyhDLHTrOWS2qOgU0Px9pqHyHm85Zg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kevin\\Documents\\Clases IP 2022\\Desarrollo de Software\\Ejercicios\\proyecto\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\amilc\\Desktop\\I PERIODO 2022\\DESARROLLO DE SOFTWARE\\Laboratorio Clinico Polanco\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
