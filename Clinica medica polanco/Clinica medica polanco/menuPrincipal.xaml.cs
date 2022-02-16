@@ -45,6 +45,7 @@ namespace Clinica_medica_polanco
             menuPacientes paciente1 = new();
             panel_Menu_Principal.Children.Clear();
             panel_Menu_Principal.Children.Add(paciente1);
+
         }
 
         private void btn_Informes_Click(object sender, RoutedEventArgs e)
