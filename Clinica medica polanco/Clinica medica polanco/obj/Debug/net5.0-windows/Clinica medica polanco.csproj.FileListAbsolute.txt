@@ -86,3 +86,13 @@ C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyec
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInformes.baml
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarPaciente.g.cs
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarPaciente.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarPaciente.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalArqueo.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInformes.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipal_Inventario.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarPaciente.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalArqueo.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInformes.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipal_Inventario.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\borrarPaciente.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\borrarPaciente.baml

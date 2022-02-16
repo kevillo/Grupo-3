@@ -24,5 +24,10 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
