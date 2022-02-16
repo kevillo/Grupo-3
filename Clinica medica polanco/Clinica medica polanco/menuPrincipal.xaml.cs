@@ -60,5 +60,12 @@ namespace Clinica_medica_polanco
             panel_Menu_Principal.Children.Clear();
             panel_Menu_Principal.Children.Add(inv);
         }
+
+        private void btn_Arqueo_Click(object sender, RoutedEventArgs e)
+        {
+            menuPrincipalArqueo arqueonuevo = new();
+            panel_Menu_Principal.Children.Clear();
+            panel_Menu_Principal.Children.Add(arqueonuevo);
+        }
     }
 }
