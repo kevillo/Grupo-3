@@ -53,5 +53,13 @@ namespace Clinica_medica_polanco
             panel_Menu_Principal.Children.Clear();
             panel_Menu_Principal.Children.Add(infor);
         }
+
+        private void btn_Empleados_Click(object sender, RoutedEventArgs e)
+        {
+            menuPrincipalEmpleados1 empleados1 = new();
+            panel_Menu_Principal.Children.Clear();
+            panel_Menu_Principal.Children.Add(empleados1);
+
+        }
     }
 }
