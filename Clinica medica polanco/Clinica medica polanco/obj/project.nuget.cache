@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "egVJ4KO+HWTWhgG4t/nHBKVylHbe+BmRMCIeboOJgAYTaYb8F/osmwHGRIuHaVgEcGG8k8zXrlr3t8gEsgd76Q==",
+  "dgSpecHash": "Oal3oH2rGxMOWTkDwKJvTVIxJHQtzyTC2FynoBBKlpredJ5gPEcrZMk4kfzqg9poFvpbWU3lYqgRM+6nNHphOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MARIA JOSE\\Documents\\pruebaGit\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\MARIA JOSE\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\DELL 6420\\Documents\\UNICAH\\2022\\7 Periodo UNICAH\\DESARROLLO DE SOFTWARE\\Proyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

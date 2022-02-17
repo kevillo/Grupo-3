@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Release\net5.0-windows\
+C:\Users\amilc\Desktop\I PERIODO 2022\DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Release\net5.0-windows\
 Clinica_medica_polanco
 none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
-C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\App.xaml
-11407045341
+C:\Users\amilc\Desktop\I PERIODO 2022\DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\App.xaml
+82032497727
 
-3-1233169557
+101112479913
 193-1891726104
-MainWindow.xaml;
+Login.xaml;menuPacientes.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipal_Inventario.xaml;
 
 True
 

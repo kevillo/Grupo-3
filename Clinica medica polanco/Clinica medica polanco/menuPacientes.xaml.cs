@@ -24,5 +24,19 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            agregarPaciente nuevoPaciente = new();
+         
+            nuevoPaciente.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            borrarPaciente borrar = new();
+            borrar.ShowDialog();
+        }
     }
 }

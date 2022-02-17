@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MARIA JOSE\Documents\pruebaGit\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
 Clinica_medica_polanco
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\MARIA JOSE\Documents\pruebaGit\Clinica medica polanco\Clinica medica polanco\App.xaml
-8-1435622008
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
+101663784580
 
-9-337492634
+12380428363
 193-1891726104
-Login.xaml;menuPacientes.xaml;menuPrincipal.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleado.xaml;menuPrincipalEmpleados1.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;
+agregarPaciente.xaml;borrarPaciente.xaml;Login.xaml;menuPacientes.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipal_Inventario.xaml;
 
 False
 
