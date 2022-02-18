@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="aa.bmp" />
+    <None Remove="aa.ico" />
     <None Remove="aa.png" />
     <None Remove="holis.png" />
     <None Remove="icons8-cent-50.png" />
@@ -23,9 +25,12 @@
     <None Remove="output-onlinepngtools%282%29.png" />
     <None Remove="output-onlinepngtools%283%29.png" />
     <None Remove="output-onlinepngtools.png" />
+    <None Remove="índice.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="aa.bmp" />
+    <Resource Include="aa.ico" />
     <Resource Include="aa.png" />
     <Resource Include="holis.png" />
     <Resource Include="icons8-cent-50.png" />
@@ -41,6 +46,7 @@
     <Resource Include="output-onlinepngtools(2).png" />
     <Resource Include="output-onlinepngtools(3).png" />
     <Resource Include="output-onlinepngtools.png" />
+    <Resource Include="índice.jpg" />
   </ItemGroup>
 
 </Project>

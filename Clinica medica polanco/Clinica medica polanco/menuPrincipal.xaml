@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_medica_polanco"
         mc:Ignorable="d"
-        Title="menuPrincipal" Width="1080" Height="599"  WindowStartupLocation="CenterScreen">
+        Title="menu Principal" Width="1080" Height="599"  WindowStartupLocation="CenterScreen" Icon="/aa.png">
     <Window.Resources>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
@@ -39,18 +39,21 @@
         </ControlTemplate>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="374*"/>
-            <ColumnDefinition Width="707*"/>
-        </Grid.ColumnDefinitions>
+       
+
+
+
+
+
+
         <Rectangle HorizontalAlignment="Left" Height="84" Margin="4,0,0,0" Stroke="White" VerticalAlignment="Top"   Width="1076" Fill="#260D2D6F" Grid.ColumnSpan="2"/>
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Examenes_medicos" HorizontalContentAlignment="Center" Content="   Exámenes &#xD;&#xA;   médicos" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,0,0,0" Click="btn_Examenes_medicos_Click"/>
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Pacientes" HorizontalContentAlignment="Center" Content="Pacientes" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,83,0,0" Click="btn_Pacientes_Click"/>
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Arqueo"   HorizontalContentAlignment="Left"  Content="               Arqueo" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,166,0,0" Click="btn_Arqueo_Click"/>
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Empleados" HorizontalContentAlignment="Center" Content="  Empleados" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,249,0,0" />
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Inventario"  HorizontalContentAlignment="Center" Content="  Inventario" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,332,0,0" Click="btn_Inventario_Click" />
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Informes" HorizontalContentAlignment="Center" Content="Informes" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,415,0,0" Click="btn_Informes_Click" />
-        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Configuracion" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Content="       Configuración" HorizontalAlignment="Left"  VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,498,0,0" Click="btn_Configuracion_Click" />
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Examenes_medicos" HorizontalContentAlignment="Center" Content="   Exámenes &#xD;&#xA;   médicos" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,0,0,0" Click="btn_Examenes_medicos_Click" LostFocus="btn_Menu_Principal_LostFocus"/>
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Pacientes" HorizontalContentAlignment="Center" Content="Pacientes" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,83,0,0" Click="btn_Pacientes_Click" LostFocus="btn_Menu_Principal_LostFocus"/>
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Arqueo"   HorizontalContentAlignment="Left"  Content="               Arqueo" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,166,0,0" Click="btn_Arqueo_Click" LostFocus="btn_Menu_Principal_LostFocus"/>
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Empleados" HorizontalContentAlignment="Center" Content="  Empleados" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,249,0,0" Click="btn_Empleados_Click" LostFocus="btn_Menu_Principal_LostFocus" />
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Inventario"  HorizontalContentAlignment="Center" Content="  Inventario" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,332,0,0" Click="btn_Inventario_Click" LostFocus="btn_Menu_Principal_LostFocus" />
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Informes" HorizontalContentAlignment="Center" Content="Informes" HorizontalAlignment="Left" Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,415,0,0" Click="btn_Informes_Click" LostFocus="btn_Menu_Principal_LostFocus" />
+        <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Configuracion" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Content="       Configuración" HorizontalAlignment="Left"  VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" BorderBrush="#FF0D2D6F" Width="340" Height="83" Margin="-1,498,0,0" Click="btn_Configuracion_Click" LostFocus="btn_Menu_Principal_LostFocus" />
         <Image HorizontalAlignment="Left" Height="61" Margin="25,9,0,0" VerticalAlignment="Top" Width="61" Source="/icons8-treatment-50.png"/>
         <Image HorizontalAlignment="Left" Height="41" Margin="35,189,0,0" VerticalAlignment="Top" Width="61" Source="/icons8-cent-50.png"/>
         <Image HorizontalAlignment="Left" Height="61" Margin="28,260,0,0" VerticalAlignment="Top" Width="61" Source="/icons8-medical-doctor-100.png"/>
@@ -58,8 +61,121 @@
         <Image HorizontalAlignment="Left" Height="61" Margin="29,346,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.5,0.5" Source="/icons8-databases-98.png" />
         <Image HorizontalAlignment="Left" Height="61" Margin="29,512,0,0" VerticalAlignment="Top" Width="61" Source="/icons8-configuration-60.png"/>
         <Image HorizontalAlignment="Left" Height="61" Margin="26,93,0,0" VerticalAlignment="Top" Width="61" Source="/icons8-man-100.png"/>
-        <Label x:Name="lbl_Mensaje_Menu_Principal" Content="MENU PRINCIPAL" HorizontalAlignment="Left"   FontFamily="Tahoma" FontSize="50" Margin="156,3,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lbl_Mensaje_Menu_Principal" Content="MENU PRINCIPAL" HorizontalAlignment="Left"   FontFamily="Tahoma" FontSize="50" Margin="509,4,0,0" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="109" Margin="352,-1,0,0" VerticalAlignment="Top" Width="123" Source="/holis.png" Grid.ColumnSpan="2"/>
         <StackPanel x:Name="panel_Menu_Principal" Margin="339,84,0,2" HorizontalAlignment="Left" Width="741" Grid.ColumnSpan="2"/>
+
+        <Polygon x:Name="poly_Deco_Arqueo"  
+                    Points="200,100 300,25 300,175 200,100"  
+                    Stroke="Transparent"
+                    StrokeThickness="2" Margin="231,131,611,286" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
+        <Polygon x:Name="poly_Deco_Pacientes"  
+            Points="200,100 300,25 300,175 200,100"  
+            Stroke="Transparent"
+            StrokeThickness="2" Margin="231,48,611,368" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
+        <Polygon x:Name="poly_Deco_Examenes"  
+            Points="200,100 300,25 300,175 200,100"  
+            Stroke="Transparent"
+            StrokeThickness="2" Margin="231,-37,611,453" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
+        <Polygon x:Name="poly_Deco_Empleados"  
+            Points="200,100 300,25 300,175 200,100"  
+            Stroke="Transparent"
+            StrokeThickness="2" Margin="231,212,611,204" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
+        <Polygon x:Name="poly_Deco_Inventario"  
+            Points="200,100 300,25 300,175 200,100"  
+            Stroke="Transparent"
+            StrokeThickness="2" Margin="231,296,611,120" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
+        <Polygon x:Name="poly_Deco_Informes"  
+            Points="200,100 300,25 300,175 200,100"  
+            Stroke="Transparent"
+            StrokeThickness="2" Margin="230,378,612,38" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
+        <Polygon x:Name="poly_Deco_Configuracion"  
+            Points="200,100 300,25 300,175 200,100"  
+            Stroke="Transparent"
+            StrokeThickness="2" Margin="229,462,613,-46" RenderTransformOrigin="0.5,0.5">
+            <Polygon.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Polygon.RenderTransform>
+            <Polygon.Fill>
+                <SolidColorBrush Color="Transparent" Opacity="1"/>
+            </Polygon.Fill>
+        </Polygon>
     </Grid>
 </Window>
