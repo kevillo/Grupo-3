@@ -25,6 +25,10 @@ namespace Clinica_medica_polanco
             InitializeComponent();
         }
 
-       
+        private void btn_Eliminar_Datos_Empleados_Click(object sender, RoutedEventArgs e)
+        {
+            EliminarEmpleado eliminarNuevoEmpleado = new();
+            eliminarNuevoEmpleado.ShowDialog();
+        }
     }
 }
