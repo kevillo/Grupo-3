@@ -172,9 +172,9 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,76,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_ID_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
-        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,110,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35"/>
+        <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,82,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
+        <TextBox x:Name="txt_Actualizar_Paciente_ID_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
+        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,116,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35"/>
         <Label Content="Nombre completo:" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Nombre_Completo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="621" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
         <Label Content="Identidad:" HorizontalAlignment="Left" Margin="278,223,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
@@ -184,10 +184,10 @@
         <Label Content="Fecha de nacimiento:" HorizontalAlignment="Left" Margin="226,293,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="611,293,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Actualizar_Paciente_CorreoE" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="566,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
-        <Rectangle HorizontalAlignment="Center" Height="66" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
-        <Image HorizontalAlignment="Left" Height="71" Margin="0,-2,0,0" VerticalAlignment="Top" Width="97" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
-        <Rectangle HorizontalAlignment="Center" Height="66" Stroke="#0D2D6F" VerticalAlignment="Top" Width="564" Fill="#FF0D2D6F" Margin="0,-2,0,0"/>
-        <Label Content="Actualizar datos paciente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="398" Foreground="White" FontFamily="Tahoma" FontSize="35" Margin="349,3,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
+        <Image HorizontalAlignment="Left" Height="114" Margin="0,-2,0,0" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="0,-2,0,0"/>
+        <Label Content="Actualizar datos paciente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="423" Foreground="White" FontFamily="Tahoma" FontSize="37" Margin="349,16,0,0"/>
         <Label Content="Altura (m):" HorizontalAlignment="Left" Margin="202,366,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Actualizar_Paciente_Salir" Content="" HorizontalAlignment="Left" Cursor="Hand" Margin="14,506,0,0" VerticalAlignment="Top" Width="100" Height="61" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.538,-0.02" Click="btn_Actualizar_Paciente_Salir_Click">
             <Button.Background>
