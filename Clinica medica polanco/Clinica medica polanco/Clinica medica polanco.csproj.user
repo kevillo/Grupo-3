@@ -7,13 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="actualizarD_Pacientes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="agregarPaciente.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="borrarPaciente.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="menuPrincipalPacientes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="menuPrincipal.xaml.cs">
@@ -25,24 +25,18 @@
     <Compile Update="menuPrincipalConfiguracion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="menuPrincipalEmpleados.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="menuPrincipalInformes.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="menuPrincipalInventario.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="actualizarD_Pacientes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="agregarPaciente.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="borrarPaciente.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="menuPrincipalPacientes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="menuPrincipal.xaml">
@@ -54,13 +48,7 @@
     <Page Update="menuPrincipalConfiguracion.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="menuPrincipalEmpleados.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="menuPrincipalInformes.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="menuPrincipalInventario.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
