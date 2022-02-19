@@ -30,5 +30,11 @@ namespace Clinica_medica_polanco
             ConsultarEmpleados consultar = new();
             consultar.ShowDialog();
         }
+
+        private void btn_Eliminar_Datos_Empleados_Click(object sender, RoutedEventArgs e)
+        {
+            EliminarEmpleado eliminar = new();
+            eliminar.ShowDialog();
+        }
     }
 }

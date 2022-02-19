@@ -118,6 +118,8 @@
     </Window.Resources>
     <Grid>
 
+        <Rectangle HorizontalAlignment="Center" Height="98" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
+
         <Label Content="Identificación del empleado o código" HorizontalAlignment="Left" Margin="185,101,0,0" VerticalAlignment="Top" Height="41" Width="382" FontSize="17"/>
         <TextBox x:Name="txt_Codigo_Eliminar_Empleado" HorizontalAlignment="Left" Margin="189,133,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="545" Height="49" FontFamily="Tahoma" FontSize="20" TextAlignment="Center"/>
         <Button Style="{DynamicResource btn_Style_Eliminar_Empleado}"  FontSize="28" FontFamily="Tahoma" Cursor="Hand" Foreground="White" x:Name="btn_Buscar_Eliminar_Empleado" Content="Buscar" HorizontalAlignment="Left" Margin="739,133,0,0" VerticalAlignment="Top" Height="49" Width="138"/>
@@ -154,7 +156,7 @@
         <Label Content="Fecha ingreso" HorizontalAlignment="Left" Margin="586,414,0,0" VerticalAlignment="Top" Height="34" Width="126"/>
         <DatePicker x:Name="dtp_Ingreso_Eliminar_Empleado" HorizontalAlignment="Left" Margin="573,453,0,0" VerticalAlignment="Top" Width="106" IsEnabled="False"/>
         <DatePicker x:Name="dtp_Pago_Eliminar_Empleado" HorizontalAlignment="Left" Margin="392,453,0,0" VerticalAlignment="Top" Width="138" IsEnabled="False"/>
-        <Rectangle HorizontalAlignment="Left"  Height="87" Margin="189,8,0,0" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F"/>
+        <Rectangle HorizontalAlignment="Left"  Height="95" Margin="189,0,0,0" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F"/>
         <Button x:Name="btn_Borrar_Empleado" Content="Deshabilitar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="376,516,0,0" VerticalAlignment="Top" Height="50" Width="308" Style="{DynamicResource btn_Style_Eliminar_Empleado}"/>
         <Button Style="{DynamicResource btn_Style_Salir}" Cursor="Hand" BorderBrush="White" Foreground="White" x:Name="btn_Salir" Content=""  HorizontalAlignment="Left" Margin="19,510,0,0" VerticalAlignment="Top" Height="62" Width="100" Click="btn_Salir_Click">
             <Button.Background>
@@ -162,8 +164,8 @@
             </Button.Background>
         </Button>
         <DatePicker x:Name="dtp_Nacimiento_Eliminar_Empleado" HorizontalAlignment="Left" Margin="189,295,0,0" VerticalAlignment="Top" Width="157" IsEnabled="False"/>
-        <Label Content="Eliminar empleado" FontFamily="Tahoma" FontSize="65" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="19,10,0,0" VerticalAlignment="Top" Width="120" Source="/aa.bmp"/>
+        <Label Content="Eliminar empleado" FontFamily="Tahoma" FontSize="65" HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
 
     </Grid>
 </Window>
