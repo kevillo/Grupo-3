@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Interop;
 
 namespace Clinica_medica_polanco
 {
@@ -22,6 +23,11 @@ namespace Clinica_medica_polanco
         public actualizarD_Pacientes()
         {
             InitializeComponent();
+        }
+    
+        private void btn_Actualizar_Paciente_Salir_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

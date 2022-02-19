@@ -38,5 +38,11 @@ namespace Clinica_medica_polanco
             borrarPaciente borrar = new();
             borrar.ShowDialog();
         }
+
+        private void btn_Actualizar_Paciente_Click(object sender, RoutedEventArgs e)
+        {
+            actualizarD_Pacientes actualizar = new();
+            actualizar.ShowDialog();
+        }
     }
 }

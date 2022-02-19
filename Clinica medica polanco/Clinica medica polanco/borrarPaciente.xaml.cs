@@ -56,5 +56,10 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
+
+        private void btn_Guardar_Datos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
