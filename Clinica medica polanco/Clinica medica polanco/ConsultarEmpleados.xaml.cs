@@ -10,25 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para menuPrincipalEmpleados1.xaml
+    /// Lógica de interacción para ConsultarEmpleados.xaml
     /// </summary>
-    public partial class menuPrincipalEmpleados:UserControl
+    public partial class ConsultarEmpleados : Window
     {
-        public menuPrincipalEmpleados()
+        public ConsultarEmpleados()
         {
             InitializeComponent();
         }
 
-        private void btn_Consultar_Datos_Empleados_Click(object sender, RoutedEventArgs e)
+        private void btn_ConsultarEmpleados_Salir_Click(object sender, RoutedEventArgs e)
         {
-            ConsultarEmpleados consultar = new();
-            consultar.ShowDialog();
+            this.Close();
         }
     }
 }

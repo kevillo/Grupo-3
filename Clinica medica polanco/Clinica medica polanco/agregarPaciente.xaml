@@ -162,40 +162,44 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
-
-        <Image HorizontalAlignment="Left" Height="108" Margin="10,10,0,0" VerticalAlignment="Top" Width="141" Source="/aa.png"/>
-        <Rectangle HorizontalAlignment="Center" Height="105" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F"/>
-        <Label Content="Registro de pacientes" HorizontalAlignment="Center" Foreground="White" FontFamily="Tahoma" FontSize="65" VerticalAlignment="Top"/>
-        <Label Content="Nombre " FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="267,130,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}"  x:Name="txt_Nombre_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="267,168,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
-        <Label Content="Apellido " FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="586,130,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <TextBox x:Name="txt_Apellido_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="586,168,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Style="{DynamicResource txt_Style_Registro_Paciente}" />
-        <Label Content="Identidad" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="266,212,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Identidad_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="266,250,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="241" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
-        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Telefono_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="585,250,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="241" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
-        <Label Content="Teléfono" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="585,211,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <Label Content="Fecha nacimiento" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="265,294,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <DatePicker x:Name="dtp_Fecha_Nacimiento_Paciente" HorizontalAlignment="Left" Margin="266,336,0,0" VerticalAlignment="Top" Width="241" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="18" />
-        <Label Content="Correo electronico" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="585,294,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Correo_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="585,336,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="298" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
-        <Label Content="Altura(cm)" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="260,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Altura_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="280,433,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="36" Width="62" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
-        <Label Content="Tipo de sangre" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="382,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <ComboBox x:Name="cmb_Tipo_Sangre_Paciente" HorizontalAlignment="Left" Margin="392,433,0,0" VerticalAlignment="Top" Width="120" Height="36" BorderBrush="White" Background="White" />
-        <RichTextBox x:Name="Rtb_direccion_Paciente" Margin="586,418,196,85">
+    <Grid Margin="0,1,0,-1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="343*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Nombre " FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="216,130,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}"  x:Name="txt_Nombre_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="216,168,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" />
+        <Label Content="Apellido " FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="535,130,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <TextBox x:Name="txt_Apellido_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="535,168,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Style="{DynamicResource txt_Style_Registro_Paciente}" Grid.Column="1" />
+        <Label Content="Identidad" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="215,212,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Identidad_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="215,250,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="241" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" />
+        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Telefono_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="534,250,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="241" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" />
+        <Label Content="Teléfono" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="534,211,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <Label Content="Fecha nacimiento" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="214,294,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <DatePicker x:Name="dtp_Fecha_Nacimiento_Paciente" HorizontalAlignment="Left" Margin="215,336,0,0" VerticalAlignment="Top" Width="241" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="18" Grid.Column="1" />
+        <Label Content="Correo electronico" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="534,294,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Correo_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="534,336,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="298" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" />
+        <Label Content="Altura(cm)" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="209,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Altura_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="229,433,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="36" Width="62" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" />
+        <Label Content="Tipo de sangre" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="331,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <ComboBox x:Name="cmb_Tipo_Sangre_Paciente" HorizontalAlignment="Left" Margin="341,433,0,0" VerticalAlignment="Top" Width="120" Height="36" BorderBrush="White" Background="White" Grid.Column="1" />
+        <RichTextBox x:Name="Rtb_direccion_Paciente" Margin="535,418,196,85" Grid.Column="1">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Dirección" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="586,379,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <Button x:Name="btn_Guardar_Datos" Style="{DynamicResource btn_Style_Agregar_Paciente}" Cursor="Hand" Width="200" Height="50" FontFamily="Tahoma" FontSize="29" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Guardar datos" HorizontalAlignment="Center" Margin="0,525,0,0" VerticalAlignment="Top"/>
-        <Button Style="{DynamicResource btn_Salir}" x:Name="btn_salir" Content="" HorizontalAlignment="Left" Cursor="Hand" Margin="30,514,0,0" VerticalAlignment="Top" Width="100" Height="61" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.538,-0.02" Click="btn_salir_Click">
+        <Label Content="Dirección" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="535,379,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
+        <Button x:Name="btn_Guardar_Datos" Style="{DynamicResource btn_Style_Agregar_Paciente}" Cursor="Hand" Width="200" Height="50" FontFamily="Tahoma" FontSize="29" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Guardar datos" HorizontalAlignment="Left" Margin="389,525,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Style="{DynamicResource btn_Salir}" x:Name="btn_salir" Content="" HorizontalAlignment="Left" Cursor="Hand" Margin="30,514,0,0" VerticalAlignment="Top" Width="100" Height="61" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.538,-0.02" Click="btn_salir_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Rectangle HorizontalAlignment="Left" Height="99" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="107" VerticalAlignment="Top" Width="146" Source="/aa.bmp" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="99" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Grid.Column="1" Margin="145,0,0,0"/>
+        <Label Content="Registro de pacientes" HorizontalAlignment="Left" Foreground="White" FontFamily="Tahoma" FontSize="65" VerticalAlignment="Top" Grid.Column="1" Margin="176,0,0,0"/>
     </Grid>
 </Window>
