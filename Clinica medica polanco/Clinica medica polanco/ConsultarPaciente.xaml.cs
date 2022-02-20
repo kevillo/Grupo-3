@@ -11,21 +11,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Windows.Interop;
 
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para actualizarD_Pacientes.xaml
+    /// Lógica de interacción para ConsultarPaciente.xaml
     /// </summary>
-    public partial class actualizarD_Pacientes : Window
+    public partial class ConsultarPaciente : Window
     {
-        public actualizarD_Pacientes()
+        public ConsultarPaciente()
         {
             InitializeComponent();
         }
-    
-        private void btn_Actualizar_Paciente_Salir_Click(object sender, RoutedEventArgs e)
+
+        private void btn_Consultar_Pacientes_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -41,8 +41,14 @@ namespace Clinica_medica_polanco
 
         private void btn_Actualizar_Paciente_Click(object sender, RoutedEventArgs e)
         {
-            actualizarD_Pacientes actualizar = new();
+            actualizarPaciente actualizar = new();
             actualizar.ShowDialog();
+        }
+
+        private void btn_Consultar_Paciente_Click(object sender, RoutedEventArgs e)
+        {
+            ConsultarPaciente nuevaConsulta = new();
+            nuevaConsulta.ShowDialog();
         }
     }
 }
