@@ -34,6 +34,9 @@
     <Compile Update="menuPrincipalInformes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="solicitudExamen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="actualizarPaciente.xaml">
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="menuPrincipalInformes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="solicitudExamen.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para menuPrincipalExamenes.xaml
+    /// Lógica de interacción para solicitudExamen.xaml
     /// </summary>
-    public partial class menuPrincipalExamenes : UserControl
+    public partial class solicitudExamen : Window
     {
-        public menuPrincipalExamenes()
+        public solicitudExamen()
         {
             InitializeComponent();
-        }
-
-        private void btn_Nuevo_Examen_Click(object sender, RoutedEventArgs e)
-        {
-            solicitudExamen solicitud = new();
-            solicitud.ShowDialog();
         }
     }
 }

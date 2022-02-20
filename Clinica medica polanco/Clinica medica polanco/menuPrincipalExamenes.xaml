@@ -65,7 +65,7 @@
     </UserControl.Resources>
     <Grid Background="White">
 
-        <Button x:Name="btn_Nuevo_Examen" Style="{DynamicResource btn_style_menuPrincipal}" Content="Nuevo examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Margin="32,72,0,0" VerticalAlignment="Top" Height="152" Width="292"/>
+        <Button x:Name="btn_Nuevo_Examen" Style="{DynamicResource btn_style_menuPrincipal}" Content="Nuevo examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Margin="32,72,0,0" VerticalAlignment="Top" Height="152" Width="292" Click="btn_Nuevo_Examen_Click"/>
         <Button x:Name="btn_Entregar_Examen" Content="Entregar examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="37" Height="152" Width="292" Margin="408,72,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
         <Button x:Name="btn_Consultar_Examen" Content="Consultar examen" HorizontalAlignment="Left"  Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" Height="152" Width="292" Margin="32,273,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
         <Button x:Name="btn_Analizar_Examen" Content="Analizar examen" HorizontalAlignment="Left" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35"  Height="152" Width="292" Margin="408,273,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_style_menuPrincipal}"/>
