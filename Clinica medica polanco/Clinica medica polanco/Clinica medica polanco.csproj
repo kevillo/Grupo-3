@@ -51,4 +51,10 @@
     <Resource Include="índice.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="AgregarEmpleado.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
 </Project>
