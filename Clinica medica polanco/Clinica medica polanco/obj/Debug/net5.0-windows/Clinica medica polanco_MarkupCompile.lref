@@ -1,20 +1,21 @@
 ﻿
 
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\actualizarPaciente.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\AgregarEmpleado.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\agregarPaciente.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\borrarPaciente.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\ConsultarEmpleados.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\ConsultarPaciente.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\EliminarEmpleado.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\Login.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipal.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalArqueo.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalConfiguracion.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalEmpleados.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalExamenes.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalInformes.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalInventario.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalPacientes.xaml;;
-FC:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\solicitudExamen.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\actualizarPaciente.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\AgregarEmpleado.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\agregarPaciente.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\borrarPaciente.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\ConsultarEmpleados.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\consultarExamen.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\ConsultarPaciente.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\EliminarEmpleado.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\Login.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipal.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalArqueo.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalConfiguracion.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalEmpleados.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalExamenes.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalInformes.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalInventario.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\menuPrincipalPacientes.xaml;;
+FC:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\solicitudExamen.xaml;;
 

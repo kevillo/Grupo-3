@@ -11,6 +11,7 @@
     <None Remove="aa.bmp" />
     <None Remove="aa.ico" />
     <None Remove="aa.png" />
+    <None Remove="embudoxd.png" />
     <None Remove="holis.png" />
     <None Remove="icons8-cent-50.png" />
     <None Remove="icons8-configuration-60.png" />
@@ -33,6 +34,7 @@
     <Resource Include="aa.bmp" />
     <Resource Include="aa.ico" />
     <Resource Include="aa.png" />
+    <Resource Include="embudoxd.png" />
     <Resource Include="holis.png" />
     <Resource Include="icons8-cent-50.png" />
     <Resource Include="icons8-configuration-60.png" />

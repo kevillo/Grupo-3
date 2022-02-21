@@ -30,5 +30,11 @@ namespace Clinica_medica_polanco
             solicitudExamen solicitud = new();
             solicitud.ShowDialog();
         }
+
+        private void btn_Consultar_Examen_Click(object sender, RoutedEventArgs e)
+        {
+            consultarExamen consultar = new();
+            consultar.ShowDialog();
+        }
     }
 }
