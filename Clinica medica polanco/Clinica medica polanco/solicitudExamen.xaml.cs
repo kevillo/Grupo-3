@@ -31,5 +31,10 @@ namespace Clinica_medica_polanco
             nuevopago.ShowDialog();
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

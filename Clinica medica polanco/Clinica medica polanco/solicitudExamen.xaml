@@ -187,7 +187,7 @@
         <TextBox x:Name="txt_Solicitud_Examen_Buscar" HorizontalAlignment="Left" Margin="102,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="540" Height="29" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
         <Button Style="{DynamicResource Style_btn_Cargar_Examen}" x:Name="btn_Solicitud_Examen_Buscar" Cursor="Hand" Content="Cargar examen" HorizontalAlignment="Left" Margin="659,210,0,0" VerticalAlignment="Top" Height="37" Width="125" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White"/>
         <DataGrid x:Name="dtg_Solicitud_Examen_Examenes" Margin="10,256,10,146"/>
-        <Button Style="{DynamicResource Style_btn_Salir}" Cursor="Hand" HorizontalAlignment="Left" Margin="10,516,0,0" VerticalAlignment="Top" Height="56" Width="61" FontFamily="Tahoma" FontSize="17">
+        <Button Style="{DynamicResource Style_btn_Salir}" Cursor="Hand" HorizontalAlignment="Left" Margin="10,516,0,0" VerticalAlignment="Top" Height="56" Width="61" FontFamily="Tahoma" FontSize="17" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
