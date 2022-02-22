@@ -194,7 +194,7 @@
         </Button>
         <Button x:Name="btn_Solicitud_Examen_Nuevo_Cliente" Content="      Nuevo Cliente" Cursor="Hand" HorizontalAlignment="Left" Margin="896,464,0,0" VerticalAlignment="Top" Height="37" Width="158" FontFamily="Tahoma" FontSize="17" Background="White" BorderBrush="Transparent"/>
         <Image HorizontalAlignment="Left" Height="26" Margin="908,470,0,0" VerticalAlignment="Top" Width="28" Source="/nuevocliente.png" RenderTransformOrigin="2,1.117"/>
-        <Button Style="{DynamicResource Style_btn_Procesar_Orden}" x:Name="btn_Solicitud_Examen_Procesar_Orden" Cursor="Hand" Content="Procesar Orden" HorizontalAlignment="Center" Margin="0,519,0,0" VerticalAlignment="Top" Height="46" Width="220" FontFamily="Tahoma" FontSize="20" Background="#FF0D2D6F" Foreground="White"/>
+        <Button Style="{DynamicResource Style_btn_Procesar_Orden}" x:Name="btn_Solicitud_Examen_Procesar_Orden" Cursor="Hand" Content="Procesar Orden" HorizontalAlignment="Center" Margin="0,519,0,0" VerticalAlignment="Top" Height="46" Width="220" FontFamily="Tahoma" FontSize="20" Background="#FF0D2D6F" Foreground="White" Click="btn_Solicitud_Examen_Procesar_Orden_Click"/>
 
     </Grid>
 </Window>

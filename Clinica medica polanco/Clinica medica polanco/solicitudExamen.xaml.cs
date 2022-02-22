@@ -23,5 +23,13 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void btn_Solicitud_Examen_Procesar_Orden_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            pagarExamenMedico nuevopago = new();
+            nuevopago.ShowDialog();
+            
+        }
     }
 }

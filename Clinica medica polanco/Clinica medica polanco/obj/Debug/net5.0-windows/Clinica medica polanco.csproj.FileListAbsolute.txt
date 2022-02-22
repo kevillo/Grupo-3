@@ -158,3 +158,11 @@ C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarExamen.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AgregarEmpleado.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarExamen.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AgregarEmpleado.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarExamen.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\solicitudExamen.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AgregarEmpleado.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarExamen.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\solicitudExamen.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\pagarExamenMedico.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\pagarExamenMedico.baml
