@@ -16,19 +16,17 @@ using System.Windows.Interop;
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para agregarPaciente.xaml
+    /// Lógica de interacción para informesCompras.xaml
     /// </summary>
-    public partial class agregarPaciente : Window
+    public partial class informesCompras : Window
     {
-        public agregarPaciente()
+        public informesCompras()
         {
             InitializeComponent();
-
-            this.SourceInitialized += AgregarPaciente_SourceInitialized;
-
+            this.SourceInitialized += informesCompras_SourceInitialized;
         }
 
-        private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)
+        private void informesCompras_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
@@ -53,15 +51,9 @@ namespace Clinica_medica_polanco
             }
             return IntPtr.Zero;
         }
-
-        private void btn_salir_Click(object sender, RoutedEventArgs e)
+        private void btn_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void btn_Guardar_Datos_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
