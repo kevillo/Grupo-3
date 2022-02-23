@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
+C:\Users\amilc\Desktop\I PERIODO 2022\DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
 Clinica_medica_polanco
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
-25178383256
+C:\Users\amilc\Desktop\I PERIODO 2022\DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\App.xaml
+28-1604738589
 
-291256253556
+321198944006
 193-1891726104
-actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;informePacientes.xaml;InformesInventario.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
+actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;consultarDatosPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;generarInformeEmpleados.xaml;generarInformeVentas1.xaml;InfomesExamenesMedicos.xaml;informePacientes.xaml;InformesInventario.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
 
 False
 

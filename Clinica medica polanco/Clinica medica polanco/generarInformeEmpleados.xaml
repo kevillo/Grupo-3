@@ -1,0 +1,15 @@
+﻿<Window x:Class="Clinica_medica_polanco.generarInformeEmpleados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clinica_medica_polanco"
+        mc:Ignorable="d"
+        Title="generarInformeEmpleados" Height="616" Width="1082">
+    <Grid Margin="0,0,0,-6">
+        <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,8,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,6,0,0"/>
+        <Label Content="Generar informe de empleados" FontFamily="Tahoma" FontSize="37" Foreground="White" HorizontalAlignment="Left" Margin="308,23,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

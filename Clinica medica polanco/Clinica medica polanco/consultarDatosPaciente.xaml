@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Clinica_medica_polanco.consultarDatosPaciente"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Clinica_medica_polanco"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Image Margin="10,10,677,363" Stretch="Fill" Source="holis.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="105" Stroke="#0D2D6F" VerticalAlignment="Top" Width="677" Fill="#FF0D2D6F" Margin="123,0,0,0"/>
+        <Label Content="Consultar Datos del Paciente&#xA;" HorizontalAlignment="Left" Foreground="White" FontFamily="Tahoma" FontSize="50
+               " VerticalAlignment="Top" Margin="144,10,0,0"/>
+        <Label Content="Nombre:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="15,174,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Codigo:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="15,134,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Apellido: " FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="15,213,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Identidad:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="15,252,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Teléfono:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="384,133,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Fecha Nacimiento:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="384,172,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Correo Electronico:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="15,333,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Altura(cm):" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="384,251,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Tipo de Sangre:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="384,212,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <Label Content="Dirección:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="15,294,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
+        <TextBox x:Name="txt_Nombre_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="121,137,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="121,177,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy1" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="121,216,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy2" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="121,255,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy3" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="562,137,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy4" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="123,297,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy5" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="198,333,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="29" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy6" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="562,175,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="28" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy7" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="562,216,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="28" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        <TextBox x:Name="txt_Nombre_Paciente_Copy8" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="562,255,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="28" Width="224" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
+        
+
+    </Grid>
+</UserControl>
