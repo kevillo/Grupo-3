@@ -10,7 +10,7 @@
         <Rectangle HorizontalAlignment="Left" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688" Margin="196,0,0,0"/>
         <Label Content="Informe de exámenes médicos" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,6,0,0"/>
         <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>
-        <Button x:Name="btn_salir" Content="" HorizontalAlignment="Center" Margin="0,523,0,0" VerticalAlignment="Top" Width="84" Height="71" Click="btn_salir_Click">
+        <Button x:Name="btn_salir" BorderBrush="White" Content="" HorizontalAlignment="Center" Margin="0,523,0,0" VerticalAlignment="Top" Width="84" Height="71" Click="btn_salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>

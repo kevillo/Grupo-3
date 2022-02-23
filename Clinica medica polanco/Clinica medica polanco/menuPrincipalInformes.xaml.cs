@@ -30,5 +30,17 @@ namespace Clinica_medica_polanco
             InformesInventario nuevoInforme = new();
             nuevoInforme.ShowDialog();
         }
+
+        private void btn_Informes_Ventas_Click(object sender, RoutedEventArgs e)
+        {
+            generarInformeVentas1 ventas = new();
+            ventas.ShowDialog();
+        }
+
+        private void btn_Informes_Empleado_Click(object sender, RoutedEventArgs e)
+        {
+            generarInformeEmpleados nuevoEmpleado = new();
+            nuevoEmpleado.ShowDialog();
+        }
     }
 }
