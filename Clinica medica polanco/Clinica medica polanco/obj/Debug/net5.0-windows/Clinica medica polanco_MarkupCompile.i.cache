@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
 Clinica_medica_polanco
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
-21868382193
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\App.xaml
+221511320509
 
-251399948964
+261900990165
 193-1891726104
-actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
+actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
 
-True
+False
 

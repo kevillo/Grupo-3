@@ -28,5 +28,12 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
+
+        private void btn_Revision_Examen_Ir_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            AnalizarExamenMedico nuevoAnalisis = new();
+            nuevoAnalisis.ShowDialog();
+        }
     }
 }
