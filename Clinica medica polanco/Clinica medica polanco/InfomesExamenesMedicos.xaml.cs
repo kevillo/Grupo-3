@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para InformesInventario.xaml
+    /// Lógica de interacción para InfomesExamenesMedicos.xaml
     /// </summary>
-    public partial class InformesInventario : Window
+    public partial class InfomesExamenesMedicos : Window
     {
-        public InformesInventario()
+        public InfomesExamenesMedicos()
         {
             InitializeComponent();
         }
 
-        private void btn_Salir_Click(object sender, RoutedEventArgs e)
+        private void btn_salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
