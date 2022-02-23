@@ -1,0 +1,15 @@
+﻿<Window x:Class="Clinica_medica_polanco.InformesInventario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clinica_medica_polanco"
+        mc:Ignorable="d"
+        Title="InformesInventario" Height="620" Width="1080">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688"/>
+        <Label Content="Informe de inventario" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>
+
+    </Grid>
+</Window>

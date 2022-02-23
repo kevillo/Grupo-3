@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para menuPrincipalInformes.xaml
+    /// Lógica de interacción para InformesInventario.xaml
     /// </summary>
-    public partial class menuPrincipalInformes : UserControl
+    public partial class InformesInventario : Window
     {
-        public menuPrincipalInformes()
+        public InformesInventario()
         {
             InitializeComponent();
-        }
-
-        private void btn_Informes_Inventario_Click(object sender, RoutedEventArgs e)
-        {
-            InformesInventario nuevoInforme = new();
-            nuevoInforme.ShowDialog();
         }
     }
 }

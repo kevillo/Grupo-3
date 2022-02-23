@@ -85,6 +85,7 @@
             </FlowDocument>
         </RichTextBox>
         <Button x:Name="btn_Guardar_Analisis" Style="{DynamicResource btn_Style_Analisis}" Content="Guardar datos" HorizontalAlignment="Left" Margin="389,512,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="35" Height="54" Width="278" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="130" Source="/aa.bmp"/>
 
     </Grid>
 </Window>
