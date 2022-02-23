@@ -1,11 +1,11 @@
-﻿<Window x:Class="Clinica_medica_polanco.consultarExamen"
+﻿<Window x:Class="Clinica_medica_polanco.entregarExamen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_medica_polanco"
         mc:Ignorable="d"
-        Title="consultarExamen" Height="620" Width="1080">
+        Title="entregarExamen" Height="620" Width="1080" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -80,7 +80,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
-        <Style x:Key="Style_btn_Sucursal" TargetType="{x:Type Button}">
+        <Style x:Key="Style_btn_Ir_Examen" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
@@ -100,8 +100,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FF5454"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FF5454"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
@@ -166,20 +170,20 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="89" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
-        <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
-        <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="220,-2,0,0"/>
-        <Label Content="Consulta de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,14,0,0"/>
-        <TextBox x:Name="txt_Consulta_Examen_Buscar" HorizontalAlignment="Left" Height="37" Margin="220,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
-        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Consulta_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="761,113,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Consulta_Examen_Buscar_Click"/>
-        <DataGrid x:Name="dtg_Consulta_Examen_Examenes" Margin="18,177,14,149"/>
-        <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Consulta_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Height="57" Margin="18,499,0,0" VerticalAlignment="Top" Width="63" Click="btn_Consulta_Examen_Salir_Click">
+        <Rectangle HorizontalAlignment="Left" Height="89" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="2,6,0,0"/>
+        <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,8,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,6,0,0"/>
+        <Label Content="Entrega de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,18,0,0"/>
+        <TextBox x:Name="txt_Entrega_Examen_Buscar" HorizontalAlignment="Left" Height="37" Margin="218,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Entrega_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="759,121,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
+        <DataGrid x:Name="dtg_Entrega_Examen_Examenes" Margin="20,173,12,117"/>
+        <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Entrega_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Margin="20,507,0,10" Width="63" Click="btn_Revision_Examen_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn_Consulta_Examen_Sucursal" Content="    Sucursal" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="109,113,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17"/>
-        <Image HorizontalAlignment="Left" Height="25" Margin="113,119,0,0" VerticalAlignment="Top" Width="26" Source="/embudoxd.png"/>
+        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="570,517,0,0" VerticalAlignment="Top" Width="264" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
+        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="250,517,0,0" VerticalAlignment="Top" Width="264" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
 
     </Grid>
 </Window>

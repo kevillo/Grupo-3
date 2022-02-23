@@ -28,5 +28,10 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
+
+        private void btn_Consulta_Examen_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

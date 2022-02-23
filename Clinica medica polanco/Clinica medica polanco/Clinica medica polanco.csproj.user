@@ -63,6 +63,9 @@
     <Page Update="pagarExamenMedico.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="entregarExamen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="revisionExamen.xaml">
       <SubType>Designer</SubType>
     </Page>

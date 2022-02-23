@@ -42,5 +42,11 @@ namespace Clinica_medica_polanco
             revisionExamen revisar = new();
             revisar.ShowDialog();
         }
+
+        private void btn_Entregar_Examen_Click(object sender, RoutedEventArgs e)
+        {
+            entregarExamen entregar = new();
+            entregar.ShowDialog();
+        }
     }
 }
