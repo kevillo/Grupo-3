@@ -42,5 +42,11 @@ namespace Clinica_medica_polanco
             AgregarEmpleado agregar = new();
             agregar.ShowDialog();
         }
+
+        private void btn_Actualizar_Datos_Empleados_Click(object sender, RoutedEventArgs e)
+        {
+            ActualizarEmpleados1 actualizar = new();
+            actualizar.ShowDialog();
+        }
     }
 }
