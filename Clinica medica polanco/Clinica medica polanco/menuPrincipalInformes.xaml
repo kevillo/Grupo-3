@@ -66,12 +66,12 @@
         </Style>
     </UserControl.Resources>
     <Grid Background="White">
-        <Button x:Name="btn_Informes_Paciente" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand"  Content="Generar informe &#xA;    de paciente" HorizontalAlignment="Left" Margin="46,20,0,0" VerticalAlignment="Top" Width="314" Height="125"/>
+        <Button x:Name="btn_Informes_Paciente" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand"  Content="Generar informe &#xA;    de paciente" HorizontalAlignment="Left" Margin="46,20,0,0" VerticalAlignment="Top" Width="314" Height="125" Click="btn_Informes_Paciente_Click"/>
         <Button x:Name="btn_Informes_Compras" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand" Content="Generar informe &#xA;    de compras" HorizontalAlignment="Left" Margin="382,190,0,0" VerticalAlignment="Top" Width="316" Height="125" Click="btn_Informes_Compras_Click"/>
         <Button x:Name="btn_Informes_Ventas" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand" Content="Generar informe &#xA;      de ventas" HorizontalAlignment="Left" Margin="48,190,0,0" VerticalAlignment="Top" Width="314" Height="125" Click="btn_Informes_Ventas_Click"/>
         <Button x:Name="btn_Informes_Empleado" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand" Content="Generar informe &#xA;  de empleados" HorizontalAlignment="Left" Margin="382,20,0,0" VerticalAlignment="Top" Width="316" Height="125" Click="btn_Informes_Empleado_Click"/>
         <Button x:Name="btn_Informes_Inventario" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand" Content="Generar informe &#xA;   de inventario" HorizontalAlignment="Left" Margin="46,353,0,0" VerticalAlignment="Top" Width="314" Height="124" Click="btn_Informes_Inventario_Click"/>
-        <Button x:Name="btn_Informes_Examenes_Medicos" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand" Content="Generar informe &#xA;   de Examenes" HorizontalAlignment="Left" Margin="382,352,0,0" VerticalAlignment="Top" Width="316" Height="125"/>
+        <Button x:Name="btn_Informes_Examenes_Medicos" Style="{DynamicResource btn_Styles_Menu_Informes}"  Cursor="Hand" Content="Generar informe &#xA;   de Examenes" HorizontalAlignment="Left" Margin="382,352,0,0" VerticalAlignment="Top" Width="316" Height="125" Click="btn_Informes_Examenes_Medicos_Click"/>
 
     </Grid>
 </UserControl>

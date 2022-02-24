@@ -48,5 +48,17 @@ namespace Clinica_medica_polanco
             informesCompras informes = new();
             informes.ShowDialog();
         }
+
+        private void btn_Informes_Paciente_Click(object sender, RoutedEventArgs e)
+        {
+            informePacientes pacientes = new();
+            pacientes.ShowDialog();
+        }
+
+        private void btn_Informes_Examenes_Medicos_Click(object sender, RoutedEventArgs e)
+        {
+            InfomesExamenesMedicos examenes = new();
+            examenes.ShowDialog();
+        }
     }
 }
