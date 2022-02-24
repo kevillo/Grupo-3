@@ -8,24 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\MARIA JOSE\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Leticia Díaz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MARIA JOSE\\Documents\\pruebaGit\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+      "projectUniqueName": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
       "projectName": "Clinica medica polanco",
-      "projectPath": "C:\\Users\\MARIA JOSE\\Documents\\pruebaGit\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
-      "packagesPath": "C:\\Users\\MARIA JOSE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MARIA JOSE\\Documents\\pruebaGit\\Clinica medica polanco\\Clinica medica polanco\\obj\\",
+      "projectPath": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+      "packagesPath": "C:\\Users\\Leticia Díaz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MARIA JOSE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Leticia Díaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,12 +55,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.13, 5.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -74,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -62,6 +62,7 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
         <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Label Content="Informe de compras" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>

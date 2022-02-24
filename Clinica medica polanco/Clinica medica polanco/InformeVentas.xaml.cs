@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para generarInformeEmpleados.xaml
+    /// Lógica de interacción para generarInformeVentas1.xaml
     /// </summary>
-    public partial class generarInformeEmpleados : Window
+    public partial class InformeVentas : Window
     {
-        public generarInformeEmpleados()
+        public InformeVentas()
         {
             InitializeComponent();
         }

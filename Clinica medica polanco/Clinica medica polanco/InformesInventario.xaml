@@ -62,10 +62,11 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
         <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Label Content="Informe de inventario" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>
-        <Button x:Name="btn_Salir" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center" BorderBrush="White" Margin="0,501,0,0" VerticalAlignment="Top" Width="84" Height="71" Click="btn_Salir_Click">
+        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center" BorderBrush="White" Margin="0,501,0,0" VerticalAlignment="Top" Width="84" Height="71" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="/logout.png"/>
             </Button.Background>

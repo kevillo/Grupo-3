@@ -45,7 +45,7 @@ namespace Clinica_medica_polanco
 
         private void btn_Actualizar_Datos_Empleados_Click(object sender, RoutedEventArgs e)
         {
-            ActualizarEmpleados1 actualizar = new();
+            ActualizarEmpleados actualizar = new();
             actualizar.ShowDialog();
         }
     }

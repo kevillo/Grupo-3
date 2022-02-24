@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para ActualizarEmpleados1.xaml
+    /// Lógica de interacción para generarInformeEmpleados.xaml
     /// </summary>
-    public partial class ActualizarEmpleados1 : Window
+    public partial class InformeEmpleados : Window
     {
-        public ActualizarEmpleados1()
+        public InformeEmpleados()
         {
             InitializeComponent();
         }

@@ -174,9 +174,9 @@
         <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,8,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,6,0,0"/>
         <Label Content="Revisión de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,18,0,0"/>
-        <TextBox x:Name="txt_Revision_Examen_Buscar" HorizontalAlignment="Left" Height="37" Margin="218,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Revision_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="218,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Revision_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="759,121,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
-        <DataGrid x:Name="dtg_Revision_Examen_Examenes" Margin="20,173,12,117"/>
+        <DataGrid x:Name="dtg_Revision_Examen_Examenes" Margin="20,173,12,117" FontFamily="Tahoma"/>
         <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Revision_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Height="57" Margin="20,507,0,0" VerticalAlignment="Top" Width="63" Click="btn_Revision_Examen_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>

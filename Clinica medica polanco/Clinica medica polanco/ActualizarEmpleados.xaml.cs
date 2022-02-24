@@ -10,21 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para generarInformeVentas1.xaml
+    /// Lógica de interacción para ActualizarEmpleados.xaml
     /// </summary>
-    public partial class generarInformeVentas1 : Window
+    public partial class ActualizarEmpleados : Window
     {
-        public generarInformeVentas1()
+        public ActualizarEmpleados()
         {
             InitializeComponent();
         }
 
-        private void btn_Salir_Click(object sender, RoutedEventArgs e)
+        private void btn_Actualizar_Empleado_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

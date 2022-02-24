@@ -33,13 +33,13 @@ namespace Clinica_medica_polanco
 
         private void btn_Informes_Ventas_Click(object sender, RoutedEventArgs e)
         {
-            generarInformeVentas1 ventas = new();
+            InformeVentas ventas = new();
             ventas.ShowDialog();
         }
 
         private void btn_Informes_Empleado_Click(object sender, RoutedEventArgs e)
         {
-            generarInformeEmpleados nuevoEmpleado = new();
+            InformeEmpleados nuevoEmpleado = new();
             nuevoEmpleado.ShowDialog();
         }
 
