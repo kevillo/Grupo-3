@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_medica_polanco"
         mc:Ignorable="d"
-        Title="borrarPaciente" Height="620" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="borrarPaciente" Height="620" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/aa.png">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -151,7 +151,7 @@
         <Button Style="{DynamicResource estilo}" x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Height="40" Margin="631,123,0,0" VerticalAlignment="Top" Width="195" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29"/>
         <TextBox x:Name="txt_Tipo_Sangre_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="15"  Margin="428,450,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="36" Width="62" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" FontFamily="Tahoma" />
         <TextBox x:Name="txt_Fecha_Nacimiento_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="15"  Margin="267,376,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="36" Width="240" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" FontFamily="Tahoma" />
-        <Button Style="{DynamicResource boton}" x:Name="btn_Salir" Content="" HorizontalAlignment="Left" Height="61" Margin="30,514,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" BorderBrush="White" Foreground="White">
+        <Button Style="{DynamicResource boton}" Cursor="Hand" x:Name="btn_Salir" Content="" HorizontalAlignment="Left" Height="61" Margin="30,514,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" BorderBrush="White" Foreground="White">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" TileMode="None" Stretch="Uniform"/>
             </Button.Background>
