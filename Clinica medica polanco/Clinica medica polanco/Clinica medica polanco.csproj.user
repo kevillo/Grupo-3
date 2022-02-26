@@ -10,6 +10,9 @@
     <Compile Update="actualizarProducto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="actualizarProveedor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="agregarPaciente.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -58,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="actualizarProducto.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="actualizarProveedor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="agregarPaciente.xaml">
