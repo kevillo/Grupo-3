@@ -10,6 +10,9 @@
     <Compile Update="agregarPaciente.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="agregarProducto.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AnalizarExamenMedico.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="agregarPaciente.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="agregarProducto.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AnalizarExamenMedico.xaml">
