@@ -121,7 +121,7 @@
     <Grid Background="White">
         <Label Content="Código del producto o nombre:" HorizontalAlignment="Left" Margin="171,34,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Insumos_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="171,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
-        <Button Style="{DynamicResource Style_btn_Buscar}" Content="Buscar" HorizontalAlignment="Left" Height="33" Margin="547,70,0,0" VerticalAlignment="Top" Width="88" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White"/>
+        <Button Style="{DynamicResource Style_btn_Buscar}" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Height="33" Margin="547,70,0,0" VerticalAlignment="Top" Width="88" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White"/>
         <Label Content="Nombre del producto:" HorizontalAlignment="Left" Margin="44,122,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Insumos_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="44,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
         <Label Content="Precio unitario:" HorizontalAlignment="Left" Margin="44,203,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
@@ -137,7 +137,7 @@
         <Label Content="Nombre de proveedor:" HorizontalAlignment="Left" Margin="376,304,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <ComboBox x:Name="cmb_Gestionar_Insumo_Nombre_Proveedor" HorizontalAlignment="Left" Height="33" Margin="376,334,0,0" VerticalAlignment="Top" Width="251"/>
         <Label Content="¿No encuentra el proveedor?" HorizontalAlignment="Left" Margin="268,382,0,0" VerticalAlignment="Top" Width="236" FontFamily="Tahoma" FontSize="17"/>
-        <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="36" Margin="296,424,0,0" VerticalAlignment="Top" Width="180" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
+        <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="36" Margin="296,424,0,0" VerticalAlignment="Top" Width="180" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
 
     </Grid>
 </UserControl>
