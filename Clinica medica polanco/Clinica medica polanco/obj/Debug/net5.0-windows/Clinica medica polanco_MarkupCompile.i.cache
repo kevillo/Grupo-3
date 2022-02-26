@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
 Clinica_medica_polanco
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
-32-1209251489
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
+342115988032
 
-36-715253026
+38-116170519
 193-1891726104
-ActualizarEmpleados.xaml;actualizarPaciente.xaml;actualizarProducto.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
+ActualizarEmpleados.xaml;actualizarPaciente.xaml;actualizarProducto.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;agregarProducto.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;EliminarInsumo.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
 
-False
+True
 
