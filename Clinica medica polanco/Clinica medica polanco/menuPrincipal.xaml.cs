@@ -24,8 +24,13 @@ namespace Clinica_medica_polanco
             InitializeComponent();
             this.Width = 1080;
             this.Height = 620;
+            
         }
 
+        public  void menuPrincipalClose()
+        {
+            this.Close();
+        }
         private void btn_Examenes_medicos_Click(object sender, RoutedEventArgs e)
         {
 
