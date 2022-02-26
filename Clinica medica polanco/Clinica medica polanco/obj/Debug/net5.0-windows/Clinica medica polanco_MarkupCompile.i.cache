@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\
 Clinica_medica_polanco
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\App.xaml
-38-111356948
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\App.xaml
+39134428540
 
-42-881288940
+431726194936
 193-1891726104
-ActualizarEmpleados.xaml;actualizarPaciente.xaml;actualizarProducto.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;agregarProducto.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;consultarProveedor.xaml;consultarStock.xaml;EliminarEmpleado.xaml;EliminarInsumo.xaml;eliminarProveedor.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;ventasRealizadas.xaml;
+ActualizarEmpleados.xaml;actualizarPaciente.xaml;actualizarProducto.xaml;actualizarProveedor.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;agregarProducto.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;consultaComprasRealizadas.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;consultarProveedor.xaml;consultarStock.xaml;EliminarEmpleado.xaml;EliminarInsumo.xaml;eliminarProveedor.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
 
-False
+True
 

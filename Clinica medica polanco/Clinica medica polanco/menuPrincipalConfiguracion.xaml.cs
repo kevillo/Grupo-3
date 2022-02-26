@@ -24,5 +24,28 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void btn_Cerrar_Sesion_Click(object sender, RoutedEventArgs e)
+        {
+            Login nuevologin = new();
+            nuevologin.ShowDialog();
+
+           
+        }
+
+        private void btn_Infor_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sistema para Clinica Médica Polanco, hecho por el grupo más mera brga, grupo 3.", "Sobre nosotros");
+        }
+
+        private void btn_Salir_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void btn_Infor_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sistema para Clinica Médica Polanco, hecho por el grupo  grupo 3.", "Sobre nosotros");
+        }
     }
 }

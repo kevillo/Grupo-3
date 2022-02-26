@@ -37,10 +37,10 @@ namespace Clinica_medica_polanco
             gestion.ShowDialog();
         }
 
-        private void btn_Ver_Ventas_Click(object sender, RoutedEventArgs e)
+        private void btn_Ver_Compras_Click(object sender, RoutedEventArgs e)
         {
-            ventasRealizadas nuevaventa = new();
-            nuevaventa.ShowDialog();
+            consultaComprasRealizadas consultaCompras = new();
+            consultaCompras.ShowDialog();
         }
     }
 }

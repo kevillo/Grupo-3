@@ -340,99 +340,29 @@ C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarInsumo.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.exe
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.deps.json
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.runtimeconfig.json
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.runtimeconfig.dev.json
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.dll
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\ref\Clinica medica polanco.dll
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\bin\Debug\net5.0-windows\Clinica medica polanco.pdb
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.csproj.AssemblyReference.cache
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ActualizarEmpleados.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarPaciente.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProducto.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AgregarEmpleado.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarPaciente.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarProducto.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AnalizarExamenMedico.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\borrarPaciente.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ConsultarEmpleados.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarExamen.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ConsultarPaciente.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarStock.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarEmpleado.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarInsumo.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\entregarExamen.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InfomesExamenesMedicos.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformeEmpleados.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informePacientes.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informesCompras.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformesInventario.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformeVentas.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipal.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalArqueo.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalConfiguracion.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalEmpleados.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalExamenes.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\MenuPrincipalGestionarInsumos.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInformes.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInventario.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalPacientes.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\pagarExamenMedico.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\revisionExamen.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\solicitudExamen.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\App.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco_MarkupCompile.cache
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco_MarkupCompile.lref
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ActualizarEmpleados.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarPaciente.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProducto.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AgregarEmpleado.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarPaciente.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarProducto.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AnalizarExamenMedico.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\borrarPaciente.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ConsultarEmpleados.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarExamen.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ConsultarPaciente.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarStock.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarEmpleado.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarInsumo.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\entregarExamen.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InfomesExamenesMedicos.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformeEmpleados.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informePacientes.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informesCompras.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformesInventario.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformeVentas.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Login.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipal.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalArqueo.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalConfiguracion.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalEmpleados.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalExamenes.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\MenuPrincipalGestionarInsumos.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInformes.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalInventario.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalPacientes.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\pagarExamenMedico.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\revisionExamen.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\solicitudExamen.baml
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.g.resources
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.AssemblyInfoInputs.cache
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.AssemblyInfo.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.csproj.CoreCompileInputs.cache
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.dll
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ref\Clinica medica polanco.dll
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.pdb
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.genruntimeconfig.cache
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ventasRealizadas.g.cs
-C:\Users\amilc\Desktop\I PERIODO 2022\4. DESARROLLO DE SOFTWARE\Laboratorio Clinico Polanco\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ventasRealizadas.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProveedor.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultaComprasRealizadas.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarStock.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.g.cs
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProveedor.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultaComprasRealizadas.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarStock.baml
+C:\Users\DELL 6420\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Proyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProducto.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProveedor.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarProducto.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultaComprasRealizadas.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarStock.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarInsumo.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProducto.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProveedor.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarProducto.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultaComprasRealizadas.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarProveedor.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarStock.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\EliminarInsumo.baml
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\eliminarProveedor.baml

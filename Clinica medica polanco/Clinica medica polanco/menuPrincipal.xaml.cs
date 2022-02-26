@@ -24,8 +24,13 @@ namespace Clinica_medica_polanco
             InitializeComponent();
             this.Width = 1080;
             this.Height = 620;
+            
         }
 
+        public  void menuPrincipalClose()
+        {
+            this.Close();
+        }
         private void btn_Examenes_medicos_Click(object sender, RoutedEventArgs e)
         {
 
@@ -123,6 +128,13 @@ namespace Clinica_medica_polanco
             poligon.Fill = new SolidColorBrush(Colors.White);
             poligon.Stroke = new SolidColorBrush(Colors.White);
 
+        }
+
+        private void btn_Cerrar_Sesion_Click(object sender, RoutedEventArgs e)
+        {
+            Login nuevoLogin = new();
+            this.Close();
+            nuevoLogin.Show();
         }
     }
 }

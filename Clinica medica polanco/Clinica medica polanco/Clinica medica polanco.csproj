@@ -13,6 +13,8 @@
     <None Remove="aa.png" />
     <None Remove="add.png" />
     <None Remove="embudoxd.png" />
+    <None Remove="exit4.png" />
+    <None Remove="exit_black.png" />
     <None Remove="holis.png" />
     <None Remove="icons8-add-30.png" />
     <None Remove="icons8-cent-50.png" />
@@ -44,6 +46,8 @@
     <Resource Include="aa.png" />
     <Resource Include="add.png" />
     <Resource Include="embudoxd.png" />
+    <Resource Include="exit4.png" />
+    <Resource Include="exit_black.png" />
     <Resource Include="holis.png" />
     <Resource Include="icons8-add-30.png" />
     <Resource Include="icons8-cent-50.png" />

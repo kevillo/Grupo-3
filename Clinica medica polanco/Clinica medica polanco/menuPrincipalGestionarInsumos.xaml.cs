@@ -44,6 +44,9 @@ namespace Clinica_medica_polanco
         private void btn_Consultar_Stock_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Consultar_Stock, btn_Consultar_Stock);
+            consultarStock nuevoStock = new();
+            panel_Menu_Principal_Insumos.Children.Clear();
+            panel_Menu_Principal_Insumos.Children.Add(nuevoStock);
         }
 
         private void btn_Actualizar_Producto_Click(object sender, RoutedEventArgs e)

@@ -164,6 +164,6 @@
         <Rectangle HorizontalAlignment="Center" Height="109" Margin="0,394,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Label Content="Información Laboral" HorizontalAlignment="Left" Margin="190,369,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma"/>
         <Label Content="Información Personal" HorizontalAlignment="Left" Margin="190,98,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma"/>
-        <Button x:Name="btn_Agregar_Empleado" Content="Guardar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="376,514,0,0" VerticalAlignment="Top" Height="50" Width="308" Background="#FF0D2D6F" Style="{DynamicResource btn_Style_Eliminar_Empleado}"/>
+        <Button x:Name="btn_Agregar_Empleado" Content="Guardar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="376,514,0,0" VerticalAlignment="Top" Height="50" Width="308" Background="#FF0D2D6F" Style="{DynamicResource btn_Style_Eliminar_Empleado}" Click="btn_Agregar_Empleado_Click_1"/>
     </Grid>
 </Window>
