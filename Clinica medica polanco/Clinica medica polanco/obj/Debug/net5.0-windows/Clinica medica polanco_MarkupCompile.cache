@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\App.xaml
-31-1296123871
+36940404209
 
-33826925752
+38996553541
 193-1891726104
-ActualizarEmpleados.xaml;actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
+ActualizarEmpleados.xaml;actualizarPaciente.xaml;actualizarProducto.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;agregarProducto.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;consultarProveedor.xaml;EliminarEmpleado.xaml;EliminarInsumo.xaml;eliminarProveedor.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
 
 False
 

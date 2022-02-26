@@ -28,11 +28,17 @@ namespace Clinica_medica_polanco
         private void btn_Agregar_Producto_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Agregar_Producto, btn_Agregar_Producto);
+            agregarProducto nuevoProducto = new();
+            panel_Menu_Principal_Insumos.Children.Clear();
+            panel_Menu_Principal_Insumos.Children.Add(nuevoProducto);
         }
 
         private void btn_Eliminar_Producto_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Eliminar_Producto, btn_Eliminar_Producto);
+            EliminarInsumo eliminarInsumo = new();
+            panel_Menu_Principal_Insumos.Children.Clear();
+            panel_Menu_Principal_Insumos.Children.Add(eliminarInsumo);
         }
 
         private void btn_Consultar_Stock_Click(object sender, RoutedEventArgs e)
@@ -43,6 +49,9 @@ namespace Clinica_medica_polanco
         private void btn_Actualizar_Producto_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Actualizar_Producto, btn_Actualizar_Producto);
+            actualizarProducto actualizarProd = new();
+            panel_Menu_Principal_Insumos.Children.Clear();
+            panel_Menu_Principal_Insumos.Children.Add(actualizarProd);
         }
 
         private void btn_Menu_Principal_Insumos_LostFocus(object sender, RoutedEventArgs e)
