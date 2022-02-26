@@ -34,6 +34,12 @@
     <Compile Update="menuPrincipalConfiguracion.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="menuPrincipalGestionarInsumos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="menuPrincipalGestionarProveedores.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="menuPrincipalInformes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +79,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="menuPrincipalConfiguracion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="menuPrincipalGestionarInsumos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="menuPrincipalGestionarProveedores.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="menuPrincipalInformes.xaml">

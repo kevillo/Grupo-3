@@ -13,11 +13,13 @@
     <None Remove="aa.png" />
     <None Remove="embudoxd.png" />
     <None Remove="holis.png" />
+    <None Remove="icons8-add-30.png" />
     <None Remove="icons8-cent-50.png" />
     <None Remove="icons8-configuration-60.png" />
     <None Remove="icons8-databases-98.png" />
     <None Remove="icons8-man-100.png" />
     <None Remove="icons8-medical-doctor-100.png" />
+    <None Remove="icons8-refresh-30.png" />
     <None Remove="icons8-report-64.png" />
     <None Remove="icons8-treatment-50.png" />
     <None Remove="logo.png" />
@@ -36,11 +38,13 @@
     <Resource Include="aa.png" />
     <Resource Include="embudoxd.png" />
     <Resource Include="holis.png" />
+    <Resource Include="icons8-add-30.png" />
     <Resource Include="icons8-cent-50.png" />
     <Resource Include="icons8-configuration-60.png" />
     <Resource Include="icons8-databases-98.png" />
     <Resource Include="icons8-man-100.png" />
     <Resource Include="icons8-medical-doctor-100.png" />
+    <Resource Include="icons8-refresh-30.png" />
     <Resource Include="icons8-report-64.png" />
     <Resource Include="icons8-treatment-50.png" />
     <Resource Include="logo.png" />

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\App.xaml
-29-1586374759
+31-1296123871
 
-33-915335160
+351893040406
 193-1891726104
-ActualizarEmpleados.xaml;actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
+ActualizarEmpleados.xaml;actualizarPaciente.xaml;AgregarEmpleado.xaml;agregarPaciente.xaml;AnalizarExamenMedico.xaml;borrarPaciente.xaml;ConsultarEmpleados.xaml;consultarExamen.xaml;ConsultarPaciente.xaml;EliminarEmpleado.xaml;entregarExamen.xaml;InfomesExamenesMedicos.xaml;InformeEmpleados.xaml;informePacientes.xaml;informesCompras.xaml;InformesInventario.xaml;InformeVentas.xaml;Login.xaml;menuPrincipal.xaml;menuPrincipalArqueo.xaml;menuPrincipalConfiguracion.xaml;menuPrincipalEmpleados.xaml;menuPrincipalExamenes.xaml;MenuPrincipalGestionarInsumos.xaml;menuPrincipalGestionarProveedores.xaml;menuPrincipalInformes.xaml;menuPrincipalInventario.xaml;menuPrincipalPacientes.xaml;pagarExamenMedico.xaml;revisionExamen.xaml;solicitudExamen.xaml;
 
-True
+False
 
