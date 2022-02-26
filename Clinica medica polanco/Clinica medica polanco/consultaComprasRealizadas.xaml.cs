@@ -16,21 +16,22 @@ using System.Windows.Interop;
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para EliminarEmpleado.xaml
+    /// Lógica de interacción para consultaComprasRealizadas.xaml
     /// </summary>
-    public partial class AgregarEmpleado : Window
+    public partial class consultaComprasRealizadas : Window
     {
-        public AgregarEmpleado()
+        public consultaComprasRealizadas()
         {
             InitializeComponent();
-            this.SourceInitialized += AgregarEmpleado_SourceInitialized;
+            this.SourceInitialized += ConsultarComprasRealizadas_SourceInitialized;
         }
-        private void btn_Salir_Click_1(object sender, RoutedEventArgs e)
+
+        private void btn_Consulta_Compras_Realizadas_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void AgregarEmpleado_SourceInitialized(object sender, EventArgs e)
+        private void ConsultarComprasRealizadas_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
@@ -54,16 +55,6 @@ namespace Clinica_medica_polanco
                     break;
             }
             return IntPtr.Zero;
-        }
-
-        private void btn_Agregar_Empleado_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btn_Agregar_Empleado_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
