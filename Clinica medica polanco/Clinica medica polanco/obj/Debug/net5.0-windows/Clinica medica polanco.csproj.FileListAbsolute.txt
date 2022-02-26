@@ -320,5 +320,5 @@ C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\MenuPrincipalGestionarInsumos.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.baml
-C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarProducto.g.cs
-C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\agregarProducto.baml
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProducto.g.cs
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarProducto.baml
