@@ -55,6 +55,9 @@
     <Compile Update="revisionExamen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ventasRealizadas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="actualizarProducto.xaml">
@@ -109,6 +112,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="revisionExamen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ventasRealizadas.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
