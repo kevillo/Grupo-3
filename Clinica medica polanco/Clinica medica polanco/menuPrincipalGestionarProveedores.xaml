@@ -165,12 +165,16 @@
         </Polygon>
         <Button Style="{DynamicResource btn_Salir}" x:Name="btn_Salir"  Content=""  Cursor="Hand"  HorizontalAlignment="Left" Margin="124,504,0,0" VerticalAlignment="Top" Width="84" Height="73" BorderBrush="#FF0D2D6F" Click="btn_Salir_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="/logout2.png" Stretch="Uniform"/>
             </Button.Background>
             <Button.Foreground>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Foreground>
         </Button>
+        <Image HorizontalAlignment="Left" Height="48" Margin="22,92,0,0" VerticalAlignment="Top" Width="64" Source="/add.png"/>
+        <Image HorizontalAlignment="Left" Height="48" Margin="22,196,0,0" VerticalAlignment="Top" Width="64" Source="/trash.png"/>
+        <Image HorizontalAlignment="Left" Height="48" Margin="22,319,0,0" VerticalAlignment="Top" Width="64" Source="/lupa.png"/>
+        <Image HorizontalAlignment="Left" Height="48" Margin="22,420,0,0" VerticalAlignment="Top" Width="64" Source="/refresh.png"/>
 
     </Grid>
 </Window>

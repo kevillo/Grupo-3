@@ -289,14 +289,12 @@ C:\Users\MARIA JOSE\Documents\pruebaGit\Clinica medica polanco\Clinica medica po
 C:\Users\MARIA JOSE\Documents\pruebaGit\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.pdb
 C:\Users\MARIA JOSE\Documents\pruebaGit\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.genruntimeconfig.cache
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AnalizarExamenMedico.g.cs
-C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarDatosPaciente.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\entregarExamen.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InfomesExamenesMedicos.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informePacientes.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informesCompras.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InformesInventario.g.cs
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\AnalizarExamenMedico.baml
-C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\consultarDatosPaciente.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\entregarExamen.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\InfomesExamenesMedicos.baml
 C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\informePacientes.baml
@@ -318,3 +316,7 @@ C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyec
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\MenuPrincipalGestionarInsumos.baml
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.g.cs
 C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.baml
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\MenuPrincipalGestionarInsumos.g.cs
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.g.cs
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\MenuPrincipalGestionarInsumos.baml
+C:\Users\Leticia Díaz\Documents\PruebasProyecto\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\menuPrincipalGestionarProveedores.baml
