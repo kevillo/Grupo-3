@@ -78,6 +78,9 @@ namespace Clinica_medica_polanco
         private void btn_Consultar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Consultar_Proveedor, btn_Consultar_Proveedor);
+            consultarProveedor consultarProv = new();
+            panel_Menu_Principal_Proveedores.Children.Clear();
+            panel_Menu_Principal_Proveedores.Children.Add(consultarProv);
         }
 
         private void btn_Actualizar_Proveedor_Click(object sender, RoutedEventArgs e)

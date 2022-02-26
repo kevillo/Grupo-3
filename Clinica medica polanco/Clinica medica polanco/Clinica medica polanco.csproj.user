@@ -13,7 +13,7 @@
     <Compile Update="agregarPaciente.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="agregarProducto.xaml.cs">
+    <Compile Update="consultarProveedor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AnalizarExamenMedico.xaml.cs">
@@ -23,12 +23,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="consultarExamen.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="EliminarInsumo.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="eliminarProveedor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="informesCompras.xaml.cs">
@@ -69,7 +63,7 @@
     <Page Update="agregarPaciente.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="agregarProducto.xaml">
+    <Page Update="consultarProveedor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AnalizarExamenMedico.xaml">
@@ -82,12 +76,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="consultarExamen.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="EliminarInsumo.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="eliminarProveedor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="informesCompras.xaml">
