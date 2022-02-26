@@ -64,6 +64,9 @@ namespace Clinica_medica_polanco
         private void btn_Agregar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Agregar_Proveedor, btn_Agregar_Proveedor);
+            agregarProveedor agregar = new();
+            panel_Menu_Principal_Proveedores.Children.Clear();
+            panel_Menu_Principal_Proveedores.Children.Add(agregar);
         }
 
         private void btn_Eliminar_Proveedor_Click(object sender, RoutedEventArgs e)
