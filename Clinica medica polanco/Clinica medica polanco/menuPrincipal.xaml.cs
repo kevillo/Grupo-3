@@ -129,5 +129,12 @@ namespace Clinica_medica_polanco
             poligon.Stroke = new SolidColorBrush(Colors.White);
 
         }
+
+        private void btn_Cerrar_Sesion_Click(object sender, RoutedEventArgs e)
+        {
+            Login nuevoLogin = new();
+            this.Close();
+            nuevoLogin.Show();
+        }
     }
 }
