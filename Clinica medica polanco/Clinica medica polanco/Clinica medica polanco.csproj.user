@@ -28,6 +28,9 @@
     <Compile Update="EliminarInsumo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="eliminarProveedor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="informesCompras.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EliminarInsumo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="eliminarProveedor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="informesCompras.xaml">
