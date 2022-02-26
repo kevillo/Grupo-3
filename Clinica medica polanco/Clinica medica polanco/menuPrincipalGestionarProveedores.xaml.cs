@@ -69,6 +69,9 @@ namespace Clinica_medica_polanco
         private void btn_Eliminar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Eliminar_Proveedor, btn_Eliminar_Proveedor);
+            eliminarProveedor eliminado = new();
+            panel_Menu_Principal_Proveedores.Children.Clear();
+            panel_Menu_Principal_Proveedores.Children.Add(eliminado);
         }
 
 
