@@ -6,30 +6,30 @@
              xmlns:local="clr-namespace:Clinica_medica_polanco"
              mc:Ignorable="d" Height="500" Width="801">
     <Grid Background="White">
-        <Label Content="Codigo de producto o nombre" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Top" />
-        <TextBox x:Name="txt_codigo_producto_nombre" FontFamily="Tahoma" FontSize="15" Text="" HorizontalAlignment="Left" Margin="77,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" Height="29"/>
+        <Label Content="Código de producto o nombre:" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="77,0,0,0" VerticalAlignment="Top" />
         <Button x:Name="btn_buscar" Content="Buscar" FontFamily="Tahoma" FontSize="15" Background="#FF0D2D6F" Foreground="White" HorizontalAlignment="Left" Margin="587,25,0,0" VerticalAlignment="Top" Height="33" Width="115"/>
         <Label Content="Nombre" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="343,62,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_nombre" FontFamily="Tahoma" FontSize="15" Text="" HorizontalAlignment="Left" Margin="292,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="25"/>
-        <Label Content="Categoria" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="338,115,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_categoria" FontFamily="Tahoma" FontSize="15" Text="" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="26" Margin="292,141,0,0"/>
-        <Label Content="Codigo" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="259,174,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_codigo" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="191" Height="26" Margin="337,175,0,0"/>
+        <Label Content="Categoría" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="338,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="Código" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="259,174,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha de expiracion" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="260,206,0,0" VerticalAlignment="Top"/>
-        <Label Content="Numero de serie" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="259,242,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_numero_serie" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="26" Margin="464,242,0,0"/>
+        <Label Content="Número de serie" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="259,242,0,0" VerticalAlignment="Top"/>
         <Label Content="Estado" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="259,275,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_estado" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Height="26" Margin="467,279,0,0"/>
-        <DatePicker x:Name="dtp_fecha_expiracion" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="416,208,0,0" VerticalAlignment="Top" Width="112"/>
         <Label Content="Stock del producto" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="36,334,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_stock_producto" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="36,377,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="92"/>
-        <Label Content="Producto al dia" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="224,338,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_producto_dia" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="262,377,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="92"/>
+        <Label Content="Producto al día" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="224,333,0,0" VerticalAlignment="Top"/>
         <Label Content="Stock en sucursales" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="418,331,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_sucursales1" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="26" Margin="454,366,0,0"/>
-        <TextBox x:Name="txt_sucursales2" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="26" Margin="454,397,0,0"/>
-        <TextBox x:Name="txt_sucursales3" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="26" Margin="454,432,0,0"/>
-        <TextBox x:Name="txt_sucursales4" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Height="26" Margin="454,464,0,0" TextChanged="txt_codigo_Copy3_TextChanged"/>
+        <Label x:Name="lbl_Consultar_Stock_Codigo_Producto" Content="" HorizontalAlignment="Left" Height="30" Margin="77,28,0,0" VerticalAlignment="Top" Width="481"/>
+        <Label x:Name="lbl_Consultar_Stock_Nombre" Content="" HorizontalAlignment="Left" Height="30" Margin="287,90,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Categoria" HorizontalAlignment="Left" Height="30" Margin="287,139,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Codigo" HorizontalAlignment="Left" Height="30" Margin="343,172,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Fecha_Expiracion" HorizontalAlignment="Left" Height="30" Margin="418,206,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Num_Serie" HorizontalAlignment="Left" Height="30" Margin="418,240,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Estado" HorizontalAlignment="Left" Height="30" Margin="418,275,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Producto_Stock" HorizontalAlignment="Left" Height="107" Margin="29,362,0,0" VerticalAlignment="Top" Width="164"/>
+        <Label x:Name="lbl_Consultar_Stock_Producto_Dia" HorizontalAlignment="Left" Height="107" Margin="210,362,0,0" VerticalAlignment="Top" Width="164"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales" HorizontalAlignment="Left" Height="30" Margin="408,359,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales2" HorizontalAlignment="Left" Height="30" Margin="408,394,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales3" HorizontalAlignment="Left" Height="30" Margin="408,429,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales4" HorizontalAlignment="Left" Height="30" Margin="408,464,0,0" VerticalAlignment="Top" Width="201"/>
 
     </Grid>
 </UserControl>
