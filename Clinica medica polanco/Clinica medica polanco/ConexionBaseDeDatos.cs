@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 using System.Data.SqlClient;
 
 namespace Clinica_medica_polanco
@@ -11,10 +13,18 @@ namespace Clinica_medica_polanco
     {
         public static SqlConnection ObtenerConexion()
         {
-            SqlConnection conexion = new SqlConnection("Data source = DESKTOP-7T3QB1P; Initial Catalog = Clinica Medica Grupo 3; Integrated Security = true");
-            conexion.Open();
+            SqlConnection conexion = new SqlConnection("server = localhost; database=Clinica medica polanco; Integrated Security = true");
+            try
+            {
+                conexion.Open();
+                return conexion;
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Error al abrir conexion con la base de datos: " + error.Message);
+                return null;
+            }
 
-            return conexion;
         }
 
         public static void CerrarConexion()

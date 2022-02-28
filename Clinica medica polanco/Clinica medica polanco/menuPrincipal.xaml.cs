@@ -150,5 +150,10 @@ namespace Clinica_medica_polanco
             }
             
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
