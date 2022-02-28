@@ -17,12 +17,12 @@ namespace Clinica_medica_polanco
             return conexion;
         }
 
-        public static SqlConnection CerrarConexion()
+        public static void CerrarConexion()
         {
-            SqlConnection conexion = new SqlConnection("Data source = DESKTOP-7T3QB1P; Initial Catalog = Clinica Medica Grupo 3; Integrated Security = true");
-            conexion.Close();
-
-            return conexion;
+            using (SqlConnection conexion = ConexionBaseDeDatos.ObtenerConexion())
+            {
+                conexion.Close();
+            }
         }
     }
 }
