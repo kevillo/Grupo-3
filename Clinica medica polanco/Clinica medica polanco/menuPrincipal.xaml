@@ -75,9 +75,9 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                </Trigger>
+                            </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                </Trigger>
+                            </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
@@ -233,5 +233,6 @@
                 <ImageBrush ImageSource="/exit_black.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Button Content="Button" Height="60" Margin="1024,10,0,0" VerticalAlignment="Top" BorderBrush="Red" Background="#FFDCFF00" Click="Button_Click"/>
     </Grid>
 </Window>

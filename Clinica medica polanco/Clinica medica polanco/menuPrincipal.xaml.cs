@@ -136,5 +136,19 @@ namespace Clinica_medica_polanco
             this.Close();
             nuevoLogin.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                MessageBox.Show("Conexion establecida correctamente");
+            }
+            catch
+            {
+                MessageBox.Show("Error al conectar a sql");
+            }
+            
+        }
     }
 }
