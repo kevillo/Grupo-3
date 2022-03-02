@@ -19,18 +19,29 @@ namespace Clinica_medica_polanco
     /// </summary>
     public partial class menuPrincipal : Window
     {
-        public menuPrincipal()
+        public menuPrincipal(int id)
         {
+
             InitializeComponent();
+            if(id ==2) EmployeeConfiguration();
+ 
+
             this.Width = 1080;
             this.Height = 620;
             
         }
 
-        public  void menuPrincipalClose()
+        private void EmployeeConfiguration()
         {
-            this.Close();
+            btn_Empleados.Visibility = Visibility.Hidden;
+            btn_Informes.Visibility = Visibility.Hidden;
+            btn_Inventario.Visibility = Visibility.Hidden;
+            imgEmpleado.Visibility = Visibility.Hidden;
+            imgInformes.Visibility = Visibility.Hidden;
+            imgInventario.Visibility = Visibility.Hidden;
         }
+
+      
         private void btn_Examenes_medicos_Click(object sender, RoutedEventArgs e)
         {
 
