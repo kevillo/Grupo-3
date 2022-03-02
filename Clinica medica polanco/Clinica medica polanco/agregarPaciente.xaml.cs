@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_medica_polanco.Pacientes;
 
 namespace Clinica_medica_polanco
 {
@@ -25,7 +26,9 @@ namespace Clinica_medica_polanco
             InitializeComponent();
 
             this.SourceInitialized += AgregarPaciente_SourceInitialized;
-
+            cmb_Tipo_Sangre_Paciente.Items.Add("A");
+            cmb_Tipo_Sangre_Paciente.Items.Add("O+");
+            cmb_Tipo_Sangre_Paciente.Items.Add("");
         }
 
         private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)
@@ -58,9 +61,29 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
-
-        private void btn_Guardar_Datos_Click(object sender, RoutedEventArgs e)
+        private void btn_Guardar_Datos_Click_1(object sender, RoutedEventArgs e)
         {
+            Paciente paciente1 = new();
+            paciente1.Nombre = txt_Nombre_Paciente.Text;
+            paciente1.Apellido = txt_Apellido_Paciente.Text;
+            paciente1.Identidad = txt_Identidad_Paciente.Text;
+            paciente1.Telefono = txt_Telefono_Paciente.Text;
+            paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Fecha_Nacimiento_Paciente.DisplayDate);
+            paciente1.Correo = txt_Correo_Paciente.Text;
+            paciente1.Altura = int.Parse(txt_Altura_Paciente.Text);
+            paciente1.TipoSangre = Convert.ToString(cmb_Tipo_Sangre_Paciente.Text);
+            paciente1.Direccion = Rtb_direccion_Paciente.Selection.Text;
+
+            int resultado = PacientesDAL.AgregarPaciente(paciente1);
+
+            if (resultado > 0)
+            {
+                MessageBox.Show("Datos Guardados Correctamente", "Datos Guardados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error al Guardar los Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
     }
