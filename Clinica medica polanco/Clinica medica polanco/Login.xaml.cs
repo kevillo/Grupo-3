@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Clinica_medica_polanco
 {
@@ -23,6 +24,25 @@ namespace Clinica_medica_polanco
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void btn_Login_IniciarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            int result = ConexionBaseDeDatos.LogIn(txt_Usuario.Text, pwb_Login_Contraseña);
+            if(result != 54)
+            {
+                menuPrincipal menu = new menuPrincipal(result);
+                menu.Show(); 
+                this.Close();
+            }
+            else
+            {
+                txt_Usuario.Clear();
+                pwb_Login_Contraseña.Clear();
+                txt_Usuario.Focus();
+                
+            }
+            
         }
 
         
