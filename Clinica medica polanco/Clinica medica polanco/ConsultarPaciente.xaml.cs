@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_medica_polanco.Pacientes;
 
 namespace Clinica_medica_polanco
 {
@@ -57,6 +58,11 @@ namespace Clinica_medica_polanco
         private void btn_Consultar_Pacientes_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Consultar_Pacientes_Click(object sender, RoutedEventArgs e)
+        {
+            dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.BuscarPaciente(txt_Consultar_Pacientes.Text);
         }
     }
 }
