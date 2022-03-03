@@ -74,6 +74,7 @@ namespace Clinica_medica_polanco
             paciente1.Altura = int.Parse(txt_Altura_Paciente.Text);
             paciente1.TipoSangre = Convert.ToString(cmb_Tipo_Sangre_Paciente.Text);
             paciente1.Direccion = Rtb_direccion_Paciente.Selection.Text;
+            paciente1.Estado = true; 
 
             int resultado = PacientesDAL.AgregarPaciente(paciente1);
 
