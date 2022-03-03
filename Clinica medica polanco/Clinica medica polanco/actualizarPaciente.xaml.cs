@@ -58,7 +58,8 @@ namespace Clinica_medica_polanco
 
         private void btn_Actualizar_Paciente_ActualizarInformacion_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Información actualizada");
+            this.Close();
         }
     }
 }

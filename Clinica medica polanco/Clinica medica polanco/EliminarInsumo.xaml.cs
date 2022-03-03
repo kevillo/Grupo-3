@@ -24,5 +24,10 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void btn_Deshabilitar_Insumo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Producto eliminado correctamente");
+        }
     }
 }

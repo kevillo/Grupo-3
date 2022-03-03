@@ -87,6 +87,8 @@ namespace Clinica_medica_polanco
                 MessageBox.Show("Error al Guardar los Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+            this.Close();
+
         }
     }
 }

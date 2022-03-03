@@ -60,5 +60,15 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
+
+        private void btn_Actualizar_Empleado_Click(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("Información actualizada correctamente");
+            this.Close();
+        }
+
+       
+
     }
 }

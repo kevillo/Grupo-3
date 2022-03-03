@@ -24,5 +24,11 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void btn_Actualizar_Informacion_Proveedor_Click(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("Información actualizada correctamente");
+        }
     }
 }

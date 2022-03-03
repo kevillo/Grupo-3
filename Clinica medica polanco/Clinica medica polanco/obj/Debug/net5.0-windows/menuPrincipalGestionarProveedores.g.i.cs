@@ -141,8 +141,7 @@ namespace Clinica_medica_polanco {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;V1.0.0.0;component/menuprincipalgestionarproveedores.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;component/menuprincipalgestionarproveedores.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\menuPrincipalGestionarProveedores.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

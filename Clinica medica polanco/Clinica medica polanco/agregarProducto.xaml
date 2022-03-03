@@ -66,7 +66,7 @@
     <Grid Background="White">
         <Rectangle x:Name="txt_Nombre_p" HorizontalAlignment="Left" Height="352" Stroke="Black" VerticalAlignment="Top" Width="669" Margin="31,68,0,0"/>
         <Label Content="Información del producto" FontFamily="Tahoma" FontSize="19" HorizontalAlignment="Left" Margin="31,32,0,0" VerticalAlignment="Top"/>
-        <Button  x:Name="btn_Proveedor_Olvidado" Content="¿no encuentra el proveedor?" HorizontalAlignment="Left" Margin="538,425,0,0" VerticalAlignment="Top" Cursor="Hand"  Background="white" BorderBrush="white" Foreground="#FF020202" FontWeight="Bold" FontSize="11" FontFamily="Tahoma" />
+        <Button  x:Name="btn_Proveedor_Olvidado" Content="¿no encuentra el proveedor?" HorizontalAlignment="Left" Margin="538,425,0,0" VerticalAlignment="Top" Cursor="Hand"  Background="white" BorderBrush="white" Foreground="#FF020202" FontWeight="Bold" FontSize="11" FontFamily="Tahoma" Click="btn_Proveedor_Olvidado_Click" />
         <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="84,78,0,0" VerticalAlignment="Top" Height="33" Width="182" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="84,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
         <Label Content="Número de serie" HorizontalAlignment="Left" Margin="410,78,0,0" VerticalAlignment="Top" Height="34" Width="154" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
@@ -89,7 +89,7 @@
         <Label Content="Tipo de insumo" HorizontalAlignment="Left" Margin="410,164,0,0" VerticalAlignment="Top" Height="34" Width="139" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <Label Content="Fecha de expiración" HorizontalAlignment="Left" Margin="84,254,0,0" VerticalAlignment="Top" Height="34" Width="169" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <CheckBox x:Name="chb_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="260,367,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
-        <Button x:Name="btn_Agregar_Producto" Style="{DynamicResource btn_Style_Agregar}"  Content="Agregar producto" FontFamily="Tahoma" FontSize="17" Padding="5" VerticalContentAlignment="Center" Background="#0D2D6F" Foreground="white" HorizontalAlignment="Left" Margin="272,434,0,0" VerticalAlignment="Top" Height="49" Width="222"/>
+        <Button x:Name="btn_Agregar_Producto" Style="{DynamicResource btn_Style_Agregar}"  Content="Agregar producto" FontFamily="Tahoma" FontSize="17" Padding="5" VerticalContentAlignment="Center" Background="#0D2D6F" Foreground="white" HorizontalAlignment="Left" Margin="272,434,0,0" VerticalAlignment="Top" Height="49" Width="222" Click="btn_Agregar_Producto_Click"/>
 
     </Grid>
 </UserControl>

@@ -52,14 +52,16 @@ namespace Clinica_medica_polanco
             return IntPtr.Zero;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btn_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void btn_Guardar_Datos_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void btn_Eliminar_Paciente_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Paciente eliminado correctamente");
+            this.Close();
         }
     }
 }

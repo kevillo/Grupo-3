@@ -51,5 +51,11 @@ namespace Clinica_medica_polanco
             }
             return IntPtr.Zero;
         }
+
+        private void btn_Guardar_Analisis_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Examen actualizado");
+            this.Close();
+        }
     }
 }

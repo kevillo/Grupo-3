@@ -56,5 +56,17 @@ namespace Clinica_medica_polanco
             }
             return IntPtr.Zero;
         }
+
+        private void btn_Entrega_Examen_Fisico_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Exámen/es actualizado/s");
+            this.Close();
+        }
+
+        private void btn_Entrega_Examen_Correo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Exámen/es actualizado/s y enviados al correo");
+            this.Close();
+        }
     }
 }
