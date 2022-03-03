@@ -48,5 +48,11 @@ namespace Clinica_medica_polanco
             actualizarStock compras = new();
             compras.ShowDialog();
         }
+
+        private void btn_Ver_Ventas_Click(object sender, RoutedEventArgs e)
+        {
+            ventasRealizadas ventas = new();
+            ventas.ShowDialog();
+        }
     }
 }
