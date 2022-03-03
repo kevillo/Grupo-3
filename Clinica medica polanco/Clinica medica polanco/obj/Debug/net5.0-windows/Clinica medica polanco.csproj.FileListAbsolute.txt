@@ -605,3 +605,5 @@ C:\Users\Arnold\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\Pr
 C:\Users\Arnold\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\ProyectoFinal\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\ref\Clinica medica polanco.dll
 C:\Users\Arnold\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\ProyectoFinal\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.pdb
 C:\Users\Arnold\Documents\UNICAH\2022\7 Periodo UNICAH\DESARROLLO DE SOFTWARE\ProyectoFinal\Grupo-3\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\Clinica medica polanco.genruntimeconfig.cache
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarStock.g.cs
+C:\Users\kevin\Documents\Clases IP 2022\Desarrollo de Software\Ejercicios\proyecto\Clinica medica polanco\Clinica medica polanco\obj\Debug\net5.0-windows\actualizarStock.baml

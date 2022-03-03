@@ -57,13 +57,14 @@ namespace Clinica_medica_polanco
             return IntPtr.Zero;
         }
 
+
         private void btn_salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
         private void btn_Guardar_Datos_Click_1(object sender, RoutedEventArgs e)
         {
-            Paciente paciente1 = new();
+            Pacientes.Paciente paciente1 = new();
             paciente1.Nombre = txt_Nombre_Paciente.Text;
             paciente1.Apellido = txt_Apellido_Paciente.Text;
             paciente1.Identidad = txt_Identidad_Paciente.Text;

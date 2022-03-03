@@ -23,7 +23,7 @@ namespace Clinica_medica_polanco
         {
 
             InitializeComponent();
-            if(id ==2) EmployeeConfiguration();
+            if(id == 2) EmployeeConfiguration();
  
 
             this.Width = 1080;

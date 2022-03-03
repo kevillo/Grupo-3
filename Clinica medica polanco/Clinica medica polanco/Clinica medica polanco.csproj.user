@@ -13,6 +13,9 @@
     <Compile Update="actualizarProveedor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="actualizarStock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="agregarPaciente.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,6 +73,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="actualizarProveedor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="actualizarStock.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="agregarPaciente.xaml">

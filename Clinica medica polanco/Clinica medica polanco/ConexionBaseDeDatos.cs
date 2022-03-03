@@ -61,6 +61,11 @@ namespace Clinica_medica_polanco
                     if (dt.Rows[0][1].ToString() == "Administrador")
                     {
                         if (dt.Rows[0][2].ToString() == "True") return 3;
+                        else
+                        {
+                            MessageBox.Show("Usuario o contraseña invalido.");
+                            return 54;
+                        }
                     }
 
                     else if (dt.Rows[0][1].ToString() == "Empleado")
