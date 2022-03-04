@@ -211,9 +211,9 @@
         <Border BorderBrush="Transparent"   
             BorderThickness="1" Margin="175,143,386,386" Background="Transparent">
             <ScrollViewer VerticalScrollBarVisibility="Disabled" Margin="1,1,0,0" Height="86" VerticalAlignment="Top" HorizontalAlignment="Left" Width="517" Background="Transparent">
-                <StackPanel Name="resultStack" Background="White" Height="97"></StackPanel>
+                <StackPanel Name="stc_InfoPaciente" Background="White" Height="97"></StackPanel>
             </ScrollViewer>
         </Border>
-        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" x:Name="textBox" Margin="172,117,386,438" />
+        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" x:Name="txt_PacienteId" Margin="172,117,386,438" />
     </Grid>
 </Window>

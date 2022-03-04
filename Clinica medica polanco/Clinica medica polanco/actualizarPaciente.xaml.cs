@@ -66,7 +66,7 @@ namespace Clinica_medica_polanco
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
         {
             bool found = false;
-            var border = (resultStack.Parent as ScrollViewer).Parent as Border;
+            var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
             var data = Model.GetData();
 
             string query = (sender as TextBox).Text;
@@ -74,7 +74,7 @@ namespace Clinica_medica_polanco
             if (query.Length == 0)
             {
                 // Clear   
-                resultStack.Children.Clear();
+                stc_InfoPaciente.Children.Clear();
                 border.Visibility = System.Windows.Visibility.Collapsed;
             }
             else
@@ -83,7 +83,7 @@ namespace Clinica_medica_polanco
             }
 
             // Clear the list   
-            resultStack.Children.Clear();
+            stc_InfoPaciente.Children.Clear();
 
             // Add the result   
             foreach (var obj in data)
@@ -98,7 +98,7 @@ namespace Clinica_medica_polanco
 
             if (!found)
             {
-                resultStack.Children.Add(new TextBlock() { Text = "No existe ese nombre de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese nombre de paciente." });
             }
         }
 
@@ -116,7 +116,7 @@ namespace Clinica_medica_polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                textBox.Text = (sender as TextBlock).Text;
+                txt_Actualizar_Paciente_ID.Text = (sender as TextBlock).Text;
             };
 
             block.MouseEnter += (sender, e) =>
@@ -132,7 +132,7 @@ namespace Clinica_medica_polanco
             };
 
             // Add to the panel   
-            resultStack.Children.Add(block);
+            stc_InfoPaciente.Children.Add(block);
         }
     }
 }
