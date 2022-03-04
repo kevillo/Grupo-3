@@ -173,7 +173,6 @@
     </Window.Resources>
     <Grid>
         <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,82,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_ID_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,116,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35"/>
         <Label Content="Nombre completo:" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Actualizar_Paciente_Nombre_Completo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="621" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
@@ -195,12 +194,12 @@
             </Button.Background>
         </Button>
         <Label Content="Dirección:" HorizontalAlignment="Left" Margin="643,367,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
-        <Button x:Name="btn_Actualizar_Paciente_ActualizarInformacion" Style="{DynamicResource Style_btn_ActualizarInformacion}" Content="Actualizar información" Cursor="Hand" HorizontalAlignment="Left" Margin="363,525,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Paciente_ActualizarInformacion_Click"/>
+        <Button x:Name="btn_Actualizar_Paciente_ActualizarInformacion" Style="{DynamicResource Style_btn_ActualizarInformacion}" Content="Actualizar información" Cursor="Hand" HorizontalAlignment="Left" Margin="363,507,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Paciente_ActualizarInformacion_Click"/>
         <TextBox x:Name="txt_Actualizar_Paciente_Altura" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="204,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
         <Label Content="Tipo de sangre:" HorizontalAlignment="Left" Margin="343,365,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <DatePicker x:Name="dtp_Actualizar_Paciente_FechaNac" HorizontalAlignment="Left" Margin="202,324,0,0" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="18" />
         <ComboBox x:Name="cmb_Actualizar_Paciente_TipoSangre" HorizontalAlignment="Left" Margin="349,400,0,0" VerticalAlignment="Top" Width="143" Height="36" BorderBrush="White" Background="White" />
-        <RichTextBox x:Name="rtb_Actualizar_Paciente_Direccion" Margin="524,396,258,93" BorderBrush="#FF141519">
+        <RichTextBox x:Name="rtb_Actualizar_Paciente_Direccion" Margin="542,396,248,125" BorderBrush="#FF141519">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
@@ -209,6 +208,12 @@
         </RichTextBox>
         <Label Content="Estado paciente:" HorizontalAlignment="Left" Margin="203,445,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <CheckBox x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="209,479,0,0" VerticalAlignment="Top" Height="32" Width="134" BorderBrush="#FF141519"/>
-
+        <Border BorderBrush="Transparent"   
+            BorderThickness="1" Margin="175,143,386,386" Background="Transparent">
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" Margin="1,1,0,0" Height="86" VerticalAlignment="Top" HorizontalAlignment="Left" Width="517" Background="Transparent">
+                <StackPanel Name="stc_InfoPaciente" Background="White" Height="97"></StackPanel>
+            </ScrollViewer>
+        </Border>
+        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" x:Name="txt_PacienteId" Margin="172,117,386,438" />
     </Grid>
 </Window>
