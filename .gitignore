@@ -35,8 +35,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-Clinica medica polanco/Clinica medica polanco/[Oo]bj/[Dd]ebug/
-Clinica medica polanco/Clinica medica polanco/[Oo]obj/
+'Clinica medica polanco'/'Clinica medica polanco'/[Oo]bj/[Dd]ebug/
+'Clinica medica polanco'/'Clinica medica polanco'/[Oo]obj/[Bb]in/
 
 
 Clinica medica polanco/.vs/
@@ -130,7 +130,7 @@ ipch/
 *.e2e
 
 # TFS 2012 Local Workspace
-$tf/
+$tf/                                                         
 
 # Guidance Automation Toolkit
 *.gpState
