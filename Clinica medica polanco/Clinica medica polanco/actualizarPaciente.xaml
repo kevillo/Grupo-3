@@ -173,7 +173,6 @@
     </Window.Resources>
     <Grid>
         <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,82,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_ID_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,116,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35"/>
         <Label Content="Nombre completo:" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Actualizar_Paciente_Nombre_Completo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="621" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
@@ -209,6 +208,12 @@
         </RichTextBox>
         <Label Content="Estado paciente:" HorizontalAlignment="Left" Margin="203,445,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <CheckBox x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="209,479,0,0" VerticalAlignment="Top" Height="32" Width="134" BorderBrush="#FF141519"/>
-
+        <Border BorderBrush="Transparent"   
+            BorderThickness="1" Margin="175,143,386,386" Background="Transparent">
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" Margin="1,1,0,0" Height="86" VerticalAlignment="Top" HorizontalAlignment="Left" Width="517" Background="Transparent">
+                <StackPanel Name="resultStack" Background="White" Height="97"></StackPanel>
+            </ScrollViewer>
+        </Border>
+        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" x:Name="textBox" Margin="172,117,386,438" />
     </Grid>
 </Window>

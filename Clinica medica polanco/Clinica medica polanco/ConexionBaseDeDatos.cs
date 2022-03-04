@@ -35,8 +35,22 @@ namespace Clinica_medica_polanco
         {
             using (SqlConnection conexion = ConexionBaseDeDatos.ObtenerConexion())
             {
-                MessageBox.Show("Se cerró la conexión");
-                conexion.Close();
+                try
+                {
+                    if(conexion != null)
+                    {
+                        conexion.Close();
+                        MessageBox.Show("Se cerró la conexión");
+                    }
+                    else
+                    {
+                        MessageBox.Show("La conexión no está abierta");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex);
+                }
             }
         }
 
