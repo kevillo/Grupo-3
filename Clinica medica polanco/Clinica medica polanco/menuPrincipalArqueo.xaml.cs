@@ -24,5 +24,15 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("El total en caja debe ser de: ");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Usted inicia con un monto de: ");
+        }
     }
 }
