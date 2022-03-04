@@ -28,7 +28,7 @@
         <Style x:Key="btn_Style_Login_IniciarSesion" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -45,12 +45,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#FF5454"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#FF5454"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
@@ -133,7 +129,11 @@
             <Label x:Name="lbl_Login_Usuario" Content="USUARIO" HorizontalAlignment="Left" Margin="396,284,0,0" VerticalAlignment="Top" Width="229" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" Height="24"/>
             <Label x:Name="lbl_Login_Contraseña" Content="CONTRASEÑA" HorizontalAlignment="Left" Margin="395,359,0,0" VerticalAlignment="Top" Width="229" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" Height="24"/>
             <Image HorizontalAlignment="Left" Height="163" Margin="410,27,0,0" VerticalAlignment="Top" Width="244" Source="/logo.png"/>
-            <Button x:Name="btn_Salir" Background="red" Cursor="Hand" Foreground="white" Content="Salir"  FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="10,539,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_Style_Login_IniciarSesion}" Height="36" Width="94" Click="btn_Salir_Click"/>
+            <Button x:Name="btn_Salir" Cursor="Hand" Foreground="white" Content=""  FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="22,514,0,0" VerticalAlignment="Top" Style="{DynamicResource btn_Style_Login_IniciarSesion}" Height="56" Width="58" Click="btn_Salir_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Salir2.png"/>
+                </Button.Background>
+            </Button>
         </Grid>
 
     </Grid>

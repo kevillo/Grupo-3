@@ -20,12 +20,12 @@ namespace Clinica_medica_polanco
             try
             {
                 conexion.Open();
-                MessageBox.Show("se abrio la conexion");
+                MessageBox.Show("Se abrió la conexión");
                 return conexion;
             }
             catch(Exception error)
             {
-                MessageBox.Show("Error al abrir conexion con la base de datos: " + error.Message);
+                MessageBox.Show("Error al abrir conexión con la base de datos: " + error.Message);
                 return null;
             }
 
@@ -35,7 +35,7 @@ namespace Clinica_medica_polanco
         {
             using (SqlConnection conexion = ConexionBaseDeDatos.ObtenerConexion())
             {
-                MessageBox.Show("se cerro la conexion");
+                MessageBox.Show("Se cerró la conexión");
                 conexion.Close();
             }
         }
@@ -63,7 +63,7 @@ namespace Clinica_medica_polanco
                         if (dt.Rows[0][2].ToString() == "True") return 3;
                         else
                         {
-                            MessageBox.Show("Usuario o contraseña invalido.");
+                            MessageBox.Show("Usuario o contraseña inválido.");
                             return 54;
                         }
                     }
@@ -74,7 +74,7 @@ namespace Clinica_medica_polanco
 
                         else
                         {
-                            MessageBox.Show("Usuario o contraseña invalido.");
+                            MessageBox.Show("Usuario o contraseña inválido.");
                             return 54;
                         }
                     }
@@ -82,7 +82,7 @@ namespace Clinica_medica_polanco
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña invalido.");
+                    MessageBox.Show("Usuario o contraseña inválido.");
                     return 54;
                 }
                 

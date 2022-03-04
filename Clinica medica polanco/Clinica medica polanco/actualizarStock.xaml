@@ -45,9 +45,9 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                              </Trigger>
+                            </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                              </Trigger>
+                            </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
@@ -129,7 +129,7 @@
         <Label Content="Administrador" HorizontalAlignment="Left" Margin="634,277,0,0" VerticalAlignment="Top" Height="40" Width="170" FontFamily="Tahoma" FontSize="25"/>
         <Label Content="Cantidad comprada" HorizontalAlignment="Left" Margin="379,386,0,0" VerticalAlignment="Top" Height="40" Width="234" FontFamily="Tahoma" FontSize="25"/>
         <TextBox x:Name="txt_Cantidad_Actualizar_Stock" HorizontalAlignment="Left" Margin="379,432,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" Height="42" FontFamily="Tahoma" FontSize="18" TextAlignment="Center"/>
-        <Button Style="{DynamicResource btn_Style_Actualizar}" Cursor="Hand" x:Name="btn_Actualizar_Stock" Content="Actualizar stock de inventario" HorizontalAlignment="Left"  Background="#FF0D2D6F" Foreground="White" Margin="369,520,0,0" VerticalAlignment="Top" Height="50" Width="352" FontFamily="Tahoma" FontSize="25" Click="btn_Actualizar_Stock_Click"/>
+        <Button Style="{DynamicResource btn_Style_Actualizar}" Cursor="Hand" x:Name="btn_Actualizar_Stock" Content="Actualizar stock de inventario" HorizontalAlignment="Center"  Background="#FF0D2D6F" Foreground="White" Margin="0,520,0,0" VerticalAlignment="Top" Height="60" Width="385" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Stock_Click"/>
         <Button Style="{DynamicResource btn_Salir}" x:Name="btn_Salir" Cursor="Hand" Content="" HorizontalAlignment="Left" BorderBrush="white" Margin="29,503,0,0" VerticalAlignment="Top" Width="89" Height="67" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>

@@ -89,7 +89,7 @@
         <Label Content="Tipo de insumo" HorizontalAlignment="Left" Margin="410,164,0,0" VerticalAlignment="Top" Height="34" Width="139" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <Label Content="Fecha de expiración" HorizontalAlignment="Left" Margin="84,254,0,0" VerticalAlignment="Top" Height="34" Width="169" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <CheckBox x:Name="chb_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="260,367,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
-        <Button x:Name="btn_Agregar_Producto" Style="{DynamicResource btn_Style_Agregar}"  Content="Agregar producto" FontFamily="Tahoma" FontSize="17" Padding="5" VerticalContentAlignment="Center" Background="#0D2D6F" Foreground="white" HorizontalAlignment="Left" Margin="272,434,0,0" VerticalAlignment="Top" Height="49" Width="222" Click="btn_Agregar_Producto_Click"/>
+        <Button x:Name="btn_Agregar_Producto" Style="{DynamicResource btn_Style_Agregar}"  Content="Agregar producto" FontFamily="Tahoma" FontSize="28" Padding="5" VerticalContentAlignment="Center" Background="#0D2D6F" Foreground="white" HorizontalAlignment="Left" Margin="220,430,0,0" VerticalAlignment="Top" Height="60" Width="300" Click="btn_Agregar_Producto_Click"/>
 
     </Grid>
 </UserControl>

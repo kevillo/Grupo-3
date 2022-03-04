@@ -35,6 +35,8 @@
     <None Remove="output-onlinepngtools%283%29.png" />
     <None Remove="output-onlinepngtools.png" />
     <None Remove="refresh.png" />
+    <None Remove="Salir.png" />
+    <None Remove="Salir2.png" />
     <None Remove="trash.png" />
     <None Remove="update.png" />
     <None Remove="índice.jpg" />
@@ -72,6 +74,8 @@
     <Resource Include="output-onlinepngtools(3).png" />
     <Resource Include="output-onlinepngtools.png" />
     <Resource Include="refresh.png" />
+    <Resource Include="Salir.png" />
+    <Resource Include="Salir2.png" />
     <Resource Include="trash.png" />
     <Resource Include="update.png" />
     <Resource Include="índice.jpg" />

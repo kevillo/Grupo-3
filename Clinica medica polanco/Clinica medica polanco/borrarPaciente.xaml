@@ -145,7 +145,7 @@
             </FlowDocument>
         </RichTextBox>
         <Label Content="Dirección" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="586,415,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
-        <Button x:Name="btn_Eliminar_Paciente" Cursor="Hand" Width="316" Height="50" FontFamily="Tahoma" FontSize="29" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Eliminar Paciente" HorizontalAlignment="Center" Margin="0,523,0,0" VerticalAlignment="Top" Background="#FF0D2D6F" BorderBrush="White" Foreground="White" Style="{DynamicResource estilo}" Click="btn_Eliminar_Paciente_Click"/>
+        <Button x:Name="btn_Eliminar_Paciente" Cursor="Hand" Width="300" Height="60" FontFamily="Tahoma" FontSize="28" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Eliminar Paciente" HorizontalAlignment="Center" Margin="0,523,0,0" VerticalAlignment="Top" Background="#FF0D2D6F" BorderBrush="White" Foreground="White" Style="{DynamicResource estilo}" Click="btn_Eliminar_Paciente_Click"/>
         <Label Content="Ingrese Id del Paciente" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="260,87,0,0" VerticalAlignment="Top" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Nombre_Paciente_" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="20"  Margin="260,125,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="337" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" />
         <Button Style="{DynamicResource estilo}" x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Height="40" Margin="631,123,0,0" VerticalAlignment="Top" Width="195" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29"/>

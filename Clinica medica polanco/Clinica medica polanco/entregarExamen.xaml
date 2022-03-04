@@ -182,8 +182,8 @@
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="570,517,0,0" VerticalAlignment="Top" Width="264" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Entrega_Examen_Correo_Click"/>
-        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="250,517,0,0" VerticalAlignment="Top" Width="264" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Entrega_Examen_Fisico_Click"/>
+        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="564,517,0,0" VerticalAlignment="Top" Width="310" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Correo_Click"/>
+        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="250,517,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Fisico_Click"/>
 
     </Grid>
 </Window>

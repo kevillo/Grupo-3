@@ -154,7 +154,7 @@
         <DatePicker x:Name="dtp_Ingreso_Eliminar_Empleado" HorizontalAlignment="Left" Margin="731,405,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" IsEnabled="False"/>
         <DatePicker x:Name="dtp_Pago_Eliminar_Empleado" HorizontalAlignment="Left" Margin="558,404,0,0" VerticalAlignment="Top" Width="148" FontFamily="Tahoma" IsEnabled="False"/>
         <Rectangle HorizontalAlignment="Left"  Height="95" Margin="189,0,0,0" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F"/>
-        <Button x:Name="btn_Borrar_Empleado" Content="Deshabilitar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="376,498,0,0" VerticalAlignment="Top" Height="50" Width="308" Style="{DynamicResource btn_Style_Eliminar_Empleado}" Click="btn_Borrar_Empleado_Click"/>
+        <Button x:Name="btn_Borrar_Empleado" Content="Deshabilitar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="376,498,0,0" VerticalAlignment="Top" Height="60" Width="300" Style="{DynamicResource btn_Style_Eliminar_Empleado}" Click="btn_Borrar_Empleado_Click"/>
         <Button Style="{DynamicResource btn_Style_Salir}" Cursor="Hand" BorderBrush="White" Foreground="White" x:Name="btn_Salir" Content=""  HorizontalAlignment="Left" Margin="19,510,0,0" VerticalAlignment="Top" Height="62" Width="100" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>

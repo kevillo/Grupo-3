@@ -205,7 +205,7 @@
         <DatePicker x:Name="dtp_Ingreso_Actulizar_Empleado" HorizontalAlignment="Left" Margin="771,394,0,0" VerticalAlignment="Top" Width="145" IsEnabled="False"/>
         <DatePicker x:Name="dtp_Pago_Actualizar_Empleado" HorizontalAlignment="Left" Margin="604,394,0,0" VerticalAlignment="Top" Width="148" IsEnabled="False"/>
         <Rectangle HorizontalAlignment="Left"  Height="95" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="228,0,0,0"/>
-        <Button x:Name="btn_Actualizar_Empleado" Content="Actualizar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="404,500,0,0" VerticalAlignment="Top" Height="50" Width="308" Style="{DynamicResource btn_Style_Actualiza_Empleado}" Click="btn_Actualizar_Empleado_Click"/>
+        <Button x:Name="btn_Actualizar_Empleado" Content="Actualizar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="383,500,0,0" VerticalAlignment="Top" Height="60" Width="300" Style="{DynamicResource btn_Style_Actualiza_Empleado}" Click="btn_Actualizar_Empleado_Click"/>
         <DatePicker x:Name="dtp_Nacimiento_Actualizar_Empleado" HorizontalAlignment="Left" Margin="231,258,0,0" VerticalAlignment="Top" Width="176" IsEnabled="False"/>
         <Label Content="Actualizar empleado" FontFamily="Tahoma" FontSize="65" HorizontalAlignment="Left" Margin="285,1,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>

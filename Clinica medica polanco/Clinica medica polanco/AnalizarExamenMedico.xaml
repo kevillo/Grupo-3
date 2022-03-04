@@ -86,7 +86,7 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="btn_Guardar_Analisis" Style="{DynamicResource btn_Style_Analisis}" Content="Guardar datos" HorizontalAlignment="Left" Margin="389,512,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="35" Height="54" Width="278" Foreground="White" Click="btn_Guardar_Analisis_Click"/>
+        <Button x:Name="btn_Guardar_Analisis" Style="{DynamicResource btn_Style_Analisis}" Cursor="Hand" Content="Guardar datos" HorizontalAlignment="Left" Margin="368,512,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="28" Height="60" Width="300" Foreground="White" Click="btn_Guardar_Analisis_Click"/>
         <Image HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="130" Source="/aa.bmp"/>
 
     </Grid>
