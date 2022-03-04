@@ -64,8 +64,8 @@
         </Style>
     </UserControl.Resources>
     <Grid Background="White">
-        <Button Style="{DynamicResource Btn_menu_Principal_Arqueo}" Content="Realizar Arqueo" HorizontalAlignment="Center" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Margin="0,38,0,0" VerticalAlignment="Top" Height="152" Width="292"/>
-        <Button Content="Verificar Monto &#xD;&#xA;       Inicial" HorizontalAlignment="Center" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Height="152" Width="292" Margin="0,252,0,0" VerticalAlignment="Top" Style="{DynamicResource Btn_menu_Principal_Arqueo}"/>
+        <Button Style="{DynamicResource Btn_menu_Principal_Arqueo}" Content="Realizar Arqueo" HorizontalAlignment="Center" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Margin="0,38,0,0" VerticalAlignment="Top" Height="152" Width="292" Click="Button_Click"/>
+        <Button Content="Verificar Monto &#xD;&#xA;       Inicial" HorizontalAlignment="Center" Cursor="Hand" Background="#0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="40" Height="152" Width="292" Margin="0,252,0,0" VerticalAlignment="Top" Style="{DynamicResource Btn_menu_Principal_Arqueo}" Click="Button_Click_1"/>
 
     </Grid>
 </UserControl>
