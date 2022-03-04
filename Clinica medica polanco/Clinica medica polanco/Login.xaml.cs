@@ -50,5 +50,10 @@ namespace Clinica_medica_polanco
 
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
