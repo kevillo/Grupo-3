@@ -61,7 +61,7 @@ namespace Clinica_medica_polanco {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;V1.0.0.0;component/infomesexamenesmedicos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;component/infomesexamenesmedicos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\InfomesExamenesMedicos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
