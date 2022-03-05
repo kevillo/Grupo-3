@@ -33,8 +33,6 @@ namespace Clinica_medica_polanco
 
         public static void CerrarConexion()
         {
-            using (SqlConnection conexion = ConexionBaseDeDatos.ObtenerConexion())
-            {
                 try
                 {
                     if(conexion != null)
@@ -49,9 +47,9 @@ namespace Clinica_medica_polanco
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex);
+                    MessageBox.Show("Error al cerrar: " + ex);
                 }
-            }
+            
         }
 
 

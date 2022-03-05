@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arnold\\Documents\\UNICAH\\2022\\7 Periodo UNICAH\\DESARROLLO DE SOFTWARE\\Proyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj": {}
+    "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arnold\\Documents\\UNICAH\\2022\\7 Periodo UNICAH\\DESARROLLO DE SOFTWARE\\Proyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj": {
+    "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arnold\\Documents\\UNICAH\\2022\\7 Periodo UNICAH\\DESARROLLO DE SOFTWARE\\Proyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+        "projectUniqueName": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
         "projectName": "Clinica medica polanco",
-        "projectPath": "C:\\Users\\Arnold\\Documents\\UNICAH\\2022\\7 Periodo UNICAH\\DESARROLLO DE SOFTWARE\\Proyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
-        "packagesPath": "C:\\Users\\Arnold\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arnold\\Documents\\UNICAH\\2022\\7 Periodo UNICAH\\DESARROLLO DE SOFTWARE\\Proyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\obj\\",
+        "projectPath": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\Clinica medica polanco.csproj",
+        "packagesPath": "C:\\Users\\Leticia Díaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leticia Díaz\\Documents\\PruebasProyecto\\Grupo-3\\Clinica medica polanco\\Clinica medica polanco\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Arnold\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leticia Díaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
