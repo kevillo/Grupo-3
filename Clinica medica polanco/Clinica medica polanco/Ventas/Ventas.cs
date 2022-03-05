@@ -19,11 +19,11 @@ namespace Clinica_medica_polanco.Ventas
         private int _metodoPagoExamen;
         private DateTime _fechaOrden;
         private DateTime _fechaFactura;
-        private byte _examenCombo;
+        private bool _examenCombo;
         private int _cantidad;
         private int _estadoExamenMedico;
-        private decimal _iSV;
-        private decimal _descuento;
+        private float _iSV;
+        private float _descuento;
         private float _totalVenta;
 
         public int CodigoFacturaVenta
