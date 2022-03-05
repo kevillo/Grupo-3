@@ -8,33 +8,143 @@ namespace Clinica_medica_polanco.Pacientes
 {
     public class Paciente
     {
-        public int Codigo { set; get; }
-        public String Nombre { set; get; }
-        public String Apellido { set; get; }
-        public String Identidad { set; get; }
-        public String Telefono { set; get; }
-        public DateTime FechaNacimiento { set; get; }
-        public String Correo { set; get; }
-        public int Altura { set; get; }
-        public String TipoSangre { set; get; }
-        public String Direccion { set; get; }
-        public bool Estado { set; get; }
+        private int _codigo;
+        private String _nombre;
+        private String _apellido;
+        private String _identidad;
+        private String _telefono;
+        private DateTime _fechaNacimiento;
+        private String _correo;
+        private int _altura;
+        private String _tipoSangre;
+        private String _direccion;
+        private bool _estado;
 
-        public Paciente() { }
 
+
+        public int validarClase()
+        {
+            if (_nombre == "Error") return 1;
+            else return 0;
+
+        }
+        public Paciente() { }    
         public Paciente(int pCodigo, String pNombre, String pApellido, String pIdentidad, String pTelefono, DateTime pFechaNacimiento, String pCorreo, int pAltura, String pTipoSangre, String pDireccion, bool pEstado)
         {
-            this.Codigo = pCodigo;
-            this.Nombre = pNombre;
-            this.Apellido = pApellido;
-            this.Identidad = pIdentidad;
-            this.Telefono = pTelefono;
-            this.FechaNacimiento = pFechaNacimiento;
-            this.Correo = pCorreo;
-            this.Altura = pAltura;
-            this.TipoSangre = pTipoSangre;
-            this.Direccion = pDireccion;
-            this.Estado = pEstado;
+            this._codigo = pCodigo;
+            this._nombre = pNombre;
+            this._apellido = pApellido;
+            this._identidad = pIdentidad;
+            this._telefono= pTelefono;
+            this._fechaNacimiento= pFechaNacimiento;
+            this._correo= pCorreo;
+            this._altura = pAltura;
+            this._tipoSangre= pTipoSangre;
+            this._direccion= pDireccion;
+            this._estado= pEstado;
         }
+
+        public int Codigo
+        {
+            get => _codigo;
+            set
+            {
+                if (value <= 0) _codigo = 1;
+                else _codigo = value;
+            }
+        }
+        public string Nombre
+        {
+            get => _nombre;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacios");
+                }
+                else _nombre = value;
+            }
+        }
+        public string Apellido
+        {
+            get => _apellido;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+
+                    throw new FormatException("No se puede ingresar campos vacios");
+                }
+                else _apellido = value;
+            }
+        }
+        public string Identidad
+        {
+            get => _identidad;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
+                else _identidad = value;
+            }
+        }
+        public string Telefono
+        {
+            get => _telefono;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
+                else _telefono = value; ;
+            }
+        }
+        public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
+        public string Correo
+        {
+            get => _correo;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
+                else _correo = value;
+            }
+        }
+        public int Altura
+        {
+            get => _altura;
+            set
+            {
+                if (value <= 0 || string.IsNullOrEmpty(value.ToString())) _altura = 1;
+                else _altura = value;
+            }
+        }
+        public string TipoSangre
+        {
+            get => _tipoSangre;
+            set
+            {
+                if (string.IsNullOrEmpty(value)) _tipoSangre = "Error";
+                else _tipoSangre = value;
+            }
+        }
+        public string Direccion
+        {
+            get => _direccion;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
+                else _direccion = value;
+            }
+        }
+        public bool Estado { get => _estado; set => _estado = value; }
     }
 }

@@ -56,5 +56,11 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
+
+        private void btn_Borrar_Empleado_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Empleado eliminado correctamente");
+            this.Close();
+        }
     }
 }

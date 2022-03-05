@@ -24,5 +24,16 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
         }
+
+        private void btn_Proveedor_Olvidado_Click(object sender, RoutedEventArgs e)
+        {
+            menuPrincipalGestionarProveedores nuevoProveedor = new();
+            nuevoProveedor.ShowDialog();
+        }
+
+        private void btn_Agregar_Producto_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Producto agregado correctamente");
+        }
     }
 }

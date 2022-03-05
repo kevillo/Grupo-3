@@ -61,5 +61,11 @@ namespace Clinica_medica_polanco
         {
             this.Close();
         }
+
+        private void btn_Actualizar_Stock_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("inventario Actualizado correctamente");
+            this.Close();
+        }
     }
 }

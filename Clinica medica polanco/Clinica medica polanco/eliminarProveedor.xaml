@@ -24,11 +24,11 @@
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="true">
                     <Setter Property="Background" TargetName="border" Value="#FF5454"/>
-                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF5454"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="true">
-                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                    <Setter Property="Background" TargetName="border" Value="#FF5454"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF5454"/>
                 </Trigger>
                 <Trigger Property="IsEnabled" Value="false">
                     <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
@@ -46,7 +46,7 @@
         <TextBox x:Name="txt_Correo_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
         <TextBox x:Name="txt_Telefono_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="397,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Código de proveedor" HorizontalAlignment="Left" Margin="99,48,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="17" Foreground="#FF878F9E"/>
-        <Button x:Name="btn_Deshabilitar_proveedor" Content="Deshabilitar proveedor" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="213,401,0,0" VerticalAlignment="Top" Height="47" Width="308" Background="#FF0D2D6F" Template="{DynamicResource estilo}"/>
+        <Button x:Name="btn_Deshabilitar_proveedor" Content="Deshabilitar proveedor" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="213,401,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Template="{DynamicResource estilo}" Click="btn_Deshabilitar_proveedor_Click"/>
         <Button x:Name="btn_Buscar_Proveedor" Content="Buscar" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="433,79,0,0" VerticalAlignment="Top" Height="47" Width="196" Background="#FF0D2D6F" Template="{DynamicResource estilo}"/>
         <Label Content="Nombre proveedor" HorizontalAlignment="Left" Margin="99,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF878F9E" FontSize="17"/>
         <Label Content="Apellido proveedor" HorizontalAlignment="Left" Margin="399,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF878F9E" FontSize="17"/>

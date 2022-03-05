@@ -56,14 +56,12 @@ namespace Clinica_medica_polanco
             return IntPtr.Zero;
         }
 
+
         private void btn_Agregar_Empleado_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void btn_Agregar_Empleado_Click_1(object sender, RoutedEventArgs e)
-        {
-
+            MessageBox.Show("Paciente Agregado correctamente");
+            this.Close();
         }
     }
 }

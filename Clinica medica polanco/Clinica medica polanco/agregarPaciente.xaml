@@ -183,7 +183,7 @@
         <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Altura_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="229,433,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="36" Width="62" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" FontFamily="Tahoma" />
         <Label Content="Tipo de sangre" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="331,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
         <ComboBox x:Name="cmb_Tipo_Sangre_Paciente" HorizontalAlignment="Left" Margin="341,433,0,0" VerticalAlignment="Top" Width="120" Height="36" BorderBrush="White" Background="White" Grid.Column="1" />
-        <RichTextBox x:Name="Rtb_direccion_Paciente" Margin="535,418,196,103" Grid.Column="1" FontFamily="Tahoma" BorderBrush="Black">
+        <RichTextBox x:Name="Rtb_direccion_Paciente" Margin="535,418,196,118" Grid.Column="1" FontFamily="Tahoma" BorderBrush="Black">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
@@ -191,7 +191,7 @@
             </FlowDocument>
         </RichTextBox>
         <Label Content="Dirección" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="535,379,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
-        <Button x:Name="btn_Guardar_Datos" Style="{DynamicResource btn_Style_Agregar_Paciente}" Cursor="Hand" Width="200" Height="50" FontFamily="Tahoma" FontSize="29" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Guardar datos" HorizontalAlignment="Left" Margin="389,525,0,0" VerticalAlignment="Top" Grid.Column="1" Click="btn_Guardar_Datos_Click_1"/>
+        <Button x:Name="btn_Guardar_Datos" Style="{DynamicResource btn_Style_Agregar_Paciente}" Cursor="Hand" Width="300" Height="60" FontFamily="Tahoma" FontSize="28" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Guardar datos" HorizontalAlignment="Left" Margin="340,513,0,0" VerticalAlignment="Top" Grid.Column="1" Click="btn_Guardar_Datos_Click_1"/>
         <Button Style="{DynamicResource btn_Salir}" x:Name="btn_salir" Content="" HorizontalAlignment="Left" Cursor="Hand" Margin="30,514,0,0" VerticalAlignment="Top" Width="100" Height="61" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.538,-0.02" Click="btn_salir_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>

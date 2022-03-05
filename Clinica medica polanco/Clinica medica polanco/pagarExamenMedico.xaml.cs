@@ -50,8 +50,7 @@ namespace Clinica_medica_polanco
             }
             return IntPtr.Zero;
         }
-
-        private void btn_Logout_Click(object sender, RoutedEventArgs e)
+        private void btn_Pagar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

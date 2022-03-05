@@ -136,8 +136,8 @@
         <ComboBox x:Name="cmb_Gestionar_Insumo_Disponible" HorizontalAlignment="Left" Height="33" Margin="609,271,0,0" VerticalAlignment="Top" Width="87"/>
         <Label Content="Nombre de proveedor:" HorizontalAlignment="Left" Margin="376,304,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <ComboBox x:Name="cmb_Gestionar_Insumo_Nombre_Proveedor" HorizontalAlignment="Left" Height="33" Margin="376,334,0,0" VerticalAlignment="Top" Width="251"/>
-        <Label Content="¿No encuentra el proveedor?" HorizontalAlignment="Left" Margin="268,382,0,0" VerticalAlignment="Top" Width="236" FontFamily="Tahoma" FontSize="17"/>
-        <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="36" Margin="296,424,0,0" VerticalAlignment="Top" Width="180" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
+        <Button Content="¿No encuentra el proveedor?" HorizontalAlignment="Left" Margin="268,382,0,0" Background="Transparent"  BorderBrush="White" VerticalAlignment="Top" Width="236" FontFamily="Tahoma" FontSize="17" Click="Button_Click"/>
+        <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="50" Margin="248,424,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Gestionar_Insumo_Actualizar_Click"/>
 
     </Grid>
 </UserControl>
