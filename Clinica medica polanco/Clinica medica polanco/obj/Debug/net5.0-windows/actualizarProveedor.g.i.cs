@@ -133,7 +133,7 @@ namespace Clinica_medica_polanco {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;component/actualizarproveedor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;V1.0.0.0;component/actualizarproveedor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\actualizarProveedor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
