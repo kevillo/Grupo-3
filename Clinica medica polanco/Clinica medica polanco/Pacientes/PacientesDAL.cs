@@ -10,13 +10,14 @@ namespace Clinica_medica_polanco.Pacientes
           public static int AgregarPaciente(Paciente pPaciente)
         {
 
-            ConexionBaseDeDatos.ObtenerConexion();
-            int retorno = 0;
-            SqlCommand comando = new SqlCommand(String.Format("Insert Into Pacientes(Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
-            pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado), ConexionBaseDeDatos.conexion);
-            retorno = comando.ExecuteNonQuery();
-            ConexionBaseDeDatos.CerrarConexion();
-            return retorno;
+                ConexionBaseDeDatos.ObtenerConexion();
+                int retorno = 0;
+                SqlCommand comando = new SqlCommand(String.Format("Insert Into Pacientes(Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
+                pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado), ConexionBaseDeDatos.conexion);
+                retorno = comando.ExecuteNonQuery();
+                ConexionBaseDeDatos.CerrarConexion();
+                return retorno;
+            
         }
 
         public static List<Paciente> BuscarPaciente(String pNombre)
