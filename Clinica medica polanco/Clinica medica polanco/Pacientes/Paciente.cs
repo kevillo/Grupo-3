@@ -55,7 +55,7 @@ namespace Clinica_medica_polanco.Pacientes
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new FormatException("No se puede ingresar campos vacios");
+                    throw new FormatException("No se puede ingresar campos vacíos");
                 }
                 else _nombre = value;
             }
@@ -68,7 +68,7 @@ namespace Clinica_medica_polanco.Pacientes
                 if (string.IsNullOrEmpty(value))
                 {
 
-                    throw new FormatException("No se puede ingresar campos vacios");
+                    throw new FormatException("No se puede ingresar campos vacíos");
                 }
                 else _apellido = value;
             }
@@ -130,7 +130,7 @@ namespace Clinica_medica_polanco.Pacientes
             {
                 if (value <= 0)
                 {
-                    throw new FormatException("No se pueden ingresar campos vacios");
+                    throw new FormatException("No se pueden ingresar campos vacíos");
                 }
                 else _altura = value;
             }
@@ -142,7 +142,7 @@ namespace Clinica_medica_polanco.Pacientes
             {
                 if(string.IsNullOrEmpty(value))
                 {
-                    throw new FormatException("No se pueden ingresar campos vacios");
+                    throw new FormatException("No se pueden ingresar campos vacíos");
                 }
             }
             

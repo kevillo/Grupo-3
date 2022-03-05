@@ -18,7 +18,10 @@ using System.Runtime.InteropServices;
 namespace Clinica_medica_polanco
 {
     /// <summary>
-    /// Lógica de interacción para agregarPaciente.xaml
+    ///  a los Strings: solo que no vayan vacios
+    ///  a los enteros: que no vaya negativo y que no vaya vacio
+    ///  a los datetime: que no vaya vacio
+    ///  a los strings como tipo identidad o telefono: que no vaya vacio y que sea un numero
     /// </summary>
     public partial class agregarPaciente : Window
     {
@@ -104,7 +107,7 @@ namespace Clinica_medica_polanco
                 else if (error.StackTrace.Contains("Altura")) validateFields(txt_Altura_Paciente, leyenda: "Altura");
                 else if (error.StackTrace.Contains("FechaNacimiento")) validateFields(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
                 else if (error.StackTrace.Contains("TipoSangre")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
-                else if (error.StackTrace.Contains("Direccion")) validateFields(rtb:Rtb_direccion_Paciente,  leyenda: "Direccion",refer:4);
+                else if (error.StackTrace.Contains("Direccion")) validateFields(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
             }
             
             
@@ -112,7 +115,7 @@ namespace Clinica_medica_polanco
 
         private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres invalidos en " + leyenda);
+            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();
