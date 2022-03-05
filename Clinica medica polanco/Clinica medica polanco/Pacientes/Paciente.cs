@@ -20,6 +20,14 @@ namespace Clinica_medica_polanco.Pacientes
         private String _direccion;
         private bool _estado;
 
+
+
+        public int validarClase()
+        {
+            if (_nombre == "Error") return 1;
+            else return 0;
+
+        }
         public Paciente() { }    
         public Paciente(int pCodigo, String pNombre, String pApellido, String pIdentidad, String pTelefono, DateTime pFechaNacimiento, String pCorreo, int pAltura, String pTipoSangre, String pDireccion, bool pEstado)
         {
@@ -50,7 +58,10 @@ namespace Clinica_medica_polanco.Pacientes
             get => _nombre;
             set
             {
-                if (string.IsNullOrEmpty(value)) _nombre = "Error";
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacios");
+                }
                 else _nombre = value;
             }
         }
@@ -59,7 +70,11 @@ namespace Clinica_medica_polanco.Pacientes
             get => _apellido;
             set
             {
-                if (string.IsNullOrEmpty(value)) _apellido = "Error";
+                if (string.IsNullOrEmpty(value))
+                {
+
+                    throw new FormatException("No se puede ingresar campos vacios");
+                }
                 else _apellido = value;
             }
         }
@@ -96,7 +111,7 @@ namespace Clinica_medica_polanco.Pacientes
             get => _altura;
             set
             {
-                if (value <= 0) _altura = 1;
+                if (value <= 0 || string.IsNullOrEmpty(value.ToString())) _altura = 1;
                 else _altura = value;
             }
         }

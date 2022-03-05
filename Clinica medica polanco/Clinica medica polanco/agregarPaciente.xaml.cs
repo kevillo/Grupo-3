@@ -64,30 +64,42 @@ namespace Clinica_medica_polanco
         }
         private void btn_Guardar_Datos_Click_1(object sender, RoutedEventArgs e)
         {
+
+
             Pacientes.Paciente paciente1 = new();
-            paciente1.Nombre = txt_Nombre_Paciente.Text;
-            paciente1.Apellido = txt_Apellido_Paciente.Text;
-            paciente1.Identidad = txt_Identidad_Paciente.Text;
-            paciente1.Telefono = txt_Telefono_Paciente.Text;
-            paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Fecha_Nacimiento_Paciente.DisplayDate);
-            paciente1.Correo = txt_Correo_Paciente.Text;
-            paciente1.Altura = int.Parse(txt_Altura_Paciente.Text);
-            paciente1.TipoSangre = Convert.ToString(cmb_Tipo_Sangre_Paciente.Text);
-            paciente1.Direccion = Rtb_direccion_Paciente.Selection.Text;
-            paciente1.Estado = true; 
-
-            int resultado = PacientesDAL.AgregarPaciente(paciente1);
-
-            if (resultado > 0)
+            try
             {
-                MessageBox.Show("Datos Guardados Correctamente", "Datos Guardados", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("Error al Guardar los Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                int resultado = 0;
+                paciente1.Nombre = txt_Nombre_Paciente.Text;
+                paciente1.Apellido = txt_Apellido_Paciente.Text;
+                paciente1.Identidad = txt_Identidad_Paciente.Text;
+                paciente1.Telefono = txt_Telefono_Paciente.Text;
+                paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Fecha_Nacimiento_Paciente.DisplayDate);
+                paciente1.Correo = txt_Correo_Paciente.Text;
+                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : int.Parse(txt_Altura_Paciente.Text);
+                paciente1.TipoSangre = Convert.ToString(cmb_Tipo_Sangre_Paciente.Text);
+                paciente1.Direccion = Rtb_direccion_Paciente.Selection.Text;
+                paciente1.Estado = true;
+                resultado = PacientesDAL.AgregarPaciente(paciente1);
+                if (resultado > 0)
+                    MessageBox.Show("Datos Guardados Correctamente", "Datos Guardados", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show("Error al Guardar los Datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
             }
 
-            this.Close();
+            catch(FormatException error)
+            {
+                if (error.StackTrace.Contains("Apellido")) validateTxtFields(txt_Apellido_Paciente,"Apellido");
+                else if (error.StackTrace.Contains("Nombre")) validateTxtFields(txt_Nombre_Paciente,"Nombre");
+                
+            }
+        }
+
+        private void validateTxtFields(TextBox txts,String leyenda)
+        {
+            MessageBox.Show("No se puede dejar espacios en blanco en el " + leyenda);
+            txts.Focus();
 
         }
     }

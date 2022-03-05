@@ -197,7 +197,7 @@ namespace Clinica_medica_polanco {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;V1.0.0.0;component/actualizarempleados.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Clinica medica polanco;component/actualizarempleados.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ActualizarEmpleados.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
