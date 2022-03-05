@@ -92,7 +92,9 @@ namespace Clinica_medica_polanco
             {
                 if (error.StackTrace.Contains("Apellido")) validateTxtFields(txt_Apellido_Paciente,"Apellido");
                 else if (error.StackTrace.Contains("Nombre")) validateTxtFields(txt_Nombre_Paciente,"Nombre");
-                
+                else if (error.StackTrace.Contains("Identidad")) validateTxtFields(txt_Identidad_Paciente, "Identidad");
+                else if (error.StackTrace.Contains("Teléfono")) validateTxtFields(txt_Telefono_Paciente, "Teléfono");
+                else if (error.StackTrace.Contains("Correo")) validateTxtFields(txt_Correo_Paciente, "Correo");
             }
         }
 

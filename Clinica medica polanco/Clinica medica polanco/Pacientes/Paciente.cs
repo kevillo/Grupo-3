@@ -83,7 +83,10 @@ namespace Clinica_medica_polanco.Pacientes
             get => _identidad;
             set
             {
-                if (string.IsNullOrEmpty(value)) _identidad = "Error";
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
                 else _identidad = value;
             }
         }
@@ -92,8 +95,11 @@ namespace Clinica_medica_polanco.Pacientes
             get => _telefono;
             set
             {
-                if (string.IsNullOrEmpty(value)) _telefono = "Error";
-                else _telefono = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
+                else _telefono = value; ;
             }
         }
         public DateTime FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
@@ -102,7 +108,10 @@ namespace Clinica_medica_polanco.Pacientes
             get => _correo;
             set
             {
-                if (string.IsNullOrEmpty(value)) _correo = "Error";
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
                 else _correo = value;
             }
         }
@@ -129,7 +138,10 @@ namespace Clinica_medica_polanco.Pacientes
             get => _direccion;
             set
             {
-                if (string.IsNullOrEmpty(value)) _direccion = "Error";
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos");
+                }
                 else _direccion = value;
             }
         }
