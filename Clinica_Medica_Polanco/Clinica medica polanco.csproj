@@ -1,0 +1,100 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Clinica_medica_polanco</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="aa.bmp" />
+    <None Remove="aa.ico" />
+    <None Remove="aa.png" />
+    <None Remove="add.png" />
+    <None Remove="embudoxd.png" />
+    <None Remove="exit4.png" />
+    <None Remove="exit_black.png" />
+    <None Remove="holis.png" />
+    <None Remove="icons8-add-30.png" />
+    <None Remove="icons8-cent-50.png" />
+    <None Remove="icons8-configuration-60.png" />
+    <None Remove="icons8-databases-98.png" />
+    <None Remove="icons8-man-100.png" />
+    <None Remove="icons8-medical-doctor-100.png" />
+    <None Remove="icons8-refresh-30.png" />
+    <None Remove="icons8-report-64.png" />
+    <None Remove="icons8-treatment-50.png" />
+    <None Remove="logo.png" />
+    <None Remove="logout.png" />
+    <None Remove="logout2.png" />
+    <None Remove="lupa.png" />
+    <None Remove="nuevocliente.png" />
+    <None Remove="output-onlinepngtools%281%29.png" />
+    <None Remove="output-onlinepngtools%282%29.png" />
+    <None Remove="output-onlinepngtools%283%29.png" />
+    <None Remove="output-onlinepngtools.png" />
+    <None Remove="refresh.png" />
+    <None Remove="Salir.png" />
+    <None Remove="Salir2.png" />
+    <None Remove="trash.png" />
+    <None Remove="update.png" />
+    <None Remove="índice.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="aa.bmp" />
+    <Resource Include="aa.ico" />
+    <Resource Include="aa.png" />
+    <Resource Include="add.png" />
+    <Resource Include="embudoxd.png" />
+    <Resource Include="exit4.png" />
+    <Resource Include="exit_black.png" />
+    <Resource Include="holis.png" />
+    <Resource Include="icons8-add-30.png" />
+    <Resource Include="icons8-cent-50.png" />
+    <Resource Include="icons8-configuration-60.png" />
+    <Resource Include="icons8-databases-98.png" />
+    <Resource Include="icons8-man-100.png" />
+    <Resource Include="icons8-medical-doctor-100.png" />
+    <Resource Include="icons8-refresh-30.png" />
+    <Resource Include="icons8-report-64.png" />
+    <Resource Include="icons8-treatment-50.png" />
+    <Resource Include="logo.png" />
+    <Resource Include="logout.png" />
+    <Resource Include="logout2.png" />
+    <Resource Include="lupa.png" />
+    <Resource Include="nuevocliente.png" />
+    <Resource Include="output-onlinepngtools(1).png" />
+    <Resource Include="output-onlinepngtools(2).png" />
+    <Resource Include="output-onlinepngtools(3).png" />
+    <Resource Include="output-onlinepngtools.png" />
+    <Resource Include="refresh.png" />
+    <Resource Include="Salir.png" />
+    <Resource Include="Salir2.png" />
+    <Resource Include="trash.png" />
+    <Resource Include="update.png" />
+    <Resource Include="índice.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="entregarExamen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="AgregarEmpleado.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="entregarExamen.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
