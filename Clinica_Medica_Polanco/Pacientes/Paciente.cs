@@ -140,10 +140,11 @@ namespace Clinica_medica_polanco.Pacientes
             get => _tipoSangre;
             set
             {
-                if(string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new FormatException("No se pueden ingresar campos vacíos");
                 }
+                else _tipoSangre = value;
             }
             
         }

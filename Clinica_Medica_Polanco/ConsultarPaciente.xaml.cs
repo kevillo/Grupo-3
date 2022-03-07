@@ -62,7 +62,9 @@ namespace Clinica_medica_polanco
 
         private void btn_Consultar_Pacientes_Click(object sender, RoutedEventArgs e)
         {
-            dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.BuscarPaciente(txt_Consultar_Pacientes.Text);
+          string consultar_paciente = txt_Consultar_Pacientes.Text;
+          if (!string.IsNullOrEmpty(consultar_paciente))
+              dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.BuscarPaciente(consultar_paciente);
         }
     }
 }

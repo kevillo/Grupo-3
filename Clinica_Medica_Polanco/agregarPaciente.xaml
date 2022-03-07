@@ -181,7 +181,7 @@
         <Label Content="Altura(cm)" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="209,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
         <TextBox Style="{DynamicResource txt_Style_Registro_Paciente}" x:Name="txt_Altura_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center" Text="" FontSize="20"  Margin="229,433,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="36" Width="62" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF141519" Grid.Column="1" FontFamily="Tahoma" />
         <Label Content="Tipo de sangre" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="331,399,0,0" VerticalAlignment="Top" Foreground="#FF878F9E" Grid.Column="1"/>
-        <ComboBox x:Name="cmb_Tipo_Sangre_Paciente" FontFamily="Tahoma" FontSize="18" HorizontalAlignment="Left" Margin="341,433,0,0" VerticalAlignment="Top" Width="120" Height="36" BorderBrush="White" Background="White" Grid.Column="1" />
+        <ComboBox x:Name="cmb_Tipo_Sangre_Paciente"  FontFamily="Tahoma" FontSize="18" HorizontalAlignment="Left" Margin="341,433,0,0" VerticalAlignment="Top" Width="120" Height="36" BorderBrush="White" Background="White" Grid.Column="1" />
         <RichTextBox x:Name="Rtb_direccion_Paciente" Margin="535,418,196,118" Grid.Column="1" FontFamily="Tahoma" BorderBrush="Black">
             <FlowDocument>
                 <Paragraph>
