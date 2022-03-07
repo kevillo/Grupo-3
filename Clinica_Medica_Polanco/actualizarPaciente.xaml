@@ -208,7 +208,7 @@
         </RichTextBox>
         <Label Content="Estado paciente:" HorizontalAlignment="Left" Margin="203,445,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="#FF878F9E"/>
         <CheckBox x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="209,479,0,0" VerticalAlignment="Top" Height="32" Width="134" BorderBrush="#FF141519"/>
-        <Border BorderBrush="Transparent"   
+        <Border BorderBrush="Transparent" Visibility="Hidden"  
             BorderThickness="1" Margin="175,143,386,386" Background="Transparent">
             <ScrollViewer VerticalScrollBarVisibility="Disabled" Margin="1,0,0,0" Height="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="517" Background="Transparent">
                 <StackPanel Name="stc_InfoPaciente" Background="White" Height="97" Visibility="Hidden"></StackPanel>

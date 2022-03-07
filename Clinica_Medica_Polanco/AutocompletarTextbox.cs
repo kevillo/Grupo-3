@@ -14,14 +14,14 @@ namespace Clinica_medica_polanco.Pacientes
         {
             List<string> data = new List<string>();
 
-            //ConexionBaseDeDatos.ObtenerConexion();
-            SqlCommand comando = new SqlCommand(String.Format("Select Nombre_Paciente from Pacientes;"), ConexionBaseDeDatos.ObtenerConexion());
+            ConexionBaseDeDatos.ObtenerConexion();
+            SqlCommand comando = new SqlCommand(String.Format("Select Nombre_Paciente from Pacientes;"), ConexionBaseDeDatos.conexion);
             SqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
                 data.Add(reader.GetString(0));
             }
-
+            ConexionBaseDeDatos.CerrarConexion();
             return data;
         }
     }

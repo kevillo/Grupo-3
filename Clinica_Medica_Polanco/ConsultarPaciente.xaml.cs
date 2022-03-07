@@ -65,6 +65,7 @@ namespace Clinica_medica_polanco
           string consultar_paciente = txt_Consultar_Pacientes.Text;
           if (!string.IsNullOrEmpty(consultar_paciente))
               dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.BuscarPaciente(consultar_paciente);
+          else MessageBox.Show("Ingrese un id de paciente válido");
         }
     }
 }

@@ -63,5 +63,15 @@ namespace Clinica_medica_polanco
             MessageBox.Show("Paciente eliminado correctamente");
             this.Close();
         }
+
+        private void btn_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            string consultar_paciente = txt_Buscar_Paciente.Text;
+            if (!string.IsNullOrEmpty(consultar_paciente))
+            {
+                // aqui pone el codigo  que llama a la funcion de eliminar paciente arnold
+            }
+            else MessageBox.Show("Ingrese un id de paciente válido");
+        }
     }
 }
