@@ -64,22 +64,22 @@
         </Style>
     </UserControl.Resources>
     <Grid Background="white">
-        <Label Content="Información del proveedor" HorizontalAlignment="Left" Margin="75,19,0,0" VerticalAlignment="Top" Width="228" Height="40" FontFamily="Tahoma" FontSize="18"/>
-        <Label Content="Nombre " HorizontalAlignment="Left" Margin="92,79,0,0" VerticalAlignment="Top" Height="44" Width="82" FontFamily="Tahoma" FontSize="18"/>
-        <TextBox x:Name="txt_Nombre_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="91,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="91,169,0,0" VerticalAlignment="Top" Height="29" Width="82" FontFamily="Tahoma" FontSize="18"/>
-        <TextBox x:Name="txt_Telefono_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="91,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <Label Content="Dirección" HorizontalAlignment="Left" Margin="91,263,0,0" VerticalAlignment="Top" Height="30" Width="93" FontFamily="Tahoma" FontSize="18"/>
-        <TextBox x:Name="txt_Direccion_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="92,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <Label Content="Apellido" HorizontalAlignment="Left" Margin="410,79,0,0" VerticalAlignment="Top" Height="44" Width="77" FontFamily="Tahoma" FontSize="18"/>
-        <TextBox x:Name="txt_Apellido_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="410,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <Label Content="Correo de contacto" HorizontalAlignment="Left" Margin="411,170,0,0" VerticalAlignment="Top" Height="29" Width="160" FontFamily="Tahoma" FontSize="18"/>
-        <TextBox x:Name="txt_Correo_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="410,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <ComboBox x:Name="cmb_Area_Trabajo_Proveedor_Agregar" HorizontalAlignment="Left" Margin="410,332,0,0" VerticalAlignment="Top" Width="251" Height="30"/>
-        <Label Content="Área de trabajo" HorizontalAlignment="Left" Margin="410,299,0,0" VerticalAlignment="Top" Height="39" Width="138" FontFamily="Tahoma" FontSize="18"/>
-        <Button Style="{DynamicResource btn_Style_Agregar_Proveedor}" Cursor="Hand" x:Name="btn_Agregar_Informacion_Proveedor" Content="Agregar Proveedor" HorizontalAlignment="Center" Margin="0,413,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Agregar_Informacion_Proveedor_Click"/>
-        <CheckBox x:Name="chk_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="410,258,0,0" VerticalAlignment="Top" Height="27" Width="251" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
-        <Rectangle HorizontalAlignment="Left" Height="324" Margin="75,64,0,0" Stroke="Black" VerticalAlignment="Top" Width="619"/>
+        <Label Content="Información del proveedor" HorizontalAlignment="Left" Margin="61,19,0,0" VerticalAlignment="Top" Width="228" Height="40" FontFamily="Tahoma" FontSize="18"/>
+        <Label Content="Nombre " HorizontalAlignment="Left" Margin="156,71,0,0" VerticalAlignment="Top" Height="37" Width="82" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox x:Name="txt_Nombre_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="73,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="152,151,0,0" VerticalAlignment="Top" Height="29" Width="82" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox x:Name="txt_Telefono_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="73,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <Label Content="Dirección" HorizontalAlignment="Left" Margin="146,239,0,0" VerticalAlignment="Top" Height="30" Width="94" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox x:Name="txt_Direccion_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="74,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="469,71,0,0" VerticalAlignment="Top" Height="44" Width="77" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox x:Name="txt_Apellido_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="392,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <Label Content="Correo de contacto" HorizontalAlignment="Left" Margin="438,152,0,0" VerticalAlignment="Top" Height="29" Width="160" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox x:Name="txt_Correo_Proveedor_Agregar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="392,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <ComboBox x:Name="cmb_Area_Trabajo_Proveedor_Agregar" HorizontalAlignment="Left" Margin="392,268,0,0" VerticalAlignment="Top" Width="251" Height="30"/>
+        <Label Content="Área de trabajo" HorizontalAlignment="Left" Margin="448,239,0,0" VerticalAlignment="Top" Height="30" Width="138" FontFamily="Tahoma" FontSize="18"/>
+        <Button Style="{DynamicResource btn_Style_Agregar_Proveedor}" Cursor="Hand" x:Name="btn_Agregar_Informacion_Proveedor" Content="Agregar proveedor" HorizontalAlignment="Left" Margin="210,419,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Agregar_Informacion_Proveedor_Click"/>
+        <CheckBox x:Name="chk_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="232,326,0,0" VerticalAlignment="Top" Height="27" Width="251" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="340" Margin="59,59,0,0" Stroke="Black" VerticalAlignment="Top" Width="618"/>
 
     </Grid>
 </UserControl>

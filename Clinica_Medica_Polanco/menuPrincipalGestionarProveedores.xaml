@@ -91,11 +91,11 @@
     </Window.Resources>
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="84" Margin="4,0,0,0" Stroke="White" VerticalAlignment="Top"   Width="1076" Fill="#260D2D6F" Grid.ColumnSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="623" Stroke="Black" Fill="#FF0D2D6F" VerticalAlignment="Top" Width="341" Margin="0,-3,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="623" Stroke="Black" Fill="#FF0D2D6F" VerticalAlignment="Top" Width="352" Margin="0,-3,0,0"/>
         <Button Template="{DynamicResource botonesClinica}"  x:Name="btn_Agregar_Proveedor"  HorizontalContentAlignment="Center" Padding="1,1,1,2" Content="Agregar &#xA;proveedor" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" BorderBrush="#FF0D2D6F" Width="340" Height="95" Margin="1,67,0,0" LostFocus="btn_Menu_Principal_Proveedores_LostFocus" Click="btn_Agregar_Proveedor_Click" />
         <Label x:Name="lbl_Mensaje_Menu_Principal" Content="GESTIONAR PROVEEDORES" HorizontalAlignment="Left"   FontFamily="Tahoma" FontSize="45" Margin="480,10,0,0" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="109" Margin="352,-1,0,0" VerticalAlignment="Top" Width="123" Source="/holis.png" Grid.ColumnSpan="2"/>
-        <StackPanel x:Name="panel_Menu_Principal_Proveedores" Margin="339,84,0,2" HorizontalAlignment="Left" Width="741" Grid.ColumnSpan="2"/>
+        <StackPanel x:Name="panel_Menu_Principal_Proveedores" Margin="357,84,0,2" HorizontalAlignment="Left" Width="723"/>
         <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Eliminar_Proveedor" HorizontalContentAlignment="Center" Padding="1,1,1,2" Content="Eliminar&#xA;proveedor" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" BorderBrush="#FF0D2D6F" Width="340" Height="95" Margin="1,173,0,0" LostFocus="btn_Menu_Principal_Proveedores_LostFocus" Click="btn_Eliminar_Proveedor_Click" />
         <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Consultar_Proveedor" HorizontalContentAlignment="Center" Padding="1,1,1,2" Content="Consultar&#xA;proveedor" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" BorderBrush="#FF0D2D6F" Width="340" Height="95" Margin="1,289,0,0" LostFocus="btn_Menu_Principal_Proveedores_LostFocus" Click="btn_Consultar_Proveedor_Click" />
         <Button Template="{DynamicResource botonesClinica}" x:Name="btn_Actualizar_Proveedor" HorizontalContentAlignment="Center" Padding="1,1,1,2" Content="Actualizar&#xA;proveedor" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" BorderBrush="#FF0D2D6F" Width="340" Height="95" Margin="1,397,0,0" LostFocus="btn_Menu_Principal_Proveedores_LostFocus" Click="btn_Actualizar_Proveedor_Click" />
@@ -163,7 +163,7 @@
                 <SolidColorBrush Color="Transparent" Opacity="1"/>
             </Polygon.Fill>
         </Polygon>
-        <Button Style="{DynamicResource btn_Salir}" x:Name="btn_Salir"  Content=""  Cursor="Hand"  HorizontalAlignment="Left" Margin="124,504,0,0" VerticalAlignment="Top" Width="84" Height="73" BorderBrush="#FF0D2D6F" Click="btn_Salir_Click">
+        <Button Style="{DynamicResource btn_Salir}" x:Name="btn_Salir"  Content=""  Cursor="Hand"  HorizontalAlignment="Left" Margin="124,512,0,0" VerticalAlignment="Top" Width="84" Height="73" BorderBrush="#FF0D2D6F" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout2.png" Stretch="Uniform"/>
             </Button.Background>

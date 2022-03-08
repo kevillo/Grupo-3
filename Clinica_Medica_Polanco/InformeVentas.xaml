@@ -66,8 +66,8 @@
 
         <Image HorizontalAlignment="Left" Height="118" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,0,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,-1,0,0"/>
-        <Label Content="Informe de ventas" FontFamily="Tahoma" FontSize="37" Foreground="White" HorizontalAlignment="Left" Margin="403,13,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center"  BorderBrush="White" Margin="0,505,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click" FontFamily="Tahoma">
+        <Label Content="Informe de ventas" FontFamily="Tahoma" FontSize="50" Foreground="White" HorizontalAlignment="Left" Margin="343,7,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Left"  BorderBrush="White" Margin="522,515,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click" FontFamily="Tahoma">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>

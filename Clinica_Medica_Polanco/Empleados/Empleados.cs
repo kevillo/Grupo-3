@@ -34,7 +34,6 @@ namespace Clinica_Medica_Polanco.Empleados
                 else _codigoJornada = value;
             }
                 
-                
         }
         public int CodigoPuesto 
         { 
