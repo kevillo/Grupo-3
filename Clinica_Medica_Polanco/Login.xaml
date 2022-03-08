@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_medica_polanco"
         mc:Ignorable="d"
-        Title="Login" Height="620" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Login" Height="620" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -175,7 +175,7 @@
 
 
     <Grid>
-        <Grid Background="#FF97A3BA" Margin="0,1,0,-14">
+        <Grid Background="#FF97A3BA" Margin="0,0,0,-13">
             <PasswordBox x:Name="pwb_Login_Contraseña" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,384,0,0" VerticalAlignment="Top" Width="282" Height="50" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="15"/>
             <TextBox x:Name="txt_Usuario" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" Height="50" Background="#FF0D2D6F" Foreground="White" SelectionBrush="#FF0D2D6F" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Margin="0,308,0,0"/>
             <Label x:Name="lbl_MensajeBienvenida" Content="Bienvenido. Por favor, inicie sesión." HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" Width="284" FontWeight="Bold" Foreground="Black" FontFamily="Tahoma" FontSize="15"/>

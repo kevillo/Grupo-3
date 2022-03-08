@@ -170,20 +170,22 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="89" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="2,6,0,0"/>
-        <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,8,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,6,0,0"/>
-        <Label Content="Entrega de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,18,0,0"/>
-        <TextBox x:Name="txt_Entrega_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="218,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
-        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Entrega_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="759,121,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Entrega_Examen_Buscar_Click"/>
-        <DataGrid x:Name="dtg_Entrega_Examen_Examenes" Margin="20,173,12,117"/>
-        <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Entrega_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Margin="20,505,0,39" Width="72" Click="btn_Revision_Examen_Salir_Click" Height="60">
+        <Rectangle HorizontalAlignment="Left" Height="89" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="2,0,0,0"/>
+        <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,2,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,0,0,0"/>
+        <Label Content="Entrega de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,12,0,0"/>
+        <TextBox x:Name="txt_Entrega_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="220,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Entrega_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="761,145,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Entrega_Examen_Buscar_Click"/>
+        <DataGrid x:Name="dtg_Entrega_Examen_Examenes" Margin="20,187,12,103"/>
+        <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Entrega_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Margin="20,535,0,25" Width="72" Click="btn_Revision_Examen_Salir_Click" Height="60">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="554,513,0,0" VerticalAlignment="Top" Width="310" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Correo_Click"/>
-        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="240,513,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Fisico_Click"/>
+        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="582,535,0,0" VerticalAlignment="Top" Width="310" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Correo_Click"/>
+        <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="268,535,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Fisico_Click"/>
+        <Label Content="Ingrese el número de la factura" HorizontalAlignment="Left" Margin="222,100,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="25"/>
+
 
     </Grid>
 </Window>

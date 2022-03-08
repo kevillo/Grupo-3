@@ -24,10 +24,6 @@ namespace Clinica_medica_polanco
 
             InitializeComponent();
             if(id == 2) EmployeeConfiguration();
- 
-
-            this.Width = 1080;
-            this.Height = 620;
             
         }
 
@@ -162,9 +158,5 @@ namespace Clinica_medica_polanco
             
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

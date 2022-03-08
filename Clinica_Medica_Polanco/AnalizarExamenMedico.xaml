@@ -64,10 +64,10 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-4,0,0"/>
 
-        <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688"/>
-        <Label Content="Análisis de exámen médico" Foreground="White" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,6,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688" Margin="0,-2,0,0"/>
+        <Label Content="Análisis de exámen médico" Foreground="White" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Orden" HorizontalAlignment="Left" Margin="178,136,0,0" VerticalAlignment="Top" Height="35" Width="80" FontSize="25" FontFamily="Tahoma"/>
         <TextBox x:Name="txt_Orden_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="352,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="32" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="178,198,0,0" VerticalAlignment="Top" Height="42" Width="107" FontSize="25" FontFamily="Tahoma"/>
@@ -86,8 +86,8 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="btn_Guardar_Analisis" Style="{DynamicResource btn_Style_Analisis}" Cursor="Hand" Content="Guardar datos" HorizontalAlignment="Left" Margin="368,512,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="28" Height="60" Width="300" Foreground="White" Click="btn_Guardar_Analisis_Click"/>
-        <Image HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="130" Source="/aa.bmp"/>
+        <Button x:Name="btn_Guardar_Analisis" Style="{DynamicResource btn_Style_Analisis}" Cursor="Hand" Content="Guardar datos" HorizontalAlignment="Left" Margin="368,536,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="28" Height="60" Width="300" Foreground="White" Click="btn_Guardar_Analisis_Click"/>
+        <Image HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="130" Source="/aa.bmp" Margin="0,-2,0,0"/>
 
     </Grid>
 </Window>

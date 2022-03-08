@@ -24,7 +24,7 @@ namespace Clinica_medica_polanco
         {
             InitializeComponent();
             this.SourceInitialized += RevisionExamen_SourceInitialized;
-            btn_Revision_Examen_Ir.IsEnabled = false;
+           
 
         }
         private void RevisionExamen_SourceInitialized(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Clinica_medica_polanco
         private void btn_Revision_Examen_Ir_Click(object sender, RoutedEventArgs e)
         {
 
-           // if (dtg_Revision_Examen_Examenes.Items.Count > 0)
+            // if (dtg_Revision_Examen_Examenes.Items.Count > 0)
             //{
                 this.Close();
                 AnalizarExamenMedico nuevoAnalisis = new();
@@ -73,16 +73,5 @@ namespace Clinica_medica_polanco
             //else MessageBox.Show("No hay exámenes por revisar");
         }
 
-        private void btn_Revision_Examen_Buscar_Click(object sender, RoutedEventArgs e)
-        {
-            string examenARevisar = txt_Revision_Examen_Buscar.Text;
-            if (!string.IsNullOrEmpty(examenARevisar) && !string.IsNullOrWhiteSpace(examenARevisar))
-            {
-                // aqui se van a cargar los examenes que tiene estado de 1, osea en proceso
-                btn_Revision_Examen_Ir.IsEnabled = true;
-            }
-            else MessageBox.Show("Elija un examen para revisarlo");
-            
-        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_medica_polanco"
         mc:Ignorable="d"
-        Title="menu Principal" Loaded="Window_Loaded" Width="1080" Height="620"  WindowStartupLocation="CenterScreen" Icon="/aa.png" WindowStyle="None">
+        Title="menu Principal"  Width="1080" Height="582"  WindowStartupLocation="CenterScreen" Icon="/aa.png" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
@@ -145,7 +145,7 @@
         <Polygon x:Name="poly_Deco_Examenes"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,-37,611,453" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,-35,611,451" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -161,7 +161,7 @@
         <Polygon x:Name="poly_Deco_Empleados"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,212,611,204" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,215,611,201" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -177,7 +177,7 @@
         <Polygon x:Name="poly_Deco_Inventario"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,296,611,120" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,298,611,118" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -193,7 +193,7 @@
         <Polygon x:Name="poly_Deco_Informes"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="230,378,612,38" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="230,380,612,36" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -209,7 +209,7 @@
         <Polygon x:Name="poly_Deco_Configuracion"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="229,462,613,-46" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="229,464,613,-48" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
