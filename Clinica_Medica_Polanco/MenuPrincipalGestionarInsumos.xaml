@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_medica_polanco"
         mc:Ignorable="d"
-        Title="menuPrincipalGestionarInsumos" Width="1080" Height="620"  WindowStartupLocation="CenterScreen" Icon="/aa.png" WindowStyle="None">
+        Title="menuPrincipalGestionarInsumos" Width="1080" Height="620"  WindowStartupLocation="CenterScreen" Icon="/aa.png" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
         <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
