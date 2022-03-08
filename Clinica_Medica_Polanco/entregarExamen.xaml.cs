@@ -68,5 +68,15 @@ namespace Clinica_medica_polanco
             MessageBox.Show("Exámen/es actualizado/s y enviados al correo");
             this.Close();
         }
+
+        private void btn_Entrega_Examen_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            string clienteExamen = txt_Entrega_Examen_Buscar.Text;
+            if (!string.IsNullOrEmpty(clienteExamen))
+            {
+                // traer los examenes de ese paciente , ordenados por estado 
+            }
+            else MessageBox.Show("No puede ir el id vacío");
+        }
     }
 }

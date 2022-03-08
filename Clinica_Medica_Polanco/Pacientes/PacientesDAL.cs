@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows;
-using System.Runtime.InteropServices;
 
 namespace Clinica_medica_polanco.Pacientes
 {

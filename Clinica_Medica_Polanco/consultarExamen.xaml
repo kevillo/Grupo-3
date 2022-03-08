@@ -178,8 +178,10 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btn_Consulta_Examen_Sucursal" Content="    Sucursal" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="109,113,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17"/>
-        <Image HorizontalAlignment="Left" Height="25" Margin="113,119,0,0" VerticalAlignment="Top" Width="26" Source="/embudoxd.png"/>
+        <ComboBox x:Name="cmb_Sucursal_Buscar" HorizontalAlignment="Left" Margin="80,113,0,0" VerticalAlignment="Top" Width="120" Height="37" FontFamily="Tahoma" FontSize="18">
+            
+        </ComboBox>
+        <Image HorizontalAlignment="Left" Height="31" Margin="80,116,0,0" VerticalAlignment="Top" Width="34" Source="/embudoxd.png"/>
 
     </Grid>
 </Window>

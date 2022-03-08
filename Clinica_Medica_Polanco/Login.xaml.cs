@@ -55,5 +55,10 @@ namespace Clinica_medica_polanco
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void btn_Contraseña_Olvidada_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Póngase en contacto con el administrador para solicitar su contraseña");
+        }
     }
 }

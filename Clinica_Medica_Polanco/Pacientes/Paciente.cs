@@ -19,10 +19,6 @@ namespace Clinica_medica_polanco.Pacientes
         private String _tipoSangre;
         private String _direccion;
         private bool _estado;
-        
-
-
-    
         public Paciente() { }    
         public Paciente(int pCodigo, String pNombre, String pApellido, String pIdentidad, String pTelefono, DateTime pFechaNacimiento, String pCorreo, int pAltura, String pTipoSangre, String pDireccion, bool pEstado)
         {

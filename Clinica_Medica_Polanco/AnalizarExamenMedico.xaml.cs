@@ -54,8 +54,27 @@ namespace Clinica_medica_polanco
 
         private void btn_Guardar_Analisis_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Examen actualizado");
-            this.Close();
+
+            string analisis = StringFromRichTextBox(rtb_Diagnostico_Analisis);
+            if (!string.IsNullOrEmpty(analisis)  && !string.IsNullOrWhiteSpace(analisis))
+            {
+
+                // aqui actualizamos el estado del examen dicho a 2: listo
+                this.Close();
+            }
+            else MessageBox.Show("Debe escribir un análisis para el examen médico");
+            
+        }
+
+
+        private string StringFromRichTextBox(RichTextBox rtb)
+        {
+            TextRange textRange = new TextRange(
+                rtb.Document.ContentStart,
+                rtb.Document.ContentEnd
+            );
+
+            return textRange.Text;
         }
     }
 }

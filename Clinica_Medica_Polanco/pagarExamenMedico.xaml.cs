@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_medica_polanco.Ventas;
 
 namespace Clinica_medica_polanco
 {
@@ -20,11 +21,16 @@ namespace Clinica_medica_polanco
     /// </summary>
     public partial class pagarExamenMedico : Window
     {
-        public pagarExamenMedico()
+        Ventas.Ventas pagarVenta = new();
+
+        public pagarExamenMedico(Ventas.Ventas nuevaVenta)
         {
+            pagarVenta = nuevaVenta;
             InitializeComponent();
             this.SourceInitialized += PagarExamenMedico_SourceInitialized;
         }
+
+
         private void PagarExamenMedico_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -52,6 +58,7 @@ namespace Clinica_medica_polanco
         }
         private void btn_Pagar_Click(object sender, RoutedEventArgs e)
         {
+
             this.Close();
         }
     }

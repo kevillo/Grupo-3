@@ -59,7 +59,12 @@ namespace Clinica_medica_polanco
 
         private void btn_Consulta_Examen_Buscar_Click(object sender, RoutedEventArgs e)
         {
-
+            string consultarExamen = txt_Consulta_Examen_Buscar.Text;
+            if (!string.IsNullOrEmpty(consultarExamen))
+            {
+                // aqui se traen los examenes por nombre de examenes o por codigo de la sucursal del empleado
+            }
+            else MessageBox.Show("No puede dejar el nombre de examen vacío ");
         }
     }
 }

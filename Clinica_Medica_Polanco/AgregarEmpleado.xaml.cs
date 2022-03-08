@@ -60,6 +60,7 @@ namespace Clinica_medica_polanco
         private void btn_Agregar_Empleado_Click(object sender, RoutedEventArgs e)
         {
 
+
             MessageBox.Show("Paciente Agregado correctamente");
             this.Close();
         }

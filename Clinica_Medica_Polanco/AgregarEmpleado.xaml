@@ -137,10 +137,8 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Codigo Empleado" HorizontalAlignment="Left" Margin="313,394,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Codigo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="280,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
-        <Label Content="Sueldo" HorizontalAlignment="Left" Margin="537,394,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Sueldo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="476,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
+        <Label Content="Sueldo" HorizontalAlignment="Left" Margin="503,394,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma"/>
+        <TextBox x:Name="txt_Sueldo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="444,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
         <Label Content="Jornada laboral" HorizontalAlignment="Left" Margin="296,441,0,0" VerticalAlignment="Top" Height="34" Width="92" FontFamily="Tahoma"/>
         <Label Content="Fecha de pago" HorizontalAlignment="Left" Margin="476,442,0,0" VerticalAlignment="Top" Height="34" Width="90" FontFamily="Tahoma"/>
         <Label Content="Cargo" HorizontalAlignment="Left" Margin="700,392,0,0" VerticalAlignment="Top" Height="30" Width="110" FontFamily="Tahoma"/>

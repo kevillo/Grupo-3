@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Clinica_medica_polanco.Ventas
 {
-    internal class Ventas
+     public class Ventas
     {
         private int _codFacturaVenta;
-        private int _codExamenMedico;
+        private int[] _codExamenMedico;
         private int _codFacturador;
         private int _codMicrobiologo;
         private int _codEnfermero;
@@ -35,12 +35,12 @@ namespace Clinica_medica_polanco.Ventas
                 else _codFacturaVenta = value;
             }
         }
-        public int CodigoExamenMedico
+        public int[] CodigoExamenMedico
         {
             get => _codExamenMedico;
             set
             {
-                if (value <= 0) _codExamenMedico = 1;
+                if (value.Length ==0 ) throw new FormatException();
                 else _codExamenMedico= value;
             }
         }
@@ -50,7 +50,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _codFacturador;
             set
             {
-                if (value <= 0) _codFacturador= 1;
+                if (value <= 0) throw new FormatException();
                 else _codFacturador = value;
             }
         }
@@ -60,7 +60,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _codMicrobiologo;
             set
             {
-                if (value <= 0) _codMicrobiologo = 1;
+                if (value < 0) throw new FormatException();
                 else _codMicrobiologo = value;
             }
         }
@@ -70,7 +70,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _codEnfermero;
             set
             {
-                if (value <= 0) _codEnfermero = 1;
+                if (value < 0) throw new FormatException();
                 else _codEnfermero = value;
             }
         }
@@ -80,7 +80,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _codPaciente;
             set
             {
-                if (value <= 0) _codPaciente = 1;
+                if (string.IsNullOrEmpty(value.ToString()) || value <= 0) throw new FormatException();
                 else _codPaciente = value;
             }
         }
@@ -90,7 +90,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _codCliente;
             set
             {
-                if (value <= 0) _codCliente = 1;
+                if (string.IsNullOrEmpty(value.ToString()) || value <=0 ) throw new FormatException();
                 else _codCliente = value;
             }
         }
@@ -100,7 +100,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _metodoEntregaExamen;
             set
             {
-                if (value <= 0) _metodoEntregaExamen = 1;
+                if (value < 0) throw new FormatException();
                 else _metodoEntregaExamen = value;
             }
         }
@@ -110,7 +110,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _metodoPagoExamen;
             set
             {
-                if (value <= 0) _metodoPagoExamen = 1;
+                if (value < 0) throw new FormatException();
                 else _metodoPagoExamen = value;
             }
         }
@@ -120,7 +120,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _cantidad;
             set
             {
-                if (value <= 0) _cantidad = 1;
+                if (value <= 0) throw new FormatException();
                 else _cantidad = value;
             }
         }
@@ -130,7 +130,7 @@ namespace Clinica_medica_polanco.Ventas
             get => _estadoExamenMedico;
             set
             {
-                if (value <= 0) _estadoExamenMedico = 1;
+                if (value <= 0) throw new FormatException();
                 else _estadoExamenMedico = value;
             }
         }
@@ -140,8 +140,9 @@ namespace Clinica_medica_polanco.Ventas
         public DateTime FechaFactura { get => _fechaFactura; set => _fechaFactura = value;}
 
         public float TotalVenta { get => _totalVenta; set => _totalVenta = value; }
-       
-        
+        public bool ExamenCombo { get => _examenCombo; set => _examenCombo = value; }
+        public float ISV { get => _iSV; set => _iSV = value; }
+        public float Descuento { get => _descuento; set => _descuento = value; }
     }
 }
 
