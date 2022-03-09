@@ -21,7 +21,7 @@ namespace Clinica_Medica_Polanco.Empleados
                                                    "@nombreEmpleado," +
                                                    "@identidadEmpleado," +
                                                    "@telefonoEmpleado," +
-                                                   "@fechaNacimiento_Empleado," +
+                                                   "@fechaNacimientoEmpleado," +
                                                    "@correoEmpleado," +
                                                    "@alturaEmpleado," +
                                                    "@tipoSangreEmpleado," +
@@ -33,6 +33,23 @@ namespace Clinica_Medica_Polanco.Empleados
                                                    "@sueldoBase," +
                                                    "@codigoSucursal", ConexionBaseDeDatos.conexion);
 
+                comando.Parameters.AddWithValue("codigoJornada", empleados.CodigoJornada);
+                comando.Parameters.AddWithValue("codigoPuesto", empleados.CodigoPuesto);
+                comando.Parameters.AddWithValue("idUsuario", empleados.IdUsuario);
+                comando.Parameters.AddWithValue("nombreEmpleado", empleados.NombreEmpleado);
+                comando.Parameters.AddWithValue("identidadEmpleado", empleados.IdentidadEmpleado);
+                comando.Parameters.AddWithValue("telefonoEmpleado", empleados.TelefonoEmpleado);
+                comando.Parameters.AddWithValue("fechaNacimientoEmpleado", empleados.FechaNacimientoEmpleado);
+                comando.Parameters.AddWithValue("correoEmpleado", empleados.CorreoEmpleado);
+                comando.Parameters.AddWithValue("alturaEmpleado", empleados.AlturaEmpleado);
+                comando.Parameters.AddWithValue("tipoSangreEmpleado", empleados.TipoSangreEmpleado);
+                comando.Parameters.AddWithValue("direccionEmpleado", empleados.DireccionEmpleado);
+                comando.Parameters.AddWithValue("apellidoEmpleado", empleados.ApellidoEmpleado);
+                comando.Parameters.AddWithValue("estadoEmpleado", "True");
+                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
+                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
+                comando.Parameters.AddWithValue("sueldoBase", empleados.SueldoBase);
+                comando.Parameters.AddWithValue("codigoSucursal", empleados.CodigoSucursal);
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
@@ -47,7 +64,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public static List<Empleados> BuscarPaciente(string pDato)
+        public static List<Empleados> BuscarEmpleado(string pDato)
         {
 
 
@@ -75,7 +92,118 @@ namespace Clinica_Medica_Polanco.Empleados
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
+        }
 
+        public static Empleados buscarEmpleadoPorId(Int64 codigoEmpleado)
+        {
+            try
+            {
+                Empleados nuevoEmpleado = new();
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand("WHERE Codigo_Empleado = @codigoEmpleado",ConexionBaseDeDatos.conexion);
+                comando.Parameters.AddWithValue("codigoEmpleado", codigoEmpleado);
+
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    //aqui vas a poner cada uno de los campos de la clase empledos y seguis el ejemplo de pacientesDAL 
+                }
+                return nuevoEmpleado;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al buscar el empleado", error.Message);
+                return new Empleados();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static int modificarEmpleado(Empleados empleados)
+        {
+            try
+            {
+                int retorno = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand("exec Empleados_Update" +
+                                                   "@CodigoEmpleado"+
+                                                   "@codigoJornada ," +
+                                                   "@codigoPuesto," +
+                                                   "@idUsuario," +
+                                                   "@nombreEmpleado," +
+                                                   "@identidadEmpleado," +
+                                                   "@telefonoEmpleado," +
+                                                   "@fechaNacimientoEmpleado," +
+                                                   "@correoEmpleado," +
+                                                   "@alturaEmpleado," +
+                                                   "@tipoSangreEmpleado," +
+                                                   "@direccionEmpleado," +
+                                                   "@apellidoEmpleado," +
+                                                   "@estadoEmpleado," +
+                                                   "@fechaContratacion," +
+                                                   "@fechaPago," +
+                                                   "@sueldoBase," +
+                                                   "@codigoSucursal", ConexionBaseDeDatos.conexion);
+                comando.Parameters.AddWithValue("CodigoEmpleado", empleados.CodigoEmpleado);
+                comando.Parameters.AddWithValue("codigoJornada", empleados.CodigoJornada);
+                comando.Parameters.AddWithValue("codigoPuesto", empleados.CodigoPuesto);
+                comando.Parameters.AddWithValue("idUsuario", empleados.IdUsuario);
+                comando.Parameters.AddWithValue("nombreEmpleado", empleados.NombreEmpleado);
+                comando.Parameters.AddWithValue("identidadEmpleado", empleados.IdentidadEmpleado);
+                comando.Parameters.AddWithValue("telefonoEmpleado", empleados.TelefonoEmpleado);
+                comando.Parameters.AddWithValue("fechaNacimientoEmpleado", empleados.FechaNacimientoEmpleado);
+                comando.Parameters.AddWithValue("correoEmpleado", empleados.CorreoEmpleado);
+                comando.Parameters.AddWithValue("alturaEmpleado", empleados.AlturaEmpleado);
+                comando.Parameters.AddWithValue("tipoSangreEmpleado", empleados.TipoSangreEmpleado);
+                comando.Parameters.AddWithValue("direccionEmpleado", empleados.DireccionEmpleado);
+                comando.Parameters.AddWithValue("apellidoEmpleado", empleados.ApellidoEmpleado);
+                comando.Parameters.AddWithValue("estadoEmpleado", empleados.EstadoEmpleado);
+                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
+                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
+                comando.Parameters.AddWithValue("sueldoBase", empleados.SueldoBase);
+                comando.Parameters.AddWithValue("codigoSucursal", empleados.CodigoSucursal);
+
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al modificar empleados ", error.Message);
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+
+        }
+
+
+        public static int eliminarEmpleado(Int64 codigoEmpleado)
+        {
+            try
+            {
+                int retorno = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand("Delete from Empleados where Codigo_Empleado = @codEmpleado", ConexionBaseDeDatos.conexion);
+                comando.Parameters.AddWithValue("codEmpleado", codigoEmpleado);
+
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al eliminar los datos ", error.Message);
+                return -1;
+            }
+            finally
+            {
+
+                ConexionBaseDeDatos.CerrarConexion();
+            }
 
         }
 

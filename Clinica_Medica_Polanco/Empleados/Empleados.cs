@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     public class Empleados
     {
+        private int _codigoEmpleado;
         private int _codigoJornada;
         private int _codigoPuesto;
         private int _idUsuario;
@@ -21,6 +22,10 @@ namespace Clinica_Medica_Polanco.Empleados
         private string _tipoSangreEmpleado;
         private string _direccionEmpleado;
         private int _codigoSucursal;
+        private DateTime _fechaPago;
+        private DateTime _fechaContratacion;
+        private decimal _sueldoBase;
+        private bool _estadoEmpleado;
 
         public int CodigoJornada 
         { 
@@ -185,5 +190,48 @@ namespace Clinica_Medica_Polanco.Empleados
                 else _codigoSucursal = value;
             }
         }
+
+        public DateTime FechaPago 
+        { 
+            get => _fechaPago; 
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToShortDateString())) throw new FormatException();
+                else _fechaPago = value;
+            }
+         }
+        public DateTime FechaContratacion
+        {
+            get => _fechaContratacion;
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToShortDateString())) throw new FormatException();
+                else _fechaContratacion = value;
+            }
+        }
+        public decimal SueldoBase 
+        { 
+            get => _sueldoBase; 
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
+                else _sueldoBase = value;
+            }
+        }
+
+        public int CodigoEmpleado 
+        { 
+            get => _codigoEmpleado; 
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString())) throw new FormatException();
+                else _codigoEmpleado = value;
+            }
+        }
+
+        public bool EstadoEmpleado { get => _estadoEmpleado; set => _estadoEmpleado = value; }
     }
 }
