@@ -187,7 +187,7 @@
         <TextBox x:Name="txt_Altura_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
         <Label Content="Tipo sangre" HorizontalAlignment="Left" Margin="375,307,0,0" VerticalAlignment="Top" Height="32" Width="88" RenderTransformOrigin="0.479,0.697" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Dirección" HorizontalAlignment="Left" Margin="740,244,0,0" VerticalAlignment="Top" Height="24" Width="74" FontFamily="Tahoma" FontSize="13"/>
-        <RichTextBox x:Name="txt_Direccion_Actualizar_Empleado" Margin="683,270,212,260" FontFamily="Tahoma">
+        <RichTextBox x:Name="rtb_Direccion_Actualizar_Empleado" Margin="683,270,212,260" FontFamily="Tahoma">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>

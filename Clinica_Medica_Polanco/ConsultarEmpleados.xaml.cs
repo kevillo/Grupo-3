@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_Medica_Polanco.Empleados;
+
 
 namespace Clinica_Medica_Polanco
 {
@@ -55,6 +57,14 @@ namespace Clinica_Medica_Polanco
         private void btn_ConsultarEmpleados_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Consultar_Empleados_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            string consultar_empleado = txt_Consultar_Empleados_Buscar.Text;
+            if (!string.IsNullOrEmpty(consultar_empleado))
+                dtg_Consultar_Empleados.ItemsSource = empleadosDAL.BuscarEmpleado(consultar_empleado);
+            else MessageBox.Show("Ingrese un id de empleado válido");
         }
     }
 }

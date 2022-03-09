@@ -26,6 +26,8 @@ namespace Clinica_Medica_Polanco.Empleados
         private DateTime _fechaContratacion;
         private decimal _sueldoBase;
         private bool _estadoEmpleado;
+        private string _cargoEmpleado;
+        private string _jornadaEmpleado;
 
         public int CodigoJornada 
         { 
@@ -233,5 +235,30 @@ namespace Clinica_Medica_Polanco.Empleados
         }
 
         public bool EstadoEmpleado { get => _estadoEmpleado; set => _estadoEmpleado = value; }
+        public string CargoEmpleado
+        {
+            get => _cargoEmpleado;
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
+                else _cargoEmpleado = value;
+            }
+        }
+
+        public string JornadaEmpleado
+        {
+            get => _jornadaEmpleado;
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
+                else _jornadaEmpleado = value;
+            }
+        }
     }
 }

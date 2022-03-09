@@ -62,5 +62,15 @@ namespace Clinica_Medica_Polanco
             MessageBox.Show("Empleado eliminado correctamente");
             this.Close();
         }
+
+        private void btn_Buscar_Eliminar_Empleado_Click(object sender, RoutedEventArgs e)
+        {
+            string consultar_empleado = txt_ID_Eliminar_Empleado.Text;
+            if (!string.IsNullOrEmpty(consultar_empleado))
+            {
+
+            }
+            else MessageBox.Show("Ingrese un id de empleado válido");
+        }
     }
 }
