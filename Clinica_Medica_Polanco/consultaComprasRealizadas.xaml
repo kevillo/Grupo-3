@@ -1,9 +1,9 @@
-﻿<Window x:Class="Clinica_medica_polanco.consultaComprasRealizadas"
+﻿<Window x:Class="Clinica_Medica_Polanco.consultaComprasRealizadas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Clinica_medica_polanco"
+        xmlns:local="clr-namespace:Clinica_Medica_Polanco"
         mc:Ignorable="d"
         Title="consultaComprasRealizadas" Height="620" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>

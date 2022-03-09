@@ -25,6 +25,12 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += AgregarEmpleado_SourceInitialized;
+
+            dtp_Nacimiento.Text = DateTime.Now.ToShortDateString();
+            cmb_Tipo_Sangre.Items.Add("A+");
+            cmb_Tipo_Sangre.Items.Add("O");
+            cmb_Tipo_Sangre.Items.Add("AB+");
+            cmb_Tipo_Sangre.Items.Add("AB-");
         }
         private void btn_Salir_Click_1(object sender, RoutedEventArgs e)
         {

@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Interop;
 
-namespace Clinica_medica_polanco
+namespace Clinica_Medica_Polanco
 {
     /// <summary>
     /// Lógica de interacción para ActualizarEmpleados.xaml

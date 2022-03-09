@@ -1,9 +1,9 @@
-﻿<Window x:Class="Clinica_medica_polanco.menuPrincipal"
+﻿<Window x:Class="Clinica_Medica_Polanco.menuPrincipal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Clinica_medica_polanco"
+        xmlns:local="clr-namespace:Clinica_Medica_Polanco"
         mc:Ignorable="d"
         Title="menu Principal"  Width="1080" Height="582"  WindowStartupLocation="CenterScreen" Icon="/aa.png" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>

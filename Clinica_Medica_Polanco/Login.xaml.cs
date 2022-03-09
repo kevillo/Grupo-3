@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 
-namespace Clinica_medica_polanco
+namespace Clinica_Medica_Polanco
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

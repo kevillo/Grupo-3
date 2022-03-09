@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
-using Clinica_medica_polanco.Pacientes;
+using Clinica_Medica_Polanco.Pacientes;
 
-namespace Clinica_medica_polanco
+namespace Clinica_Medica_Polanco
 {
     /// <summary>
     /// Lógica de interacción para ConsultarPaciente.xaml

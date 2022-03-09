@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Clinica_medica_polanco
+namespace Clinica_Medica_Polanco
 {
     /// <summary>
     /// Lógica de interacción para menuPrincipalExamenes.xaml
