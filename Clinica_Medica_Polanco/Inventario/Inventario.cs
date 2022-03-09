@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica_medica_polanco.Inventario
+namespace Clinica_Medica_Polanco.Inventario
 {
     class Inventario
     {

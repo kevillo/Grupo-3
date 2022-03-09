@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows;
 
-namespace Clinica_medica_polanco.Pacientes
+namespace Clinica_Medica_Polanco.Pacientes
 {
     public class PacientesDAL
     {

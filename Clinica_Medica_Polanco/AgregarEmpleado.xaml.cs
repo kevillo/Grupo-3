@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_Medica_Polanco.Empleados;
 
-namespace Clinica_medica_polanco
+namespace Clinica_Medica_Polanco
 {
     /// <summary>
     /// Lógica de interacción para EliminarEmpleado.xaml

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clinica_Medica_Polanco.Empleados
 {
-    class Empleados
+    public class Empleados
     {
         private int _codigoJornada;
         private int _codigoPuesto;

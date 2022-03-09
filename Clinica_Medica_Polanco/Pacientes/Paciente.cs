@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-namespace Clinica_medica_polanco.Pacientes
+namespace Clinica_Medica_Polanco.Pacientes
 {
     public class Paciente
     {

@@ -8,7 +8,7 @@ using System.Data;
 using System.Windows;
 using System.Data.SqlClient;
 
-namespace Clinica_medica_polanco
+namespace Clinica_Medica_Polanco
 {
     public class ConexionBaseDeDatos
     {

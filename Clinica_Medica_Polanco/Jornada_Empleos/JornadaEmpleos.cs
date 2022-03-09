@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica_medica_polanco.Jornada_Empleo
+namespace Clinica_Medica_Polanco.Jornada_Empleo
 {
     class JornadaEmpleos
     {
