@@ -14,28 +14,13 @@ namespace Clinica_Medica_Polanco.Empleados
 
                 ConexionBaseDeDatos.ObtenerConexion();
                 int retorno = 0;
-                SqlCommand comando = new SqlCommand("exec Empleados_Insert " +
-                                                   "@codigoJornada ," +
-                                                   "@codigoPuesto," +
-                                                   "@idUsuario," +
-                                                   "@nombreEmpleado," +
-                                                   "@identidadEmpleado," +
-                                                   "@telefonoEmpleado," +
-                                                   "@fechaNacimientoEmpleado," +
-                                                   "@correoEmpleado," +
-                                                   "@alturaEmpleado," +
-                                                   "@tipoSangreEmpleado," +
-                                                   "@direccionEmpleado," +
-                                                   "@apellidoEmpleado," +
-                                                   "@estadoEmpleado," +
-                                                   "@fechaContratacion," +
-                                                   "@fechaPago," +
-                                                   "@sueldoBase," +
-                                                   "@codigoSucursal", ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = ConexionBaseDeDatos.conexion;
+                comando.CommandText = "Empleados_Insert @codigoJornada";
 
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("codigoJornada", empleados.CodigoJornada);
                 comando.Parameters.AddWithValue("codigoPuesto", empleados.CodigoPuesto);
-                comando.Parameters.AddWithValue("idUsuario", empleados.IdUsuario);
                 comando.Parameters.AddWithValue("nombreEmpleado", empleados.NombreEmpleado);
                 comando.Parameters.AddWithValue("identidadEmpleado", empleados.IdentidadEmpleado);
                 comando.Parameters.AddWithValue("telefonoEmpleado", empleados.TelefonoEmpleado);
@@ -47,7 +32,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.Parameters.AddWithValue("apellidoEmpleado", empleados.ApellidoEmpleado);
                 comando.Parameters.AddWithValue("estadoEmpleado", "True");
                 comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
-                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
+                comando.Parameters.AddWithValue("fechaPago", empleados.FechaPago);
                 comando.Parameters.AddWithValue("sueldoBase", empleados.SueldoBase);
                 comando.Parameters.AddWithValue("codigoSucursal", empleados.CodigoSucursal);
                 retorno = comando.ExecuteNonQuery();
@@ -72,14 +57,30 @@ namespace Clinica_Medica_Polanco.Empleados
             {
                 List<Empleados> Lista = new List<Empleados>();
                 ConexionBaseDeDatos.ObtenerConexion();
-                // aqui en la sentencia tenes que poner todos los campos de la tabla empleados, osea un select nombre.. from empleados
-                SqlCommand comando = new SqlCommand("where Nombre_Empleado like @nombreEmpleado or Identidad_Empleado=@identidadEmpleado", ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados");
                 comando.Parameters.AddWithValue("nombreEmpleado", pDato);
                 comando.Parameters.AddWithValue("identidadEmpleado", pDato);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                   //aqui vas a poner cada uno de los campos de la clase empledos y seguis el ejemplo de pacientesDAL 
+                    Empleados eEmpleados = new Empleados();
+                    eEmpleados.CodigoEmpleado = reader.GetInt32(0);
+                    eEmpleados.CodigoJornada = reader.GetInt32(1);
+                    eEmpleados.CodigoPuesto = reader.GetInt32(2);
+                    eEmpleados.NombreEmpleado = reader.GetString(3);
+                    eEmpleados.ApellidoEmpleado = reader.GetString(4);
+                    eEmpleados.IdentidadEmpleado = reader.GetString(5);
+                    eEmpleados.TelefonoEmpleado = reader.GetString(6);
+                    eEmpleados.FechaNacimientoEmpleado = reader.GetDateTime(7);
+                    eEmpleados.CorreoEmpleado = reader.GetString(8);
+                    eEmpleados.AlturaEmpleado = reader.GetInt32(9);
+                    eEmpleados.TipoSangreEmpleado = reader.GetString(10);
+                    eEmpleados.DireccionEmpleado = reader.GetString(11);
+                    eEmpleados.EstadoEmpleado = reader.GetBoolean(12);
+                    eEmpleados.CodigoSucursal = reader.GetInt32(13);
+                    eEmpleados.FechaContratacion = reader.GetDateTime(14);
+                    eEmpleados.FechaPago = reader.GetDateTime(15);
+                    eEmpleados.SueldoBase = reader.GetDecimal(16);
                 }
                 return Lista;
             }
@@ -106,8 +107,24 @@ namespace Clinica_Medica_Polanco.Empleados
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-
-                    //aqui vas a poner cada uno de los campos de la clase empledos y seguis el ejemplo de pacientesDAL 
+                    Empleados eEmpleados = new Empleados();
+                    eEmpleados.CodigoEmpleado = reader.GetInt32(0);
+                    eEmpleados.CodigoJornada = reader.GetInt32(1);
+                    eEmpleados.CodigoPuesto = reader.GetInt32(2);
+                    eEmpleados.NombreEmpleado = reader.GetString(3);
+                    eEmpleados.ApellidoEmpleado = reader.GetString(4);
+                    eEmpleados.IdentidadEmpleado = reader.GetString(5);
+                    eEmpleados.TelefonoEmpleado = reader.GetString(6);
+                    eEmpleados.FechaNacimientoEmpleado = reader.GetDateTime(7);
+                    eEmpleados.CorreoEmpleado = reader.GetString(8);
+                    eEmpleados.AlturaEmpleado = reader.GetInt32(9);
+                    eEmpleados.TipoSangreEmpleado = reader.GetString(10);
+                    eEmpleados.DireccionEmpleado = reader.GetString(11);
+                    eEmpleados.EstadoEmpleado = reader.GetBoolean(12);
+                    eEmpleados.CodigoSucursal = reader.GetInt32(13);
+                    eEmpleados.FechaContratacion = reader.GetDateTime(14);
+                    eEmpleados.FechaPago = reader.GetDateTime(15);
+                    eEmpleados.SueldoBase = reader.GetDecimal(16);
                 }
                 return nuevoEmpleado;
             }

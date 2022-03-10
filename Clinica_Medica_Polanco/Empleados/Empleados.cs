@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Clinica_Medica_Polanco.Empleados
 {
@@ -95,7 +97,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _identidadEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || Int64.TryParse(value, out long _) )
+                if (string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value, out long _) )
                 {
                     throw new FormatException();
                 }
@@ -173,7 +175,7 @@ namespace Clinica_Medica_Polanco.Empleados
           get => _direccionEmpleado;
           set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (string.IsNullOrEmpty(value))
                 {
                     throw new FormatException();
                 }
@@ -185,7 +187,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _codigoSucursal;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || value <= 0)
+                if (string.IsNullOrEmpty(value.ToString()) || value < 0)
                 {
                     throw new FormatException();
                 }
@@ -198,7 +200,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaPago; 
             set
             {
-                if (string.IsNullOrEmpty(value.ToShortDateString())) throw new FormatException();
+                if (value.ToShortDateString() == "1/1/1999") throw new FormatException();  
                 else _fechaPago = value;
             }
          }
@@ -207,7 +209,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaContratacion;
             set
             {
-                if (string.IsNullOrEmpty(value.ToShortDateString())) throw new FormatException();
+                if (value.ToShortDateString() == "1/1/1999") throw new FormatException();
                 else _fechaContratacion = value;
             }
         }
@@ -216,7 +218,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _sueldoBase; 
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (string.IsNullOrEmpty(value.ToString()) || value < 0)
                 {
                     throw new FormatException();
                 }

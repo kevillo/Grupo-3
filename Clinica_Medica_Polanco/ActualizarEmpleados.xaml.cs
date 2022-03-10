@@ -111,8 +111,8 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("TipoSangre")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Empleado_Tipo_Sangre, refer: 3);
                 else if (error.StackTrace.Contains("Direccion")) validateFields(rtb: rtb_Direccion_Actualizar_Empleado, leyenda: "Dirección", refer: 4);
                 else if (error.StackTrace.Contains("Sueldo")) validateFields(txt_Sueldo_Actualizar_Empleado, leyenda: "Sueldo");
-                else if (error.StackTrace.Contains("Cargo")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Empleado_Cargo, refer: 3);
-                else if (error.StackTrace.Contains("Jornada")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Empleado_Jornada, refer: 3);
+                else if (error.StackTrace.Contains("Cargo")) validateFields(leyenda: "Cargo", cmb: cmb_Actualizar_Empleado_Cargo, refer: 3);
+                else if (error.StackTrace.Contains("Jornada")) validateFields(leyenda: "Jornada laboral", cmb: cmb_Actualizar_Empleado_Jornada, refer: 3);
                 else if (error.StackTrace.Contains("FechaPago")) validateFields(leyenda: "Fecha de pago", dt: dtp_Pago_Actualizar_Empleado, refer: 2);
                 else if (error.StackTrace.Contains("FechaIngreso")) validateFields(leyenda: "Fecha de ingreso", dt: dtp_Ingreso_Actulizar_Empleado, refer: 2);
 

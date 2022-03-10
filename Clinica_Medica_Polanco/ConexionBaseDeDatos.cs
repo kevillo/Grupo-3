@@ -13,6 +13,8 @@ namespace Clinica_Medica_Polanco
     public class ConexionBaseDeDatos
     {
         public static SqlConnection conexion = new SqlConnection("server = localhost; database=Clinica medica polanco; Integrated Security = true");
+        
+
         public static SqlConnection ObtenerConexion()
         {
             try
