@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Empleados;
 using System.Runtime.InteropServices;
-using System.Data.SqlClient;
 
 namespace Clinica_Medica_Polanco
 {
@@ -27,13 +17,15 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += AgregarEmpleado_SourceInitialized;
-            cargarJornada();
-            cargarCargo();
-            cargarSucursal();
+
+            empleadosDAL.cargarJornada(cmb_Jornada_Laboral);
+            empleadosDAL.cargarCargo(cmb_Cargo);
+            empleadosDAL.cargarSucursal(cmb_Sucursal);
 
             dtp_Nacimiento.Text = DateTime.Now.ToShortDateString();
             dtp_Ingreso_Agregar_Empleado.Text = "1999/01/01";
             dtp_Pago_Agregar_Empleado.Text = "1999/01/01";
+            
             cmb_Tipo_Sangre.Items.Add("A+");
             cmb_Tipo_Sangre.Items.Add("O");
             cmb_Tipo_Sangre.Items.Add("AB+");
@@ -44,40 +36,11 @@ namespace Clinica_Medica_Polanco
             this.Close();
         }
 
-        private void AgregarEmpleado_SourceInitialized(object sender, EventArgs e)
-        {
-            WindowInteropHelper helper = new(this);
-            HwndSource souce = HwndSource.FromHwnd(helper.Handle);
-            souce.AddHook(WndProc);
-        }
-        const int WM_SYSCOMMAND = 0x0112;
-        const int SC_MOVE = 0xF010;
-        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
-        {
-
-            switch (msg)
-            {
-                case WM_SYSCOMMAND:
-                    int command = wParam.ToInt32() & 0xfff0;
-                    if (command == SC_MOVE)
-                    {
-                        handled = true;
-                    }
-                    break;
-                default:
-                    break;
-            }
-            return IntPtr.Zero;
-        }
-
 
         private void btn_Agregar_Empleado_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                int resultado = 0;
-
-
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = txt_Nombre.Text;
                 empleados1.ApellidoEmpleado = txt_Apellido.Text;
@@ -91,12 +54,11 @@ namespace Clinica_Medica_Polanco
                 empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo.Text) ? -1 : int.Parse(txt_Sueldo.Text);
                 empleados1.FechaPago = Convert.ToDateTime(dtp_Pago_Agregar_Empleado.Text);
                 empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Agregar_Empleado.Text);
-                empleados1.CodigoJornada = cmb_Jornada_Laboral.SelectedIndex + 1;
-                empleados1.CodigoPuesto = cmb_Cargo.SelectedIndex + 1;
-                empleados1.CodigoSucursal = cmb_Sucursal.SelectedIndex +1;
+                empleados1.CodigoJornada = cmb_Jornada_Laboral.SelectedIndex+1;
+                empleados1.CodigoPuesto = cmb_Cargo.SelectedIndex+1;
+                empleados1.CodigoSucursal = cmb_Sucursal.SelectedIndex+1;
                 empleadosDAL.AgregarEmpleado(empleados1);
                 this.Close();
-
             }
 
             catch (FormatException error)
@@ -141,79 +103,36 @@ namespace Clinica_Medica_Polanco
         }
 
 
-        void cargarJornada()
+
+
+/// <summary>
+/// Funcion para evitar el movimiento del formulario
+/// </summary>
+        private void AgregarEmpleado_SourceInitialized(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server = localhost; database=Clinica medica polanco; Integrated Security = true");
+            WindowInteropHelper helper = new(this);
+            HwndSource souce = HwndSource.FromHwnd(helper.Handle);
+            souce.AddHook(WndProc);
+        }
+        const int WM_SYSCOMMAND = 0x0112;
+        const int SC_MOVE = 0xF010;
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
 
-            try
+            switch (msg)
             {
-                conexion.Open();
-                string Query = "Select Codigo_Jornada, Descripcion_Jornada from Jornadas_Empleados";
-                SqlCommand createCommand = new SqlCommand(cmdText: Query, conexion);
-                SqlDataReader dr = createCommand.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    string nombre = dr.GetString(1);
-                    cmb_Jornada_Laboral.Items.Add(nombre);
-                }
-
-                conexion.Close();
+                case WM_SYSCOMMAND:
+                    int command = wParam.ToInt32() & 0xfff0;
+                    if (command == SC_MOVE)
+                    {
+                        handled = true;
+                    }
+                    break;
+                default:
+                    break;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            return IntPtr.Zero;
         }
 
-        void cargarCargo()
-        {
-            SqlConnection conexion = new SqlConnection("server = localhost; database=Clinica medica polanco; Integrated Security = true");
-
-            try
-            {
-                conexion.Open();
-                string Query = "Select Codigo_Puestos, Descripcion_Puesto from Puestos_Empleados";
-                SqlCommand createCommand = new SqlCommand(cmdText: Query, conexion);
-                SqlDataReader dr = createCommand.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    string nombre = dr.GetString(1);
-                    cmb_Cargo.Items.Add(nombre);
-                }
-
-                conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        void cargarSucursal()
-        {
-            SqlConnection conexion = new SqlConnection("server = localhost; database=Clinica medica polanco; Integrated Security = true");
-
-            try
-            {
-                conexion.Open();
-                string Query = "Select Codigo_Sucursal, Nombre_Sucursal from Sucursales";
-                SqlCommand createCommand = new SqlCommand(cmdText: Query, conexion);
-                SqlDataReader dr = createCommand.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    string nombre = dr.GetString(1);
-                    cmb_Sucursal.Items.Add(nombre);
-                }
-
-                conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }

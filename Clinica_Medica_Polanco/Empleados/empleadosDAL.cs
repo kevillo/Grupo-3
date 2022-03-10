@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Clinica_Medica_Polanco.Empleados
 {
@@ -34,6 +35,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.Parameters.AddWithValue("Sueldo_Base", SqlDbType.Money).Value=empleados.SueldoBase;
                 comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value= empleados.CodigoSucursal;
                 comando.ExecuteReader();
+                MessageBox.Show("Empleado agregado exitosamente");
             }
             catch (Exception error)
             {
@@ -221,6 +223,86 @@ namespace Clinica_Medica_Polanco.Empleados
 
         }
 
+        public static void cargarJornada(ComboBox cmbJornada)
+        {
+            
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query = "Select Codigo_Jornada, Descripcion_Jornada from Jornadas_Empleados";
+                SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(1);
+                    cmbJornada.Items.Add(nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static void cargarSucursal(ComboBox cmbSucursal)
+        {
+            
+            try
+            {
+
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query = "Select Codigo_Sucursal, Nombre_Sucursal from Sucursales";
+                SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(1);
+                    cmbSucursal.Items.Add(nombre);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
+        public static void cargarCargo(ComboBox cmbCargo)
+        {
+            
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query = "Select Codigo_Puestos, Descripcion_Puesto from Puestos_Empleados";
+                SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(1);
+                    cmbCargo.Items.Add(nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
 
     }
 
