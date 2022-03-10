@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
 
@@ -7,41 +8,37 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     public class empleadosDAL
     {
-        public static int AgregarEmpleado(Empleados empleados)
+        public static void AgregarEmpleado(Empleados empleados)
         {
             try
             {
 
                 ConexionBaseDeDatos.ObtenerConexion();
-                int retorno = 0;
-                SqlCommand comando = new SqlCommand();
-                comando.Connection = ConexionBaseDeDatos.conexion;
-                comando.CommandText = "Empleados_Insert @codigoJornada";
-
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("codigoJornada", empleados.CodigoJornada);
-                comando.Parameters.AddWithValue("codigoPuesto", empleados.CodigoPuesto);
-                comando.Parameters.AddWithValue("nombreEmpleado", empleados.NombreEmpleado);
-                comando.Parameters.AddWithValue("identidadEmpleado", empleados.IdentidadEmpleado);
-                comando.Parameters.AddWithValue("telefonoEmpleado", empleados.TelefonoEmpleado);
-                comando.Parameters.AddWithValue("fechaNacimientoEmpleado", empleados.FechaNacimientoEmpleado);
-                comando.Parameters.AddWithValue("correoEmpleado", empleados.CorreoEmpleado);
-                comando.Parameters.AddWithValue("alturaEmpleado", empleados.AlturaEmpleado);
-                comando.Parameters.AddWithValue("tipoSangreEmpleado", empleados.TipoSangreEmpleado);
-                comando.Parameters.AddWithValue("direccionEmpleado", empleados.DireccionEmpleado);
-                comando.Parameters.AddWithValue("apellidoEmpleado", empleados.ApellidoEmpleado);
-                comando.Parameters.AddWithValue("estadoEmpleado", "True");
-                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
-                comando.Parameters.AddWithValue("fechaPago", empleados.FechaPago);
-                comando.Parameters.AddWithValue("sueldoBase", empleados.SueldoBase);
-                comando.Parameters.AddWithValue("codigoSucursal", empleados.CodigoSucursal);
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                SqlCommand comando = new SqlCommand("Empleados_Insert", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Codigo_Jornada",SqlDbType.Int).Value=empleados.CodigoJornada;
+                MessageBox.Show(empleados.CodigoJornada.ToString());
+                comando.Parameters.AddWithValue("Codigo_puesto", SqlDbType.Int).Value=empleados.CodigoPuesto;
+                comando.Parameters.AddWithValue("Nombre_Empleado", SqlDbType.VarChar).Value= empleados.NombreEmpleado;
+                comando.Parameters.AddWithValue("Identidad_Empleado", SqlDbType.VarChar).Value=empleados.IdentidadEmpleado;
+                comando.Parameters.AddWithValue("Telefono_Empleado", SqlDbType.VarChar).Value=empleados.TelefonoEmpleado;
+                comando.Parameters.AddWithValue("Fecha_Nacimiento_Empleado", SqlDbType.DateTime).Value=empleados.FechaNacimientoEmpleado;
+                comando.Parameters.AddWithValue("Correo_Empleado", SqlDbType.VarChar).Value= empleados.CorreoEmpleado;
+                comando.Parameters.AddWithValue("Altura_Empleado", SqlDbType.Decimal).Value=empleados.AlturaEmpleado;
+                comando.Parameters.AddWithValue("Tipo_Sangre_Empleado", SqlDbType.VarChar).Value=empleados.TipoSangreEmpleado;
+                comando.Parameters.AddWithValue("Direccion_Empleado", SqlDbType.VarChar).Value=empleados.DireccionEmpleado;
+                comando.Parameters.AddWithValue("Apellido_Empleado", SqlDbType.VarChar).Value=empleados.ApellidoEmpleado;
+                comando.Parameters.AddWithValue("Estado_Empleado", SqlDbType.Bit).Value = "True";
+                comando.Parameters.AddWithValue("Fecha_Contratacion", SqlDbType.DateTime).Value=empleados.FechaContratacion;
+                comando.Parameters.AddWithValue("Fecha_Pago", SqlDbType.DateTime).Value=empleados.FechaPago;
+                comando.Parameters.AddWithValue("Sueldo_Base", SqlDbType.Money).Value=empleados.SueldoBase;
+                comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value= empleados.CodigoSucursal;
+                comando.ExecuteReader();
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error al ingresar empleado " + error.Message);
-                return -1;
+                
             }
             finally
             {

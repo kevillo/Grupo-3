@@ -94,12 +94,7 @@ namespace Clinica_Medica_Polanco
                 empleados1.CodigoJornada = cmb_Jornada_Laboral.SelectedIndex + 1;
                 empleados1.CodigoPuesto = cmb_Cargo.SelectedIndex + 1;
                 empleados1.CodigoSucursal = cmb_Sucursal.SelectedIndex +1;
-                
-                resultado = empleadosDAL.AgregarEmpleado(empleados1);
-                if (resultado > 0)
-                    MessageBox.Show("Empleado agregado correctamente", "Datos Guardados", MessageBoxButton.OK, MessageBoxImage.Information);
-                else
-                    MessageBox.Show("Error al guardar los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                empleadosDAL.AgregarEmpleado(empleados1);
                 this.Close();
 
             }

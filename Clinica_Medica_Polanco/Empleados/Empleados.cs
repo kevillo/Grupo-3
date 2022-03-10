@@ -20,7 +20,7 @@ namespace Clinica_Medica_Polanco.Empleados
         private string _telefonoEmpleado;
         private DateTime _fechaNacimientoEmpleado;
         private string _correoEmpleado;
-        private int _alturaEmpleado;
+        private float _alturaEmpleado;
         private string _tipoSangreEmpleado;
         private string _direccionEmpleado;
         private int _codigoSucursal;
@@ -145,7 +145,7 @@ namespace Clinica_Medica_Polanco.Empleados
 
 
         }
-        public int AlturaEmpleado 
+        public float AlturaEmpleado 
         { 
             get => _alturaEmpleado;
             set
