@@ -174,7 +174,7 @@
         <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,2,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,0,0,0"/>
         <Label Content="Revisión de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,12,0,0"/>
-        <DataGrid x:Name="dtg_Revision_Examen_Examenes" Margin="20,94,12,120" FontFamily="Tahoma"/>
+        <DataGrid x:Name="dtg_Revision_Examen_Examenes" Margin="20,126,12,120" FontFamily="Tahoma"/>
         <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Revision_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="20,539,0,0" VerticalAlignment="Top" Width="72" Click="btn_Revision_Examen_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>

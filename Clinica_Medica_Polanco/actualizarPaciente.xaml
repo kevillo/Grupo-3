@@ -197,9 +197,9 @@
         <Button x:Name="btn_Actualizar_Paciente_ActualizarInformacion" Style="{DynamicResource Style_btn_ActualizarInformacion}" Content="Actualizar información" Cursor="Hand" HorizontalAlignment="Left" Margin="363,519,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Paciente_ActualizarInformacion_Click"/>
         <TextBox x:Name="txt_Actualizar_Paciente_Altura" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="204,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
         <Label Content="Tipo de sangre:" HorizontalAlignment="Left" Margin="343,365,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <DatePicker x:Name="dtp_Actualizar_Paciente_FechaNac" HorizontalAlignment="Left" Margin="202,324,0,0" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="18" Background="{x:Null}" BorderBrush="Black" Foreground="Black" />
-        <ComboBox x:Name="cmb_Actualizar_Paciente_TipoSangre" HorizontalAlignment="Left" Margin="349,400,0,0" VerticalAlignment="Top" Width="143" Height="36" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />
-        <RichTextBox x:Name="rtb_Actualizar_Paciente_Direccion" Margin="542,396,248,125" BorderBrush="Black" Background="{x:Null}" Foreground="Black">
+        <DatePicker x:Name="dtp_Actualizar_Paciente_FechaNac" HorizontalAlignment="Left" Margin="202,324,0,0" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="15" Background="{x:Null}" BorderBrush="Black" Foreground="Black" />
+        <ComboBox x:Name="cmb_Actualizar_Paciente_TipoSangre" HorizontalAlignment="Left" Margin="349,400,0,0" VerticalAlignment="Top" Width="143" Height="36" BorderBrush="Black" Background="{x:Null}" Foreground="Black" FontFamily="Tahoma" FontSize="15" />
+        <RichTextBox x:Name="rtb_Actualizar_Paciente_Direccion" Margin="542,396,248,125" BorderBrush="Black" Background="{x:Null}" Foreground="Black" FontSize="15">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
@@ -214,6 +214,6 @@
                 <StackPanel Name="stc_InfoPaciente" Background="White" Height="97" Visibility="Hidden"></StackPanel>
             </ScrollViewer>
         </Border>
-        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" VerticalContentAlignment="Center" x:Name="txt_PacienteId" Margin="203,117,386,469" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />
+        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" VerticalContentAlignment="Center" x:Name="txt_PacienteId" Margin="203,117,386,469" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />
     </Grid>
 </Window>

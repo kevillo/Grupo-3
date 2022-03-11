@@ -78,7 +78,7 @@
         <Label Content="Correo de contacto" HorizontalAlignment="Left" Margin="400,209,0,0" VerticalAlignment="Top" Height="29" Width="160" FontFamily="Tahoma" FontSize="15"/>
         <TextBox x:Name="txt_Correo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="399,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <CheckBox x:Name="chb_Disponibilidad_Proveedor_Actualizar" VerticalContentAlignment="Center" Content="Disponible inmediatamente" HorizontalAlignment="Left" Margin="276,374,0,0" VerticalAlignment="Top" Height="26" Width="208" FontFamily="Tahoma" FontSize="15"/>
-        <ComboBox x:Name="cmb_Area_Trabajo_Proveedor_Actualizar" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="200" Height="30"/>
+        <ComboBox x:Name="cmb_Area_Trabajo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Área de trabajo" HorizontalAlignment="Left" Margin="399,286,0,0" VerticalAlignment="Top" Height="39" Width="138" FontFamily="Tahoma" FontSize="15"/>
         <Button Style="{DynamicResource btn_Style_Actualizar_Producto}" Cursor="Hand" x:Name="btn_Actualizar_Informacion_Proveedor" Content="Actualizar información" HorizontalAlignment="Left" Margin="242,422,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Actualizar_Informacion_Proveedor_Click"/>
 

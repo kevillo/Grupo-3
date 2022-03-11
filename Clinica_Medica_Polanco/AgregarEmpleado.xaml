@@ -154,11 +154,11 @@
         <DatePicker x:Name="dtp_Nacimiento" HorizontalAlignment="Left" Margin="289,240,0,0" VerticalAlignment="Top" Width="181" IsEnabled="True"/>
         <Label Content="Agregar empleado" FontFamily="Tahoma" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="312,0,0,0"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
-        <ComboBox x:Name="cmb_Tipo_Sangre" HorizontalAlignment="Left" Height="23" Margin="403,308,0,0" VerticalAlignment="Top" Width="74" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
+        <ComboBox x:Name="cmb_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="403,308,0,0" VerticalAlignment="Top" Width="74" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
         <ComboBox x:Name="cmb_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="645,416,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
-        <Rectangle HorizontalAlignment="Left" Height="244" Margin="211,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
+        <Rectangle HorizontalAlignment="Left" Height="244" Margin="211,123,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <ComboBox x:Name="cmb_Jornada_Laboral" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="272,468,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
-        <Rectangle HorizontalAlignment="Left" Height="108" Margin="211,396,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
+        <Rectangle HorizontalAlignment="Left" Height="108" Margin="211,392,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Label Content="Información Laboral" HorizontalAlignment="Left" Margin="211,371,0,0" VerticalAlignment="Top" Height="24" Width="126" FontFamily="Tahoma"/>
         <Label Content="Información Personal" HorizontalAlignment="Left" Margin="209,101,0,0" VerticalAlignment="Top" Height="23" Width="126" FontFamily="Tahoma"/>
         <Button x:Name="btn_Agregar_Empleado" Content="Guardar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="380,523,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Style="{DynamicResource btn_Style_Eliminar_Empleado}" Click="btn_Agregar_Empleado_Click"/>
