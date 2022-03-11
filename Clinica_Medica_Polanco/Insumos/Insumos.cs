@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica_Medica_Polanco.Paciente
+namespace Clinica_Medica_Polanco.Insumos
 {
     class Insumos
     {
         private int _codigoCategoriaInsumo;
+        private int _codigoInsumo;
         private string _nombreInsumo;
         private DateTime _fechaExpiracion;
         private float _precioUnitario;
@@ -20,7 +21,7 @@ namespace Clinica_Medica_Polanco.Paciente
             get => _codigoCategoriaInsumo;
             set
             {
-                if (value <= 0) _codigoCategoriaInsumo = 1;
+                if (value <= 0) throw new FormatException();
                 else _codigoCategoriaInsumo = value;
             }
         }
@@ -29,22 +30,42 @@ namespace Clinica_Medica_Polanco.Paciente
             get => _nombreInsumo;
             set
             {
-                if (string.IsNullOrEmpty(value)) _nombreInsumo = "Error";
+                if (string.IsNullOrEmpty(value)) throw new FormatException();
                 else _nombreInsumo = value;
             }
         }
 
-        public DateTime FechaExpiracion { get => _fechaExpiracion; set => _fechaExpiracion = value; }
-        public float PrecioUnitario { get => _precioUnitario; set => _precioUnitario = value; }
+        public DateTime FechaExpiracion
+        {
+            get => _fechaExpiracion;
+            set
+            {
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString()) throw new FormatException();
+                else _fechaExpiracion = value;
+            }
+        }
+
+        public float PrecioUnitario 
+        { 
+            get => _precioUnitario; 
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString()) || value <0) throw new FormatException();
+                else _precioUnitario = value;
+            }
+        }
+        
+        
         public string NumeroSerie
         {
             get => _numeroSerie;
             set
             {
-                if (string.IsNullOrEmpty(value)) _numeroSerie = "Error";
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _)) throw new FormatException();
                 else _numeroSerie = value;
             }
         }
         public bool Estado { get => _estado; set => _estado = value; }
+        public int CodigoInsumo { get => _codigoInsumo; set => _codigoInsumo = value; }
     }
 }

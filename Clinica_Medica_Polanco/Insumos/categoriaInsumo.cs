@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica_Medica_Polanco.Pacientes
+namespace Clinica_Medica_Polanco.Insumos
 {
     class categoriaInsumo
     {

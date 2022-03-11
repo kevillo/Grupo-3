@@ -18,7 +18,6 @@ namespace Clinica_Medica_Polanco.Empleados
                 SqlCommand comando = new SqlCommand("Empleados_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_Jornada",SqlDbType.Int).Value=empleados.CodigoJornada;
-                MessageBox.Show(empleados.CodigoJornada.ToString());
                 comando.Parameters.AddWithValue("Codigo_puesto", SqlDbType.Int).Value=empleados.CodigoPuesto;
                 comando.Parameters.AddWithValue("Nombre_Empleado", SqlDbType.VarChar).Value= empleados.NombreEmpleado;
                 comando.Parameters.AddWithValue("Identidad_Empleado", SqlDbType.VarChar).Value=empleados.IdentidadEmpleado;
@@ -50,13 +49,11 @@ namespace Clinica_Medica_Polanco.Empleados
 
         public static List<Empleados> BuscarEmpleado(string pDato)
         {
-
-
             try
             {
                 List<Empleados> Lista = new List<Empleados>();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados");
+                SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados WHERE Identidad_Empleado = @identidadEmpleado OR Nombre_Empleado=@nombreEmpleado");
                 comando.Parameters.AddWithValue("nombreEmpleado", pDato);
                 comando.Parameters.AddWithValue("identidadEmpleado", pDato);
                 SqlDataReader reader = comando.ExecuteReader();
@@ -80,12 +77,13 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.FechaContratacion = reader.GetDateTime(14);
                     eEmpleados.FechaPago = reader.GetDateTime(15);
                     eEmpleados.SueldoBase = reader.GetDecimal(16);
+                    Lista.Add(eEmpleados);
                 }
                 return Lista;
             }
             catch (Exception err)
             {
-                MessageBox.Show("Error al actualizar" + err.Message);
+                MessageBox.Show("Error al buscar empleados" + err.Message);
                 return new List<Empleados>();
             }
             finally
@@ -94,15 +92,15 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public static Empleados buscarEmpleadoPorId(Int64 codigoEmpleado)
+        public static Empleados buscarEmpleadoPorId(Int64 pDato)
         {
             try
             {
                 Empleados nuevoEmpleado = new();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("WHERE Codigo_Empleado = @codigoEmpleado",ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("codigoEmpleado", codigoEmpleado);
-
+                SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados WHERE Identidad_Empleado = @identidadEmpleado OR Nombre_Empleado=@nombreEmpleado", ConexionBaseDeDatos.conexion);
+                comando.Parameters.AddWithValue("nombreEmpleado", pDato);
+                comando.Parameters.AddWithValue("identidadEmpleado", pDato);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -124,6 +122,7 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.FechaContratacion = reader.GetDateTime(14);
                     eEmpleados.FechaPago = reader.GetDateTime(15);
                     eEmpleados.SueldoBase = reader.GetDecimal(16);
+                    break;
                 }
                 return nuevoEmpleado;
             }
@@ -144,43 +143,25 @@ namespace Clinica_Medica_Polanco.Empleados
             {
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("exec Empleados_Update" +
-                                                   "@CodigoEmpleado"+
-                                                   "@codigoJornada ," +
-                                                   "@codigoPuesto," +
-                                                   "@idUsuario," +
-                                                   "@nombreEmpleado," +
-                                                   "@identidadEmpleado," +
-                                                   "@telefonoEmpleado," +
-                                                   "@fechaNacimientoEmpleado," +
-                                                   "@correoEmpleado," +
-                                                   "@alturaEmpleado," +
-                                                   "@tipoSangreEmpleado," +
-                                                   "@direccionEmpleado," +
-                                                   "@apellidoEmpleado," +
-                                                   "@estadoEmpleado," +
-                                                   "@fechaContratacion," +
-                                                   "@fechaPago," +
-                                                   "@sueldoBase," +
-                                                   "@codigoSucursal", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("CodigoEmpleado", empleados.CodigoEmpleado);
-                comando.Parameters.AddWithValue("codigoJornada", empleados.CodigoJornada);
-                comando.Parameters.AddWithValue("codigoPuesto", empleados.CodigoPuesto);
-                comando.Parameters.AddWithValue("idUsuario", empleados.IdUsuario);
-                comando.Parameters.AddWithValue("nombreEmpleado", empleados.NombreEmpleado);
-                comando.Parameters.AddWithValue("identidadEmpleado", empleados.IdentidadEmpleado);
-                comando.Parameters.AddWithValue("telefonoEmpleado", empleados.TelefonoEmpleado);
-                comando.Parameters.AddWithValue("fechaNacimientoEmpleado", empleados.FechaNacimientoEmpleado);
-                comando.Parameters.AddWithValue("correoEmpleado", empleados.CorreoEmpleado);
-                comando.Parameters.AddWithValue("alturaEmpleado", empleados.AlturaEmpleado);
-                comando.Parameters.AddWithValue("tipoSangreEmpleado", empleados.TipoSangreEmpleado);
-                comando.Parameters.AddWithValue("direccionEmpleado", empleados.DireccionEmpleado);
-                comando.Parameters.AddWithValue("apellidoEmpleado", empleados.ApellidoEmpleado);
-                comando.Parameters.AddWithValue("estadoEmpleado", empleados.EstadoEmpleado);
-                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
-                comando.Parameters.AddWithValue("fechaContratacion", empleados.FechaContratacion);
-                comando.Parameters.AddWithValue("sueldoBase", empleados.SueldoBase);
-                comando.Parameters.AddWithValue("codigoSucursal", empleados.CodigoSucursal);
+                SqlCommand comando = new SqlCommand("exec Empleados_Update", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Codigo_Empleado",SqlDbType.Int).Value= empleados.CodigoEmpleado;
+                comando.Parameters.AddWithValue("Codigo_Jornada", SqlDbType.Int).Value= empleados.CodigoJornada;
+                comando.Parameters.AddWithValue("Codigo_puesto", SqlDbType.Int).Value=empleados.CodigoPuesto;
+                comando.Parameters.AddWithValue("Nombre_Empleado", SqlDbType.VarChar).Value = empleados.NombreEmpleado;
+                comando.Parameters.AddWithValue("Identidad_Empleado", SqlDbType.VarChar).Value = empleados.IdentidadEmpleado;
+                comando.Parameters.AddWithValue("Telefono_Empleado", SqlDbType.VarChar).Value = empleados.TelefonoEmpleado;
+                comando.Parameters.AddWithValue("Fecha_Nacimiento_Empleado", SqlDbType.DateTime).Value = empleados.FechaNacimientoEmpleado;
+                comando.Parameters.AddWithValue("Correo_Empleado", SqlDbType.VarChar).Value = empleados.CorreoEmpleado;
+                comando.Parameters.AddWithValue("Altura_Empleado", SqlDbType.Decimal).Value = empleados.AlturaEmpleado;
+                comando.Parameters.AddWithValue("Tipo_Sangre_Empleado", SqlDbType.VarChar).Value = empleados.TipoSangreEmpleado;
+                comando.Parameters.AddWithValue("Direccion_Empleado", SqlDbType.VarChar).Value = empleados.DireccionEmpleado;
+                comando.Parameters.AddWithValue("Apellido_Empleado", SqlDbType.VarChar).Value = empleados.ApellidoEmpleado;
+                comando.Parameters.AddWithValue("Estado_Empleado", SqlDbType.Bit).Value = empleados.EstadoEmpleado;
+                comando.Parameters.AddWithValue("Fecha_Contratacion", SqlDbType.DateTime).Value = empleados.FechaContratacion;
+                comando.Parameters.AddWithValue("Fecha_Pago", SqlDbType.DateTime).Value = empleados.FechaPago;
+                comando.Parameters.AddWithValue("Sueldo_Base", SqlDbType.Money).Value = empleados.SueldoBase;
+                comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value = empleados.CodigoSucursal;
 
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
