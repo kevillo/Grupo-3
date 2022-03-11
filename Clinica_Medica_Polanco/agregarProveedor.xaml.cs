@@ -32,6 +32,7 @@ namespace Clinica_Medica_Polanco
                 proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(StringFromRichTextBox(rtb_Direccion_Proveedor)) ? null : StringFromRichTextBox(rtb_Direccion_Proveedor);
                 proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex + 1;
                 ProveedoresDAL.AgregarProveedor(proveedores1);
+                reiniciarPantalla();
             }
 
             catch (FormatException error)
@@ -64,5 +65,18 @@ namespace Clinica_Medica_Polanco
             );
             return textRange.Text;
         }
+        private void reiniciarPantalla()
+        {
+            txt_Nombre_Proveedor_Agregar.Clear();
+            txt_Apellido_Proveedor_Agregar.Clear();
+            txt_Telefono_Proveedor_Agregar.Clear();
+            txt_Correo_Proveedor_Agregar.Clear();
+            rtb_Direccion_Proveedor.Document.Blocks.Clear();
+            cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex = 0;
+
+        }
+
+
+
     }
 }

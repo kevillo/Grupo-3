@@ -69,7 +69,7 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.TelefonoEmpleado = reader.GetString(6);
                     eEmpleados.FechaNacimientoEmpleado = reader.GetDateTime(7);
                     eEmpleados.CorreoEmpleado = reader.GetString(8);
-                    eEmpleados.AlturaEmpleado = reader.GetInt32(9);
+                    eEmpleados.AlturaEmpleado = reader.GetDecimal(9);
                     eEmpleados.TipoSangreEmpleado = reader.GetString(10);
                     eEmpleados.DireccionEmpleado = reader.GetString(11);
                     eEmpleados.EstadoEmpleado = reader.GetBoolean(12);
@@ -114,7 +114,7 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.TelefonoEmpleado = reader.GetString(6);
                     eEmpleados.FechaNacimientoEmpleado = reader.GetDateTime(7);
                     eEmpleados.CorreoEmpleado = reader.GetString(8);
-                    eEmpleados.AlturaEmpleado = reader.GetInt32(9);
+                    eEmpleados.AlturaEmpleado = reader.GetDecimal(9);
                     eEmpleados.TipoSangreEmpleado = reader.GetString(10);
                     eEmpleados.DireccionEmpleado = reader.GetString(11);
                     eEmpleados.EstadoEmpleado = reader.GetBoolean(12);

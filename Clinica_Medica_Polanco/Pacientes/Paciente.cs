@@ -15,7 +15,7 @@ namespace Clinica_Medica_Polanco.Pacientes
         private String _telefono;
         private DateTime _fechaNacimiento;
         private String _correo;
-        private int _altura;
+        private decimal _altura;
         private String _tipoSangre;
         private String _direccion;
         private bool _estado;
@@ -119,7 +119,7 @@ namespace Clinica_Medica_Polanco.Pacientes
                 else _correo = value;
             }
         }
-        public int Altura
+        public decimal Altura
         {
             get => _altura;
             set

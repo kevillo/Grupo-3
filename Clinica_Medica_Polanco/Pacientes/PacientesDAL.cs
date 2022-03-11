@@ -50,7 +50,7 @@ namespace Clinica_Medica_Polanco.Pacientes
                     pPaciente.Telefono = reader.GetString(4);
                     pPaciente.FechaNacimiento = reader.GetDateTime(5);
                     pPaciente.Correo = reader.GetString(6);
-                    pPaciente.Altura = reader.GetInt32(7);
+                    pPaciente.Altura = reader.GetDecimal(7);
                     pPaciente.TipoSangre = reader.GetString(8);
                     pPaciente.Direccion = reader.GetString(9);
                     pPaciente.Estado = reader.GetBoolean(10);
