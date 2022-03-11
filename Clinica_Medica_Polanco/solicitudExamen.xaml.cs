@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_Medica_Polanco.ExamenesMedicos;
 using System.Runtime.InteropServices;
 
 namespace Clinica_Medica_Polanco
@@ -25,10 +26,11 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += SolicitudExamen_SourceInitialized;
-            cmb_Solicitud_Examen_Microbiologo.Items.Add("a");
-            cmb_Solicitud_Examen_Enfermero.Items.Add("a");
-            cmb_Forma_Entrega.Items.Add("a");
-            cmb_Forma_Pago.Items.Add("a");
+
+            ExamenesDAL.cargarMicrobiologos(cmb_Solicitud_Examen_Microbiologo);
+            ExamenesDAL.cargarEnfermeros(cmb_Solicitud_Examen_Enfermero);
+            ExamenesDAL.cargarFormaEntrega(cmb_Forma_Entrega);
+            ExamenesDAL.cargarFormaPago(cmb_Forma_Pago);
         }
         private void SolicitudExamen_SourceInitialized(object sender, EventArgs e)
         {
@@ -98,7 +100,7 @@ namespace Clinica_Medica_Polanco
 
         private void validarCampos(string leyenda, [Optional]TextBox txt,[Optional]ComboBox cmb,[Optional] int refer)
         {
-            MessageBox.Show($"no se puede dejar {leyenda} vacío");
+            MessageBox.Show($"No se puede dejar {leyenda} vacío");
             if (refer == 1) txt.Focus();
             else if (refer == 2) cmb.Focus();
         }
