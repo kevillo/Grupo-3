@@ -86,7 +86,7 @@
         <Label x:Name="lbl_Consultar_Stock_Sucursales2" HorizontalAlignment="Left" Height="25" Margin="404,446,0,0" VerticalAlignment="Top" Width="168"/>
         <Label x:Name="lbl_Consultar_Stock_Sucursales3" HorizontalAlignment="Left" Height="24" Margin="589,413,0,0" VerticalAlignment="Top" Width="165"/>
         <Label x:Name="lbl_Consultar_Stock_Sucursales4" HorizontalAlignment="Left" Height="24" Margin="589,446,0,0" VerticalAlignment="Top" Width="165"/>
-        <TextBox x:Name="txt_Consultar_Stock_Codigo_Producto" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="123,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Consultar_Stock_Codigo_Producto" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="123,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
 
     </Grid>
 </UserControl>

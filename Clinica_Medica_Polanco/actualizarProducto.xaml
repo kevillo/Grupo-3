@@ -120,22 +120,22 @@
     </UserControl.Resources>
     <Grid Background="White">
         <Label Content="Código del producto o nombre:" HorizontalAlignment="Left" Margin="171,34,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="171,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Gestionar_Insumos_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="171,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Height="33" Margin="546,66,0,0" VerticalAlignment="Top" Width="88" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White"/>
         <Label Content="Nombre del producto:" HorizontalAlignment="Left" Margin="44,122,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="44,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Gestionar_Insumos_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="44,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Precio unitario:" HorizontalAlignment="Left" Margin="44,203,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Precio" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="32" Margin="183,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Gestionar_Insumos_Precio" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="32" Margin="183,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Fecha de expiración:" HorizontalAlignment="Left" Margin="44,244,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Fecha_Expiracion" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="44,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Gestionar_Insumos_Fecha_Expiracion" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="44,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Número de serie:" HorizontalAlignment="Left" Margin="376,122,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17" FontWeight="Normal"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Num_Serie" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="376,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Gestionar_Insumos_Num_Serie" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="376,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Tipo de insumo:" HorizontalAlignment="Left" Margin="376,195,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <ComboBox x:Name="cmb_Gestionar_Insumo_Tipo_Insumo" HorizontalAlignment="Left" Height="32" Margin="376,224,0,0" VerticalAlignment="Top" Width="320"/>
+        <ComboBox x:Name="cmb_Gestionar_Insumo_Tipo_Insumo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="376,224,0,0" VerticalAlignment="Top" Width="320" FontSize="15" FontFamily="Tahoma"/>
         <Label Content="Disponible inmediatamente:" HorizontalAlignment="Left" Margin="376,269,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <ComboBox x:Name="cmb_Gestionar_Insumo_Disponible" HorizontalAlignment="Left" Height="33" Margin="609,271,0,0" VerticalAlignment="Top" Width="87"/>
+        <ComboBox x:Name="cmb_Gestionar_Insumo_Disponible" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="609,271,0,0" VerticalAlignment="Top" Width="87" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Nombre de proveedor:" HorizontalAlignment="Left" Margin="376,304,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <ComboBox x:Name="cmb_Gestionar_Insumo_Nombre_Proveedor" HorizontalAlignment="Left" Height="33" Margin="376,334,0,0" VerticalAlignment="Top" Width="251"/>
+        <ComboBox x:Name="cmb_Gestionar_Insumo_Nombre_Proveedor" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="376,334,0,0" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="15"/>
         <Button Content="¿No encuentra el proveedor?" HorizontalAlignment="Left" Margin="268,382,0,0" Background="Transparent"  BorderBrush="White" VerticalAlignment="Top" Width="236" FontFamily="Tahoma" FontSize="17" Click="Button_Click"/>
         <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="50" Margin="248,424,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Gestionar_Insumo_Actualizar_Click"/>
 

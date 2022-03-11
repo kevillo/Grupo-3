@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica_Medica_Polanco.Paciente
+namespace Clinica_Medica_Polanco.Proveedores
 {
 
-    class Proveedores
+    public class Proveedores
     {
+        private int _codigoProveedor;
         private int _codigoAreaTrabajo;
         private string _nombreProveedor;
         private string _apellidoProveedor;
@@ -17,20 +18,33 @@ namespace Clinica_Medica_Polanco.Paciente
         private string _telefonoProveedor;
         private bool _estadoProveedor;
 
-        public int CodigoAreaTrabajo 
-        { 
+        public int CodigoProveedor
+        {
+            get => _codigoProveedor;
+            set {
+                if (value <= 0) _codigoProveedor = 1;
+                else _codigoProveedor = value;
+            }
+        }
+        public int CodigoAreaTrabajo
+        {
             get => _codigoAreaTrabajo;
             set {
-                if (value <= 0) _codigoAreaTrabajo = 1;
+                if (string.IsNullOrEmpty(value.ToString()) || value < 0)
+                {
+                    throw new FormatException();
+                }
                 else _codigoAreaTrabajo = value;
             }
         }
-        public string NombreProveedor 
-        { 
+        public string NombreProveedor
+        {
             get => _nombreProveedor;
-            set 
-            {
-                if (String.IsNullOrEmpty(value)) _nombreProveedor = "Error";
+            set {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
                 else _nombreProveedor = value;
             }
         }
@@ -39,36 +53,47 @@ namespace Clinica_Medica_Polanco.Paciente
             get => _apellidoProveedor;
             set
             {
-                if (String.IsNullOrEmpty(value)) _apellidoProveedor = "Error";
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
                 else _apellidoProveedor = value;
             }
         }
-
-        public string DireccionProveedor 
-        { 
+        public string DireccionProveedor
+        {
             get => _direccionProveedor;
             set
             {
-                if (String.IsNullOrEmpty(value)) _direccionProveedor = "Error";
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new FormatException();
+                }
                 else _direccionProveedor = value;
             }
         }
-        public string CorreoProveedor 
-        { 
+        public string CorreoProveedor
+        {
             get => _correoProveedor;
             set
             {
-                if (String.IsNullOrEmpty(value)) _correoProveedor = "Error";
-                else _correoProveedor= value;
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
+                else _correoProveedor = value;
             }
         }
         public string TelefonoProveedor
-        { 
+        {
             get => _telefonoProveedor;
             set
             {
-                if (String.IsNullOrEmpty(value)) _telefonoProveedor = "Error";
-                else _telefonoProveedor= value;
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException();
+                }
+                else _telefonoProveedor = value;
             }
         }
         public bool EstadoProveedor { get => _estadoProveedor; set => _estadoProveedor = value; }

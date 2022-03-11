@@ -69,17 +69,17 @@
         <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688" Margin="0,-2,0,0"/>
         <Label Content="Análisis de exámen médico" Foreground="White" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Orden" HorizontalAlignment="Left" Margin="178,136,0,0" VerticalAlignment="Top" Height="35" Width="80" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Orden_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="352,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="32" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Orden_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="352,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="32" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="178,198,0,0" VerticalAlignment="Top" Height="42" Width="107" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Nombre_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="352,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Nombre_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="352,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Fecha Orden" HorizontalAlignment="Left" Margin="178,266,0,0" VerticalAlignment="Top" Height="36" Width="156" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Fecha_Orden_Analisis" HorizontalAlignment="Left" Margin="352,272,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Fecha_Orden_Analisis" HorizontalAlignment="Left" Margin="352,272,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Edad" HorizontalAlignment="Left" Margin="589,145,0,0" VerticalAlignment="Top" Height="35" Width="75" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Edad_Analisis" HorizontalAlignment="Left" Margin="768,154,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"  VerticalAlignment="Top" Width="44" Height="24" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Edad_Analisis" HorizontalAlignment="Left" Margin="768,154,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"  VerticalAlignment="Top" Width="44" Height="24" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Sexo" HorizontalAlignment="Left" Margin="589,209,0,0" VerticalAlignment="Top" Height="47" Width="75" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Sexo_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="768,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Height="24" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Sexo_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="768,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Height="24" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Diagnóstico final" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" FontSize="25" FontFamily="Tahoma"/>
-        <RichTextBox x:Name="rtb_Diagnostico_Analisis" Margin="216,362,216,115" FontFamily="Tahoma" FontSize="15">
+        <RichTextBox x:Name="rtb_Diagnostico_Analisis" Margin="216,362,216,115" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF73757C">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>

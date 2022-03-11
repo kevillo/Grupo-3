@@ -40,18 +40,18 @@
     </UserControl.Resources>
 
     <Grid Background="White">
-        <TextBox x:Name="txt_Codigo_Proveedor_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
-        <TextBox x:Name="txt_Nombre_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
-        <TextBox x:Name="txt_Apellido_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="397,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
-        <TextBox x:Name="txt_Correo_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
-        <TextBox x:Name="txt_Telefono_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="397,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
-        <Label Content="Código de proveedor" HorizontalAlignment="Left" Margin="99,48,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="17" Foreground="#FF878F9E"/>
+        <TextBox x:Name="txt_Codigo_Proveedor_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="47" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" BorderBrush="#FF5D5F64"/>
+        <TextBox x:Name="txt_Nombre_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF5D5F64"/>
+        <TextBox x:Name="txt_Apellido_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="397,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF5D5F64"/>
+        <TextBox x:Name="txt_Correo_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="97,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF5D5F64"/>
+        <TextBox x:Name="txt_Telefono_Proveedor_Eliminar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="397,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="47" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF5D5F64"/>
+        <Label Content="Código de proveedor" HorizontalAlignment="Left" Margin="99,48,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="17" Foreground="#FF252629"/>
         <Button x:Name="btn_Deshabilitar_proveedor" Content="Deshabilitar proveedor" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="213,401,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Template="{DynamicResource estilo}" Click="btn_Deshabilitar_proveedor_Click"/>
         <Button x:Name="btn_Buscar_Proveedor" Content="Buscar" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="433,79,0,0" VerticalAlignment="Top" Height="47" Width="196" Background="#FF0D2D6F" Template="{DynamicResource estilo}"/>
-        <Label Content="Nombre proveedor" HorizontalAlignment="Left" Margin="99,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF878F9E" FontSize="17"/>
-        <Label Content="Apellido proveedor" HorizontalAlignment="Left" Margin="399,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF878F9E" FontSize="17"/>
-        <Label Content="Correo electronico" HorizontalAlignment="Left" Margin="99,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF878F9E" FontSize="17"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="399,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF878F9E" FontSize="17"/>
+        <Label Content="Nombre proveedor" HorizontalAlignment="Left" Margin="99,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF252629" FontSize="17"/>
+        <Label Content="Apellido proveedor" HorizontalAlignment="Left" Margin="399,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF252629" FontSize="17"/>
+        <Label Content="Correo electronico" HorizontalAlignment="Left" Margin="99,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF252629" FontSize="17"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="399,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF252629" FontSize="17"/>
 
     </Grid>
 </UserControl>

@@ -222,7 +222,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
 
         }
-
+        //Cargar datos al combobox
         public static void cargarJornada(ComboBox cmbJornada)
         {
             

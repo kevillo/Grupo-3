@@ -119,16 +119,16 @@
         <Rectangle HorizontalAlignment="Left"  Height="95" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="228,0,0,0"/>
         <Label Content="Actualizar stock" FontFamily="Tahoma" FontSize="60" HorizontalAlignment="Left" Margin="350,3,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
-        <Label Content="Código de insumo" HorizontalAlignment="Left" Margin="250,129,0,0" VerticalAlignment="Top" Height="40" Width="208" FontFamily="Tahoma" FontSize="25"/>
-        <TextBox x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,180,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="18" TextAlignment="Center"/>
-        <ComboBox x:Name="cmb_Proveedor_Actualizar_Stock" HorizontalAlignment="Left" Margin="624,180,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="20"/>
-        <Label Content="Proveedor" HorizontalAlignment="Left" Margin="702,131,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="25"/>
-        <ComboBox x:Name="cmb_Comprador_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,305,0,0" VerticalAlignment="Top" Width="296" Height="49" FontFamily="Tahoma" FontSize="20"/>
-        <Label Content="Comprador" HorizontalAlignment="Left" Margin="272,249,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="25"/>
-        <ComboBox x:Name="cmb_Administrador_Actualizar_Stock" HorizontalAlignment="Left" Margin="624,305,0,0" VerticalAlignment="Top" Width="292" Height="49" FontFamily="Tahoma" FontSize="20"/>
-        <Label Content="Administrador" HorizontalAlignment="Left" Margin="686,257,0,0" VerticalAlignment="Top" Height="40" Width="170" FontFamily="Tahoma" FontSize="25"/>
-        <Label Content="Cantidad comprada" HorizontalAlignment="Left" Margin="453,381,0,0" VerticalAlignment="Top" Height="40" Width="234" FontFamily="Tahoma" FontSize="25"/>
-        <TextBox x:Name="txt_Cantidad_Actualizar_Stock" HorizontalAlignment="Left" Margin="403,430,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="42" FontFamily="Tahoma" FontSize="18" TextAlignment="Center"/>
+        <Label Content="Código de insumo" HorizontalAlignment="Left" Margin="250,129,0,0" VerticalAlignment="Top" Height="40" Width="208" FontFamily="Tahoma" FontSize="20"/>
+        <TextBox x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,180,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <ComboBox x:Name="cmb_Proveedor_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="624,180,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Proveedor" HorizontalAlignment="Left" Margin="702,131,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="20"/>
+        <ComboBox x:Name="cmb_Comprador_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="200,305,0,0" VerticalAlignment="Top" Width="296" Height="49" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Comprador" HorizontalAlignment="Left" Margin="272,249,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="20"/>
+        <ComboBox x:Name="cmb_Administrador_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="624,305,0,0" VerticalAlignment="Top" Width="292" Height="49" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Administrador" HorizontalAlignment="Left" Margin="686,257,0,0" VerticalAlignment="Top" Height="40" Width="170" FontFamily="Tahoma" FontSize="20"/>
+        <Label Content="Cantidad comprada" HorizontalAlignment="Left" Margin="453,381,0,0" VerticalAlignment="Top" Height="40" Width="234" FontFamily="Tahoma" FontSize="20"/>
+        <TextBox x:Name="txt_Cantidad_Actualizar_Stock" HorizontalAlignment="Left" Margin="403,430,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="42" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Button Style="{DynamicResource btn_Style_Actualizar}" Cursor="Hand" x:Name="btn_Actualizar_Stock" Content="Actualizar stock" HorizontalAlignment="Left"  Background="#FF0D2D6F" Foreground="White" Margin="433,533,0,0" VerticalAlignment="Top" Height="60" Width="274" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Stock_Click"/>
         <Button Style="{DynamicResource btn_Salir}" x:Name="btn_Salir" Cursor="Hand" Content="" HorizontalAlignment="Left" BorderBrush="white" Margin="34,533,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click">
             <Button.Background>
