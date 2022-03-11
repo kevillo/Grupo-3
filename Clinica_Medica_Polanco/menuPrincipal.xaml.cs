@@ -19,12 +19,14 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class menuPrincipal : Window
     {
+        private int codEmpleado;
         public menuPrincipal(int id)
         {
 
             InitializeComponent();
-            if(id == 2) EmployeeConfiguration();
-            
+            codEmpleado = id;
+             string rol = ConexionBaseDeDatos.confEmpleado(id);
+            if (!(rol == "Administrador")) EmployeeConfiguration();
         }
 
         private void EmployeeConfiguration()
@@ -42,7 +44,7 @@ namespace Clinica_Medica_Polanco
         {
 
             btn_poly_decor_click(poly_Deco_Examenes, btn_Examenes_medicos);
-            menuPrincipalExamenes nuevo = new();
+            menuPrincipalExamenes nuevo = new(codEmpleado);
             panel_Menu_Principal.Children.Clear();
             panel_Menu_Principal.Children.Add(nuevo);
 

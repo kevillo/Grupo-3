@@ -20,7 +20,7 @@ namespace Clinica_Medica_Polanco.Ventas
         private DateTime _fechaOrden;
         private DateTime _fechaFactura;
         private bool _examenCombo;
-        private int _cantidad;
+        private int[] _cantidad;
         private int _estadoExamenMedico;
         private float _iSV;
         private float _descuento;
@@ -115,12 +115,12 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public int Cantidad
+        public int[] Cantidad
         {
             get => _cantidad;
             set
             {
-                if (value <= 0) throw new FormatException();
+                if (value.Length<0) throw new FormatException();
                 else _cantidad = value;
             }
         }

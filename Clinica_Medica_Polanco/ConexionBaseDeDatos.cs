@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Data;
 using System.Windows;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Clinica_Medica_Polanco
 {
@@ -59,7 +60,7 @@ namespace Clinica_Medica_Polanco
             {
                 conexion.Open();
                
-                SqlCommand cmd = new SqlCommand("SELECT Usuarios.Nombre_Usuario, Roles_Usuarios.Descripcion_Rol_Usuario, Usuarios.Estado_Usuario FROM Usuarios inner join Roles_Usuarios on Roles_Usuarios.Codigo_Rol_Usuario = Usuarios.Codigo_Rol_Usuario WHERE Usuarios.Nombre_Usuario = @u AND Usuarios.contraseña = @p", conexion);
+                SqlCommand cmd = new SqlCommand("SELECT Usuarios.Nombre_Usuario, Roles_Usuarios.Descripcion_Rol_Usuario, Usuarios.Estado_Usuario,Usuarios.Codigo_Empleado FROM Usuarios inner join Roles_Usuarios on Roles_Usuarios.Codigo_Rol_Usuario = Usuarios.Codigo_Rol_Usuario WHERE Usuarios.Nombre_Usuario = @u AND Usuarios.contraseña = @p", conexion);
 
                 cmd.Parameters.AddWithValue("u", user);
                 cmd.Parameters.AddWithValue("p", pass.Password);
@@ -72,22 +73,22 @@ namespace Clinica_Medica_Polanco
                 {
                     if (dt.Rows[0][1].ToString() == "Administrador")
                     {
-                        if (dt.Rows[0][2].ToString() == "True") return 3;
+                        if (dt.Rows[0][2].ToString() == "True") return (int)dt.Rows[0][3];
                         else
                         {
                             MessageBox.Show("Usuario o contraseña inválido.");
-                            return 54;
+                            return -5;
                         }
                     }
 
                     else if (dt.Rows[0][1].ToString() == "Empleado")
                     {
-                        if (dt.Rows[0][2].ToString() == "True") return 2;
+                        if (dt.Rows[0][2].ToString() == "True") return (int)dt.Rows[0][3];
 
                         else
                         {
                             MessageBox.Show("Usuario o contraseña inválido.");
-                            return 54;
+                            return -5;
                         }
                     }
                    
@@ -95,7 +96,7 @@ namespace Clinica_Medica_Polanco
                 else
                 {
                     MessageBox.Show("Usuario o contraseña inválido.");
-                    return 54;
+                    return -5;
                 }
                 
 
@@ -103,15 +104,47 @@ namespace Clinica_Medica_Polanco
             catch(Exception ERR)
             {
                 MessageBox.Show("Error en el login: " + ERR.Message);
-                return 1;   
+                return -5;   
             }
             finally
             {
                 conexion.Close();
                 
             }
-            return 654;
-            
+            return -5;
         }
+
+
+        public static string confEmpleado(int codigoEmpleado)
+        {
+            try
+            {
+                ObtenerConexion();
+                string nombre = "";
+                SqlCommand comando = new SqlCommand(string.Format( "select Roles_Usuarios.Descripcion_Rol_Usuario from Usuarios " +
+                                                    " inner join Roles_Usuarios on Usuarios.Codigo_Rol_Usuario = Roles_Usuarios.Codigo_Rol_Usuario" +
+                                                    " where Usuarios.Codigo_Empleado = {0}",codigoEmpleado), conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    nombre = dr.GetString(0);
+
+                }
+                return nombre;
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("El código no esta asignado a ningún empleado ",error.Message);
+                return "error";
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+        }
+
+
     }
 }

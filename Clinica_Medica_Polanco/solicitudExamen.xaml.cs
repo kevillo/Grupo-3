@@ -22,8 +22,10 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class solicitudExamen : Window
     {
-        public solicitudExamen()
+        int codEmpleado;
+        public solicitudExamen(int id)
         {
+            codEmpleado = id;
             InitializeComponent();
             this.SourceInitialized += SolicitudExamen_SourceInitialized;
 
@@ -66,19 +68,20 @@ namespace Clinica_Medica_Polanco
             {
 
                 Ventas.Ventas nuevaVenta = new();
-                int[] codigosExamen = { 2, 2 };
+                int[] codigosExamen = { 0};
+                int[] cantidadExamenes = { 0 };
                 nuevaVenta.CodigoFacturaVenta = 45; // aqui habra un metodo para traer el codigo
                 nuevaVenta.CodigoExamenMedico = codigosExamen; // aqui se guardaran todos los codigos de examenes del dgv
-                nuevaVenta.CodigoFacturador = 2; // aqui vamos a poner el codigo del empleado
-                nuevaVenta.CodigoMicrobiologo = cmb_Solicitud_Examen_Microbiologo.SelectedIndex;
+                nuevaVenta.CodigoFacturador = codEmpleado; // aqui vamos a poner el codigo del empleado
+                nuevaVenta.CodigoMicrobiologo = cmb_Solicitud_Examen_Microbiologo.SelectedIndex+1;
                 MessageBox.Show(nuevaVenta.CodigoMicrobiologo.ToString());
-                nuevaVenta.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex;
-                nuevaVenta.CodigoCliente = 4;//aqui vamos a seleccionar el id a traves de un autocompletar, que muestre el nombre y apellido
-                nuevaVenta.MetodoEntregaExamen = cmb_Forma_Entrega.SelectedIndex;
-                nuevaVenta.MetodoPagoExamen = cmb_Forma_Pago.SelectedIndex;
+                nuevaVenta.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex+1;
+                nuevaVenta.CodigoCliente = string.IsNullOrEmpty(txt_Solicitud_Examen_ID_Cliente.Text) ? -1 : int.Parse(txt_Solicitud_Examen_ID_Cliente.Text);
+                nuevaVenta.MetodoEntregaExamen = cmb_Forma_Entrega.SelectedIndex+1;
+                nuevaVenta.MetodoPagoExamen = cmb_Forma_Pago.SelectedIndex+1;
                 nuevaVenta.FechaOrden = DateTime.Now;
                 nuevaVenta.ExamenCombo =  Convert.ToBoolean(chk_Solicitud_Examen_Combo_Si.IsChecked);
-                nuevaVenta.Cantidad = 4; // vamos a sacar el codigo de la cantidad en el dgv
+                nuevaVenta.Cantidad = cantidadExamenes; // vamos a sacar el codigo de la cantidad en el dgv
                 nuevaVenta.EstadoExamenMedico = 1; // cambiar estado a en proceso
                 pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta);
                 this.Close();

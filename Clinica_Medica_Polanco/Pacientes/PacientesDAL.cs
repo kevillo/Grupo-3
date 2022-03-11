@@ -60,7 +60,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
             catch(Exception err)
             {
-                MessageBox.Show("Error al actualizar" + err.Message) ;
+                MessageBox.Show("No se puede encontrar un paciente con esas especificaciones " + err.Message) ;
                 return new List<Paciente>();
             }
             finally
