@@ -28,7 +28,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Login_IniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            int codigoError = -5; //Es el código de estado que nos indicará de algún error en el Login
+            int codigoError = -5; 
             int estado = ConexionBaseDeDatos.LogIn(txt_Usuario.Text, pwb_Login_Contraseña);
             if(estado  != codigoError)
             {
@@ -45,6 +45,13 @@ namespace Clinica_Medica_Polanco
             }
             
         }
+
+        private void btn_Salir_Click(object sender, RoutedEventArgs e)
+        {
+
+            System.Windows.Application.Current.Shutdown();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
