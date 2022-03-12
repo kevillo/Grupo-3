@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-namespace Clinica_Medica_Polanco.Pacientes
+
+namespace Clinica_Medica_Polanco
 {
-    public class Paciente
+    public class Pacient
     {
         private int _codigo;
         private String _nombre;
@@ -19,8 +20,8 @@ namespace Clinica_Medica_Polanco.Pacientes
         private String _tipoSangre;
         private String _direccion;
         private bool _estado;
-        public Paciente() { }    
-        public Paciente(int pCodigo, String pNombre, String pApellido, String pIdentidad, String pTelefono, DateTime pFechaNacimiento, String pCorreo, int pAltura, String pTipoSangre, String pDireccion, bool pEstado)
+        public Pacient() { }    
+        public Pacient(int pCodigo, String pNombre, String pApellido, String pIdentidad, String pTelefono, DateTime pFechaNacimiento, String pCorreo, int pAltura, String pTipoSangre, String pDireccion, bool pEstado)
         {
             this._codigo = pCodigo;
             this._nombre = pNombre;

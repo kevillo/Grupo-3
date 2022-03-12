@@ -28,8 +28,11 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += ActualizarPaciente_SourceInitialized;
 
             dtp_Actualizar_Paciente_FechaNac.Text = DateTime.Now.ToShortDateString();
-            cmb_Actualizar_Paciente_TipoSangre.Items.Add("A");
-            cmb_Actualizar_Paciente_TipoSangre.Items.Add("O+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("A+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("O");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("AB+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("AB-");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add(" ");
         }
         private void ActualizarPaciente_SourceInitialized(object sender, EventArgs e)
         {
@@ -66,31 +69,31 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                int resultado = 0;
-                Pacientes.Paciente paciente1 = new();
-                paciente1.Nombre = txt_Actualizar_Paciente_Nombre_Completo.Text;
-                paciente1.Identidad = txt_Actualizar_Paciente_ID.Text;
+                Pacient paciente1 = new Pacient();
+                paciente1.Nombre = txt_Actualizar_Paciente_Nombre.Text;
+                paciente1.Apellido = txt_Actualizar_Paciente_Apellido.Text;                
                 paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
                 paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
                 paciente1.Correo = txt_Actualizar_Paciente_CorreoE.Text;
                 paciente1.Altura = string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : int.Parse(txt_Actualizar_Paciente_Altura.Text);
                 paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
                 paciente1.Direccion = string.IsNullOrWhiteSpace(StringFromRichTextBox(rtb_Actualizar_Paciente_Direccion)) ? null : StringFromRichTextBox(rtb_Actualizar_Paciente_Direccion);
-                paciente1.Estado = true;
+                paciente1.Estado = Convert.ToBoolean(chk_Actualizar_Paciente_EstadoPaciente.IsChecked);
+                paciente1.Identidad = txt_PacienteId.Text;
 
-                resultado = PacientesDAL.ModificarPaciente(paciente1);
+                int resultado = PacientesDAL.ModificarPaciente(paciente1);
                 if (resultado > 0)
                     MessageBox.Show("Datos actualizados correctamente", "Datos Actualizados", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show("Error al actualizar los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
-
+                this.Close();    
             }
 
             catch (FormatException error)
             { 
-                if (error.StackTrace.Contains("Nombre")) validateFields(txt_Actualizar_Paciente_Nombre_Completo, leyenda: "Nombre");
-                else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Actualizar_Paciente_ID, leyenda: "Identidad");
+                if (error.StackTrace.Contains("Nombre")) validateFields(txt_Actualizar_Paciente_Nombre, leyenda: "Nombre");
+                else if (error.StackTrace.Contains("Apellido")) validateFields(txt_Actualizar_Paciente_Apellido, leyenda: "Apellido");
+                else if (error.StackTrace.Contains("Identidad")) validateFields(txt_PacienteId, leyenda: "Identidad");
                 else if (error.StackTrace.Contains("Telefono")) validateFields(txt_Actualizar_Paciente_Telefono, leyenda: "Teléfono");
                 else if (error.StackTrace.Contains("Correo")) validateFields(txt_Actualizar_Paciente_CorreoE, leyenda: "Correo");
                 else if (error.StackTrace.Contains("Altura")) validateFields(txt_Actualizar_Paciente_Altura, leyenda: "Altura");
@@ -154,7 +157,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese nombre de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad." });
             }
         }
 
@@ -172,7 +175,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Actualizar_Paciente_ID.Text = (sender as TextBlock).Text;
+                txt_PacienteId.Text = (sender as TextBlock).Text;
             };
 
             block.MouseEnter += (sender, e) =>
@@ -189,6 +192,30 @@ namespace Clinica_Medica_Polanco
 
             // Add to the panel   
             stc_InfoPaciente.Children.Add(block);
+        }
+
+        public Pacient pacienteSeleccionado { get; set; }
+        public Pacient pacienteActual { get; set; }
+
+        private void btn_Actualizar_Paciente_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            String Identidad_Paciente = txt_PacienteId.Text;
+            pacienteSeleccionado = PacientesDAL.BuscarPaciente(Identidad_Paciente);
+
+            if(pacienteSeleccionado != null)
+            {
+                pacienteActual = pacienteSeleccionado;
+                txt_Actualizar_Paciente_Codigo.Text = Convert.ToString(pacienteSeleccionado.Codigo);
+                txt_Actualizar_Paciente_Nombre.Text = pacienteSeleccionado.Nombre;
+                txt_Actualizar_Paciente_Apellido.Text = pacienteSeleccionado.Apellido;
+                txt_Actualizar_Paciente_Telefono.Text = pacienteSeleccionado.Telefono;
+                dtp_Actualizar_Paciente_FechaNac.Text = Convert.ToString(pacienteSeleccionado.FechaNacimiento);
+                txt_Actualizar_Paciente_CorreoE.Text = pacienteSeleccionado.Correo;
+                txt_Actualizar_Paciente_Altura.Text = Convert.ToString(pacienteSeleccionado.Altura);
+                cmb_Actualizar_Paciente_TipoSangre.SelectedItem = pacienteSeleccionado.TipoSangre;
+                rtb_Actualizar_Paciente_Direccion.Selection.Text = Convert.ToString(pacienteSeleccionado.Direccion);
+                chk_Actualizar_Paciente_EstadoPaciente.IsChecked = pacienteSeleccionado.Estado;
+            }
         }
     }
 }

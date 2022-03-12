@@ -31,13 +31,12 @@ namespace Clinica_Medica_Polanco
 
             this.SourceInitialized += AgregarPaciente_SourceInitialized;
 
-
             dtp_Fecha_Nacimiento_Paciente.Text = DateTime.Now.ToShortDateString();
             cmb_Tipo_Sangre_Paciente.Items.Add("A+");
             cmb_Tipo_Sangre_Paciente.Items.Add("O");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB+");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB-");
-
+            cmb_Tipo_Sangre_Paciente.Items.Add(" ");
         }
 
         private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)
@@ -79,7 +78,7 @@ namespace Clinica_Medica_Polanco
             try
             {
                 int resultado = 0;
-                Pacientes.Paciente paciente1 = new();
+                Pacient paciente1 = new();
                 paciente1.Nombre = txt_Nombre_Paciente.Text;
                 paciente1.Apellido = txt_Apellido_Paciente.Text;
                 paciente1.Identidad = txt_Identidad_Paciente.Text;
@@ -112,9 +111,7 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("FechaNacimiento")) validateFields(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
                 else if (error.StackTrace.Contains("TipoSangre")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
                 else if (error.StackTrace.Contains("Direccion")) validateFields(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
-            }
-            
-            
+            }        
         }
 
         private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)
@@ -128,7 +125,7 @@ namespace Clinica_Medica_Polanco
 
         }
 
-        private string StringFromRichTextBox(RichTextBox rtb)
+        public string StringFromRichTextBox(RichTextBox rtb)
         {
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,
