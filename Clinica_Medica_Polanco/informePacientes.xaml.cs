@@ -26,6 +26,7 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += InformePacientes_SourceInitialized;
         }
 
+        // Funcion para no mover la ventana del form
         private void InformePacientes_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);

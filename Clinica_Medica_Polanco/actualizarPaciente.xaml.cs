@@ -31,6 +31,8 @@ namespace Clinica_Medica_Polanco
             cmb_Actualizar_Paciente_TipoSangre.Items.Add("A");
             cmb_Actualizar_Paciente_TipoSangre.Items.Add("O+");
         }
+
+        // Funcion para no mover la ventana del form
         private void ActualizarPaciente_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);

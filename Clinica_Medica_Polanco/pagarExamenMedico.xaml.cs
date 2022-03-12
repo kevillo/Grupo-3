@@ -31,6 +31,7 @@ namespace Clinica_Medica_Polanco
         }
 
 
+        // Funcion para no mover la ventana del form
         private void PagarExamenMedico_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);

@@ -57,6 +57,8 @@ namespace Clinica_Medica_Polanco
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
             souce.AddHook(WndProc);
         }
+
+        // Funcion para no mover la ventana del form
         const int WM_SYSCOMMAND = 0x0112;
         const int SC_MOVE = 0xF010;
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
@@ -83,6 +85,7 @@ namespace Clinica_Medica_Polanco
             Ventas.ventasDAL.GenerarFactura();
 
             int codigoFacturaVenta = Ventas.ventasDAL.ObtenerIdVenta();
+
             try
             {
 
@@ -95,6 +98,7 @@ namespace Clinica_Medica_Polanco
                 this.Close();
                 nuevopago.ShowDialog();
             }
+
             catch(FormatException error)
             {
                 if (error.StackTrace.Contains("CodigoPaciente")) validarCampos("paciente", txt_Solicitud_Examen_ID_Cliente, refer: 1);
@@ -123,6 +127,7 @@ namespace Clinica_Medica_Polanco
             try
             {
                 //Validación de datos
+
                 Ventas.Ventas nuev = new();
                 nuev.Cantidad= string.IsNullOrEmpty(txt_Cantidad_Examen.Text) ? -1 : int.Parse(txt_Cantidad_Examen.Text);
                 nuev.CodigoPaciente= Ventas.ventasDAL.TraerCodigoPaciente(txt_Solicitud_Examen_ID_Cliente.Text);
@@ -155,6 +160,12 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("MetodoEntregaExamen")) validarCampos("Metodo de entrega", cmb: cmb_Forma_Entrega, refer: 2);
                 else if (error.StackTrace.Contains("MetodoPagoExamen")) validarCampos("Metodo de pago", cmb: cmb_Forma_Pago, refer: 2);
             }
+        }
+
+        private void btn_Solicitud_Examen_Nuevo_Cliente_Click(object sender, RoutedEventArgs e)
+        {
+            agregarPaciente nuevoPaciente = new();
+            nuevoPaciente.ShowDialog();
         }
     }
 }

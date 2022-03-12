@@ -20,6 +20,11 @@ namespace Clinica_Medica_Polanco
         private String _tipoSangre;
         private String _direccion;
         private bool _estado;
+
+
+        // validacion string: que no venga vacio
+        // validacion int: que no sea negativo ni que venga vacio
+        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public Pacient() { }    
         public Pacient(int pCodigo, String pNombre, String pApellido, String pIdentidad, String pTelefono, DateTime pFechaNacimiento, String pCorreo, int pAltura, String pTipoSangre, String pDireccion, bool pEstado)
         {

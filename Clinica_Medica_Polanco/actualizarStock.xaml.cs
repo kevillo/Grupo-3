@@ -26,7 +26,9 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += ActualizarStock_SourceInitialized;
 
         }
-       private void ActualizarStock_SourceInitialized(object sender, EventArgs e)
+
+        // Funcion para no mover la ventana del form
+        private void ActualizarStock_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
