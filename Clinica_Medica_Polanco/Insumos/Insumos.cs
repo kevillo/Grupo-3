@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Insumos
 {
     class Insumos
     {
+        //Validación de valores
         private int _codigoCategoriaInsumo;
         private int _codigoInsumo;
         private string _nombreInsumo;

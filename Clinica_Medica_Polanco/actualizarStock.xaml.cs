@@ -24,6 +24,7 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += ActualizarStock_SourceInitialized;
+
         }
        private void ActualizarStock_SourceInitialized(object sender, EventArgs e)
         {

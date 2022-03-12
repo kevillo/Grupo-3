@@ -28,14 +28,17 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
             this.SourceInitialized += ActualizarEmpleados_SourceInitialized;
 
+            //Llamado de función para cargar datos desde la bd a cmb
+            empleadosDAL.CargarJornada(cmb_Actualizar_Empleado_Jornada);
+            empleadosDAL.CargarCargo(cmb_Actualizar_Empleado_Cargo);
+
             dtp_Nacimiento_Actualizar_Empleado.Text = DateTime.Now.ToShortDateString();
+            //Estableciendo valores al cmb tipo sangre
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("A");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB-");
         }
-
-      
 
         private void ActualizarEmpleados_SourceInitialized(object sender, EventArgs e)
         {
@@ -73,6 +76,7 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
+                //Validación de datos
                 int resultado = 0;
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = txt_Nombre_Actualizar_Empleado.Text;
@@ -88,10 +92,10 @@ namespace Clinica_Medica_Polanco
                 empleados1.FechaPago = Convert.ToDateTime(dtp_Pago_Actualizar_Empleado.Text);
                 empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Actulizar_Empleado.Text);
 
-                empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(StringFromRichTextBox(rtb_Direccion_Actualizar_Empleado)) ? null : StringFromRichTextBox(rtb_Direccion_Actualizar_Empleado);
+                empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Actualizar_Empleado)) ? null : rtbAString(rtb_Direccion_Actualizar_Empleado);
 
 
-                resultado = empleadosDAL.modificarEmpleado(empleados1);
+                resultado = empleadosDAL.ModificarEmpleado(empleados1);
                 if (resultado > 0)
                     MessageBox.Show("Datos actualizados correctamente", "Datos Actualizados", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
@@ -102,23 +106,25 @@ namespace Clinica_Medica_Polanco
 
             catch (FormatException error)
             {
-                if (error.StackTrace.Contains("Nombre")) validateFields(txt_Nombre_Actualizar_Empleado, leyenda: "Nombre");
-                else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Identidad_Actualizar_Empleado, leyenda: "Identidad");
-                else if (error.StackTrace.Contains("Telefono")) validateFields(txt_Telefono_Actualizar_Empleado, leyenda: "Teléfono");
-                else if (error.StackTrace.Contains("Correo")) validateFields(txt_Correo_Actualizar_Empleado, leyenda: "Correo");
-                else if (error.StackTrace.Contains("Altura")) validateFields(txt_Altura_Actualizar_Empleado, leyenda: "Altura");
-                else if (error.StackTrace.Contains("FechaNacimiento")) validateFields(leyenda: "Fecha de nacimiento", dt: dtp_Nacimiento_Actualizar_Empleado, refer: 2);
-                else if (error.StackTrace.Contains("TipoSangre")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Empleado_Tipo_Sangre, refer: 3);
-                else if (error.StackTrace.Contains("Direccion")) validateFields(rtb: rtb_Direccion_Actualizar_Empleado, leyenda: "Dirección", refer: 4);
-                else if (error.StackTrace.Contains("Sueldo")) validateFields(txt_Sueldo_Actualizar_Empleado, leyenda: "Sueldo");
-                else if (error.StackTrace.Contains("Cargo")) validateFields(leyenda: "Cargo", cmb: cmb_Actualizar_Empleado_Cargo, refer: 3);
-                else if (error.StackTrace.Contains("Jornada")) validateFields(leyenda: "Jornada laboral", cmb: cmb_Actualizar_Empleado_Jornada, refer: 3);
-                else if (error.StackTrace.Contains("FechaPago")) validateFields(leyenda: "Fecha de pago", dt: dtp_Pago_Actualizar_Empleado, refer: 2);
-                else if (error.StackTrace.Contains("FechaIngreso")) validateFields(leyenda: "Fecha de ingreso", dt: dtp_Ingreso_Actulizar_Empleado, refer: 2);
+                //Excepción que nos indicará si ocurre un error
+                if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Actualizar_Empleado, leyenda: "Nombre");
+                else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Identidad_Actualizar_Empleado, leyenda: "Identidad");
+                else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Telefono_Actualizar_Empleado, leyenda: "Teléfono");
+                else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Correo_Actualizar_Empleado, leyenda: "Correo");
+                else if (error.StackTrace.Contains("Altura")) ValidarCampos(txt_Altura_Actualizar_Empleado, leyenda: "Altura");
+                else if (error.StackTrace.Contains("FechaNacimiento")) ValidarCampos(leyenda: "Fecha de nacimiento", dt: dtp_Nacimiento_Actualizar_Empleado, refer: 2);
+                else if (error.StackTrace.Contains("TipoSangre")) ValidarCampos(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Empleado_Tipo_Sangre, refer: 3);
+                else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb: rtb_Direccion_Actualizar_Empleado, leyenda: "Dirección", refer: 4);
+                else if (error.StackTrace.Contains("Sueldo")) ValidarCampos(txt_Sueldo_Actualizar_Empleado, leyenda: "Sueldo");
+                else if (error.StackTrace.Contains("Cargo")) ValidarCampos(leyenda: "Cargo", cmb: cmb_Actualizar_Empleado_Cargo, refer: 3);
+                else if (error.StackTrace.Contains("Jornada")) ValidarCampos(leyenda: "Jornada laboral", cmb: cmb_Actualizar_Empleado_Jornada, refer: 3);
+                else if (error.StackTrace.Contains("FechaPago")) ValidarCampos(leyenda: "Fecha de pago", dt: dtp_Pago_Actualizar_Empleado, refer: 2);
+                else if (error.StackTrace.Contains("FechaIngreso")) ValidarCampos(leyenda: "Fecha de ingreso", dt: dtp_Ingreso_Actulizar_Empleado, refer: 2);
 
             }
         }
-        private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
+        //Validar campos tipo txt, rtb, dt, cmb
+        private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
 
@@ -128,7 +134,7 @@ namespace Clinica_Medica_Polanco
             else txts.Focus();
 
         }
-        private string StringFromRichTextBox(RichTextBox rtb)
+        private string rtbAString(RichTextBox rtb)
         {
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,
@@ -136,6 +142,16 @@ namespace Clinica_Medica_Polanco
             );
 
             return textRange.Text;
+        }
+
+        private void btn_Buscar_Actualizar_Empleado_Click(object sender, RoutedEventArgs e)
+        {
+            string actualizarEmpleado = txt_Codigo_Actualizar_Empleado.Text;
+            if (!string.IsNullOrEmpty(actualizarEmpleado))
+            {
+                // aqui se traen los examenes por codigo de empleado
+            }
+            else MessageBox.Show("No puede dejar el id del empleado vacío ");
         }
     }
 }

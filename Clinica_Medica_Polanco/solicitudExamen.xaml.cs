@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,23 +12,44 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_Medica_Polanco.ExamenesMedicos;
 using System.Runtime.InteropServices;
-
+using System.Data;
 namespace Clinica_Medica_Polanco
 {
     /// <summary>
     /// Lógica de interacción para solicitudExamen.xaml
     /// </summary>
+    /// 
+    
     public partial class solicitudExamen : Window
     {
-        public solicitudExamen()
+        private int codEmpleado;
+        private DataTable tabla;
+        private List<Ventas.Ventas> nuevaVenta = new List<Ventas.Ventas>();
+        public solicitudExamen(int id)
         {
+            codEmpleado = id;
             InitializeComponent();
+            tabla = new DataTable();
             this.SourceInitialized += SolicitudExamen_SourceInitialized;
-            cmb_Solicitud_Examen_Microbiologo.Items.Add("a");
-            cmb_Solicitud_Examen_Enfermero.Items.Add("a");
-            cmb_Forma_Entrega.Items.Add("a");
-            cmb_Forma_Pago.Items.Add("a");
+            ExamenesDAL.CargarMicrobiologo(cmb_Solicitud_Examen_Microbiologo);
+            ExamenesDAL.CargarEnfermeros(cmb_Solicitud_Examen_Enfermero);
+            ExamenesDAL.CargarEntregaExamen(cmb_Forma_Entrega);
+            ExamenesDAL.CargarFormaPago(cmb_Forma_Pago);
+
+            tabla.Columns.Add("examen medico");
+            tabla.Columns.Add("facturador");
+            tabla.Columns.Add("microbiologo");
+            tabla.Columns.Add("enfermero");
+            tabla.Columns.Add("paciente");
+            tabla.Columns.Add("forma entrega examen");
+            tabla.Columns.Add("forma pago examen");
+            tabla.Columns.Add("cantidad");
+            tabla.Columns.Add("estado examen");
+            tabla.Columns.Add("combo");
+            tabla.Columns.Add("Fecha factura");
+            dtg_Solicitud_Examen_Examenes.ItemsSource = tabla.AsDataView();
         }
         private void SolicitudExamen_SourceInitialized(object sender, EventArgs e)
         {
@@ -59,25 +80,17 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Solicitud_Examen_Procesar_Orden_Click(object sender, RoutedEventArgs e)
         {
+            Ventas.ventasDAL.GenerarFactura();
 
+            int codigoFacturaVenta = Ventas.ventasDAL.ObtenerIdVenta();
             try
             {
 
-                Ventas.Ventas nuevaVenta = new();
-                int[] codigosExamen = { 2, 2 };
-                nuevaVenta.CodigoFacturaVenta = 45; // aqui habra un metodo para traer el codigo
-                nuevaVenta.CodigoExamenMedico = codigosExamen; // aqui se guardaran todos los codigos de examenes del dgv
-                nuevaVenta.CodigoFacturador = 2; // aqui vamos a poner el codigo del empleado
-                nuevaVenta.CodigoMicrobiologo = cmb_Solicitud_Examen_Microbiologo.SelectedIndex;
-                MessageBox.Show(nuevaVenta.CodigoMicrobiologo.ToString());
-                nuevaVenta.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex;
-                nuevaVenta.CodigoCliente = 4;//aqui vamos a seleccionar el id a traves de un autocompletar, que muestre el nombre y apellido
-                nuevaVenta.MetodoEntregaExamen = cmb_Forma_Entrega.SelectedIndex;
-                nuevaVenta.MetodoPagoExamen = cmb_Forma_Pago.SelectedIndex;
-                nuevaVenta.FechaOrden = DateTime.Now;
-                nuevaVenta.ExamenCombo =  Convert.ToBoolean(chk_Solicitud_Examen_Combo_Si.IsChecked);
-                nuevaVenta.Cantidad = 4; // vamos a sacar el codigo de la cantidad en el dgv
-                nuevaVenta.EstadoExamenMedico = 1; // cambiar estado a en proceso
+                foreach(Ventas.Ventas v in nuevaVenta)
+                {
+                    MessageBox.Show(codigoFacturaVenta.ToString(),v.Cantidad.ToString());
+                    Ventas.ventasDAL.RegistrarVenta(v, codigoFacturaVenta);
+                }
                 pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta);
                 this.Close();
                 nuevopago.ShowDialog();
@@ -89,16 +102,12 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("CodigoEnfermero")) validarCampos("Enfermero", cmb: cmb_Solicitud_Examen_Enfermero, refer: 2);
                 else if (error.StackTrace.Contains("MetodoEntregaExamen")) validarCampos("Metodo de entrega", cmb: cmb_Forma_Entrega, refer: 2);
                 else if (error.StackTrace.Contains("MetodoPagoExamen")) validarCampos("Metodo de pago", cmb: cmb_Forma_Pago, refer: 2);
-            }
-
-
-            
+            }   
         }
-
 
         private void validarCampos(string leyenda, [Optional]TextBox txt,[Optional]ComboBox cmb,[Optional] int refer)
         {
-            MessageBox.Show($"no se puede dejar {leyenda} vacío");
+            MessageBox.Show($"No se puede dejar {leyenda} vacío");
             if (refer == 1) txt.Focus();
             else if (refer == 2) cmb.Focus();
         }
@@ -111,12 +120,41 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Solicitud_Examen_Cargar_Click(object sender, RoutedEventArgs e)
         {
-            string examenBuscar = txt_Solicitud_Examen_Buscar.Text;
-            if (!string.IsNullOrEmpty(examenBuscar))
+            try
             {
-                // codigo para buscar los examenes 
+                //Validación de datos
+                Ventas.Ventas nuev = new();
+                nuev.Cantidad= string.IsNullOrEmpty(txt_Cantidad_Examen.Text) ? -1 : int.Parse(txt_Cantidad_Examen.Text);
+                nuev.CodigoPaciente= Ventas.ventasDAL.TraerCodigoPaciente(txt_Solicitud_Examen_ID_Cliente.Text);
+                nuev.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex+1;
+                nuev.CodigoExamenMedico = string.IsNullOrEmpty(txt_Solicitud_Examen_Buscar.Text) ? -1 : int.Parse(txt_Solicitud_Examen_Buscar.Text);
+                nuev.CodigoFacturador = codEmpleado;
+                nuev.CodigoMicrobiologo = cmb_Solicitud_Examen_Microbiologo.SelectedIndex+1;
+                nuev.EstadoExamenMedico = 1;
+                nuev.ExamenCombo = (bool)chk_Solicitud_Examen_Combo_Si.IsChecked;
+                nuev.FechaOrden = DateTime.Now;
+                nuev.MetodoEntregaExamen = cmb_Forma_Entrega.SelectedIndex + 1;
+                nuev.MetodoPagoExamen = cmb_Forma_Pago.SelectedIndex+1;
+                nuevaVenta.Add(nuev);
+
+                tabla.Rows.Add(nuev.CodigoExamenMedico, nuev.CodigoFacturador, nuev.CodigoMicrobiologo,
+                                    nuev.CodigoEnfermero, nuev.CodigoPaciente, nuev.MetodoEntregaExamen, nuev.MetodoPagoExamen,
+                                    nuev.Cantidad, nuev.EstadoExamenMedico, nuev.ExamenCombo, nuev.FechaOrden);     
+                
+                dtg_Solicitud_Examen_Examenes.DataContext = tabla;
+
+
             }
-            else MessageBox.Show("No pueden buscar exámenes vacíos");
+            catch (FormatException error)
+            {
+                //Excepción que nos indicará si hay algún error
+                if (error.StackTrace.Contains("CodigoPaciente")) validarCampos("paciente", txt_Solicitud_Examen_ID_Cliente, refer: 1);
+                else if (error.StackTrace.Contains("Cantidad")) validarCampos("cantidad", txt_Cantidad_Examen, refer: 1);
+                else if (error.StackTrace.Contains("CodigoMicrobiologo")) validarCampos("Microbiologo", cmb: cmb_Solicitud_Examen_Microbiologo, refer: 2);
+                else if (error.StackTrace.Contains("CodigoEnfermero")) validarCampos("Enfermero", cmb: cmb_Solicitud_Examen_Enfermero, refer: 2);
+                else if (error.StackTrace.Contains("MetodoEntregaExamen")) validarCampos("Metodo de entrega", cmb: cmb_Forma_Entrega, refer: 2);
+                else if (error.StackTrace.Contains("MetodoPagoExamen")) validarCampos("Metodo de pago", cmb: cmb_Forma_Pago, refer: 2);
+            }
         }
     }
 }

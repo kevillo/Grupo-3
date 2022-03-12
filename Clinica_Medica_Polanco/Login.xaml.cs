@@ -28,10 +28,11 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Login_IniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            int result = ConexionBaseDeDatos.LogIn(txt_Usuario.Text, pwb_Login_Contraseña);
-            if(result != 54)
+            int codigoError = -5; 
+            int estado = ConexionBaseDeDatos.LogIn(txt_Usuario.Text, pwb_Login_Contraseña);
+            if(estado  != codigoError)
             {
-                menuPrincipal menu = new menuPrincipal(result);
+                menuPrincipal menu = new menuPrincipal(estado);
                 menu.Show(); 
                 this.Close();
             }

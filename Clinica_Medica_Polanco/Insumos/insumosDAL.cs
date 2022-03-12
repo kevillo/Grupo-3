@@ -18,6 +18,7 @@ namespace Clinica_Medica_Polanco.Insumos
         {
             try
             {
+                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Insumos_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -46,6 +47,7 @@ namespace Clinica_Medica_Polanco.Insumos
         {
             try
             {
+                //Validación de datos
                 List<Insumos> Lista = new List<Insumos>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("SELECT Codigo_Insumo, Codigo_Categoria_Insumo, Nombre_Insumo, Fecha_Expiracion, Precio_Unitario, Numero_Serie, Estado_Insumo FROM Insumos WHERE Nombre_Insumo = @nombreInsumo OR Codigo_Insumo = @codInsumo");
@@ -76,11 +78,11 @@ namespace Clinica_Medica_Polanco.Insumos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static Insumos buscarInsumoPorNombreId(string pDato)
+        public static Insumos BuscarInsumoPorNombreOId(string pDato)
         {
             try
             {
-
+                //Validación de datos
                 Insumos consultaInsumos = new Insumos();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("SELECT Codigo_Insumo, Codigo_Categoria_Insumo, Nombre_Insumo, Fecha_Expiracion, Precio_Unitario, Numero_Serie, Estado_Insumo FROM Insumos WHERE Nombre_Insumo = @nombreInsumo OR Codigo_Insumo = @codInsumo");
@@ -111,10 +113,11 @@ namespace Clinica_Medica_Polanco.Insumos
             }
         }
 
-        public static int modificarInsumo(Insumos vInsumo)
+        public static int ModificarInsumo(Insumos vInsumo)
         {
             try
             {
+                //Validación de datos
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("exec Insumos_Update", ConexionBaseDeDatos.conexion);
@@ -141,10 +144,11 @@ namespace Clinica_Medica_Polanco.Insumos
 
         }
 
-        public static int eliminarInsumo(Int64 codigoInsumo)
+        public static int EliminarInsumo(Int64 codigoInsumo)
         {
             try
             {
+                //Validación de datos
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Delete from Insumos Codigo_Insumo where = @codInsumo", ConexionBaseDeDatos.conexion);
@@ -162,9 +166,6 @@ namespace Clinica_Medica_Polanco.Insumos
 
                 ConexionBaseDeDatos.CerrarConexion();
             }
-
         }
-
-
     }
 }

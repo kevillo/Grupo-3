@@ -102,7 +102,7 @@
         <Polygon x:Name="poly_Deco_Actualizar_Producto"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,367,611,49" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,346,611,70" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -118,7 +118,7 @@
         <Polygon x:Name="poly_Deco_Eliminar_Producto"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,141,611,275" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,120,611,296" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -134,7 +134,7 @@
         <Polygon x:Name="poly_Deco_Consultar_Stock"  
                     Points="200,100 300,25 300,175 200,100"  
                     Stroke="Transparent"
-                    StrokeThickness="2" Margin="231,259,611,158" RenderTransformOrigin="0.5,0.5">
+                    StrokeThickness="2" Margin="231,229,611,188" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -150,7 +150,7 @@
         <Polygon x:Name="poly_Deco_Agregar_Producto"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,34,611,382" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,13,611,403" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

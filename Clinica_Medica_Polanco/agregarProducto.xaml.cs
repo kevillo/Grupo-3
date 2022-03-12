@@ -28,11 +28,11 @@ namespace Clinica_Medica_Polanco
             dtp_Fecha_Expiracion.Text = DateTime.Now.ToShortDateString();
         }
 
-
         private void btn_Agregar_Producto_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                //Validación de datos
                 Insumos.Insumos nuevoInsumo = new();
                 nuevoInsumo.NombreInsumo = txt_Nombre_Producto.Text;
                 nuevoInsumo.NumeroSerie = txt_Numero_Serie.Text;
@@ -46,6 +46,7 @@ namespace Clinica_Medica_Polanco
             }
             catch(FormatException error)
             {
+                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("NombreInsumo")) validarCampos(txt_Nombre_Producto,leyenda: "Nombre insumo" );
                 else if (error.StackTrace.Contains("NumeroSerie")) validarCampos(txt_Numero_Serie, leyenda: "Numero serie");
                 else if (error.StackTrace.Contains("PrecioUnitario")) validarCampos(txt_Precio_Unitario, leyenda: "precio unitario");
@@ -55,7 +56,7 @@ namespace Clinica_Medica_Polanco
             }
         }
 
-
+        //Validar campos de tipo txt, cmb. rtb y dt
         private void validarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
@@ -66,6 +67,7 @@ namespace Clinica_Medica_Polanco
             else txts.Focus();
 
         }
+        //Función para reinicar pantalla y a la vez limpiar los campos
         private void reiniciarPantalla()
         {
             txt_Nombre_Producto.Clear();

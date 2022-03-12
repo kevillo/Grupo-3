@@ -20,14 +20,16 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class menuPrincipalExamenes : UserControl
     {
-        public menuPrincipalExamenes()
+        private int codEmpleado;
+        public menuPrincipalExamenes(int id)
         {
+            codEmpleado = id;
             InitializeComponent();
         }
 
         private void btn_Nuevo_Examen_Click(object sender, RoutedEventArgs e)
         {
-            solicitudExamen solicitud = new();
+            solicitudExamen solicitud = new(codEmpleado);
             solicitud.ShowDialog();
         }
 

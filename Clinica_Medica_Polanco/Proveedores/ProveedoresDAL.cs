@@ -14,6 +14,7 @@ namespace Clinica_Medica_Polanco.Proveedores
         {
             try
             {
+                //Validación datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Proveedores_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -42,6 +43,7 @@ namespace Clinica_Medica_Polanco.Proveedores
 
             try
             {
+                //Validación datos
                 List<Proveedores> Lista = new List<Proveedores>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Select Codigo_Proveedor, Codigo_Area_Trabajo, Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correo_Proveedor, Telefono_Proveedor, Estado_Proveedor From Proveedores");
@@ -71,10 +73,11 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
 
-        public static Proveedores buscarProveedorPorId(Int64 codigoProveedor)
+        public static Proveedores BuscarProveedorPorId(Int64 codigoProveedor)
         {
             try
             {
+                //Validación de datos
                 Proveedores nuevoProveedor = new();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("WHERE Codigo_Proveedor = @codigoProveedor", ConexionBaseDeDatos.conexion);
@@ -104,10 +107,11 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static void modificarProveedor(Proveedores proveedores)
+        public static void ModificarProveedor(Proveedores proveedores)
         {
             try
             {
+                //Validación datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Proveedores_Update", ConexionBaseDeDatos.conexion);
                 comando.Parameters.AddWithValue("Codigo_Proveedor", SqlDbType.Int).Value = proveedores.CodigoProveedor;
@@ -130,7 +134,7 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static int eliminarProveedor(Int64 codigoProveedor)
+        public static int EliminarProveedor(Int64 codigoProveedor)
         {
             try
             {
@@ -153,8 +157,8 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        //Cargar datos al combobox
-        public static void cargarAreaTrabajo(ComboBox cmb_Area_Trabajo_Proveedor_Agregar)
+        //Función para cargar datos desde la bd al combobox ÁreaTrabajo 
+        public static void CargarAreaTrabajo(ComboBox cmb_Area_Trabajo_Proveedor_Agregar)
         {
 
             try

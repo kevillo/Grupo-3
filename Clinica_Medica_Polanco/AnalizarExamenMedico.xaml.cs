@@ -55,7 +55,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Guardar_Analisis_Click(object sender, RoutedEventArgs e)
         {
 
-            string analisis = StringFromRichTextBox(rtb_Diagnostico_Analisis);
+            string analisis = rtbAString(rtb_Diagnostico_Analisis);
             if (!string.IsNullOrEmpty(analisis)  && !string.IsNullOrWhiteSpace(analisis))
             {
 
@@ -67,7 +67,7 @@ namespace Clinica_Medica_Polanco
         }
 
 
-        private string StringFromRichTextBox(RichTextBox rtb)
+        private string rtbAString(RichTextBox rtb)
         {
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,

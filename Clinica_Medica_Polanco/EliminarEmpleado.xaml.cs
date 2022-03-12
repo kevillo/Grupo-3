@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_Medica_Polanco.Empleados;
 
 namespace Clinica_Medica_Polanco
 {
@@ -24,6 +25,10 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += EliminarEmpleado_SourceInitialized;
+
+            //Llamado a las funciones para cargar datos desde la bd a los cmb
+            empleadosDAL.CargarCargo(cmb_Eliminar_Empleado_Cargo);
+            empleadosDAL.CargarJornada(cmb_Eliminar_Empleado_Jornada);
         }
         private void EliminarEmpleado_SourceInitialized(object sender, EventArgs e)
         {

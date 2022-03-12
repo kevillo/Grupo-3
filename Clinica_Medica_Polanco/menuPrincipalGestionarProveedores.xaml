@@ -91,7 +91,7 @@
     </Window.Resources>
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="84" Margin="4,0,0,0" Stroke="White" VerticalAlignment="Top"   Width="1076" Fill="#260D2D6F" Grid.ColumnSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="623" Stroke="Black" Fill="#FF0D2D6F" VerticalAlignment="Top" Width="352" Margin="0,-3,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="623" Stroke="Black" Fill="#FF0D2D6F" VerticalAlignment="Top" Width="341" Margin="0,-3,0,0"/>
         <Button Template="{DynamicResource botonesClinica}"  x:Name="btn_Agregar_Proveedor"  HorizontalContentAlignment="Center" Padding="1,1,1,2" Content="Agregar &#xA;proveedor" HorizontalAlignment="Left"  Cursor="Hand" VerticalAlignment="Top" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="35" BorderBrush="#FF0D2D6F" Width="340" Height="95" Margin="1,67,0,0" LostFocus="btn_Menu_Principal_Proveedores_LostFocus" Click="btn_Agregar_Proveedor_Click" />
         <Label x:Name="lbl_Mensaje_Menu_Principal" Content="GESTIONAR PROVEEDORES" HorizontalAlignment="Left"   FontFamily="Tahoma" FontSize="45" Margin="480,10,0,0" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="109" Margin="352,-1,0,0" VerticalAlignment="Top" Width="123" Source="/holis.png" Grid.ColumnSpan="2"/>
@@ -102,7 +102,7 @@
         <Polygon x:Name="poly_Deco_Actualizar_Proveedor"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,367,611,49" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,343,611,73" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -118,7 +118,7 @@
         <Polygon x:Name="poly_Deco_Eliminar_Proveedor"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,141,611,275" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,121,611,295" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -134,7 +134,7 @@
         <Polygon x:Name="poly_Deco_Consultar_Proveedor"  
                     Points="200,100 300,25 300,175 200,100"  
                     Stroke="Transparent"
-                    StrokeThickness="2" Margin="231,259,611,158" RenderTransformOrigin="0.5,0.5">
+                    StrokeThickness="2" Margin="231,235,611,182" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -150,7 +150,7 @@
         <Polygon x:Name="poly_Deco_Agregar_Proveedor"  
             Points="200,100 300,25 300,175 200,100"  
             Stroke="Transparent"
-            StrokeThickness="2" Margin="231,34,611,382" RenderTransformOrigin="0.5,0.5">
+            StrokeThickness="2" Margin="231,4,611,412" RenderTransformOrigin="0.5,0.5">
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
