@@ -7,7 +7,6 @@ using System.Windows.Controls;
 using System.Data;
 using System.Windows;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace Clinica_Medica_Polanco
 {
