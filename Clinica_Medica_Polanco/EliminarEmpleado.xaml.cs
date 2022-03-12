@@ -27,8 +27,8 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += EliminarEmpleado_SourceInitialized;
 
             //Llamado a las funciones para cargar datos desde la bd a los cmb
-            empleadosDAL.cargarCargo(cmb_Eliminar_Empleado_Cargo);
-            empleadosDAL.cargarJornada(cmb_Eliminar_Empleado_Jornada);
+            empleadosDAL.CargarCargo(cmb_Eliminar_Empleado_Cargo);
+            empleadosDAL.CargarJornada(cmb_Eliminar_Empleado_Jornada);
         }
         private void EliminarEmpleado_SourceInitialized(object sender, EventArgs e)
         {

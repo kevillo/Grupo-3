@@ -10,7 +10,7 @@ namespace Clinica_Medica_Polanco.Ventas
 {
     class ventasDAL
     {
-        public static int obtenerIdVenta()
+        public static int ObtenerIdVenta()
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public static void generarFactura()
+        public static void GenerarFactura()
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public static void registrarVenta(Ventas nuevaVenta,int codVenta)
+        public static void RegistrarVenta(Ventas nuevaVenta,int codVenta)
         {
             try
             {
@@ -109,7 +109,6 @@ namespace Clinica_Medica_Polanco.Ventas
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-        }
-            
+        }      
     }
 }

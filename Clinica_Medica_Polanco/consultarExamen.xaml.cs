@@ -26,7 +26,7 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
             this.SourceInitialized += ConsultarExamen_SourceInitialized;
 
-            ExamenesDAL.cargarSucursal(cmb_Sucursal_Buscar);
+            ExamenesDAL.CargarSucursal(cmb_Sucursal_Buscar);
         }
         private void ConsultarExamen_SourceInitialized(object sender, EventArgs e)
         {

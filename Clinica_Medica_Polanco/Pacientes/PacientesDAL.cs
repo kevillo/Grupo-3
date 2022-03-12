@@ -11,7 +11,7 @@ namespace Clinica_Medica_Polanco.Pacientes
         {
             try
             {
-
+                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 int retorno = 0;
                 SqlCommand comando = new SqlCommand(String.Format("Insert Into Pacientes(Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
@@ -36,6 +36,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             
             try
             {
+                //Validación de datos
                 List<Paciente> Lista = new List<Paciente>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Nombre_Paciente like '%{0}%' or Identidad_Paciente='{1}' ", pDato, pDato), ConexionBaseDeDatos.conexion);
@@ -67,14 +68,13 @@ namespace Clinica_Medica_Polanco.Pacientes
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-            
-
         }
 
         public static Paciente ConsultarPaciente(Int64 pCodigo_Paciente)
         {
             try
             {
+                //Validación de datos
                 Paciente pPaciente = new Paciente();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Codigo_Paciente = {0}'", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
@@ -129,10 +129,11 @@ namespace Clinica_Medica_Polanco.Pacientes
 
         }
 
-        public static int eliminar(Int64 pCodigo_Paciente)
+        public static int Eliminar(Int64 pCodigo_Paciente)
         {
             try
             {
+                //Validación de datos
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Delete from Pacientes where Codigo_Paciente = {0}", pCodigo_Paciente), ConexionBaseDeDatos.conexion);

@@ -73,7 +73,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
 
-        public static Proveedores buscarProveedorPorId(Int64 codigoProveedor)
+        public static Proveedores BuscarProveedorPorId(Int64 codigoProveedor)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static void modificarProveedor(Proveedores proveedores)
+        public static void ModificarProveedor(Proveedores proveedores)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static int eliminarProveedor(Int64 codigoProveedor)
+        public static int EliminarProveedor(Int64 codigoProveedor)
         {
             try
             {
@@ -158,7 +158,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
         //Función para cargar datos desde la bd al combobox ÁreaTrabajo 
-        public static void cargarAreaTrabajo(ComboBox cmb_Area_Trabajo_Proveedor_Agregar)
+        public static void CargarAreaTrabajo(ComboBox cmb_Area_Trabajo_Proveedor_Agregar)
         {
 
             try

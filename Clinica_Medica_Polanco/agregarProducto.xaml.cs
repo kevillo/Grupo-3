@@ -28,7 +28,6 @@ namespace Clinica_Medica_Polanco
             dtp_Fecha_Expiracion.Text = DateTime.Now.ToShortDateString();
         }
 
-
         private void btn_Agregar_Producto_Click(object sender, RoutedEventArgs e)
         {
             try

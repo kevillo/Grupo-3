@@ -51,6 +51,7 @@ namespace Clinica_Medica_Polanco.Empleados
         {
             try
             {
+                //Validación de datos
                 List<Empleados> Lista = new List<Empleados>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados WHERE Identidad_Empleado = @identidadEmpleado OR Nombre_Empleado=@nombreEmpleado");
@@ -92,10 +93,11 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public static Empleados buscarEmpleadoPorId(Int64 pDato)
+        public static Empleados BuscarEmpleadoPorId(Int64 pDato)
         {
             try
             {
+                //Validación de datos
                 Empleados nuevoEmpleado = new();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados WHERE Identidad_Empleado = @identidadEmpleado OR Nombre_Empleado=@nombreEmpleado", ConexionBaseDeDatos.conexion);
@@ -137,7 +139,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public static int modificarEmpleado(Empleados empleados)
+        public static int ModificarEmpleado(Empleados empleados)
         {
             try
             {
@@ -180,10 +182,11 @@ namespace Clinica_Medica_Polanco.Empleados
         }
 
 
-        public static int eliminarEmpleado(Int64 codigoEmpleado)
+        public static int EliminarEmpleado(Int64 codigoEmpleado)
         {
             try
             {
+                //Validación de datos
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Delete from Empleados where Codigo_Empleado = @codEmpleado", ConexionBaseDeDatos.conexion);
@@ -204,7 +207,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         } 
         //Función para cargar datos al combobox de Jornada Empleado
-        public static void cargarJornada(ComboBox cmbJornada)
+        public static void CargarJornada(ComboBox cmbJornada)
         {
             
             try
@@ -230,7 +233,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
         //Función para cargar datos desde la bd al combobox de Sucursal
-        public static void cargarSucursal(ComboBox cmbSucursal)
+        public static void CargarSucursal(ComboBox cmbSucursal)
         {
             
             try
@@ -259,7 +262,7 @@ namespace Clinica_Medica_Polanco.Empleados
         }
 
         //Función par cargar datos desde la bd al cmb de Cargo 
-        public static void cargarCargo(ComboBox cmbCargo)
+        public static void CargarCargo(ComboBox cmbCargo)
         {
             
             try

@@ -91,7 +91,7 @@ namespace Clinica_Medica_Polanco
                 paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : int.Parse(txt_Altura_Paciente.Text); 
                 paciente1.TipoSangre = cmb_Tipo_Sangre_Paciente.SelectedItem.ToString();
               
-                paciente1.Direccion = string.IsNullOrWhiteSpace(StringFromRichTextBox(Rtb_direccion_Paciente))?null: StringFromRichTextBox(Rtb_direccion_Paciente);
+                paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(Rtb_direccion_Paciente))?null: rtbAString(Rtb_direccion_Paciente);
                 paciente1.Estado = true;
 
                 resultado = PacientesDAL.AgregarPaciente(paciente1);
@@ -106,21 +106,21 @@ namespace Clinica_Medica_Polanco
             catch (FormatException error)
             {
                 //Excepción que nos indicará si ocurre un error
-                if (error.StackTrace.Contains("Apellido")) validateFields(txt_Apellido_Paciente, leyenda: "Apellido");
-                else if (error.StackTrace.Contains("Nombre")) validateFields(txt_Nombre_Paciente, leyenda: "Nombre");
-                else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Identidad_Paciente, leyenda: "Identidad");
-                else if (error.StackTrace.Contains("Telefono")) validateFields(txt_Telefono_Paciente, leyenda: "Teléfono");
-                else if (error.StackTrace.Contains("Correo")) validateFields(txt_Correo_Paciente, leyenda: "Correo");
-                else if (error.StackTrace.Contains("Altura")) validateFields(txt_Altura_Paciente, leyenda: "Altura");
-                else if (error.StackTrace.Contains("FechaNacimiento")) validateFields(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
-                else if (error.StackTrace.Contains("TipoSangre")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
-                else if (error.StackTrace.Contains("Direccion")) validateFields(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
+                if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Apellido_Paciente, leyenda: "Apellido");
+                else if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Paciente, leyenda: "Nombre");
+                else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Identidad_Paciente, leyenda: "Identidad");
+                else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Telefono_Paciente, leyenda: "Teléfono");
+                else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Correo_Paciente, leyenda: "Correo");
+                else if (error.StackTrace.Contains("Altura")) ValidarCampos(txt_Altura_Paciente, leyenda: "Altura");
+                else if (error.StackTrace.Contains("FechaNacimiento")) ValidarCampos(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
+                else if (error.StackTrace.Contains("TipoSangre")) ValidarCampos(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
+                else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
             }
             
             
         }
         //Validar campos
-        private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)
+        private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
 
@@ -131,7 +131,7 @@ namespace Clinica_Medica_Polanco
 
         }
 
-        private string StringFromRichTextBox(RichTextBox rtb)
+        private string rtbAString(RichTextBox rtb)
         {
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,

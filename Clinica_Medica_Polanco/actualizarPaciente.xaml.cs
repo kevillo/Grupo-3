@@ -66,6 +66,7 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
+                //Validar datos
                 int resultado = 0;
                 Pacientes.Paciente paciente1 = new();
                 paciente1.Nombre = txt_Actualizar_Paciente_Nombre_Completo.Text;
@@ -75,7 +76,7 @@ namespace Clinica_Medica_Polanco
                 paciente1.Correo = txt_Actualizar_Paciente_CorreoE.Text;
                 paciente1.Altura = string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : int.Parse(txt_Actualizar_Paciente_Altura.Text);
                 paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
-                paciente1.Direccion = string.IsNullOrWhiteSpace(StringFromRichTextBox(rtb_Actualizar_Paciente_Direccion)) ? null : StringFromRichTextBox(rtb_Actualizar_Paciente_Direccion);
+                paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(rtb_Actualizar_Paciente_Direccion)) ? null : rtbAString(rtb_Actualizar_Paciente_Direccion);
                 paciente1.Estado = true;
 
                 resultado = PacientesDAL.ModificarPaciente(paciente1);
@@ -89,17 +90,18 @@ namespace Clinica_Medica_Polanco
 
             catch (FormatException error)
             { 
-                if (error.StackTrace.Contains("Nombre")) validateFields(txt_Actualizar_Paciente_Nombre_Completo, leyenda: "Nombre");
-                else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Actualizar_Paciente_ID, leyenda: "Identidad");
-                else if (error.StackTrace.Contains("Telefono")) validateFields(txt_Actualizar_Paciente_Telefono, leyenda: "Teléfono");
-                else if (error.StackTrace.Contains("Correo")) validateFields(txt_Actualizar_Paciente_CorreoE, leyenda: "Correo");
-                else if (error.StackTrace.Contains("Altura")) validateFields(txt_Actualizar_Paciente_Altura, leyenda: "Altura");
-                else if (error.StackTrace.Contains("FechaNacimiento")) validateFields(leyenda: "Fecha de nacimiento", dt: dtp_Actualizar_Paciente_FechaNac, refer: 2);
-                else if (error.StackTrace.Contains("TipoSangre")) validateFields(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Paciente_TipoSangre, refer: 3);
-                else if (error.StackTrace.Contains("Direccion")) validateFields(rtb:rtb_Actualizar_Paciente_Direccion, leyenda: "Dirección", refer: 4);
+                //Excepción que nos indicará si hay algún error
+                if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Actualizar_Paciente_Nombre_Completo, leyenda: "Nombre");
+                else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Actualizar_Paciente_ID, leyenda: "Identidad");
+                else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Actualizar_Paciente_Telefono, leyenda: "Teléfono");
+                else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Actualizar_Paciente_CorreoE, leyenda: "Correo");
+                else if (error.StackTrace.Contains("Altura")) ValidarCampos(txt_Actualizar_Paciente_Altura, leyenda: "Altura");
+                else if (error.StackTrace.Contains("FechaNacimiento")) ValidarCampos(leyenda: "Fecha de nacimiento", dt: dtp_Actualizar_Paciente_FechaNac, refer: 2);
+                else if (error.StackTrace.Contains("TipoSangre")) ValidarCampos(leyenda: "Tipo de sangre", cmb: cmb_Actualizar_Paciente_TipoSangre, refer: 3);
+                else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb:rtb_Actualizar_Paciente_Direccion, leyenda: "Dirección", refer: 4);
             }
         }
-        private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
+        private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
 
@@ -109,7 +111,7 @@ namespace Clinica_Medica_Polanco
             else txts.Focus();
 
         }
-        private string StringFromRichTextBox(RichTextBox rtb)
+        private string rtbAString(RichTextBox rtb)
         {
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,

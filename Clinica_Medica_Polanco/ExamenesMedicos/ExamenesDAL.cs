@@ -13,7 +13,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
         {
             try
             {
-
+                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Examenes_Medicos_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -37,6 +37,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
         {
             try
             {
+                //Validación de datos
                 List<ExamenesMedicos> Lista = new List<ExamenesMedicos>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Select Cod_Examen_Medico, Codigo_Tipo_Examen, Precio_Unitario, Estado From Examenes_Medicos WHERE Cod_Examen_Medico = @Cod_Examen");
@@ -63,10 +64,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static ExamenesMedicos buscarExamenPorId(Int64 pDato)
+        public static ExamenesMedicos BuscarExamenPorId(Int64 pDato)
         {
             try
             {
+                //Validación de datos
                 ExamenesMedicos nuevoExamen = new();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Select Cod_Examen_Medico, Codigo_Tipo_Examen, Precio_Unitario, Estado From Examenes_Medicos WHERE Cod_Examen_Medico = @Cod_Examen", ConexionBaseDeDatos.conexion);
@@ -94,7 +96,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
         //Función para cargar datos al combobox de microbiológo
-        public static void cargarMicrobiologos(ComboBox cmb_Solicitud_Examen_Microbiologo)
+        public static void CargarMicrobiologo(ComboBox cmb_Solicitud_Examen_Microbiologo)
         {
 
             try
@@ -120,7 +122,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
         //Función para cargar datos al combobox de enfermeros
-        public static void cargarEnfermeros(ComboBox cmb_Solicitud_Examen_Enfermero)
+        public static void CargarEnfermeros(ComboBox cmb_Solicitud_Examen_Enfermero)
         {
 
             try
@@ -146,7 +148,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
         //Función para cargar datos al combobox forma de entrega examen
-        public static void cargarFormaEntrega(ComboBox cmb_Forma_Entrega)
+        public static void CargarEntregaExamen(ComboBox cmb_Forma_Entrega)
         {
 
             try
@@ -172,7 +174,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
         //Función para cargar datos al combobox de forma pago
-        public static void cargarFormaPago(ComboBox cmb_Forma_Pago)
+        public static void CargarFormaPago(ComboBox cmb_Forma_Pago)
         {
 
             try
@@ -198,7 +200,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
         //Función para cargar datos al combobox de sucursal
-        public static void cargarSucursal(ComboBox cmb_Sucursal_Buscar)
+        public static void CargarSucursal(ComboBox cmb_Sucursal_Buscar)
         {
 
             try
