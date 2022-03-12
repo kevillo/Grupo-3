@@ -68,9 +68,10 @@ namespace Clinica_Medica_Polanco
             {
                 //Validar datos
                 int resultado = 0;
-                Pacientes.Paciente paciente1 = new();
-                paciente1.Nombre = txt_Actualizar_Paciente_Nombre_Completo.Text;
-                paciente1.Identidad = txt_Actualizar_Paciente_ID.Text;
+                Pacient paciente1 = new();
+                paciente1.Nombre = txt_Actualizar_Paciente_Nombre.Text;
+                paciente1.Apellido = txt_Actualizar_Paciente_Apellido.Text;
+                paciente1.Identidad = txt_PacienteId.Text;
                 paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
                 paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
                 paciente1.Correo = txt_Actualizar_Paciente_CorreoE.Text;
@@ -91,8 +92,9 @@ namespace Clinica_Medica_Polanco
             catch (FormatException error)
             { 
                 //Excepción que nos indicará si hay algún error
-                if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Actualizar_Paciente_Nombre_Completo, leyenda: "Nombre");
-                else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Actualizar_Paciente_ID, leyenda: "Identidad");
+                if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Actualizar_Paciente_Nombre, leyenda: "Nombre");
+                else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Actualizar_Paciente_Apellido, leyenda: "Apellido");
+                else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_PacienteId, leyenda: "Identidad");
                 else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Actualizar_Paciente_Telefono, leyenda: "Teléfono");
                 else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Actualizar_Paciente_CorreoE, leyenda: "Correo");
                 else if (error.StackTrace.Contains("Altura")) ValidarCampos(txt_Actualizar_Paciente_Altura, leyenda: "Altura");
@@ -174,7 +176,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Actualizar_Paciente_ID.Text = (sender as TextBlock).Text;
+                txt_PacienteId.Text = (sender as TextBlock).Text;
             };
 
             block.MouseEnter += (sender, e) =>

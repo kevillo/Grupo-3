@@ -81,7 +81,7 @@ namespace Clinica_Medica_Polanco
             {
                 //Validación de datos
                 int resultado = 0;
-                Pacientes.Paciente paciente1 = new();
+                Pacient paciente1 = new();
                 paciente1.Nombre = txt_Nombre_Paciente.Text;
                 paciente1.Apellido = txt_Apellido_Paciente.Text;
                 paciente1.Identidad = txt_Identidad_Paciente.Text;
