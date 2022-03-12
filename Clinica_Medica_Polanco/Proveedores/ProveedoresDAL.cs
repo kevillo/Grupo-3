@@ -183,6 +183,32 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+        //Cargar datos desde la bd al cmb Proveedores
+        public static void CargarProveedores(ComboBox cmb_Gestionar_Insumo_Nombre_Proveedor)
+        {
+
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query = "Select Nombre_Proveedor from Proveedores";
+                SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(0);
+                    cmb_Gestionar_Insumo_Nombre_Proveedor.Items.Add(nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
     }
 }
 

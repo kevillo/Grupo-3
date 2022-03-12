@@ -24,6 +24,8 @@ namespace Clinica_Medica_Polanco
         public actualizarProveedor()
         {
             InitializeComponent();
+
+            ProveedoresDAL.CargarAreaTrabajo(cmb_Area_Trabajo_Proveedor_Actualizar);
         }
 
         private void btn_Actualizar_Informacion_Proveedor_Click(object sender, RoutedEventArgs e)

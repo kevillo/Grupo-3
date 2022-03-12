@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Clinica_Medica_Polanco.Proveedores;
 using System.Windows.Shapes;
 
 namespace Clinica_Medica_Polanco
@@ -23,6 +24,8 @@ namespace Clinica_Medica_Polanco
         public actualizarProducto()
         {
             InitializeComponent();
+
+            ProveedoresDAL.CargarProveedores(cmb_Gestionar_Insumo_Nombre_Proveedor);
         }
 
         private void btn_Gestionar_Insumo_Actualizar_Click(object sender, RoutedEventArgs e)
