@@ -74,7 +74,7 @@ namespace Clinica_Medica_Polanco.Ventas
                 comando.Parameters.AddWithValue("Examen_Combo", SqlDbType.Int).Value =nuevaVenta.ExamenCombo;
                 comando.Parameters.AddWithValue("Cantidad", SqlDbType.Int).Value =nuevaVenta.Cantidad;
                 comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Bit).Value =nuevaVenta.EstadoExamenMedico;
-                comando.ExecuteReader();   
+                comando.ExecuteReader();  
             }
             catch(Exception error)
             {

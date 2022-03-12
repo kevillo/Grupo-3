@@ -40,6 +40,7 @@ namespace Clinica_Medica_Polanco
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB-");
         }
 
+        // Funcion para no mover la ventana del form
         private void ActualizarEmpleados_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);

@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Clinica_Medica_Polanco
 {
     /// <summary>
-    /// Lógica de interacción para menuPrincipalNa.xaml
+    /// Lógica de interacción para menuPrincipal.xaml
     /// </summary>
     public partial class menuPrincipal : Window
     {
@@ -25,6 +25,7 @@ namespace Clinica_Medica_Polanco
 
             InitializeComponent();
             codEmpleado = id;
+            // se busca el rol del empleado en la base y si no es admin se configura la pantalla como empleado
              string rol = ConexionBaseDeDatos.confEmpleado(id);
             if (!(rol == "Administrador")) EmployeeConfiguration();
         }
@@ -130,7 +131,7 @@ namespace Clinica_Medica_Polanco
             poly_Deco_Inventario.Stroke = new SolidColorBrush(Colors.Transparent);
 
         }
-
+        // funcion para poner estilos a los botones 
         private void btn_poly_decor_click(Polygon poligon, Button button)
         {
             button.Background = new SolidColorBrush(Color.FromRgb(255, 84, 84));
@@ -141,6 +142,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Cerrar_Sesion_Click(object sender, RoutedEventArgs e)
         {
+
             Login nuevoLogin = new();
             this.Close();
             nuevoLogin.Show();

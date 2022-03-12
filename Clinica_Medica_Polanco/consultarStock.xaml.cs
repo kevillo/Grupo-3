@@ -25,9 +25,5 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
         }
 
-        private void txt_codigo_Copy3_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

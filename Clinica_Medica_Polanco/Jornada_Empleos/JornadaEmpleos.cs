@@ -14,6 +14,9 @@ namespace Clinica_Medica_Polanco.Jornada_Empleo
         private DateTime _HoraEntrada;
         private DateTime _HoraSalida;
 
+        // validacion string: que no venga vacio
+        // validacion int: que no sea negativo ni que venga vacio
+        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public string DescripcionJornada
         {
             get => _DescripcionJornada;

@@ -17,6 +17,9 @@ namespace Clinica_Medica_Polanco.Paciente
         private int _codigoInsumo;
         private int _cantidad;
 
+        // validacion string: que no venga vacio
+        // validacion int: que no sea negativo ni que venga vacio
+        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public int CodFacturaCompra { get => _codFacturaCompra; set => _codFacturaCompra = value; }
         public int CodComprador { get => _codComprador; set => _codComprador = value; }
         public int CodProveedor { get => codProveedor; set => codProveedor = value; }

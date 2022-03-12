@@ -18,6 +18,9 @@ namespace Clinica_Medica_Polanco.Proveedores
         private string _telefonoProveedor;
         private bool _estadoProveedor;
 
+        // validacion string: que no venga vacio
+        // validacion int: que no sea negativo ni que venga vacio
+        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public int CodigoProveedor
         {
             get => _codigoProveedor;

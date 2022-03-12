@@ -18,6 +18,10 @@ namespace Clinica_Medica_Polanco.Inventario
         private int _Existencia;
         private string _numerolote;
 
+
+        // validacion string: que no venga vacio
+        // validacion int: que no sea negativo ni que venga vacio
+        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public int InventarioMes
         {
             get => _InventarioMes;

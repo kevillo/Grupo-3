@@ -33,6 +33,7 @@ namespace Clinica_Medica_Polanco
             souce.AddHook(WndProc);
         }
 
+        // Funcion para no mover la ventana del form
         const int WM_SYSCOMMAND = 0x0112;
         const int SC_MOVE = 0xF010;
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)

@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows;
 using System.Data.SqlClient;
 
+
 namespace Clinica_Medica_Polanco
 {
     public class ConexionBaseDeDatos
@@ -51,7 +52,8 @@ namespace Clinica_Medica_Polanco
             
         }
 
-
+        // codigo de estado -5: error al loguear
+        // de lo contrario se retorna el codigo de empleado
         public static int LogIn(String user,PasswordBox pass)
         {
             try

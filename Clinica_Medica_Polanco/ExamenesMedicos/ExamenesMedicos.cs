@@ -13,6 +13,9 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
         private float _precioUnitario;
         private bool _estado;
 
+        // validacion string: que no venga vacio
+        // validacion int: que no sea negativo ni que venga vacio
+        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public int CodigoExamen { get => _codigoExamen; set => _codigoExamen = value; }
         public int CodigoTipoExamen
         {
