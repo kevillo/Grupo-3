@@ -8,39 +8,26 @@ namespace Clinica_Medica_Polanco.Ventas
 {
      public class Ventas
     {
-        private int _codFacturaVenta;
-        private int[] _codExamenMedico;
+        private int _codExamenMedico;
         private int _codFacturador;
         private int _codMicrobiologo;
         private int _codEnfermero;
         private int _codPaciente;
-        private int _codCliente;
         private int _metodoEntregaExamen;
         private int _metodoPagoExamen;
         private DateTime _fechaOrden;
-        private DateTime _fechaFactura;
         private bool _examenCombo;
-        private int[] _cantidad;
+        private int _cantidad;
         private int _estadoExamenMedico;
-        private float _iSV;
-        private float _descuento;
-        private float _totalVenta;
+        
 
-        public int CodigoFacturaVenta
-        {
-            get => _codFacturaVenta;
-            set
-            {
-                if (value <= 0) _codFacturaVenta = 1;
-                else _codFacturaVenta = value;
-            }
-        }
-        public int[] CodigoExamenMedico
+        
+        public int CodigoExamenMedico
         {
             get => _codExamenMedico;
             set
             {
-                if (value.Length ==0 ) throw new FormatException();
+                if (value<0 ) throw new FormatException();
                 else _codExamenMedico= value;
             }
         }
@@ -80,21 +67,12 @@ namespace Clinica_Medica_Polanco.Ventas
             get => _codPaciente;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || value <= 0) throw new FormatException();
+                if (string.IsNullOrEmpty(value.ToString()) || value < 0) throw new FormatException();
                 else _codPaciente = value;
             }
         }
 
-        public int CodigoCliente
-        {
-            get => _codCliente;
-            set
-            {
-                if (string.IsNullOrEmpty(value.ToString()) || value <=0 ) throw new FormatException();
-                else _codCliente = value;
-            }
-        }
-
+       
         public int MetodoEntregaExamen
         {
             get => _metodoEntregaExamen;
@@ -115,12 +93,12 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public int[] Cantidad
+        public int Cantidad
         {
             get => _cantidad;
             set
             {
-                if (value.Length<0) throw new FormatException();
+                if (value<0) throw new FormatException();
                 else _cantidad = value;
             }
         }
@@ -134,15 +112,10 @@ namespace Clinica_Medica_Polanco.Ventas
                 else _estadoExamenMedico = value;
             }
         }
-        
         public DateTime FechaOrden { get => _fechaOrden; set => _fechaOrden = value; }
 
-        public DateTime FechaFactura { get => _fechaFactura; set => _fechaFactura = value;}
-
-        public float TotalVenta { get => _totalVenta; set => _totalVenta = value; }
         public bool ExamenCombo { get => _examenCombo; set => _examenCombo = value; }
-        public float ISV { get => _iSV; set => _iSV = value; }
-        public float Descuento { get => _descuento; set => _descuento = value; }
+       
     }
 }
 

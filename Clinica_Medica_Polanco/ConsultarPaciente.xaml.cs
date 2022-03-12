@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Pacientes;
+using System.Data;
+using System.Windows.Controls.Primitives;
 
 namespace Clinica_Medica_Polanco
 {
@@ -62,10 +64,17 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Consultar_Pacientes_Click(object sender, RoutedEventArgs e)
         {
+
           string consultar_paciente = txt_Consultar_Pacientes.Text;
           if (!string.IsNullOrEmpty(consultar_paciente))
-              dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.BuscarPaciente(consultar_paciente);
+            {
+                dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.BuscarPaciente(consultar_paciente);
+                
+
+            }
           else MessageBox.Show("Ingrese un id de paciente válido");
+
+  
         }
     }
 }

@@ -23,9 +23,9 @@ namespace Clinica_Medica_Polanco
     {
         Ventas.Ventas pagarVenta = new();
 
-        public pagarExamenMedico(Ventas.Ventas nuevaVenta)
+        public pagarExamenMedico(List<Ventas.Ventas> nuevaVenta)
         {
-            pagarVenta = nuevaVenta;
+
             InitializeComponent();
             this.SourceInitialized += PagarExamenMedico_SourceInitialized;
         }
