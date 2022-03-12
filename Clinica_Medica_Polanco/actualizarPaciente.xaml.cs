@@ -30,6 +30,7 @@ namespace Clinica_Medica_Polanco
             dtp_Actualizar_Paciente_FechaNac.Text = DateTime.Now.ToShortDateString();
             cmb_Actualizar_Paciente_TipoSangre.Items.Add("A");
             cmb_Actualizar_Paciente_TipoSangre.Items.Add("O+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("AB+");
         }
 
         // Funcion para no mover la ventana del form
@@ -127,10 +128,14 @@ namespace Clinica_Medica_Polanco
 
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
         {
+            stc_InfoPaciente.Visibility = Visibility.Visible;
+            scv_BuscarPaciente.Visibility = Visibility.Visible;
+            brd_BuscarPaciente.Visibility = Visibility.Visible;
+            //scv_BuscarPaciente.Background = new 
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
             var data = Model.GetData();
-
+            
             string query = (sender as TextBox).Text;
 
             if (query.Length == 0)
@@ -166,10 +171,12 @@ namespace Clinica_Medica_Polanco
 
         private void addItem(String text)
         {
+
             TextBlock block = new TextBlock();
 
             // Add the text   
             block.Text = text;
+           
 
             // A little style...   
             block.Margin = new Thickness(2, 3, 2, 3);
@@ -178,7 +185,10 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_PacienteId.Text = (sender as TextBlock).Text;
+                txt_PacienteId.Text = (sender as TextBlock).Text.Split(" ")[0];
+                stc_InfoPaciente.Visibility = Visibility.Hidden;
+                scv_BuscarPaciente.Visibility = Visibility.Hidden;
+                brd_BuscarPaciente.Visibility = Visibility.Hidden;
             };
 
             block.MouseEnter += (sender, e) =>
@@ -203,7 +213,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Actualizar_Paciente_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Paciente = txt_PacienteId.Text;
-            pacienteSeleccionado = PacientesDAL.buscarPaciente(buscar_Paciente);
+            pacienteSeleccionado = PacientesDAL.BuscarPaciente(buscar_Paciente);
 
             if (!string.IsNullOrEmpty(buscar_Paciente))
             {
@@ -216,13 +226,23 @@ namespace Clinica_Medica_Polanco
                 dtp_Actualizar_Paciente_FechaNac.Text = Convert.ToString(pacienteSeleccionado.FechaNacimiento);
                 txt_Actualizar_Paciente_CorreoE.Text = pacienteSeleccionado.Correo;
                 txt_Actualizar_Paciente_Altura.Text = Convert.ToString(pacienteSeleccionado.Altura);
-                cmb_Actualizar_Paciente_TipoSangre.Text = pacienteSeleccionado.TipoSangre;
-                rtb_Actualizar_Paciente_Direccion.Selection.Text = pacienteSeleccionado.Direccion;
+                cmb_Actualizar_Paciente_TipoSangre.SelectedItem = pacienteSeleccionado.TipoSangre;
+                prueba(rtb_Actualizar_Paciente_Direccion,pacienteSeleccionado.Direccion);
                 chk_Actualizar_Paciente_EstadoPaciente.IsChecked = pacienteSeleccionado.Estado;
 
 
             }
             else MessageBox.Show("Ingrese un id de paciente válido");
         }
+
+
+        private void prueba(RichTextBox rtb,string textoSet)
+        {
+            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+            textRange.Text = textoSet;
+        }
+
+        
+
     }
 }

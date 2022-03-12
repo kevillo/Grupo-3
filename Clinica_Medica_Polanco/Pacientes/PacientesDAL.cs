@@ -70,14 +70,14 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
-        public static Pacient buscarPaciente(string pCodigo_Paciente)
+        public static Pacient BuscarPaciente(string pCodigo_Paciente)
         {
             try
             {
                 //Validación de datos
                 Pacient pPaciente = new Pacient();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Codigo_Paciente = {0}'", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Identidad_Paciente ='{0}'", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -88,7 +88,7 @@ namespace Clinica_Medica_Polanco.Pacientes
                     pPaciente.Telefono = reader.GetString(4);
                     pPaciente.FechaNacimiento = reader.GetDateTime(5);
                     pPaciente.Correo = reader.GetString(6);
-                    pPaciente.Altura = Convert.ToInt32(reader.GetInt32(7));
+                    pPaciente.Altura = reader.GetDecimal(7);
                     pPaciente.TipoSangre = reader.GetString(8);
                     pPaciente.Direccion = reader.GetString(9);
                     pPaciente.Estado = reader.GetBoolean(10);
@@ -114,10 +114,10 @@ namespace Clinica_Medica_Polanco.Pacientes
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Update Pacientes set Nombre_Paciente = '{0}', Apellido_Paciente = '{1}', Identidad_Paciente = '{2}', " +
-                    "Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', Altura_Paciente = '{6}', Tipo_Sangre_Paciente = '{7}', " +
-                    "Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Codigo_Paciente = '{10}'", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, 
+                    "Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', [Altura_Paciente(cm)] = {6}, Tipo_Sangre_Paciente = '{7}', " +
+                    "Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Identidad_Paciente ='{10}' ", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, 
                     pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado, 
-                    pPaciente.Codigo), ConexionBaseDeDatos.conexion);
+                    pPaciente.Identidad), ConexionBaseDeDatos.conexion);
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
