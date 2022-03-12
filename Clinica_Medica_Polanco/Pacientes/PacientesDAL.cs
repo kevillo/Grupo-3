@@ -114,8 +114,8 @@ namespace Clinica_Medica_Polanco.Pacientes
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Update Pacientes set Nombre_Paciente = '{0}', Apellido_Paciente = '{1}', Identidad_Paciente = '{2}', " +
-                    "Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', [Altura_Paciente(cm)] = {6}, Tipo_Sangre_Paciente = '{7}', " +
-                    "Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Identidad_Paciente ='{10}' ", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, 
+                    "Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', Altura_Paciente = '{6}', Tipo_Sangre_Paciente = '{7}', " +
+                    "Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Codigo_Paciente = '{10}'", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, 
                     pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado, 
                     pPaciente.Identidad), ConexionBaseDeDatos.conexion);
                 retorno = comando.ExecuteNonQuery();
