@@ -211,7 +211,7 @@
         <Border BorderBrush="Transparent" 
             BorderThickness="1" Margin="203,148,389,382" Background="Transparent">
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
-                <StackPanel Name="stc_InfoPaciente" Background="White" Height="97" Width="491" Visibility="Hidden"></StackPanel>
+                <StackPanel Name="stc_InfoPaciente" Background="White" Height="97" Width="491"></StackPanel>
             </ScrollViewer>
         </Border>
         <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" VerticalContentAlignment="Center" x:Name="txt_PacienteId" Margin="203,111,386,475" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />

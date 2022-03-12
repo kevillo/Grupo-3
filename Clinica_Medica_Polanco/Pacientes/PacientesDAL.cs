@@ -30,7 +30,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
-        public static List<Pacient> BuscarPaciente(string pDato)
+        public static List<Pacient> ConsultarPaciente(string pDato)
         {
 
             
@@ -70,7 +70,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
-        public static Pacient ConsultarPaciente(Int64 pCodigo_Paciente)
+        public static Pacient buscarPaciente(string pCodigo_Paciente)
         {
             try
             {

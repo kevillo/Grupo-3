@@ -38,7 +38,6 @@ namespace Clinica_Medica_Polanco
             cmb_Tipo_Sangre_Paciente.Items.Add("O");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB+");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB-");
-
         }
 
         private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)
