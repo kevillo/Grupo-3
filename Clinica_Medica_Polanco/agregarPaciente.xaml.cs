@@ -33,6 +33,7 @@ namespace Clinica_Medica_Polanco
 
 
             dtp_Fecha_Nacimiento_Paciente.Text = DateTime.Now.ToShortDateString();
+            //Estableciendo valores al cmb tipo sangre
             cmb_Tipo_Sangre_Paciente.Items.Add("A+");
             cmb_Tipo_Sangre_Paciente.Items.Add("O");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB+");
@@ -78,6 +79,7 @@ namespace Clinica_Medica_Polanco
 
             try
             {
+                //Validación de datos
                 int resultado = 0;
                 Pacientes.Paciente paciente1 = new();
                 paciente1.Nombre = txt_Nombre_Paciente.Text;
@@ -86,7 +88,7 @@ namespace Clinica_Medica_Polanco
                 paciente1.Telefono = txt_Telefono_Paciente.Text;
                 paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Fecha_Nacimiento_Paciente.Text);
                 paciente1.Correo = txt_Correo_Paciente.Text;
-                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : int.Parse(txt_Altura_Paciente.Text);
+                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : int.Parse(txt_Altura_Paciente.Text); 
                 paciente1.TipoSangre = cmb_Tipo_Sangre_Paciente.SelectedItem.ToString();
               
                 paciente1.Direccion = string.IsNullOrWhiteSpace(StringFromRichTextBox(Rtb_direccion_Paciente))?null: StringFromRichTextBox(Rtb_direccion_Paciente);
@@ -103,6 +105,7 @@ namespace Clinica_Medica_Polanco
 
             catch (FormatException error)
             {
+                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("Apellido")) validateFields(txt_Apellido_Paciente, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Nombre")) validateFields(txt_Nombre_Paciente, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Identidad_Paciente, leyenda: "Identidad");
@@ -116,7 +119,7 @@ namespace Clinica_Medica_Polanco
             
             
         }
-
+        //Validar campos
         private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);

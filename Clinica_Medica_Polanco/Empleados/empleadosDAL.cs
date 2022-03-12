@@ -13,7 +13,7 @@ namespace Clinica_Medica_Polanco.Empleados
         {
             try
             {
-
+                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Empleados_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -36,7 +36,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.ExecuteReader();
                 MessageBox.Show("Empleado agregado exitosamente");
             }
-            catch (Exception error)
+            catch (Exception error)//excepción que indica error
             {
                 MessageBox.Show("Error al ingresar empleado " + error.Message);
                 
@@ -141,6 +141,7 @@ namespace Clinica_Medica_Polanco.Empleados
         {
             try
             {
+                //Validación de datos
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("exec Empleados_Update", ConexionBaseDeDatos.conexion);
@@ -201,9 +202,8 @@ namespace Clinica_Medica_Polanco.Empleados
 
                 ConexionBaseDeDatos.CerrarConexion();
             }
-
-        }
-        //Cargar datos al combobox
+        } 
+        //Función para cargar datos al combobox de Jornada Empleado
         public static void cargarJornada(ComboBox cmbJornada)
         {
             
@@ -229,7 +229,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-
+        //Función para cargar datos desde la bd al combobox de Sucursal
         public static void cargarSucursal(ComboBox cmbSucursal)
         {
             
@@ -258,7 +258,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-
+        //Función par cargar datos desde la bd al cmb de Cargo 
         public static void cargarCargo(ComboBox cmbCargo)
         {
             

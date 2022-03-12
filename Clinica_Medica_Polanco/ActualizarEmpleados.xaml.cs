@@ -28,14 +28,17 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
             this.SourceInitialized += ActualizarEmpleados_SourceInitialized;
 
+            //Llamado de función para cargar datos desde la bd a cmb
+            empleadosDAL.cargarJornada(cmb_Actualizar_Empleado_Jornada);
+            empleadosDAL.cargarCargo(cmb_Actualizar_Empleado_Cargo);
+
             dtp_Nacimiento_Actualizar_Empleado.Text = DateTime.Now.ToShortDateString();
+            //Estableciendo valores al cmb tipo sangre
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("A");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB-");
         }
-
-      
 
         private void ActualizarEmpleados_SourceInitialized(object sender, EventArgs e)
         {
@@ -73,6 +76,7 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
+                //Validación de datos
                 int resultado = 0;
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = txt_Nombre_Actualizar_Empleado.Text;
@@ -102,6 +106,7 @@ namespace Clinica_Medica_Polanco
 
             catch (FormatException error)
             {
+                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("Nombre")) validateFields(txt_Nombre_Actualizar_Empleado, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Identidad_Actualizar_Empleado, leyenda: "Identidad");
                 else if (error.StackTrace.Contains("Telefono")) validateFields(txt_Telefono_Actualizar_Empleado, leyenda: "Teléfono");
@@ -118,6 +123,7 @@ namespace Clinica_Medica_Polanco
 
             }
         }
+        //Validar campos tipo txt, rtb, dt, cmb
         private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
@@ -136,6 +142,16 @@ namespace Clinica_Medica_Polanco
             );
 
             return textRange.Text;
+        }
+
+        private void btn_Buscar_Actualizar_Empleado_Click(object sender, RoutedEventArgs e)
+        {
+            string actualizarEmpleado = txt_Codigo_Actualizar_Empleado.Text;
+            if (!string.IsNullOrEmpty(actualizarEmpleado))
+            {
+                // aqui se traen los examenes por codigo de empleado
+            }
+            else MessageBox.Show("No puede dejar el id del empleado vacío ");
         }
     }
 }

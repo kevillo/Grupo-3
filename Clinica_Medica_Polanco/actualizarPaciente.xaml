@@ -173,7 +173,7 @@
     </Window.Resources>
     <Grid>
         <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,82,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,116,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35"/>
+        <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,116,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35" Click="btn_Actualizar_Paciente_Buscar_Click"/>
         <Label Content="Nombre completo:" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <TextBox x:Name="txt_Actualizar_Paciente_Nombre_Completo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="201,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="621" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
         <Label Content="Identidad:" HorizontalAlignment="Left" Margin="278,223,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>

@@ -178,10 +178,10 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <ComboBox x:Name="cmb_Sucursal_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="80,124,0,0" VerticalAlignment="Top" Width="120" Height="37" FontFamily="Tahoma" FontSize="15">
+        <ComboBox x:Name="cmb_Sucursal_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="48,124,0,0" VerticalAlignment="Top" Width="152" Height="37" FontFamily="Tahoma" FontSize="15">
 
         </ComboBox>
-        <Image HorizontalAlignment="Left" Height="31" Margin="80,127,0,0" VerticalAlignment="Top" Width="34" Source="/embudoxd.png"/>
+        <Image HorizontalAlignment="Left" Height="31" Margin="54,127,0,0" VerticalAlignment="Top" Width="34" Source="/embudoxd.png"/>
         <Label Content="Ingrese el nombre del examen médico" HorizontalAlignment="Left" Margin="220,90,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20"/>
 
     </Grid>

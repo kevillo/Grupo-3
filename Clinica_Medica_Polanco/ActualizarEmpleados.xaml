@@ -173,7 +173,7 @@
 
         <Label Content="Identificación del empleado o código" HorizontalAlignment="Left" Margin="291,107,0,0" VerticalAlignment="Top" Height="32" Width="262" FontSize="15" FontFamily="Tahoma"/>
         <TextBox x:Name="txt_Codigo_Actualizar_Empleado" HorizontalAlignment="Left" Margin="293,139,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="415" Height="39" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <Button Style="{DynamicResource btn_Style_Actualiza_Empleado}"  FontSize="17" FontFamily="Tahoma" Cursor="Hand" Foreground="White" x:Name="btn_Buscar_Actualizar_Empleado" Content="Buscar" HorizontalAlignment="Left" Margin="764,139,0,0" VerticalAlignment="Top" Height="39" Width="104"/>
+        <Button Style="{DynamicResource btn_Style_Actualiza_Empleado}"  FontSize="17" FontFamily="Tahoma" Cursor="Hand" Foreground="White" x:Name="btn_Buscar_Actualizar_Empleado" Content="Buscar" HorizontalAlignment="Left" Margin="764,139,0,0" VerticalAlignment="Top" Height="39" Width="104" Click="btn_Buscar_Actualizar_Empleado_Click"/>
         <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="295,190,0,0" VerticalAlignment="Top" Height="34" Width="137" FontFamily="Tahoma" FontSize="15"/>
         <TextBox x:Name="txt_Nombre_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Identidad" HorizontalAlignment="Left" Margin="738,192,0,0" VerticalAlignment="Top" Height="27" Width="83" FontFamily="Tahoma" FontSize="15"/>

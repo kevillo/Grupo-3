@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Clinica_Medica_Polanco.ExamenesMedicos;
 using System.Windows.Interop;
 
 namespace Clinica_Medica_Polanco
@@ -24,6 +25,8 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += ConsultarExamen_SourceInitialized;
+
+            ExamenesDAL.cargarSucursal(cmb_Sucursal_Buscar);
         }
         private void ConsultarExamen_SourceInitialized(object sender, EventArgs e)
         {

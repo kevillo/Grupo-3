@@ -74,7 +74,6 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    ExamenesMedicos eExamen = new ExamenesMedicos();
                     ExamenesMedicos eExamenes = new ExamenesMedicos();
                     eExamenes.CodigoExamen = reader.GetInt32(0);
                     eExamenes.CodigoTipoExamen = reader.GetInt32(1);
@@ -94,7 +93,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        //Cargar datos al combobox de microbiológo
+        //Función para cargar datos al combobox de microbiológo
         public static void cargarMicrobiologos(ComboBox cmb_Solicitud_Examen_Microbiologo)
         {
 
@@ -120,7 +119,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        //Cargar datos al combobox de enfermeros
+        //Función para cargar datos al combobox de enfermeros
         public static void cargarEnfermeros(ComboBox cmb_Solicitud_Examen_Enfermero)
         {
 
@@ -146,7 +145,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        //Cargar datos al combobox forma de entrega examen
+        //Función para cargar datos al combobox forma de entrega examen
         public static void cargarFormaEntrega(ComboBox cmb_Forma_Entrega)
         {
 
@@ -172,7 +171,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        //Cargar datos al combobox de forma pago
+        //Función para cargar datos al combobox de forma pago
         public static void cargarFormaPago(ComboBox cmb_Forma_Pago)
         {
 
@@ -187,6 +186,32 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 {
                     string nombre = dr.GetString(0);
                     cmb_Forma_Pago.Items.Add(nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+        //Función para cargar datos al combobox de sucursal
+        public static void cargarSucursal(ComboBox cmb_Sucursal_Buscar)
+        {
+
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query = "Select Nombre_Sucursal from Sucursales";
+                SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(0);
+                    cmb_Sucursal_Buscar.Items.Add(nombre);
                 }
             }
             catch (Exception ex)

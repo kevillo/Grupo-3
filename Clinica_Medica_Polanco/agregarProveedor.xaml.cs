@@ -17,6 +17,7 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
 
+            //Llamado a la función donde cargamos datos desde la bd al cmb áreaTrabajo
             ProveedoresDAL.cargarAreaTrabajo(cmb_Area_Trabajo_Proveedor_Agregar);
         }
 
@@ -24,6 +25,7 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
+                //Validación de datos
                 Proveedores.Proveedores proveedores1 = new();
                 proveedores1.NombreProveedor = txt_Nombre_Proveedor_Agregar.Text;
                 proveedores1.ApellidoProveedor = txt_Apellido_Proveedor_Agregar.Text;
@@ -37,6 +39,7 @@ namespace Clinica_Medica_Polanco
 
             catch (FormatException error)
             {
+                //Excepción que nos indica de algún error
                 if (error.StackTrace.Contains("Nombre")) validateFields(txt_Nombre_Proveedor_Agregar, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) validateFields(txt_Apellido_Proveedor_Agregar, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Telefono")) validateFields(txt_Telefono_Proveedor_Agregar, leyenda: "Teléfono");
@@ -46,6 +49,7 @@ namespace Clinica_Medica_Polanco
 
             }
         }
+        //Validando campos como txt, rtb, dt y cmb
         private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
@@ -65,6 +69,7 @@ namespace Clinica_Medica_Polanco
             );
             return textRange.Text;
         }
+        //Función para reinicar pantalla y a la vez limpiar los campos
         private void reiniciarPantalla()
         {
             txt_Nombre_Proveedor_Agregar.Clear();
@@ -75,8 +80,5 @@ namespace Clinica_Medica_Polanco
             cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex = 0;
 
         }
-
-
-
     }
 }

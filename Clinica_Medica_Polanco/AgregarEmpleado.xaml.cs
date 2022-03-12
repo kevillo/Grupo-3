@@ -18,6 +18,7 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
             this.SourceInitialized += AgregarEmpleado_SourceInitialized;
 
+            //Llamando la función para cargar datos de la bd a los cmb
             empleadosDAL.cargarJornada(cmb_Jornada_Laboral);
             empleadosDAL.cargarCargo(cmb_Cargo);
             empleadosDAL.cargarSucursal(cmb_Sucursal);
@@ -26,6 +27,7 @@ namespace Clinica_Medica_Polanco
             dtp_Ingreso_Agregar_Empleado.Text = "1999/01/01";
             dtp_Pago_Agregar_Empleado.Text = "1999/01/01";
             
+            //Estableciendo valores al cmb tipo sangre
             cmb_Tipo_Sangre.Items.Add("A+");
             cmb_Tipo_Sangre.Items.Add("O");
             cmb_Tipo_Sangre.Items.Add("AB+");
@@ -41,6 +43,7 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
+                //Validación de datos
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = txt_Nombre.Text;
                 empleados1.ApellidoEmpleado = txt_Apellido.Text;
@@ -63,6 +66,7 @@ namespace Clinica_Medica_Polanco
 
             catch (FormatException error)
             {
+                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("Nombre")) validateFields(txt_Nombre, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) validateFields(txt_Apellido, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Identidad")) validateFields(txt_Identidad, leyenda: "Identidad");
@@ -81,6 +85,7 @@ namespace Clinica_Medica_Polanco
 
             }
         }
+        //Validar campos
         private void validateFields([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
             MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);

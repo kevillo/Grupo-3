@@ -190,5 +190,15 @@ namespace Clinica_Medica_Polanco
             // Add to the panel   
             stc_InfoPaciente.Children.Add(block);
         }
+
+        private void btn_Actualizar_Paciente_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            string actualizar_paciente = txt_PacienteId.Text;
+            if (!string.IsNullOrEmpty(actualizar_paciente))
+            {
+                // aqui pone el codigo  que llama a la funcion de actualizar 
+            }
+            else MessageBox.Show("Ingrese un id de paciente válido");
+        }
     }
 }
