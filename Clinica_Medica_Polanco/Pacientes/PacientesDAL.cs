@@ -7,7 +7,7 @@ namespace Clinica_Medica_Polanco.Pacientes
 {
     public class PacientesDAL
     {
-        public static int AgregarPaciente(Paciente pPaciente)
+        public static int AgregarPaciente(Pacient pPaciente)
         {
             try
             {
@@ -30,20 +30,20 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
-        public static List<Paciente> BuscarPaciente(string pDato)
+        public static List<Pacient> BuscarPaciente(string pDato)
         {
 
             
             try
             {
                 //Validación de datos
-                List<Paciente> Lista = new List<Paciente>();
+                List<Pacient> Lista = new List<Pacient>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Nombre_Paciente like '%{0}%' or Identidad_Paciente='{1}' ", pDato, pDato), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Paciente pPaciente = new Paciente();
+                    Pacient pPaciente = new Pacient();
                     pPaciente.Codigo = reader.GetInt32(0);
                     pPaciente.Nombre = reader.GetString(1);
                     pPaciente.Apellido = reader.GetString(2);
@@ -62,7 +62,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             catch(Exception err)
             {
                 MessageBox.Show("No se puede encontrar un paciente con esas especificaciones " + err.Message) ;
-                return new List<Paciente>();
+                return new List<Pacient>();
             }
             finally
             {
@@ -70,12 +70,12 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
-        public static Paciente ConsultarPaciente(Int64 pCodigo_Paciente)
+        public static Pacient ConsultarPaciente(Int64 pCodigo_Paciente)
         {
             try
             {
                 //Validación de datos
-                Paciente pPaciente = new Paciente();
+                Pacient pPaciente = new Pacient();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Codigo_Paciente = {0}'", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
@@ -98,7 +98,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             catch(Exception error)
             {
                 MessageBox.Show("Error al buscar el paciente ",error.Message);
-                return new Paciente();
+                return new Pacient();
             }
             finally
             {
@@ -107,13 +107,17 @@ namespace Clinica_Medica_Polanco.Pacientes
 
         }
 
-        public static int ModificarPaciente(Paciente pPaciente)
+        public static int ModificarPaciente(Pacient pPaciente)
         {
             try
             {
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Update Pacientes set Nombre_Paciente = '{0}', Apellido_Paciente = '{1}', Identidad_Paciente = '{2}', Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', Altura_Paciente = '{6}', Tipo_Sangre_Paciente = '{7}', Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Codigo_Paciente = '{10}'", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado, pPaciente.Codigo), ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand(String.Format("Update Pacientes set Nombre_Paciente = '{0}', Apellido_Paciente = '{1}', Identidad_Paciente = '{2}', " +
+                    "Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', Altura_Paciente = '{6}', Tipo_Sangre_Paciente = '{7}', " +
+                    "Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Codigo_Paciente = '{10}'", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, 
+                    pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado, 
+                    pPaciente.Codigo), ConexionBaseDeDatos.conexion);
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
@@ -126,7 +130,6 @@ namespace Clinica_Medica_Polanco.Pacientes
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-
         }
 
         public static int Eliminar(Int64 pCodigo_Paciente)
