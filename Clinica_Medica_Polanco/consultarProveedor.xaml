@@ -65,7 +65,7 @@
     </UserControl.Resources>
     <Grid Background="White" Margin="6,0,-6,0">
         <Label Content="Nombre del proveedor o código:" HorizontalAlignment="Left" Margin="195,18,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Proveedores_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="195,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Gestionar_Proveedores_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="195,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Gestionar_Proveedores_Buscar_KeyUp"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Gestionar_Proveedores_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Height="33" Margin="582,51,0,0" VerticalAlignment="Top" Width="92" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="54,84,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Proveedores_Nombre" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="54,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
@@ -81,6 +81,11 @@
         <Label Content="Área de trabajo:" HorizontalAlignment="Left" Margin="397,248,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Proveedores_Area_Trabajo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="32" Margin="397,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <DataGrid x:Name="dtg_Gestionar_Proveedores_Consulta" Margin="10,323,50,10" FontFamily="Tahoma"/>
-
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="195,80,258,332" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="514"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </UserControl>

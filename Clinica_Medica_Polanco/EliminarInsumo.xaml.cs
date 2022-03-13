@@ -89,7 +89,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Codigo_Insumo.Text = (sender as TextBlock).Text.Split(" ")[0];
+                txt_Codigo_Insumo.Text = (sender as TextBlock).Text.Split("-")[1];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;

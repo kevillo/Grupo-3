@@ -12,7 +12,7 @@ namespace Clinica_Medica_Polanco.Autocompletados
         {
             ConexionBaseDeDatos.conexion.Open();
             List<string> data = new List<string>();
-            SqlCommand comando = new SqlCommand(String.Format("Select Identidad_Empleado,Nombre_Empleado,Apellido_Empleado from Empleados;"), ConexionBaseDeDatos.conexion);
+            SqlCommand comando = new SqlCommand(String.Format("Select Identidad_Empleado, Nombre_Empleado, Apellido_Empleado from Empleados;"), ConexionBaseDeDatos.conexion);
             SqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {

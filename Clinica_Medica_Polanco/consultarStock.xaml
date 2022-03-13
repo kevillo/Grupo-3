@@ -86,7 +86,12 @@
         <Label x:Name="lbl_Consultar_Stock_Sucursales2" HorizontalAlignment="Left" Height="25" Margin="404,446,0,0" VerticalAlignment="Top" Width="168"/>
         <Label x:Name="lbl_Consultar_Stock_Sucursales3" HorizontalAlignment="Left" Height="24" Margin="589,413,0,0" VerticalAlignment="Top" Width="165"/>
         <Label x:Name="lbl_Consultar_Stock_Sucursales4" HorizontalAlignment="Left" Height="24" Margin="589,446,0,0" VerticalAlignment="Top" Width="165"/>
-        <TextBox x:Name="txt_Consultar_Stock_Codigo_Producto" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="123,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-
+        <TextBox x:Name="txt_Consultar_Stock_Codigo_Producto" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="123,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Consultar_Stock_Codigo_Producto_KeyUp"/>
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="123,75,275,337" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="514"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </UserControl>

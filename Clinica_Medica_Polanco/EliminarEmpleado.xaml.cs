@@ -111,7 +111,6 @@ namespace Clinica_Medica_Polanco
             stc_InfoPaciente.Visibility = Visibility.Visible;
             scv_BuscarPaciente.Visibility = Visibility.Visible;
             brd_BuscarPaciente.Visibility = Visibility.Visible;
-            //scv_BuscarPaciente.Background = new 
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
             var data = Autocompletados.autocompletarEmpleado.GetData();

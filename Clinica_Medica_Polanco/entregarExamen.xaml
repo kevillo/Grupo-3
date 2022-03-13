@@ -174,7 +174,7 @@
         <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309" Margin="2,2,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="222,0,0,0"/>
         <Label Content="Entrega de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,12,0,0"/>
-        <TextBox x:Name="txt_Entrega_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="220,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Entrega_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="220,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="518" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Entrega_Examen_Buscar_KeyUp"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Entrega_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="761,145,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Entrega_Examen_Buscar_Click"/>
         <DataGrid x:Name="dtg_Entrega_Examen_Examenes" Margin="20,187,12,103" FontFamily="Tahoma"/>
         <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Entrega_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Margin="20,535,0,25" Width="72" Click="btn_Revision_Examen_Salir_Click" Height="60">
@@ -182,6 +182,12 @@
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="208,182,355,348" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="517"/>
+            </ScrollViewer>
+        </Border>
         <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="582,535,0,0" VerticalAlignment="Top" Width="310" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Correo_Click"/>
         <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="268,535,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Fisico_Click"/>
         <Label Content="Ingrese el número de la factura" HorizontalAlignment="Left" Margin="222,100,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="25"/>

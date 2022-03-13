@@ -181,7 +181,7 @@
         <Label Content="Exámenes en combo:" HorizontalAlignment="Left" Margin="63,90,0,0" VerticalAlignment="Top" Height="36" Width="247" FontFamily="Tahoma" FontSize="20"/>
         <CheckBox x:Name="chk_Solicitud_Examen_Combo_Si" Content="Sí" HorizontalAlignment="Left" Margin="71,129,0,0" VerticalAlignment="Top" Height="27" Width="194" FontFamily="Tahoma" FontSize="17"/>
         <Label Content="Identificación cliente:" HorizontalAlignment="Left" Margin="445,90,0,0" VerticalAlignment="Top" Height="36" Width="247" FontFamily="Tahoma" FontSize="20"/>
-        <TextBox x:Name="txt_Solicitud_Examen_ID_Cliente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="360,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="29" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Solicitud_Examen_ID_Cliente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="360,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="29" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Solicitud_Examen_ID_Cliente_KeyUp"/>
         <Label Content="Busca el examen a realizar:" HorizontalAlignment="Left" Margin="16,174,0,0" VerticalAlignment="Top" Height="36" Width="262" FontFamily="Tahoma" FontSize="20"/>
         <TextBox x:Name="txt_Solicitud_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="16,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="423" Height="29" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Solicitud_Examen_Buscar_KeyUp"/>
         <Button Style="{DynamicResource Style_btn_Cargar_Examen}" x:Name="btn_Solicitud_Examen_Cargar" Cursor="Hand" Content="Cargar examen" HorizontalAlignment="Left" Margin="540,212,0,0" VerticalAlignment="Top" Height="36" Width="125" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Click="btn_Solicitud_Examen_Cargar_Click"/>
@@ -205,6 +205,12 @@
             BorderThickness="1" Margin="16,249,641,281" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-15,-3,0,0" Background="Transparent" HorizontalAlignment="Left" Width="449" Height="85" VerticalAlignment="Top">
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="419"/>
+            </ScrollViewer>
+        </Border>
+        <Border x:Name="brd_BuscarCliente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="360,158,335,372" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarCliente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoCliente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
     </Grid>

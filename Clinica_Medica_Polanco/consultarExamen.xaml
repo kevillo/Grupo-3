@@ -170,7 +170,7 @@
         <Image HorizontalAlignment="Left" Height="116" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
         <Rectangle HorizontalAlignment="Left" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="220,-2,0,0"/>
         <Label Content="Consulta de examen médico" HorizontalAlignment="Left" VerticalAlignment="Top" Height="61" Width="472" FontFamily="Tahoma" FontSize="37" Foreground="White" Margin="328,14,0,0"/>
-        <TextBox x:Name="txt_Consulta_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="220,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Consulta_Examen_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="37" Margin="220,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Consulta_Examen_Buscar_KeyUp"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Consulta_Examen_Buscar" Content="Buscar exámenes" Cursor="Hand" HorizontalAlignment="Left" Height="37" Margin="761,124,0,0" VerticalAlignment="Top" Width="149" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Consulta_Examen_Buscar_Click"/>
         <DataGrid x:Name="dtg_Consulta_Examen_Examenes" Margin="18,177,14,135" VerticalContentAlignment="Center" FontFamily="Tahoma" FontSize="10"/>
         <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Consulta_Examen_Salir" Cursor="Hand" HorizontalAlignment="Left" Height="72" Margin="506,520,0,0" VerticalAlignment="Top" Width="74" Click="btn_Consulta_Examen_Salir_Click">
@@ -178,6 +178,12 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="220,161,356,350" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="-1,4,-1,-1">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="93" Width="524"/>
+            </ScrollViewer>
+        </Border>
         <ComboBox x:Name="cmb_Sucursal_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="48,124,0,0" VerticalAlignment="Top" Width="152" Height="37" FontFamily="Tahoma" FontSize="15">
 
         </ComboBox>

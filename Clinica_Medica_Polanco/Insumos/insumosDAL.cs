@@ -54,7 +54,7 @@ namespace Clinica_Medica_Polanco.Insumos
                 {
                     codInsumo = dr.GetInt32(0);
                 }
-                return codInsumo 
+                return codInsumo; 
             }
             catch (Exception error)
             {

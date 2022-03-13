@@ -35,24 +35,24 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
         }
         public static List<ExamenesMedicos> BuscarExamen(string pDato)
         {
-            try
+            List<ExamenesMedicos> Lista = new List<ExamenesMedicos>();
+            ConexionBaseDeDatos.ObtenerConexion();
+            SqlCommand comando = new SqlCommand(string.Format("Select * from Examenes_Medicos where Cod_Examen_Medico = '{0}'", pDato), ConexionBaseDeDatos.conexion);
+            SqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                ExamenesMedicos eExamenes = new ExamenesMedicos();
+                eExamenes.CodigoExamen = reader.GetInt32(0);
+                eExamenes.CodigoTipoExamen = reader.GetInt32(1);
+                eExamenes.PrecioUnitario = reader.GetDecimal(2);
+                eExamenes.Estado = reader.GetBoolean(3);
+                Lista.Add(eExamenes);
+            }
+            return Lista;
+            /*try
             {
                 //Validación de datos
-                List<ExamenesMedicos> Lista = new List<ExamenesMedicos>();
-                ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Select Cod_Examen_Medico, Codigo_Tipo_Examen, Precio_Unitario, Estado From Examenes_Medicos WHERE Cod_Examen_Medico = @Cod_Examen");
-                comando.Parameters.AddWithValue("cod_Examen_Medico", pDato);
-                SqlDataReader reader = comando.ExecuteReader();
-                while (reader.Read())
-                {
-                    ExamenesMedicos eExamenes = new ExamenesMedicos();
-                    eExamenes.CodigoExamen = reader.GetInt32(0);
-                    eExamenes.CodigoTipoExamen = reader.GetInt32(1);
-                    eExamenes.PrecioUnitario = reader.GetFloat(2);
-                    eExamenes.Estado = reader.GetBoolean(3);
-                    Lista.Add(eExamenes);
-                }
-                return Lista;
+                
             }
             catch (Exception err)
             {
@@ -62,7 +62,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
-            }
+            }*/
         }
         public static ExamenesMedicos BuscarExamenPorId(Int64 pDato)
         {
@@ -79,7 +79,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     ExamenesMedicos eExamenes = new ExamenesMedicos();
                     eExamenes.CodigoExamen = reader.GetInt32(0);
                     eExamenes.CodigoTipoExamen = reader.GetInt32(1);
-                    eExamenes.PrecioUnitario = reader.GetFloat(2);
+                    eExamenes.PrecioUnitario = reader.GetDecimal(2);
                     eExamenes.Estado = reader.GetBoolean(3);
                     break;
                 }

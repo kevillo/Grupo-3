@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Clinica_Medica_Polanco.ExamenesMedicos
 {
-    class ExamenesMedicos
+    public class ExamenesMedicos
     {
         private int _codigoExamen;
         private int _codigoTipoExamen;
-        private float _precioUnitario;
+        private decimal _precioUnitario;
         private bool _estado;
 
         // validacion string: que no venga vacio
@@ -25,7 +25,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 else _codigoTipoExamen = value;
             }
         }
-        public float PrecioUnitario { get => _precioUnitario; set => _precioUnitario = value; }
+        public decimal PrecioUnitario { get => _precioUnitario; set => _precioUnitario = value; }
         public bool Estado { get => _estado; set => _estado = value; }
     }
 }

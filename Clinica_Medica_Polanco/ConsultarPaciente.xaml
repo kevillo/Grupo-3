@@ -118,7 +118,7 @@
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="127" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="0,-2,0,0"/>
-        <TextBox x:Name="txt_Consultar_Pacientes" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="196,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="507" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Consultar_Pacientes" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="196,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="507" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center" KeyUp="txt_Consultar_Pacientes_KeyUp"/>
         <Button Style="{DynamicResource Style_ConsultarEmpleados_Buscar}" x:Name="btn_Consultar_Pacientes" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Margin="751,123,0,0" VerticalAlignment="Top" Width="127" Height="35" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Consultar_Pacientes_Click"/>
         <DataGrid x:Name="dtg_Consultar_Pacientes" CanUserAddRows="False" Margin="20,176,28,100" FontFamily="Tahoma" FontSize="20" FontStyle="Normal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FlowDirection="LeftToRight"/>
         <Button Style="{DynamicResource Style_ConsultarEmpleados_Salir}" x:Name="btn_Consultar_Pacientes_Salir" Cursor="Hand" Content="" HorizontalAlignment="Left" Margin="502,529,0,0" VerticalAlignment="Top" Height="60" Width="72" Click="btn_Consultar_Pacientes_Salir_Click" >
@@ -126,6 +126,12 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="89,104,295,309" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="514"/>
+            </ScrollViewer>
+        </Border>
         <Label Content="Consultar Pacientes" HorizontalAlignment="Left" Margin="360,12,0,0" VerticalAlignment="Top" Height="60" Width="354" Foreground="White" FontFamily="Tahoma" FontSize="37"/>
         <Label Content="Ingrese identidad o nombre:" HorizontalAlignment="Left" Height="35" Margin="196,90,0,0" VerticalAlignment="Top" Width="361" FontFamily="Tahoma" FontSize="17"/>
 
