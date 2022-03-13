@@ -25,7 +25,6 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
 
-            ProveedoresDAL.CargarProveedores(cmb_Gestionar_Insumo_Nombre_Proveedor);
         }
 
         private void btn_Gestionar_Insumo_Actualizar_Click(object sender, RoutedEventArgs e)

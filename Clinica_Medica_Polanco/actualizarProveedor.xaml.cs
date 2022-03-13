@@ -131,7 +131,7 @@ namespace Clinica_Medica_Polanco
                 txt_Telefono_Proveedor_Actualizar.Text = proveedorSeleccionado.CorreoProveedor;
                 txt_Correo_Proveedor_Actualizar.Text = proveedorSeleccionado.TelefonoProveedor;
                 txt_Direccion_Proveedor_Actualizar.Text = proveedorSeleccionado.TelefonoProveedor;
-                //cmb_Area_Trabajo_Proveedor_Actualizar.SelectedItem = nuevo.NombreArea;
+                cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = proveedorSeleccionado.CodigoAreaTrabajo;
             }
             else MessageBox.Show("Ingrese un No. de Identidad de empleado válido");
         }

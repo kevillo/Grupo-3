@@ -89,6 +89,7 @@ namespace Clinica_Medica_Polanco.Proveedores
                     pProveedores.DireccionProveedor = reader.GetString(2);
                     pProveedores.CorreoProveedor = reader.GetString(3);
                     pProveedores.TelefonoProveedor = reader.GetString(4);
+
                 }
                 return pProveedores;
             }

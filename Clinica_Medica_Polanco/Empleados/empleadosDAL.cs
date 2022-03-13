@@ -105,9 +105,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 //Validación de datos
                 Empleados nuevoEmpleado = new();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, Altura_Empleado(Cm), Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, Fecha_Contratacion, Fecha_Pago, Sueldo_Base From Empleados WHERE Identidad_Empleado = @identidadEmpleado OR Nombre_Empleado=@nombreEmpleado", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("nombreEmpleado", pDato);
-                comando.Parameters.AddWithValue("identidadEmpleado", pDato);
+                SqlCommand comando = new SqlCommand(string.Format("Select * from Empleados where Identidad_Empleado = '{0}'", pDato), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -129,7 +127,6 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.FechaContratacion = reader.GetDateTime(14);
                     eEmpleados.FechaPago = reader.GetDateTime(15);
                     eEmpleados.SueldoBase = reader.GetDecimal(16);
-                    break;
                 }
                 return nuevoEmpleado;
             }

@@ -113,8 +113,6 @@ namespace Clinica_Medica_Polanco
 
         public Insumos.Insumos insumoSeleccionado { get; set; }
         public Insumos.Insumos insumoActual { get; set; }
-        public Proveedores.Proveedores proveedorSeleccionado { get; set; }
-        public Proveedores.Proveedores proveedorActual { get; set; }
         private void btn__Buscar_Insumo_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Insumo = txt_Codigo_Insumo.Text;
@@ -123,9 +121,8 @@ namespace Clinica_Medica_Polanco
             if (!string.IsNullOrEmpty(buscar_Insumo))
             {
                 insumoActual = insumoSeleccionado;
-                proveedorActual = proveedorSeleccionado;
                 txt_Nombre_Insumo.Text = insumoSeleccionado.NombreInsumo;
-                //txt_Nombre_Proveedor.Text = proveedorSeleccionado.NombreProveedor;
+                txt_Fecha_Expiración_Insumo.Text = Convert.ToString(insumoSeleccionado.FechaExpiracion);
                 txt_Precio_Unitario.Text = Convert.ToString(insumoSeleccionado.PrecioUnitario);
                 txt_Numero_de_serie.Text = insumoSeleccionado.NumeroSerie;
             }
