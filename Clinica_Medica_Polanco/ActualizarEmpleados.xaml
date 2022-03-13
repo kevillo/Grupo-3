@@ -172,7 +172,7 @@
         <Rectangle HorizontalAlignment="Center" Height="98" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
 
         <Label Content="Identificación del empleado o código" HorizontalAlignment="Left" Margin="291,107,0,0" VerticalAlignment="Top" Height="32" Width="262" FontSize="15" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Codigo_Actualizar_Empleado" HorizontalAlignment="Left" Margin="293,139,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="415" Height="39" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Codigo_Actualizar_Empleado" HorizontalAlignment="Left" Margin="293,139,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="415" Height="39" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Codigo_Actualizar_Empleado_KeyUp"/>
         <Button Style="{DynamicResource btn_Style_Actualiza_Empleado}"  FontSize="17" FontFamily="Tahoma" Cursor="Hand" Foreground="White" x:Name="btn_Buscar_Actualizar_Empleado" Content="Buscar" HorizontalAlignment="Left" Margin="764,139,0,0" VerticalAlignment="Top" Height="39" Width="104" Click="btn_Buscar_Actualizar_Empleado_Click"/>
         <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="295,190,0,0" VerticalAlignment="Top" Height="34" Width="137" FontFamily="Tahoma" FontSize="15"/>
         <TextBox x:Name="txt_Nombre_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
@@ -215,6 +215,11 @@
         <ComboBox x:Name="cmb_Actualizar_Empleado_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="377,338,0,0" VerticalAlignment="Top" Width="83" FontFamily="Tahoma" FontSize="15"/>
         <ComboBox x:Name="cmb_Actualizar_Empleado_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="610,413,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
         <ComboBox x:Name="cmb_Actualizar_Empleado_Jornada" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="254,476,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" FontSize="15"/>
-
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="295,181,376,349" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>

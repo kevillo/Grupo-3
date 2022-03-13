@@ -77,7 +77,9 @@ namespace Clinica_Medica_Polanco.Pacientes
                 //Validación de datos
                 Pacient pPaciente = new Pacient();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes where Identidad_Paciente ='{0}'", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, " +
+                    "Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes " +
+                    "where Identidad_Paciente ='{0}'", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {

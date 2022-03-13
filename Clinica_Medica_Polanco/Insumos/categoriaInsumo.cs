@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Clinica_Medica_Polanco.Insumos
 {
-    class categoriaInsumo
+    public class categoriaInsumo
     {
         private int _CodigoCategoriaInsumo;
         private string _DescripcionCategoriaInsumo;

@@ -73,29 +73,24 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
 
-        public static Proveedores BuscarProveedorPorId(Int64 codigoProveedor)
+        public static Proveedores BuscarProveedorPorId(string codigoProveedor)
         {
             try
             {
                 //Validación de datos
-                Proveedores nuevoProveedor = new();
+                Proveedores pProveedores = new Proveedores();               
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("WHERE Codigo_Proveedor = @codigoProveedor", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("codigoProveedor", codigoProveedor);
-
+                SqlCommand comando = new SqlCommand(string.Format("Select Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correro_Proveedor, Telefono_Proveedor from [dbo].[vProveedoresBuscar] where Codigo_Proveedor = '{0}'", codigoProveedor), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
-                {
-                    Proveedores pProveedores = new Proveedores();
-                    pProveedores.CodigoProveedor = reader.GetInt32(0);
-                    pProveedores.NombreProveedor = reader.GetString(1);
-                    pProveedores.ApellidoProveedor = reader.GetString(2);
-                    pProveedores.DireccionProveedor = reader.GetString(3);
-                    pProveedores.CorreoProveedor = reader.GetString(4);
-                    pProveedores.TelefonoProveedor = reader.GetString(5);
-                    pProveedores.EstadoProveedor = reader.GetBoolean(6);
+                {                    
+                    pProveedores.NombreProveedor = reader.GetString(0);
+                    pProveedores.ApellidoProveedor = reader.GetString(1);
+                    pProveedores.DireccionProveedor = reader.GetString(2);
+                    pProveedores.CorreoProveedor = reader.GetString(3);
+                    pProveedores.TelefonoProveedor = reader.GetString(4);
                 }
-                return nuevoProveedor;
+                return pProveedores;
             }
             catch (Exception error)
             {

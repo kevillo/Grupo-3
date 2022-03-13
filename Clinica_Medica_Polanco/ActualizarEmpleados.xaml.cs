@@ -144,15 +144,117 @@ namespace Clinica_Medica_Polanco
 
             return textRange.Text;
         }
+        public Empleados.Empleados empleadoSeleccionado { get; set; }
+        public Empleados.Empleados empleadoActual { get; set; }
 
         private void btn_Buscar_Actualizar_Empleado_Click(object sender, RoutedEventArgs e)
         {
-            string actualizarEmpleado = txt_Codigo_Actualizar_Empleado.Text;
-            if (!string.IsNullOrEmpty(actualizarEmpleado))
+            string buscar_Empleado = txt_Codigo_Actualizar_Empleado.Text;
+            empleadoSeleccionado = empleadosDAL.BuscarEmpleadoPorId(buscar_Empleado);
+
+            if (!string.IsNullOrEmpty(buscar_Empleado))
             {
-                // aqui se traen los examenes por codigo de empleado
+                empleadoActual = empleadoSeleccionado;
+                txt_Nombre_Actualizar_Empleado.Text = (empleadoSeleccionado.NombreEmpleado + " " + empleadoSeleccionado.ApellidoEmpleado);
+                txt_Identidad_Actualizar_Empleado.Text = empleadoSeleccionado.IdentidadEmpleado;
+                txt_Telefono_Actualizar_Empleado.Text = empleadoSeleccionado.TelefonoEmpleado;
+                dtp_Nacimiento_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaNacimientoEmpleado);
+                txt_Correo_Actualizar_Empleado.Text = empleadoSeleccionado.CorreoEmpleado;
+                txt_Altura_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.AlturaEmpleado);
+                cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem = empleadoSeleccionado.TipoSangreEmpleado;
+                prueba(rtb_Direccion_Actualizar_Empleado, empleadoSeleccionado.DireccionEmpleado);
+                txt_Sueldo_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.SueldoBase);
+                cmb_Actualizar_Empleado_Cargo.Text = empleadoSeleccionado.CargoEmpleado;
+                cmb_Actualizar_Empleado_Jornada.Text = empleadoSeleccionado.JornadaEmpleado;
+                dtp_Pago_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaPago);
+                dtp_Ingreso_Actulizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
             }
-            else MessageBox.Show("No puede dejar el id del empleado vacío ");
+        }
+        private void prueba(RichTextBox rtb, string textoSet)
+        {
+            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+            textRange.Text = textoSet;
+        }
+
+        private void txt_Codigo_Actualizar_Empleado_KeyUp(object sender, KeyEventArgs e)
+        {
+            stc_InfoPaciente.Visibility = Visibility.Visible;
+            scv_BuscarPaciente.Visibility = Visibility.Visible;
+            brd_BuscarPaciente.Visibility = Visibility.Visible;
+            //scv_BuscarPaciente.Background = new 
+            bool found = false;
+            var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
+            var data = Autocompletados.autocompletarEmpleado.GetData();
+
+            string query = (sender as TextBox).Text;
+
+            if (query.Length == 0)
+            {
+                // Clear   
+                stc_InfoPaciente.Children.Clear();
+                border.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                border.Visibility = System.Windows.Visibility.Visible;
+            }
+
+            // Clear the list   
+            stc_InfoPaciente.Children.Clear();
+
+            // Add the result   
+            foreach (var obj in data)
+            {
+                if (obj.ToLower().StartsWith(query.ToLower()))
+                {
+                    // The word starts with this... Autocomplete must work   
+                    addItem(obj);
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+            }
+        }
+
+        private void addItem(String text)
+        {
+
+            TextBlock block = new TextBlock();
+
+            // Add the text   
+            block.Text = text;
+
+
+            // A little style...   
+            block.Margin = new Thickness(2, 3, 2, 3);
+            block.Cursor = Cursors.Hand;
+
+            // Mouse events   
+            block.MouseLeftButtonUp += (sender, e) =>
+            {
+                txt_Codigo_Actualizar_Empleado.Text = (sender as TextBlock).Text.Split(" ")[0];
+                stc_InfoPaciente.Visibility = Visibility.Hidden;
+                scv_BuscarPaciente.Visibility = Visibility.Hidden;
+                brd_BuscarPaciente.Visibility = Visibility.Hidden;
+            };
+
+            block.MouseEnter += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.PeachPuff;
+            };
+
+            block.MouseLeave += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.Transparent;
+            };
+
+            // Add to the panel   
+            stc_InfoPaciente.Children.Add(block);
         }
     }
 }

@@ -121,7 +121,7 @@
         <Rectangle HorizontalAlignment="Center" Height="98" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
 
         <Label Content="Identificación del empleado o código" HorizontalAlignment="Left" Margin="274,101,0,0" VerticalAlignment="Top" Height="27" Width="262" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_ID_Eliminar_Empleado" HorizontalAlignment="Left" Margin="272,128,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="462" Height="30" FontFamily="Tahoma" FontSize="20" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_ID_Eliminar_Empleado" HorizontalAlignment="Left" Margin="272,128,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="462" Height="30" FontFamily="Tahoma" FontSize="20" TextAlignment="Center" KeyUp="txt_ID_Eliminar_Empleado_KeyUp"/>
         <Button Style="{DynamicResource btn_Style_Eliminar_Empleado}"  FontSize="17" FontFamily="Tahoma" Cursor="Hand" Foreground="White" x:Name="btn_Buscar_Eliminar_Empleado" Content="Buscar" HorizontalAlignment="Left" Margin="751,128,0,0" VerticalAlignment="Top" Height="30" Width="121" Click="btn_Buscar_Eliminar_Empleado_Click"/>
         <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="256,173,0,0" VerticalAlignment="Top" Height="34" Width="116" FontFamily="Tahoma" FontSize="12"/>
         <TextBox x:Name="txt_Nombre_Eliminar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="228,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" IsEnabled="False"/>
@@ -160,6 +160,12 @@
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="274,158,346,372" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            </ScrollViewer>
+        </Border>
         <DatePicker x:Name="dtp_Nacimiento_Eliminar_Empleado" HorizontalAlignment="Left" Margin="228,276,0,0" VerticalAlignment="Top" Width="181" FontFamily="Tahoma" IsEnabled="False"/>
         <Label Content="Eliminar empleado" FontFamily="Tahoma" FontSize="60" HorizontalAlignment="Left" Margin="301,1,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>

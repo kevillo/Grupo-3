@@ -118,10 +118,10 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid Background="White">        
         <Label Content="Código del producto o nombre:" HorizontalAlignment="Left" Margin="171,34,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="171,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <Button Style="{DynamicResource Style_btn_Buscar}" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Height="33" Margin="546,66,0,0" VerticalAlignment="Top" Width="88" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White"/>
+        <TextBox x:Name="txt_Gestionar_Insumos_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="171,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Gestionar_Insumos_Buscar_KeyUp"/>
+        <Button Style="{DynamicResource Style_btn_Buscar}" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Height="33" Margin="546,66,0,0" VerticalAlignment="Top" Width="88" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Click="Button_Click_1"/>
         <Label Content="Nombre del producto:" HorizontalAlignment="Left" Margin="44,122,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Insumos_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="44,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Precio unitario:" HorizontalAlignment="Left" Margin="44,203,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
@@ -137,6 +137,11 @@
         <Button Content="¿No encuentra el proveedor?" HorizontalAlignment="Left" Margin="268,388,0,0" Background="Transparent"  BorderBrush="White" VerticalAlignment="Top" Width="236" FontFamily="Tahoma" FontSize="17" Click="Button_Click"/>
         <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="50" Margin="248,424,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Gestionar_Insumo_Actualizar_Click"/>
         <CheckBox x:Name="chk_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="272,350,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
-
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="171,104,282,310" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </UserControl>

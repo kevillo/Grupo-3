@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Clinica_Medica_Polanco.Pacientes;
 using System.Data.SqlClient;
 
-namespace Clinica_Medica_Polanco.Pacientes
+namespace Clinica_Medica_Polanco.Autocompletados
 {
     public class Model
     {

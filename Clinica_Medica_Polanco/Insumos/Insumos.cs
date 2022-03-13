@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Clinica_Medica_Polanco.Insumos
 {
-    class Insumos
+    public class Insumos
     {
         //Validación de valores
         private int _codigoCategoriaInsumo;
         private int _codigoInsumo;
         private string _nombreInsumo;
         private DateTime _fechaExpiracion;
-        private float _precioUnitario;
+        private decimal _precioUnitario;
         private string _numeroSerie;
         private bool _estado;
 
@@ -50,7 +50,7 @@ namespace Clinica_Medica_Polanco.Insumos
             }
         }
 
-        public float PrecioUnitario 
+        public decimal PrecioUnitario 
         { 
             get => _precioUnitario; 
             set

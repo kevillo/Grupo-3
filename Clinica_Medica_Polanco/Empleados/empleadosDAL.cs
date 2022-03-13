@@ -98,7 +98,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public static Empleados BuscarEmpleadoPorId(Int64 pDato)
+        public static Empleados BuscarEmpleadoPorId(string pDato)
         {
             try
             {

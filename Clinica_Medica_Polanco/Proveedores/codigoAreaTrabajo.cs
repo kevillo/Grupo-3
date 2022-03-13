@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica_Medica_Polanco.Paciente
+namespace Clinica_Medica_Polanco.Proveedores
 {
-    class codigoAreaTrabajo
+    public class codigoAreaTrabajo
     {
-        private string _nombreArea;
+        public string _nombreArea;
 
         public string NombreArea 
         { 

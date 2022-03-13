@@ -41,18 +41,23 @@
 
     <Grid Background="White">
 
-        <TextBox x:Name="txt_Codigo_Insumo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center"/>
+        <TextBox x:Name="txt_Codigo_Insumo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Codigo_Insumo_KeyUp"/>
         <TextBox x:Name="txt_Nombre_Insumo" HorizontalAlignment="Left" Margin="97,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" VerticalContentAlignment="Center" Height="33" TextAlignment="Center" FontFamily="Tahoma" FontSize="17" IsEnabled="False"/>
         <TextBox x:Name="txt_Nombre_Proveedor" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="397,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="33" TextAlignment="Center" FontSize="17" FontFamily="Tahoma" IsEnabled="False"/>
         <TextBox x:Name="txt_Precio_Unitario" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="97,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
         <TextBox x:Name="txt_Numero_de_serie" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="397,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Código de insumo" HorizontalAlignment="Left" Margin="99,48,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="17" Foreground="#FF1C1C1D"/>
         <Button x:Name="btn_Deshabilitar_Insumo" Content="Deshabilitar insumo" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="239,400,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Template="{DynamicResource estilo}" Click="btn_Deshabilitar_Insumo_Click"/>
-        <Button x:Name="btn__Buscar_Insumo" Content="Buscar" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="17" HorizontalAlignment="Left" Margin="433,79,0,0" VerticalAlignment="Top" Height="33" Width="196" Background="#FF0D2D6F" Template="{DynamicResource estilo}"/>
+        <Button x:Name="btn__Buscar_Insumo" Content="Buscar" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="17" HorizontalAlignment="Left" Margin="433,79,0,0" VerticalAlignment="Top" Height="33" Width="196" Background="#FF0D2D6F" Template="{DynamicResource estilo}" Click="btn__Buscar_Insumo_Click"/>
         <Label Content="Nombre insumo" HorizontalAlignment="Left" Margin="99,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
         <Label Content="Nombre proveedor" HorizontalAlignment="Left" Margin="399,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
         <Label Content="Precio Unitario" HorizontalAlignment="Left" Margin="99,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
         <Label Content="Número de serie" HorizontalAlignment="Left" Margin="399,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
-
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="97,113,399,313" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </UserControl>

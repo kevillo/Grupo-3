@@ -134,7 +134,7 @@ namespace Clinica_Medica_Polanco
             //scv_BuscarPaciente.Background = new 
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
-            var data = Model.GetData();
+            var data = Autocompletados.Model.GetData();
             
             string query = (sender as TextBox).Text;
 
@@ -215,18 +215,7 @@ namespace Clinica_Medica_Polanco
             string buscar_Paciente = txt_PacienteId.Text;
             pacienteSeleccionado = PacientesDAL.BuscarPaciente(buscar_Paciente);
 
-            pacienteActual = pacienteSeleccionado;
-            txt_Actualizar_Paciente_Codigo.Text = Convert.ToString(pacienteSeleccionado.Codigo);
-            txt_Actualizar_Paciente_Nombre.Text = pacienteSeleccionado.Nombre;
-            txt_Actualizar_Paciente_Apellido.Text = pacienteSeleccionado.Apellido;
-            txt_Actualizar_Paciente_Telefono.Text = pacienteSeleccionado.Telefono;
-            dtp_Actualizar_Paciente_FechaNac.Text = Convert.ToString(pacienteSeleccionado.FechaNacimiento);
-            txt_Actualizar_Paciente_CorreoE.Text = pacienteSeleccionado.Correo;
-            txt_Actualizar_Paciente_Altura.Text = Convert.ToString(pacienteSeleccionado.Altura);
-            cmb_Actualizar_Paciente_TipoSangre.Text = pacienteSeleccionado.TipoSangre;
-            rtb_Actualizar_Paciente_Direccion.Selection.Text = pacienteSeleccionado.Direccion;
-            chk_Actualizar_Paciente_EstadoPaciente.IsChecked = pacienteSeleccionado.Estado;
-            /*if (!string.IsNullOrEmpty(buscar_Paciente))
+            if (!string.IsNullOrEmpty(buscar_Paciente))
             {
                 // aqui pone el codigo  que llama a la funcion de buscar
                 pacienteActual = pacienteSeleccionado;
@@ -241,17 +230,12 @@ namespace Clinica_Medica_Polanco
                 prueba(rtb_Actualizar_Paciente_Direccion,pacienteSeleccionado.Direccion);
                 chk_Actualizar_Paciente_EstadoPaciente.IsChecked = pacienteSeleccionado.Estado;
             }
-            else MessageBox.Show("Ingrese un id de paciente válido");*/
+            else MessageBox.Show("Ingrese un id de paciente válido");
         }
-
-
         private void prueba(RichTextBox rtb,string textoSet)
         {
             TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
             textRange.Text = textoSet;
-        }
-
-        
-
+        }    
     }
 }

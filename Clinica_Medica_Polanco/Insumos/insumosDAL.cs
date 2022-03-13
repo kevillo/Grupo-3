@@ -61,7 +61,7 @@ namespace Clinica_Medica_Polanco.Insumos
                     nuevoInsumo.CodigoCategoriaInsumo = reader.GetInt32(1);
                     nuevoInsumo.NombreInsumo = reader.GetString(2);
                     nuevoInsumo.FechaExpiracion = reader.GetDateTime(3);
-                    nuevoInsumo.PrecioUnitario = reader.GetFloat(4);
+                    nuevoInsumo.PrecioUnitario = reader.GetDecimal(4);
                     nuevoInsumo.NumeroSerie = reader.GetString(5);
                     nuevoInsumo.Estado = reader.GetBoolean(6);
                     Lista.Add(nuevoInsumo);
@@ -80,25 +80,21 @@ namespace Clinica_Medica_Polanco.Insumos
         }
         public static Insumos BuscarInsumoPorNombreOId(string pDato)
         {
+
             try
             {
                 //Validación de datos
-                Insumos consultaInsumos = new Insumos();
+                Insumos consultaInsumos = new();
+                Proveedores.Proveedores consultaProveedor = new();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("SELECT Codigo_Insumo, Codigo_Categoria_Insumo, Nombre_Insumo, Fecha_Expiracion, Precio_Unitario, Numero_Serie, Estado_Insumo FROM Insumos WHERE Nombre_Insumo = @nombreInsumo OR Codigo_Insumo = @codInsumo");
-                comando.Parameters.AddWithValue("nombreInsumo", pDato);
-                comando.Parameters.AddWithValue("codInsumo", int.Parse(pDato));
+                SqlCommand comando = new SqlCommand(String.Format("Select * from [dbo].[vEliminarProductoBuscar] where Codigo_Insumo = '{0}'", pDato), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    consultaInsumos.CodigoInsumo = reader.GetInt32(0);
-                    consultaInsumos.CodigoCategoriaInsumo = reader.GetInt32(1);
-                    consultaInsumos.NombreInsumo = reader.GetString(2);
-                    consultaInsumos.FechaExpiracion = reader.GetDateTime(3);
-                    consultaInsumos.PrecioUnitario = reader.GetFloat(4);
-                    consultaInsumos.NumeroSerie = reader.GetString(5);
-                    consultaInsumos.Estado = reader.GetBoolean(6);
-                    break;
+                    consultaInsumos.NombreInsumo = reader.GetString(0);
+                    consultaProveedor.NombreProveedor = reader.GetString(1);
+                    consultaInsumos.PrecioUnitario = reader.GetDecimal(2);
+                    consultaInsumos.NumeroSerie = reader.GetString(3);
                 }
                 return consultaInsumos;
             }
