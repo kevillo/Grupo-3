@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Pacientes;
-
+using System.Runtime.InteropServices;
 namespace Clinica_Medica_Polanco
 {
     /// <summary>
@@ -25,6 +25,10 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += EliminarPaciente_SourceInitialized;
+            cmd_Tipo_Sangre.Items.Add("A+");
+            cmd_Tipo_Sangre.Items.Add("O+");
+            cmd_Tipo_Sangre.Items.Add("AB+");
+            cmd_Tipo_Sangre.Items.Add("AB-");
         }
 
         private void EliminarPaciente_SourceInitialized(object sender, EventArgs e)
@@ -61,26 +65,43 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Eliminar_Paciente_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Paciente eliminado correctamente");
-            this.Close();
+            int codPaciente = PacientesDAL.ObtenerIdPaciente(txt_Identidad_Paciente.Text);
+            PacientesDAL.EliminarPaciente(codPaciente);
         }
 
-        public Pacient pacienteSeleccionado { get; set; }
-        public Pacient pacienteActual { get; set; }
+        private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
+        {
+            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
 
+            if (refer == 2) dt.Focus();
+            else if (refer == 3) cmb.Focus();
+            else if (refer == 4) rtb.Focus();
+            else txts.Focus();
+
+        }
+
+        private string rtbAString(RichTextBox rtb)
+        {
+            TextRange textRange = new TextRange(
+                rtb.Document.ContentStart,
+                rtb.Document.ContentEnd
+            );
+
+            return textRange.Text;
+        }
+        public Pacient pacienteSeleccionado { get; set; }
+        
         private void btn_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Paciente = txt_Buscar_Paciente.Text;
             pacienteSeleccionado = PacientesDAL.BuscarPaciente(buscar_Paciente);
             if (!string.IsNullOrEmpty(buscar_Paciente))
             {
-                // aqui pone el codigo  que llama a la funcion de eliminar paciente arnold
-                pacienteActual = pacienteSeleccionado;
                 txt_Nombre_Paciente.Text = pacienteSeleccionado.Nombre;
                 txt_Apellido_Paciente.Text = pacienteSeleccionado.Apellido;
                 txt_Identidad_Paciente.Text = pacienteSeleccionado.Identidad;
                 txt_Telefono_Paciente.Text = pacienteSeleccionado.Telefono;
-                txt_Fecha_Nacimiento_Paciente.Text = Convert.ToString(pacienteSeleccionado.FechaNacimiento);
+                dtp_Fecha_Nacimiento_Borrar_Empleado.Text = Convert.ToString(pacienteSeleccionado.FechaNacimiento);
                 txt_Correo_Paciente.Text = pacienteSeleccionado.Correo;
                 txt_Altura_Paciente.Text = Convert.ToString(pacienteSeleccionado.Altura);
                 cmd_Tipo_Sangre.SelectedItem = pacienteSeleccionado.TipoSangre;
@@ -100,7 +121,7 @@ namespace Clinica_Medica_Polanco
             stc_InfoPaciente.Visibility = Visibility.Visible;
             scv_BuscarPaciente.Visibility = Visibility.Visible;
             brd_BuscarPaciente.Visibility = Visibility.Visible;
-            //scv_BuscarPaciente.Background = new 
+        
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
             var data = Autocompletados.Model.GetData();

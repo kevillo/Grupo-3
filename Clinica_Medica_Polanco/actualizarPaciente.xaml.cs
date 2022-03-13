@@ -70,8 +70,8 @@ namespace Clinica_Medica_Polanco
             try
             {
                 //Validar datos
-                int resultado = 0;
                 Pacient paciente1 = new();
+                paciente1.Codigo = PacientesDAL.ObtenerIdPaciente(txt_PacienteId.Text);
                 paciente1.Nombre = txt_Actualizar_Paciente_Nombre.Text;
                 paciente1.Apellido = txt_Actualizar_Paciente_Apellido.Text;
                 paciente1.Identidad = txt_PacienteId.Text;
@@ -81,13 +81,9 @@ namespace Clinica_Medica_Polanco
                 paciente1.Altura = string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : int.Parse(txt_Actualizar_Paciente_Altura.Text);
                 paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
                 paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(rtb_Actualizar_Paciente_Direccion)) ? null : rtbAString(rtb_Actualizar_Paciente_Direccion);
-                paciente1.Estado = true;
+                paciente1.Estado = (bool)chk_Actualizar_Paciente_EstadoPaciente.IsChecked;
 
-                resultado = PacientesDAL.ModificarPaciente(paciente1);
-                if (resultado > 0)
-                    MessageBox.Show("Datos actualizados correctamente", "Datos Actualizados", MessageBoxButton.OK, MessageBoxImage.Information);
-                else
-                    MessageBox.Show("Error al actualizar los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                PacientesDAL.ModificarPaciente(paciente1);
                 this.Close();
 
             }
@@ -97,6 +93,7 @@ namespace Clinica_Medica_Polanco
                 //Excepción que nos indicará si hay algún error
                 if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Actualizar_Paciente_Nombre, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Actualizar_Paciente_Apellido, leyenda: "Apellido");
+                else if (error.StackTrace.Contains("Codigo")) ValidarCampos(txt_PacienteId, leyenda: "Codigo");
                 else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_PacienteId, leyenda: "Identidad");
                 else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Actualizar_Paciente_Telefono, leyenda: "Teléfono");
                 else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Actualizar_Paciente_CorreoE, leyenda: "Correo");

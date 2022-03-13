@@ -30,6 +30,10 @@ namespace Clinica_Medica_Polanco
             //Llamado a las funciones para cargar datos desde la bd a los cmb
             empleadosDAL.CargarCargo(cmb_Eliminar_Empleado_Cargo);
             empleadosDAL.CargarJornada(cmb_Eliminar_Empleado_Jornada);
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("A+");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("O");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("AB+");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("AB-");
         }
         private void EliminarEmpleado_SourceInitialized(object sender, EventArgs e)
         {
@@ -65,13 +69,12 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Borrar_Empleado_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Empleado eliminado correctamente");
+            empleadosDAL.EliminarEmpleado(int.Parse(txt_Codigo_Eliminar_Empleado.Text));
             this.Close();
         }
 
-        public Empleados.Empleados empleadoSeleccionado { get; set; }
-        public Empleados.Empleados empleadoActual { get; set; }
-
+        private Empleados.Empleados empleadoSeleccionado { get; set; }
+        
         private void btn_Buscar_Eliminar_Empleado_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Empleado = txt_ID_Eliminar_Empleado.Text;
@@ -79,7 +82,6 @@ namespace Clinica_Medica_Polanco
 
             if (!string.IsNullOrEmpty(buscar_Empleado))
             {
-                empleadoActual = empleadoSeleccionado;
                 txt_Codigo_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.CodigoEmpleado);
                 txt_Nombre_Eliminar_Empleado.Text = (empleadoSeleccionado.NombreEmpleado + " "+ empleadoSeleccionado.ApellidoEmpleado);
                 txt_Identidad_Eliminar_Empleado.Text = empleadoSeleccionado.IdentidadEmpleado;
@@ -90,8 +92,8 @@ namespace Clinica_Medica_Polanco
                 cmb_Eliminar_Empleado_Tip_Sangre.SelectedItem = empleadoSeleccionado.TipoSangreEmpleado;
                 prueba(rtx_Direccion_Eliminar_Empleado, empleadoSeleccionado.DireccionEmpleado);
                 txt_Sueldo_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.SueldoBase);
-                cmb_Eliminar_Empleado_Cargo.Text = empleadoSeleccionado.CargoEmpleado;
-                cmb_Eliminar_Empleado_Jornada.Text = empleadoSeleccionado.JornadaEmpleado;
+                cmb_Eliminar_Empleado_Cargo.SelectedIndex= empleadoSeleccionado.CodigoPuesto;
+                cmb_Eliminar_Empleado_Jornada.SelectedIndex= empleadoSeleccionado.CodigoJornada;
                 dtp_Pago_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaPago);
                 dtp_Ingreso_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
             }

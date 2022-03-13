@@ -42,7 +42,30 @@ namespace Clinica_Medica_Polanco.Insumos
             }
         }
 
-
+        public static int obtenerIdInsumo(string numSerie)
+        {
+            int codInsumo = 0;
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select Codigo_Insumo from Insumos where Numero_Serie = {0}", numSerie), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    codInsumo = dr.GetInt32(0);
+                }
+                return codInsumo 
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al buscar el id de insumo " + error.Message);
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
         public static List<Insumos> BuscarInsumos(string pDato)
         {
             try
@@ -116,7 +139,7 @@ namespace Clinica_Medica_Polanco.Insumos
                 //Validación de datos
                 int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("exec Insumos_Update", ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand("Insumos_Update", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Codigo_Insumo", SqlDbType.Int).Value = vInsumo.CodigoInsumo;
                 comando.Parameters.AddWithValue("@Codigo_Categoria_Insumo", SqlDbType.Int).Value = vInsumo.CodigoCategoriaInsumo;
@@ -140,22 +163,20 @@ namespace Clinica_Medica_Polanco.Insumos
 
         }
 
-        public static int EliminarInsumo(Int64 codigoInsumo)
+        public static void EliminarInsumo(Int64 codigoInsumo)
         {
             try
             {
                 //Validación de datos
-                int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Delete from Insumos Codigo_Insumo where = @codInsumo", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("codInsumo", codigoInsumo);
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                SqlCommand comando = new SqlCommand("Insumos_Delete", ConexionBaseDeDatos.conexion);
+                comando.Parameters.AddWithValue("Codigo_Insumos", SqlDbType.Int).Value=codigoInsumo;
+                comando.ExecuteReader();
+                MessageBox.Show("Insumo deshabilitado exitosamente");
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error al eliminar los datos ", error.Message);
-                return -1;
             }
             finally
             {

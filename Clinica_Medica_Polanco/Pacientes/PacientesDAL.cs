@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Data;
 
 namespace Clinica_Medica_Polanco.Pacientes
 {
@@ -70,6 +71,32 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
+        public static  int ObtenerIdPaciente(string identidad)
+        {
+            int codPaciente = 0;
+            try
+            {
+
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select Codigo_Paciente from Pacientes where Identidad_Paciente = '{0}'", identidad), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    codPaciente = dr.GetInt32(0);
+                }
+                return codPaciente;
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show("Error al buscar el paciente " + err.Message);
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
         public static Pacient BuscarPaciente(string pCodigo_Paciente)
         {
             try
@@ -109,24 +136,33 @@ namespace Clinica_Medica_Polanco.Pacientes
 
         }
 
-        public static int ModificarPaciente(Pacient pPaciente)
+        public static void ModificarPaciente(Pacient pPaciente)
         {
             try
             {
-                int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Update Pacientes set Nombre_Paciente = '{0}', Apellido_Paciente = '{1}', Identidad_Paciente = '{2}', " +
-                    "Telefono_Paciente = '{3}', Fecha_Nacimiento = '{4}', Correo_Paciente = '{5}', Altura_Paciente = '{6}', Tipo_Sangre_Paciente = '{7}', " +
-                    "Direccion_Paciente = '{8}', Estado_Paciente = '{9}' where Codigo_Paciente = '{10}'", pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, 
-                    pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado, 
-                    pPaciente.Identidad), ConexionBaseDeDatos.conexion);
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                SqlCommand comando = new SqlCommand("Pacientes_Update", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Codigo_Paciente", SqlDbType.Int).Value = pPaciente.Codigo;
+                comando.Parameters.AddWithValue("@Nombre_Paciente", SqlDbType.Int).Value = pPaciente.Nombre;
+                comando.Parameters.AddWithValue("@Identidad_Paciente", SqlDbType.VarChar).Value =pPaciente.Identidad;
+                comando.Parameters.AddWithValue("@Telefono_Paciente", SqlDbType.VarChar).Value =pPaciente.Telefono;
+                comando.Parameters.AddWithValue("@Fecha_Nacimiento", SqlDbType.DateTime).Value =pPaciente.FechaNacimiento;
+                comando.Parameters.AddWithValue("@Correo_Paciente", SqlDbType.VarChar).Value = pPaciente.Correo;
+                comando.Parameters.AddWithValue("@Altura_Paciente", SqlDbType.Decimal).Value = pPaciente.Altura;
+                comando.Parameters.AddWithValue("@Tipo_Sangre_Paciente", SqlDbType.VarChar).Value =pPaciente.TipoSangre;
+                comando.Parameters.AddWithValue("@Direccion_Paciente", SqlDbType.VarChar).Value = pPaciente.Direccion;
+                comando.Parameters.AddWithValue("@Apellido_Paciente", SqlDbType.VarChar).Value = pPaciente.Apellido;
+                comando.Parameters.AddWithValue("@Estado_Paciente", SqlDbType.Bit).Value = pPaciente.Estado;
+
+
+                comando.ExecuteReader();
+                MessageBox.Show("Paciente modificado exitosamente");
             }
             catch(Exception error)
             {
                 MessageBox.Show("Error al modificar pacientes ", error.Message);
-                return -1;
+                
             }
             finally
             {
@@ -134,25 +170,24 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
-        public static int Eliminar(Int64 pCodigo_Paciente)
+        public static void EliminarPaciente(int  pCodigo_Paciente)
         {
             try
             {
                 //Validación de datos
-                int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Delete from Pacientes where Codigo_Paciente = {0}", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                SqlCommand comando = new SqlCommand("Pacientes_Delete", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Codigo_A_Eliminar",SqlDbType.Int).Value=pCodigo_Paciente;
+                comando.ExecuteReader();
+                MessageBox.Show("Paciente deshabilitado correctamente");
             }
             catch(Exception error)
             {
                 MessageBox.Show("Error al eliminar los datos ", error.Message);
-                return -1;
             }
             finally
             {
-
                 ConexionBaseDeDatos.CerrarConexion();
             }
             

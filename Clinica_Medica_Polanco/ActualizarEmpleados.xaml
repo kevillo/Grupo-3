@@ -178,10 +178,10 @@
         <TextBox x:Name="txt_Nombre_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Identidad" HorizontalAlignment="Left" Margin="738,192,0,0" VerticalAlignment="Top" Height="27" Width="83" FontFamily="Tahoma" FontSize="15"/>
         <TextBox x:Name="txt_Identidad_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="671,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
-        <Label Content="Correo electrónico" HorizontalAlignment="Left" Margin="513,307,0,0" VerticalAlignment="Top" Height="31" Width="142" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Correo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="496,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="540,248,0,0" VerticalAlignment="Top" Height="27" Width="76" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Telefono_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="496,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Correo electrónico" HorizontalAlignment="Left" Margin="496,310,0,0" VerticalAlignment="Top" Height="31" Width="142" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox x:Name="txt_Correo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="487,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="538,248,0,0" VerticalAlignment="Top" Height="27" Width="76" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox x:Name="txt_Telefono_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="488,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="298,251,0,0" VerticalAlignment="Top" Height="31" Width="131" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Altura" HorizontalAlignment="Left" Margin="277,309,0,0" VerticalAlignment="Top" Height="28" Width="54" FontFamily="Tahoma" FontSize="15"/>
         <TextBox x:Name="txt_Altura_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
@@ -194,26 +194,26 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Sueldo" HorizontalAlignment="Left" Margin="434,381,0,0" VerticalAlignment="Top" Height="34" Width="66" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Sueldo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="378,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Sueldo" HorizontalAlignment="Left" Margin="314,376,0,0" VerticalAlignment="Top" Height="34" Width="66" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox x:Name="txt_Sueldo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="258,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Jornada laboral" HorizontalAlignment="Left" Margin="268,444,0,0" VerticalAlignment="Top" Height="34" Width="114" FontFamily="Tahoma" FontSize="15"/>
-        <Label Content="Fecha de pago" HorizontalAlignment="Left" Margin="514,446,0,0" VerticalAlignment="Top" Height="34" Width="116" FontFamily="Tahoma" FontSize="15"/>
-        <Label Content="Cargo" HorizontalAlignment="Left" Margin="660,381,0,0" VerticalAlignment="Top" Height="30" Width="58" FontFamily="Tahoma" FontSize="15"/>
-        <Label Content="Fecha ingreso" HorizontalAlignment="Left" Margin="742,446,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma" FontSize="15"/>
-        <DatePicker x:Name="dtp_Ingreso_Actulizar_Empleado" HorizontalAlignment="Left" Margin="714,476,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False" FontFamily="Tahoma" FontSize="15"/>
-        <DatePicker x:Name="dtp_Pago_Actualizar_Empleado" HorizontalAlignment="Left" Margin="467,476,0,0" VerticalAlignment="Top" Width="182" IsEnabled="False" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Fecha de pago" HorizontalAlignment="Left" Margin="496,442,0,0" VerticalAlignment="Top" Height="34" Width="116" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Cargo" HorizontalAlignment="Left" Margin="518,376,0,0" VerticalAlignment="Top" Height="30" Width="58" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Fecha ingreso" HorizontalAlignment="Left" Margin="718,438,0,0" VerticalAlignment="Top" Height="34" Width="126" FontFamily="Tahoma" FontSize="15"/>
+        <DatePicker x:Name="dtp_Ingreso_Actulizar_Empleado" HorizontalAlignment="Left" Margin="683,472,0,0" VerticalAlignment="Top" Width="185" IsEnabled="False" FontFamily="Tahoma" FontSize="15"/>
+        <DatePicker x:Name="dtp_Pago_Actualizar_Empleado" HorizontalAlignment="Left" Margin="456,472,0,0" VerticalAlignment="Top" Width="182" IsEnabled="False" FontFamily="Tahoma" FontSize="15"/>
         <Rectangle HorizontalAlignment="Left"  Height="95" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="671" Fill="#FF0D2D6F" Margin="228,0,0,0"/>
-        <Button x:Name="btn_Actualizar_Empleado" Content="Actualizar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="408,532,0,0" VerticalAlignment="Top" Height="60" Width="300" Style="{DynamicResource btn_Style_Actualiza_Empleado}" Click="btn_Actualizar_Empleado_Click"/>
+        <Button x:Name="btn_Actualizar_Empleado" Content="Actualizar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="408,544,0,0" VerticalAlignment="Top" Height="60" Width="300" Style="{DynamicResource btn_Style_Actualiza_Empleado}" Click="btn_Actualizar_Empleado_Click"/>
         <DatePicker x:Name="dtp_Nacimiento_Actualizar_Empleado" HorizontalAlignment="Left" Margin="263,280,0,0" VerticalAlignment="Top" Width="196" IsEnabled="False"/>
         <Label Content="Actualizar empleado" FontFamily="Tahoma" FontSize="60" HorizontalAlignment="Left" Margin="299,3,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
-        <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Actualizar_Empleado_Salir" Content="" HorizontalAlignment="Left" Height="60" Margin="34,532,0,0" VerticalAlignment="Top" Width="72" Click="btn_Actualizar_Empleado_Salir_Click">
+        <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Actualizar_Empleado_Salir" Content="" HorizontalAlignment="Left" Height="60" Margin="34,544,0,0" VerticalAlignment="Top" Width="72" Click="btn_Actualizar_Empleado_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
         <ComboBox x:Name="cmb_Actualizar_Empleado_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="377,338,0,0" VerticalAlignment="Top" Width="83" FontFamily="Tahoma" FontSize="15"/>
-        <ComboBox x:Name="cmb_Actualizar_Empleado_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="610,413,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
+        <ComboBox x:Name="cmb_Actualizar_Empleado_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="474,407,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
         <ComboBox x:Name="cmb_Actualizar_Empleado_Jornada" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="254,476,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" FontSize="15"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="295,181,376,349" Background="Transparent">
@@ -221,5 +221,11 @@
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
+        <Label Content="Empleado activo" HorizontalAlignment="Left" Margin="718,506,0,0" VerticalAlignment="Top" Height="30" Width="130" FontFamily="Tahoma" FontSize="15"/>
+        <CheckBox x:Name="chb_Estado_Empleado" Content="" HorizontalAlignment="Left" Margin="848,513,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_Apellido_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="466,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="540,188,0,0" VerticalAlignment="Top" Height="34" Width="72" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Sucursal" HorizontalAlignment="Left" Margin="739,376,0,0" VerticalAlignment="Top" Height="30" Width="70" FontFamily="Tahoma" FontSize="15"/>
+        <ComboBox x:Name="cmb_Actualizar_Empleado_Sucursal" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="695,407,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
     </Grid>
 </Window>

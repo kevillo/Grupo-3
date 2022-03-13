@@ -103,13 +103,12 @@ namespace Clinica_Medica_Polanco.Empleados
             try
             {
                 //Validación de datos
-                Empleados nuevoEmpleado = new();
+                Empleados eEmpleados = new();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(string.Format("Select * from Empleados where Identidad_Empleado = '{0}'", pDato), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Empleados eEmpleados = new Empleados();
                     eEmpleados.CodigoEmpleado = reader.GetInt32(0);
                     eEmpleados.CodigoJornada = reader.GetInt32(1);
                     eEmpleados.CodigoPuesto = reader.GetInt32(2);
@@ -128,7 +127,8 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.FechaPago = reader.GetDateTime(15);
                     eEmpleados.SueldoBase = reader.GetDecimal(16);
                 }
-                return nuevoEmpleado;
+
+                return eEmpleados;
             }
             catch (Exception error)
             {
@@ -141,12 +141,36 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public static int ModificarEmpleado(Empleados empleados)
+        public static  int traerCodigoEmpleado(string identidad)
+        {
+            try
+            {
+                int codEmpleado=0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("Select Codigo_Empleado from Empleados where Identidad_Empleado = '{0}'", identidad), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    codEmpleado = dr.GetInt32(0);
+                }
+                return codEmpleado;
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("No se pudo encontrar el codigo del empleado " + error.Message);
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+
+        }
+        public static void ModificarEmpleado(Empleados empleados)
         {
             try
             {
                 //Validación de datos
-                int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Empleados_Update", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -167,14 +191,13 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.Parameters.AddWithValue("Fecha_Pago", SqlDbType.DateTime).Value = empleados.FechaPago;
                 comando.Parameters.AddWithValue("Sueldo_Base", SqlDbType.Money).Value = empleados.SueldoBase;
                 comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value = empleados.CodigoSucursal;
-
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                comando.ExecuteReader();
+                MessageBox.Show("Empleado actualizado");
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al modificar empleados ", error.Message);
-                return -1;
+                MessageBox.Show("Error al modificar empleados "+error.Message);
+                
             }
             finally
             {
@@ -182,25 +205,22 @@ namespace Clinica_Medica_Polanco.Empleados
             }
 
         }
-
-
-        public static int EliminarEmpleado(Int64 codigoEmpleado)
+        public static void EliminarEmpleado(int codigoEmpleado)
         {
             try
             {
                 //Validación de datos
-                int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Delete from Empleados where Codigo_Empleado = @codEmpleado", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("codEmpleado", codigoEmpleado);
-
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                SqlCommand comando = new SqlCommand("Empleados_Delete", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Codigo_A_Eliminar",DbType.Int32).Value=codigoEmpleado;
+                comando.ExecuteReader();
+                MessageBox.Show("Empleado deshabilitado con exito");
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error al eliminar los datos ", error.Message);
-                return -1;
+                
             }
             finally
             {

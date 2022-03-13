@@ -31,13 +31,14 @@ namespace Clinica_Medica_Polanco
             //Llamado de función para cargar datos desde la bd a cmb
             empleadosDAL.CargarJornada(cmb_Actualizar_Empleado_Jornada);
             empleadosDAL.CargarCargo(cmb_Actualizar_Empleado_Cargo);
-
+            empleadosDAL.CargarSucursal(cmb_Actualizar_Empleado_Sucursal);
             dtp_Nacimiento_Actualizar_Empleado.Text = DateTime.Now.ToShortDateString();
             //Estableciendo valores al cmb tipo sangre
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("A");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB-");
+            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("a");
         }
 
         // Funcion para no mover la ventana del form
@@ -51,7 +52,6 @@ namespace Clinica_Medica_Polanco
         const int SC_MOVE = 0xF010;
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-
             switch (msg)
             {
                 case WM_SYSCOMMAND:
@@ -67,7 +67,6 @@ namespace Clinica_Medica_Polanco
             return IntPtr.Zero;
         }
 
-
         private void btn_Actualizar_Empleado_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -75,34 +74,30 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Actualizar_Empleado_Click(object sender, RoutedEventArgs e)
         {
+            int codEmpleado = empleadosDAL.traerCodigoEmpleado(txt_Identidad_Actualizar_Empleado.Text);
             try
             {
                 //Validación de datos
-                int resultado = 0;
                 Empleados.Empleados empleados1 = new();
+                empleados1.CodigoEmpleado = codEmpleado;
                 empleados1.NombreEmpleado = txt_Nombre_Actualizar_Empleado.Text;
+                empleados1.ApellidoEmpleado = txt_Apellido_Actualizar_Empleado.Text;
                 empleados1.IdentidadEmpleado = txt_Identidad_Actualizar_Empleado.Text;
                 empleados1.TelefonoEmpleado = txt_Telefono_Actualizar_Empleado.Text;
                 empleados1.FechaNacimientoEmpleado = Convert.ToDateTime(dtp_Nacimiento_Actualizar_Empleado.Text);
                 empleados1.CorreoEmpleado = txt_Correo_Actualizar_Empleado.Text;
-                empleados1.AlturaEmpleado = string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : int.Parse(txt_Altura_Actualizar_Empleado.Text);
+                empleados1.AlturaEmpleado = string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Altura_Actualizar_Empleado.Text);
                 empleados1.TipoSangreEmpleado = cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem.ToString();
-                empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo_Actualizar_Empleado.Text) ? 0 : int.Parse(txt_Sueldo_Actualizar_Empleado.Text);
-                empleados1.CargoEmpleado = cmb_Actualizar_Empleado_Cargo.SelectedItem.ToString();
-                empleados1.JornadaEmpleado = cmb_Actualizar_Empleado_Jornada.SelectedItem.ToString();
+                empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Sueldo_Actualizar_Empleado.Text);
+                empleados1.CodigoPuesto = cmb_Actualizar_Empleado_Cargo.SelectedIndex+1;
+                empleados1.CodigoSucursal = cmb_Actualizar_Empleado_Sucursal.SelectedIndex + 1;
+                empleados1.CodigoJornada = cmb_Actualizar_Empleado_Jornada.SelectedIndex+1;
                 empleados1.FechaPago = Convert.ToDateTime(dtp_Pago_Actualizar_Empleado.Text);
                 empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Actulizar_Empleado.Text);
-
                 empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Actualizar_Empleado)) ? null : rtbAString(rtb_Direccion_Actualizar_Empleado);
-
-
-                resultado = empleadosDAL.ModificarEmpleado(empleados1);
-                if (resultado > 0)
-                    MessageBox.Show("Datos actualizados correctamente", "Datos Actualizados", MessageBoxButton.OK, MessageBoxImage.Information);
-                else
-                    MessageBox.Show("Error al actualizar los datos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                empleados1.EstadoEmpleado = (bool)chb_Estado_Empleado.IsChecked;
+                empleadosDAL.ModificarEmpleado(empleados1);
                 this.Close();
-
             }
 
             catch (FormatException error)
@@ -121,7 +116,6 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("Jornada")) ValidarCampos(leyenda: "Jornada laboral", cmb: cmb_Actualizar_Empleado_Jornada, refer: 3);
                 else if (error.StackTrace.Contains("FechaPago")) ValidarCampos(leyenda: "Fecha de pago", dt: dtp_Pago_Actualizar_Empleado, refer: 2);
                 else if (error.StackTrace.Contains("FechaIngreso")) ValidarCampos(leyenda: "Fecha de ingreso", dt: dtp_Ingreso_Actulizar_Empleado, refer: 2);
-
             }
         }
         //Validar campos tipo txt, rtb, dt, cmb
@@ -133,7 +127,6 @@ namespace Clinica_Medica_Polanco
             else if (refer == 3) cmb.Focus();
             else if (refer == 4) rtb.Focus();
             else txts.Focus();
-
         }
         private string rtbAString(RichTextBox rtb)
         {
@@ -154,23 +147,25 @@ namespace Clinica_Medica_Polanco
 
             if (!string.IsNullOrEmpty(buscar_Empleado))
             {
-                empleadoActual = empleadoSeleccionado;
-                txt_Nombre_Actualizar_Empleado.Text = (empleadoSeleccionado.NombreEmpleado + " " + empleadoSeleccionado.ApellidoEmpleado);
+                txt_Nombre_Actualizar_Empleado.Text = empleadoSeleccionado.NombreEmpleado;
+                txt_Apellido_Actualizar_Empleado.Text = empleadoSeleccionado.ApellidoEmpleado;
                 txt_Identidad_Actualizar_Empleado.Text = empleadoSeleccionado.IdentidadEmpleado;
                 txt_Telefono_Actualizar_Empleado.Text = empleadoSeleccionado.TelefonoEmpleado;
                 dtp_Nacimiento_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaNacimientoEmpleado);
                 txt_Correo_Actualizar_Empleado.Text = empleadoSeleccionado.CorreoEmpleado;
                 txt_Altura_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.AlturaEmpleado);
                 cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem = empleadoSeleccionado.TipoSangreEmpleado;
-                prueba(rtb_Direccion_Actualizar_Empleado, empleadoSeleccionado.DireccionEmpleado);
+                setTextToRTB(rtb_Direccion_Actualizar_Empleado, empleadoSeleccionado.DireccionEmpleado);
                 txt_Sueldo_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.SueldoBase);
-                cmb_Actualizar_Empleado_Cargo.Text = empleadoSeleccionado.CargoEmpleado;
-                cmb_Actualizar_Empleado_Jornada.Text = empleadoSeleccionado.JornadaEmpleado;
+                cmb_Actualizar_Empleado_Cargo.SelectedIndex= empleadoSeleccionado.CodigoPuesto-1;
+                cmb_Actualizar_Empleado_Sucursal.SelectedIndex = empleadoSeleccionado.CodigoSucursal - 1;
+                cmb_Actualizar_Empleado_Jornada.SelectedIndex= empleadoSeleccionado.CodigoJornada-1;
                 dtp_Pago_Actualizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaPago);
                 dtp_Ingreso_Actulizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
+                chb_Estado_Empleado.IsChecked = empleadoSeleccionado.EstadoEmpleado;
             }
         }
-        private void prueba(RichTextBox rtb, string textoSet)
+        private void setTextToRTB(RichTextBox rtb, string textoSet)
         {
             TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
             textRange.Text = textoSet;
