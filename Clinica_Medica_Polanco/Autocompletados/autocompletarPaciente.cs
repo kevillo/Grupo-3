@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace Clinica_Medica_Polanco.Autocompletados
 {
-    public class Model
+    public class autocompletarPacinte
     {
         static public List<string> GetData()
         {            
@@ -14,7 +14,7 @@ namespace Clinica_Medica_Polanco.Autocompletados
             SqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                data.Add(reader.GetString(0) +" "+reader.GetString(1) + " " + reader.GetString(2));
+                data.Add(reader.GetString(0) +" - "+reader.GetString(1) + " - " + reader.GetString(2));
             }
             ConexionBaseDeDatos.conexion.Close();
             return data;                     

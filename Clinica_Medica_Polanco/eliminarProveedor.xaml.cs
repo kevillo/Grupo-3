@@ -56,10 +56,11 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
 
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo          Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);
@@ -89,7 +90,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Codigo_Proveedor_Buscar.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Codigo_Proveedor_Buscar.Text = (sender as TextBlock).Text.Split(" - ")[0];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;
@@ -117,7 +118,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Buscar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Buscar.Text;
-            proveedorSeleccionado = Proveedores.ProveedoresDAL.BuscarProveedorPorId(buscar_Proveedor);
+            proveedorSeleccionado = Proveedores.ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
 
             if (!string.IsNullOrEmpty(buscar_Proveedor))
             {

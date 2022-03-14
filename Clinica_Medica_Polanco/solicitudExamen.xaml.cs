@@ -193,11 +193,11 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
-
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Descripcion" });
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower())|| obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);
@@ -256,7 +256,7 @@ namespace Clinica_Medica_Polanco
             brd_BuscarCliente.Visibility = Visibility.Visible;
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
-            var data = Autocompletados.autocompletarEmpleado.GetData();
+            var data = Autocompletados.autocompletarPacinte.GetData();
 
             string query = (sender as TextBox).Text;
 
@@ -264,16 +264,20 @@ namespace Clinica_Medica_Polanco
             {
                 // Clear   
                 stc_InfoCliente.Children.Clear();
-                border.Visibility = System.Windows.Visibility.Collapsed;
+
+                //border.Visibility = Visibility.Collapsed;
+                stc_InfoCliente.Visibility = Visibility.Hidden;
+                scv_BuscarCliente.Visibility = Visibility.Hidden;
+                brd_BuscarCliente.Visibility = Visibility.Hidden;
             }
             else
             {
-                border.Visibility = System.Windows.Visibility.Visible;
+                border.Visibility = Visibility.Visible;
             }
 
             // Clear the list   
             stc_InfoCliente.Children.Clear();
-
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = " Identidad                 Nombre      Apellido" });
             // Add the result   
             foreach (var obj in data)
             {

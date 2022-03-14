@@ -124,7 +124,7 @@ namespace Clinica_Medica_Polanco
         
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
-            var data = Autocompletados.Model.GetData();
+            var data = Autocompletados.autocompletarPacinte.GetData();
 
             string query = (sender as TextBox).Text;
 
@@ -142,6 +142,7 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
 
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = " Identidad                 Nombre      Apellido" });
             // Add the result   
             foreach (var obj in data)
             {

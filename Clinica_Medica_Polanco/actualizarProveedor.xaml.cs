@@ -59,11 +59,11 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
-
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo          Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);
@@ -73,7 +73,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese provvedor o el codigo es invalido." });
             }
         }
 
@@ -93,7 +93,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Codigo_Proveedor_Actualizar.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Codigo_Proveedor_Actualizar.Text = (sender as TextBlock).Text.Split(" - ")[0];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;
@@ -121,19 +121,26 @@ namespace Clinica_Medica_Polanco
         {
             Proveedores.codigoAreaTrabajo nuevo = new();
             string buscar_Proveedor = txt_Codigo_Proveedor_Actualizar.Text;
-            proveedorSeleccionado = Proveedores.ProveedoresDAL.BuscarProveedorPorId(buscar_Proveedor);
+            proveedorSeleccionado = Proveedores.ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
 
             if (!string.IsNullOrEmpty(buscar_Proveedor))
             {
                 proveedorActual = proveedorSeleccionado;
                 txt_Nombre_Proveedor_Actualizar.Text = proveedorSeleccionado.NombreProveedor;
                 txt_Apellido_Proveedor_Actualizar.Text = proveedorSeleccionado.ApellidoProveedor;
-                txt_Telefono_Proveedor_Actualizar.Text = proveedorSeleccionado.CorreoProveedor;
-                txt_Correo_Proveedor_Actualizar.Text = proveedorSeleccionado.TelefonoProveedor;
-                txt_Direccion_Proveedor_Actualizar.Text = proveedorSeleccionado.TelefonoProveedor;
-                cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = proveedorSeleccionado.CodigoAreaTrabajo;
+                txt_Telefono_Proveedor_Actualizar.Text = proveedorSeleccionado.TelefonoProveedor;
+                txt_Correo_Proveedor_Actualizar.Text = proveedorSeleccionado.CorreoProveedor;
+                strinARtb(rtb_Direccion_Actualizar, proveedorSeleccionado.DireccionProveedor);
+                cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = proveedorSeleccionado.CodigoAreaTrabajo-1;
+                chb_Disponibilidad_Proveedor_Actualizar.IsChecked = proveedorSeleccionado.EstadoProveedor;
             }
             else MessageBox.Show("Ingrese un No. de Identidad de empleado válido");
+        }
+
+        private void strinARtb(RichTextBox rtb, string textoSet)
+        {
+            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+            textRange.Text = textoSet;
         }
     }
 }

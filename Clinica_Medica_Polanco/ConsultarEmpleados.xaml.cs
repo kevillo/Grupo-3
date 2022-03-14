@@ -92,6 +92,7 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Identidad            Nombre      Apellido" });
 
             // Add the result   
             foreach (var obj in data)

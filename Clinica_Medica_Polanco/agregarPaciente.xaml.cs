@@ -87,7 +87,7 @@ namespace Clinica_Medica_Polanco
                 paciente1.Telefono = txt_Telefono_Paciente.Text;
                 paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Fecha_Nacimiento_Paciente.Text);
                 paciente1.Correo = txt_Correo_Paciente.Text;
-                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : int.Parse(txt_Altura_Paciente.Text); 
+                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : decimal.Parse(txt_Altura_Paciente.Text); 
                 paciente1.TipoSangre = cmb_Tipo_Sangre_Paciente.SelectedItem.ToString();
               
                 paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(Rtb_direccion_Paciente))?null: rtbAString(Rtb_direccion_Paciente);

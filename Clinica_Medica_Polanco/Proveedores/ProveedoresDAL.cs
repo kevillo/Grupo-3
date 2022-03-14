@@ -37,28 +37,26 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static List<Proveedores> BuscarProveedor(string pDato)
+        public static List<Proveedores> BuscarProveedor(int pDato)
         {
-
-
             try
             {
                 //Validación datos
                 List<Proveedores> Lista = new List<Proveedores>();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Select Codigo_Proveedor, Codigo_Area_Trabajo, Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correo_Proveedor, Telefono_Proveedor, Estado_Proveedor From Proveedores");
-                comando.Parameters.AddWithValue("nombreProveedor", pDato);
+                SqlCommand comando = new SqlCommand(string.Format("Select Codigo_Proveedor, Codigo_Area_Trabajo, Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correo_Proveedor, Telefono_Proveedor, Estado_Proveedor From Proveedores WHERE Codigo_Proveedor = {0}",pDato));
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
                     Proveedores pProveedores = new Proveedores();
                     pProveedores.CodigoProveedor = reader.GetInt32(0);
-                    pProveedores.NombreProveedor = reader.GetString(1);
-                    pProveedores.ApellidoProveedor = reader.GetString(2);
-                    pProveedores.DireccionProveedor = reader.GetString(3);
-                    pProveedores.CorreoProveedor = reader.GetString(4);
-                    pProveedores.TelefonoProveedor = reader.GetString(5);
-                    pProveedores.EstadoProveedor = reader.GetBoolean(6);
+                    pProveedores.CodigoAreaTrabajo = reader.GetInt32(1);
+                    pProveedores.NombreProveedor = reader.GetString(2);
+                    pProveedores.ApellidoProveedor = reader.GetString(3);
+                    pProveedores.DireccionProveedor = reader.GetString(4);
+                    pProveedores.CorreoProveedor = reader.GetString(5);
+                    pProveedores.TelefonoProveedor = reader.GetString(6);
+                    pProveedores.EstadoProveedor = reader.GetBoolean(7);
                 }
                 return Lista;
             }
@@ -73,22 +71,25 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
 
-        public static Proveedores BuscarProveedorPorId(string codigoProveedor)
+        public static Proveedores BuscarProveedorPorId(int codigoProveedor)
         {
             try
             {
                 //Validación de datos
                 Proveedores pProveedores = new Proveedores();               
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(string.Format("Select Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correro_Proveedor, Telefono_Proveedor from [dbo].[vProveedoresBuscar] where Codigo_Proveedor = '{0}'", codigoProveedor), ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand(string.Format("Select Codigo_Proveedor, Codigo_Area_Trabajo,Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correro_Proveedor, Telefono_Proveedor,Estado_Proveedor from [dbo].[vProveedoresBuscar] where Codigo_Proveedor = {0}", codigoProveedor), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
-                {                    
-                    pProveedores.NombreProveedor = reader.GetString(0);
-                    pProveedores.ApellidoProveedor = reader.GetString(1);
-                    pProveedores.DireccionProveedor = reader.GetString(2);
-                    pProveedores.CorreoProveedor = reader.GetString(3);
-                    pProveedores.TelefonoProveedor = reader.GetString(4);
+                {
+                    pProveedores.CodigoProveedor = reader.GetInt32(0);
+                    pProveedores.CodigoAreaTrabajo = reader.GetInt32(1);
+                    pProveedores.NombreProveedor = reader.GetString(2);
+                    pProveedores.ApellidoProveedor = reader.GetString(3);
+                    pProveedores.DireccionProveedor = reader.GetString(4);
+                    pProveedores.CorreoProveedor = reader.GetString(5);
+                    pProveedores.TelefonoProveedor = reader.GetString(6);
+                    pProveedores.EstadoProveedor = reader.GetBoolean(7);
 
                 }
                 return pProveedores;

@@ -56,10 +56,11 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
 
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);
@@ -69,7 +70,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
             }
         }
 
@@ -89,7 +90,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Codigo_Insumo.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Codigo_Insumo.Text = (sender as TextBlock).Text.Split(" - ")[0];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;

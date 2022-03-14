@@ -84,7 +84,6 @@ namespace Clinica_Medica_Polanco
             stc_InfoPaciente.Visibility = Visibility.Visible;
             scv_BuscarPaciente.Visibility = Visibility.Visible;
             brd_BuscarPaciente.Visibility = Visibility.Visible;
-
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
             var data = Autocompletados.autocompletarEntregaExamenMedico.GetData();
@@ -105,10 +104,12 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
 
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Identidad            Factura      Nombre" });
+
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);

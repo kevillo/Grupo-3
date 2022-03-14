@@ -16,7 +16,7 @@ namespace Clinica_Medica_Polanco.Autocompletados
             SqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                data.Add(reader.GetString(0) + " - " + reader.GetInt32(1));
+                data.Add(reader.GetInt32(1) + " - " +reader.GetString(0));
             }
             ConexionBaseDeDatos.conexion.Close();
             return data;

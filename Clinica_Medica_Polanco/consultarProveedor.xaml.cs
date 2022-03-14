@@ -23,6 +23,7 @@ namespace Clinica_Medica_Polanco
         public consultarProveedor()
         {
             InitializeComponent();
+            Proveedores.ProveedoresDAL.CargarAreaTrabajo(cmb_Area_Trabajo);
         }
 
         private void txt_Gestionar_Proveedores_Buscar_KeyUp(object sender, KeyEventArgs e)
@@ -51,10 +52,11 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
 
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo          Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);
@@ -84,7 +86,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Gestionar_Proveedores_Buscar.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Gestionar_Proveedores_Buscar.Text = (sender as TextBlock).Text.Split(" - ")[0];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;
@@ -104,6 +106,30 @@ namespace Clinica_Medica_Polanco
 
             // Add to the panel   
             stc_InfoPaciente.Children.Add(block);
+        }
+
+        private void btn_Gestionar_Proveedores_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            string provBuscar = txt_Gestionar_Proveedores_Buscar.Text;
+            if (!string.IsNullOrEmpty(provBuscar))
+            {
+                Proveedores.Proveedores provConsultar = Proveedores.ProveedoresDAL.BuscarProveedorPorId(int.Parse(provBuscar));
+                txt_Gestionar_Proveedores_Apellido.Text = provConsultar.ApellidoProveedor;
+                txt_Gestionar_Proveedores_Correo.Text = provConsultar.CorreoProveedor;
+                strinARtb(rtb_Direccion_Proveedor, provConsultar.DireccionProveedor);
+                txt_Gestionar_Proveedores_Nombre.Text = provConsultar.NombreProveedor;
+                txt_Gestionar_Proveedores_Telefono.Text = provConsultar.TelefonoProveedor;
+                cmb_Area_Trabajo.SelectedIndex = provConsultar.CodigoAreaTrabajo-1;
+                chb_Disponibilidad.IsChecked = provConsultar.EstadoProveedor;
+            }
+            else MessageBox.Show("No se puede dejar vacio el codigo del proveedor");
+        }
+
+
+        private void strinARtb(RichTextBox rtb, string textoSet)
+        {
+            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+            textRange.Text = textoSet;
         }
     }
 }

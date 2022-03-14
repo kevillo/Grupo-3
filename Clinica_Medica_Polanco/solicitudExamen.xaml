@@ -210,7 +210,7 @@
         <Border x:Name="brd_BuscarCliente" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="360,158,335,372" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarCliente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
-                <StackPanel x:Name="stc_InfoCliente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+                <StackPanel x:Name="stc_InfoCliente"  Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
     </Grid>

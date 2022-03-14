@@ -169,6 +169,9 @@
     </Window.Resources>
     <Grid>
 
+        <TextBox x:Name="txt_Apellido_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="466,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="540,188,0,0" VerticalAlignment="Top" Height="34" Width="72" FontFamily="Tahoma" FontSize="15"/>
+
         <Rectangle HorizontalAlignment="Center" Height="98" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
 
         <Label Content="Identificación del empleado o código" HorizontalAlignment="Left" Margin="291,107,0,0" VerticalAlignment="Top" Height="32" Width="262" FontSize="15" FontFamily="Tahoma"/>
@@ -223,8 +226,6 @@
         </Border>
         <Label Content="Empleado activo" HorizontalAlignment="Left" Margin="718,506,0,0" VerticalAlignment="Top" Height="30" Width="130" FontFamily="Tahoma" FontSize="15"/>
         <CheckBox x:Name="chb_Estado_Empleado" Content="" HorizontalAlignment="Left" Margin="848,513,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_Apellido_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="466,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
-        <Label Content="Apellido" HorizontalAlignment="Left" Margin="540,188,0,0" VerticalAlignment="Top" Height="34" Width="72" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Sucursal" HorizontalAlignment="Left" Margin="739,376,0,0" VerticalAlignment="Top" Height="30" Width="70" FontFamily="Tahoma" FontSize="15"/>
         <ComboBox x:Name="cmb_Actualizar_Empleado_Sucursal" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="695,407,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
     </Grid>

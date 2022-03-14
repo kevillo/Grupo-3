@@ -79,10 +79,11 @@ namespace Clinica_Medica_Polanco
             //scv_BuscarPaciente.Background = new 
             bool found = false;
             var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
-            var data = Autocompletados.autocompletarExamenMedico.GetData();
+            var data = Autocompletados.autocompletarExamenMedico.GetData(); // trae la lista de las coincidencias
 
             string query = (sender as TextBox).Text;
 
+            // condiciona si hay o no texto en el textbox
             if (query.Length == 0)
             {
                 // Clear   
@@ -97,10 +98,12 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
 
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Descripcion" });
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                // aqui se compara el texto ingresado con el texto en el autocompletado mostrado
+                if (obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);
