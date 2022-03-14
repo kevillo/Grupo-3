@@ -61,4 +61,8 @@
     <Resource Include="trash.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+
 </Project>
