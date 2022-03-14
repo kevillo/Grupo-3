@@ -27,7 +27,22 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Deshabilitar_Insumo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Producto eliminado correctamente");
+            int codEliminar = 0;
+            if (!string.IsNullOrEmpty(txt_Codigo_Insumo.Text))
+            {
+                codEliminar = int.Parse(txt_Codigo_Insumo.Text);
+                Insumos.insumosDAL.EliminarInsumo(codEliminar);
+            }
+            else MessageBox.Show("No se puede dejar el id de insumo vacio");
+            reiniciarPantalla();
+        }
+        private void reiniciarPantalla()
+        {
+            txt_Codigo_Insumo.Clear();
+            txt_Fecha_Expiración_Insumo.Clear();
+            txt_Nombre_Insumo.Clear();
+            txt_Numero_de_serie.Clear();
+            txt_Precio_Unitario.Clear();
         }
 
         private void txt_Codigo_Insumo_KeyUp(object sender, KeyEventArgs e)
@@ -117,7 +132,7 @@ namespace Clinica_Medica_Polanco
         private void btn__Buscar_Insumo_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Insumo = txt_Codigo_Insumo.Text;
-            insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(buscar_Insumo);
+            insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(int.Parse(buscar_Insumo));
 
             if (!string.IsNullOrEmpty(buscar_Insumo))
             {

@@ -105,5 +105,37 @@ namespace Clinica_Medica_Polanco
             // Add to the panel   
             stc_InfoPaciente.Children.Add(block);
         }
+
+        private void btn_buscar_Click(object sender, RoutedEventArgs e)
+        {
+            int codInsumo = 0;
+            if(!string.IsNullOrEmpty(txt_Consultar_Stock_Codigo_Producto.Text))
+            {
+                codInsumo = int.Parse(txt_Consultar_Stock_Codigo_Producto.Text);
+                Insumos.Insumos nuevoInsumo = Insumos.insumosDAL.obtenerInfoStock(codInsumo);
+                List<string> informacionSucursales = Insumos.insumosDAL.obtenerInfoStockSucursal(codInsumo);
+
+                lbl_Consultar_Stock_Nombre.Content = nuevoInsumo.NombreInsumo;
+                lbl_Consultar_Stock_Categoria.Content = nuevoInsumo.DescripcionCategoriaInsumo;
+                lbl_Consultar_Stock_Codigo.Content = nuevoInsumo.CodigoInsumo;
+                lbl_Consultar_Stock_Fecha_Expiracion.Content = nuevoInsumo.FechaExpiracion.ToShortDateString();
+                lbl_Consultar_Stock_Num_Serie.Content = nuevoInsumo.NumeroSerie;
+                lbl_Consultar_Stock_Estado.Content = Equals(nuevoInsumo.Estado,true) ? "Disponible" : "No disponible";
+                lbl_Consultar_Stock_Producto_Stock.Content = nuevoInsumo.Existencia;
+                lbl_Consultar_Stock_Producto_Dia.Content = Math.Round(nuevoInsumo.PrecioUnitario,2);
+                int cont = informacionSucursales.Count;
+
+                lbl_Consultar_Stock_Sucursales1.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont]) ? informacionSucursales[0].Split(" -> ")[0] : "";
+                lbl_Consultar_Stock_Sucursales1_existencia.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont--]) ? informacionSucursales[0].Split(" -> ")[1] : "";
+
+                lbl_Consultar_Stock_Sucursales2.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont]) ? informacionSucursales[1].Split(" -> ")[0] : "";
+                lbl_Consultar_Stock_Sucursales2_existencia.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont--]) ? informacionSucursales[1].Split(" -> ")[1] : "";
+
+                lbl_Consultar_Stock_Sucursales3.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont]) ? informacionSucursales[2].Split(" -> ")[0] : "";
+                lbl_Consultar_Stock_Sucursales3_existencia.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont--]) ? informacionSucursales[2].Split(" -> ")[1] : "";
+                
+
+            }
+        }
     }
 }

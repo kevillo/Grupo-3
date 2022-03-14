@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Clinica_Medica_Polanco.Insumos;
 using System.Windows;
-
+using System.Windows.Controls;
 
 namespace Clinica_Medica_Polanco.Insumos
 {
@@ -101,23 +101,26 @@ namespace Clinica_Medica_Polanco.Insumos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static Insumos BuscarInsumoPorNombreOId(string pDato)
+        public static Insumos BuscarInsumoPorNombreOId(int pDato)
         {
 
             try
             {
                 //Validación de datos
-                Insumos consultaInsumos = new();
-                Proveedores.Proveedores consultaProveedor = new();
+
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Select * from [dbo].[vEliminarProductoBuscar] where Codigo_Insumo = '{0}'", pDato), ConexionBaseDeDatos.conexion);
+                Insumos consultaInsumos = new();
+                SqlCommand comando = new SqlCommand(String.Format("Select * from Insumos where Codigo_Insumo = {0}", pDato), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    consultaInsumos.NombreInsumo = reader.GetString(0);
-                    consultaProveedor.NombreProveedor = reader.GetString(1);
-                    consultaInsumos.PrecioUnitario = reader.GetDecimal(2);
-                    consultaInsumos.NumeroSerie = reader.GetString(3);
+                    consultaInsumos.CodigoInsumo = reader.GetInt32(0);
+                    consultaInsumos.CodigoCategoriaInsumo = reader.GetInt32(1);
+                    consultaInsumos.NombreInsumo = reader.GetString(2);
+                    consultaInsumos.FechaExpiracion = reader.GetDateTime(3);
+                    consultaInsumos.PrecioUnitario = reader.GetDecimal(4);
+                    consultaInsumos.NumeroSerie = reader.GetString(5);
+                    consultaInsumos.Estado = reader.GetBoolean(6);
                 }
                 return consultaInsumos;
             }
@@ -132,29 +135,29 @@ namespace Clinica_Medica_Polanco.Insumos
             }
         }
 
-        public static int ModificarInsumo(Insumos vInsumo)
+        public static void ModificarInsumo(Insumos vInsumo)
         {
             try
             {
                 //Validación de datos
-                int retorno = 0;
+                
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Insumos_Update", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@Codigo_Insumo", SqlDbType.Int).Value = vInsumo.CodigoInsumo;
-                comando.Parameters.AddWithValue("@Codigo_Categoria_Insumo", SqlDbType.Int).Value = vInsumo.CodigoCategoriaInsumo;
-                comando.Parameters.AddWithValue("@Nombre_Insumo", SqlDbType.VarChar).Value = vInsumo.NombreInsumo;
-                comando.Parameters.AddWithValue("@Fecha_Expiracion", SqlDbType.DateTime).Value = vInsumo.FechaExpiracion;
-                comando.Parameters.AddWithValue("@Precio_Unitario", SqlDbType.Money).Value = vInsumo.PrecioUnitario;
-                comando.Parameters.AddWithValue("@Numero_Serie", SqlDbType.VarChar).Value = vInsumo.NumeroSerie;
-                comando.Parameters.AddWithValue("@Estado_Insumo", SqlDbType.Bit).Value = vInsumo.Estado;
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                comando.Parameters.AddWithValue("Codigo_Insumo", SqlDbType.Int).Value = vInsumo.CodigoInsumo;
+                comando.Parameters.AddWithValue("Codigo_Categoria_Insumo", SqlDbType.Int).Value = vInsumo.CodigoCategoriaInsumo;
+                comando.Parameters.AddWithValue("Nombre_Insumo", SqlDbType.VarChar).Value = vInsumo.NombreInsumo;
+                comando.Parameters.AddWithValue("Fecha_Expiracion", SqlDbType.DateTime).Value = vInsumo.FechaExpiracion;
+                comando.Parameters.AddWithValue("Precio_Unitario", SqlDbType.Money).Value = vInsumo.PrecioUnitario;
+                comando.Parameters.AddWithValue("Numero_Serie", SqlDbType.VarChar).Value = vInsumo.NumeroSerie;
+                comando.Parameters.AddWithValue("Estado_Insumo", SqlDbType.Bit).Value = vInsumo.Estado;
+                comando.ExecuteReader();
+                MessageBox.Show("Insumo actualizado correctamente");
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error al modificar insumos", error.Message);
-                return -1;
+                
             }
             finally
             {
@@ -163,13 +166,77 @@ namespace Clinica_Medica_Polanco.Insumos
 
         }
 
-        public static void EliminarInsumo(Int64 codigoInsumo)
+        public static Insumos obtenerInfoStock(int codInsumo)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                Insumos consultaInsumos = new();
+                SqlCommand comando = new SqlCommand("Stock_Info", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Insumo", SqlDbType.Int).Value = codInsumo;
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    consultaInsumos.CodigoInsumo = reader.GetInt32(0);
+                    consultaInsumos.NombreInsumo = reader.GetString(1);
+                    consultaInsumos.DescripcionCategoriaInsumo = reader.GetString(2);
+                    consultaInsumos.FechaExpiracion = reader.GetDateTime(3);
+                    consultaInsumos.NumeroSerie = reader.GetString(4);
+                    consultaInsumos.Estado = reader.GetBoolean(5);
+                    consultaInsumos.Existencia = reader.GetInt32(6);
+                    consultaInsumos.PrecioUnitario = reader.GetDecimal(7);
+                }
+
+                return consultaInsumos;
+            }
+            catch
+            {
+                MessageBox.Show("No se ha encontrado ningun producto");
+                return new Insumos();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static List<String> obtenerInfoStockSucursal(int codInsumo)
         {
             try
             {
                 //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Insumos_Delete", ConexionBaseDeDatos.conexion);
+                List<string> informacion = new();
+                SqlCommand comando = new SqlCommand("Stock_Info_Sucursal", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Insumo", SqlDbType.Int).Value = codInsumo;
+                SqlDataReader dr =  comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    informacion.Add(dr.GetString(1) + " -> " + dr.GetInt32(2));
+                }
+                return informacion;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al eliminar los datos ", error.Message);
+                return new List<string>();
+            }
+            finally
+            {
+
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+        public static void EliminarInsumo(int codigoInsumo)
+        {
+            try
+            {
+                //Validación de datos
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand("insumos_Delete", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_Insumos", SqlDbType.Int).Value=codigoInsumo;
                 comando.ExecuteReader();
                 MessageBox.Show("Insumo deshabilitado exitosamente");
@@ -181,6 +248,33 @@ namespace Clinica_Medica_Polanco.Insumos
             finally
             {
 
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
+        public static void CargarTipoInsumo(ComboBox cmb_Tipo_Insumo)
+        {
+
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query = "select Codigo_Categoria_Insumo,Descripcion_Categoria_Insumo from Categoria_Insumos";
+                SqlCommand createCommand = new (cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(1);
+                    cmb_Tipo_Insumo.Items.Add(nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }

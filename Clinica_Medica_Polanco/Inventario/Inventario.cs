@@ -15,7 +15,7 @@ namespace Clinica_Medica_Polanco.Inventario
         private int _CodigoProveedor;
         private int _CodigoSucursal;
         private DateTime _FechaIngreso;
-        private int _Existencia;
+        
         private string _numerolote;
 
 
@@ -74,18 +74,7 @@ namespace Clinica_Medica_Polanco.Inventario
             }
         }
 
-        public int Existencia
-        {
-            get => _Existencia;
-            set
-            {
-                if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
-                {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
-                }
-                else _Existencia = value;
-            }
-        }
+        
 
         public string Numerolote
         {

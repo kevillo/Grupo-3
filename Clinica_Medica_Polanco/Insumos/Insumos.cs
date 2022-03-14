@@ -16,11 +16,39 @@ namespace Clinica_Medica_Polanco.Insumos
         private decimal _precioUnitario;
         private string _numeroSerie;
         private bool _estado;
+        private string _DescripcionCategoriaInsumo;
+        private int _Existencia;
+
 
 
         // validacion string: que no venga vacio
         // validacion int: que no sea negativo ni que venga vacio
         // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+
+        public int Existencia
+        {
+            get => _Existencia;
+            set
+            {
+                if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                }
+                else _Existencia = value;
+            }
+        }
+        public string DescripcionCategoriaInsumo
+        {
+            get => _DescripcionCategoriaInsumo;
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new FormatException("Este campos esta vacio");
+                }
+                else _DescripcionCategoriaInsumo = value;
+            }
+        }
         public int CodigoCategoriaInsumo
         {
             get => _codigoCategoriaInsumo;

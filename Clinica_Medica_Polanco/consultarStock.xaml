@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Clinica_Medica_Polanco"
-             mc:Ignorable="d" Height="500" Width="801">
+             mc:Ignorable="d" Height="530" Width="801">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -64,28 +64,25 @@
     </UserControl.Resources>
     <Grid Background="White">
         <Label Content="Código de producto o nombre:" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="127,10,0,0" VerticalAlignment="Top" />
-        <Button Style="{DynamicResource btn_Style_Consultar}" Cursor="Hand" x:Name="btn_buscar" Content="Buscar" FontFamily="Tahoma" FontSize="15" Background="#FF0D2D6F" Foreground="White" HorizontalAlignment="Left" Margin="555,39,0,0" VerticalAlignment="Top" Height="33" Width="115"/>
-        <Label Content="Nombre" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="186,105,0,0" VerticalAlignment="Top"/>
-        <Label Content="Categoría" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="508,109,0,0" VerticalAlignment="Top"/>
-        <Label Content="Código" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="287,191,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha de expiracion" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="204,224,0,0" VerticalAlignment="Top"/>
-        <Label Content="Número de serie" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="226,260,0,0" VerticalAlignment="Top"/>
-        <Label Content="Estado" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="288,288,0,0" VerticalAlignment="Top"/>
-        <Label Content="Stock del producto" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="56,352,0,0" VerticalAlignment="Top"/>
-        <Label Content="Producto al día" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="248,351,0,0" VerticalAlignment="Top"/>
-        <Label Content="Stock en sucursales" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="518,359,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_Consultar_Stock_Nombre" Content="" HorizontalAlignment="Left" Height="30" Margin="130,133,0,0" VerticalAlignment="Top" Width="201"/>
-        <Label x:Name="lbl_Consultar_Stock_Categoria" HorizontalAlignment="Left" Height="30" Margin="457,133,0,0" VerticalAlignment="Top" Width="201"/>
-        <Label x:Name="lbl_Consultar_Stock_Codigo" HorizontalAlignment="Left" Height="30" Margin="362,189,0,0" VerticalAlignment="Top" Width="201"/>
-        <Label x:Name="lbl_Consultar_Stock_Fecha_Expiracion" HorizontalAlignment="Left" Height="30" Margin="362,224,0,0" VerticalAlignment="Top" Width="201"/>
-        <Label x:Name="lbl_Consultar_Stock_Num_Serie" HorizontalAlignment="Left" Height="30" Margin="362,258,0,0" VerticalAlignment="Top" Width="201"/>
-        <Label x:Name="lbl_Consultar_Stock_Estado" HorizontalAlignment="Left" Height="30" Margin="362,293,0,0" VerticalAlignment="Top" Width="201"/>
-        <Label x:Name="lbl_Consultar_Stock_Producto_Stock" HorizontalAlignment="Left" Height="97" Margin="37,380,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="lbl_Consultar_Stock_Producto_Dia" HorizontalAlignment="Left" Height="97" Margin="218,380,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="lbl_Consultar_Stock_Sucursales" HorizontalAlignment="Left" Height="25" Margin="404,413,0,0" VerticalAlignment="Top" Width="168"/>
-        <Label x:Name="lbl_Consultar_Stock_Sucursales2" HorizontalAlignment="Left" Height="25" Margin="404,446,0,0" VerticalAlignment="Top" Width="168"/>
-        <Label x:Name="lbl_Consultar_Stock_Sucursales3" HorizontalAlignment="Left" Height="24" Margin="589,413,0,0" VerticalAlignment="Top" Width="165"/>
-        <Label x:Name="lbl_Consultar_Stock_Sucursales4" HorizontalAlignment="Left" Height="24" Margin="589,446,0,0" VerticalAlignment="Top" Width="165"/>
+        <Button Style="{DynamicResource btn_Style_Consultar}" Cursor="Hand" x:Name="btn_buscar" Content="Buscar" FontFamily="Tahoma" FontSize="20" Background="#FF0D2D6F" Foreground="White" HorizontalAlignment="Left" Margin="555,39,0,0" VerticalAlignment="Top" Height="33" Width="115" Click="btn_buscar_Click"/>
+        <Label Content="Código" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="284,199,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Fecha de expiracion" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="188,232,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Número de serie" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="213,266,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Estado" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="282,302,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Stock del producto" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="0,360,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Precio al dia de hoy" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="189,360,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Stock en sucursales" FontFamily="Tahoma" FontSize="15" HorizontalAlignment="Left" Margin="434,360,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lbl_Consultar_Stock_Nombre" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="" HorizontalAlignment="Left" Height="60" Margin="233,86,0,0" VerticalAlignment="Top" Width="245" FontFamily="Tahoma" FontSize="35" FontWeight="Bold"/>
+        <Label x:Name="lbl_Consultar_Stock_Categoria" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="71" Margin="233,134,0,0" VerticalAlignment="Top" Width="245" FontFamily="Tahoma" FontSize="35" FontWeight="Bold" Content=""/>
+        <Label x:Name="lbl_Consultar_Stock_Codigo" HorizontalAlignment="Left" Height="35" Margin="343,197,0,0" VerticalAlignment="Top" Width="201" Content="" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" FontStyle="Normal" Foreground="#FFCB1872"/>
+        <Label x:Name="lbl_Consultar_Stock_Fecha_Expiracion" HorizontalAlignment="Left" Height="34" Margin="343,229,0,0" VerticalAlignment="Top" Width="201" Content="" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" FontStyle="Normal" Foreground="#FFCB1872"/>
+        <Label x:Name="lbl_Consultar_Stock_Num_Serie" HorizontalAlignment="Left" Height="35" Margin="343,263,0,0" VerticalAlignment="Top" Width="201" Content="" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" FontStyle="Normal" Foreground="#FFCB1872"/>
+        <Label x:Name="lbl_Consultar_Stock_Estado" HorizontalAlignment="Left" Height="35" Margin="343,301,0,0" VerticalAlignment="Top" Width="201" Content="" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" FontStyle="Normal" Foreground="#FFCB1872"/>
+        <Label x:Name="lbl_Consultar_Stock_Producto_Stock"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="97" Margin="36,383,0,0" VerticalAlignment="Top" Width="164" Content="" Foreground="#FFCB1872" FontFamily="Tahoma" FontSize="35" FontWeight="Bold" Background="{x:Null}"/>
+        <Label x:Name="lbl_Consultar_Stock_Producto_Dia" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="97" Margin="252,383,0,0" VerticalAlignment="Top" Width="164" Content="" Foreground="#FFCB1872" FontFamily="Tahoma" FontSize="35" FontWeight="Bold"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales2" HorizontalAlignment="Left" Height="43" Margin="452,433,0,0" VerticalAlignment="Top" Width="287" Content="" FontFamily="Tahoma" FontWeight="Bold" FontSize="13"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales1" HorizontalAlignment="Left" Height="46" Margin="452,397,0,0" VerticalAlignment="Top" Width="287" Content="" FontFamily="Tahoma" FontWeight="Bold" FontSize="13"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales3" HorizontalAlignment="Left" Height="44" Margin="452,470,0,0" VerticalAlignment="Top" Width="287" Content="" FontFamily="Tahoma" FontWeight="Bold" FontSize="13"/>
         <TextBox x:Name="txt_Consultar_Stock_Codigo_Producto" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="33" Margin="123,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Consultar_Stock_Codigo_Producto_KeyUp"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="123,75,275,337" Background="Transparent">
@@ -93,5 +90,8 @@
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="514"/>
             </ScrollViewer>
         </Border>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales2_existencia" HorizontalAlignment="Left" Height="43" Margin="685,433,0,0" VerticalAlignment="Top" Width="69" Content="" FontFamily="Tahoma" FontWeight="Bold" FontSize="13" Foreground="#FFCB1872"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales1_existencia" HorizontalAlignment="Left" Height="46" Margin="685,397,0,0" VerticalAlignment="Top" Width="69" Content="" FontFamily="Tahoma" FontWeight="Bold" FontSize="13" Foreground="#FFCB1872"/>
+        <Label x:Name="lbl_Consultar_Stock_Sucursales3_existencia" HorizontalAlignment="Left" Height="44" Margin="685,470,0,0" VerticalAlignment="Top" Width="69" Content="" FontFamily="Tahoma" FontWeight="Bold" FontSize="13" Foreground="#FFCB1872"/>
     </Grid>
 </UserControl>

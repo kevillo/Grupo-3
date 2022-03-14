@@ -127,7 +127,6 @@
         <Label Content="Precio unitario:" HorizontalAlignment="Left" Margin="75,189,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Insumos_Precio" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="32" Margin="75,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Fecha de expiración:" HorizontalAlignment="Left" Margin="288,257,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Gestionar_Insumos_Fecha_Expiracion" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="242,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Número de serie:" HorizontalAlignment="Left" Margin="407,116,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17" FontWeight="Normal"/>
         <TextBox x:Name="txt_Gestionar_Insumos_Num_Serie" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="407,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Tipo de insumo:" HorizontalAlignment="Left" Margin="407,189,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
@@ -140,5 +139,6 @@
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
+        <DatePicker x:Name="dtp_Fecha_Expiracion" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="258,288,0,0" VerticalAlignment="Top" Width="248" Height="30" FontFamily="Tahoma" FontSize="18"/>
     </Grid>
 </UserControl>

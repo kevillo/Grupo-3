@@ -24,7 +24,7 @@ namespace Clinica_Medica_Polanco
         public agregarProducto()
         {
             InitializeComponent();
-            cmb_Tipo_Insumo.Items.Add("a");
+            insumosDAL.CargarTipoInsumo(cmb_Tipo_Insumo);
             dtp_Fecha_Expiracion.Text = DateTime.Now.ToShortDateString();
         }
 
@@ -36,7 +36,7 @@ namespace Clinica_Medica_Polanco
                 Insumos.Insumos nuevoInsumo = new();
                 nuevoInsumo.NombreInsumo = txt_Nombre_Producto.Text;
                 nuevoInsumo.NumeroSerie = txt_Numero_Serie.Text;
-                nuevoInsumo.PrecioUnitario =  string.IsNullOrEmpty(txt_Precio_Unitario.Text) ? -1 : int.Parse(txt_Precio_Unitario.Text);              
+                nuevoInsumo.PrecioUnitario =  string.IsNullOrEmpty(txt_Precio_Unitario.Text) ? -1 : decimal.Parse(txt_Precio_Unitario.Text);              
                 nuevoInsumo.CodigoCategoriaInsumo = cmb_Tipo_Insumo.SelectedIndex+1;
                 nuevoInsumo.FechaExpiracion = Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
                 nuevoInsumo.Estado = (bool)chb_Disponibilidad.IsChecked;
