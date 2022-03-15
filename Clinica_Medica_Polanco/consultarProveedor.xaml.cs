@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Clinica_Medica_Polanco.Proveedores;
 
 namespace Clinica_Medica_Polanco
 {
@@ -23,7 +24,9 @@ namespace Clinica_Medica_Polanco
         public consultarProveedor()
         {
             InitializeComponent();
-            Proveedores.ProveedoresDAL.CargarAreaTrabajo(cmb_Area_Trabajo);
+
+            //Cargar datos desde la bd al cmb
+            ProveedoresDAL.CargarAreaTrabajo(cmb_Area_Trabajo);
         }
 
         private void txt_Gestionar_Proveedores_Buscar_KeyUp(object sender, KeyEventArgs e)
@@ -113,7 +116,8 @@ namespace Clinica_Medica_Polanco
             string provBuscar = txt_Gestionar_Proveedores_Buscar.Text;
             if (!string.IsNullOrEmpty(provBuscar))
             {
-                Proveedores.Proveedores provConsultar = Proveedores.ProveedoresDAL.BuscarProveedorPorId(int.Parse(provBuscar));
+                Proveedores.Proveedores provConsultar = ProveedoresDAL.BuscarProveedorPorId(int.Parse(provBuscar));
+                txt_Gestionar_Proveedores_Nombre.Text = provConsultar.NombreProveedor;
                 txt_Gestionar_Proveedores_Apellido.Text = provConsultar.ApellidoProveedor;
                 txt_Gestionar_Proveedores_Correo.Text = provConsultar.CorreoProveedor;
                 strinARtb(rtb_Direccion_Proveedor, provConsultar.DireccionProveedor);
@@ -121,10 +125,10 @@ namespace Clinica_Medica_Polanco
                 txt_Gestionar_Proveedores_Telefono.Text = provConsultar.TelefonoProveedor;
                 cmb_Area_Trabajo.SelectedIndex = provConsultar.CodigoAreaTrabajo-1;
                 chb_Disponibilidad.IsChecked = provConsultar.EstadoProveedor;
+                dtg_Gestionar_Proveedores_Consulta.ItemsSource = ProveedoresDAL.BuscarProveedor(provBuscar);
             }
-            else MessageBox.Show("No se puede dejar vacio el codigo del proveedor");
+            else MessageBox.Show("Ingrese un ID de proveedor válido.");
         }
-
 
         private void strinARtb(RichTextBox rtb, string textoSet)
         {

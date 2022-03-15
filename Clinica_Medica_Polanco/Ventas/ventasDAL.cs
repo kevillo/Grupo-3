@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+
 namespace Clinica_Medica_Polanco.Ventas
 {
     class ventasDAL
@@ -200,6 +201,76 @@ namespace Clinica_Medica_Polanco.Ventas
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-        }      
+        }
+
+        public static List<Ventas> MostrarVentas()
+        {
+            try
+            {    //Por si te sirve de algo esta kk que hice :(
+                //Validación de datos
+                List<Ventas> Lista = new List<Ventas>();
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand(String.Format("Select * From Resumen_Factura_Venta"), ConexionBaseDeDatos.conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Ventas vVentas = new Ventas();
+                    vVentas.CodigoFacturaVenta = reader.GetInt32(0);
+                    vVentas.CodigoSucursal = reader.GetInt32(1);
+                    vVentas.CodigoCliente = reader.GetInt32(2);
+                    vVentas.CodigoFacturador = reader.GetInt32(3);
+                    vVentas.FechaFactura = reader.GetDateTime(4);
+                    vVentas.Subtotal = reader.GetFloat(5);
+                    vVentas.Isv = reader.GetFloat(6);
+                    vVentas.Descuento = reader.GetFloat(7);
+                    vVentas.TotalVenta = reader.GetFloat(8);
+                    Lista.Add(vVentas);
+                }
+                return Lista;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("No hay ventas que mostrar" + err.Message);
+                return new List<Ventas>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static List<Ventas> MostrarCompras()
+        {
+            try
+            {   
+                //Validación de datos
+                List<Ventas> Lista = new List<Ventas>();
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand(String.Format("Select * From Resumen_Factura_Compras"), ConexionBaseDeDatos.conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    Ventas cCompras = new Ventas();
+                    cCompras.CodigoFacturaCompra = reader.GetInt32(0);
+                    cCompras.CodigoComprador = reader.GetInt32(1);
+                    cCompras.CodigoProveedor = reader.GetInt32(2);
+                    cCompras.FechaFactura = reader.GetDateTime(3);
+                    cCompras.Isv = reader.GetFloat(4);
+                    cCompras.CodigoAdministrador = reader.GetInt32(5);
+                    cCompras.TotalCompra = reader.GetFloat(6);
+                    Lista.Add(cCompras);
+                }
+                return Lista;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("No hay ventas que mostrar" + err.Message);
+                return new List<Ventas>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
     }
 }
