@@ -24,7 +24,7 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += RevisionExamen_SourceInitialized;
-           
+            dtg_Revision_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.analsisExamen();
 
         }
 
@@ -66,13 +66,16 @@ namespace Clinica_Medica_Polanco
         private void btn_Revision_Examen_Ir_Click(object sender, RoutedEventArgs e)
         {
 
-            // if (dtg_Revision_Examen_Examenes.Items.Count > 0)
-            //{
+            if (dtg_Revision_Examen_Examenes.Items.Count > 0)
+            {
+
+                Ventas.Ventas venta = (Ventas.Ventas)dtg_Revision_Examen_Examenes.SelectedItem;
+                
                 this.Close();
-                AnalizarExamenMedico nuevoAnalisis = new();
+                AnalizarExamenMedico nuevoAnalisis = new(venta);
                 nuevoAnalisis.ShowDialog();
-            //}
-            //else MessageBox.Show("No hay exámenes por revisar");
+            }
+            else MessageBox.Show("No hay exámenes por revisar");
         }
 
     }

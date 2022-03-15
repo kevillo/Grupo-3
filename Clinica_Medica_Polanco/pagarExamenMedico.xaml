@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_Medica_Polanco"
         mc:Ignorable="d"
-        Title="pagarExamenMedico" Height="620" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/aa.png" WindowStyle="None">
+        Title="pagarExamenMedico" Loaded="Window_Loaded" Height="620" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/aa.png" WindowStyle="None">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -126,13 +126,13 @@
         <Label Content="Teléfono" HorizontalAlignment="Left" Margin="460,87,0,0" VerticalAlignment="Top" Height="35" Width="78" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Telefono_Pagar" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="692,86,0,0" VerticalAlignment="Top" Height="35" Width="64" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Email_Pagar" VerticalContentAlignment="Center"  HorizontalAlignment="Left"  Margin="692,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Email_Pagar" VerticalContentAlignment="Center"  HorizontalAlignment="Left"  Margin="692,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Fecha orden" HorizontalAlignment="Left" Margin="223,172,0,0" VerticalAlignment="Top" Height="35" Width="124" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Fecha_Orden_Pagar" HorizontalAlignment="Left" VerticalContentAlignment="Center"  Margin="223,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Forma de pago" HorizontalAlignment="Left" Margin="453,170,0,0" VerticalAlignment="Top" Height="36" Width="152" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Forma_Pagar" HorizontalAlignment="Center" VerticalContentAlignment="Center"  Margin="0,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Forma de entrega" HorizontalAlignment="Left" Margin="692,171,0,0" VerticalAlignment="Top" Height="35" Width="173" FontFamily="Tahoma" FontSize="17"/>
-        <TextBox x:Name="txt_Forma_Entrega_Pagar" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="692,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txt_Forma_Entrega_Pagar" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="692,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="24" FontSize="15" FontFamily="Tahoma" TextAlignment="Center" IsEnabled="False"/>
         <DataGrid x:Name="dgv_Datos_Pago" Margin="193,237,199,185" FontFamily="Tahoma"/>
         <Label Content="Subtotal" HorizontalAlignment="Left" Margin="634,433,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Height="33" Width="84"/>
         <TextBox x:Name="txt_Subtotal" HorizontalAlignment="Left" VerticalContentAlignment="Center" BorderBrush="Transparent" Margin="728,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="29" Background="White" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>

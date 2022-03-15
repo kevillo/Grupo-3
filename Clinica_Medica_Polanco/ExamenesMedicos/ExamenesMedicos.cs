@@ -9,6 +9,9 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
     public class ExamenesMedicos
     {
         private int _codigoExamen;
+        private int _codSucursal;
+        private string _nombreSucursal;
+        private string _tipoExamen;
         private int _codigoTipoExamen;
         private decimal _precioUnitario;
         private bool _estado;
@@ -17,15 +20,18 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
         // validacion int: que no sea negativo ni que venga vacio
         // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
         public int CodigoExamen { get => _codigoExamen; set => _codigoExamen = value; }
-        public int CodigoTipoExamen
+        public string TipoExamen
         {
-            get => _codigoTipoExamen;
+            get => _tipoExamen;
             set {
-                if (value <= 0) _codigoTipoExamen = 1;
-                else _codigoTipoExamen = value;
+                if (string.IsNullOrEmpty(value)) throw new FormatException();
+                else _tipoExamen = value;
             }
         }
         public decimal PrecioUnitario { get => _precioUnitario; set => _precioUnitario = value; }
         public bool Estado { get => _estado; set => _estado = value; }
+        public int CodSucursal { get => _codSucursal; set => _codSucursal = value; }
+        public string NombreSucursal { get => _nombreSucursal; set => _nombreSucursal = value; }
+        public int CodigoTipoExamen { get => _codigoTipoExamen; set => _codigoTipoExamen = value; }
     }
 }

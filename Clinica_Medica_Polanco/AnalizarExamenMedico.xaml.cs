@@ -20,8 +20,10 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class AnalizarExamenMedico : Window
     {
-        public AnalizarExamenMedico()
+        private Ventas.Ventas ventaAnalisis = new();
+        public AnalizarExamenMedico(Ventas.Ventas venta)
         {
+            ventaAnalisis = venta;
             InitializeComponent();
             this.SourceInitialized += AnalizarExamenMedico_SourceInitialized;
         }
@@ -60,6 +62,7 @@ namespace Clinica_Medica_Polanco
             {
 
                 // aqui actualizamos el estado del examen dicho a 2: listo
+                ExamenesMedicos.ExamenesDAL.analizarExamenMedico(ventaAnalisis.CodFacturaVenta, ventaAnalisis.CodigoExamenMedico, analisis);
                 this.Close();
             }
             else MessageBox.Show("Debe escribir un análisis para el examen médico");
@@ -75,6 +78,17 @@ namespace Clinica_Medica_Polanco
             );
 
             return textRange.Text;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Pacientes.Pacient nuevoPaciente =  Pacientes.PacientesDAL.BuscarPaciente(ventaAnalisis.CodigoPaciente.ToString());
+            txt_Fecha_Orden_Analisis.Text = ventaAnalisis.FechaOrden.ToShortDateString();
+            txt_Orden_Analisis.Text = ventaAnalisis.CodFacturaVenta.ToString();
+            txt_Correo_Analisis.Text = nuevoPaciente.Correo;
+            txt_Nombre_Analisis.Text = nuevoPaciente.Nombre;
+            txt_Fecha_Nacimiento_Analisis.Text = nuevoPaciente.FechaNacimiento.ToShortDateString();
+
         }
     }
 }

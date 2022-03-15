@@ -190,7 +190,7 @@
         </Border>
         <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Correo" Content="Entrega de examen por correo" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="582,535,0,0" VerticalAlignment="Top" Width="310" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Correo_Click"/>
         <Button Style="{DynamicResource Style_btn_Ir_Examen}" x:Name="btn_Entrega_Examen_Fisico" Content="Entrega de examen físico" Cursor="Hand" HorizontalAlignment="Left" Height="60" Margin="268,535,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="22" Click="btn_Entrega_Examen_Fisico_Click"/>
-        <Label Content="Ingrese el número de la factura" HorizontalAlignment="Left" Margin="222,100,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="25"/>
+        <Label Content="Ingrese el número de la factura o la identidad del paciente" HorizontalAlignment="Left" Margin="80,101,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="25"/>
 
 
     </Grid>

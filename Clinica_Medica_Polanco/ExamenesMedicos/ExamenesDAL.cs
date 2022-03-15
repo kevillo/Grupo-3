@@ -49,20 +49,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 Lista.Add(eExamenes);
             }
             return Lista;
-            /*try
-            {
-                //Validación de datos
-                
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Error al buscar examen" + err.Message);
-                return new List<ExamenesMedicos>();
-            }
-            finally
-            {
-                ConexionBaseDeDatos.CerrarConexion();
-            }*/
+            
         }
         public static ExamenesMedicos BuscarExamenPorId(Int64 pDato)
         {
@@ -225,6 +212,288 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        public static List<ExamenesMedicos> obtenerInforPorSucursalExamen(int codSucursal,int codExamen)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                List<ExamenesMedicos> nuevoExamenConsultar = new();
+                SqlCommand comando = new("Infor_Examenes_Sucursal", ConexionBaseDeDatos.conexion);
+
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Sucursal", SqlDbType.Int).Value = codSucursal;
+                comando.Parameters.AddWithValue("Cod_Examen", SqlDbType.Int).Value = codExamen;
+                SqlDataReader dr = comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    ExamenesMedicos nuevoExamennConsultar = new();
+                    nuevoExamennConsultar.CodigoExamen = codExamen;
+                    nuevoExamennConsultar.CodSucursal = dr.GetInt32(0);
+                    nuevoExamennConsultar.NombreSucursal = dr.GetString(1);
+                    nuevoExamennConsultar.CodigoExamen = dr.GetInt32(2);
+                    nuevoExamennConsultar.CodigoTipoExamen = dr.GetInt32(3);
+                    nuevoExamennConsultar.TipoExamen = dr.GetString(4);
+                    nuevoExamennConsultar.PrecioUnitario = dr.GetDecimal(5);
+                    nuevoExamennConsultar.Estado = dr.GetBoolean(6);
+                    nuevoExamenConsultar.Add(nuevoExamennConsultar);
+                }
+                return nuevoExamenConsultar;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen "+ error.Message);
+                return new List<ExamenesMedicos>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+        public static List<ExamenesMedicos> obtenerInforPorSucursalExamen(int codSucursal)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                List<ExamenesMedicos> nuevoExamenConsultar = new();
+                SqlCommand comando = new("Infor_Examenes_Sucursal_Detalle_Examen", ConexionBaseDeDatos.conexion);
+
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Sucursal", SqlDbType.Int).Value = codSucursal;
+                
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ExamenesMedicos nuevoExamennConsultar = new();
+                    nuevoExamennConsultar.CodSucursal = dr.GetInt32(0);
+                    nuevoExamennConsultar.NombreSucursal = dr.GetString(1);
+                    nuevoExamennConsultar.CodigoExamen = dr.GetInt32(2);
+                    nuevoExamennConsultar.CodigoTipoExamen = dr.GetInt32(3);
+                    nuevoExamennConsultar.TipoExamen = dr.GetString(4);
+                    nuevoExamennConsultar.PrecioUnitario = dr.GetDecimal(5);
+                    nuevoExamennConsultar.Estado = dr.GetBoolean(6);
+                    nuevoExamenConsultar.Add(nuevoExamennConsultar);
+                }
+                return nuevoExamenConsultar;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen " + error.Message);
+                return new List<ExamenesMedicos>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+        public static List<ExamenesMedicos> obtenerInforPorSucursalExamen(string codExamen)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                List<ExamenesMedicos> nuevoExamenConsultar = new();
+                SqlCommand comando = new("Infor_Examenes_Sucursal_Detalle_Sucursal", ConexionBaseDeDatos.conexion);
+
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Examen", SqlDbType.Int).Value = int.Parse(codExamen);
+
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ExamenesMedicos nuevoExamennConsultar = new();
+                    nuevoExamennConsultar.CodSucursal = dr.GetInt32(0);
+                    nuevoExamennConsultar.NombreSucursal = dr.GetString(1);
+                    nuevoExamennConsultar.CodigoExamen = dr.GetInt32(2);
+                    nuevoExamennConsultar.CodigoTipoExamen = dr.GetInt32(3);
+                    nuevoExamennConsultar.TipoExamen = dr.GetString(4);
+                    nuevoExamennConsultar.PrecioUnitario = dr.GetDecimal(5);
+                    nuevoExamennConsultar.Estado = dr.GetBoolean(6);
+                    nuevoExamenConsultar.Add(nuevoExamennConsultar);
+                }
+                return nuevoExamenConsultar;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen " + error.Message);
+                return new List<ExamenesMedicos>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
+        public static List<Ventas.Ventas> obtenerExamenesParaEntregar(int codFactura)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                List<Ventas.Ventas> ventasEntregar= new();
+                SqlCommand comando = new(string.Format("select * from Detalle_Factura_Venta "+
+                                         " where Cod_Factura_Venta = {0} and Estado_Examen_Medico=2", codFactura), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    Ventas.Ventas entregarV = new();
+                    entregarV.CodFacturaVenta = dr.GetInt32(0);
+                    entregarV.CodigoExamenMedico = dr.GetInt32(1);
+                    entregarV.CodigoFacturador = dr.GetInt32(2);
+                    entregarV.CodigoMicrobiologo = dr.GetInt32(3);
+                    entregarV.CodigoEnfermero = dr.GetInt32(4);
+                    entregarV.CodigoPaciente = dr.GetInt32(5);
+                    entregarV.MetodoEntregaExamen = dr.GetInt32(6);
+                    entregarV.MetodoPagoExamen = dr.GetInt32(7);
+                    entregarV.FechaOrden = dr.GetDateTime(8);
+                    entregarV.ExamenCombo = dr.GetBoolean(9);
+                    entregarV.Cantidad = dr.GetInt32(10);
+                    entregarV.EstadoExamenMedico = dr.GetInt32(11);
+                    ventasEntregar.Add(entregarV);
+                }
+                return ventasEntregar;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al generar entrega ", error.Message);
+                return new List<Ventas.Ventas>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static List<Ventas.Ventas> obtenerExamenesParaEntregar(string identidadPaciente )
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                List<Ventas.Ventas> ventasEntregar = new();
+                SqlCommand comando = new(string.Format("select Detalle_Factura_Venta.* from Detalle_Factura_Venta"+
+                                                       " inner join Pacientes on Detalle_Factura_Venta.Cod_Paciente = Pacientes.Codigo_Paciente"+
+                                                       " where Pacientes.Identidad_Paciente = '{0}' and Detalle_Factura_Venta.Estado_Examen_Medico = 2",identidadPaciente), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    Ventas.Ventas entregarV = new();
+                    entregarV.CodFacturaVenta = dr.GetInt32(0);
+                    entregarV.CodigoExamenMedico = dr.GetInt32(1);
+                    entregarV.CodigoFacturador = dr.GetInt32(2);
+                    entregarV.CodigoMicrobiologo = dr.GetInt32(3);
+                    entregarV.CodigoEnfermero = dr.GetInt32(4);
+                    entregarV.CodigoPaciente = dr.GetInt32(5);
+                    entregarV.MetodoEntregaExamen = dr.GetInt32(6);
+                    entregarV.MetodoPagoExamen = dr.GetInt32(7);
+                    entregarV.FechaOrden = dr.GetDateTime(8);
+                    entregarV.ExamenCombo = dr.GetBoolean(9);
+                    entregarV.Cantidad = dr.GetInt32(10);
+                    entregarV.EstadoExamenMedico = dr.GetInt32(11);
+                    ventasEntregar.Add(entregarV);
+                }
+                return ventasEntregar;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al generar entrega", error.Message);
+                return new List<Ventas.Ventas>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+        public static List<Ventas.Ventas> analsisExamen()
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                List<Ventas.Ventas> ventasEntregar = new();
+                SqlCommand comando = new("select * from Detalle_Factura_Venta where Estado_Examen_Medico =1", ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    Ventas.Ventas entregarV = new();
+                    entregarV.CodFacturaVenta = dr.GetInt32(0);
+                    entregarV.CodigoExamenMedico = dr.GetInt32(1);
+                    entregarV.CodigoFacturador = dr.GetInt32(2);
+                    entregarV.CodigoMicrobiologo = dr.GetInt32(3);
+                    entregarV.CodigoEnfermero = dr.GetInt32(4);
+                    entregarV.CodigoPaciente = dr.GetInt32(5);
+                    entregarV.MetodoEntregaExamen = dr.GetInt32(6);
+                    entregarV.MetodoPagoExamen = dr.GetInt32(7);
+                    entregarV.FechaOrden = dr.GetDateTime(8);
+                    entregarV.ExamenCombo = dr.GetBoolean(9);
+                    entregarV.Cantidad = dr.GetInt32(10);
+                    entregarV.EstadoExamenMedico = dr.GetInt32(11);
+                    ventasEntregar.Add(entregarV);
+                }
+                return ventasEntregar;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al generar analsis", error.Message);
+                return new List<Ventas.Ventas>();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static void analizarExamenMedico(int codFactura,int CodExamen,string analisis)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+               
+                SqlCommand comando = new("Detalle_Factura_Venta_Update", ConexionBaseDeDatos.conexion);
+
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Factura_Venta", SqlDbType.Int).Value = codFactura;
+                comando.Parameters.AddWithValue("Cod_Examen_Medico", SqlDbType.Int).Value = CodExamen;
+                comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Int).Value = 2;
+                comando.Parameters.AddWithValue("Diagnostico", SqlDbType.VarChar).Value = analisis;
+                comando.ExecuteReader();
+                MessageBox.Show("Informacion actualizada correctamente");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo terminar de guardar la informacion del examen analizado " + error.Message);
+                
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
+        public static void entregarExamenMedico(int codFactura)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+
+                SqlCommand comando = new("Detalle_Factura_Venta_Update_Factura", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Factura_Venta", SqlDbType.Int).Value = codFactura;
+                comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Int).Value = 3;
+                comando.ExecuteReader();
+                MessageBox.Show("Informacion actualizada correctamente");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo terminar de guardar la informacion del examen a entregar " + error.Message);
+
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
+
     }
 }
 

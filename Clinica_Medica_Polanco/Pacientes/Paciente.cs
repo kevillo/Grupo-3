@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Clinica_Medica_Polanco
+namespace Clinica_Medica_Polanco.Pacientes
 {
     public class Pacient
     {
@@ -57,7 +57,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos");
+                    throw new FormatException("No se puede ingresar campos vacíos en  nombre");
                 }
                 else _nombre = value;
             }
@@ -70,7 +70,7 @@ namespace Clinica_Medica_Polanco
                 if (string.IsNullOrEmpty(value))
                 {
 
-                    throw new FormatException("No se puede ingresar campos vacíos");
+                    throw new FormatException("No se puede ingresar campos vacíos en apellido");
                 }
                 else _apellido = value;
             }
@@ -82,7 +82,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _))
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos");
+                    throw new FormatException("No se puede ingresar campos vacíos en identidad");
                 }
                 else _identidad = value;
             }
@@ -94,7 +94,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _))
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos");
+                    throw new FormatException("No se puede ingresar campos vacíos en telefono");
                 }
                 else _telefono = value;
             }
@@ -120,7 +120,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos");
+                    throw new FormatException("No se puede ingresar campos vacíos en correo");
                 }
                 else _correo = value;
             }
@@ -132,7 +132,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (value <= 0)
                 {
-                    throw new FormatException("No se pueden ingresar campos vacíos");
+                    throw new FormatException("No se pueden ingresar campos vacíos en altura");
                 }
                 else _altura = value;
             }
@@ -144,7 +144,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new FormatException("No se pueden ingresar campos vacíos");
+                    throw new FormatException("No se pueden ingresar campos vacíos en tipo sangre");
                 }
                 else _tipoSangre = value;
             }
@@ -157,7 +157,7 @@ namespace Clinica_Medica_Polanco
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos");
+                    throw new FormatException("No se puede ingresar campos vacíos en direccion");
                 }
                 else _direccion = value;
             }

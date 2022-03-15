@@ -59,6 +59,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Entrega_Examen_Fisico_Click(object sender, RoutedEventArgs e)
         {
+            ExamenesMedicos.ExamenesDAL.entregarExamenMedico(int.Parse(txt_Entrega_Examen_Buscar.Text));
             MessageBox.Show("Exámen/es actualizado/s");
             this.Close();
         }
@@ -74,9 +75,16 @@ namespace Clinica_Medica_Polanco
             
             if (!string.IsNullOrEmpty(buscar_Examen))
             {
-                dtg_Entrega_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.BuscarExamen(buscar_Examen);
+                if(buscar_Examen.Length<13)
+                {
+                    int codFactura = int.Parse(buscar_Examen);
+                    dtg_Entrega_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(codFactura);
+                }
+                else
+                {
+                    dtg_Entrega_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(buscar_Examen);
+                }
             }
-            else MessageBox.Show("No puede ir el nombre del examen médico vacío");
         }
 
         private void txt_Entrega_Examen_Buscar_KeyUp(object sender, KeyEventArgs e)
@@ -139,7 +147,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Entrega_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[0];
+                txt_Entrega_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[1];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;

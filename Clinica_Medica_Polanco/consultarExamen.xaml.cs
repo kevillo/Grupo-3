@@ -21,12 +21,16 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class consultarExamen : Window
     {
-        public consultarExamen()
+        int codEmpleador = 0;
+        public consultarExamen(int codEmpleado)
         {
+            codEmpleador = codEmpleado;
             InitializeComponent();
             this.SourceInitialized += ConsultarExamen_SourceInitialized;
 
             ExamenesDAL.CargarSucursal(cmb_Sucursal_Buscar);
+            cmb_Sucursal_Buscar.SelectedIndex = Ventas.ventasDAL.obtenerIdSucursal(codEmpleado) - 1;
+            cmb_Sucursal_Buscar.Items.Add("Global");
         }
         private void ConsultarExamen_SourceInitialized(object sender, EventArgs e)
         {
@@ -63,12 +67,23 @@ namespace Clinica_Medica_Polanco
         private void btn_Consulta_Examen_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string consultarExamen = txt_Consulta_Examen_Buscar.Text;
-            if (!string.IsNullOrEmpty(consultarExamen))
+            
+            if (cmb_Sucursal_Buscar.SelectedIndex == 3)
             {
-                // aqui se traen los examenes por nombre de examenes o por codigo de la sucursal del empleado
-                
+                dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(consultarExamen);
             }
-            else MessageBox.Show("No puede dejar el nombre de examen vacío ");
+            else if (!string.IsNullOrEmpty(consultarExamen))
+            {
+                int codExamen = int.Parse(consultarExamen);
+                int codSucursal = cmb_Sucursal_Buscar.SelectedIndex + 1;
+                dtg_Consulta_Examen_Examenes.ItemsSource  = ExamenesDAL.obtenerInforPorSucursalExamen(codSucursal, codExamen);
+            }
+            else
+            {
+
+                int codSucursal = cmb_Sucursal_Buscar.SelectedIndex + 1;
+                dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(codSucursal);
+            }
         }
 
         private void txt_Consulta_Examen_Buscar_KeyUp(object sender, KeyEventArgs e)
@@ -133,7 +148,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Consulta_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Consulta_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[0];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;

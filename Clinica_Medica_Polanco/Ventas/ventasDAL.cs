@@ -10,6 +10,71 @@ namespace Clinica_Medica_Polanco.Ventas
 {
     class ventasDAL
     {
+
+
+        public static Pago cargarDatosPago(int codFacturaVenta)
+        {
+
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                Pago nuevoPago = new();
+                SqlCommand comando = new("traer_Info_Venta", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Factura", SqlDbType.Int).Value = codFacturaVenta;
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    nuevoPago.ISV = dr.GetDecimal(0);
+                    nuevoPago.Descuento = dr.GetDecimal(1);
+                    nuevoPago.TotalVenta = dr.GetDecimal(2);
+                    nuevoPago.Subtotal = dr.GetDecimal(3);
+                    
+                }
+                return nuevoPago;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al generar factura ", error.Message);
+                return new Pago();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static Pago cargarDatosVenta(int codFacturaVenta)
+        {
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                Pago nuevoPago = new();
+                SqlCommand comando = new("infor_Venta_Paciente", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Factura_Venta", SqlDbType.Int).Value = codFacturaVenta;
+                SqlDataReader dr= comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    nuevoPago.NombrePaciente = dr.GetString(0);
+                    nuevoPago.TelefonoPaciente = dr.GetString(1);
+                    nuevoPago.CorreoPaciente = dr.GetString(2);
+                    nuevoPago.FechaOrden = dr.GetDateTime(3).ToShortDateString();
+                    nuevoPago.MetodoEntrega = dr.GetString(4);
+                    nuevoPago.MetodoPago = dr.GetString(5);
+                }
+                return nuevoPago;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al generar factura ", error.Message);
+                return new Pago();  
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
         public static int ObtenerIdVenta()
         {
             try
@@ -36,13 +101,39 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public static void GenerarFactura()
+        public static int obtenerIdSucursal(int codEmpleado)
+        {
+            try
+            {
+                int codSucursal = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(String.Format("select Empleados.Codigo_Sucursal from Empleados where Codigo_Empleado = {0}",codEmpleado), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    codSucursal = dr.GetInt32(0);
+                }
+                return codSucursal;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al generar factura ", error.Message);
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static void GenerarFactura(int codSucursal)
         {
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new("Actualizar_Ventas_Insumos", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value = codSucursal;
                 comando.ExecuteReader();
             }
             catch(Exception error)
@@ -73,7 +164,7 @@ namespace Clinica_Medica_Polanco.Ventas
                 comando.Parameters.AddWithValue("Fecha_Orden", SqlDbType.DateTime).Value =nuevaVenta.FechaOrden;
                 comando.Parameters.AddWithValue("Examen_Combo", SqlDbType.Int).Value =nuevaVenta.ExamenCombo;
                 comando.Parameters.AddWithValue("Cantidad", SqlDbType.Int).Value =nuevaVenta.Cantidad;
-                comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Bit).Value =nuevaVenta.EstadoExamenMedico;
+                comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Bit).Value =1;    
                 comando.ExecuteReader();  
             }
             catch(Exception error)

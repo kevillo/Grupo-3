@@ -35,7 +35,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Consultar_Examen_Click(object sender, RoutedEventArgs e)
         {
-            consultarExamen consultar = new();
+            consultarExamen consultar = new(codEmpleado);
             consultar.ShowDialog();
         }
 

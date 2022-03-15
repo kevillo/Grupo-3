@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_Medica_Polanco"
         mc:Ignorable="d"
-        Title="AnalizarExamenMedico" Height="620" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/aa.png" WindowStyle="None">
+        Title="AnalizarExamenMedico" Loaded="Window_Loaded" Height="620" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/aa.png" WindowStyle="None">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -74,10 +74,10 @@
         <TextBox x:Name="txt_Nombre_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="352,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Fecha Orden" HorizontalAlignment="Left" Margin="178,266,0,0" VerticalAlignment="Top" Height="36" Width="156" FontSize="25" FontFamily="Tahoma"/>
         <TextBox x:Name="txt_Fecha_Orden_Analisis" HorizontalAlignment="Left" Margin="352,272,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
-        <Label Content="Edad" HorizontalAlignment="Left" Margin="589,145,0,0" VerticalAlignment="Top" Height="35" Width="75" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Edad_Analisis" HorizontalAlignment="Left" Margin="768,154,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"  VerticalAlignment="Top" Width="44" Height="24" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
-        <Label Content="Sexo" HorizontalAlignment="Left" Margin="589,209,0,0" VerticalAlignment="Top" Height="47" Width="75" FontSize="25" FontFamily="Tahoma"/>
-        <TextBox x:Name="txt_Sexo_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="768,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Height="24" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Margin="575,142,0,0" VerticalAlignment="Top" Height="40" Width="93" FontSize="25" FontFamily="Tahoma"/>
+        <TextBox x:Name="txt_Correo_Analisis" HorizontalAlignment="Left" Margin="668,148,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center"  VerticalAlignment="Top" Width="216" Height="34" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
+        <Label Content="Fecha de nacimiento" HorizontalAlignment="Left" Margin="608,210,0,0" VerticalAlignment="Top" Height="46" Width="256" FontSize="25" FontFamily="Tahoma"/>
+        <TextBox x:Name="txt_Fecha_Nacimiento_Analisis" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="648,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="37" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False" BorderBrush="#FF73757C"/>
         <Label Content="Diagnóstico final" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" FontSize="25" FontFamily="Tahoma"/>
         <RichTextBox x:Name="rtb_Diagnostico_Analisis" Margin="216,362,216,115" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF73757C">
             <FlowDocument>

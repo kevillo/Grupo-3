@@ -21,13 +21,16 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class pagarExamenMedico : Window
     {
-        Ventas.Ventas pagarVenta = new();
-
-        public pagarExamenMedico(List<Ventas.Ventas> nuevaVenta)
+        private int codFactura = 0;
+        public pagarExamenMedico(List<Ventas.Ventas> nuevaVenta,int codFactura)
         {
 
             InitializeComponent();
+            
             this.SourceInitialized += PagarExamenMedico_SourceInitialized;
+            this.codFactura = codFactura;
+            dgv_Datos_Pago.ItemsSource = nuevaVenta;
+
         }
 
 
@@ -59,8 +62,26 @@ namespace Clinica_Medica_Polanco
         }
         private void btn_Pagar_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Informacion actualizada");
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Pago nuevoPago = ventasDAL.cargarDatosPago(codFactura);
+            Pago nuevaVenta = ventasDAL.cargarDatosVenta(codFactura);
+
+            txt_Nombre_Pagar.Text = nuevaVenta.NombrePaciente;
+            txt_Telefono_Pagar.Text = nuevaVenta.TelefonoPaciente;
+            txt_Email_Pagar.Text = nuevaVenta.CorreoPaciente;
+            txt_Fecha_Orden_Pagar.Text = nuevaVenta.FechaOrden;
+            txt_Forma_Pagar.Text = nuevaVenta.MetodoPago;
+            txt_Forma_Entrega_Pagar.Text = nuevaVenta.MetodoEntrega;
+            txt_IVA.Text =  Math.Round(nuevoPago.ISV,2).ToString();
+            txt_Descuento.Text = Math.Round(nuevoPago.Descuento, 2).ToString();
+            txt_Total_Pagar.Text = Math.Round(nuevoPago.TotalVenta, 2).ToString();
+            txt_Subtotal.Text = Math.Round(nuevoPago.Subtotal, 2).ToString();
+
         }
     }
 }

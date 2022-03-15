@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Ventas
 {
      public class Ventas
     {
+        private int _codFacturaVenta;
         private int _codExamenMedico;
         private int _codFacturador;
         private int _codMicrobiologo;
@@ -109,14 +110,14 @@ namespace Clinica_Medica_Polanco.Ventas
             get => _estadoExamenMedico;
             set
             {
-                if (value <= 0) throw new FormatException();
+                if (value < 0) throw new FormatException();
                 else _estadoExamenMedico = value;
             }
         }
         public DateTime FechaOrden { get => _fechaOrden; set => _fechaOrden = value; }
 
         public bool ExamenCombo { get => _examenCombo; set => _examenCombo = value; }
-       
+        public int CodFacturaVenta { get => _codFacturaVenta; set => _codFacturaVenta = value; }
     }
 }
 

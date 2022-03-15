@@ -37,7 +37,6 @@ namespace Clinica_Medica_Polanco
             ExamenesDAL.CargarEnfermeros(cmb_Solicitud_Examen_Enfermero);
             ExamenesDAL.CargarEntregaExamen(cmb_Forma_Entrega);
             ExamenesDAL.CargarFormaPago(cmb_Forma_Pago);
-
             tabla.Columns.Add("examen medico");
             tabla.Columns.Add("facturador");
             tabla.Columns.Add("microbiologo");
@@ -82,7 +81,8 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Solicitud_Examen_Procesar_Orden_Click(object sender, RoutedEventArgs e)
         {
-            Ventas.ventasDAL.GenerarFactura();
+            int codSucursalEmpleado = Ventas.ventasDAL.obtenerIdSucursal(codEmpleado);
+            Ventas.ventasDAL.GenerarFactura(codSucursalEmpleado);
 
             int codigoFacturaVenta = Ventas.ventasDAL.ObtenerIdVenta();
 
@@ -94,9 +94,9 @@ namespace Clinica_Medica_Polanco
                     MessageBox.Show(codigoFacturaVenta.ToString(),v.Cantidad.ToString());
                     Ventas.ventasDAL.RegistrarVenta(v, codigoFacturaVenta);
                 }
-                pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta);
-                this.Close();
+                pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta,codigoFacturaVenta);
                 nuevopago.ShowDialog();
+                this.Close();
             }
 
             catch(FormatException error)
@@ -227,7 +227,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Solicitud_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Solicitud_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[0];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;
