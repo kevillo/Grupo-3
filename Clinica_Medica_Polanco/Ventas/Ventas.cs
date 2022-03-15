@@ -19,6 +19,19 @@ namespace Clinica_Medica_Polanco.Ventas
         private bool _examenCombo;
         private int _cantidad;
         private int _estadoExamenMedico;
+        private int _codigoFacturaVenta;
+        private int _codigoSucursal;
+        private int _codigoCliente;
+        private DateTime _fechaFactura;
+        private float _subtotal;
+        private float _isv;
+        private float _descuento;
+        private float _totalVenta;
+        private int _codigoComprador;
+        private int _codigoProveedor;
+        private int _codigoAdministrador;
+        private int _codigoFacturaCompra;
+        private float _totalCompra;
 
         // validacion string: que no venga vacio
         // validacion int: que no sea negativo ni que venga vacio
@@ -116,7 +129,19 @@ namespace Clinica_Medica_Polanco.Ventas
         public DateTime FechaOrden { get => _fechaOrden; set => _fechaOrden = value; }
 
         public bool ExamenCombo { get => _examenCombo; set => _examenCombo = value; }
-       
+        public int CodigoFacturaVenta { get => _codigoFacturaVenta; set => _codigoFacturaVenta = value; }
+        public int CodigoSucursal { get => _codigoSucursal; set => _codigoSucursal = value; }
+        public int CodigoCliente { get => _codigoCliente; set => _codigoCliente = value; }
+        public DateTime FechaFactura { get => _fechaFactura; set => _fechaFactura = value; }
+        public float Subtotal { get => _subtotal; set => _subtotal = value; }
+        public float Isv { get => _isv; set => _isv = value; }
+        public float Descuento { get => _descuento; set => _descuento = value; }
+        public float TotalVenta { get => _totalVenta; set => _totalVenta = value; }
+        public int CodigoComprador { get => _codigoComprador; set => _codigoComprador = value; }
+        public int CodigoProveedor { get => _codigoProveedor; set => _codigoProveedor = value; }
+        public int CodigoAdministrador { get => _codigoAdministrador; set => _codigoAdministrador = value; }
+        public int CodigoFacturaCompra { get => _codigoFacturaCompra; set => _codigoFacturaCompra = value; }
+        public float TotalCompra { get => _totalCompra; set => _totalCompra = value; }
     }
 }
 

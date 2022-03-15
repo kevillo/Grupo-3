@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using Clinica_Medica_Polanco.Ventas;
 
 namespace Clinica_Medica_Polanco
 {
@@ -24,6 +25,8 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += VentasRealizadas_SourceInitialized;
+
+            dtg_Ventas_Realizadas.ItemsSource = ventasDAL.MostrarVentas();
         }
 
         private void VentasRealizadas_SourceInitialized(object sender, EventArgs e)
