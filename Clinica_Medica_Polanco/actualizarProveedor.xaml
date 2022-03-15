@@ -86,7 +86,7 @@
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
-        <RichTextBox x:Name="rtb_Direccion_Actualizar" Margin="123,314,480,100">
+        <RichTextBox x:Name="rtb_Direccion_Proveedor_Actualizar" Margin="123,314,480,100">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>

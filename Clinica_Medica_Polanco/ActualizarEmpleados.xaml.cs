@@ -41,7 +41,7 @@ namespace Clinica_Medica_Polanco
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("a");
         }
 
-        // Funcion para no mover la ventana del form
+        // Función para no mover la ventana del form
         private void ActualizarEmpleados_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -133,7 +133,7 @@ namespace Clinica_Medica_Polanco
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,
                 rtb.Document.ContentEnd
-            );
+         );
 
             return textRange.Text;
         }

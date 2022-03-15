@@ -109,6 +109,6 @@ namespace Clinica_Medica_Polanco.Ventas
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-        }      
+        }    
     }
 }

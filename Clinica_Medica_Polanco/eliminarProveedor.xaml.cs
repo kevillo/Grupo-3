@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Clinica_Medica_Polanco.Proveedores;
+
 
 namespace Clinica_Medica_Polanco
 {
@@ -27,7 +29,8 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Deshabilitar_proveedor_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Proveedor agregado correctamente");
+            ProveedoresDAL.EliminarProveedor(int.Parse(txt_Codigo_Proveedor_Buscar.Text));
+            reiniciarPantalla();
         }
 
         private void txt_Codigo_Proveedor_Buscar_KeyUp(object sender, KeyEventArgs e)
@@ -118,7 +121,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Buscar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Buscar.Text;
-            proveedorSeleccionado = Proveedores.ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
+            proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
 
             if (!string.IsNullOrEmpty(buscar_Proveedor))
             {
@@ -128,7 +131,15 @@ namespace Clinica_Medica_Polanco
                 txt_Correo_Proveedor_Eliminar.Text = proveedorSeleccionado.CorreoProveedor;
                 txt_Telefono_Proveedor_Eliminar.Text = proveedorSeleccionado.TelefonoProveedor;
             }
-            else MessageBox.Show("Ingrese un id de empleado válido");
+            else MessageBox.Show("Ingrese un id de proveedor válido");
+        }
+        private void reiniciarPantalla()
+        {
+            txt_Codigo_Proveedor_Buscar.Clear();
+            txt_Nombre_Proveedor_Eliminar.Clear();
+            txt_Apellido_Proveedor_Eliminar.Clear();
+            txt_Telefono_Proveedor_Eliminar.Clear();
+            txt_Correo_Proveedor_Eliminar.Clear();
         }
     }
 }

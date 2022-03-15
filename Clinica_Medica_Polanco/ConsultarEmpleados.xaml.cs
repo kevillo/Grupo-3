@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Empleados;
 
-
 namespace Clinica_Medica_Polanco
 {
     /// <summary>

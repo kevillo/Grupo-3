@@ -157,7 +157,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
             catch(Exception error)
             {
-                MessageBox.Show("No se pudo encontrar el codigo del empleado " + error.Message);
+                MessageBox.Show("No se pudo encontrar el código del empleado " + error.Message);
                 return -1;
             }
             finally

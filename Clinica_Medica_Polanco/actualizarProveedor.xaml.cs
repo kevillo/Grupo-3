@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Interop;
 using Clinica_Medica_Polanco.Proveedores;
+using System.Runtime.InteropServices;
 
 namespace Clinica_Medica_Polanco
 {
@@ -25,13 +27,58 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
 
+            //Llamado de función para cargar datos desde la bd al cmb
             ProveedoresDAL.CargarAreaTrabajo(cmb_Area_Trabajo_Proveedor_Actualizar);
         }
 
         private void btn_Actualizar_Informacion_Proveedor_Click(object sender, RoutedEventArgs e)
         {
+            int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
+            try
+            {
+                //Validación de datos
+                Proveedores.Proveedores proveedores1 = new();
+                proveedores1.CodigoProveedor = codProveedor;
+                proveedores1.NombreProveedor = txt_Nombre_Proveedor_Actualizar.Text;
+                proveedores1.ApellidoProveedor = txt_Apellido_Proveedor_Actualizar.Text;
+                proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Actualizar.Text;
+                proveedores1.CorreoProveedor = txt_Correo_Proveedor_Actualizar.Text;
+                proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
+                proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
+                proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
+                ProveedoresDAL.ModificarProveedor(proveedores1);
+                reiniciarPantalla();
+            }
 
-            MessageBox.Show("Información actualizada correctamente");
+            catch (FormatException error)
+            {
+                //Excepción que nos indicará si ocurre un error
+                if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Proveedor_Actualizar, leyenda: "Nombre");
+                else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Apellido_Proveedor_Actualizar, leyenda: "Apellido");
+                else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Telefono_Proveedor_Actualizar, leyenda: "Teléfono");
+                else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Correo_Proveedor_Actualizar, leyenda: "Correo");
+                else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb: rtb_Direccion_Proveedor_Actualizar, leyenda: "Dirección", refer: 4);
+                else if (error.StackTrace.Contains("AreaTrabajo")) ValidarCampos(leyenda: "Área de trabajo", cmb: cmb_Area_Trabajo_Proveedor_Actualizar, refer: 3);
+            }
+        }
+        //Validar campos tipo txt, rtb, dt, cmb
+        private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
+        {
+            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+
+            if (refer == 2) dt.Focus();
+            else if (refer == 3) cmb.Focus();
+            else if (refer == 4) rtb.Focus();
+            else txts.Focus();
+        }
+        private string rtbAString(RichTextBox rtb)
+        {
+            TextRange textRange = new TextRange(
+                rtb.Document.ContentStart,
+                rtb.Document.ContentEnd
+         );
+
+            return textRange.Text;
         }
 
         private void txt_Codigo_Proveedor_Actualizar_KeyUp(object sender, KeyEventArgs e)
@@ -73,7 +120,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese provvedor o el codigo es invalido." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese proveedor o el código es inválido." });
             }
         }
 
@@ -119,9 +166,8 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Buscar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
-            Proveedores.codigoAreaTrabajo nuevo = new();
             string buscar_Proveedor = txt_Codigo_Proveedor_Actualizar.Text;
-            proveedorSeleccionado = Proveedores.ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
+            proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
 
             if (!string.IsNullOrEmpty(buscar_Proveedor))
             {
@@ -130,17 +176,25 @@ namespace Clinica_Medica_Polanco
                 txt_Apellido_Proveedor_Actualizar.Text = proveedorSeleccionado.ApellidoProveedor;
                 txt_Telefono_Proveedor_Actualizar.Text = proveedorSeleccionado.TelefonoProveedor;
                 txt_Correo_Proveedor_Actualizar.Text = proveedorSeleccionado.CorreoProveedor;
-                strinARtb(rtb_Direccion_Actualizar, proveedorSeleccionado.DireccionProveedor);
+                setTextToRTB(rtb_Direccion_Proveedor_Actualizar, proveedorSeleccionado.DireccionProveedor);
                 cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = proveedorSeleccionado.CodigoAreaTrabajo-1;
                 chb_Disponibilidad_Proveedor_Actualizar.IsChecked = proveedorSeleccionado.EstadoProveedor;
             }
-            else MessageBox.Show("Ingrese un No. de Identidad de empleado válido");
         }
-
-        private void strinARtb(RichTextBox rtb, string textoSet)
+        private void setTextToRTB(RichTextBox rtb, string textoSet)
         {
             TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
             textRange.Text = textoSet;
+        }
+        //Función para reinicar pantalla y a la vez limpiar los campos
+        private void reiniciarPantalla()
+        {
+            txt_Nombre_Proveedor_Actualizar.Clear();
+            txt_Apellido_Proveedor_Actualizar.Clear();
+            txt_Telefono_Proveedor_Actualizar.Clear();
+            txt_Correo_Proveedor_Actualizar.Clear();
+            rtb_Direccion_Proveedor_Actualizar.Document.Blocks.Clear();
+            cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = 0;
         }
     }
 }

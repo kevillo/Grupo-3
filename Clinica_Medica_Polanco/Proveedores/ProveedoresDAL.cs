@@ -24,7 +24,7 @@ namespace Clinica_Medica_Polanco.Proveedores
                 comando.Parameters.AddWithValue("Direccion_Proveedor", SqlDbType.VarChar).Value = proveedores.DireccionProveedor;
                 comando.Parameters.AddWithValue("Correro_Proveedor", SqlDbType.VarChar).Value = proveedores.CorreoProveedor;
                 comando.Parameters.AddWithValue("Telefono_Proveedor", SqlDbType.VarChar).Value = proveedores.TelefonoProveedor;
-                comando.Parameters.AddWithValue("Estado_Proveedor", SqlDbType.Bit).Value = "True";
+                comando.Parameters.AddWithValue("Estado_Proveedor", SqlDbType.Bit).Value = proveedores.EstadoProveedor;
                 comando.ExecuteReader();
                 MessageBox.Show("Proveedor agregado exitosamente");
             }
@@ -37,14 +37,21 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static List<Proveedores> BuscarProveedor(int pDato)
+        public static List<Proveedores> BuscarProveedor(string pDato)
         {
             try
             {
                 //Validación datos
                 List<Proveedores> Lista = new List<Proveedores>();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(string.Format("Select Codigo_Proveedor, Codigo_Area_Trabajo, Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correo_Proveedor, Telefono_Proveedor, Estado_Proveedor From Proveedores WHERE Codigo_Proveedor = {0}",pDato));
+                SqlCommand comando = new SqlCommand("Select Inventario.Codigo_Insumo,Insumos.Nombre_Insumo,Proveedores.Nombre_Proveedor,Sucursales.Nombre_Sucursal,Inventario.Existencia," +
+                                                    "Inventario.Fecha_Ingreso, Inventario.Inventario_Año, Inventario.Inventario_Mes, Inventario.numero_lote from Inventario" +
+                                                    "inner join Proveedores on Proveedores.Codigo_Proveedor = Inventario.Codigo_Proveedor" +
+                                                    "inner join Insumos on insumos.Codigo_Insumo = Inventario.Codigo_Insumo" +
+                                                    "inner join Sucursales on Inventario.Codigo_Sucursal = Sucursales.Codigo_Sucursal" +
+                                                    "where Inventario.Inventario_Mes = MONTH(GETDATE()) AND Inventario_Año = YEAR(GETDATE())" +
+                                                    "and Proveedores.Codigo_Proveedor = 23", ConexionBaseDeDatos.conexion);
+                comando.Parameters.AddWithValue("CodigoProveedor", pDato);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -57,12 +64,13 @@ namespace Clinica_Medica_Polanco.Proveedores
                     pProveedores.CorreoProveedor = reader.GetString(5);
                     pProveedores.TelefonoProveedor = reader.GetString(6);
                     pProveedores.EstadoProveedor = reader.GetBoolean(7);
+                    Lista.Add(pProveedores);
                 }
                 return Lista;
             }
             catch (Exception err)
             {
-                MessageBox.Show("Error al actualizar" + err.Message);
+                MessageBox.Show("Error al consultar" + err.Message);
                 return new List<Proveedores>();
             }
             finally
@@ -71,14 +79,14 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
 
-        public static Proveedores BuscarProveedorPorId(int codigoProveedor)
+        public static Proveedores BuscarProveedorPorId(int pDato)
         {
             try
             {
                 //Validación de datos
                 Proveedores pProveedores = new Proveedores();               
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(string.Format("Select Codigo_Proveedor, Codigo_Area_Trabajo,Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correro_Proveedor, Telefono_Proveedor,Estado_Proveedor from [dbo].[vProveedoresBuscar] where Codigo_Proveedor = {0}", codigoProveedor), ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand(string.Format("Select Codigo_Proveedor, Codigo_Area_Trabajo,Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correro_Proveedor, Telefono_Proveedor,Estado_Proveedor from [dbo].[vProveedoresBuscar] where Codigo_Proveedor = {0}", pDato), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -104,6 +112,31 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+        public static int traerCodigoProveedor(string identidad)
+        {
+            try
+            {
+                int codProveedor = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("Select Codigo_Proveedor from Proveedor where Codigo_Proveedor = '{0}'", identidad), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    codProveedor = dr.GetInt32(0);
+                }
+                return codProveedor;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("No se pudo encontrar el código del proveedor " + error.Message);
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+
+        }
         public static void ModificarProveedor(Proveedores proveedores)
         {
             try
@@ -111,6 +144,7 @@ namespace Clinica_Medica_Polanco.Proveedores
                 //Validación datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Proveedores_Update", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_Proveedor", SqlDbType.Int).Value = proveedores.CodigoProveedor;
                 comando.Parameters.AddWithValue("Codigo_Area_Trabajo", SqlDbType.VarChar).Value = proveedores.CodigoAreaTrabajo;
                 comando.Parameters.AddWithValue("Nombre_Proveedor", SqlDbType.VarChar).Value = proveedores.NombreProveedor;
@@ -118,35 +152,33 @@ namespace Clinica_Medica_Polanco.Proveedores
                 comando.Parameters.AddWithValue("Direccion_Proveedor", SqlDbType.VarChar).Value = proveedores.DireccionProveedor;
                 comando.Parameters.AddWithValue("Correro_Proveedor", SqlDbType.VarChar).Value = proveedores.CorreoProveedor;
                 comando.Parameters.AddWithValue("Telefono_Proveedor", SqlDbType.VarChar).Value = proveedores.TelefonoProveedor;
-                comando.Parameters.AddWithValue("Estado_Proveedor", SqlDbType.Bit).Value = "True";
-                comando.ExecuteNonQuery();
+                comando.Parameters.AddWithValue("Estado_Proveedor", SqlDbType.Bit).Value = proveedores.EstadoProveedor;
+                comando.ExecuteReader();
                 MessageBox.Show("Proveedor actualizado exitosamente");
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al actualizar proveedores", error.Message);
+                MessageBox.Show("Error al actualizar proveedor", error.Message);
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static int EliminarProveedor(Int64 codigoProveedor)
+        public static void EliminarProveedor(int codigoProveedor)
         {
             try
             {
-                int retorno = 0;
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Delete from Proveedores where Codigo_Proveedores = @codProveedor", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("codProveedor", codigoProveedor);
-
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+                SqlCommand comando = new SqlCommand("Proveedores_Delete", ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Codigo_A_Eliminar", DbType.Int32).Value = codigoProveedor;
+                comando.ExecuteReader();
+                MessageBox.Show("Proveedor deshabilitado con éxito");
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error al eliminar los datos ", error.Message);
-                return -1;
             }
             finally
             {
