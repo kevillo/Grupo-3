@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Clinica_Medica_Polanco"
         mc:Ignorable="d"
-        Title="ventasRealizadas" Height="622" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+        Title="ventasRealizadas" Loaded="Window_Loaded" Height="622" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -71,7 +71,7 @@
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dtg_Ventas_Realizadas" Margin="10,132,10,126"/>
+        <DataGrid x:Name="dtg_Ventas_Realizadas" Margin="10,132,10,126" FontFamily="Tahoma" FontSize="18"/>
 
     </Grid>
 </Window>

@@ -203,35 +203,39 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public static List<Ventas> MostrarVentas()
+        public static List<ventasRealizadas> MostrarVentas(int codSucursal)
         {
             try
-            {    //Por si te sirve de algo esta kk que hice :(
+            {  
+
                 //Validación de datos
-                List<Ventas> Lista = new List<Ventas>();
+                List<ventasRealizadas> Lista = new List<ventasRealizadas>();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand(String.Format("Select * From Resumen_Factura_Venta"), ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new SqlCommand(String.Format("ventas_Realizadas"), ConexionBaseDeDatos.conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("Cod_Sucursal", SqlDbType.Int).Value = codSucursal;
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Ventas vVentas = new Ventas();
-                    vVentas.CodigoFacturaVenta = reader.GetInt32(0);
-                    vVentas.CodigoSucursal = reader.GetInt32(1);
-                    vVentas.CodigoCliente = reader.GetInt32(2);
-                    vVentas.CodigoFacturador = reader.GetInt32(3);
-                    vVentas.FechaFactura = reader.GetDateTime(4);
-                    vVentas.Subtotal = reader.GetFloat(5);
-                    vVentas.Isv = reader.GetFloat(6);
-                    vVentas.Descuento = reader.GetFloat(7);
-                    vVentas.TotalVenta = reader.GetFloat(8);
-                    Lista.Add(vVentas);
+                    ventasRealizadas nuevaVenta = new();
+                    nuevaVenta.CodFactura = reader.GetInt32(0);
+                    nuevaVenta.NombreSucursal = reader.GetString(1);
+                    nuevaVenta.NombrePaciente = reader.GetString(2);
+                    nuevaVenta.NombreaEmpleado = reader.GetString(3);
+                    nuevaVenta.FechaFactura = reader.GetDateTime(4);
+                    nuevaVenta.SubtotalVenta = reader.GetDecimal(5);
+                    nuevaVenta.IsvVenta = reader.GetDecimal(6);
+                    nuevaVenta.DescuentoVenta = reader.GetDecimal(7);
+                    nuevaVenta.TotalVenta = reader.GetDecimal(8);
+                    Lista.Add(nuevaVenta);
+
                 }
                 return Lista;
             }
             catch (Exception err)
             {
                 MessageBox.Show("No hay ventas que mostrar" + err.Message);
-                return new List<Ventas>();
+                return new List<ventasRealizadas>();
             }
             finally
             {
@@ -239,7 +243,7 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-        public static List<Ventas> MostrarCompras()
+     /*   public static List<Ventas> MostrarCompras()
         {
             try
             {   
@@ -271,6 +275,6 @@ namespace Clinica_Medica_Polanco.Ventas
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-        }
+        }*/
     }
 }

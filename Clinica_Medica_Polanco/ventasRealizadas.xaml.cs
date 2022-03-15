@@ -21,12 +21,15 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class ventasRealizadas : Window
     {
-        public ventasRealizadas()
+        int codEmpleador = 0;
+        public ventasRealizadas(int cod)
         {
+            codEmpleador = cod;
+
             InitializeComponent();
             this.SourceInitialized += VentasRealizadas_SourceInitialized;
 
-            dtg_Ventas_Realizadas.ItemsSource = ventasDAL.MostrarVentas();
+          //  dtg_Ventas_Realizadas.ItemsSource = ventasDAL.MostrarVentas();
         }
 
         private void VentasRealizadas_SourceInitialized(object sender, EventArgs e)
@@ -60,6 +63,12 @@ namespace Clinica_Medica_Polanco
         private void btn_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            int codSucursal = ventasDAL.obtenerIdSucursal(codEmpleador);
+            dtg_Ventas_Realizadas.ItemsSource = ventasDAL.MostrarVentas(codSucursal);
         }
     }
 }

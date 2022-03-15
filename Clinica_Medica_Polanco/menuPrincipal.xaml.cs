@@ -78,7 +78,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Inventario_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Inventario, btn_Inventario);
-            menuPrincipalInventario inv = new();
+            menuPrincipalInventario inv = new(codEmpleado);
             panel_Menu_Principal.Children.Clear();
             panel_Menu_Principal.Children.Add(inv);
         }

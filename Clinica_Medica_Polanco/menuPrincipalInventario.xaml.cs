@@ -20,8 +20,10 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class menuPrincipalInventario : UserControl
     {
-        public menuPrincipalInventario()
+        int empleado = 0;
+        public menuPrincipalInventario(int codEmpleado)
         {
+            empleado = codEmpleado;
             InitializeComponent();
         }
 
@@ -39,19 +41,19 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Ver_Compras_Click(object sender, RoutedEventArgs e)
         {
-            consultaComprasRealizadas consultaCompras = new();
+            consultaComprasRealizadas consultaCompras = new(empleado);
             consultaCompras.ShowDialog();
         }
 
         private void btn_Actualizar_Stock_Click(object sender, RoutedEventArgs e)
         {
-            actualizarStock compras = new();
+            actualizarStock compras = new(empleado);
             compras.ShowDialog();
         }
 
         private void btn_Ver_Ventas_Click(object sender, RoutedEventArgs e)
         {
-            ventasRealizadas ventas = new();
+            ventasRealizadas ventas = new(empleado);
             ventas.ShowDialog();
         }
     }

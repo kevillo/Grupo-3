@@ -123,8 +123,7 @@
         <TextBox x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <ComboBox x:Name="cmb_Proveedor_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="624,212,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Proveedor" HorizontalAlignment="Left" Margin="702,163,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="20"/>
-        <ComboBox x:Name="cmb_Administrador_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="624,337,0,0" VerticalAlignment="Top" Width="292" Height="49" FontFamily="Tahoma" FontSize="15"/>
-        <Label Content="Administrador" HorizontalAlignment="Left" Margin="686,289,0,0" VerticalAlignment="Top" Height="40" Width="170" FontFamily="Tahoma" FontSize="20"/>
+        <Label Content="Existencia actual" HorizontalAlignment="Left" Margin="686,289,0,0" VerticalAlignment="Top" Height="40" Width="170" FontFamily="Tahoma" FontSize="20"/>
         <Label Content="Cantidad comprada" HorizontalAlignment="Left" Margin="250,295,0,0" VerticalAlignment="Top" Height="40" Width="234" FontFamily="Tahoma" FontSize="20"/>
         <TextBox x:Name="txt_Cantidad_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,343,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="42" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Button Style="{DynamicResource btn_Style_Actualizar}" Cursor="Hand" x:Name="btn_Actualizar_Stock" Content="Actualizar stock" HorizontalAlignment="Left"  Background="#FF0D2D6F" Foreground="White" Margin="427,527,0,0" VerticalAlignment="Top" Height="60" Width="274" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Stock_Click"/>
@@ -133,5 +132,6 @@
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <TextBox x:Name="txt_Existencia_Actualizar_Stock" HorizontalAlignment="Left" Margin="620,343,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="42" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
     </Grid>
 </Window>

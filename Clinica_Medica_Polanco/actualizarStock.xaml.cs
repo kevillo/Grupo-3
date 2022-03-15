@@ -20,8 +20,11 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class actualizarStock : Window
     {
-        public actualizarStock()
+
+        int codEmpleador = 0;
+        public actualizarStock(int cod)
         {
+            codEmpleador = cod;
             InitializeComponent();
             this.SourceInitialized += ActualizarStock_SourceInitialized;
 

@@ -21,8 +21,11 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class consultaComprasRealizadas : Window
     {
-        public consultaComprasRealizadas()
+
+        int codEmpleador = 0;
+        public consultaComprasRealizadas(int cod)
         {
+            codEmpleador = cod;
             InitializeComponent();
             this.SourceInitialized += ConsultarComprasRealizadas_SourceInitialized;
         }
@@ -56,6 +59,12 @@ namespace Clinica_Medica_Polanco
                     break;
             }
             return IntPtr.Zero;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            int codSucursal = ventasDAL.obtenerIdSucursal(codEmpleador);
+            dtg_Consulta_Compras_Realizadas.ItemsSource = Compras.comprasDAL.obtenerInfoCompras(codSucursal);
         }
     }
 }

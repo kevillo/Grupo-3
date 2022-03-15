@@ -37,41 +37,42 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static List<Proveedores> BuscarProveedor(string pDato)
+        public static List<proveedoresVentas> BuscarProveedor(string pDato)
         {
             try
             {
                 //Validación datos
-                List<Proveedores> Lista = new List<Proveedores>();
+                List<proveedoresVentas> Lista = new List<proveedoresVentas>();
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Select Inventario.Codigo_Insumo,Insumos.Nombre_Insumo,Proveedores.Nombre_Proveedor,Sucursales.Nombre_Sucursal,Inventario.Existencia," +
-                                                    "Inventario.Fecha_Ingreso, Inventario.Inventario_Año, Inventario.Inventario_Mes, Inventario.numero_lote from Inventario" +
-                                                    "inner join Proveedores on Proveedores.Codigo_Proveedor = Inventario.Codigo_Proveedor" +
-                                                    "inner join Insumos on insumos.Codigo_Insumo = Inventario.Codigo_Insumo" +
-                                                    "inner join Sucursales on Inventario.Codigo_Sucursal = Sucursales.Codigo_Sucursal" +
-                                                    "where Inventario.Inventario_Mes = MONTH(GETDATE()) AND Inventario_Año = YEAR(GETDATE())" +
-                                                    "and Proveedores.Codigo_Proveedor = 23", ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("CodigoProveedor", pDato);
+                SqlCommand comando = new SqlCommand(String.Format("Select Inventario.Codigo_Insumo,Insumos.Nombre_Insumo,Proveedores.Nombre_Proveedor,Sucursales.Nombre_Sucursal,Inventario.Existencia, " +
+                                                    "Inventario.Fecha_Ingreso, Inventario.Inventario_Año, Inventario.Inventario_Mes, Inventario.numero_lote from Inventario " +
+                                                    " inner join Proveedores on Proveedores.Codigo_Proveedor = Inventario.Codigo_Proveedor " +
+                                                    " inner join Insumos on insumos.Codigo_Insumo = Inventario.Codigo_Insumo " +
+                                                    " inner join Sucursales on Inventario.Codigo_Sucursal = Sucursales.Codigo_Sucursal " +
+                                                    " where Inventario.Inventario_Mes = MONTH(GETDATE()) AND Inventario_Año = YEAR(GETDATE()) " +
+                                                    " and Proveedores.Codigo_Proveedor = {0}",int.Parse(pDato)), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    Proveedores pProveedores = new Proveedores();
-                    pProveedores.CodigoProveedor = reader.GetInt32(0);
-                    pProveedores.CodigoAreaTrabajo = reader.GetInt32(1);
-                    pProveedores.NombreProveedor = reader.GetString(2);
-                    pProveedores.ApellidoProveedor = reader.GetString(3);
-                    pProveedores.DireccionProveedor = reader.GetString(4);
-                    pProveedores.CorreoProveedor = reader.GetString(5);
-                    pProveedores.TelefonoProveedor = reader.GetString(6);
-                    pProveedores.EstadoProveedor = reader.GetBoolean(7);
-                    Lista.Add(pProveedores);
+                    proveedoresVentas nuevoProveddor = new();
+                    nuevoProveddor.CodigoInsumo = reader.GetInt32(0);
+                    nuevoProveddor.NombreInsumo = reader.GetString(1);
+                    nuevoProveddor.NombreProveedor = reader.GetString(2);
+                    nuevoProveddor.NombreSucursal = reader.GetString(3);
+                    nuevoProveddor.Existencia = reader.GetInt32(4);
+                    nuevoProveddor.FechaIngreso = reader.GetDateTime(5);
+                    nuevoProveddor.AnioInventario = reader.GetInt32(6);
+                    nuevoProveddor.MesInventario = reader.GetInt32(7);
+                    nuevoProveddor.NumeroLote = reader.GetString(8);
+                    Lista.Add(nuevoProveddor);
+                    
                 }
                 return Lista;
             }
             catch (Exception err)
             {
                 MessageBox.Show("Error al consultar" + err.Message);
-                return new List<Proveedores>();
+                return new List<proveedoresVentas>();
             }
             finally
             {
