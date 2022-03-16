@@ -9,6 +9,9 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     public class empleadosDAL
     {
+
+
+
         public static void AgregarEmpleado(Empleados empleados)
         {
             try
