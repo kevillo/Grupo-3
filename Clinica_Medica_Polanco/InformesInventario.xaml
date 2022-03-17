@@ -67,11 +67,11 @@
         <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Label Content="Informe de inventario" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>
-        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center" BorderBrush="White" Margin="0,501,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click">
+        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center" BorderBrush="White" Margin="0,543,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <BoldReports:ReportViewer Name="Informe_Inventario"/>
+        <BoldReports:ReportViewer Name="ReportViewer" Margin="0,90,0,82"/>
     </Grid>
 </Window>

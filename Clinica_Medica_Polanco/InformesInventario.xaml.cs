@@ -32,6 +32,9 @@ namespace Clinica_Medica_Polanco
             WindowInteropHelper helper = new(this);
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
             souce.AddHook(WndProc);
+
+            this.ReportViewer.ReportPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Reportes\ReporteInventario.rdl");
+            this.ReportViewer.RefreshReport();
         }
         const int WM_SYSCOMMAND = 0x0112;
         const int SC_MOVE = 0xF010;

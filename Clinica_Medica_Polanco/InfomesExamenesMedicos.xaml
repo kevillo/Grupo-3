@@ -65,11 +65,11 @@
         <Rectangle HorizontalAlignment="Left" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="710" Margin="196,0,0,0"/>
         <Label Content="Informe de exámenes médicos" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="204,6,0,0"/>
         <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>
-        <Button Style="{DynamicResource Style_btn_Salir}" Cursor="Hand" x:Name="btn_salir" BorderBrush="White" Content="" HorizontalAlignment="Center" Margin="0,503,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_salir_Click">
+        <Button Style="{DynamicResource Style_btn_Salir}" Cursor="Hand" x:Name="btn_salir" BorderBrush="White" Content="" HorizontalAlignment="Center" Margin="0,543,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <BoldReports:ReportViewer Name="Informe_Examenes_Medicos"/>
+        <BoldReports:ReportViewer Name="ReportViewer" Margin="0,90,0,82"/>
     </Grid>
 </Window>

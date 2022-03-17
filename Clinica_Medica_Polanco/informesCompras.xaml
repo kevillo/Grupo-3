@@ -65,13 +65,13 @@
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
         <Rectangle HorizontalAlignment="Center" Fill="#0D2D6F" Height="85" Stroke="Black" VerticalAlignment="Top" Width="688"/>
-        <Label Content="Compras realizadas" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Informe de compras realizadas" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="123" Source="/aa.bmp"/>
-        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center"  BorderBrush="White" Margin="0,511,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click">
+        <Button x:Name="btn_Salir" Cursor="Hand" Style="{DynamicResource btn_Salir}" Content="" HorizontalAlignment="Center"  BorderBrush="White" Margin="0,547,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <BoldReports:ReportViewer Name="Informe_Compras"/>
+        <BoldReports:ReportViewer Name="ReportViewer" Margin="0,90,0,78"/>
     </Grid>
 </Window>

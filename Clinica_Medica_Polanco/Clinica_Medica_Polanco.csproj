@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,12 +27,19 @@
     <None Remove="lupa.png" />
     <None Remove="nuevocliente.png" />
     <None Remove="refresh.png" />
+    <None Remove="Reportes\ReporteCompras.rdl" />
+    <None Remove="Reportes\ReporteEmpleados.rdl" />
+    <None Remove="Reportes\ReporteExamenesMedicos.rdl" />
+    <None Remove="Reportes\ReporteInventario.rdl" />
+    <None Remove="Reportes\ReportePacientes.rdl" />
+    <None Remove="Reportes\ReporteVentas.rdl" />
     <None Remove="Salir.png" />
     <None Remove="Salir2.png" />
     <None Remove="trash.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bold.Licensing" Version="3.3.31" />
     <PackageReference Include="BoldReports.WPF" Version="3.3.31" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
@@ -62,7 +70,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Reportes\" />
+    <Content Include="Reportes\ReporteCompras.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReporteEmpleados.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReporteExamenesMedicos.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReporteInventario.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReportePacientes.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReporteVentas.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
