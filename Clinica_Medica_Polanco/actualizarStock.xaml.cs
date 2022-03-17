@@ -29,7 +29,7 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += ActualizarStock_SourceInitialized;
             int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
             Proveedores.ProveedoresDAL.CargarProveedores(cmb_Proveedor_Actualizar_Stock);
-            Proveedores.ProveedoresDAL.cargarEmpleados(cmb_Administrador_Actualizar,codSucursal);
+            Proveedores.ProveedoresDAL.cargarEmpleados(cmb_Administrador_Actualizar, codSucursal);
         }
 
         // Funcion para no mover la ventana del form
@@ -73,11 +73,91 @@ namespace Clinica_Medica_Polanco
         private void btn_Actualizar_Stock_Click(object sender, RoutedEventArgs e)
         {
             int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
-            Inventario.inventarioDAL.actualizarStock(cmb_Administrador_Actualizar.SelectedIndex+1,codSucursal,cmb_Proveedor_Actualizar_Stock.SelectedIndex+1, codEmpleador);
+            Inventario.inventarioDAL.actualizarStock(cmb_Administrador_Actualizar.SelectedIndex + 1, codSucursal, cmb_Proveedor_Actualizar_Stock.SelectedIndex + 1, codEmpleador);
             Inventario.inventarioDAL.ingresarInventario(int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text), int.Parse(txt_Cantidad_Actualizar_Stock.Text));
 
 
             this.Close();
+        }
+
+        private void txt_Codigo_Insumo_Actualizar_Stock_KeyUp(object sender, KeyEventArgs e)
+        {
+            stc_InfoPaciente.Visibility = Visibility.Visible;
+            scv_BuscarPaciente.Visibility = Visibility.Visible;
+            brd_BuscarPaciente.Visibility = Visibility.Visible;
+            //scv_BuscarPaciente.Background = new 
+            bool found = false;
+            var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
+            var data = Autocompletados.autocompletarProducto.GetData();
+
+            string query = (sender as TextBox).Text;
+
+            if (query.Length == 0)
+            {
+                // Clear   
+                stc_InfoPaciente.Children.Clear();
+                border.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                border.Visibility = System.Windows.Visibility.Visible;
+            }
+
+            // Clear the list   
+            stc_InfoPaciente.Children.Clear();
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
+            // Add the result   
+            foreach (var obj in data)
+            {
+                if (obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()) || obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()))
+                {
+                    // The word starts with this... Autocomplete must work   
+                    addItem(obj);
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
+            }
+        }
+
+        private void addItem(String text)
+        {
+            TextBlock block = new TextBlock();
+
+            // Add the text   
+            block.Text = text;
+
+
+            // A little style...   
+            block.Margin = new Thickness(2, 3, 2, 3);
+            block.Cursor = Cursors.Hand;
+
+            // Mouse events   
+            block.MouseLeftButtonUp += (sender, e) =>
+            {
+                txt_Codigo_Insumo_Actualizar_Stock.Text = (sender as TextBlock).Text.Split(" - ")[0];
+                stc_InfoPaciente.Visibility = Visibility.Hidden;
+                scv_BuscarPaciente.Visibility = Visibility.Hidden;
+                brd_BuscarPaciente.Visibility = Visibility.Hidden;
+            };
+
+            block.MouseEnter += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.PeachPuff;
+            };
+
+            block.MouseLeave += (sender, e) =>
+            {
+                TextBlock b = sender as TextBlock;
+                b.Background = Brushes.Transparent;
+            };
+
+            // Add to the panel   
+            stc_InfoPaciente.Children.Add(block);
         }
     }
 }
