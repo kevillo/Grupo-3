@@ -30,7 +30,7 @@ namespace Clinica_Medica_Polanco
 
                 if (adjuntoRuta.Equals("") == false)
                 {
-                    System.Net.Mail.Attachment archivo = new System.Net.Mail.Attachment(adjuntoRuta);
+                    Attachment archivo = new Attachment(adjuntoRuta);
                     correos.Attachments.Add(archivo);
                 }
 

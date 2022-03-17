@@ -34,10 +34,14 @@ namespace Clinica_Medica_Polanco
 
             dtp_Fecha_Nacimiento_Paciente.Text = DateTime.Now.ToShortDateString();
             //Estableciendo valores al cmb tipo sangre
+            cmb_Tipo_Sangre_Paciente.Items.Add("O-");
+            cmb_Tipo_Sangre_Paciente.Items.Add("O+");
             cmb_Tipo_Sangre_Paciente.Items.Add("A+");
-            cmb_Tipo_Sangre_Paciente.Items.Add("O");
+            cmb_Tipo_Sangre_Paciente.Items.Add("A-");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB+");
             cmb_Tipo_Sangre_Paciente.Items.Add("AB-");
+            cmb_Tipo_Sangre_Paciente.Items.Add("B-");
+            cmb_Tipo_Sangre_Paciente.Items.Add("B+");
         }
 
         private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)

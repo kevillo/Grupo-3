@@ -26,12 +26,16 @@ namespace Clinica_Medica_Polanco
             dtp_Nacimiento.Text = DateTime.Now.ToShortDateString();
             dtp_Ingreso_Agregar_Empleado.Text = "1999/01/01";
             dtp_Pago_Agregar_Empleado.Text = "1999/01/01";
-            
+
             //Estableciendo valores al cmb tipo sangre
+            cmb_Tipo_Sangre.Items.Add("O-");
+            cmb_Tipo_Sangre.Items.Add("O+");
             cmb_Tipo_Sangre.Items.Add("A+");
-            cmb_Tipo_Sangre.Items.Add("O");
+            cmb_Tipo_Sangre.Items.Add("A-");
             cmb_Tipo_Sangre.Items.Add("AB+");
             cmb_Tipo_Sangre.Items.Add("AB-");
+            cmb_Tipo_Sangre.Items.Add("B-");
+            cmb_Tipo_Sangre.Items.Add("B+");
         }
         private void btn_Salir_Click_1(object sender, RoutedEventArgs e)
         {

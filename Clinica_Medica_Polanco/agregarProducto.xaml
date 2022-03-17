@@ -68,7 +68,7 @@
         <Label Content="Información del producto" FontFamily="Tahoma" FontSize="19" HorizontalAlignment="Left" Margin="31,32,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="84,78,0,0" VerticalAlignment="Top" Height="33" Width="182" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="84,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
-        <Label Content="Número de serie" HorizontalAlignment="Left" Margin="410,78,0,0" VerticalAlignment="Top" Height="34" Width="154" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
+        <Label Content="Número de serie (Número)" HorizontalAlignment="Left" Margin="410,78,0,0" VerticalAlignment="Top" Height="34" Width="221" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <TextBox x:Name="txt_Numero_Serie" HorizontalAlignment="Left" Margin="410,112,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
         <Label Content="Precio unitario" HorizontalAlignment="Left" Margin="84,181,0,0" VerticalAlignment="Top" Height="34" Width="132" FontFamily="Tahoma" FontSize="17" RenderTransformOrigin="0.5,0.5" FontWeight="Normal" Foreground="#FF878F9E">
             <Label.RenderTransform>

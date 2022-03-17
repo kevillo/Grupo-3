@@ -20,7 +20,7 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class EnviarCorreo : Window
     {
-        Correo c = new Correo();
+        Correo correo = new Correo();
 
         public EnviarCorreo()
         {
@@ -54,7 +54,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Correo_Enviar_Click(object sender, RoutedEventArgs e)
         {
-           c.enviarCorreo(txt_Correo_Para.Text, txt_Correo_Asunto.Text, txt_Correo_Adjuntar.Text, txt_Correo_Cuerpo.Text);
+           correo.enviarCorreo(txt_Correo_Para.Text, txt_Correo_Asunto.Text, txt_Correo_Adjuntar.Text, txt_Correo_Cuerpo.Text);
         }
     }
 }

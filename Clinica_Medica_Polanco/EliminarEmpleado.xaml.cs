@@ -30,10 +30,14 @@ namespace Clinica_Medica_Polanco
             //Llamado a las funciones para cargar datos desde la bd a los cmb
             empleadosDAL.CargarCargo(cmb_Eliminar_Empleado_Cargo);
             empleadosDAL.CargarJornada(cmb_Eliminar_Empleado_Jornada);
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("O-");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("O+");
             cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("A+");
-            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("O");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("A-");
             cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("AB+");
             cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("AB-");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("B-");
+            cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("B+");
         }
         private void EliminarEmpleado_SourceInitialized(object sender, EventArgs e)
         {

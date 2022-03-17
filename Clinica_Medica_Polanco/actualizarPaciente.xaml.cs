@@ -28,9 +28,14 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += ActualizarPaciente_SourceInitialized;
 
             dtp_Actualizar_Paciente_FechaNac.Text = DateTime.Now.ToShortDateString();
-            cmb_Actualizar_Paciente_TipoSangre.Items.Add("A");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("O-");
             cmb_Actualizar_Paciente_TipoSangre.Items.Add("O+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("A+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("A-");
             cmb_Actualizar_Paciente_TipoSangre.Items.Add("AB+");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("AB-");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("B-");
+            cmb_Actualizar_Paciente_TipoSangre.Items.Add("B+");
         }
 
         // Funcion para no mover la ventana del form

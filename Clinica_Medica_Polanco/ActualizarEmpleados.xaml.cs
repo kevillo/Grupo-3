@@ -34,11 +34,14 @@ namespace Clinica_Medica_Polanco
             empleadosDAL.CargarSucursal(cmb_Actualizar_Empleado_Sucursal);
             dtp_Nacimiento_Actualizar_Empleado.Text = DateTime.Now.ToShortDateString();
             //Estableciendo valores al cmb tipo sangre
-            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("A");
+            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O-");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O+");
+            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("A+");
+            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("A-");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB+");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("AB-");
-            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("a");
+            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("B-");
+            cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("B+");
         }
 
         // Función para no mover la ventana del form

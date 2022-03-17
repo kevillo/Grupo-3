@@ -103,7 +103,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             {
                 //Validación de datos
                 Pacient pPaciente = new Pacient();
-                int codPac = int.Parse(pCodigo_Paciente);
+                int codPac = ObtenerIdPaciente(pCodigo_Paciente);
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, " +
                     "Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes " +

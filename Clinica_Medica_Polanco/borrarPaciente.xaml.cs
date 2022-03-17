@@ -25,10 +25,14 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += EliminarPaciente_SourceInitialized;
-            cmd_Tipo_Sangre.Items.Add("A+");
+            cmd_Tipo_Sangre.Items.Add("O-");
             cmd_Tipo_Sangre.Items.Add("O+");
+            cmd_Tipo_Sangre.Items.Add("A+");
+            cmd_Tipo_Sangre.Items.Add("A-");
             cmd_Tipo_Sangre.Items.Add("AB+");
             cmd_Tipo_Sangre.Items.Add("AB-");
+            cmd_Tipo_Sangre.Items.Add("B-");
+            cmd_Tipo_Sangre.Items.Add("B+");
         }
 
         private void EliminarPaciente_SourceInitialized(object sender, EventArgs e)

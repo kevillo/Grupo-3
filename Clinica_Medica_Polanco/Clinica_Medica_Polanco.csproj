@@ -5,6 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>aa(1).ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -88,6 +89,10 @@
     <Content Include="Reportes\ReporteVentas.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="servicios\" />
   </ItemGroup>
 
 </Project>

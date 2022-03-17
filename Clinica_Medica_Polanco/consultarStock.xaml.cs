@@ -112,7 +112,9 @@ namespace Clinica_Medica_Polanco
             if(!string.IsNullOrEmpty(txt_Consultar_Stock_Codigo_Producto.Text))
             {
                 codInsumo = int.Parse(txt_Consultar_Stock_Codigo_Producto.Text);
+
                 Insumos.Insumos nuevoInsumo = Insumos.insumosDAL.obtenerInfoStock(codInsumo);
+
                 List<string> informacionSucursales = Insumos.insumosDAL.obtenerInfoStockSucursal(codInsumo);
 
                 lbl_Consultar_Stock_Nombre.Content = nuevoInsumo.NombreInsumo;
