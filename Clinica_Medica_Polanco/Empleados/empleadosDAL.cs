@@ -9,9 +9,6 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     public class empleadosDAL
     {
-
-
-
         public static void AgregarEmpleado(Empleados empleados)
         {
             try
@@ -52,43 +49,37 @@ namespace Clinica_Medica_Polanco.Empleados
 
         public static List<Empleados> BuscarEmpleado(string pDato)
         {
-            try
+            List<Empleados> Lista = new List<Empleados>();
+            ConexionBaseDeDatos.ObtenerConexion();
+            SqlCommand comando = new SqlCommand(String.Format("Select * from Empleados where Identidad_Empleado = '{0}'", pDato), ConexionBaseDeDatos.conexion);
+            SqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Empleados eEmpleados = new Empleados();
+                eEmpleados.CodigoEmpleado = reader.GetInt32(0);
+                eEmpleados.CodigoJornada = reader.GetInt32(1);
+                eEmpleados.CodigoPuesto = reader.GetInt32(2);
+                eEmpleados.NombreEmpleado = reader.GetString(3);
+                eEmpleados.ApellidoEmpleado = reader.GetString(4);
+                eEmpleados.IdentidadEmpleado = reader.GetString(5);
+                eEmpleados.TelefonoEmpleado = reader.GetString(6);
+                eEmpleados.FechaNacimientoEmpleado = reader.GetDateTime(7);
+                eEmpleados.CorreoEmpleado = reader.GetString(8);
+                eEmpleados.AlturaEmpleado = reader.GetDecimal(9);
+                eEmpleados.TipoSangreEmpleado = reader.GetString(10);
+                eEmpleados.DireccionEmpleado = reader.GetString(11);
+                eEmpleados.EstadoEmpleado = reader.GetBoolean(12);
+                eEmpleados.CodigoSucursal = reader.GetInt32(13);
+                eEmpleados.FechaContratacion = reader.GetDateTime(14);
+                eEmpleados.FechaPago = reader.GetDateTime(15);
+                eEmpleados.SueldoBase = reader.GetDecimal(16);
+                Lista.Add(eEmpleados);
+            }
+            return Lista;
+            /*try
             {
                 //Validación de datos
-                List<Empleados> Lista = new List<Empleados>();
-                ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Select Codigo_Empleado, Codigo_Jornada, " +
-                    "Codigo_puesto, Nombre_Empleado, Apellido_Empleado, Identidad_Empleado, " +
-                    "Telefono_Empleado, Fecha_Nacimiento_Empleado, Correo_Empleado, [Altura_Empleado(Cm)], " +
-                    "Tipo_Sangre_Empleado, Direccion_Empleado, Estado_Empleado, Codigo_Sucursal, " +
-                    "Fecha_Contratacion, Fecha_Pago, Sueldo_Base " +
-                    "From Empleados WHERE Identidad_Empleado = @identidadEmpleado OR Nombre_Empleado=@nombreEmpleado",ConexionBaseDeDatos.conexion);
-                comando.Parameters.AddWithValue("nombreEmpleado", pDato);
-                comando.Parameters.AddWithValue("identidadEmpleado", pDato);
-                SqlDataReader reader = comando.ExecuteReader();
-                while (reader.Read())
-                {
-                    Empleados eEmpleados = new Empleados();
-                    eEmpleados.CodigoEmpleado = reader.GetInt32(0);
-                    eEmpleados.CodigoJornada = reader.GetInt32(1);
-                    eEmpleados.CodigoPuesto = reader.GetInt32(2);
-                    eEmpleados.NombreEmpleado = reader.GetString(3);
-                    eEmpleados.ApellidoEmpleado = reader.GetString(4);
-                    eEmpleados.IdentidadEmpleado = reader.GetString(5);
-                    eEmpleados.TelefonoEmpleado = reader.GetString(6);
-                    eEmpleados.FechaNacimientoEmpleado = reader.GetDateTime(7);
-                    eEmpleados.CorreoEmpleado = reader.GetString(8);
-                    eEmpleados.AlturaEmpleado = reader.GetDecimal(9);
-                    eEmpleados.TipoSangreEmpleado = reader.GetString(10);
-                    eEmpleados.DireccionEmpleado = reader.GetString(11);
-                    eEmpleados.EstadoEmpleado = reader.GetBoolean(12);
-                    eEmpleados.CodigoSucursal = reader.GetInt32(13);
-                    eEmpleados.FechaContratacion = reader.GetDateTime(14);
-                    eEmpleados.FechaPago = reader.GetDateTime(15);
-                    eEmpleados.SueldoBase = reader.GetDecimal(16);
-                    Lista.Add(eEmpleados);
-                }
-                return Lista;
+                
             }
             catch (Exception err)
             {
@@ -98,7 +89,7 @@ namespace Clinica_Medica_Polanco.Empleados
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
-            }
+            }*/
         }
 
         public static Empleados BuscarEmpleadoPorId(string pDato)
