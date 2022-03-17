@@ -25,7 +25,6 @@ namespace Clinica_Medica_Polanco
     public partial class solicitudExamen : Window
     {
 
-        Ventas.Ventas nuev = new();
         private int codEmpleado;
         private DataTable tabla;
         private List<Ventas.Ventas> nuevaVenta = new List<Ventas.Ventas>();
@@ -87,16 +86,18 @@ namespace Clinica_Medica_Polanco
             int codSucursalEmpleado = Ventas.ventasDAL.obtenerIdSucursal(codEmpleado);
             Ventas.ventasDAL.GenerarFactura(codSucursalEmpleado);
 
-            int codigoFacturaVenta = Ventas.ventasDAL.ObtenerIdVenta();
             
-            nuev.CodFacturaVenta = codigoFacturaVenta;
             try
             {
-
-                foreach(Ventas.Ventas v in nuevaVenta)
+                int codigoFacturaVenta = Ventas.ventasDAL.ObtenerIdVenta();
+                
+                foreach (Ventas.Ventas v in nuevaVenta)
                 {
+
                     Ventas.ventasDAL.RegistrarVenta(v, codigoFacturaVenta);
+                    
                 }
+
                 pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta,codigoFacturaVenta);
                 nuevopago.ShowDialog();
                 this.Close();
@@ -131,6 +132,7 @@ namespace Clinica_Medica_Polanco
             {
                 //Validación de datos
 
+                Ventas.Ventas nuev = new();
                 nuev.Cantidad= string.IsNullOrEmpty(txt_Cantidad_Examen.Text) ? -1 : int.Parse(txt_Cantidad_Examen.Text);
                 nuev.CodigoPaciente= Ventas.ventasDAL.TraerCodigoPaciente(txt_Solicitud_Examen_ID_Cliente.Text);
                 nuev.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex+1;
@@ -142,6 +144,7 @@ namespace Clinica_Medica_Polanco
                 nuev.FechaOrden = DateTime.Now;
                 nuev.MetodoEntregaExamen = cmb_Forma_Entrega.SelectedIndex + 1;
                 nuev.MetodoPagoExamen = cmb_Forma_Pago.SelectedIndex+1;
+
                 nuevaVenta.Add(nuev);
 
                 tabla.Rows.Add(nuev.CodigoExamenMedico, nuev.CodigoFacturador, nuev.CodigoMicrobiologo,
