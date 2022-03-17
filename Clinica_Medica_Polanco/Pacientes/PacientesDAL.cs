@@ -8,22 +8,30 @@ namespace Clinica_Medica_Polanco.Pacientes
 {
     public class PacientesDAL
     {
-        public static int AgregarPaciente(Pacient pPaciente)
+        public static void AgregarPaciente(Pacient pPaciente)
         {
             try
             {
                 //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
-                int retorno = 0;
-                SqlCommand comando = new SqlCommand(String.Format("Insert Into Pacientes(Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
-                pPaciente.Nombre, pPaciente.Apellido, pPaciente.Identidad, pPaciente.Telefono, pPaciente.FechaNacimiento, pPaciente.Correo, pPaciente.Altura, pPaciente.TipoSangre, pPaciente.Direccion, pPaciente.Estado), ConexionBaseDeDatos.conexion);
-                retorno = comando.ExecuteNonQuery();
-                return retorno;
+            SqlCommand comando = new SqlCommand("Pacientes_Insert", ConexionBaseDeDatos.conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("Nombre_Paciente", SqlDbType.VarChar).Value = pPaciente.Nombre;            
+            comando.Parameters.AddWithValue("Identidad_Paciente", SqlDbType.VarChar).Value = pPaciente.Identidad;
+            comando.Parameters.AddWithValue("Telefono_Paciente", SqlDbType.VarChar).Value = pPaciente.Telefono;
+            comando.Parameters.AddWithValue("Fecha_Nacimiento", SqlDbType.DateTime).Value = pPaciente.FechaNacimiento;
+            comando.Parameters.AddWithValue("Correo_Paciente", SqlDbType.VarChar).Value = pPaciente.Correo;
+            comando.Parameters.AddWithValue("Altura_Paciente", SqlDbType.Decimal).Value = pPaciente.Altura;
+            comando.Parameters.AddWithValue("Tipo_Sangre_Paciente", SqlDbType.VarChar).Value = pPaciente.TipoSangre;
+            comando.Parameters.AddWithValue("Direccion_Paciente", SqlDbType.VarChar).Value = pPaciente.Direccion;
+            comando.Parameters.AddWithValue("Apellido_Paciente", SqlDbType.VarChar).Value = pPaciente.Apellido;
+            comando.Parameters.AddWithValue("Estado_Paciente", SqlDbType.Bit).Value = "True";
+            comando.ExecuteReader();
+            MessageBox.Show("Paciente agregado exitosamente");
             }
             catch(Exception error)
             {
                 MessageBox.Show("Error al ingresar pacientes " + error.Message);
-                return -1;
             }
             finally
             {

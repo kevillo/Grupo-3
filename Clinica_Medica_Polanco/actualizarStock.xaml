@@ -124,7 +124,7 @@
         <Label Content="Actualizar stock" FontFamily="Tahoma" FontSize="60" HorizontalAlignment="Left" Margin="36,3,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
         <Label Content="Código de insumo" HorizontalAlignment="Left" Margin="250,161,0,0" VerticalAlignment="Top" Height="40" Width="208" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Grid.ColumnSpan="2" KeyUp="txt_Codigo_Insumo_Actualizar_Stock_KeyUp"/>
         <ComboBox x:Name="cmb_Proveedor_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="310,212,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15" Grid.Column="1"/>
         <Label Content="Proveedor" HorizontalAlignment="Left" Margin="388,163,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="20" Grid.Column="1"/>
         <Label Content="Cantidad comprada" HorizontalAlignment="Left" Margin="250,304,0,0" VerticalAlignment="Top" Height="40" Width="234" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2"/>
@@ -135,6 +135,12 @@
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="200,260,584,270" Background="Transparent" Grid.ColumnSpan="2">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            </ScrollViewer>
+        </Border>
         <ComboBox x:Name="cmb_Administrador_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="315,351,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15" Grid.Column="1"/>
         <Label Content="Empleado" HorizontalAlignment="Left" Margin="388,304,0,0" VerticalAlignment="Top" Height="40" Width="112" FontFamily="Tahoma" FontSize="20" Grid.Column="1"/>
     </Grid>
