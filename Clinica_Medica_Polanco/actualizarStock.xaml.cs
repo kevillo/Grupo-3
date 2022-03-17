@@ -27,8 +27,9 @@ namespace Clinica_Medica_Polanco
             codEmpleador = cod;
             InitializeComponent();
             this.SourceInitialized += ActualizarStock_SourceInitialized;
-            
+            int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
             Proveedores.ProveedoresDAL.CargarProveedores(cmb_Proveedor_Actualizar_Stock);
+            Proveedores.ProveedoresDAL.cargarEmpleados(cmb_Administrador_Actualizar,codSucursal);
         }
 
         // Funcion para no mover la ventana del form
@@ -72,8 +73,10 @@ namespace Clinica_Medica_Polanco
         private void btn_Actualizar_Stock_Click(object sender, RoutedEventArgs e)
         {
             int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
-            Inventario.inventarioDAL.actualizarStock(int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text), codSucursal, cmb_Proveedor_Actualizar_Stock.SelectedIndex + 1, int.Parse(txt_Cantidad_Actualizar_Stock.Text));
-            MessageBox.Show("inventario Actualizado correctamente");
+            Inventario.inventarioDAL.actualizarStock(cmb_Administrador_Actualizar.SelectedIndex+1,codSucursal,cmb_Proveedor_Actualizar_Stock.SelectedIndex+1, codEmpleador);
+            Inventario.inventarioDAL.ingresarInventario(int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text), int.Parse(txt_Cantidad_Actualizar_Stock.Text));
+
+
             this.Close();
         }
     }

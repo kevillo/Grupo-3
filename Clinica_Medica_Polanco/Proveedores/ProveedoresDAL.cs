@@ -239,6 +239,34 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        public static void cargarEmpleados(ComboBox cmb_Administrador,int codSucursal)
+        {
+
+            try
+            {
+                ConexionBaseDeDatos.ObtenerConexion();
+                string Query =string.Format("select CONCAT(Nombre_Empleado,' ',Apellido_Empleado) AS [Empleado] from Empleados where Codigo_puesto!=1 AND Codigo_Sucursal = {0}",codSucursal);
+                SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = createCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string nombre = dr.GetString(0);
+                    cmb_Administrador.Items.Add(nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
     }
 }
 

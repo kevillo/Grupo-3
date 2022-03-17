@@ -20,19 +20,29 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class menuPrincipalArqueo : UserControl
     {
-        public menuPrincipalArqueo()
+        int codEmpleador = 0;
+        public menuPrincipalArqueo(int cod)
         {
+            codEmpleador = cod;
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+      
+
+        private void btn_Verificar_Monto_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("El total en caja debe ser de: ");
+            int codArqueo = Arqueo.arqueoDAL.traerCodArqueo();
+            decimal cantidad = Arqueo.arqueoDAL.traerMontoInicial(codArqueo+1);
+            MessageBox.Show("Usted inicia con un monto de: "+ cantidad.ToString()+"\n\nSi el valor es negativo signfica que la anterior caja quedo con un saldo negativo\n\nSi el arqueo es 0 es por que no se hizo ni una venta o compra en el turno anterior");
+
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btn_Realizar_Arqueo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Usted inicia con un monto de: ");
+            Arqueo.arqueoDAL.generarArqueo(codEmpleador);
+            int codArqueo = Arqueo.arqueoDAL.traerCodArqueo();
+            decimal cantidad = Arqueo.arqueoDAL.traerMontoInicial(codArqueo + 1);
+            MessageBox.Show("El dinero en caja debe ser: " + cantidad.ToString());
         }
     }
 }

@@ -86,7 +86,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Arqueo_Click(object sender, RoutedEventArgs e)
         {
             btn_poly_decor_click(poly_Deco_Arqueo, btn_Arqueo);
-            menuPrincipalArqueo arqueonuevo = new();
+            menuPrincipalArqueo arqueonuevo = new(codEmpleado);
             panel_Menu_Principal.Children.Clear();
             panel_Menu_Principal.Children.Add(arqueonuevo);
         }

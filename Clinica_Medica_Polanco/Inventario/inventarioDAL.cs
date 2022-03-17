@@ -12,35 +12,52 @@ namespace Clinica_Medica_Polanco.Inventario
 {
     class inventarioDAL
     {
-        public static void actualizarStock(int codInsumo, int codSucursal,int codProveedor,int existencia)
+        public static void actualizarStock(int CodEmpleado, int codSucursal,int codProveedor,int codAdministrador)
         {
             try
             {
-                DateTime fecha = DateTime.Now;
-                int mes = fecha.Month;
-                int anio = fecha.Year;
+                
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new("Inventario_Update", ConexionBaseDeDatos.conexion);
+                SqlCommand comando = new("Resumen_Factura_Compra_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("Codigo_Insumo", SqlDbType.Int).Value = codInsumo;
-                comando.Parameters.AddWithValue("Inventario_Mes", SqlDbType.Int).Value = mes;
-                comando.Parameters.AddWithValue("Inventario_Año", SqlDbType.Int).Value = anio;
-                comando.Parameters.AddWithValue("Codigo_Proveedor", SqlDbType.Int).Value = codProveedor;
-                comando.Parameters.AddWithValue("Existencia", SqlDbType.Int).Value = existencia;
-                comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value = codSucursal;
+                comando.Parameters.AddWithValue("Cod_Comprador", SqlDbType.Int).Value = CodEmpleado;
+                comando.Parameters.AddWithValue("Cod_Proveedor", SqlDbType.Int).Value = codProveedor;
+                comando.Parameters.AddWithValue("Cod_Sucursal", SqlDbType.Int).Value = codSucursal;
+                comando.Parameters.AddWithValue("Cod_Administrador", SqlDbType.Int).Value = codAdministrador;
                 comando.ExecuteReader();
-                MessageBox.Show("Inventario actualizado");
+                MessageBox.Show("registro actualizado");
             }
-            catch
+            catch (Exception erro)
             {
-                MessageBox.Show("No se pudo actualizar el inventario");
+                MessageBox.Show("No se pudo ingresar  el registro ",erro.Message);
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+        public static void ingresarInventario(int codInsumo, int cantidad)
+        {
+            try
+            {
 
-
+                ConexionBaseDeDatos.ObtenerConexion();
+              
+                SqlCommand comando2 = new("Detalle_Factura_Compra_Insert", ConexionBaseDeDatos.conexion);
+                comando2.CommandType = CommandType.StoredProcedure;
+                comando2.Parameters.AddWithValue("Cod_Insumo", SqlDbType.Int).Value = codInsumo;
+                comando2.Parameters.AddWithValue("Cantidad", SqlDbType.Int).Value = cantidad;
+                comando2.ExecuteReader();
+                MessageBox.Show("Inventario actualizado");
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("No se pudo actualizar el inventario ", erro.Message);
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
     }
 }
