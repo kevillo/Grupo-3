@@ -24,9 +24,12 @@ namespace Clinica_Medica_Polanco
     
     public partial class solicitudExamen : Window
     {
+
+        Ventas.Ventas nuev = new();
         private int codEmpleado;
         private DataTable tabla;
         private List<Ventas.Ventas> nuevaVenta = new List<Ventas.Ventas>();
+
         public solicitudExamen(int id)
         {
             codEmpleado = id;
@@ -85,13 +88,13 @@ namespace Clinica_Medica_Polanco
             Ventas.ventasDAL.GenerarFactura(codSucursalEmpleado);
 
             int codigoFacturaVenta = Ventas.ventasDAL.ObtenerIdVenta();
-
+            
+            nuev.CodFacturaVenta = codigoFacturaVenta;
             try
             {
 
                 foreach(Ventas.Ventas v in nuevaVenta)
                 {
-                    MessageBox.Show(codigoFacturaVenta.ToString(),v.Cantidad.ToString());
                     Ventas.ventasDAL.RegistrarVenta(v, codigoFacturaVenta);
                 }
                 pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta,codigoFacturaVenta);
@@ -128,7 +131,6 @@ namespace Clinica_Medica_Polanco
             {
                 //Validación de datos
 
-                Ventas.Ventas nuev = new();
                 nuev.Cantidad= string.IsNullOrEmpty(txt_Cantidad_Examen.Text) ? -1 : int.Parse(txt_Cantidad_Examen.Text);
                 nuev.CodigoPaciente= Ventas.ventasDAL.TraerCodigoPaciente(txt_Solicitud_Examen_ID_Cliente.Text);
                 nuev.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex+1;
