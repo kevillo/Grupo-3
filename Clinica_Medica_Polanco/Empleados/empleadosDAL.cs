@@ -51,7 +51,10 @@ namespace Clinica_Medica_Polanco.Empleados
         {
             List<Empleados> Lista = new List<Empleados>();
             ConexionBaseDeDatos.ObtenerConexion();
-            SqlCommand comando = new SqlCommand(String.Format("Select * from Empleados where Identidad_Empleado = '{0}'", pDato), ConexionBaseDeDatos.conexion);
+            SqlCommand comando = new SqlCommand(String.Format("select Empleados.*, Descripcion_Puesto,Descripcion_Jornada from Empleados"+ 
+                                                               " inner join Puestos_Empleados on Empleados.Codigo_puesto = Puestos_Empleados.Codigo_Puestos"+
+                                                               " inner join Jornadas_Empleados on Jornadas_Empleados.Codigo_Jornada = Empleados.Codigo_Jornada " +
+                                                               " where Identidad_Empleado = '{0}'", pDato), ConexionBaseDeDatos.conexion);
             SqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -73,6 +76,8 @@ namespace Clinica_Medica_Polanco.Empleados
                 eEmpleados.FechaContratacion = reader.GetDateTime(14);
                 eEmpleados.FechaPago = reader.GetDateTime(15);
                 eEmpleados.SueldoBase = reader.GetDecimal(16);
+                eEmpleados.CargoEmpleado = reader.GetString(17);
+                eEmpleados.JornadaEmpleado = reader.GetString(18);
                 Lista.Add(eEmpleados);
             }
             return Lista;
