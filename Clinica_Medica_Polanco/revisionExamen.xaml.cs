@@ -24,7 +24,8 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += RevisionExamen_SourceInitialized;
-            dtg_Revision_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.analsisExamen();
+            List<Ventas.Ventas> analizarVentas = ExamenesMedicos.ExamenesDAL.analsisExamen();
+            dtg_Revision_Examen_Examenes.ItemsSource = analizarVentas;
 
         }
 

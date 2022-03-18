@@ -130,10 +130,12 @@ namespace Clinica_Medica_Polanco
             block.Margin = new Thickness(2, 3, 2, 3);
             block.Cursor = Cursors.Hand;
 
-            // Mouse events   
+            // Mouse events: cuando le doy click al mouse   
             block.MouseLeftButtonUp += (sender, e) =>
             {
                 txt_Consultar_Pacientes.Text = (sender as TextBlock).Text.Split(" ")[0];
+                dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.ConsultarPaciente(txt_Consultar_Pacientes.Text);
+
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;

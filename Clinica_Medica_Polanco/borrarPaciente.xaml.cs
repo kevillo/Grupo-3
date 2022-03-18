@@ -71,6 +71,7 @@ namespace Clinica_Medica_Polanco
         {
             int codPaciente = PacientesDAL.ObtenerIdPaciente(txt_Identidad_Paciente.Text);
             PacientesDAL.EliminarPaciente(codPaciente);
+            this.Close();
         }
 
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)

@@ -118,6 +118,7 @@ namespace Clinica_Medica_Polanco.Ventas
 
         public bool ExamenCombo { get => _examenCombo; set => _examenCombo = value; }
         public int CodFacturaVenta { get => _codFacturaVenta; set => _codFacturaVenta = value; }
+    
     }
 }
 

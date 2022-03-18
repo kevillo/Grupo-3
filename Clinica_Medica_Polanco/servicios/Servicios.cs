@@ -10,6 +10,7 @@ namespace Clinica_Medica_Polanco.servicios
     {
         private string _nombreExamen;
         private string _nombrePaciente;
+        private string _nombreEmpleado;
         private string _nombreMetodoEntrega;
         private string _nombreMetodoPago;
 
@@ -61,5 +62,7 @@ namespace Clinica_Medica_Polanco.servicios
                 else _nombreMetodoPago = value;
             }
         }
+
+        public string NombreEmpleado { get => _nombreEmpleado; set => _nombreEmpleado = value; }
     }
 }
