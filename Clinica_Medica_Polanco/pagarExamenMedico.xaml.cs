@@ -24,11 +24,17 @@ namespace Clinica_Medica_Polanco
         private int codFactura = 0;
         public pagarExamenMedico(List<Ventas.Ventas> nuevaVenta,int codFactura)
         {
-
+            List<Ventas.Ventas> pagarVenta = new();
             InitializeComponent();
             
             this.SourceInitialized += PagarExamenMedico_SourceInitialized;
             this.codFactura = codFactura;
+
+            foreach ( Ventas.Ventas v in nuevaVenta)
+            {
+                v.CodFacturaVenta = codFactura;
+                pagarVenta.Add(v);
+            }
             dgv_Datos_Pago.ItemsSource = nuevaVenta;
 
         }
