@@ -62,7 +62,7 @@ namespace Clinica_Medica_Polanco
         }
         private void btn_Pagar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Informacion actualizada");
+            MessageBox.Show("Pago procesado correctamente");
             this.Close();
         }
 
