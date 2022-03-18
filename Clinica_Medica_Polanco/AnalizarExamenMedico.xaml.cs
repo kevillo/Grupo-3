@@ -82,7 +82,10 @@ namespace Clinica_Medica_Polanco
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Pacientes.Pacient nuevoPaciente =  Pacientes.PacientesDAL.BuscarPaciente(ventaAnalisis.CodigoPaciente.ToString());
+            Pacientes.Pacient nuevoPaciente;
+            nuevoPaciente = Pacientes.PacientesDAL.BuscarPaciente(ventaAnalisis.CodigoPaciente);
+          
+
             txt_Fecha_Orden_Analisis.Text = ventaAnalisis.FechaOrden.ToShortDateString();
             txt_Orden_Analisis.Text = ventaAnalisis.CodFacturaVenta.ToString();
             txt_Correo_Analisis.Text = nuevoPaciente.Correo;

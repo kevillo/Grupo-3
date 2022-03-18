@@ -13,6 +13,33 @@ namespace Clinica_Medica_Polanco.Ventas
     {
 
 
+        public static string traerDiagnostico(int codFactura,int codExamen)
+        {
+            try
+            {
+                string diagnostico = "";
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select Diagnostico from Detalle_Factura_Venta where Cod_Factura_Venta = {0} and Cod_Examen_Medico = {1}", codFactura, codExamen),ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while(dr.Read())
+                {
+                    diagnostico = dr.GetString(0);
+                }
+                return diagnostico;
+
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Error al cargar el diagnostico: " + error.Message);
+                return "";
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
         public static Pago cargarDatosPago(int codFacturaVenta)
         {
 

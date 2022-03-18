@@ -19,9 +19,25 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class ProcesoCorreo : Window
     {
-        public ProcesoCorreo()
+        private Ventas.Ventas entregarVenta = new();
+        public ProcesoCorreo(Ventas.Ventas nuevo)
         {
             InitializeComponent();
+            entregarVenta = nuevo;
+            Pacientes.Pacient entregarPaciente = Pacientes.PacientesDAL.BuscarPaciente(entregarVenta.CodigoPaciente);
+            txt_Nombre_Analisis.Text = entregarPaciente.Nombre;
+            txt_Orden_Analisis.Text = entregarVenta.CodFacturaVenta.ToString();
+            txt_Fecha_Orden_Analisis.Text = entregarVenta.FechaOrden.ToShortDateString();
+            txt_Fecha_Nacimiento_Analisis.Text = entregarPaciente.FechaNacimiento.ToShortDateString();
+            txt_Correo_Analisis.Text = entregarPaciente.Correo;
+            string diagnosticoExamen = Ventas.ventasDAL.traerDiagnostico(entregarVenta.CodFacturaVenta, entregarVenta.CodigoExamenMedico);
+            strToRTB(rtb_Diagnostico_Analisis, diagnosticoExamen);
+            
+        }
+        private void strToRTB(RichTextBox rtb, string textoSet)
+        {
+            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+            textRange.Text = textoSet;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,9 +47,11 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Proceso_Envio_Click(object sender, RoutedEventArgs e)
         {
-            EnviarCorreo enviarCorreo = new EnviarCorreo();
+            EnviarCorreo enviarCorreo = new EnviarCorreo(txt_Correo_Analisis.Text);
             enviarCorreo.ShowDialog();
             this.Close();
         }
+
+      
     }
 }

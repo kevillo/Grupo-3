@@ -66,8 +66,8 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Entrega_Examen_Correo_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Exámen/es actualizado/s y enviados al correo");
-            ProcesoCorreo procesoCorreo = new ProcesoCorreo();
+            Ventas.Ventas ventaEntregar = (Ventas.Ventas)dtg_Entrega_Examen_Examenes.SelectedItem; 
+            ProcesoCorreo procesoCorreo = new ProcesoCorreo(ventaEntregar);
             procesoCorreo.ShowDialog();
             this.Close();
         }

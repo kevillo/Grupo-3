@@ -22,9 +22,11 @@ namespace Clinica_Medica_Polanco
     {
         Correo correo = new Correo();
 
-        public EnviarCorreo()
+        public EnviarCorreo(string correoEnviar)
         {
             InitializeComponent();
+            txt_Correo_Para.Text = correoEnviar;
+            
         }
 
         private void btn_Correo_Adjuntar_Click(object sender, RoutedEventArgs e)

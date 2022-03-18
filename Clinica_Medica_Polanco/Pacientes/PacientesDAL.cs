@@ -107,15 +107,15 @@ namespace Clinica_Medica_Polanco.Pacientes
 
         public static Pacient BuscarPaciente(string pCodigo_Paciente)
         {
+
             try
             {
                 //Validación de datos
                 Pacient pPaciente = new Pacient();
-                int codPac = ObtenerIdPaciente(pCodigo_Paciente);
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, " +
                     "Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes " +
-                    "where Codigo_Paciente = {0} OR Identidad_Paciente ='{1}' " ,codPac,pCodigo_Paciente), ConexionBaseDeDatos.conexion);
+                    "where Identidad_Paciente ='{1}' ", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -133,9 +133,9 @@ namespace Clinica_Medica_Polanco.Pacientes
                 }
                 return pPaciente;
             }
-            catch(Exception error)
+            catch (Exception error)
             {
-                MessageBox.Show("Error al buscar el paciente ",error.Message);
+                MessageBox.Show("Error al buscar el paciente ", error.Message);
                 return new Pacient();
             }
             finally
@@ -144,6 +144,46 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
 
         }
+        public static Pacient BuscarPaciente(int pCodigo_Paciente)
+        {
+
+            try
+            {
+                //Validación de datos
+                Pacient pPaciente = new Pacient();
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new SqlCommand(String.Format("Select Codigo_Paciente, Nombre_Paciente, Apellido_Paciente, Identidad_Paciente, Telefono_Paciente, " +
+                    "Fecha_Nacimiento, Correo_Paciente, [Altura_Paciente(cm)], Tipo_Sangre_Paciente, Direccion_Paciente, Estado_Paciente from Pacientes " +
+                    "where Codigo_Paciente = {0} ", pCodigo_Paciente), ConexionBaseDeDatos.conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    pPaciente.Codigo = reader.GetInt32(0);
+                    pPaciente.Nombre = reader.GetString(1);
+                    pPaciente.Apellido = reader.GetString(2);
+                    pPaciente.Identidad = reader.GetString(3);
+                    pPaciente.Telefono = reader.GetString(4);
+                    pPaciente.FechaNacimiento = reader.GetDateTime(5);
+                    pPaciente.Correo = reader.GetString(6);
+                    pPaciente.Altura = reader.GetDecimal(7);
+                    pPaciente.TipoSangre = reader.GetString(8);
+                    pPaciente.Direccion = reader.GetString(9);
+                    pPaciente.Estado = reader.GetBoolean(10);
+                }
+                return pPaciente;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al buscar el paciente ", error.Message);
+                return new Pacient();
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+
+        }
+
 
         public static void ModificarPaciente(Pacient pPaciente)
         {
