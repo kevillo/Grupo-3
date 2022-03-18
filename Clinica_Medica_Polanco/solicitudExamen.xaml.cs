@@ -157,7 +157,7 @@ namespace Clinica_Medica_Polanco
                     nuev.MetodoPagoExamen = cmb_Forma_Pago.SelectedIndex + 1;
 
                     nuevoServicio.NombreEmpleado = servicios.serviciosDAL.traerNombreFacturador(nuev.CodigoFacturador);
-
+                    /// aqui agregas los demas
                     int indice = Array.IndexOf(codigos, nuev.CodigoExamenMedico);
 
                     if (indice > -1)
@@ -173,7 +173,7 @@ namespace Clinica_Medica_Polanco
                         nuevaVenta.Add(nuev);
 
                         tabla.Rows.Add(nuev.CodigoExamenMedico, nuevoServicio.NombreExamen,nuev.CodigoFacturador,nuevoServicio.NombreEmpleado, nuev.CodigoMicrobiologo,
-                                            nuev.CodigoEnfermero, nuev.CodigoPaciente, nuev.MetodoEntregaExamen, nuev.MetodoPagoExamen,
+                                            nuev.CodigoEnfermero, nuev.CodigoPaciente,nuevoServicio.NombrePaciente, nuev.MetodoEntregaExamen,nuevoServicio.NombreMetodoEntrega, nuev.MetodoPagoExamen,nuevoServicio.NombreMetodoPago,
                                             nuev.Cantidad, nuev.EstadoExamenMedico, nuev.ExamenCombo, nuev.FechaOrden);
                         dtg_Solicitud_Examen_Examenes.DataContext = tabla;
                     }
