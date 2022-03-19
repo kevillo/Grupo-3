@@ -19,13 +19,16 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class ProcesoCorreo : Window
     {
-        private Ventas.Ventas entregarVenta = new();
-        public ProcesoCorreo(Ventas.Ventas nuevo)
+        private servicios.serviciosEntrega entregarVenta = new();
+        public ProcesoCorreo(servicios.serviciosEntrega nuevo)
         {
             InitializeComponent();
             entregarVenta = nuevo;
+
             Pacientes.Pacient entregarPaciente = Pacientes.PacientesDAL.BuscarPaciente(entregarVenta.CodigoPaciente);
-            txt_Nombre_Analisis.Text = entregarPaciente.Nombre;
+
+
+            txt_Nombre_Analisis.Text = nuevo.NombrePaciente;
             txt_Orden_Analisis.Text = entregarVenta.CodFacturaVenta.ToString();
             txt_Fecha_Orden_Analisis.Text = entregarVenta.FechaOrden.ToShortDateString();
             txt_Fecha_Nacimiento_Analisis.Text = entregarPaciente.FechaNacimiento.ToShortDateString();

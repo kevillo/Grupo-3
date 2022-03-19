@@ -103,7 +103,7 @@ namespace Clinica_Medica_Polanco
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower())|| obj.Split(" - ")[1].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem(obj);

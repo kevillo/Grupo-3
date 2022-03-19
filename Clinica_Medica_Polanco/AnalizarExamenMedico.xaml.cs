@@ -20,8 +20,8 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class AnalizarExamenMedico : Window
     {
-        private Ventas.Ventas ventaAnalisis = new();
-        public AnalizarExamenMedico(Ventas.Ventas venta)
+        private servicios.serviciosEntrega ventaAnalisis = new();
+        public AnalizarExamenMedico(servicios.serviciosEntrega venta)
         {
             ventaAnalisis = venta;
             InitializeComponent();

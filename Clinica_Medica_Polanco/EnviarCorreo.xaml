@@ -120,7 +120,7 @@
         <Label Content="Enviar correo" FontFamily="Tahoma" FontSize="55" HorizontalAlignment="Left" Margin="398,9,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
         <Label Content="Para:" HorizontalAlignment="Left" Margin="122,112,0,0" VerticalAlignment="Top" Width="69" FontFamily="Tahoma" FontSize="22"/>
-        <TextBox x:Name="txt_Correo_Para" HorizontalAlignment="Left" Height="44" VerticalContentAlignment="Center" Margin="198,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" FontFamily="Tahoma" FontSize="17" BorderBrush="#FF999A9B" IsEnabled="False"/>
+        <TextBox x:Name="txt_Correo_Para" HorizontalAlignment="Left" Height="44" VerticalContentAlignment="Center" Margin="198,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" FontFamily="Tahoma" FontSize="17" BorderBrush="#FF999A9B"/>
         <Label Content="Asunto:" HorizontalAlignment="Left" Margin="104,182,0,0" VerticalAlignment="Top" Width="87" FontFamily="Tahoma" FontSize="22"/>
         <TextBox x:Name="txt_Correo_Asunto" HorizontalAlignment="Left" Height="44" VerticalContentAlignment="Center" Margin="198,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" FontFamily="Tahoma" FontSize="17" BorderBrush="#FF999A9B"/>
         <Label Content="Adjuntar:" HorizontalAlignment="Left" Margin="86,246,0,0" VerticalAlignment="Top" Width="105" FontFamily="Tahoma" FontSize="22"/>

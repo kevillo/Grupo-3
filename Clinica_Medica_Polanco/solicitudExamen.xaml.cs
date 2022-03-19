@@ -161,11 +161,7 @@ namespace Clinica_Medica_Polanco
                     nuevoServicio.NombreMetodoPago = servicios.serviciosDAL.traerNombreMetodoPago(nuev.MetodoPagoExamen);
               
                     int indice = Array.IndexOf(codigos, nuev.CodigoExamenMedico);
-                    int indice2 = Array.IndexOf(codigos, nuev.CodigoPaciente);
-                    int indice3 = Array.IndexOf(codigos, nuev.CodigoExamenMedico);
-                    int indice4 = Array.IndexOf(codigos, nuev.MetodoEntregaExamen);
-                    int indice5 = Array.IndexOf(codigos, nuev.MetodoPagoExamen);
-
+                   
 
                     if (indice > -1)
                     {

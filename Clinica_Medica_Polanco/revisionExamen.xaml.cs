@@ -24,9 +24,7 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
             this.SourceInitialized += RevisionExamen_SourceInitialized;
-            List<Ventas.Ventas> analizarVentas = ExamenesMedicos.ExamenesDAL.analsisExamen();
-            dtg_Revision_Examen_Examenes.ItemsSource = analizarVentas;
-
+            dtg_Revision_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.analsisExamen();
         }
 
         // Funcion para no mover la ventana del form
@@ -70,10 +68,10 @@ namespace Clinica_Medica_Polanco
             if (dtg_Revision_Examen_Examenes.Items.Count > 0)
             {
 
-                Ventas.Ventas venta = (Ventas.Ventas)dtg_Revision_Examen_Examenes.SelectedItem;
+                servicios.serviciosEntrega analisis = (servicios.serviciosEntrega)dtg_Revision_Examen_Examenes.SelectedItem;
                 
                 this.Close();
-                AnalizarExamenMedico nuevoAnalisis = new(venta);
+                AnalizarExamenMedico nuevoAnalisis = new(analisis);
                 nuevoAnalisis.ShowDialog();
             }
             else MessageBox.Show("No hay exámenes por revisar");

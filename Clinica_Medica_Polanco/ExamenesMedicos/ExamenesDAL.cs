@@ -402,29 +402,33 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        public static List<Ventas.Ventas> analsisExamen()
+        public static List<servicios.serviciosEntrega> analsisExamen()
         {
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
-                List<Ventas.Ventas> ventasEntregar = new();
-                SqlCommand comando = new("select * from Detalle_Factura_Venta where Estado_Examen_Medico =1", ConexionBaseDeDatos.conexion);
+                List<servicios.serviciosEntrega> ventasEntregar = new();
+                SqlCommand comando = new("select * from vAnalizarExamen", ConexionBaseDeDatos.conexion);
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
                 {
-                    Ventas.Ventas entregarV = new();
-                    entregarV.CodFacturaVenta = dr.GetInt32(0);
-                    entregarV.CodigoExamenMedico = dr.GetInt32(1);
-                    entregarV.CodigoFacturador = dr.GetInt32(2);
-                    entregarV.CodigoMicrobiologo = dr.GetInt32(3);
-                    entregarV.CodigoEnfermero = dr.GetInt32(4);
-                    entregarV.CodigoPaciente = dr.GetInt32(5);
-                    entregarV.MetodoEntregaExamen = dr.GetInt32(6);
-                    entregarV.MetodoPagoExamen = dr.GetInt32(7);
-                    entregarV.FechaOrden = dr.GetDateTime(8);
-                    entregarV.ExamenCombo = dr.GetBoolean(9);
-                    entregarV.Cantidad = dr.GetInt32(10);
-                    entregarV.EstadoExamenMedico = dr.GetInt32(11);
+                    servicios.serviciosEntrega entregarV = new();
+                    entregarV.NombreExamen = dr.GetString(0);
+                    entregarV.NombrePaciente = dr.GetString(1);
+                    entregarV.NombreMetodoPago = dr.GetString(2);
+                    entregarV.NombreMetodoEntrega = dr.GetString(3);
+                    entregarV.NombreEmpleado = dr.GetString(4);
+                    entregarV.CodFacturaVenta = dr.GetInt32(5);
+                    entregarV.CodigoExamenMedico = dr.GetInt32(6);
+                    entregarV.CodigoFacturador = dr.GetInt32(8);
+                    entregarV.CodigoMicrobiologo = dr.GetInt32(7);
+                    entregarV.CodigoEnfermero = dr.GetInt32(9);
+                    entregarV.CodigoPaciente = dr.GetInt32(10);
+                    entregarV.MetodoEntregaExamen = dr.GetInt32(11);
+                    entregarV.MetodoPagoExamen = dr.GetInt32(12);
+                    entregarV.FechaOrden = dr.GetDateTime(13);
+                    entregarV.ExamenCombo = dr.GetBoolean(14);
+                    entregarV.EstadoExamenMedico = dr.GetInt32(15);
                     ventasEntregar.Add(entregarV);
                 }
                 return ventasEntregar;
@@ -432,7 +436,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             catch (Exception error)
             {
                 MessageBox.Show("Error al generar analsis", error.Message);
-                return new List<Ventas.Ventas>();
+                return new List<servicios.serviciosEntrega>();
             }
             finally
             {

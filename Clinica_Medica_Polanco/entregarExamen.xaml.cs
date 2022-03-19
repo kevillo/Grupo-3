@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using System.Data;
 
 namespace Clinica_Medica_Polanco
 {
@@ -20,10 +21,13 @@ namespace Clinica_Medica_Polanco
     /// </summary>
     public partial class entregarExamen : Window
     {
+        
         public entregarExamen()
         {
             InitializeComponent();
+            
             this.SourceInitialized += entregarExamen_SourceInitialized;
+           
         }
 
         private void btn_Revision_Examen_Salir_Click(object sender, RoutedEventArgs e)
@@ -66,7 +70,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Entrega_Examen_Correo_Click(object sender, RoutedEventArgs e)
         {
-            Ventas.Ventas ventaEntregar = (Ventas.Ventas)dtg_Entrega_Examen_Examenes.SelectedItem; 
+            servicios.serviciosEntrega ventaEntregar = (servicios.serviciosEntrega)dtg_Entrega_Examen_Examenes.SelectedItem; 
             ProcesoCorreo procesoCorreo = new ProcesoCorreo(ventaEntregar);
             procesoCorreo.ShowDialog();
             this.Close();
@@ -74,20 +78,92 @@ namespace Clinica_Medica_Polanco
         private void btn_Entrega_Examen_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Examen = txt_Entrega_Examen_Buscar.Text;
-            MessageBox.Show("Si no aparece nada en el recuadro de abajo,\n significa que ese paciente no tiene ningun examen listo para entregar");
             if (!string.IsNullOrEmpty(buscar_Examen))
             {
-
-                if(buscar_Examen.Length<13)
+                MessageBox.Show("Si no aparece nada en el recuadro de abajo,\nsignifica que ese paciente no tiene ningun examen listo para entregar");
+                if (buscar_Examen.Length < 13)
                 {
                     int codFactura = int.Parse(buscar_Examen);
-                    dtg_Entrega_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(codFactura);
+                    cargarDTGEntrega(codFactura);
                 }
-                else
-                {
-                    dtg_Entrega_Examen_Examenes.ItemsSource = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(buscar_Examen);
-                }
+                else cargarDTGEntrega(buscar_Examen);
             }
+            else MessageBox.Show("Ingrese un id de paciente o numero de factura");
+        }
+
+
+        private void cargarDTGEntrega(int facturaCod)
+        {
+            List<Ventas.Ventas> entregarVenta = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(facturaCod);
+            servicios.Servicios nuevoServicio = new();
+            List<servicios.serviciosEntrega> nuevaEntrega = new();
+            foreach (Ventas.Ventas nuev in entregarVenta)
+            {
+                servicios.serviciosEntrega entrega = new();
+                nuevoServicio.NombreExamen = servicios.serviciosDAL.traerNombreExamen(nuev.CodigoExamenMedico);
+                nuevoServicio.NombreEmpleado = servicios.serviciosDAL.traerNombreFacturador(nuev.CodigoFacturador);
+                nuevoServicio.NombreMetodoEntrega = servicios.serviciosDAL.traerNombreMetodoEntrega(nuev.MetodoEntregaExamen);
+                nuevoServicio.NombreMetodoPago = servicios.serviciosDAL.traerNombreMetodoPago(nuev.MetodoPagoExamen);
+                nuevoServicio.NombrePaciente = servicios.serviciosDAL.traerNombrePaciente(nuev.CodigoPaciente);
+
+                entrega.CodFacturaVenta = nuev.CodFacturaVenta;
+                entrega.CodigoEnfermero = nuev.CodigoEnfermero;
+                entrega.CodigoExamenMedico = nuev.CodigoExamenMedico;
+                entrega.CodigoFacturador = nuev.CodigoFacturador;
+                entrega.CodigoMicrobiologo = nuev.CodigoMicrobiologo;
+                entrega.CodigoPaciente = nuev.CodigoPaciente;
+                entrega.EstadoExamenMedico = nuev.EstadoExamenMedico;
+                entrega.ExamenCombo = nuev.ExamenCombo;
+                entrega.MetodoEntregaExamen = nuev.MetodoEntregaExamen;
+                entrega.MetodoPagoExamen = nuev.MetodoPagoExamen;
+                entrega.NombreEmpleado = nuevoServicio.NombreEmpleado;
+                entrega.NombreExamen = nuevoServicio.NombreExamen;
+                entrega.NombreMetodoEntrega = nuevoServicio.NombreMetodoEntrega;
+                entrega.NombreMetodoPago = nuevoServicio.NombreMetodoPago;
+                entrega.NombrePaciente = nuevoServicio.NombrePaciente;
+                entrega.FechaOrden = nuev.FechaOrden;
+
+                nuevaEntrega.Add(entrega);
+            }
+
+            dtg_Entrega_Examen_Examenes.ItemsSource = nuevaEntrega;
+        }
+        private void cargarDTGEntrega(string facturaCod)
+        {
+
+            List<Ventas.Ventas> entregarVenta = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(facturaCod);
+            servicios.Servicios nuevoServicio = new();
+            List<servicios.serviciosEntrega> nuevaEntrega = new();
+            foreach (Ventas.Ventas nuev in entregarVenta)
+            {
+                servicios.serviciosEntrega entrega = new();
+                nuevoServicio.NombreExamen = servicios.serviciosDAL.traerNombreExamen(nuev.CodigoExamenMedico);
+                nuevoServicio.NombreEmpleado = servicios.serviciosDAL.traerNombreFacturador(nuev.CodigoFacturador);
+                nuevoServicio.NombreMetodoEntrega = servicios.serviciosDAL.traerNombreMetodoEntrega(nuev.MetodoEntregaExamen);
+                nuevoServicio.NombreMetodoPago = servicios.serviciosDAL.traerNombreMetodoPago(nuev.MetodoPagoExamen);
+                nuevoServicio.NombrePaciente = servicios.serviciosDAL.traerNombrePaciente(nuev.CodigoPaciente);
+                
+                entrega.CodFacturaVenta = nuev.CodFacturaVenta;
+                entrega.CodigoEnfermero = nuev.CodigoEnfermero;
+                entrega.CodigoExamenMedico = nuev.CodigoExamenMedico;
+                entrega.CodigoFacturador = nuev.CodigoFacturador;
+                entrega.CodigoMicrobiologo = nuev.CodigoMicrobiologo;
+                entrega.CodigoPaciente = nuev.CodigoPaciente;
+                entrega.EstadoExamenMedico = nuev.EstadoExamenMedico;
+                entrega.ExamenCombo = nuev.ExamenCombo;
+                entrega.MetodoEntregaExamen = nuev.MetodoEntregaExamen;
+                entrega.MetodoPagoExamen = nuev.MetodoPagoExamen;
+                entrega.NombreEmpleado = nuevoServicio.NombreEmpleado;
+                entrega.NombreExamen = nuevoServicio.NombreExamen;
+                entrega.NombreMetodoEntrega = nuevoServicio.NombreMetodoEntrega;
+                entrega.NombreMetodoPago = nuevoServicio.NombreMetodoPago;
+                entrega.NombrePaciente = nuevoServicio.NombrePaciente;
+                entrega.FechaOrden = nuev.FechaOrden;
+
+                nuevaEntrega.Add(entrega);
+            }
+            dtg_Entrega_Examen_Examenes.ItemsSource = nuevaEntrega;
+
         }
 
         private void txt_Entrega_Examen_Buscar_KeyUp(object sender, KeyEventArgs e)
@@ -150,7 +226,7 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Entrega_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[1];
+                txt_Entrega_Examen_Buscar.Text = (sender as TextBlock).Text.Split(" - ")[1];
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;

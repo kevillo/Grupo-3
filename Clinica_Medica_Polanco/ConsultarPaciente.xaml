@@ -128,12 +128,12 @@
         </Button>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="89,163,295,309" Background="Transparent">
-            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden"  VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="514"/>
             </ScrollViewer>
         </Border>
         <Label Content="Consultar Pacientes" HorizontalAlignment="Left" Margin="360,12,0,0" VerticalAlignment="Top" Height="60" Width="354" Foreground="White" FontFamily="Tahoma" FontSize="37"/>
-        <Label Content="Ingrese identidad o nombre:" HorizontalAlignment="Left" Height="35" Margin="196,90,0,0" VerticalAlignment="Top" Width="361" FontFamily="Tahoma" FontSize="17"/>
+        <Label Content="Ingrese la identidad del paciente o su nombre: " HorizontalAlignment="Left" Height="35" Margin="196,90,0,0" VerticalAlignment="Top" Width="361" FontFamily="Tahoma" FontSize="17"/>
 
     </Grid>
 </Window>
