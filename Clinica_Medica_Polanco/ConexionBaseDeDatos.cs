@@ -20,7 +20,6 @@ namespace Clinica_Medica_Polanco
             try
             {
                 conexion.Open();
-               MessageBox.Show("Se abrió la conexión");
                 return conexion;
             }
             catch(Exception error)
@@ -38,7 +37,6 @@ namespace Clinica_Medica_Polanco
                     if(conexion != null)
                     {
                         conexion.Close();
-                        MessageBox.Show("Se cerró la conexión");
                     }
                     else
                     {
