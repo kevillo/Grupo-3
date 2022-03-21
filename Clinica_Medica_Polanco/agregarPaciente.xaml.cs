@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Pacientes;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -43,6 +44,8 @@ namespace Clinica_Medica_Polanco
             cmb_Tipo_Sangre_Paciente.Items.Add("B-");
             cmb_Tipo_Sangre_Paciente.Items.Add("B+");
         }
+
+        
 
         private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)
         {
@@ -78,8 +81,7 @@ namespace Clinica_Medica_Polanco
 
        
         private void btn_Guardar_Datos_Click_1(object sender, RoutedEventArgs e)
-        {
-
+        {           
             try
             {
                 //Validación de datos
@@ -109,9 +111,7 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("FechaNacimiento")) ValidarCampos(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
                 else if (error.StackTrace.Contains("TipoSangre")) ValidarCampos(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
                 else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
-            }
-            
-            
+            }            
         }
         //Validar campos
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)

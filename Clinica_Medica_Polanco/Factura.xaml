@@ -70,6 +70,6 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <Xaml:ReportViewer x:Name="Factura" Margin="0,95,0,76"/>
+        <Xaml:ReportViewer x:Name="Factura1" Margin="0,95,0,76"/>
     </Grid>
 </Window>

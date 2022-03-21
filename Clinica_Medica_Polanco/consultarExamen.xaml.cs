@@ -169,5 +169,10 @@ namespace Clinica_Medica_Polanco
             // Add to the panel   
             stc_InfoPaciente.Children.Add(block);
         }
+
+        private void txt_Consulta_Examen_Buscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
