@@ -215,17 +215,10 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-<<<<<<< HEAD
         <ComboBox TabIndex="7" x:Name="cmb_Actualizar_Empleado_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="377,338,0,0" VerticalAlignment="Top" Width="83" FontFamily="Tahoma" FontSize="15"/>
         <ComboBox TabIndex="11" x:Name="cmb_Actualizar_Empleado_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="474,407,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
         <ComboBox TabIndex="13" x:Name="cmb_Actualizar_Empleado_Jornada" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="254,476,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" FontSize="15"/>
-        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
-=======
-        <ComboBox x:Name="cmb_Actualizar_Empleado_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="377,338,0,0" VerticalAlignment="Top" Width="83" FontFamily="Tahoma" FontSize="15"/>
-        <ComboBox x:Name="cmb_Actualizar_Empleado_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="474,407,0,0" VerticalAlignment="Top" Width="146" FontSize="15" FontFamily="Tahoma"/>
-        <ComboBox x:Name="cmb_Actualizar_Empleado_Jornada" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="254,476,0,0" VerticalAlignment="Top" Width="146" FontFamily="Tahoma" FontSize="15"/>
         <Border x:Name="brd_Empleados" BorderBrush="Transparent" Visibility="Hidden"
->>>>>>> 42490a0e6ccc177cd62392f5bcca0f63ada1c4f1
             BorderThickness="1" Margin="295,181,376,349" Background="Transparent">
             <ScrollViewer x:Name="scv_Empleados" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_Empleados" Visibility="Hidden" Background="White" Height="97" Width="491"/>

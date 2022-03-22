@@ -78,13 +78,8 @@
         <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="397,183,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
         <TextBox x:Name="txt_Gestionar_Proveedores_Correo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="32" Margin="397,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
         <Label Content="Área de trabajo:" HorizontalAlignment="Left" Margin="397,248,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-<<<<<<< HEAD
         <DataGrid IsReadOnly="True" x:Name="dtg_Gestionar_Proveedores_Consulta" Margin="10,323,50,10" FontFamily="Tahoma"/>
-        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
-=======
-        <DataGrid x:Name="dtg_Gestionar_Proveedores_Consulta" Margin="10,323,50,10" FontFamily="Tahoma"/>
         <Border x:Name="brd_BuscarProveedor" BorderBrush="Transparent" Visibility="Hidden"
->>>>>>> 42490a0e6ccc177cd62392f5bcca0f63ada1c4f1
             BorderThickness="1" Margin="195,80,258,332" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarProveedor" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_InfoProveedor" Visibility="Hidden" Background="White" Height="98" Width="514"/>

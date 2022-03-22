@@ -130,17 +130,10 @@
         <Label Content="Número de serie:" HorizontalAlignment="Left" Margin="407,116,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17" FontWeight="Normal"/>
         <TextBox  TabIndex="2" x:Name="txt_Gestionar_Insumos_Num_Serie" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="33" Margin="407,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Tipo de insumo:" HorizontalAlignment="Left" Margin="407,189,0,0" VerticalAlignment="Top" Width="320" FontFamily="Tahoma" FontSize="17"/>
-<<<<<<< HEAD
         <ComboBox TabIndex="4" x:Name="cmb_Gestionar_Insumo_Tipo_Insumo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="407,218,0,0" VerticalAlignment="Top" Width="320" FontSize="15" FontFamily="Tahoma"/>
         <Button TabIndex="7" Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="50" Margin="225,409,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Gestionar_Insumo_Actualizar_Click"/>
         <CheckBox TabIndex="6" x:Name="chk_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="249,351,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
-        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
-=======
-        <ComboBox x:Name="cmb_Gestionar_Insumo_Tipo_Insumo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="407,218,0,0" VerticalAlignment="Top" Width="320" FontSize="15" FontFamily="Tahoma"/>
-        <Button Style="{DynamicResource Style_btn_Agregar_Insumo}" Cursor="Hand" x:Name="btn_Gestionar_Insumo_Actualizar" Content="Actualizar insumo" HorizontalAlignment="Left" Height="50" Margin="225,409,0,0" VerticalAlignment="Top" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Gestionar_Insumo_Actualizar_Click"/>
-        <CheckBox x:Name="chk_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="249,351,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
         <Border x:Name="brd_Insumo" BorderBrush="Transparent" Visibility="Hidden"
->>>>>>> 42490a0e6ccc177cd62392f5bcca0f63ada1c4f1
             BorderThickness="1" Margin="171,104,282,310" Background="Transparent">
             <ScrollViewer x:Name="scv_Insumo" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_Insumo" Visibility="Hidden" Background="White" Height="97" Width="491"/>
