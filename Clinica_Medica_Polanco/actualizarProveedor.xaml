@@ -79,11 +79,16 @@
         <CheckBox TabIndex="7" x:Name="chb_Disponibilidad_Proveedor_Actualizar" VerticalContentAlignment="Center" Content="Disponibilidad" HorizontalAlignment="Left" Margin="400,374,0,0" VerticalAlignment="Top" Height="26" Width="208" FontFamily="Tahoma" FontSize="15"/>
         <ComboBox TabIndex="6" x:Name="cmb_Area_Trabajo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Área de trabajo" HorizontalAlignment="Left" Margin="399,286,0,0" VerticalAlignment="Top" Height="39" Width="138" FontFamily="Tahoma" FontSize="15"/>
+<<<<<<< HEAD
         <Button TabIndex="8" Style="{DynamicResource btn_Style_Actualizar_Producto}" Cursor="Hand" x:Name="btn_Actualizar_Informacion_Proveedor" Content="Actualizar información" HorizontalAlignment="Left" Margin="242,422,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Actualizar_Informacion_Proveedor_Click"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+=======
+        <Button Style="{DynamicResource btn_Style_Actualizar_Producto}" Cursor="Hand" x:Name="btn_Actualizar_Informacion_Proveedor" Content="Actualizar información" HorizontalAlignment="Left" Margin="242,422,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Actualizar_Informacion_Proveedor_Click"/>
+        <Border x:Name="brd_Proveedor" BorderBrush="Transparent" Visibility="Hidden"
+>>>>>>> 42490a0e6ccc177cd62392f5bcca0f63ada1c4f1
             BorderThickness="1" Margin="109,116,316,297" Background="Transparent">
-            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
-                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            <ScrollViewer x:Name="scv_Proveedor" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_Proveedor" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
         <RichTextBox TabIndex="5" x:Name="rtb_Direccion_Proveedor_Actualizar" Margin="123,314,480,100">

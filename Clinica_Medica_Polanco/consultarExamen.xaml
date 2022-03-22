@@ -178,10 +178,10 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+        <Border x:Name="brd_Examen" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="220,161,356,350" Background="Transparent">
-            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="-1,4,-1,-1">
-                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="93" Width="524"/>
+            <ScrollViewer x:Name="scv_Examen" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="-1,4,-1,-1">
+                <StackPanel x:Name="stc_Examen" Visibility="Hidden" Background="White" Height="93" Width="524"/>
             </ScrollViewer>
         </Border>
         <ComboBox x:Name="cmb_Sucursal_Buscar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="48,124,0,0" VerticalAlignment="Top" Width="264" Height="37" FontFamily="Tahoma" FontSize="15">

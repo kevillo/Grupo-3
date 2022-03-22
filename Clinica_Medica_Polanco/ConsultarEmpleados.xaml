@@ -125,11 +125,19 @@
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
+<<<<<<< HEAD
         <DataGrid IsReadOnly="True" Name="dtg_Consultar_Empleados"  HorizontalAlignment="Center" Height="307" Margin="0,183,0,0" VerticalAlignment="Top" Width="1060"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="93,159,291,307" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="507"/>
+=======
+        <DataGrid Name="dtg_Consultar_Empleados"  HorizontalAlignment="Center" Height="307" Margin="0,183,0,0" VerticalAlignment="Top" Width="1060" IsEnabled="False"/>
+        <Border x:Name="brd_Empleados" BorderBrush="Transparent" Visibility="Hidden"
+            BorderThickness="1" Margin="93,106,291,307" Background="Transparent">
+            <ScrollViewer x:Name="scv_Empleados" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_Empleados" Visibility="Hidden" Background="White" Height="98" Width="507"/>
+>>>>>>> 42490a0e6ccc177cd62392f5bcca0f63ada1c4f1
             </ScrollViewer>
         </Border>
         

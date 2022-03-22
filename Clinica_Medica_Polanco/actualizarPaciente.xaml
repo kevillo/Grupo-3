@@ -209,11 +209,16 @@
             </FlowDocument>
         </RichTextBox>
         <Label Content="Estado paciente:" HorizontalAlignment="Left" Margin="204,433,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
+<<<<<<< HEAD
         <CheckBox TabIndex="10" x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="262,467,0,0" VerticalAlignment="Top" Height="16" Width="20" BorderBrush="#FF141519"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent"  Visibility="Hidden"
+=======
+        <CheckBox x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="262,467,0,0" VerticalAlignment="Top" Height="16" Width="20" BorderBrush="#FF141519"/>
+        <Border x:Name="brd_Paciente" BorderBrush="Transparent"  Visibility="Hidden"
+>>>>>>> 42490a0e6ccc177cd62392f5bcca0f63ada1c4f1
             BorderThickness="1" Margin="203,148,389,382" Background="Transparent">
-            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
-                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            <ScrollViewer x:Name="scv_Paciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_Paciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
         <TextBox TabIndex="0" Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" VerticalContentAlignment="Center" x:Name="txt_PacienteId" Margin="203,111,386,475" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />

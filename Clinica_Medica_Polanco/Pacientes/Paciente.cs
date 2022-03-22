@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace Clinica_Medica_Polanco.Pacientes
 {
@@ -92,7 +94,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _telefono;
             set
             {
-                if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _))
+                if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _) || validarTelefono(value) == false)
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en telefono");
                 }
@@ -118,7 +120,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _correo;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (validarEmail(value) == false)
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en correo");
                 }
@@ -163,5 +165,39 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
         public bool Estado { get => _estado; set => _estado = value; }
+
+        public static bool validarEmail(string comprobarEmail)
+        {
+            string emailFormato;
+            emailFormato = "\\w+([-+.']\\w+)*@\\w+([-+.']\\w+)*\\w+([-+.']\\w+)*";
+            if (Regex.IsMatch(comprobarEmail, emailFormato))
+            {
+                if (Regex.Replace(comprobarEmail, emailFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool validarTelefono(string telefono)
+        {
+            if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))
+            {
+                return true;
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("El número de telefóno debe comenzar por 2, 3, 8 o 9");
+                return false;
+            }
+        }
     }
 }

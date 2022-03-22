@@ -53,10 +53,10 @@
         <Label Content="Fecha Expiración" HorizontalAlignment="Left" Margin="399,179,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
         <Label Content="Precio Unitario" HorizontalAlignment="Left" Margin="99,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
         <Label Content="Número de serie" HorizontalAlignment="Left" Margin="399,268,0,0" VerticalAlignment="Top" FontFamily="Tahoma" Foreground="#FF1C1C1D" FontSize="17"/>
-        <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
+        <Border x:Name="brd_BuscarProveedor" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="97,113,399,313" Background="Transparent">
-            <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
-                <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
+            <ScrollViewer x:Name="scv_BuscarProveedor" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
+                <StackPanel x:Name="stc_InfoProveedor" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
     </Grid>
