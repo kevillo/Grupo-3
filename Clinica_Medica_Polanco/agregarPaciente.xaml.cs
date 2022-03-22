@@ -15,6 +15,7 @@ using System.Windows.Interop;
 using Clinica_Medica_Polanco.Pacientes;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Clinica_Medica_Polanco
 {
@@ -81,7 +82,7 @@ namespace Clinica_Medica_Polanco
 
        
         private void btn_Guardar_Datos_Click_1(object sender, RoutedEventArgs e)
-        {           
+        {            
             try
             {
                 //Validación de datos
@@ -111,12 +112,12 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("FechaNacimiento")) ValidarCampos(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
                 else if (error.StackTrace.Contains("TipoSangre")) ValidarCampos(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
                 else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
-            }            
+            }           
         }
         //Validar campos
-        private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] ComboBox cmb,[Optional] int refer)
+        private void ValidarCampos([Optional] System.Windows.Controls.TextBox txts, [Optional] System.Windows.Controls.RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] System.Windows.Controls.ComboBox cmb,[Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            System.Windows.MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();
@@ -125,7 +126,7 @@ namespace Clinica_Medica_Polanco
 
         }
 
-        private string rtbAString(RichTextBox rtb)
+        private string rtbAString(System.Windows.Controls.RichTextBox rtb)
         {
             TextRange textRange = new TextRange(
                 rtb.Document.ContentStart,
@@ -133,6 +134,26 @@ namespace Clinica_Medica_Polanco
             );
 
             return textRange.Text;
+        }
+
+        private void txt_Nombre_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        private void txt_Identidad_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;            
         }
     }
 }
