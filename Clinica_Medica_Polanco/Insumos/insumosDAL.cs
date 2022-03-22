@@ -14,6 +14,32 @@ namespace Clinica_Medica_Polanco.Insumos
     class insumosDAL
     {
 
+
+        public static int ValidadNumeroSerieInsumo(string numSerie)
+        {
+            try
+            {
+                int coincidencias = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select count(Codigo_Insumo) from Insumos where Numero_Serie = '{0}'", numSerie), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    coincidencias = dr.GetInt32(0);
+                }
+
+                return coincidencias;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo comprobar si el numero de serie ya existe en la base de datos ");
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
         public static void AgregarInsumo(Insumos nuevoInsumo)
         {
             try

@@ -89,6 +89,7 @@ namespace Clinica_Medica_Polanco
             {
                 // Clear   
                 stc_InfoPaciente.Children.Clear();
+                MessageBox.Show("Estoy vacio");
                 border.Visibility = System.Windows.Visibility.Collapsed;
             }
             else

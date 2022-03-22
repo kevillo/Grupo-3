@@ -173,18 +173,18 @@
     </Window.Resources>
     <Grid>
         <Label Content="Código" HorizontalAlignment="Left" Margin="279,173,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_Codigo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="203,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black" IsEnabled="False"/>
+        <TextBox TabIndex="1" x:Name="txt_Actualizar_Paciente_Codigo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="203,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black" IsEnabled="False"/>
         <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,76,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,110,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35" Click="btn_Actualizar_Paciente_Buscar_Click"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="640,171,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_Nombre" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="565,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
+        <TextBox TabIndex="2" x:Name="txt_Actualizar_Paciente_Nombre" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="565,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
         <Label Content="Apellido:" HorizontalAlignment="Left" Margin="279,237,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="644,237,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_Apellido" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="203,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="36" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_Telefono" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="567,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="36" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
+        <TextBox TabIndex="3" x:Name="txt_Actualizar_Paciente_Apellido" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="203,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="36" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
+        <TextBox TabIndex="4" x:Name="txt_Actualizar_Paciente_Telefono" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="567,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="36" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
         <Label Content="Fecha de nacimiento:" HorizontalAlignment="Left" Margin="227,301,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="612,301,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_CorreoE" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="567,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
+        <TextBox TabIndex="6" x:Name="txt_Actualizar_Paciente_CorreoE" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="567,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-4,0,0"/>
         <Image HorizontalAlignment="Left" Height="114" Margin="0,-4,0,0" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="0,-4,0,0"/>
@@ -196,12 +196,12 @@
             </Button.Background>
         </Button>
         <Label Content="Dirección:" HorizontalAlignment="Left" Margin="644,371,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <Button x:Name="btn_Actualizar_Paciente_ActualizarInformacion" Style="{DynamicResource Style_btn_ActualizarInformacion}" Content="Actualizar información" Cursor="Hand" HorizontalAlignment="Left" Margin="363,549,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Paciente_ActualizarInformacion_Click"/>
-        <TextBox x:Name="txt_Actualizar_Paciente_Altura" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="205,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
+        <Button TabIndex="11" x:Name="btn_Actualizar_Paciente_ActualizarInformacion" Style="{DynamicResource Style_btn_ActualizarInformacion}" Content="Actualizar información" Cursor="Hand" HorizontalAlignment="Left" Margin="363,549,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Paciente_ActualizarInformacion_Click"/>
+        <TextBox TabIndex="7" x:Name="txt_Actualizar_Paciente_Altura" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="205,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black"/>
         <Label Content="Tipo de sangre:" HorizontalAlignment="Left" Margin="344,369,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <DatePicker x:Name="dtp_Actualizar_Paciente_FechaNac" HorizontalAlignment="Left" Margin="203,332,0,0" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="15" Background="{x:Null}" BorderBrush="Black" Foreground="Black" />
-        <ComboBox x:Name="cmb_Actualizar_Paciente_TipoSangre" HorizontalAlignment="Left" Margin="350,404,0,0" VerticalAlignment="Top" Width="143" Height="36" BorderBrush="Black" Background="{x:Null}" Foreground="Black" FontFamily="Tahoma" FontSize="15" />
-        <RichTextBox x:Name="rtb_Actualizar_Paciente_Direccion" Margin="543,400,247,137" BorderBrush="Black" Background="{x:Null}" Foreground="Black" FontSize="15">
+        <DatePicker TabIndex="5" x:Name="dtp_Actualizar_Paciente_FechaNac" HorizontalAlignment="Left" Margin="203,332,0,0" VerticalAlignment="Top" Width="256" Height="38" FontFamily="Tahoma" HorizontalContentAlignment="Stretch" Padding="15,6,0,0"   FontSize="15" Background="{x:Null}" BorderBrush="Black" Foreground="Black" />
+        <ComboBox TabIndex="8" x:Name="cmb_Actualizar_Paciente_TipoSangre" HorizontalAlignment="Left" Margin="350,404,0,0" VerticalAlignment="Top" Width="143" Height="36" BorderBrush="Black" Background="{x:Null}" Foreground="Black" FontFamily="Tahoma" FontSize="15" />
+        <RichTextBox TabIndex="9" x:Name="rtb_Actualizar_Paciente_Direccion" Margin="543,400,247,137" BorderBrush="Black" Background="{x:Null}" Foreground="Black" FontSize="15">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
@@ -209,13 +209,13 @@
             </FlowDocument>
         </RichTextBox>
         <Label Content="Estado paciente:" HorizontalAlignment="Left" Margin="204,433,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
-        <CheckBox x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="262,467,0,0" VerticalAlignment="Top" Height="16" Width="20" BorderBrush="#FF141519"/>
+        <CheckBox TabIndex="10" x:Name="chk_Actualizar_Paciente_EstadoPaciente" Content="" HorizontalAlignment="Left" Margin="262,467,0,0" VerticalAlignment="Top" Height="16" Width="20" BorderBrush="#FF141519"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent"  Visibility="Hidden"
             BorderThickness="1" Margin="203,148,389,382" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
-        <TextBox Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" VerticalContentAlignment="Center" x:Name="txt_PacienteId" Margin="203,111,386,475" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />
+        <TextBox TabIndex="0" Padding="5, 3, 5, 3" KeyUp="TextBox_KeyUp" VerticalContentAlignment="Center" x:Name="txt_PacienteId" Margin="203,111,386,475" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" BorderBrush="Black" Background="{x:Null}" Foreground="Black" />
     </Grid>
 </Window>

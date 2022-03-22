@@ -8,6 +8,61 @@ namespace Clinica_Medica_Polanco.Pacientes
 {
     public class PacientesDAL
     {
+
+
+        public static int ValidarIdentidadPaciente(string identidad)
+        {
+            try
+            {
+                int coincidencias = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select count(Codigo_Paciente) from Pacientes where Identidad_Paciente = '{0}'", identidad), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    coincidencias = dr.GetInt32(0);
+                }
+
+                return coincidencias;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo comprobar si la identidad del paciente ya existe en la base de datos ");
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+        public static int ValidarCorreoPaciente(string correo)
+        {
+            try
+            {
+                int coincidencias = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select count(Codigo_Paciente) from Pacientes where Correo_Paciente = '{0}'", correo), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    coincidencias = dr.GetInt32(0);
+                }
+
+                return coincidencias;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo comprobar si el correo del paciente ya existe en la base de datos ");
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
+
+
         public static void AgregarPaciente(Pacient pPaciente)
         {
             try

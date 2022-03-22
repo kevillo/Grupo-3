@@ -32,6 +32,9 @@ namespace Clinica_Medica_Polanco.Empleados
         // validacion string: que no venga vacio
         // validacion int: que no sea negativo ni que venga vacio
         // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+
+
+        
         public int CodigoJornada 
         { 
             get => _codigoJornada;

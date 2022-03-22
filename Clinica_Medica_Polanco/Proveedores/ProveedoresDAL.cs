@@ -10,6 +10,33 @@ namespace Clinica_Medica_Polanco.Proveedores
 {
     class ProveedoresDAL
     {
+
+
+        public static int ValidarCorreoProveedor(string correo)
+        {
+            try
+            {
+                int coincidencias = 0;
+                ConexionBaseDeDatos.ObtenerConexion();
+                SqlCommand comando = new(string.Format("select count(Codigo_Proveedor) from Proveedores where Correro_Proveedor = '{0}'", correo), ConexionBaseDeDatos.conexion);
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    coincidencias = dr.GetInt32(0);
+                }
+
+                return coincidencias;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo comprobar si el correo del proveedor ya existe en la base de datos ");
+                return -1;
+            }
+            finally
+            {
+                ConexionBaseDeDatos.CerrarConexion();
+            }
+        }
         public static void AgregarProveedor(Proveedores proveedores)
         {
             try

@@ -118,16 +118,16 @@
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="127" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="0,-2,0,0"/>
-        <TextBox x:Name="txt_Consultar_Empleados_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="198,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="511" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center" KeyUp="txt_Consultar_Empleados_Buscar_KeyUp"/>
-        <Button Style="{DynamicResource Style_ConsultarEmpleados_Buscar}" x:Name="btn_Consultar_Empleados_Buscar" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Margin="758,124,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Consultar_Empleados_Buscar_Click"/>
+        <TextBox TabIndex="0" x:Name="txt_Consultar_Empleados_Buscar" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="198,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="511" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF141519" TextAlignment="Center" KeyUp="txt_Consultar_Empleados_Buscar_KeyUp"/>
+        <Button  TabIndex="1" Style="{DynamicResource Style_ConsultarEmpleados_Buscar}" x:Name="btn_Consultar_Empleados_Buscar" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Margin="758,124,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="17" Click="btn_Consultar_Empleados_Buscar_Click"/>
         <Button Style="{DynamicResource Style_ConsultarEmpleados_Salir}" x:Name="btn_Consultar_Empleados_Salir" Cursor="Hand" Content="" HorizontalAlignment="Left" Margin="501,535,0,0" VerticalAlignment="Top" Height="60" Width="72" Click="btn_ConsultarEmpleados_Salir_Click" RenderTransformOrigin="0.485,0.448">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>
             </Button.Background>
         </Button>
-        <DataGrid Name="dtg_Consultar_Empleados"  HorizontalAlignment="Center" Height="307" Margin="0,183,0,0" VerticalAlignment="Top" Width="1060"/>
+        <DataGrid IsReadOnly="True" Name="dtg_Consultar_Empleados"  HorizontalAlignment="Center" Height="307" Margin="0,183,0,0" VerticalAlignment="Top" Width="1060"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
-            BorderThickness="1" Margin="93,106,291,307" Background="Transparent">
+            BorderThickness="1" Margin="93,159,291,307" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="98" Width="507"/>
             </ScrollViewer>

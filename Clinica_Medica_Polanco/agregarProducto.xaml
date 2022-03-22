@@ -67,9 +67,9 @@
         <Rectangle HorizontalAlignment="Left" Height="352" Stroke="Black" VerticalAlignment="Top" Width="669" Margin="31,68,0,0"/>
         <Label Content="Información del producto" FontFamily="Tahoma" FontSize="19" HorizontalAlignment="Left" Margin="31,32,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="84,78,0,0" VerticalAlignment="Top" Height="33" Width="182" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
-        <TextBox x:Name="txt_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="84,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox TabIndex="0" x:Name="txt_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="84,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
         <Label Content="Número de serie (Número)" HorizontalAlignment="Left" Margin="410,78,0,0" VerticalAlignment="Top" Height="34" Width="221" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
-        <TextBox x:Name="txt_Numero_Serie" HorizontalAlignment="Left" Margin="410,112,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox TabIndex="1" x:Name="txt_Numero_Serie" HorizontalAlignment="Left" Margin="410,112,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
         <Label Content="Precio unitario" HorizontalAlignment="Left" Margin="84,181,0,0" VerticalAlignment="Top" Height="34" Width="132" FontFamily="Tahoma" FontSize="17" RenderTransformOrigin="0.5,0.5" FontWeight="Normal" Foreground="#FF878F9E">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -80,13 +80,13 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txt_Precio_Unitario" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="223,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="34" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
-        <ComboBox x:Name="cmb_Tipo_Insumo" HorizontalAlignment="Left" Margin="410,203,0,0" VerticalAlignment="Top" Width="221" Height="28" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
-        <DatePicker x:Name="dtp_Fecha_Expiracion" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="286,290,0,0" VerticalAlignment="Top" Height="32" Width="172" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="2" x:Name="txt_Precio_Unitario" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="223,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="34" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
+        <ComboBox TabIndex="3" x:Name="cmb_Tipo_Insumo" HorizontalAlignment="Left" Margin="410,203,0,0" VerticalAlignment="Top" Width="221" Height="28" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
+        <DatePicker TabIndex="4" x:Name="dtp_Fecha_Expiracion" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="286,290,0,0" VerticalAlignment="Top" Height="32" Width="172" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Tipo de insumo" HorizontalAlignment="Left" Margin="410,164,0,0" VerticalAlignment="Top" Height="34" Width="139" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <Label Content="Fecha de expiración" HorizontalAlignment="Left" Margin="286,250,0,0" VerticalAlignment="Top" Height="34" Width="168" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
-        <CheckBox x:Name="chb_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="260,367,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
-        <Button x:Name="btn_Agregar_Producto" Style="{DynamicResource btn_Style_Agregar}" Cursor="Hand" Content="Agregar producto" FontFamily="Tahoma" FontSize="28" Padding="5" VerticalContentAlignment="Center" Background="#0D2D6F" Foreground="white" HorizontalAlignment="Left" Margin="220,430,0,0" VerticalAlignment="Top" Height="60" Width="300" Click="btn_Agregar_Producto_Click"/>
+        <CheckBox TabIndex="5" x:Name="chb_Disponibilidad" Content="Disponible inmediatamente" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="260,367,0,0" VerticalAlignment="Top" Height="27" Width="246" FontFamily="Tahoma" FontSize="18" Foreground="Black" BorderBrush="Black"/>
+        <Button TabIndex="6" x:Name="btn_Agregar_Producto" Style="{DynamicResource btn_Style_Agregar}" Cursor="Hand" Content="Agregar producto" FontFamily="Tahoma" FontSize="28" Padding="5" VerticalContentAlignment="Center" Background="#0D2D6F" Foreground="white" HorizontalAlignment="Left" Margin="220,430,0,0" VerticalAlignment="Top" Height="60" Width="300" Click="btn_Agregar_Producto_Click"/>
 
     </Grid>
 </UserControl>

@@ -56,6 +56,7 @@ namespace Clinica_Medica_Polanco
             tabla.Columns.Add("Combo");
             tabla.Columns.Add("Fecha factura");
             dtg_Solicitud_Examen_Examenes.ItemsSource = tabla.AsDataView();
+            dtg_Solicitud_Examen_Examenes.IsReadOnly = true;
         }
         private void SolicitudExamen_SourceInitialized(object sender, EventArgs e)
         {

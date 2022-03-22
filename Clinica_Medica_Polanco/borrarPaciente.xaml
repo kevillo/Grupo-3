@@ -151,17 +151,17 @@
             </ScrollViewer>
         </Border>
         <Label Content="Dirección" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="586,415,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#FF040404"/>
-        <Button x:Name="btn_Eliminar_Paciente" Cursor="Hand" Width="300" Height="60" FontFamily="Tahoma" FontSize="28" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Eliminar Paciente" HorizontalAlignment="Center" Margin="0,547,0,0" VerticalAlignment="Top" Background="#FF0D2D6F" BorderBrush="White" Foreground="White" Style="{DynamicResource estilo}" Click="btn_Eliminar_Paciente_Click"/>
+        <Button TabIndex="2" x:Name="btn_Eliminar_Paciente" Cursor="Hand" Width="300" Height="60" FontFamily="Tahoma" FontSize="28" Padding="0,0,0,3" VerticalContentAlignment="Center" Content="Eliminar Paciente" HorizontalAlignment="Center" Margin="0,547,0,0" VerticalAlignment="Top" Background="#FF0D2D6F" BorderBrush="White" Foreground="White" Style="{DynamicResource estilo}" Click="btn_Eliminar_Paciente_Click"/>
         <Label Content="Identidad del Paciente:" FontFamily="Tahoma" FontSize="20" HorizontalAlignment="Left" Margin="260,87,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#FF040404"/>
-        <TextBox x:Name="txt_Buscar_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="15"  Margin="260,125,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="337" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF040404" FontFamily="Tahoma" KeyUp="txt_Buscar_Paciente_KeyUp" />
-        <Button Style="{DynamicResource estilo}" x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Height="40" Margin="631,123,0,0" VerticalAlignment="Top" Width="195" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29" Click="btn_Buscar_Click"/>
+        <TextBox TabIndex="0" x:Name="txt_Buscar_Paciente" HorizontalAlignment="Left" VerticalContentAlignment="Center"  FontSize="15"  Margin="260,125,0,0"   TextWrapping="Wrap" VerticalAlignment="Top"  Height="38" Width="337" Foreground="Black" Background="White" TextAlignment="Center" BorderBrush="#FF040404" FontFamily="Tahoma" KeyUp="txt_Buscar_Paciente_KeyUp" />
+        <Button TabIndex="1" Style="{DynamicResource estilo}" x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Height="40" Margin="631,123,0,0" VerticalAlignment="Top" Width="195" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="29" Click="btn_Buscar_Click"/>
         <Button Style="{DynamicResource boton}" Cursor="Hand" x:Name="btn_Salir" Content="" HorizontalAlignment="Left" Height="60" Margin="30,514,0,0" VerticalAlignment="Top" Width="72" Click="btn_Salir_Click" BorderBrush="White" Foreground="White">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" TileMode="None" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <ComboBox x:Name="cmd_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="400,450,0,0" VerticalAlignment="Top" Width="117" FontFamily="Tahoma" FontSize="15"/>
-        <DatePicker x:Name="dtp_Fecha_Nacimiento_Borrar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="265,373,0,0" VerticalAlignment="Top" Width="242" Height="38" FontFamily="Tahoma" FontSize="18"/>
+        <ComboBox x:Name="cmd_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="400,450,0,0" VerticalAlignment="Top" Width="117" FontFamily="Tahoma" FontSize="15" IsEnabled="False"/>
+        <DatePicker x:Name="dtp_Fecha_Nacimiento_Borrar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="265,373,0,0" VerticalAlignment="Top" Width="242" Height="38" FontFamily="Tahoma" FontSize="18" IsEnabled="False"/>
 
     </Grid>
 </Window>

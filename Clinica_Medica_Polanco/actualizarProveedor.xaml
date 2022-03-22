@@ -65,28 +65,28 @@
     </UserControl.Resources>
     <Grid Background="white">
         <Label Content="Nombre o código del proveedor" HorizontalAlignment="Left" Margin="103,49,0,0" VerticalAlignment="Top" Width="228" Height="28" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Codigo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="109,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" Height="36" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Codigo_Proveedor_Actualizar_KeyUp"/>
+        <TextBox TabIndex="0" x:Name="txt_Codigo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="109,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" Height="36" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Codigo_Proveedor_Actualizar_KeyUp"/>
         <Button x:Name="btn_Buscar_Proveedor" Cursor="Hand" Content="Buscar" HorizontalAlignment="Left" Margin="555,77,0,0" VerticalAlignment="Top" Width="126" Height="36" FontFamily="Tahoma" FontSize="15" BorderBrush="#FF0D2D6F" Background="#FF0D2D6F" Foreground="White" Style="{DynamicResource btn_Style_Actualizar_Producto}" Click="btn_Buscar_Proveedor_Click"/>
         <Label Content="Nombre " HorizontalAlignment="Left" Margin="122,118,0,0" VerticalAlignment="Top" Height="44" Width="82" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Nombre_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="121,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <TextBox TabIndex="1" x:Name="txt_Nombre_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="121,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Teléfono" HorizontalAlignment="Left" Margin="122,208,0,0" VerticalAlignment="Top" Height="29" Width="82" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Telefono_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="122,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <TextBox TabIndex="3" x:Name="txt_Telefono_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="122,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Dirección" HorizontalAlignment="Left" Margin="120,286,0,0" VerticalAlignment="Top" Height="29" Width="93" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Apellido" HorizontalAlignment="Left" Margin="399,118,0,0" VerticalAlignment="Top" Height="44" Width="77" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Apellido_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="399,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <TextBox TabIndex="2" x:Name="txt_Apellido_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="399,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
         <Label Content="Correo de contacto" HorizontalAlignment="Left" Margin="400,209,0,0" VerticalAlignment="Top" Height="29" Width="160" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox x:Name="txt_Correo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="399,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
-        <CheckBox x:Name="chb_Disponibilidad_Proveedor_Actualizar" VerticalContentAlignment="Center" Content="Disponibilidad" HorizontalAlignment="Left" Margin="400,374,0,0" VerticalAlignment="Top" Height="26" Width="208" FontFamily="Tahoma" FontSize="15"/>
-        <ComboBox x:Name="cmb_Area_Trabajo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="4" x:Name="txt_Correo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="399,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15" TextAlignment="Center"/>
+        <CheckBox TabIndex="7" x:Name="chb_Disponibilidad_Proveedor_Actualizar" VerticalContentAlignment="Center" Content="Disponibilidad" HorizontalAlignment="Left" Margin="400,374,0,0" VerticalAlignment="Top" Height="26" Width="208" FontFamily="Tahoma" FontSize="15"/>
+        <ComboBox TabIndex="6" x:Name="cmb_Area_Trabajo_Proveedor_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="200" Height="30" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Área de trabajo" HorizontalAlignment="Left" Margin="399,286,0,0" VerticalAlignment="Top" Height="39" Width="138" FontFamily="Tahoma" FontSize="15"/>
-        <Button Style="{DynamicResource btn_Style_Actualizar_Producto}" Cursor="Hand" x:Name="btn_Actualizar_Informacion_Proveedor" Content="Actualizar información" HorizontalAlignment="Left" Margin="242,422,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Actualizar_Informacion_Proveedor_Click"/>
+        <Button TabIndex="8" Style="{DynamicResource btn_Style_Actualizar_Producto}" Cursor="Hand" x:Name="btn_Actualizar_Informacion_Proveedor" Content="Actualizar información" HorizontalAlignment="Left" Margin="242,422,0,0" VerticalAlignment="Top" Height="60" Width="300" FontFamily="Tahoma" FontSize="28" Background="#FF0D2D6F" BorderBrush="#FF0D2D6F" Foreground="White" Click="btn_Actualizar_Informacion_Proveedor_Click"/>
         <Border x:Name="brd_BuscarPaciente" BorderBrush="Transparent" Visibility="Hidden"
             BorderThickness="1" Margin="109,116,316,297" Background="Transparent">
             <ScrollViewer x:Name="scv_BuscarPaciente" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="-1,1,-27,2" Background="Transparent">
                 <StackPanel x:Name="stc_InfoPaciente" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
-        <RichTextBox x:Name="rtb_Direccion_Proveedor_Actualizar" Margin="123,314,480,100">
+        <RichTextBox TabIndex="5" x:Name="rtb_Direccion_Proveedor_Actualizar" Margin="123,314,480,100">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>

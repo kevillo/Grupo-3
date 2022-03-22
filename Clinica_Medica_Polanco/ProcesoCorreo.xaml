@@ -119,7 +119,7 @@
         <Rectangle HorizontalAlignment="Left"  Height="95" Stroke="#FF0D2D6F" VerticalAlignment="Top" Width="671" Fill="#FF0D2D6F" Margin="228,0,0,0"/>
         <Label Content="Análisis de examen médico" FontFamily="Tahoma" FontSize="50" HorizontalAlignment="Left" Margin="250,13,0,0" VerticalAlignment="Top" Foreground="White" Height="86" Width="657"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
-        <Button Style="{DynamicResource Style_btn_Proceso}" x:Name="btn_Proceso_Envio" Content="Procesar Envío" Cursor="Hand" HorizontalAlignment="Left" Height="62" Margin="427,534,0,0" VerticalAlignment="Top" Width="242" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" Click="btn_Proceso_Envio_Click"/>
+        <Button TabIndex="0" Style="{DynamicResource Style_btn_Proceso}" x:Name="btn_Proceso_Envio" Content="Procesar Envío" Cursor="Hand" HorizontalAlignment="Left" Height="62" Margin="427,534,0,0" VerticalAlignment="Top" Width="242" Background="#FF0D2D6F" Foreground="White" FontFamily="Tahoma" FontSize="25" Click="btn_Proceso_Envio_Click"/>
         <Button Style="{DynamicResource Style_btn_Salir}" HorizontalAlignment="Left" Height="60" Margin="34,541,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png"/>
