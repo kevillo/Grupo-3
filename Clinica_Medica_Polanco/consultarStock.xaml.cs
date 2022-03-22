@@ -27,12 +27,12 @@ namespace Clinica_Medica_Polanco
 
         private void txt_Consultar_Stock_Codigo_Producto_KeyUp(object sender, KeyEventArgs e)
         {
-            stc_InfoPaciente.Visibility = Visibility.Visible;
-            scv_BuscarPaciente.Visibility = Visibility.Visible;
-            brd_BuscarPaciente.Visibility = Visibility.Visible;
+            stc_InfoStock.Visibility = Visibility.Visible;
+            scv_BuscarStock.Visibility = Visibility.Visible;
+            brd_BuscarStock.Visibility = Visibility.Visible;
             //scv_BuscarPaciente.Background = new 
             bool found = false;
-            var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
+            var border = (stc_InfoStock.Parent as ScrollViewer).Parent as Border;
             var data = Autocompletados.autocompletarProducto.GetData();
 
             string query = (sender as TextBox).Text;
@@ -40,7 +40,7 @@ namespace Clinica_Medica_Polanco
             if (query.Length == 0)
             {
                 // Clear   
-                stc_InfoPaciente.Children.Clear();
+                stc_InfoStock.Children.Clear();
                 border.Visibility = System.Windows.Visibility.Collapsed;
             }
             else
@@ -49,8 +49,8 @@ namespace Clinica_Medica_Polanco
             }
 
             // Clear the list   
-            stc_InfoPaciente.Children.Clear();
-            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
+            stc_InfoStock.Children.Clear();
+            stc_InfoStock.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -64,7 +64,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
+                stc_InfoStock.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
             }
         }
 
@@ -85,9 +85,9 @@ namespace Clinica_Medica_Polanco
             block.MouseLeftButtonUp += (sender, e) =>
             {
                 txt_Consultar_Stock_Codigo_Producto.Text = (sender as TextBlock).Text.Split(" - ")[0];
-                stc_InfoPaciente.Visibility = Visibility.Hidden;
-                scv_BuscarPaciente.Visibility = Visibility.Hidden;
-                brd_BuscarPaciente.Visibility = Visibility.Hidden;
+                stc_InfoStock.Visibility = Visibility.Hidden;
+                scv_BuscarStock.Visibility = Visibility.Hidden;
+                brd_BuscarStock.Visibility = Visibility.Hidden;
             };
 
             block.MouseEnter += (sender, e) =>
@@ -103,7 +103,7 @@ namespace Clinica_Medica_Polanco
             };
 
             // Add to the panel   
-            stc_InfoPaciente.Children.Add(block);
+            stc_InfoStock.Children.Add(block);
         }
 
         private void btn_buscar_Click(object sender, RoutedEventArgs e)

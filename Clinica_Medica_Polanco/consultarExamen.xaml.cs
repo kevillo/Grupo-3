@@ -88,12 +88,12 @@ namespace Clinica_Medica_Polanco
 
         private void txt_Consulta_Examen_Buscar_KeyUp(object sender, KeyEventArgs e)
         {
-            stc_InfoPaciente.Visibility = Visibility.Visible;
-            scv_BuscarPaciente.Visibility = Visibility.Visible;
-            brd_BuscarPaciente.Visibility = Visibility.Visible;
+            stc_Examen.Visibility = Visibility.Visible;
+            scv_Examen.Visibility = Visibility.Visible;
+            brd_Examen.Visibility = Visibility.Visible;
             //scv_BuscarPaciente.Background = new 
             bool found = false;
-            var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
+            var border = (stc_Examen.Parent as ScrollViewer).Parent as Border;
             var data = Autocompletados.autocompletarExamenMedico.GetData(); // trae la lista de las coincidencias
 
             string query = (sender as TextBox).Text;
@@ -102,7 +102,7 @@ namespace Clinica_Medica_Polanco
             if (query.Length == 0)
             {
                 // Clear   
-                stc_InfoPaciente.Children.Clear();
+                stc_Examen.Children.Clear();
                 border.Visibility = System.Windows.Visibility.Collapsed;
             }
             else
@@ -111,9 +111,9 @@ namespace Clinica_Medica_Polanco
             }
 
             // Clear the list   
-            stc_InfoPaciente.Children.Clear();
+            stc_Examen.Children.Clear();
 
-            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Descripcion" });
+            stc_Examen.Children.Add(new TextBlock() { Text = "Codigo      Descripcion" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -128,7 +128,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese código de examen médico." });
+                stc_Examen.Children.Add(new TextBlock() { Text = "No existe ese código de examen médico." });
             }
         }
 
@@ -149,9 +149,9 @@ namespace Clinica_Medica_Polanco
             block.MouseLeftButtonUp += (sender, e) =>
             {
                 txt_Consulta_Examen_Buscar.Text = (sender as TextBlock).Text.Split(" - ")[0];
-                stc_InfoPaciente.Visibility = Visibility.Hidden;
-                scv_BuscarPaciente.Visibility = Visibility.Hidden;
-                brd_BuscarPaciente.Visibility = Visibility.Hidden;
+                stc_Examen.Visibility = Visibility.Hidden;
+                scv_Examen.Visibility = Visibility.Hidden;
+                brd_Examen.Visibility = Visibility.Hidden;
             };
 
             block.MouseEnter += (sender, e) =>
@@ -167,7 +167,7 @@ namespace Clinica_Medica_Polanco
             };
 
             // Add to the panel   
-            stc_InfoPaciente.Children.Add(block);
+            stc_Examen.Children.Add(block);
         }
 
         private void txt_Consulta_Examen_Buscar_TextChanged(object sender, TextChangedEventArgs e)

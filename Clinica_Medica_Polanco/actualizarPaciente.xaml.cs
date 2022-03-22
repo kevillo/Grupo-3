@@ -130,12 +130,12 @@ namespace Clinica_Medica_Polanco
 
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
         {
-            stc_InfoPaciente.Visibility = Visibility.Visible;
-            scv_BuscarPaciente.Visibility = Visibility.Visible;
-            brd_BuscarPaciente.Visibility = Visibility.Visible;
+            stc_Paciente.Visibility = Visibility.Visible;
+            scv_Paciente.Visibility = Visibility.Visible;
+            brd_Paciente.Visibility = Visibility.Visible;
             //scv_BuscarPaciente.Background = new 
             bool found = false;
-            var border = (stc_InfoPaciente.Parent as ScrollViewer).Parent as Border;
+            var border = (stc_Paciente.Parent as ScrollViewer).Parent as Border;
             var data = Autocompletados.autocompletarPacinte.GetData();
             
             string query = (sender as TextBox).Text;
@@ -143,7 +143,7 @@ namespace Clinica_Medica_Polanco
             if (query.Length == 0)
             {
                 // Clear   
-                stc_InfoPaciente.Children.Clear();
+                stc_Paciente.Children.Clear();
                 border.Visibility = System.Windows.Visibility.Collapsed;
             }
             else
@@ -152,9 +152,9 @@ namespace Clinica_Medica_Polanco
             }
 
             // Clear the list   
-            stc_InfoPaciente.Children.Clear();
+            stc_Paciente.Children.Clear();
 
-            stc_InfoPaciente.Children.Add(new TextBlock() { Text = " Identidad                 Nombre      Apellido" });
+            stc_Paciente.Children.Add(new TextBlock() { Text = " Identidad                 Nombre      Apellido" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -168,7 +168,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_Paciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
             }
         }
 
@@ -189,9 +189,9 @@ namespace Clinica_Medica_Polanco
             block.MouseLeftButtonUp += (sender, e) =>
             {
                 txt_PacienteId.Text = (sender as TextBlock).Text.Split(" - ")[0];
-                stc_InfoPaciente.Visibility = Visibility.Hidden;
-                scv_BuscarPaciente.Visibility = Visibility.Hidden;
-                brd_BuscarPaciente.Visibility = Visibility.Hidden;
+                stc_Paciente.Visibility = Visibility.Hidden;
+                scv_Paciente.Visibility = Visibility.Hidden;
+                brd_Paciente.Visibility = Visibility.Hidden;
             };
 
             block.MouseEnter += (sender, e) =>
@@ -207,7 +207,7 @@ namespace Clinica_Medica_Polanco
             };
 
             // Add to the panel   
-            stc_InfoPaciente.Children.Add(block);
+            stc_Paciente.Children.Add(block);
         }
 
         public Pacient pacienteSeleccionado { get; set; }
