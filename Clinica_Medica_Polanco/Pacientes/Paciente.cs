@@ -57,7 +57,8 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _nombre;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en  nombre");
                 }
@@ -69,7 +70,8 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _apellido;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
 
                     throw new FormatException("No se puede ingresar campos vacíos en apellido");
@@ -82,7 +84,8 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _identidad;
             set
             {
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _))
+                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length!=13)
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en identidad");
                 }
@@ -94,7 +97,8 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _telefono;
             set
             {
-                if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _) || validarTelefono(value) == false)
+                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
+                if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _) || validarTelefono(value) == false || value.Length!=8)
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en telefono");
                 }
@@ -106,7 +110,9 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _fechaNacimiento;
             set
             {
-                if (value.ToShortDateString() == DateTime.Now.ToShortDateString())
+                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es mayor a la de hoy
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value > DateTime.Now)
                 {
                     throw new FormatException();
                 }
@@ -120,6 +126,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _correo;
             set
             {
+                // valida si el email es verdadero ( aqui se pone falso por que asi entrara en el catch de ser falso)
                 if (validarEmail(value) == false)
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en correo");
@@ -132,7 +139,8 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _altura;
             set
             {
-                if (value <= 0)
+                //valida si la altura es positiva y si es un deciamal
+                if (value <= 0 || !decimal.TryParse(value.ToString(),out decimal _))
                 {
                     throw new FormatException("No se pueden ingresar campos vacíos en altura");
                 }
@@ -166,10 +174,12 @@ namespace Clinica_Medica_Polanco.Pacientes
         }
         public bool Estado { get => _estado; set => _estado = value; }
 
+
+        // valida si el correo tiene un @, si hay algo antes y despues del @ y si tiene un .com o algo asi
         public static bool validarEmail(string comprobarEmail)
         {
             string emailFormato;
-            emailFormato = "\\w+([-+.']\\w+)*@\\w+([-+.']\\w+)*\\w+([-+.']\\w+)*";
+            emailFormato = "\\w+([-+.']\\w+)*@\\w+([-+.']\\w+)*\\.\\w+([-+.']\\w+)*";
             if (Regex.IsMatch(comprobarEmail, emailFormato))
             {
                 if (Regex.Replace(comprobarEmail, emailFormato, String.Empty).Length == 0)
@@ -187,6 +197,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             }
         }
 
+        //valida si el telefono empieza en 9 8 3 2 
         public static bool validarTelefono(string telefono)
         {
             if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))

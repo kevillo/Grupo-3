@@ -93,11 +93,39 @@ namespace Clinica_Medica_Polanco
                 paciente1.Telefono = txt_Telefono_Paciente.Text;
                 paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Fecha_Nacimiento_Paciente.Text);
                 paciente1.Correo = txt_Correo_Paciente.Text;
-                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : int.Parse(txt_Altura_Paciente.Text);
+                // si esta vacio, devuelve 0, si no esta vacio, valida que sea un decimal convirtiendolo, si falla la conversion, devuelve un 0, sino lo que tenga el txt
+                paciente1.Altura = string.IsNullOrEmpty(txt_Altura_Paciente.Text) ? 0 : decimal.TryParse(txt_Altura_Paciente.Text, out decimal _) ? decimal.Parse(txt_Altura_Paciente.Text): 0;
                 paciente1.TipoSangre = cmb_Tipo_Sangre_Paciente.SelectedItem.ToString();
                 paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(Rtb_direccion_Paciente)) ? null : rtbAString(Rtb_direccion_Paciente);
-                PacientesDAL.AgregarPaciente(paciente1);
-                this.Close();
+                
+                //validacion de un correo o identidad duplicada en la base de datos
+                int validarIdentidad = PacientesDAL.ValidarIdentidadPaciente(paciente1.Identidad);
+                int validarCorreo = PacientesDAL.ValidarCorreoPaciente(paciente1.Correo);
+                
+
+                // si el correo esta duplicado, manda error
+                if (validarCorreo < 1)
+                {
+                    // si la identidad esta duplicada, manda error
+                    if (validarIdentidad < 1)
+                    {
+                        PacientesDAL.AgregarPaciente(paciente1);
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Identidad repetida: por favor ingrese una identidad diferente");
+                        txt_Identidad_Paciente.Clear();
+                        txt_Identidad_Paciente.Focus();
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor inrgese otro correo");
+                    txt_Correo_Paciente.Clear();
+                    txt_Correo_Paciente.Focus();
+                }
+
             }
 
             catch (FormatException error)
@@ -136,6 +164,7 @@ namespace Clinica_Medica_Polanco
             return textRange.Text;
         }
 
+        //validacion para que solo se pueda ingresar letras a un campo
         private void txt_Nombre_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -147,6 +176,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validacion para que solo se pueda ingresar numeros a un campo
         private void txt_Identidad_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -154,6 +184,18 @@ namespace Clinica_Medica_Polanco
             if (ascci >= 48 && ascci <= 57) e.Handled = false;
 
             else e.Handled = true;            
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Apellido_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }
