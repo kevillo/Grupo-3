@@ -112,10 +112,12 @@ namespace Clinica_Medica_Polanco.Proveedores
             try
             {
                 //Validación de datos
-                Proveedores pProveedores = new Proveedores();               
+                Proveedores pProveedores = new Proveedores();            
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(string.Format("Select Codigo_Proveedor, Codigo_Area_Trabajo,Nombre_Proveedor, Apellido_Proveedor, Direccion_Proveedor, Correro_Proveedor, Telefono_Proveedor,Estado_Proveedor from [dbo].[vProveedoresBuscar] where Codigo_Proveedor = {0}", pDato), ConexionBaseDeDatos.conexion);
+                
                 SqlDataReader reader = comando.ExecuteReader();
+                
                 while (reader.Read())
                 {
                     pProveedores.CodigoProveedor = reader.GetInt32(0);
@@ -140,6 +142,8 @@ namespace Clinica_Medica_Polanco.Proveedores
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+
         public static int traerCodigoProveedor(string identidad)
         {
             try

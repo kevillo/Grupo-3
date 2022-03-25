@@ -33,10 +33,10 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Actualizar_Informacion_Proveedor_Click(object sender, RoutedEventArgs e)
         {
-            int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
             try
             {
                 //Validación de datos
+                int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
                 Proveedores.Proveedores proveedores1 = new();
                 proveedores1.CodigoProveedor = codProveedor;
                 proveedores1.NombreProveedor = txt_Nombre_Proveedor_Actualizar.Text;
@@ -46,22 +46,9 @@ namespace Clinica_Medica_Polanco
                 proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
                 proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
                 proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
+                ProveedoresDAL.ModificarProveedor(proveedores1);
+                reiniciarPantalla();
 
-                //Validación de un correo o identidad duplicada en la base de datos
-                int validarCorreo = ProveedoresDAL.ValidarCorreoProveedor(proveedores1.CorreoProveedor);
-
-                //Si el correo está duplicado, manda error
-                if (validarCorreo < 1)
-                {
-                    ProveedoresDAL.AgregarProveedor(proveedores1);
-                    reiniciarPantalla();
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
-                    txt_Correo_Proveedor_Actualizar.Clear();
-                    txt_Correo_Proveedor_Actualizar.Focus();
-                }
             }
             catch (FormatException error)
             {
@@ -180,10 +167,10 @@ namespace Clinica_Medica_Polanco
         private void btn_Buscar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Actualizar.Text;
-            proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
-
-            if (!string.IsNullOrEmpty(buscar_Proveedor))
+            
+            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _))
             {
+                proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
                 proveedorActual = proveedorSeleccionado;
                 txt_Nombre_Proveedor_Actualizar.Text = proveedorSeleccionado.NombreProveedor;
                 txt_Apellido_Proveedor_Actualizar.Text = proveedorSeleccionado.ApellidoProveedor;
@@ -192,6 +179,12 @@ namespace Clinica_Medica_Polanco
                 setTextToRTB(rtb_Direccion_Proveedor_Actualizar, proveedorSeleccionado.DireccionProveedor);
                 cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = proveedorSeleccionado.CodigoAreaTrabajo-1;
                 chb_Disponibilidad_Proveedor_Actualizar.IsChecked = proveedorSeleccionado.EstadoProveedor;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un id de proveedor valido");
+                txt_Codigo_Proveedor_Actualizar.Clear();
+                txt_Codigo_Proveedor_Actualizar.Focus();
             }
         }
         private void setTextToRTB(RichTextBox rtb, string textoSet)

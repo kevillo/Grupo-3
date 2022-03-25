@@ -29,7 +29,14 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Deshabilitar_proveedor_Click(object sender, RoutedEventArgs e)
         {
-            ProveedoresDAL.EliminarProveedor(int.Parse(txt_Codigo_Proveedor_Buscar.Text));
+            int codEliminar = !string.IsNullOrEmpty(txt_Codigo_Proveedor_Buscar.Text) ? int.Parse(txt_Codigo_Proveedor_Buscar.Text):0;
+            if(codEliminar !=0)
+                ProveedoresDAL.EliminarProveedor(codEliminar);
+            else
+            {
+                MessageBox.Show("Ingrese un codigo de proveedor para eliminar");
+                txt_Codigo_Proveedor_Buscar.Focus();
+            }
             reiniciarPantalla();
         }
 
@@ -121,17 +128,27 @@ namespace Clinica_Medica_Polanco
         private void btn_Buscar_Proveedor_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Buscar.Text;
-            proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
 
-            if (!string.IsNullOrEmpty(buscar_Proveedor))
+            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _))
             {
+
+                proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
                 proveedorActual = proveedorSeleccionado;
                 txt_Nombre_Proveedor_Eliminar.Text = proveedorSeleccionado.NombreProveedor;
                 txt_Apellido_Proveedor_Eliminar.Text = proveedorSeleccionado.ApellidoProveedor;
                 txt_Correo_Proveedor_Eliminar.Text = proveedorSeleccionado.CorreoProveedor;
                 txt_Telefono_Proveedor_Eliminar.Text = proveedorSeleccionado.TelefonoProveedor;
             }
-            else MessageBox.Show("Ingrese un id de proveedor válido");
+            else
+            {
+                MessageBox.Show("Ingrese un id de proveedor válido");
+                txt_Codigo_Proveedor_Buscar.Clear();
+                txt_Codigo_Proveedor_Buscar.Focus();
+            }
+            stc_InfoProveedor.Visibility = Visibility.Hidden;
+            scv_BuscarProveedor.Visibility = Visibility.Hidden;
+            brd_BuscarProveedor.Visibility = Visibility.Hidden;
+
         }
         private void reiniciarPantalla()
         {
@@ -143,14 +160,7 @@ namespace Clinica_Medica_Polanco
         }
 
         //validacion para que solo se pueda ingresar numeros a un campo
-        private void txt_Codigo_Proveedor_Buscar_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-
-            if (ascci >= 48 && ascci <= 57) e.Handled = false;
-
-            else e.Handled = true;
-        }
+        
 
         //validacion para que solo se pueda ingresar letras a un campo
         private void txt_Nombre_Proveedor_Eliminar_PreviewTextInput(object sender, TextCompositionEventArgs e)

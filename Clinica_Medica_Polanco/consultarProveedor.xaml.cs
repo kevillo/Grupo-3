@@ -114,7 +114,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Gestionar_Proveedores_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string provBuscar = txt_Gestionar_Proveedores_Buscar.Text;
-            if (!string.IsNullOrEmpty(provBuscar))
+            if (!string.IsNullOrEmpty(provBuscar) && int.TryParse(provBuscar, out int _))
             {
                 Proveedores.Proveedores provConsultar = ProveedoresDAL.BuscarProveedorPorId(int.Parse(provBuscar));
                 txt_Gestionar_Proveedores_Nombre.Text = provConsultar.NombreProveedor;
@@ -123,11 +123,22 @@ namespace Clinica_Medica_Polanco
                 strinARtb(rtb_Direccion_Proveedor, provConsultar.DireccionProveedor);
                 txt_Gestionar_Proveedores_Nombre.Text = provConsultar.NombreProveedor;
                 txt_Gestionar_Proveedores_Telefono.Text = provConsultar.TelefonoProveedor;
-                cmb_Area_Trabajo.SelectedIndex = provConsultar.CodigoAreaTrabajo-1;
+                cmb_Area_Trabajo.SelectedIndex = provConsultar.CodigoAreaTrabajo - 1;
                 chb_Disponibilidad.IsChecked = provConsultar.EstadoProveedor;
                 dtg_Gestionar_Proveedores_Consulta.ItemsSource = ProveedoresDAL.BuscarProveedor(provBuscar);
             }
-            else MessageBox.Show("Ingrese un ID de proveedor válido.");
+            else
+            {
+                MessageBox.Show("Ingrese un ID de proveedor válido.");
+                txt_Gestionar_Proveedores_Buscar.Clear();
+                txt_Gestionar_Proveedores_Buscar.Focus();
+            }
+
+            stc_InfoProveedor.Visibility = Visibility.Hidden;
+            scv_BuscarProveedor.Visibility = Visibility.Hidden;
+            brd_BuscarProveedor.Visibility = Visibility.Hidden;
+
+
         }
 
         private void strinARtb(RichTextBox rtb, string textoSet)

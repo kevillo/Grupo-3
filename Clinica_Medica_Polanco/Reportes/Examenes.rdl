@@ -6,7 +6,7 @@
     <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=LAPTOP-ABUM25N7;Initial Catalog=Clinica medica polanco</ConnectString>
+        <ConnectString>Data Source=localhost;Initial Catalog=Clinica medica polanco</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>

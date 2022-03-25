@@ -58,7 +58,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                if ( string.IsNullOrEmpty(value) || value.Length < 2 )
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en  nombre");
                 }
@@ -165,7 +165,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _direccion;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value) || (value.Length >25 && value.Length<255))
                 {
                     throw new FormatException("No se puede ingresar campos vacíos en direccion");
                 }

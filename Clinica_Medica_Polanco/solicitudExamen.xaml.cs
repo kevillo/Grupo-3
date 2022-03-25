@@ -57,6 +57,7 @@ namespace Clinica_Medica_Polanco
             tabla.Columns.Add("Fecha factura");
             dtg_Solicitud_Examen_Examenes.ItemsSource = tabla.AsDataView();
             dtg_Solicitud_Examen_Examenes.IsReadOnly = true;
+            btn_Solicitud_Examen_Procesar_Orden.IsEnabled = false;
         }
         private void SolicitudExamen_SourceInitialized(object sender, EventArgs e)
         {
@@ -146,7 +147,7 @@ namespace Clinica_Medica_Polanco
                     nuev.Cantidad = string.IsNullOrEmpty(txt_Cantidad_Examen.Text) ? -1 : int.Parse(txt_Cantidad_Examen.Text);
                     nuev.CodigoPaciente = Ventas.ventasDAL.TraerCodigoPaciente(txt_Solicitud_Examen_ID_Cliente.Text);
                     nuev.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex + 1;
-                    nuev.CodigoExamenMedico = string.IsNullOrEmpty(txt_Solicitud_Examen_Buscar.Text) ? -1 : int.Parse(txt_Solicitud_Examen_Buscar.Text);
+                    nuev.CodigoExamenMedico = string.IsNullOrWhiteSpace(txt_Solicitud_Examen_Buscar.Text) ? -1 : int.Parse(txt_Solicitud_Examen_Buscar.Text);
                     nuev.CodigoFacturador = codEmpleado;
                     nuev.CodigoMicrobiologo = cmb_Solicitud_Examen_Microbiologo.SelectedIndex + 1;
                     nuev.EstadoExamenMedico = 1;
@@ -181,11 +182,19 @@ namespace Clinica_Medica_Polanco
                                             nuev.Cantidad, nuev.EstadoExamenMedico, nuev.ExamenCombo, nuev.FechaOrden);
                         dtg_Solicitud_Examen_Examenes.DataContext = tabla;
                     }
+
+
+                    if (cont > 0) btn_Solicitud_Examen_Procesar_Orden.IsEnabled = true;
+
+
+                    
+
                 }
                 catch (FormatException error)
                 {
                     //Excepción que nos indicará si hay algún error
                     if (error.StackTrace.Contains("CodigoPaciente")) validarCampos("Paciente", txt_Solicitud_Examen_ID_Cliente, refer: 1);
+                    else if (error.StackTrace.Contains("CodigoExamenMedico")) validarCampos("Examen medico", txt_Solicitud_Examen_Buscar, refer: 1);
                     else if (error.StackTrace.Contains("Cantidad")) validarCampos("Cantidad", txt_Cantidad_Examen, refer: 1);
                     else if (error.StackTrace.Contains("CodigoMicrobiologo")) validarCampos("Microbiólogo", cmb: cmb_Solicitud_Examen_Microbiologo, refer: 2);
                     else if (error.StackTrace.Contains("CodigoEnfermero")) validarCampos("Enfermero", cmb: cmb_Solicitud_Examen_Enfermero, refer: 2);

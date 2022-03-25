@@ -66,11 +66,20 @@ namespace Clinica_Medica_Polanco
         {
             string consultar_paciente = txt_Consultar_Pacientes.Text;
 
-            if (!string.IsNullOrEmpty(consultar_paciente))
+            if (!string.IsNullOrEmpty(consultar_paciente) && Int64.TryParse(consultar_paciente, out long _))
             {
                 dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.ConsultarPaciente(consultar_paciente);
             }
-            else MessageBox.Show("Ingrese un id de paciente válido");  
+            else
+            {
+                MessageBox.Show("Ingrese un id de paciente válido");
+                txt_Consultar_Pacientes.Clear();
+                txt_Consultar_Pacientes.Focus();
+            }
+
+            stc_InfoPaciente.Visibility = Visibility.Hidden;
+            scv_BuscarPaciente.Visibility = Visibility.Hidden;
+            brd_BuscarPaciente.Visibility = Visibility.Hidden;
         }
 
         private void txt_Consultar_Pacientes_KeyUp(object sender, KeyEventArgs e)
@@ -89,7 +98,7 @@ namespace Clinica_Medica_Polanco
             {
                 // Clear   
                 stc_InfoPaciente.Children.Clear();
-                MessageBox.Show("Estoy vacio");
+              
                 border.Visibility = System.Windows.Visibility.Collapsed;
             }
             else

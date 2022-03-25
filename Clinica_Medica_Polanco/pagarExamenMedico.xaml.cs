@@ -70,6 +70,7 @@ namespace Clinica_Medica_Polanco
         {
             Factura nueva = new();
             nueva.ShowDialog();
+            this.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

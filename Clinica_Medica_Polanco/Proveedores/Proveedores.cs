@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Clinica_Medica_Polanco.Proveedores
@@ -44,7 +45,7 @@ namespace Clinica_Medica_Polanco.Proveedores
         {
             get => _nombreProveedor;
             set {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (string.IsNullOrEmpty(value.ToString()) || value.Length <2)
                 {
                     throw new FormatException();
                 }
@@ -56,7 +57,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _apellidoProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (string.IsNullOrEmpty(value.ToString())|| value.Length < 2)
                 {
                     throw new FormatException();
                 }
@@ -68,7 +69,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _direccionProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value)|| (value.Length > 25 && value.Length < 255))
                 {
                     throw new FormatException();
                 }
@@ -80,7 +81,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _correoProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (validarEmail(value) == false)
                 {
                     throw new FormatException();
                 }
@@ -92,7 +93,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _telefonoProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (string.IsNullOrEmpty(value.ToString()) || validarTelefono(value) == false || value.Length !=8)
                 {
                     throw new FormatException();
                 }
@@ -100,5 +101,42 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
         public bool EstadoProveedor { get => _estadoProveedor; set => _estadoProveedor = value; }
+
+
+        public static bool validarTelefono(string telefono)
+        {
+            if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))
+            {
+                return true;
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("El número de telefóno debe comenzar por 2, 3, 8 o 9");
+                return false;
+            }
+        }
+
+
+        public static bool validarEmail(string comprobarEmail)
+        {
+            string emailFormato;
+            emailFormato = "\\w+([-+.']\\w+)*@\\w+([-+.']\\w+)*\\.\\w+([-+.']\\w+)*";
+            if (Regex.IsMatch(comprobarEmail, emailFormato))
+            {
+                if (Regex.Replace(comprobarEmail, emailFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

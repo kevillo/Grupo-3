@@ -83,33 +83,12 @@ namespace Clinica_Medica_Polanco
                 paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
                 paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
                 paciente1.Correo = txt_Actualizar_Paciente_CorreoE.Text;
-                paciente1.Altura = string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : int.Parse(txt_Actualizar_Paciente_Altura.Text);
+                paciente1.Altura = string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.TryParse(txt_Actualizar_Paciente_Altura.Text, out decimal _) ? decimal.Parse(txt_Actualizar_Paciente_Altura.Text) : 0;
                 paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
                 paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(rtb_Actualizar_Paciente_Direccion)) ? null : rtbAString(rtb_Actualizar_Paciente_Direccion);
                 paciente1.Estado = (bool)chk_Actualizar_Paciente_EstadoPaciente.IsChecked;
-
-                //validacion de un correo o identidad duplicada en la base de datos
-                int validarIdentidad = PacientesDAL.ValidarIdentidadPaciente(paciente1.Identidad);
-                int validarCorreo = PacientesDAL.ValidarCorreoPaciente(paciente1.Correo);
-
-
-                // si el correo esta duplicado, manda error
-                if (validarCorreo < 1)
-                {
-                    // si la identidad esta duplicada, manda error
-                    if (validarIdentidad < 1)
-                    {
-                        PacientesDAL.ModificarPaciente(paciente1);
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
-                    txt_Actualizar_Paciente_CorreoE.Clear();
-                    txt_Actualizar_Paciente_CorreoE.Focus();
-                }
-
+                PacientesDAL.ModificarPaciente(paciente1);
+                this.Close();
             }
 
             catch (FormatException error)
@@ -237,7 +216,7 @@ namespace Clinica_Medica_Polanco
             string buscar_Paciente = txt_PacienteId.Text;
             pacienteSeleccionado = PacientesDAL.BuscarPaciente(buscar_Paciente);
 
-            if (!string.IsNullOrEmpty(buscar_Paciente))
+            if (!string.IsNullOrEmpty(buscar_Paciente) && Int64.TryParse(buscar_Paciente,out long _))
             {
                 // aqui pone el codigo  que llama a la funcion de buscar
                 pacienteActual = pacienteSeleccionado;
@@ -252,7 +231,17 @@ namespace Clinica_Medica_Polanco
                 prueba(rtb_Actualizar_Paciente_Direccion,pacienteSeleccionado.Direccion);
                 chk_Actualizar_Paciente_EstadoPaciente.IsChecked = pacienteSeleccionado.Estado;
             }
-            else MessageBox.Show("Ingrese un id de paciente válido");
+            else
+            {
+                MessageBox.Show("Ingrese un id de paciente válido");
+                stc_Paciente.Visibility = Visibility.Hidden;
+                scv_Paciente.Visibility = Visibility.Hidden;
+                brd_Paciente.Visibility = Visibility.Hidden;
+                txt_PacienteId.Clear();
+                txt_PacienteId.Focus();
+
+            }
+                
         }
         private void prueba(RichTextBox rtb,string textoSet)
         {
