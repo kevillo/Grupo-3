@@ -6,7 +6,7 @@
     <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=localhost;Initial Catalog=Clinica medica polanco</ConnectString>
+        <ConnectString>Data Source=LAPTOP-ABUM25N7;Initial Catalog=Clinica medica polanco</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
@@ -713,10 +713,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>1.13667in</Top>
-            <Left>1.60667in</Left>
+            <Top>2.02334in</Top>
+            <Left>1.60668in</Left>
             <Height>0.5in</Height>
-            <Width>7.59375in</Width>
+            <Width>7.59374in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -732,7 +732,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Fecha ingreso</Value>
+                        <Value>Fecha de ingreso</Value>
                         <Style>
                           <FontFamily>Tahoma</FontFamily>
                           <FontSize>11pt</FontSize>
@@ -812,7 +812,8 @@
               </Image>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Left>2.39834in</Left>
+            <Top>0.88667in</Top>
+            <Left>2.39835in</Left>
             <Height>1.01042in</Height>
             <Width>5.96875in</Width>
             <ZIndex>1</ZIndex>
@@ -822,8 +823,59 @@
               </Border>
             </Style>
           </Rectangle>
+          <Rectangle Name="Rectangle2">
+            <ReportItems>
+              <Textbox Name="Textbox4">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>REPORTE DE INVENTARIO</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>18pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox4</rd:DefaultName>
+                <Top>0.10292in</Top>
+                <Left>1.07958in</Left>
+                <Height>0.4375in</Height>
+                <Width>5.51294in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Left>1.60667in</Left>
+            <Height>0.67583in</Height>
+            <Width>7.59375in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>DarkBlue</BackgroundColor>
+            </Style>
+          </Rectangle>
         </ReportItems>
-        <Height>2.51042in</Height>
+        <Height>3.80209in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -833,7 +885,7 @@
       <Width>9.20042in</Width>
       <Page>
         <PageFooter>
-          <Height>0.45in</Height>
+          <Height>0.31458in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -854,10 +906,39 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>0.2in</Top>
+              <Top>0.02778in</Top>
               <Left>7.15875in</Left>
               <Height>0.25in</Height>
               <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox22">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Página "&amp;Globals!PageNumber</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox21</rd:DefaultName>
+              <Left>1.60667in</Left>
+              <Height>0.29167in</Height>
+              <Width>1.16667in</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

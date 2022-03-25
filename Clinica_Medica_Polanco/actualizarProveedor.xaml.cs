@@ -46,10 +46,23 @@ namespace Clinica_Medica_Polanco
                 proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
                 proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
                 proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
-                ProveedoresDAL.ModificarProveedor(proveedores1);
-                reiniciarPantalla();
-            }
 
+                //Validación de un correo o identidad duplicada en la base de datos
+                int validarCorreo = ProveedoresDAL.ValidarCorreoProveedor(proveedores1.CorreoProveedor);
+
+                //Si el correo está duplicado, manda error
+                if (validarCorreo < 1)
+                {
+                    ProveedoresDAL.AgregarProveedor(proveedores1);
+                    reiniciarPantalla();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
+                    txt_Correo_Proveedor_Actualizar.Clear();
+                    txt_Correo_Proveedor_Actualizar.Focus();
+                }
+            }
             catch (FormatException error)
             {
                 //Excepción que nos indicará si ocurre un error
@@ -195,6 +208,30 @@ namespace Clinica_Medica_Polanco
             txt_Correo_Proveedor_Actualizar.Clear();
             rtb_Direccion_Proveedor_Actualizar.Document.Blocks.Clear();
             cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = 0;
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Nombre_Proveedor_Actualizar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Apellido_Proveedor_Actualizar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }

@@ -33,6 +33,7 @@ namespace Clinica_Medica_Polanco
             empleadosDAL.CargarCargo(cmb_Actualizar_Empleado_Cargo);
             empleadosDAL.CargarSucursal(cmb_Actualizar_Empleado_Sucursal);
             dtp_Nacimiento_Actualizar_Empleado.Text = DateTime.Now.ToShortDateString();
+
             //Estableciendo valores al cmb tipo sangre
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O-");
             cmb_Actualizar_Empleado_Tipo_Sangre.Items.Add("O+");
@@ -99,8 +100,34 @@ namespace Clinica_Medica_Polanco
                 empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Actulizar_Empleado.Text);
                 empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Actualizar_Empleado)) ? null : rtbAString(rtb_Direccion_Actualizar_Empleado);
                 empleados1.EstadoEmpleado = (bool)chb_Estado_Empleado.IsChecked;
-                empleadosDAL.ModificarEmpleado(empleados1);
-                this.Close();
+
+                //validacion de un correo o identidad duplicada en la base de datos
+                int validarIdentidad = empleadosDAL.ValidarIdentidadEmpleado(empleados1.IdentidadEmpleado);
+                int validarCorreo = empleadosDAL.validarCorreoEmpleado(empleados1.CorreoEmpleado);
+
+
+                // si el correo esta duplicado, manda error
+                if (validarCorreo < 1)
+                {
+                    // si la identidad esta duplicada, manda error
+                    if (validarIdentidad < 1)
+                    {
+                        empleadosDAL.ModificarEmpleado(empleados1);
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Identidad repetida: por favor ingrese una identidad diferente");
+                        txt_Identidad_Actualizar_Empleado.Clear();
+                        txt_Identidad_Actualizar_Empleado.Focus();
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
+                    txt_Correo_Actualizar_Empleado.Clear();
+                    txt_Correo_Actualizar_Empleado.Focus();
+                }
             }
 
             catch (FormatException error)
@@ -254,6 +281,40 @@ namespace Clinica_Medica_Polanco
 
             // Add to the panel   
             stc_Empleados.Children.Add(block);
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Nombre_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar numeros a un campo
+        private void txt_Identidad_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Apellido_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }

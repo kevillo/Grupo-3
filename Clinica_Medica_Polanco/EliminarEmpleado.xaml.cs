@@ -78,7 +78,7 @@ namespace Clinica_Medica_Polanco
         }
 
         private Empleados.Empleados empleadoSeleccionado { get; set; }
-        
+
         private void btn_Buscar_Eliminar_Empleado_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Empleado = txt_ID_Eliminar_Empleado.Text;
@@ -87,7 +87,7 @@ namespace Clinica_Medica_Polanco
             if (!string.IsNullOrEmpty(buscar_Empleado))
             {
                 txt_Codigo_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.CodigoEmpleado);
-                txt_Nombre_Eliminar_Empleado.Text = (empleadoSeleccionado.NombreEmpleado + " "+ empleadoSeleccionado.ApellidoEmpleado);
+                txt_Nombre_Eliminar_Empleado.Text = (empleadoSeleccionado.NombreEmpleado + " " + empleadoSeleccionado.ApellidoEmpleado);
                 txt_Identidad_Eliminar_Empleado.Text = empleadoSeleccionado.IdentidadEmpleado;
                 txt_Telefono_Eliminar_Empleado.Text = empleadoSeleccionado.TelefonoEmpleado;
                 dtp_Nacimiento_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaNacimientoEmpleado);
@@ -96,8 +96,8 @@ namespace Clinica_Medica_Polanco
                 cmb_Eliminar_Empleado_Tip_Sangre.SelectedItem = empleadoSeleccionado.TipoSangreEmpleado;
                 prueba(rtx_Direccion_Eliminar_Empleado, empleadoSeleccionado.DireccionEmpleado);
                 txt_Sueldo_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.SueldoBase);
-                cmb_Eliminar_Empleado_Cargo.SelectedIndex= empleadoSeleccionado.CodigoPuesto;
-                cmb_Eliminar_Empleado_Jornada.SelectedIndex= empleadoSeleccionado.CodigoJornada;
+                cmb_Eliminar_Empleado_Cargo.SelectedIndex = empleadoSeleccionado.CodigoPuesto;
+                cmb_Eliminar_Empleado_Jornada.SelectedIndex = empleadoSeleccionado.CodigoJornada;
                 dtp_Pago_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaPago);
                 dtp_Ingreso_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
             }
@@ -189,6 +189,48 @@ namespace Clinica_Medica_Polanco
 
             // Add to the panel   
             stc_InfoEmpleado.Children.Add(block);
+        }
+
+        //Validación para que solo se pueda ingresar numeros a un campo
+        private void txt_Identidad_Eliminar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //Validación para que solo se pueda ingresar numeros a un campo
+        private void txt_Telefono_Eliminar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //Validación para que solo se pueda ingresar letras a un campo
+        private void txt_Nombre_Eliminar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar numeros a un campo
+        private void txt_ID_Eliminar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }

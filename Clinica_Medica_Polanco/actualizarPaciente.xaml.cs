@@ -88,8 +88,27 @@ namespace Clinica_Medica_Polanco
                 paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(rtb_Actualizar_Paciente_Direccion)) ? null : rtbAString(rtb_Actualizar_Paciente_Direccion);
                 paciente1.Estado = (bool)chk_Actualizar_Paciente_EstadoPaciente.IsChecked;
 
-                PacientesDAL.ModificarPaciente(paciente1);
-                this.Close();
+                //validacion de un correo o identidad duplicada en la base de datos
+                int validarIdentidad = PacientesDAL.ValidarIdentidadPaciente(paciente1.Identidad);
+                int validarCorreo = PacientesDAL.ValidarCorreoPaciente(paciente1.Correo);
+
+
+                // si el correo esta duplicado, manda error
+                if (validarCorreo < 1)
+                {
+                    // si la identidad esta duplicada, manda error
+                    if (validarIdentidad < 1)
+                    {
+                        PacientesDAL.ModificarPaciente(paciente1);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
+                    txt_Actualizar_Paciente_CorreoE.Clear();
+                    txt_Actualizar_Paciente_CorreoE.Focus();
+                }
 
             }
 
@@ -239,6 +258,30 @@ namespace Clinica_Medica_Polanco
         {
             TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
             textRange.Text = textoSet;
-        }    
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Actualizar_Paciente_Nombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Actualizar_Paciente_Apellido_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
     }
 }

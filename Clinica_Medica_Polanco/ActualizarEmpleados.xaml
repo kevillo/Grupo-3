@@ -169,7 +169,7 @@
     </Window.Resources>
     <Grid>
 
-        <TextBox TabIndex="2" x:Name="txt_Apellido_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="466,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="2" x:Name="txt_Apellido_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="466,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" PreviewTextInput="txt_Apellido_Actualizar_Empleado_PreviewTextInput"/>
         <Label Content="Apellido" HorizontalAlignment="Left" Margin="540,188,0,0" VerticalAlignment="Top" Height="34" Width="72" FontFamily="Tahoma" FontSize="15"/>
 
         <Rectangle HorizontalAlignment="Center" Height="98" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
@@ -177,12 +177,12 @@
         <Label Content="Identificación del empleado o código" HorizontalAlignment="Left" Margin="291,107,0,0" VerticalAlignment="Top" Height="32" Width="262" FontSize="15" FontFamily="Tahoma"/>
         <TextBox TabIndex="0" x:Name="txt_Codigo_Actualizar_Empleado" HorizontalAlignment="Left" Margin="293,139,0,0" Text="" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="415" Height="39" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" KeyUp="txt_Codigo_Actualizar_Empleado_KeyUp"/>
         <Button Style="{DynamicResource btn_Style_Actualiza_Empleado}"  FontSize="17" FontFamily="Tahoma" Cursor="Hand" Foreground="White" x:Name="btn_Buscar_Actualizar_Empleado" Content="Buscar" HorizontalAlignment="Left" Margin="764,139,0,0" VerticalAlignment="Top" Height="39" Width="104" Click="btn_Buscar_Actualizar_Empleado_Click"/>
-        <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="295,190,0,0" VerticalAlignment="Top" Height="34" Width="137" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox TabIndex="1" x:Name="txt_Nombre_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="323,190,0,0" VerticalAlignment="Top" Height="34" Width="69" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="1" x:Name="txt_Nombre_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" PreviewTextInput="txt_Nombre_Actualizar_Empleado_PreviewTextInput"/>
         <Label Content="Identidad" HorizontalAlignment="Left" Margin="738,192,0,0" VerticalAlignment="Top" Height="27" Width="83" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox TabIndex="3" x:Name="txt_Identidad_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="671,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="3" x:Name="txt_Identidad_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="671,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" IsEnabled="False" PreviewTextInput="txt_Identidad_Actualizar_Empleado_PreviewTextInput"/>
         <Label Content="Correo electrónico" HorizontalAlignment="Left" Margin="496,310,0,0" VerticalAlignment="Top" Height="31" Width="142" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox TabIndex="8" x:Name="txt_Correo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="487,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBox TabIndex="8" x:Name="txt_Correo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="487,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="22" TextAlignment="Center" FontFamily="Tahoma" IsEnabled="False"/>
         <Label Content="Teléfono" HorizontalAlignment="Left" Margin="538,248,0,0" VerticalAlignment="Top" Height="27" Width="76" FontFamily="Tahoma" FontSize="15"/>
         <TextBox TabIndex="5" x:Name="txt_Telefono_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="488,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="298,251,0,0" VerticalAlignment="Top" Height="31" Width="131" FontFamily="Tahoma" FontSize="15"/>

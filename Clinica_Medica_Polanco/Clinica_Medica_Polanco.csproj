@@ -33,6 +33,7 @@
     <None Remove="Reportes\Examenes.rdl" />
     <None Remove="Reportes\Inventario.rdl" />
     <None Remove="Reportes\Pacientes.rdl" />
+    <None Remove="Reportes\ReporteFactura.rdl" />
     <None Remove="Reportes\Ventas.rdl" />
     <None Remove="Salir.png" />
     <None Remove="Salir2.png" />
@@ -53,6 +54,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Reportes\Pacientes.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\ReporteFactura.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Reportes\Ventas.rdl">

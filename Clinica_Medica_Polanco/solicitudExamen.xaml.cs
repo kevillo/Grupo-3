@@ -371,5 +371,25 @@ namespace Clinica_Medica_Polanco
             // Add to the panel   
             stc_InfoCliente.Children.Add(block);
         }
+
+        //validacion para que solo se pueda ingresar numeros a un campo
+        private void txt_Solicitud_Examen_ID_Cliente_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar numeros a un campo
+        private void txt_Cantidad_Examen_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
     }
 }

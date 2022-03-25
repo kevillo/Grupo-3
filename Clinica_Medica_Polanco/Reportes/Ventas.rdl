@@ -6,7 +6,7 @@
     <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=localhost;Initial Catalog=Clinica medica polanco</ConnectString>
+        <ConnectString>Data Source=LAPTOP-ABUM25N7;Initial Catalog=Clinica medica polanco</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
@@ -697,7 +697,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>1.25in</Top>
+            <Top>2.375in</Top>
             <Left>1.90687in</Left>
             <Height>0.5in</Height>
             <Width>7.875in</Width>
@@ -731,7 +731,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox17</rd:DefaultName>
                 <Top>0.13542in</Top>
-                <Left>0.80146in</Left>
+                <Left>1in</Left>
                 <Height>0.27083in</Height>
                 <Width>5.7825in</Width>
                 <Style>
@@ -751,7 +751,7 @@
                 <Value>encimera</Value>
                 <Sizing>FitProportional</Sizing>
                 <Top>0.27431in</Top>
-                <Left>6.84375in</Left>
+                <Left>7.04229in</Left>
                 <Height>0.39583in</Height>
                 <Width>0.36458in</Width>
                 <ZIndex>1</ZIndex>
@@ -781,7 +781,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Cod_Factura_Venta1</rd:DefaultName>
                 <Top>0.42014in</Top>
-                <Left>1.56187in</Left>
+                <Left>1.76041in</Left>
                 <Height>0.25in</Height>
                 <Width>0.35542in</Width>
                 <ZIndex>2</ZIndex>
@@ -811,7 +811,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Fecha_Factura2</rd:DefaultName>
                 <Top>0.42014in</Top>
-                <Left>4.28062in</Left>
+                <Left>4.47916in</Left>
                 <Height>0.25in</Height>
                 <Width>2.01042in</Width>
                 <ZIndex>3</ZIndex>
@@ -827,9 +827,10 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Left>2.10541in</Left>
+            <Top>1.125in</Top>
+            <Left>1.90687in</Left>
             <Height>0.83333in</Height>
-            <Width>7.33333in</Width>
+            <Width>7.875in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -840,8 +841,59 @@
               </BottomBorder>
             </Style>
           </Rectangle>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox2">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>REPORTE DE VENTAS</Value>
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>18pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox2</rd:DefaultName>
+                <Top>0.19667in</Top>
+                <Left>2.25in</Left>
+                <Height>0.45833in</Height>
+                <Width>3.48771in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Left>1.90687in</Left>
+            <Height>0.82167in</Height>
+            <Width>7.875in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>DarkBlue</BackgroundColor>
+            </Style>
+          </Rectangle>
         </ReportItems>
-        <Height>2.91667in</Height>
+        <Height>3.34375in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -851,7 +903,7 @@
       <Width>9.78187in</Width>
       <Page>
         <PageFooter>
-          <Height>0.45in</Height>
+          <Height>0.33542in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -872,10 +924,40 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
-              <Top>0.2in</Top>
+              <Top>0.02778in</Top>
               <Left>7.78187in</Left>
               <Height>0.25in</Height>
               <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox22">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Página "&amp;Globals!PageNumber</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox21</rd:DefaultName>
+              <Top>0.02778in</Top>
+              <Left>1.90687in</Left>
+              <Height>0.29167in</Height>
+              <Width>1.16667in</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

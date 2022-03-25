@@ -121,7 +121,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Correo repetido: Por favor inrgese otro correo");
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
                     txt_Correo_Paciente.Clear();
                     txt_Correo_Paciente.Focus();
                 }

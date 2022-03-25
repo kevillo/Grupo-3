@@ -293,8 +293,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
-            }
-            
+            }  
         }
     }
 }

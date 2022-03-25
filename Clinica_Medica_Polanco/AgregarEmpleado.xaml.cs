@@ -5,6 +5,7 @@ using System.Windows.Documents;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Empleados;
 using System.Runtime.InteropServices;
+using System.Windows.Input;
 
 namespace Clinica_Medica_Polanco
 {
@@ -64,8 +65,33 @@ namespace Clinica_Medica_Polanco
                 empleados1.CodigoJornada = cmb_Jornada_Laboral.SelectedIndex+1;
                 empleados1.CodigoPuesto = cmb_Cargo.SelectedIndex+1;
                 empleados1.CodigoSucursal = cmb_Sucursal.SelectedIndex+1;
-                empleadosDAL.AgregarEmpleado(empleados1);
-                this.Close();
+
+                //Validación de un correo o identidad duplicada en la base de datos
+                int validarIdentidad = empleadosDAL.ValidarIdentidadEmpleado(empleados1.IdentidadEmpleado);
+                int validarCorreo = empleadosDAL.validarCorreoEmpleado(empleados1.CorreoEmpleado);
+
+                //Si el correo está duplicado, manda error
+                if (validarCorreo < 1)
+                {
+                    //Si la identidad está duplicada, manda error
+                    if (validarIdentidad < 1)
+                    {
+                        empleadosDAL.AgregarEmpleado(empleados1);
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Identidad repetida: por favor ingrese una identidad diferente");
+                        txt_Identidad.Clear();
+                        txt_Identidad.Focus();
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
+                    txt_Correo.Clear();
+                    txt_Correo.Focus();
+                }
             }
 
             catch (FormatException error)
@@ -111,12 +137,9 @@ namespace Clinica_Medica_Polanco
             return textRange.Text;
         }
 
-
-
-
-/// <summary>
-/// Funcion para evitar el movimiento del formulario
-/// </summary>
+        /// <summary>
+        /// Funcion para evitar el movimiento del formulario
+        /// </summary>
         private void AgregarEmpleado_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -141,6 +164,39 @@ namespace Clinica_Medica_Polanco
                     break;
             }
             return IntPtr.Zero;
+        }
+        //Validación para que solo se pueda ingresar letras a un campo
+        private void txt_Nombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar numeros a un campo
+        private void txt_Identidad_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //Validación para que solo se pueda ingresar letras a un campo
+        private void txt_Apellido_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }

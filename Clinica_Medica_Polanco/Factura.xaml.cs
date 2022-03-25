@@ -31,7 +31,7 @@ namespace Clinica_Medica_Polanco
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
             souce.AddHook(WndProc);
 
-            this.Factura1.ReportPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Reportes\Pacientes.rdl");
+            this.Factura1.ReportPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Reportes\ReporteFactura.rdl");
             this.Factura1.RefreshReport();
         }
         const int WM_SYSCOMMAND = 0x0112;

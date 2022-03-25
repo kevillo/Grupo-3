@@ -5,6 +5,7 @@ using System.Windows.Documents;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Proveedores;
 using System.Runtime.InteropServices;
+using System.Windows.Input;
 
 namespace Clinica_Medica_Polanco
 {
@@ -33,9 +34,23 @@ namespace Clinica_Medica_Polanco
                 proveedores1.CorreoProveedor = txt_Correo_Proveedor_Agregar.Text;
                 proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor)) ? null : rtbAString(rtb_Direccion_Proveedor);
                 proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex + 1;
-                ProveedoresDAL.AgregarProveedor(proveedores1);
-                reiniciarPantalla();
-            }
+
+                //Validación de un correo o identidad duplicada en la base de datos
+                int validarCorreo = ProveedoresDAL.ValidarCorreoProveedor(proveedores1.CorreoProveedor);
+
+                //Si el correo está duplicado, manda error
+                if (validarCorreo < 1)
+                {
+                    ProveedoresDAL.AgregarProveedor(proveedores1);
+                    reiniciarPantalla();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
+                        txt_Correo_Proveedor_Agregar.Clear();
+                        txt_Correo_Proveedor_Agregar.Focus();
+                    }
+                }
 
             catch (FormatException error)
             {
@@ -49,6 +64,7 @@ namespace Clinica_Medica_Polanco
 
             }
         }
+
         //Validando campos como txt, rtb, dt y cmb
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
@@ -78,6 +94,28 @@ namespace Clinica_Medica_Polanco
             txt_Correo_Proveedor_Agregar.Clear();
             rtb_Direccion_Proveedor.Document.Blocks.Clear();
             cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex = 0;
+        }
+        private void txt_Nombre_Proveedor_Agregar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false; 
+
+            else e.Handled = true;
+        }
+
+        //validacion para que solo se pueda ingresar letras a un campo
+        private void txt_Apellido_Proveedor_Agregar_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }

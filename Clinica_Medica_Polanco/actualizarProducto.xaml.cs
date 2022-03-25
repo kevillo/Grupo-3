@@ -188,5 +188,27 @@ namespace Clinica_Medica_Polanco
                 cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex = insumoSeleccionado.CodigoCategoriaInsumo - 1;
             }
         }
+
+        //validación para que solo se pueda ingresar letras a un campo
+        private void txt_Gestionar_Insumos_Nombre_Producto_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
+
+        //validación para que solo se pueda ingresar numeros a un campo
+        private void txt_Gestionar_Insumos_Num_Serie_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
+        }
     }
 }

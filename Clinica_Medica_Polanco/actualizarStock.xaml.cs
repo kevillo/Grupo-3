@@ -68,8 +68,6 @@ namespace Clinica_Medica_Polanco
             int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
             Inventario.inventarioDAL.actualizarStock(cmb_Administrador_Actualizar.SelectedIndex + 1, codSucursal, cmb_Proveedor_Actualizar_Stock.SelectedIndex + 1, codEmpleador);
             Inventario.inventarioDAL.ingresarInventario(int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text), int.Parse(txt_Cantidad_Actualizar_Stock.Text));
-
-
             this.Close();
         }
 
@@ -151,6 +149,16 @@ namespace Clinica_Medica_Polanco
 
             // Add to the panel   
             stc_Insumo.Children.Add(block);
+        }
+
+        //validacion para que solo se pueda ingresar numeros a un campo
+        private void txt_Codigo_Insumo_Actualizar_Stock_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+
+            else e.Handled = true;
         }
     }
 }
