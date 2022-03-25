@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco.Empleados
 {
@@ -77,9 +77,10 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _nombreEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
-                    throw new FormatException();
+                    throw new FormatException("No se puede ingresar campos vacíos en  nombre");
                 }
                 else _nombreEmpleado = value;
             }
@@ -89,9 +90,11 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _apellidoEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
-                    throw new FormatException();
+
+                    throw new FormatException("No se puede ingresar campos vacíos en apellido");
                 }
                 else _apellidoEmpleado = value;
             }
@@ -101,9 +104,10 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _identidadEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value, out long _) )
+                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13)
                 {
-                    throw new FormatException();
+                    throw new FormatException("No se puede ingresar campos vacíos en identidad");
                 }
                 else _identidadEmpleado = value;
             }
@@ -115,9 +119,10 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _telefonoEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8)
                 {
-                    throw new FormatException();
+                    throw new FormatException("No se puede ingresar campos vacíos en telefono");
                 }
                 else _telefonoEmpleado = value;
             }
@@ -128,7 +133,9 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaNacimientoEmpleado;
             set
             {
-                if (value.ToShortDateString()==DateTime.Now.ToShortDateString())
+                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es mayor a la de hoy
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value > DateTime.Now)
                 {
                     throw new FormatException();
                 }
@@ -140,9 +147,10 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _correoEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                // valida si el email es verdadero ( aqui se pone falso por que asi entrara en el catch de ser falso)
+                if (validarEmail(value) == false)
                 {
-                    throw new FormatException();
+                    throw new FormatException("No se puede ingresar campos vacíos en correo");
                 }
                 else _correoEmpleado = value;
             }
@@ -154,9 +162,10 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _alturaEmpleado;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || value <= 0)
+                //valida si la altura es positiva y si es un deciamal
+                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _))
                 {
-                    throw new FormatException();
+                    throw new FormatException("No se pueden ingresar campos vacíos en altura");
                 }
                 else _alturaEmpleado = value;
             }
@@ -179,7 +188,7 @@ namespace Clinica_Medica_Polanco.Empleados
           get => _direccionEmpleado;
           set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value) || (value.Length > 25 && value.Length < 255))
                 {
                     throw new FormatException();
                 }
@@ -204,7 +213,12 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaPago; 
             set
             {
-                if (value.ToShortDateString() == "1/1/1999") throw new FormatException();  
+                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value < DateTime.Now)
+                {
+                    throw new FormatException();
+                }
                 else _fechaPago = value;
             }
          }
@@ -213,7 +227,12 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaContratacion;
             set
             {
-                if (value.ToShortDateString() == "1/1/1999") throw new FormatException();
+                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value < DateTime.Now)
+                {
+                    throw new FormatException();
+                }
                 else _fechaContratacion = value;
             }
         }
@@ -222,9 +241,10 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _sueldoBase; 
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || value < 0)
+                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 10 caracteres
+                if (string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value.ToString(), out long _) || value.ToString().Length > 10)
                 {
-                    throw new FormatException();
+                    throw new FormatException("Recuerde que solo debe ser en un rango de 10 dígitos.");
                 }
                 else _sueldoBase = value;
             }
@@ -264,6 +284,41 @@ namespace Clinica_Medica_Polanco.Empleados
                     throw new FormatException();
                 }
                 else _jornadaEmpleado = value;
+            }
+        }
+
+        // valida si el correo tiene un @, si hay algo antes y despues del @ y si tiene un .com o algo asi
+        public static bool validarEmail(string comprobarEmail)
+        {
+            string emailFormato;
+            emailFormato = "\\w+([-+.']\\w+)*@\\w+([-+.']\\w+)*\\.\\w+([-+.']\\w+)*";
+            if (Regex.IsMatch(comprobarEmail, emailFormato))
+            {
+                if (Regex.Replace(comprobarEmail, emailFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //valida si el telefono empieza en 9 8 3 2 
+        public static bool validarTelefono(string telefono)
+        {
+            if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))
+            {
+                return true;
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("El número de telefóno debe comenzar por 2, 3, 8 o 9");
+                return false;
             }
         }
     }

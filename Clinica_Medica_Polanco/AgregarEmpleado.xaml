@@ -124,7 +124,7 @@
         <TextBox x:Name="txt_Identidad" TabIndex="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="289,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Identidad_PreviewTextInput"/>
         <Label Content="Correo electrónico" HorizontalAlignment="Left" Margin="640,218,0,0" VerticalAlignment="Top" Height="31" Width="126" FontFamily="Tahoma"/>
         <TextBox TabIndex="5" x:Name="txt_Correo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="664,173,0,0" VerticalAlignment="Top" Height="26" Width="124" FontFamily="Tahoma"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="664,173,0,0" VerticalAlignment="Top" Height="26" Width="124" FontFamily="Tahoma" PreviewTextInput="txt_Telefono_PreviewTextInput"/>
         <TextBox x:Name="txt_Telefono" TabIndex="3" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
         <Label Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="329,216,0,0" VerticalAlignment="Top" Height="31" Width="126" FontFamily="Tahoma"/>
         <Label Content="Altura" HorizontalAlignment="Left" Margin="312,285,0,0" VerticalAlignment="Top" Height="28" Width="43" FontFamily="Tahoma"/>
