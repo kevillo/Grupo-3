@@ -69,20 +69,20 @@ namespace Clinica_Medica_Polanco.Pacientes
             {
                 //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new SqlCommand("Pacientes_Insert", ConexionBaseDeDatos.conexion);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("Nombre_Paciente", SqlDbType.VarChar).Value = pPaciente.Nombre;
-                comando.Parameters.AddWithValue("Identidad_Paciente", SqlDbType.VarChar).Value = pPaciente.Identidad;
-                comando.Parameters.AddWithValue("Telefono_Paciente", SqlDbType.VarChar).Value = pPaciente.Telefono;
-                comando.Parameters.AddWithValue("Fecha_Nacimiento", SqlDbType.DateTime).Value = pPaciente.FechaNacimiento;
-                comando.Parameters.AddWithValue("Correo_Paciente", SqlDbType.VarChar).Value = pPaciente.Correo;
-                comando.Parameters.AddWithValue("Altura_Paciente", SqlDbType.Decimal).Value = pPaciente.Altura;
-                comando.Parameters.AddWithValue("Tipo_Sangre_Paciente", SqlDbType.VarChar).Value = pPaciente.TipoSangre;
-                comando.Parameters.AddWithValue("Direccion_Paciente", SqlDbType.VarChar).Value = pPaciente.Direccion;
-                comando.Parameters.AddWithValue("Apellido_Paciente", SqlDbType.VarChar).Value = pPaciente.Apellido;
-                comando.Parameters.AddWithValue("Estado_Paciente", SqlDbType.Bit).Value = "True";
-                comando.ExecuteReader();
-                MessageBox.Show("Paciente agregado exitosamente");
+            SqlCommand comando = new SqlCommand("Pacientes_Insert", ConexionBaseDeDatos.conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("Nombre_Paciente", SqlDbType.VarChar).Value = pPaciente.Nombre;            
+            comando.Parameters.AddWithValue("Identidad_Paciente", SqlDbType.VarChar).Value = pPaciente.Identidad;
+            comando.Parameters.AddWithValue("Telefono_Paciente", SqlDbType.VarChar).Value = pPaciente.Telefono;
+            comando.Parameters.AddWithValue("Fecha_Nacimiento", SqlDbType.DateTime).Value = pPaciente.FechaNacimiento;
+            comando.Parameters.AddWithValue("Correo_Paciente", SqlDbType.VarChar).Value = pPaciente.Correo;
+            comando.Parameters.AddWithValue("Altura_Paciente", SqlDbType.Decimal).Value = pPaciente.Altura;
+            comando.Parameters.AddWithValue("Tipo_Sangre_Paciente", SqlDbType.VarChar).Value = pPaciente.TipoSangre;
+            comando.Parameters.AddWithValue("Direccion_Paciente", SqlDbType.VarChar).Value = pPaciente.Direccion;
+            comando.Parameters.AddWithValue("Apellido_Paciente", SqlDbType.VarChar).Value = pPaciente.Apellido;
+            comando.Parameters.AddWithValue("Estado_Paciente", SqlDbType.Bit).Value = "True";
+            comando.ExecuteReader();
+            MessageBox.Show("Paciente agregado exitosamente");
             }
             catch (Exception error)
             {
