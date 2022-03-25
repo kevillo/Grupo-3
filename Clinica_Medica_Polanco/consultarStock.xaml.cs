@@ -135,8 +135,15 @@ namespace Clinica_Medica_Polanco
 
                 lbl_Consultar_Stock_Sucursales3.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont]) ? informacionSucursales[2].Split(" -> ")[0] : "";
                 lbl_Consultar_Stock_Sucursales3_existencia.Content = (cont < 1) ? "" : !string.IsNullOrEmpty(informacionSucursales[^cont--]) ? informacionSucursales[2].Split(" -> ")[1] : "";
-                
-
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese un insumo valido");
+                txt_Consultar_Stock_Codigo_Producto.Clear();
+                txt_Consultar_Stock_Codigo_Producto.Focus();
+                stc_InfoStock.Visibility = Visibility.Hidden;
+                scv_BuscarStock.Visibility = Visibility.Hidden;
+                brd_BuscarStock.Visibility = Visibility.Hidden;
             }
         }
     }

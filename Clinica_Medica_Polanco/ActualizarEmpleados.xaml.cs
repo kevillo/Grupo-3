@@ -78,56 +78,49 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Actualizar_Empleado_Click(object sender, RoutedEventArgs e)
         {
-            int codEmpleado = empleadosDAL.traerCodigoEmpleado(txt_Identidad_Actualizar_Empleado.Text);
             try
             {
-                //Validación de datos
-                Empleados.Empleados empleados1 = new();
-                empleados1.CodigoEmpleado = codEmpleado;
-                empleados1.NombreEmpleado = txt_Nombre_Actualizar_Empleado.Text;
-                empleados1.ApellidoEmpleado = txt_Apellido_Actualizar_Empleado.Text;
-                empleados1.IdentidadEmpleado = txt_Identidad_Actualizar_Empleado.Text;
-                empleados1.TelefonoEmpleado = txt_Telefono_Actualizar_Empleado.Text;
-                empleados1.FechaNacimientoEmpleado = Convert.ToDateTime(dtp_Nacimiento_Actualizar_Empleado.Text);
-                empleados1.CorreoEmpleado = txt_Correo_Actualizar_Empleado.Text;
-                empleados1.AlturaEmpleado = string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Altura_Actualizar_Empleado.Text);
-                empleados1.TipoSangreEmpleado = cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem.ToString();
-                empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Sueldo_Actualizar_Empleado.Text);
-                empleados1.CodigoPuesto = cmb_Actualizar_Empleado_Cargo.SelectedIndex+1;
-                empleados1.CodigoSucursal = cmb_Actualizar_Empleado_Sucursal.SelectedIndex + 1;
-                empleados1.CodigoJornada = cmb_Actualizar_Empleado_Jornada.SelectedIndex+1;
-                empleados1.FechaPago = Convert.ToDateTime(dtp_Pago_Actualizar_Empleado.Text);
-                empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Actulizar_Empleado.Text);
-                empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Actualizar_Empleado)) ? null : rtbAString(rtb_Direccion_Actualizar_Empleado);
-                empleados1.EstadoEmpleado = (bool)chb_Estado_Empleado.IsChecked;
-
-                //validacion de un correo o identidad duplicada en la base de datos
-                int validarIdentidad = empleadosDAL.ValidarIdentidadEmpleado(empleados1.IdentidadEmpleado);
-                int validarCorreo = empleadosDAL.validarCorreoEmpleado(empleados1.CorreoEmpleado);
-
-
-                // si el correo esta duplicado, manda error
-                if (validarCorreo < 1)
+                if (!string.IsNullOrEmpty(txt_Identidad_Actualizar_Empleado.Text))
                 {
-                    // si la identidad esta duplicada, manda error
-                    if (validarIdentidad < 1)
-                    {
-                        empleadosDAL.ModificarEmpleado(empleados1);
-                        this.Close();
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show("Identidad repetida: por favor ingrese una identidad diferente");
-                        txt_Identidad_Actualizar_Empleado.Clear();
-                        txt_Identidad_Actualizar_Empleado.Focus();
-                    }
+                    //Validación de datos
+
+                    int codEmpleado = empleadosDAL.traerCodigoEmpleado(txt_Identidad_Actualizar_Empleado.Text);
+                    Empleados.Empleados empleados1 = new();
+                    empleados1.CodigoEmpleado = codEmpleado;
+                    empleados1.NombreEmpleado = txt_Nombre_Actualizar_Empleado.Text;
+                    empleados1.ApellidoEmpleado = txt_Apellido_Actualizar_Empleado.Text;
+                    empleados1.IdentidadEmpleado = txt_Identidad_Actualizar_Empleado.Text;
+                    empleados1.TelefonoEmpleado = txt_Telefono_Actualizar_Empleado.Text;
+                    empleados1.FechaNacimientoEmpleado = Convert.ToDateTime(dtp_Nacimiento_Actualizar_Empleado.Text);
+                    empleados1.CorreoEmpleado = txt_Correo_Actualizar_Empleado.Text;
+                    empleados1.AlturaEmpleado = string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Altura_Actualizar_Empleado.Text);
+                    empleados1.TipoSangreEmpleado = cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem.ToString();
+                    empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Sueldo_Actualizar_Empleado.Text);
+                    empleados1.CodigoPuesto = cmb_Actualizar_Empleado_Cargo.SelectedIndex + 1;
+                    empleados1.CodigoSucursal = cmb_Actualizar_Empleado_Sucursal.SelectedIndex + 1;
+                    empleados1.CodigoJornada = cmb_Actualizar_Empleado_Jornada.SelectedIndex + 1;
+                    empleados1.FechaPago = Convert.ToDateTime(dtp_Pago_Actualizar_Empleado.Text);
+                    empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Actulizar_Empleado.Text);
+                    empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Actualizar_Empleado)) ? null : rtbAString(rtb_Direccion_Actualizar_Empleado);
+                    empleados1.EstadoEmpleado = (bool)chb_Estado_Empleado.IsChecked;
+
+                    //validacion de un correo o identidad duplicada en la base de datos
+                    int validarIdentidad = empleadosDAL.ValidarIdentidadEmpleado(empleados1.IdentidadEmpleado);
+                    int validarCorreo = empleadosDAL.validarCorreoEmpleado(empleados1.CorreoEmpleado);
+                    empleadosDAL.ModificarEmpleado(empleados1);
+                    this.Close();
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
-                    txt_Correo_Actualizar_Empleado.Clear();
-                    txt_Correo_Actualizar_Empleado.Focus();
+                    MessageBox.Show("Por favor ingrese una identidad de empleado");
+                    txt_Codigo_Actualizar_Empleado.Clear();
+                    txt_Codigo_Actualizar_Empleado.Focus();
+                    stc_Empleados.Visibility = Visibility.Hidden;
+                    scv_Empleados.Visibility = Visibility.Hidden;
+                    brd_Empleados.Visibility = Visibility.Hidden;
+
                 }
+                 
             }
 
             catch (FormatException error)
@@ -194,11 +187,34 @@ namespace Clinica_Medica_Polanco
                 dtp_Ingreso_Actulizar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
                 chb_Estado_Empleado.IsChecked = empleadoSeleccionado.EstadoEmpleado;
             }
+            else
+            {
+                MessageBox.Show("Por favor ingrese un id de empleado");
+                txt_Codigo_Actualizar_Empleado.Clear();
+                txt_Codigo_Actualizar_Empleado.Focus();
+                stc_Empleados.Visibility = Visibility.Hidden;
+                scv_Empleados.Visibility = Visibility.Hidden;
+                brd_Empleados.Visibility = Visibility.Hidden;
+            }
         }
         private void setTextToRTB(RichTextBox rtb, string textoSet)
         {
-            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
-            textRange.Text = textoSet;
+            try
+            {
+
+                TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+                textRange.Text = textoSet;
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Error al recuperar la direccion del empleado ingresado");
+                txt_Codigo_Actualizar_Empleado.Clear();
+                txt_Codigo_Actualizar_Empleado.Focus();
+                stc_Empleados.Visibility = Visibility.Hidden;
+                scv_Empleados.Visibility = Visibility.Hidden;
+                brd_Empleados.Visibility = Visibility.Hidden;
+
+            }
         }
 
         private void txt_Codigo_Actualizar_Empleado_KeyUp(object sender, KeyEventArgs e)

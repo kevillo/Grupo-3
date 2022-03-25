@@ -35,18 +35,30 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                //Validación de datos
-                int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
-                Proveedores.Proveedores proveedores1 = new();
-                proveedores1.CodigoProveedor = codProveedor;
-                proveedores1.NombreProveedor = txt_Nombre_Proveedor_Actualizar.Text;
-                proveedores1.ApellidoProveedor = txt_Apellido_Proveedor_Actualizar.Text;
-                proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Actualizar.Text;
-                proveedores1.CorreoProveedor = txt_Correo_Proveedor_Actualizar.Text;
-                proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
-                proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
-                proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
-                ProveedoresDAL.ModificarProveedor(proveedores1);
+                if(!string.IsNullOrEmpty(txt_Codigo_Proveedor_Actualizar.Text))
+                {
+                    int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
+                    Proveedores.Proveedores proveedores1 = new();
+                    proveedores1.CodigoProveedor = codProveedor;
+                    proveedores1.NombreProveedor = txt_Nombre_Proveedor_Actualizar.Text;
+                    proveedores1.ApellidoProveedor = txt_Apellido_Proveedor_Actualizar.Text;
+                    proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Actualizar.Text;
+                    proveedores1.CorreoProveedor = txt_Correo_Proveedor_Actualizar.Text;
+                    proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
+                    proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
+                    proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
+                    ProveedoresDAL.ModificarProveedor(proveedores1);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor ingrese un insumo valido");
+                    txt_Codigo_Proveedor_Actualizar.Clear();
+                    txt_Codigo_Proveedor_Actualizar.Focus();
+                    stc_Proveedor.Visibility = Visibility.Hidden;
+                    scv_Proveedor.Visibility = Visibility.Hidden;
+                    brd_Proveedor.Visibility = Visibility.Hidden;
+
+                }
                 reiniciarPantalla();
 
             }
@@ -185,6 +197,9 @@ namespace Clinica_Medica_Polanco
                 MessageBox.Show("Ingrese un id de proveedor valido");
                 txt_Codigo_Proveedor_Actualizar.Clear();
                 txt_Codigo_Proveedor_Actualizar.Focus();
+                stc_Proveedor.Visibility = Visibility.Hidden;
+                scv_Proveedor.Visibility = Visibility.Hidden;
+                brd_Proveedor.Visibility = Visibility.Hidden;
             }
         }
         private void setTextToRTB(RichTextBox rtb, string textoSet)

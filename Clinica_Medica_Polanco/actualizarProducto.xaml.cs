@@ -34,17 +34,30 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                //Validación de datos
-                Insumos.Insumos nuevoInsumo = new();
-                nuevoInsumo.CodigoInsumo = int.Parse(txt_Gestionar_Insumos_Buscar.Text);
-                nuevoInsumo.NombreInsumo = txt_Gestionar_Insumos_Nombre_Producto.Text;
-                nuevoInsumo.NumeroSerie = txt_Gestionar_Insumos_Num_Serie.Text;
-                nuevoInsumo.PrecioUnitario = string.IsNullOrEmpty(txt_Gestionar_Insumos_Precio.Text) ? -1 : decimal.Parse(txt_Gestionar_Insumos_Precio.Text);
-                nuevoInsumo.CodigoCategoriaInsumo = cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex+1;
-                nuevoInsumo.FechaExpiracion = Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
-                nuevoInsumo.Estado = (bool)chk_Disponibilidad.IsChecked;
-                insumosDAL.ModificarInsumo(nuevoInsumo);
+                if(!string.IsNullOrEmpty(txt_Gestionar_Insumos_Buscar.Text))
+                {
+                    Insumos.Insumos nuevoInsumo = new();
+                    nuevoInsumo.CodigoInsumo = int.Parse(txt_Gestionar_Insumos_Buscar.Text);
+                    nuevoInsumo.NombreInsumo = txt_Gestionar_Insumos_Nombre_Producto.Text;
+                    nuevoInsumo.NumeroSerie = txt_Gestionar_Insumos_Num_Serie.Text;
+                    nuevoInsumo.PrecioUnitario = string.IsNullOrEmpty(txt_Gestionar_Insumos_Precio.Text) ? -1 : decimal.Parse(txt_Gestionar_Insumos_Precio.Text);
+                    nuevoInsumo.CodigoCategoriaInsumo = cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex + 1;
+                    nuevoInsumo.FechaExpiracion = Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
+                    nuevoInsumo.Estado = (bool)chk_Disponibilidad.IsChecked;
+                    insumosDAL.ModificarInsumo(nuevoInsumo);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("por favor ingrese un insumo valido");
+                    txt_Gestionar_Insumos_Buscar.Clear();   
+                    txt_Gestionar_Insumos_Buscar.Focus();
+                    stc_Insumo.Visibility = Visibility.Hidden;
+                    scv_Insumo.Visibility = Visibility.Hidden;
+                    brd_Insumo.Visibility = Visibility.Hidden;
+                }
                 reiniciarPantalla();
+
 
             }
             catch (FormatException error)
@@ -175,17 +188,26 @@ namespace Clinica_Medica_Polanco
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string buscar_Insumo = txt_Gestionar_Insumos_Buscar.Text;
-            insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(int.Parse(buscar_Insumo));
-
+            
             if (!string.IsNullOrEmpty(buscar_Insumo))
             {
-                
+                insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(int.Parse(buscar_Insumo));
                 txt_Gestionar_Insumos_Nombre_Producto.Text = insumoSeleccionado.NombreInsumo;
                 txt_Gestionar_Insumos_Precio.Text = Convert.ToString(insumoSeleccionado.PrecioUnitario);
                 txt_Gestionar_Insumos_Num_Serie.Text = insumoSeleccionado.NumeroSerie;
                 dtp_Fecha_Expiracion.Text = Convert.ToString(insumoSeleccionado.FechaExpiracion);
                 chk_Disponibilidad.IsChecked = insumoSeleccionado.Estado;
                 cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex = insumoSeleccionado.CodigoCategoriaInsumo - 1;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un insumo valido");
+                txt_Gestionar_Insumos_Buscar.Clear();
+                txt_Gestionar_Insumos_Buscar.Focus();
+                stc_Insumo.Visibility = Visibility.Hidden;
+                scv_Insumo.Visibility = Visibility.Hidden;
+                brd_Insumo.Visibility = Visibility.Hidden;
+
             }
         }
 

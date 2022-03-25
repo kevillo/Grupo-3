@@ -23,8 +23,8 @@ namespace Clinica_Medica_Polanco
         private servicios.serviciosEntrega ventaAnalisis = new();
         public AnalizarExamenMedico(servicios.serviciosEntrega venta)
         {
-            ventaAnalisis = venta;
             InitializeComponent();
+            ventaAnalisis = venta;
             this.SourceInitialized += AnalizarExamenMedico_SourceInitialized;
         }
 
@@ -84,8 +84,6 @@ namespace Clinica_Medica_Polanco
         {
             Pacientes.Pacient nuevoPaciente;
             nuevoPaciente = Pacientes.PacientesDAL.BuscarPaciente(ventaAnalisis.CodigoPaciente);
-          
-
             txt_Fecha_Orden_Analisis.Text = ventaAnalisis.FechaOrden.ToShortDateString();
             txt_Orden_Analisis.Text = ventaAnalisis.CodFacturaVenta.ToString();
             txt_Correo_Analisis.Text = nuevoPaciente.Correo;

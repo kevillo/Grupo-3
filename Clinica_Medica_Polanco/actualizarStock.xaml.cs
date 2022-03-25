@@ -65,10 +65,35 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Actualizar_Stock_Click(object sender, RoutedEventArgs e)
         {
-            int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
-            Inventario.inventarioDAL.actualizarStock(cmb_Administrador_Actualizar.SelectedIndex + 1, codSucursal, cmb_Proveedor_Actualizar_Stock.SelectedIndex + 1, codEmpleador);
-            Inventario.inventarioDAL.ingresarInventario(int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text), int.Parse(txt_Cantidad_Actualizar_Stock.Text));
-            this.Close();
+
+            if((!string.IsNullOrEmpty(txt_Cantidad_Actualizar_Stock.Text) &&  int.TryParse(txt_Cantidad_Actualizar_Stock.Text,out int _)) && (!string.IsNullOrEmpty(txt_Codigo_Insumo_Actualizar_Stock.Text)&& int.TryParse(txt_Codigo_Insumo_Actualizar_Stock.Text, out int _)))
+            {
+                int codigoInsumo = int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text);
+                int cantidad = int.Parse(txt_Cantidad_Actualizar_Stock.Text);
+                int codSucursal = Ventas.ventasDAL.obtenerIdSucursal(codEmpleador);
+                if(codigoInsumo >0 && cantidad>0)
+                {
+                   
+                    Inventario.inventarioDAL.actualizarStock(cmb_Administrador_Actualizar.SelectedIndex + 1, codSucursal, cmb_Proveedor_Actualizar_Stock.SelectedIndex + 1, codEmpleador);
+                    Inventario.inventarioDAL.ingresarInventario(codigoInsumo, cantidad);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Procure no dejar valores negativos");
+                    stc_Insumo.Visibility = Visibility.Hidden;
+                    scv_Insumo.Visibility = Visibility.Hidden;
+                    brd_Insumo.Visibility = Visibility.Hidden;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Procure no dejar el codigo de insumo o la cantidad ingresada en blanco o con caracteres invalidos");
+                stc_Insumo.Visibility = Visibility.Hidden;
+                scv_Insumo.Visibility = Visibility.Hidden;
+                brd_Insumo.Visibility = Visibility.Hidden;
+            }
+            
         }
 
         private void txt_Codigo_Insumo_Actualizar_Stock_KeyUp(object sender, KeyEventArgs e)
@@ -152,7 +177,10 @@ namespace Clinica_Medica_Polanco
         }
 
         //validacion para que solo se pueda ingresar numeros a un campo
-        private void txt_Codigo_Insumo_Actualizar_Stock_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        
+
+
+        private void txt_Cantidad_Actualizar_Stock_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
 

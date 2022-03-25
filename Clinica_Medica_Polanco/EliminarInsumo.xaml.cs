@@ -33,7 +33,12 @@ namespace Clinica_Medica_Polanco
                 codEliminar = int.Parse(txt_Codigo_Insumo.Text);
                 Insumos.insumosDAL.EliminarInsumo(codEliminar);
             }
-            else MessageBox.Show("No se puede dejar el id de insumo vacío");
+            else
+            {
+               MessageBox.Show("No se puede dejar el id de insumo vacío");
+               txt_Codigo_Insumo.Clear();
+               txt_Codigo_Insumo.Focus();
+            }
             reiniciarPantalla();
         }
         private void reiniciarPantalla()
@@ -132,15 +137,25 @@ namespace Clinica_Medica_Polanco
         private void btn__Buscar_Insumo_Click(object sender, RoutedEventArgs e)
         {
             string buscar_Insumo = txt_Codigo_Insumo.Text;
-            insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(int.Parse(buscar_Insumo));
 
-            if (!string.IsNullOrEmpty(buscar_Insumo))
+            if (!string.IsNullOrEmpty(buscar_Insumo) && int.TryParse(buscar_Insumo,out int _))
             {
+
+                insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(int.Parse(buscar_Insumo));
                 insumoActual = insumoSeleccionado;
                 txt_Nombre_Insumo.Text = insumoSeleccionado.NombreInsumo;
                 txt_Fecha_Expiración_Insumo.Text = Convert.ToString(insumoSeleccionado.FechaExpiracion);
                 txt_Precio_Unitario.Text = Convert.ToString(insumoSeleccionado.PrecioUnitario);
                 txt_Numero_de_serie.Text = insumoSeleccionado.NumeroSerie;
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese insumo valido");
+                txt_Codigo_Insumo.Clear();
+                txt_Codigo_Insumo.Focus();
+                stc_InfoProveedor.Visibility = Visibility.Hidden;
+                scv_BuscarProveedor.Visibility = Visibility.Hidden;
+                brd_BuscarProveedor.Visibility = Visibility.Hidden;
             }
         }
 

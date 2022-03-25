@@ -63,17 +63,37 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Entrega_Examen_Fisico_Click(object sender, RoutedEventArgs e)
         {
-            ExamenesMedicos.ExamenesDAL.entregarExamenMedico(int.Parse(txt_Entrega_Examen_Buscar.Text));
-            MessageBox.Show("Exámen/es actualizado/s");
-            this.Close();
+            int codEntrega = string.IsNullOrEmpty(txt_Entrega_Examen_Buscar.Text)?-1:int.Parse(txt_Entrega_Examen_Buscar.Text);
+            if(codEntrega <0)
+            {
+                MessageBox.Show("Por favor, seleccione un examen para ser entregado");
+                txt_Entrega_Examen_Buscar.Clear();
+                txt_Entrega_Examen_Buscar.Focus();
+            }
+            else
+            {
+
+                ExamenesMedicos.ExamenesDAL.entregarExamenMedico(codEntrega);
+                MessageBox.Show("Exámen/es actualizado/s");
+                this.Close();
+            }
         }
 
         private void btn_Entrega_Examen_Correo_Click(object sender, RoutedEventArgs e)
         {
             servicios.serviciosEntrega ventaEntregar = (servicios.serviciosEntrega)dtg_Entrega_Examen_Examenes.SelectedItem; 
-            ProcesoCorreo procesoCorreo = new ProcesoCorreo(ventaEntregar);
-            procesoCorreo.ShowDialog();
-            this.Close();
+            if(ventaEntregar == null)
+            {
+                MessageBox.Show("Por favor, seleccione un examen para ser entregado");
+                txt_Entrega_Examen_Buscar.Clear();
+                txt_Entrega_Examen_Buscar.Focus();
+            }
+            else
+            {
+                ProcesoCorreo procesoCorreo = new ProcesoCorreo(ventaEntregar);
+                procesoCorreo.ShowDialog();
+                this.Close();
+            }
         }
         private void btn_Entrega_Examen_Buscar_Click(object sender, RoutedEventArgs e)
         {
@@ -88,7 +108,14 @@ namespace Clinica_Medica_Polanco
                 }
                 else cargarDTGEntrega(buscar_Examen);
             }
-            else MessageBox.Show("Ingrese un id de paciente o numero de factura");
+            else
+            {
+
+                MessageBox.Show("Ingrese un id de paciente o numero de factura");
+                txt_Entrega_Examen_Buscar.Clear();
+                txt_Entrega_Examen_Buscar.Focus();
+
+            }
         }
 
 

@@ -85,8 +85,8 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length!=13)
-                {
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13)
+                { 
                     throw new FormatException("No se puede ingresar campos vacíos en identidad");
                 }
                 else _identidad = value;

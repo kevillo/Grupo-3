@@ -414,21 +414,21 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 {
                     servicios.serviciosEntrega entregarV = new();
                     entregarV.NombreExamen = dr.GetString(0);
-                    entregarV.NombrePaciente = dr.GetString(1);
-                    entregarV.NombreMetodoPago = dr.GetString(2);
-                    entregarV.NombreMetodoEntrega = dr.GetString(3);
-                    entregarV.NombreEmpleado = dr.GetString(4);
-                    entregarV.CodFacturaVenta = dr.GetInt32(5);
-                    entregarV.CodigoExamenMedico = dr.GetInt32(6);
-                    entregarV.CodigoFacturador = dr.GetInt32(8);
-                    entregarV.CodigoMicrobiologo = dr.GetInt32(7);
-                    entregarV.CodigoEnfermero = dr.GetInt32(9);
-                    entregarV.CodigoPaciente = dr.GetInt32(10);
-                    entregarV.MetodoEntregaExamen = dr.GetInt32(11);
-                    entregarV.MetodoPagoExamen = dr.GetInt32(12);
-                    entregarV.FechaOrden = dr.GetDateTime(13);
-                    entregarV.ExamenCombo = dr.GetBoolean(14);
-                    entregarV.EstadoExamenMedico = dr.GetInt32(15);
+                    entregarV.NombrePaciente = dr.GetString(2);
+                    entregarV.NombreMetodoPago = dr.GetString(3);
+                    entregarV.NombreMetodoEntrega = dr.GetString(4);
+                    entregarV.NombreEmpleado = dr.GetString(5);
+                    entregarV.CodFacturaVenta = dr.GetInt32(6);
+                    entregarV.CodigoExamenMedico = dr.GetInt32(7);
+                    entregarV.CodigoFacturador = dr.GetInt32(9);
+                    entregarV.CodigoMicrobiologo = dr.GetInt32(8);
+                    entregarV.CodigoEnfermero = dr.GetInt32(10);
+                    entregarV.CodigoPaciente = dr.GetInt32(11);
+                    entregarV.MetodoEntregaExamen = dr.GetInt32(12);
+                    entregarV.MetodoPagoExamen = dr.GetInt32(13);
+                    entregarV.FechaOrden = dr.GetDateTime(14);
+                    entregarV.ExamenCombo = dr.GetBoolean(15);
+                    entregarV.EstadoExamenMedico = dr.GetInt32(16);
                     ventasEntregar.Add(entregarV);
                 }
                 return ventasEntregar;

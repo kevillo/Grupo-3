@@ -61,9 +61,16 @@ namespace Clinica_Medica_Polanco
         private void btn_Consultar_Empleados_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string consultar_empleado = txt_Consultar_Empleados_Buscar.Text;
-            if (!string.IsNullOrEmpty(consultar_empleado))
+            if (!string.IsNullOrEmpty(consultar_empleado) && Int64.TryParse(txt_Consultar_Empleados_Buscar.Text, out long _))
                 dtg_Consultar_Empleados.ItemsSource = empleadosDAL.BuscarEmpleado(consultar_empleado);
-            else MessageBox.Show("Ingrese un id de empleado válido");
+            else
+            {
+                MessageBox.Show("Ingrese un id de empleado válido");
+                stc_Empleados.Visibility = Visibility.Hidden;
+                scv_Empleados.Visibility = Visibility.Hidden;
+                brd_Empleados.Visibility = Visibility.Hidden;
+            }
+
         }
 
         private void txt_Consultar_Empleados_Buscar_KeyUp(object sender, KeyEventArgs e)

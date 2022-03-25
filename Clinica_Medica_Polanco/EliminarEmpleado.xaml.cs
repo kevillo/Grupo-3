@@ -108,13 +108,36 @@ namespace Clinica_Medica_Polanco
                 dtp_Pago_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaPago);
                 dtp_Ingreso_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
             }
-            else MessageBox.Show("Ingrese un id de empleado válido");
+            else
+            {
+                MessageBox.Show("Ingrese un id de empleado válido");
+                txt_Codigo_Eliminar_Empleado.Clear();
+                txt_Codigo_Eliminar_Empleado.Focus();
+
+                stc_InfoEmpleado.Visibility = Visibility.Hidden;
+                scv_BuscarEmpleado.Visibility = Visibility.Hidden;
+                brd_BuscarEmpleado.Visibility = Visibility.Hidden;
+            }
         }
 
         private void prueba(RichTextBox rtb, string textoSet)
         {
-            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
-            textRange.Text = textoSet;
+            try
+            {
+
+                TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+                textRange.Text = textoSet;
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Error al recuperar la direccion del em[pleado ingresado");
+                txt_ID_Eliminar_Empleado.Clear();
+                txt_ID_Eliminar_Empleado.Focus();
+                stc_InfoEmpleado.Visibility = Visibility.Hidden;
+                scv_BuscarEmpleado.Visibility = Visibility.Hidden;
+                brd_BuscarEmpleado.Visibility = Visibility.Hidden;
+
+            }
         }
 
         private void txt_ID_Eliminar_Empleado_KeyUp(object sender, KeyEventArgs e)

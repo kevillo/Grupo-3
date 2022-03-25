@@ -124,12 +124,12 @@
         <Label Content="Actualizar stock" FontFamily="Tahoma" FontSize="60" HorizontalAlignment="Left" Margin="36,3,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1"/>
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
         <Label Content="Código de insumo" HorizontalAlignment="Left" Margin="250,161,0,0" VerticalAlignment="Top" Height="40" Width="208" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2"/>
-        <TextBox TabIndex="0" x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Grid.ColumnSpan="2" KeyUp="txt_Codigo_Insumo_Actualizar_Stock_KeyUp" PreviewTextInput="txt_Codigo_Insumo_Actualizar_Stock_PreviewTextInput"/>
-        <ComboBox TabIndex="1" x:Name="cmb_Proveedor_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="310,212,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15" Grid.Column="1"/>
+        <TextBox TabIndex="0" x:Name="txt_Codigo_Insumo_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,212,0,0" VerticalContentAlignment="Center" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="43" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Grid.ColumnSpan="2" KeyUp="txt_Codigo_Insumo_Actualizar_Stock_KeyUp" />
+        <ComboBox TabIndex="1" x:Name="cmb_Proveedor_Actualizar_Stock" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="310,212,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15" Grid.Column="1" SelectedIndex="0"/>
         <Label Content="Proveedor" HorizontalAlignment="Left" Margin="388,163,0,0" VerticalAlignment="Top" Height="40" Width="146" FontFamily="Tahoma" FontSize="20" Grid.Column="1"/>
         <Label Content="Cantidad comprada" HorizontalAlignment="Left" Margin="250,304,0,0" VerticalAlignment="Top" Height="40" Width="234" FontFamily="Tahoma" FontSize="20" Grid.ColumnSpan="2"/>
-        <TextBox TabIndex="2" x:Name="txt_Cantidad_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,352,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="42" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Grid.ColumnSpan="2"/>
-        <Button TabIndex="4" Style="{DynamicResource btn_Style_Actualizar}" Cursor="Hand" x:Name="btn_Actualizar_Stock" Content="Actualizar stock" HorizontalAlignment="Left"  Background="#FF0D2D6F" Foreground="White" Margin="113,527,0,0" VerticalAlignment="Top" Height="60" Width="274" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Stock_Click" Grid.Column="1"/>
+        <TextBox TabIndex="2" x:Name="txt_Cantidad_Actualizar_Stock" HorizontalAlignment="Left" Margin="200,352,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Height="42" FontFamily="Tahoma" FontSize="15" TextAlignment="Center" Grid.ColumnSpan="2" PreviewTextInput="txt_Cantidad_Actualizar_Stock_PreviewTextInput"/>
+        <Button TabIndex="4" Style="{DynamicResource btn_Style_Actualizar}" Cursor="Hand" x:Name="btn_Actualizar_Stock" Content="Actualizar stock" HorizontalAlignment="Left"  Background="#FF0D2D6F" Foreground="White" Margin="113,527,0,0" VerticalAlignment="Top" Height="60" Width="274" FontFamily="Tahoma" FontSize="28" Click="btn_Actualizar_Stock_Click" Grid.Column="1" />
         <Button Style="{DynamicResource btn_Salir}" x:Name="btn_Salir" Cursor="Hand" Content="" HorizontalAlignment="Left" BorderBrush="white" Margin="34,523,0,0" VerticalAlignment="Top" Width="72" Height="60" Click="btn_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>
@@ -141,7 +141,7 @@
                 <StackPanel x:Name="stc_Insumo" Visibility="Hidden" Background="White" Height="97" Width="491"/>
             </ScrollViewer>
         </Border>
-        <ComboBox TabIndex="3" x:Name="cmb_Administrador_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="315,351,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15" Grid.Column="1"/>
+        <ComboBox TabIndex="3" x:Name="cmb_Administrador_Actualizar" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="315,351,0,0" VerticalAlignment="Top" Width="292" Height="43" FontFamily="Tahoma" FontSize="15" Grid.Column="1" SelectedIndex="0"/>
         <Label Content="Empleado" HorizontalAlignment="Left" Margin="388,304,0,0" VerticalAlignment="Top" Height="40" Width="112" FontFamily="Tahoma" FontSize="20" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -69,9 +69,19 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Eliminar_Paciente_Click(object sender, RoutedEventArgs e)
         {
-            int codPaciente = PacientesDAL.ObtenerIdPaciente(txt_Identidad_Paciente.Text);
-            PacientesDAL.EliminarPaciente(codPaciente);
-            this.Close();
+            if(!string.IsNullOrEmpty(txt_Identidad_Paciente.Text))
+            {
+
+                int codPaciente = PacientesDAL.ObtenerIdPaciente(txt_Identidad_Paciente.Text);
+                PacientesDAL.EliminarPaciente(codPaciente);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese una identidad de paciente");
+                txt_Buscar_Paciente.Clear();
+                txt_Buscar_Paciente.Focus();
+            }
         }
 
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
@@ -115,10 +125,24 @@ namespace Clinica_Medica_Polanco
             else MessageBox.Show("Ingrese un id de paciente válido");
         }
 
-        private void prueba(RichTextBox rtb, string textoSet)
+        private void prueba(RichTextBox rtb, string textoSet="error")
         {
-            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
-            textRange.Text = textoSet;
+            try
+            {
+                
+                TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+                textRange.Text = textoSet;
+            }
+            catch(ArgumentNullException)
+            {
+                MessageBox.Show("Error al recuperar la direccion del paciente ingresado");
+                txt_Buscar_Paciente.Clear();
+                txt_Buscar_Paciente.Focus();
+                stc_InfoPaciente.Visibility = Visibility.Hidden;
+                scv_BuscarPaciente.Visibility = Visibility.Hidden;
+                brd_BuscarPaciente.Visibility = Visibility.Hidden;
+
+            }
         }
 
         private void txt_Buscar_Paciente_KeyUp(object sender, KeyEventArgs e)

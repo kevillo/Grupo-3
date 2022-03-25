@@ -242,7 +242,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 10 caracteres
-                if (string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value.ToString(), out long _) || value.ToString().Length > 10)
+                if ( value <=0 ||  string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value.ToString(), out long _) || value.ToString().Length > 10)
                 {
                     throw new FormatException("Recuerde que solo debe ser en un rango de 10 dígitos.");
                 }
