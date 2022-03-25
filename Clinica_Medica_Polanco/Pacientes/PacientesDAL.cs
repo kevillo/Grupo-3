@@ -67,8 +67,8 @@ namespace Clinica_Medica_Polanco.Pacientes
         {
             try
             {
-                //Validación de datos
-                ConexionBaseDeDatos.ObtenerConexion();
+            //Validación de datos
+            ConexionBaseDeDatos.ObtenerConexion();
             SqlCommand comando = new SqlCommand("Pacientes_Insert", ConexionBaseDeDatos.conexion);
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("Nombre_Paciente", SqlDbType.VarChar).Value = pPaciente.Nombre;            

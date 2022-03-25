@@ -40,8 +40,22 @@ namespace Clinica_Medica_Polanco
                 nuevoInsumo.CodigoCategoriaInsumo = cmb_Tipo_Insumo.SelectedIndex+1;
                 nuevoInsumo.FechaExpiracion = Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
                 nuevoInsumo.Estado = (bool)chb_Disponibilidad.IsChecked;
-                insumosDAL.AgregarInsumo(nuevoInsumo);
-                reiniciarPantalla();
+
+                //Validación de número de serie duplicada en la base de datos
+                int ValidadNumeroSerieInsumo = insumosDAL.ValidadNumeroSerieInsumo(nuevoInsumo.NumeroSerie);
+
+                //Si el número de serie está duplicado, manda error
+                if (ValidadNumeroSerieInsumo < 1)
+                {
+                    insumosDAL.AgregarInsumo(nuevoInsumo);
+                    reiniciarPantalla();
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Número de serie repetido: Por favor ingrese otro número");
+                    txt_Numero_Serie.Clear();
+                    txt_Numero_Serie.Focus();
+                }
 
             }
             catch(FormatException error)
@@ -76,18 +90,6 @@ namespace Clinica_Medica_Polanco
             cmb_Tipo_Insumo.SelectedIndex = 0;
             dtp_Fecha_Expiracion.Text = DateTime.Now.ToShortDateString();
             chb_Disponibilidad.IsChecked = false;
-        }
-
-        //validación para que solo se pueda ingresar letras a un campo
-        private void txt_Nombre_Producto_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-
-            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122)
-
-                e.Handled = false;
-
-            else e.Handled = true;
         }
 
         //validación para que solo se pueda ingresar numeros a un campo

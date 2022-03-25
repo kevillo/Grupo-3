@@ -33,7 +33,7 @@ namespace Clinica_Medica_Polanco
                 codEliminar = int.Parse(txt_Codigo_Insumo.Text);
                 Insumos.insumosDAL.EliminarInsumo(codEliminar);
             }
-            else MessageBox.Show("No se puede dejar el id de insumo vacio");
+            else MessageBox.Show("No se puede dejar el id de insumo vacío");
             reiniciarPantalla();
         }
         private void reiniciarPantalla()

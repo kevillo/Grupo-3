@@ -32,7 +32,7 @@ namespace Clinica_Medica_Polanco.Insumos
             {
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Este campos esta vacio o tiene números negativos");
                 }
                 else _Existencia = value;
             }
@@ -63,7 +63,11 @@ namespace Clinica_Medica_Polanco.Insumos
             get => _nombreInsumo;
             set
             {
-                if (string.IsNullOrEmpty(value)) throw new FormatException();
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos en nombre");
+                }
                 else _nombreInsumo = value;
             }
         }
@@ -83,7 +87,11 @@ namespace Clinica_Medica_Polanco.Insumos
             get => _precioUnitario; 
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || value <0) throw new FormatException();
+                //valida si la altura es positiva y si es un deciamal
+                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _))
+                {
+                    throw new FormatException("No se pueden ingresar campos vacíos en precio unitario");
+                }
                 else _precioUnitario = value;
             }
         }
@@ -94,7 +102,11 @@ namespace Clinica_Medica_Polanco.Insumos
             get => _numeroSerie;
             set
             {
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _)) throw new FormatException();
+                // valida si la cadena no esta vacia, si es un numero, y si está en un rango de 10 caracteres
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length > 10)
+                {
+                    throw new FormatException("No se puede ingresar campos vacíos en número serie");
+                }
                 else _numeroSerie = value;
             }
         }
