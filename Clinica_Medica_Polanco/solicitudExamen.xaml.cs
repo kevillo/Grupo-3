@@ -338,7 +338,7 @@ namespace Clinica_Medica_Polanco
             // Add the result   
             foreach (var obj in data)
             {
-                if (obj.ToLower().StartsWith(query.ToLower()))
+                if (obj.Split(" - ")[0].ToLower().StartsWith(query.ToLower()))
                 {
                     // The word starts with this... Autocomplete must work   
                     addItem1(obj);
@@ -368,7 +368,8 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Solicitud_Examen_ID_Cliente.Text = (sender as TextBlock).Text.Split(" ")[0];
+                txt_Solicitud_Examen_ID_Cliente.Text = (sender as TextBlock).Text.Split(" - ")[0];
+                MessageBox.Show("aaaa");
                 stc_InfoCliente.Visibility = Visibility.Hidden;
                 scv_BuscarCliente.Visibility = Visibility.Hidden;
                 brd_BuscarCliente.Visibility = Visibility.Hidden;
@@ -410,18 +411,6 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
-        private void txt_Solicitud_Examen_ID_Cliente_LostFocus(object sender, RoutedEventArgs e)
-        {
-            stc_InfoCliente.Visibility = Visibility.Hidden;
-            scv_BuscarCliente.Visibility = Visibility.Hidden;
-            brd_BuscarCliente.Visibility = Visibility.Hidden;
-        }
-
-        private void txt_Solicitud_Examen_Buscar_LostFocus(object sender, RoutedEventArgs e)
-        {
-            stc_InfoPaciente.Visibility = Visibility.Hidden;
-            scv_BuscarPaciente.Visibility = Visibility.Hidden;
-            brd_BuscarPaciente.Visibility = Visibility.Hidden;
-        }
+       
     }
 }
