@@ -215,7 +215,7 @@ namespace Clinica_Medica_Polanco.Empleados
             {
                 // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
                 // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
-                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value < DateTime.Now)
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() )
                 {
                     throw new FormatException();
                 }
@@ -229,7 +229,7 @@ namespace Clinica_Medica_Polanco.Empleados
             {
                 // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
                 // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
-                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value < DateTime.Now)
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString() )
                 {
                     throw new FormatException();
                 }
@@ -242,7 +242,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 10 caracteres
-                if ( value <=0 ||  string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value.ToString(), out long _) || value.ToString().Length > 10)
+                if ( value <=0 ||  string.IsNullOrEmpty(value.ToString())|| !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length > 10)
                 {
                     throw new FormatException("Procure no dejar el Sueldo con un formato incorrecto o vacío.");
                 }
