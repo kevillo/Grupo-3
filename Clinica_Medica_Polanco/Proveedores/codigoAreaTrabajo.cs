@@ -19,10 +19,5 @@ namespace Clinica_Medica_Polanco.Proveedores
                 else _nombreArea = value;
             }
         }
-
-
-
-
-
     }
 }

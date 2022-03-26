@@ -94,7 +94,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    MessageBox.Show("Por favor ingrese una identidad del paciente");
+                    MessageBox.Show("Procure no dejar la Identidad del paciente con un formato incorrecto o vacío.");
                     txt_PacienteId.Clear();
                     txt_PacienteId.Focus();
                 }
@@ -117,7 +117,7 @@ namespace Clinica_Medica_Polanco
         }
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            MessageBox.Show("Procure no dejar un formato incorrecto o vacío en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();
@@ -242,7 +242,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un id de paciente válido");
+                MessageBox.Show("Procure no dejar la Identidad el paciente con un formato incorrecto o vacío.");
                 stc_Paciente.Visibility = Visibility.Hidden;
                 scv_Paciente.Visibility = Visibility.Hidden;
                 brd_Paciente.Visibility = Visibility.Hidden;
@@ -262,7 +262,7 @@ namespace Clinica_Medica_Polanco
             }
             catch (ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la direccion del paciente ingresado");
+                MessageBox.Show("Error al recuperar la dirección del paciente ingresado");
                 txt_PacienteId.Clear();
                 txt_PacienteId.Focus();
                 stc_Paciente.Visibility = Visibility.Hidden;

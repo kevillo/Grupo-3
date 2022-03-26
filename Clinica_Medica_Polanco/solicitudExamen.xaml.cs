@@ -119,7 +119,7 @@ namespace Clinica_Medica_Polanco
 
         private void validarCampos(string leyenda, [Optional]TextBox txt,[Optional]ComboBox cmb,[Optional] int refer)
         {
-            MessageBox.Show($"No se puede dejar {leyenda} vacío");
+            MessageBox.Show($"No se puede dejar {leyenda} vacío.");
             if (refer == 1) txt.Focus();
             else if (refer == 2) cmb.Focus();
         }
@@ -146,7 +146,7 @@ namespace Clinica_Medica_Polanco
 
                     if(coincidencias < 1)
                     {
-                        MessageBox.Show("No se puede encontrar un paciente con esa identidad");
+                        MessageBox.Show("No se puede encontrar un paciente con esa identidad.");
                         txt_Solicitud_Examen_ID_Cliente.Clear();
                         txt_Solicitud_Examen_ID_Cliente.Focus();
                     }
@@ -177,7 +177,7 @@ namespace Clinica_Medica_Polanco
 
                         if (indice > -1)
                         {
-                            MessageBox.Show("El número del examen se repite, por favor ingrese otro examen médico");
+                            MessageBox.Show("El número del examen se repite, por favor ingrese otro número de examen médico.");
                             txt_Solicitud_Examen_Buscar.Clear();
                             txt_Cantidad_Examen.Clear();
                             txt_Solicitud_Examen_Buscar.Focus();
@@ -213,7 +213,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Por favor, ingrese un paciente al que aplicarle un examen");
+                MessageBox.Show("Por favor, ingrese un paciente al que aplicarle un examen.");
                 txt_Solicitud_Examen_ID_Cliente.Focus();
             }
 
@@ -250,7 +250,7 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_InfoPaciente.Children.Clear();
-            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Codigo      Descripcion" });
+            stc_InfoPaciente.Children.Add(new TextBlock() { Text = "Código      Descripcion" });
             // Add the result   
             foreach (var obj in data)
             {

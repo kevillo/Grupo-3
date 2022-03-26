@@ -112,7 +112,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    MessageBox.Show("Por favor ingrese una identidad de empleado");
+                    MessageBox.Show("Procure no dejar la Identidad de Empleado con un formato incorrecto o vacío.");
                     txt_Codigo_Actualizar_Empleado.Clear();
                     txt_Codigo_Actualizar_Empleado.Focus();
                     stc_Empleados.Visibility = Visibility.Hidden;
@@ -144,7 +144,7 @@ namespace Clinica_Medica_Polanco
         //Validar campos tipo txt, rtb, dt, cmb
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            MessageBox.Show("Procure no dejar un formato incorrecto o vacío en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();
@@ -189,7 +189,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Por favor ingrese un id de empleado");
+                MessageBox.Show("Procure no dejar la Identidad de Empleado con un formato incorrecto o vacío.");
                 txt_Codigo_Actualizar_Empleado.Clear();
                 txt_Codigo_Actualizar_Empleado.Focus();
                 stc_Empleados.Visibility = Visibility.Hidden;
@@ -207,7 +207,7 @@ namespace Clinica_Medica_Polanco
             }
             catch (ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la direccion del empleado ingresado");
+                MessageBox.Show("Error al recuperar la dirección del empleado ingresado");
                 txt_Codigo_Actualizar_Empleado.Clear();
                 txt_Codigo_Actualizar_Empleado.Focus();
                 stc_Empleados.Visibility = Visibility.Hidden;

@@ -88,7 +88,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Procure no dejar el codigo de insumo o la cantidad ingresada en blanco o con caracteres invalidos");
+                MessageBox.Show("Procure no dejar el Código de insumo con un formato incorrecto o vacío.");
                 stc_Insumo.Visibility = Visibility.Hidden;
                 scv_Insumo.Visibility = Visibility.Hidden;
                 brd_Insumo.Visibility = Visibility.Hidden;
@@ -121,7 +121,7 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_Insumo.Children.Clear();
-            stc_Insumo.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
+            stc_Insumo.Children.Add(new TextBlock() { Text = "Código      Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -135,7 +135,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Insumo.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
+                stc_Insumo.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido" });
             }
         }
 
@@ -177,9 +177,6 @@ namespace Clinica_Medica_Polanco
         }
 
         //validacion para que solo se pueda ingresar numeros a un campo
-        
-
-
         private void txt_Cantidad_Actualizar_Stock_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));

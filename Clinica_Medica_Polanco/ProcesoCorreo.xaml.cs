@@ -54,7 +54,5 @@ namespace Clinica_Medica_Polanco
             enviarCorreo.ShowDialog();
             this.Close();
         }
-
-      
     }
 }

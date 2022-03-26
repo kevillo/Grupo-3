@@ -51,7 +51,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    MessageBox.Show("Por favor ingrese un insumo valido");
+                    MessageBox.Show("Por favor, ingrese un proveedor válido");
                     txt_Codigo_Proveedor_Actualizar.Clear();
                     txt_Codigo_Proveedor_Actualizar.Focus();
                     stc_Proveedor.Visibility = Visibility.Hidden;
@@ -76,7 +76,7 @@ namespace Clinica_Medica_Polanco
         //Validar campos tipo txt, rtb, dt, cmb
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            MessageBox.Show("Procure no dejar un formato incorrecto o vacío en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();
@@ -118,7 +118,7 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_Proveedor.Children.Clear();
-            stc_Proveedor.Children.Add(new TextBlock() { Text = "Codigo          Nombre" });
+            stc_Proveedor.Children.Add(new TextBlock() { Text = "Código          Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -194,7 +194,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un id de proveedor valido");
+                MessageBox.Show("Procure no dejar la Identidad del proveedor con un formato incorrecto o vacío.");
                 txt_Codigo_Proveedor_Actualizar.Clear();
                 txt_Codigo_Proveedor_Actualizar.Focus();
                 stc_Proveedor.Visibility = Visibility.Hidden;

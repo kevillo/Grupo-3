@@ -80,7 +80,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
                 if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos en  nombre");
+                    throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
                 }
                 else _nombreEmpleado = value;
             }
@@ -94,7 +94,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
 
-                    throw new FormatException("No se puede ingresar campos vacíos en apellido");
+                    throw new FormatException("Procure no dejar el Apellido con un formato incorrecto o vacío.");
                 }
                 else _apellidoEmpleado = value;
             }
@@ -107,7 +107,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13)
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos en identidad");
+                    throw new FormatException("Procure no dejar la Identidad con un formato incorrecto o vacío.");
                 }
                 else _identidadEmpleado = value;
             }
@@ -122,7 +122,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8)
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos en telefono");
+                    throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
                 }
                 else _telefonoEmpleado = value;
             }
@@ -150,7 +150,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 // valida si el email es verdadero ( aqui se pone falso por que asi entrara en el catch de ser falso)
                 if (validarEmail(value) == false)
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos en correo");
+                    throw new FormatException("Procure no dejar el Correo con un formato incorrecto o vacío.");
                 }
                 else _correoEmpleado = value;
             }
@@ -165,7 +165,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 //valida si la altura es positiva y si es un deciamal
                 if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _))
                 {
-                    throw new FormatException("No se pueden ingresar campos vacíos en altura");
+                    throw new FormatException("Procure no dejar la Altura con un formato incorrecto o vacío.");
                 }
                 else _alturaEmpleado = value;
             }
@@ -244,7 +244,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 10 caracteres
                 if ( value <=0 ||  string.IsNullOrEmpty(value.ToString()) || !Int64.TryParse(value.ToString(), out long _) || value.ToString().Length > 10)
                 {
-                    throw new FormatException("Recuerde que solo debe ser en un rango de 10 dígitos.");
+                    throw new FormatException("Procure no dejar el Sueldo con un formato incorrecto o vacío.");
                 }
                 else _sueldoBase = value;
             }

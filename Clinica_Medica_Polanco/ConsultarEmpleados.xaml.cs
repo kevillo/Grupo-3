@@ -65,7 +65,7 @@ namespace Clinica_Medica_Polanco
                 dtg_Consultar_Empleados.ItemsSource = empleadosDAL.BuscarEmpleado(consultar_empleado);
             else
             {
-                MessageBox.Show("Ingrese un id de empleado válido");
+                MessageBox.Show("Procure no dejar la Identidad del empleado con un formato incorrecto o vacío.");
                 stc_Empleados.Visibility = Visibility.Hidden;
                 scv_Empleados.Visibility = Visibility.Hidden;
                 brd_Empleados.Visibility = Visibility.Hidden;
@@ -113,7 +113,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Empleados.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_Empleados.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de empleado." });
             }
         }
 

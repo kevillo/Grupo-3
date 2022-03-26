@@ -50,7 +50,7 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_InfoStock.Children.Clear();
-            stc_InfoStock.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
+            stc_InfoStock.Children.Add(new TextBlock() { Text = "Código      Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -64,7 +64,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoStock.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
+                stc_InfoStock.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido" });
             }
         }
 
@@ -138,7 +138,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Por favor ingrese un insumo valido");
+                MessageBox.Show("Por favor ingrese un insumo válido.");
                 txt_Consultar_Stock_Codigo_Producto.Clear();
                 txt_Consultar_Stock_Codigo_Producto.Focus();
                 stc_InfoStock.Visibility = Visibility.Hidden;

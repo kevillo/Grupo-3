@@ -24,7 +24,7 @@ namespace Clinica_Medica_Polanco.Jornada_Empleo
             {
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Procure no dejar la Jornada con un formato incorrecto o vacío.");
                 }
                 else _DescripcionJornada = value;
             }

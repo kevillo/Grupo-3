@@ -34,7 +34,7 @@ namespace Clinica_Medica_Polanco
                 ProveedoresDAL.EliminarProveedor(codEliminar);
             else
             {
-                MessageBox.Show("Ingrese un codigo de proveedor para eliminar");
+                MessageBox.Show("Ingrese un código de proveedor para eliminar");
                 txt_Codigo_Proveedor_Buscar.Focus();
             }
             reiniciarPantalla();
@@ -66,7 +66,7 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoProveedor.Children.Clear();
 
-            stc_InfoProveedor.Children.Add(new TextBlock() { Text = "Codigo          Nombre" });
+            stc_InfoProveedor.Children.Add(new TextBlock() { Text = "Código          Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -80,7 +80,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de proveedor." });
             }
         }
 
@@ -141,7 +141,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un id de proveedor válido");
+                MessageBox.Show("Ingrese un id de proveedor válido.");
                 txt_Codigo_Proveedor_Buscar.Clear();
                 txt_Codigo_Proveedor_Buscar.Focus();
             }

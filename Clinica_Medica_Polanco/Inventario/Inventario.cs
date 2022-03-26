@@ -29,7 +29,7 @@ namespace Clinica_Medica_Polanco.Inventario
             {
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Procure no dejar el Mes de Inventario con un formato incorrecto o vacío.");
                 }
                 else _InventarioMes = value;
             }
@@ -42,7 +42,7 @@ namespace Clinica_Medica_Polanco.Inventario
             {
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Procure no dejar el Año de Inventario con un formato incorrecto o vacío.");
                 }
                 else _InventarioAño = value;
             }
@@ -55,7 +55,7 @@ namespace Clinica_Medica_Polanco.Inventario
             {
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Procure no dejar el Código de Proveedor con un formato incorrecto o vacío.");
                 }
                 else _CodigoProveedor = value;
             }
@@ -68,7 +68,7 @@ namespace Clinica_Medica_Polanco.Inventario
             {
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Procure no dejar el Código de Sucursal con un formato incorrecto o vacío.");
                 }
                 else _CodigoSucursal = value;
             }
@@ -83,7 +83,7 @@ namespace Clinica_Medica_Polanco.Inventario
             {
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene numeros negativos");
+                    throw new FormatException("Procure no dejar el Número de Lote con un formato incorrecto o vacío.");
                 }
                 else _numerolote = value;
             }
