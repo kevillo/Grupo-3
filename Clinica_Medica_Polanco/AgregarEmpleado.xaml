@@ -137,8 +137,10 @@
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
+        <Rectangle HorizontalAlignment="Left" Height="108" Margin="216,392,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
+
         <Label Content="Sueldo" HorizontalAlignment="Left" Margin="518,394,0,0" VerticalAlignment="Top" Height="34" Width="64" FontFamily="Tahoma"/>
-        <TextBox TabIndex="10" x:Name="txt_Sueldo" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBox TabIndex="10" x:Name="txt_Sueldo" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Sueldo_PreviewTextInput"/>
         <Label Content="Jornada laboral" HorizontalAlignment="Left" Margin="303,443,0,0" VerticalAlignment="Top" Height="25" Width="92" FontFamily="Tahoma"/>
         <Label Content="Fecha de pago" HorizontalAlignment="Left" Margin="487,443,0,0" VerticalAlignment="Top" Height="34" Width="90" FontFamily="Tahoma"/>
         <Label Content="Cargo" HorizontalAlignment="Left" Margin="704,392,0,0" VerticalAlignment="Top" Height="24" Width="43" FontFamily="Tahoma"/>
@@ -158,11 +160,10 @@
         <ComboBox TabIndex="11" x:Name="cmb_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="645,416,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
         <Rectangle HorizontalAlignment="Left" Height="244" Margin="216,124,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <ComboBox TabIndex="12" x:Name="cmb_Jornada_Laboral" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="272,468,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
-        <Rectangle HorizontalAlignment="Left" Height="108" Margin="216,392,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Label Content="Información Laboral" HorizontalAlignment="Left" Margin="211,371,0,0" VerticalAlignment="Top" Height="24" Width="126" FontFamily="Tahoma"/>
         <Label Content="Información Personal" HorizontalAlignment="Left" Margin="209,101,0,0" VerticalAlignment="Top" Height="23" Width="126" FontFamily="Tahoma"/>
         <Button TabIndex="15" x:Name="btn_Agregar_Empleado" Content="Guardar empleado" Foreground="White" Cursor="Hand" FontFamily="Tahoma" FontSize="28" HorizontalAlignment="Left" Margin="380,523,0,0" VerticalAlignment="Top" Height="60" Width="300" Background="#FF0D2D6F" Style="{DynamicResource btn_Style_Eliminar_Empleado}" Click="btn_Agregar_Empleado_Click"/>
-        <TextBox TabIndex="6" x:Name="txt_Altura" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="302,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="23" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBox TabIndex="6" x:Name="txt_Altura" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="302,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="23" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Altura_PreviewTextInput"/>
         <Label Content="Apellido" HorizontalAlignment="Left" Margin="663,123,0,0" VerticalAlignment="Top" Height="23" Width="57" FontFamily="Tahoma"/>
         <TextBox x:Name="txt_Apellido" TabIndex="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Apellido_PreviewTextInput"/>
         <ComboBox TabIndex="9" x:Name="cmb_Sucursal" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="272,416,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>

@@ -187,7 +187,7 @@
         <TextBox TabIndex="5" x:Name="txt_Telefono_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="488,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" PreviewTextInput="txt_Telefono_Actualizar_Empleado_PreviewTextInput"/>
         <Label Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="298,251,0,0" VerticalAlignment="Top" Height="31" Width="131" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Altura" HorizontalAlignment="Left" Margin="277,309,0,0" VerticalAlignment="Top" Height="28" Width="54" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox TabIndex="6" x:Name="txt_Altura_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="6" x:Name="txt_Altura_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="263,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" PreviewTextInput="txt_Altura_Actualizar_Empleado_PreviewTextInput"/>
         <Label Content="Tipo sangre" HorizontalAlignment="Left" Margin="375,307,0,0" VerticalAlignment="Top" Height="32" Width="88" RenderTransformOrigin="0.479,0.697" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Dirección" HorizontalAlignment="Left" Margin="740,244,0,0" VerticalAlignment="Top" Height="30" Width="74" FontFamily="Tahoma" FontSize="15"/>
         <RichTextBox TabIndex="9" x:Name="rtb_Direccion_Actualizar_Empleado" Margin="683,274,212,256" FontFamily="Tahoma" FontSize="15">
@@ -198,7 +198,7 @@
             </FlowDocument>
         </RichTextBox>
         <Label Content="Sueldo" HorizontalAlignment="Left" Margin="314,376,0,0" VerticalAlignment="Top" Height="34" Width="66" FontFamily="Tahoma" FontSize="15"/>
-        <TextBox TabIndex="10" x:Name="txt_Sueldo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="258,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15"/>
+        <TextBox TabIndex="10" x:Name="txt_Sueldo_Actualizar_Empleado" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="258,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="22" TextAlignment="Center" FontFamily="Tahoma" FontSize="15" PreviewTextInput="txt_Sueldo_Actualizar_Empleado_PreviewTextInput"/>
         <Label Content="Jornada laboral" HorizontalAlignment="Left" Margin="268,444,0,0" VerticalAlignment="Top" Height="34" Width="114" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Fecha de pago" HorizontalAlignment="Left" Margin="496,442,0,0" VerticalAlignment="Top" Height="34" Width="116" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Cargo" HorizontalAlignment="Left" Margin="518,376,0,0" VerticalAlignment="Top" Height="30" Width="58" FontFamily="Tahoma" FontSize="15"/>
