@@ -49,7 +49,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    MessageBox.Show("por favor ingrese un insumo valido");
+                    MessageBox.Show("Procure no dejar la Identidad del Insumo con un formato incorrecto o vacío.");
                     txt_Gestionar_Insumos_Buscar.Clear();   
                     txt_Gestionar_Insumos_Buscar.Focus();
                     stc_Insumo.Visibility = Visibility.Hidden;
@@ -86,7 +86,7 @@ namespace Clinica_Medica_Polanco
 
         private void validarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            MessageBox.Show("Procure no dejar un formato incorrecto o vacío en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();
@@ -127,7 +127,7 @@ namespace Clinica_Medica_Polanco
 
             // Clear the list   
             stc_Insumo.Children.Clear();
-            stc_Insumo.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
+            stc_Insumo.Children.Add(new TextBlock() { Text = "Código      Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -201,7 +201,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un insumo valido");
+                MessageBox.Show("Procure no dejar la Identidad de Insumo con un formato incorrecto o vacío.");
                 txt_Gestionar_Insumos_Buscar.Clear();
                 txt_Gestionar_Insumos_Buscar.Focus();
                 stc_Insumo.Visibility = Visibility.Hidden;

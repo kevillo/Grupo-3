@@ -88,7 +88,7 @@ namespace Clinica_Medica_Polanco
             txt_Descuento.Text = Math.Round(nuevoPago.Descuento, 2).ToString();
             txt_Total_Pagar.Text = Math.Round(nuevoPago.TotalVenta, 2).ToString();
             txt_Subtotal.Text = Math.Round(nuevoPago.Subtotal, 2).ToString();
-
+            txt_Subtotal.Text = Math.Round(nuevoPago.Subtotal, 2).ToString();
         }
     }
 }

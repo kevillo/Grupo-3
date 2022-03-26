@@ -66,7 +66,7 @@ namespace Clinica_Medica_Polanco
             int codEntrega = string.IsNullOrEmpty(txt_Entrega_Examen_Buscar.Text)?-1:int.Parse(txt_Entrega_Examen_Buscar.Text);
             if(codEntrega <0)
             {
-                MessageBox.Show("Por favor, seleccione un examen para ser entregado");
+                MessageBox.Show("Por favor, seleccione un examen para ser entregado.");
                 txt_Entrega_Examen_Buscar.Clear();
                 txt_Entrega_Examen_Buscar.Focus();
             }
@@ -84,7 +84,7 @@ namespace Clinica_Medica_Polanco
             servicios.serviciosEntrega ventaEntregar = (servicios.serviciosEntrega)dtg_Entrega_Examen_Examenes.SelectedItem; 
             if(ventaEntregar == null)
             {
-                MessageBox.Show("Por favor, seleccione un examen para ser entregado");
+                MessageBox.Show("Por favor, seleccione un examen para ser entregado.");
                 txt_Entrega_Examen_Buscar.Clear();
                 txt_Entrega_Examen_Buscar.Focus();
             }
@@ -100,7 +100,7 @@ namespace Clinica_Medica_Polanco
             string buscar_Examen = txt_Entrega_Examen_Buscar.Text;
             if (!string.IsNullOrEmpty(buscar_Examen))
             {
-                MessageBox.Show("Si no aparece nada en el recuadro de abajo,\nsignifica que ese paciente no tiene ningun examen listo para entregar");
+                MessageBox.Show("Si no aparece nada en el recuadro de abajo,\nsignifica que ese paciente no tiene ningún examen listo para entregar.");
                 if (buscar_Examen.Length < 13)
                 {
                     int codFactura = int.Parse(buscar_Examen);
@@ -111,7 +111,7 @@ namespace Clinica_Medica_Polanco
             else
             {
 
-                MessageBox.Show("Ingrese un id de paciente o numero de factura");
+                MessageBox.Show("Procure no dejar la Identidad de paciente o un Número de factura con un formato incorrecto o vacío.");
                 txt_Entrega_Examen_Buscar.Clear();
                 txt_Entrega_Examen_Buscar.Focus();
 

@@ -35,7 +35,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-               MessageBox.Show("No se puede dejar el id de insumo vacío");
+               MessageBox.Show("Procure no dejar el Código de insumo con un formato incorrecto o vacío.");
                txt_Codigo_Insumo.Clear();
                txt_Codigo_Insumo.Focus();
             }
@@ -76,7 +76,7 @@ namespace Clinica_Medica_Polanco
             // Clear the list   
             stc_InfoProveedor.Children.Clear();
 
-            stc_InfoProveedor.Children.Add(new TextBlock() { Text = "Codigo      Nombre" });
+            stc_InfoProveedor.Children.Add(new TextBlock() { Text = "Código      Nombre" });
             // Add the result   
             foreach (var obj in data)
             {
@@ -90,7 +90,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese producto o es invalido" });
+                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido" });
             }
         }
 
@@ -150,7 +150,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Por favor ingrese insumo valido");
+                MessageBox.Show("Por favor ingrese un insumo válido.");
                 txt_Codigo_Insumo.Clear();
                 txt_Codigo_Insumo.Focus();
                 stc_InfoProveedor.Visibility = Visibility.Hidden;

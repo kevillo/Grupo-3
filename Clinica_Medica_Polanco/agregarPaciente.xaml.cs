@@ -114,14 +114,14 @@ namespace Clinica_Medica_Polanco
                     }
                     else
                     {
-                        System.Windows.MessageBox.Show("Identidad repetida: por favor ingrese una identidad diferente");
+                        System.Windows.MessageBox.Show("Identidad repetida: Por favor, ingrese una identidad diferente.");
                         txt_Identidad_Paciente.Clear();
                         txt_Identidad_Paciente.Focus();
                     }
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Correo repetido: Por favor ingrese otro correo");
+                    System.Windows.MessageBox.Show("Correo repetido: Por favor, ingrese un correo diferente.");
                     txt_Correo_Paciente.Clear();
                     txt_Correo_Paciente.Focus();
                 }
@@ -145,7 +145,7 @@ namespace Clinica_Medica_Polanco
         //Validar campos
         private void ValidarCampos([Optional] System.Windows.Controls.TextBox txts, [Optional] System.Windows.Controls.RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] System.Windows.Controls.ComboBox cmb,[Optional] int refer)
         {
-            System.Windows.MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            System.Windows.MessageBox.Show("Procure no dejar un formato incorrecto o vacío en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();

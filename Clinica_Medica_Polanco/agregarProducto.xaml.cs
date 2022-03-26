@@ -52,7 +52,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Número de serie repetido: Por favor ingrese otro número");
+                    System.Windows.MessageBox.Show("Número de serie repetido: Por favor, ingrese otro número.");
                     txt_Numero_Serie.Clear();
                     txt_Numero_Serie.Focus();
                 }
@@ -73,7 +73,7 @@ namespace Clinica_Medica_Polanco
         //Validar campos de tipo txt, cmb. rtb y dt
         private void validarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
         {
-            MessageBox.Show("No se pueden dejar espacios en blanco o ingresar caracteres inválidos en " + leyenda);
+            MessageBox.Show("Procure no dejar un formato incorrecto o vacío en " + leyenda);
 
             if (refer == 2) dt.Focus();
             else if (refer == 3) cmb.Focus();

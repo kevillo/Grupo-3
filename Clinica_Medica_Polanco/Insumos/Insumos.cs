@@ -32,7 +32,7 @@ namespace Clinica_Medica_Polanco.Insumos
             {
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio o tiene números negativos");
+                    throw new FormatException("Procure no dejar la Existencia con un formato incorrecto o vacío.");
                 }
                 else _Existencia = value;
             }
@@ -44,7 +44,7 @@ namespace Clinica_Medica_Polanco.Insumos
             {
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio");
+                    throw new FormatException("Procure no dejar la Categoría de Insumo con un formato incorrecto o vacío.");
                 }
                 else _DescripcionCategoriaInsumo = value;
             }
@@ -66,7 +66,7 @@ namespace Clinica_Medica_Polanco.Insumos
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
                 if (string.IsNullOrEmpty(value) || value.Length < 2)
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos en nombre");
+                    throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
                 }
                 else _nombreInsumo = value;
             }
@@ -90,7 +90,7 @@ namespace Clinica_Medica_Polanco.Insumos
                 //valida si la altura es positiva y si es un deciamal
                 if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _))
                 {
-                    throw new FormatException("No se pueden ingresar campos vacíos en precio unitario");
+                    throw new FormatException("Procure no dejar el Precio Unitario con un formato incorrecto o vacío.");
                 }
                 else _precioUnitario = value;
             }
@@ -105,7 +105,7 @@ namespace Clinica_Medica_Polanco.Insumos
                 // valida si la cadena no esta vacia, si es un numero, y si está en un rango de 10 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length > 10)
                 {
-                    throw new FormatException("No se puede ingresar campos vacíos en número serie");
+                    throw new FormatException("Procure no dejar el Número de serie con un formato incorrecto o vacío.");
                 }
                 else _numeroSerie = value;
             }

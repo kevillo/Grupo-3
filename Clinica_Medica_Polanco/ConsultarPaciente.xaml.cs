@@ -72,7 +72,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un id de paciente válido");
+                MessageBox.Show("Procure no dejar la Identidad de paciente con un formato incorrecto o vacío.");
                 txt_Consultar_Pacientes.Clear();
                 txt_Consultar_Pacientes.Focus();
             }

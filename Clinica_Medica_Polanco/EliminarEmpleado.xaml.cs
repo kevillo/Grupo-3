@@ -130,7 +130,7 @@ namespace Clinica_Medica_Polanco
             }
             catch (ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la direccion del em[pleado ingresado");
+                MessageBox.Show("Error al recuperar la dirección del empleado ingresado");
                 txt_ID_Eliminar_Empleado.Clear();
                 txt_ID_Eliminar_Empleado.Focus();
                 stc_InfoEmpleado.Visibility = Visibility.Hidden;
@@ -179,7 +179,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoEmpleado.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoEmpleado.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de empleado." });
             }
         }
 

@@ -54,9 +54,6 @@ namespace Clinica_Medica_Polanco
             return IntPtr.Zero;
         }
 
-
-
-
         private void btn_Revision_Examen_Salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -71,7 +68,7 @@ namespace Clinica_Medica_Polanco
                 servicios.serviciosEntrega analisis = (servicios.serviciosEntrega)dtg_Revision_Examen_Examenes.SelectedItem;
                 if (analisis == null)
                 {
-                    MessageBox.Show("seleccione al menos un examen para entregar");
+                    MessageBox.Show("seleccione al menos un examen para entregar.");
                 }
                 else
                 {
@@ -82,7 +79,7 @@ namespace Clinica_Medica_Polanco
 
                 }
             }
-            else MessageBox.Show("No hay exámenes por revisar");
+            else MessageBox.Show("No hay exámenes por revisar.");
         }
 
     }

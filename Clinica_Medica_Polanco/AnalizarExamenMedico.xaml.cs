@@ -65,7 +65,7 @@ namespace Clinica_Medica_Polanco
                 ExamenesMedicos.ExamenesDAL.analizarExamenMedico(ventaAnalisis.CodFacturaVenta, ventaAnalisis.CodigoExamenMedico, analisis);
                 this.Close();
             }
-            else MessageBox.Show("Debe escribir un análisis para el examen médico");
+            else MessageBox.Show("Procure no dejar el análisis del examen con un formato incorrecto o vacío.");
             
         }
 
