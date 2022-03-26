@@ -78,7 +78,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
                     throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
                 }
@@ -91,7 +91,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
 
                     throw new FormatException("Procure no dejar el Apellido con un formato incorrecto o vacío.");
