@@ -56,7 +56,9 @@ namespace Clinica_Medica_Polanco
             tabla.Columns.Add("Combo");
             tabla.Columns.Add("Fecha factura");
             dtg_Solicitud_Examen_Examenes.ItemsSource = tabla.AsDataView();
+
             dtg_Solicitud_Examen_Examenes.IsReadOnly = true;
+
             btn_Solicitud_Examen_Procesar_Orden.IsEnabled = false;
         }
         private void SolicitudExamen_SourceInitialized(object sender, EventArgs e)
@@ -369,7 +371,6 @@ namespace Clinica_Medica_Polanco
             block.MouseLeftButtonUp += (sender, e) =>
             {
                 txt_Solicitud_Examen_ID_Cliente.Text = (sender as TextBlock).Text.Split(" - ")[0];
-                MessageBox.Show("aaaa");
                 stc_InfoCliente.Visibility = Visibility.Hidden;
                 scv_BuscarCliente.Visibility = Visibility.Hidden;
                 brd_BuscarCliente.Visibility = Visibility.Hidden;

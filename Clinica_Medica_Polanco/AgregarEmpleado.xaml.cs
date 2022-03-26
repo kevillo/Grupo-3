@@ -6,6 +6,7 @@ using System.Windows.Interop;
 using Clinica_Medica_Polanco.Empleados;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -50,18 +51,19 @@ namespace Clinica_Medica_Polanco
             {
                 //Validación de datos
                 Empleados.Empleados empleados1 = new();
-                empleados1.NombreEmpleado = txt_Nombre.Text;
-                empleados1.ApellidoEmpleado = txt_Apellido.Text;
+                empleados1.NombreEmpleado = (txt_Nombre.Text).StartsWith(" ") ? null : (txt_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre.Text, "\\s+", " ");
+                
+                empleados1.ApellidoEmpleado = (txt_Apellido.Text).StartsWith(" ") ? null : (txt_Apellido.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido.Text, "\\s+", " ");
                 empleados1.IdentidadEmpleado = txt_Identidad.Text;
                 empleados1.TelefonoEmpleado = txt_Telefono.Text;
-                empleados1.FechaNacimientoEmpleado = Convert.ToDateTime(dtp_Nacimiento.Text);
-                empleados1.CorreoEmpleado = txt_Correo.Text;
-                empleados1.AlturaEmpleado = string.IsNullOrEmpty(txt_Altura.Text) ? 0 : decimal.Parse(txt_Altura.Text);
+                empleados1.FechaNacimientoEmpleado = string.IsNullOrEmpty(dtp_Nacimiento.Text)?DateTime.Now: Convert.ToDateTime(dtp_Nacimiento.Text);
+                empleados1.CorreoEmpleado = (txt_Correo.Text).StartsWith(" ") ? " " : (txt_Correo.Text).EndsWith(" ") ? " " : txt_Correo.Text;
+                empleados1.AlturaEmpleado = (txt_Altura.Text).StartsWith(" ")?0:(txt_Altura.Text).EndsWith(" ")?0:string.IsNullOrEmpty(txt_Altura.Text)?0: decimal.Parse(txt_Altura.Text);
                 empleados1.TipoSangreEmpleado = cmb_Tipo_Sangre.SelectedItem.ToString();
                 empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion)) ? null : rtbAString(rtb_Direccion);
                 empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo.Text) ? -1 : decimal.Parse(txt_Sueldo.Text);
-                empleados1.FechaPago = Convert.ToDateTime(dtp_Pago_Agregar_Empleado.Text);
-                empleados1.FechaContratacion = Convert.ToDateTime(dtp_Ingreso_Agregar_Empleado.Text);
+                empleados1.FechaPago = string.IsNullOrEmpty(dtp_Pago_Agregar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Pago_Agregar_Empleado.Text);
+                empleados1.FechaContratacion = string.IsNullOrEmpty(dtp_Ingreso_Agregar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Ingreso_Agregar_Empleado.Text);
                 empleados1.CodigoJornada = cmb_Jornada_Laboral.SelectedIndex+1;
                 empleados1.CodigoPuesto = cmb_Cargo.SelectedIndex+1;
                 empleados1.CodigoSucursal = cmb_Sucursal.SelectedIndex+1;
@@ -112,6 +114,12 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("Sucursal")) ValidarCampos(leyenda: "Sucursal", cmb: cmb_Sucursal, refer: 3);
                 else if (error.StackTrace.Contains("FechaPago")) ValidarCampos(leyenda: "Fecha de pago", dt: dtp_Pago_Agregar_Empleado, refer: 2);
                 else if (error.StackTrace.Contains("FechaContratacion")) ValidarCampos(leyenda: "Fecha de ingreso", dt: dtp_Ingreso_Agregar_Empleado, refer: 2);
+
+            }
+            catch(OverflowException errorS)
+            {
+                if (errorS.StackTrace.Contains("Altura")) ValidarCampos(txt_Altura, leyenda: "Altura");
+                else if (errorS.StackTrace.Contains("Sueldo")) ValidarCampos(txt_Sueldo, leyenda: "Sueldo base");
 
             }
         }

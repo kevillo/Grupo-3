@@ -66,6 +66,7 @@ namespace Clinica_Medica_Polanco
             else
             {
                 MessageBox.Show("Procure no dejar la Identidad del empleado con un formato incorrecto o vacío.");
+                txt_Consultar_Empleados_Buscar.Focus();
                 stc_Empleados.Visibility = Visibility.Hidden;
                 scv_Empleados.Visibility = Visibility.Hidden;
                 brd_Empleados.Visibility = Visibility.Hidden;

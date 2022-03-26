@@ -28,7 +28,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Deshabilitar_Insumo_Click(object sender, RoutedEventArgs e)
         {
             int codEliminar = 0;
-            if (!string.IsNullOrEmpty(txt_Codigo_Insumo.Text))
+            if (!string.IsNullOrEmpty(txt_Codigo_Insumo.Text) && int.TryParse(txt_Codigo_Insumo.Text,out int _))
             {
                 codEliminar = int.Parse(txt_Codigo_Insumo.Text);
                 Insumos.insumosDAL.EliminarInsumo(codEliminar);
@@ -182,13 +182,6 @@ namespace Clinica_Medica_Polanco
         }
 
         //validacion para que solo se pueda ingresar numeros a un campo
-        private void txt_Codigo_Insumo_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-
-            if (ascci >= 48 && ascci <= 57) e.Handled = false;
-
-            else e.Handled = true;
-        }
+       
     }
 }

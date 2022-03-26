@@ -41,7 +41,7 @@
 
     <Grid Background="White">
 
-        <TextBox TabIndex="0" x:Name="txt_Codigo_Insumo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Codigo_Insumo_KeyUp" PreviewTextInput="txt_Codigo_Insumo_PreviewTextInput"/>
+        <TextBox TabIndex="0" x:Name="txt_Codigo_Insumo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" KeyUp="txt_Codigo_Insumo_KeyUp" />
         <TextBox x:Name="txt_Nombre_Insumo" HorizontalAlignment="Left" Margin="97,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" VerticalContentAlignment="Center" Height="33" TextAlignment="Center" FontFamily="Tahoma" FontSize="17" IsEnabled="False" PreviewTextInput="txt_Nombre_Insumo_PreviewTextInput"/>
         <TextBox x:Name="txt_Fecha_Expiración_Insumo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="397,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="33" TextAlignment="Center" FontSize="17" FontFamily="Tahoma" IsEnabled="False"/>
         <TextBox x:Name="txt_Precio_Unitario" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="97,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="33" FontFamily="Tahoma" FontSize="17" TextAlignment="Center" IsEnabled="False"/>

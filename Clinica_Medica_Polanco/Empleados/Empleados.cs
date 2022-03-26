@@ -148,7 +148,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si el email es verdadero ( aqui se pone falso por que asi entrara en el catch de ser falso)
-                if (validarEmail(value) == false)
+                if (!validarEmail(value) )
                 {
                     throw new FormatException("Procure no dejar el Correo con un formato incorrecto o vacío.");
                 }
@@ -163,7 +163,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 //valida si la altura es positiva y si es un deciamal
-                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _))
+                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length<1 || value.ToString().Length > 3)
                 {
                     throw new FormatException("Procure no dejar la Altura con un formato incorrecto o vacío.");
                 }
@@ -188,7 +188,7 @@ namespace Clinica_Medica_Polanco.Empleados
           get => _direccionEmpleado;
           set
             {
-                if (string.IsNullOrEmpty(value) || (value.Length > 25 && value.Length < 255))
+                if (string.IsNullOrEmpty(value) || (value.Length < 25 || value.Length > 255))
                 {
                     throw new FormatException();
                 }
@@ -242,7 +242,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 10 caracteres
-                if ( value <=0 ||  string.IsNullOrEmpty(value.ToString())|| !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length > 10)
+                if ( value <=0 ||  string.IsNullOrEmpty(value.ToString())|| !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length<4 || value.ToString().Length > 10)
                 {
                     throw new FormatException("Procure no dejar el Sueldo con un formato incorrecto o vacío.");
                 }
