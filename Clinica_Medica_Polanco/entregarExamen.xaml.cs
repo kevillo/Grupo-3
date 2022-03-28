@@ -102,12 +102,12 @@ namespace Clinica_Medica_Polanco
 
                 string buscar_Examen = txt_Entrega_Examen_Buscar.Text;
                 MessageBox.Show("Si no aparece nada en el recuadro de abajo,\nsignifica que ese paciente no tiene ningún examen listo para entregar.");
-                if (buscar_Examen.Length < 13 && !string.IsNullOrEmpty(buscar_Examen))
+                if (buscar_Examen.Length < 13 && !string.IsNullOrEmpty(buscar_Examen) && int.TryParse(buscar_Examen,out int _))
                 {
-                    int codFactura = int.Parse(buscar_Examen);
+                    int codFactura = int.Parse(buscar_Examen.Trim());
                     cargarDTGEntrega(codFactura);
                 }
-                else cargarDTGEntrega(buscar_Examen);
+                else cargarDTGEntrega(buscar_Examen.Trim());
             }
             else
             {
@@ -117,6 +117,12 @@ namespace Clinica_Medica_Polanco
                 txt_Entrega_Examen_Buscar.Focus();
 
             }
+            stc_InfoPaciente.Visibility = Visibility.Hidden;
+            scv_BuscarPaciente.Visibility = Visibility.Hidden;
+            brd_BuscarPaciente.Visibility = Visibility.Hidden;
+            txt_Entrega_Examen_Buscar.Clear();
+
+
         }
 
 

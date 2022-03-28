@@ -72,18 +72,23 @@ namespace Clinica_Medica_Polanco
             {
                 dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(consultarExamen);
             }
-            else if (!string.IsNullOrEmpty(consultarExamen))
+            else if (!string.IsNullOrEmpty(consultarExamen) && int.TryParse(consultarExamen,out int _))
             {
                 int codExamen = int.Parse(consultarExamen);
                 int codSucursal = cmb_Sucursal_Buscar.SelectedIndex + 1;
                 dtg_Consulta_Examen_Examenes.ItemsSource  = ExamenesDAL.obtenerInforPorSucursalExamen(codSucursal, codExamen);
             }
-            else
+            else 
             {
 
                 int codSucursal = cmb_Sucursal_Buscar.SelectedIndex + 1;
                 dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(codSucursal);
             }
+            
+            stc_Examen.Visibility = Visibility.Hidden;
+            scv_Examen.Visibility = Visibility.Hidden;
+            brd_Examen.Visibility = Visibility.Hidden;
+            txt_Consulta_Examen_Buscar.Clear();
         }
 
         private void txt_Consulta_Examen_Buscar_KeyUp(object sender, KeyEventArgs e)

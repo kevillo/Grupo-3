@@ -15,6 +15,8 @@ using System.Windows.Interop;
 using Clinica_Medica_Polanco.ExamenesMedicos;
 using System.Runtime.InteropServices;
 using System.Data;
+using System.Text.RegularExpressions;
+
 namespace Clinica_Medica_Polanco
 {
     /// <summary>
@@ -155,10 +157,19 @@ namespace Clinica_Medica_Polanco
                     {
                         Ventas.Ventas nuev = new();
                         servicios.Servicios nuevoServicio = new();
-                        nuev.Cantidad = string.IsNullOrEmpty(txt_Cantidad_Examen.Text) ? -1 : int.Parse(txt_Cantidad_Examen.Text);
+                        nuev.Cantidad = string.IsNullOrEmpty(txt_Cantidad_Examen.Text)
+                            ? -1 : (txt_Cantidad_Examen.Text).StartsWith(" ")
+                            ? -1 : (txt_Cantidad_Examen.Text).EndsWith(" ")
+                            ? -1 : !int.TryParse(txt_Cantidad_Examen.Text, out int _)
+                            ? -1 : int.Parse(Regex.Replace(txt_Cantidad_Examen.Text, "\\s", ""));
+
                         nuev.CodigoPaciente = Ventas.ventasDAL.TraerCodigoPaciente(txt_Solicitud_Examen_ID_Cliente.Text);
                         nuev.CodigoEnfermero = cmb_Solicitud_Examen_Enfermero.SelectedIndex + 1;
-                        nuev.CodigoExamenMedico = string.IsNullOrWhiteSpace(txt_Solicitud_Examen_Buscar.Text) ? -1 : int.Parse(txt_Solicitud_Examen_Buscar.Text);
+                        nuev.CodigoExamenMedico = string.IsNullOrEmpty(txt_Solicitud_Examen_Buscar.Text)
+                                ? -1 : !int.TryParse(txt_Solicitud_Examen_Buscar.Text, out int _)
+                                ? -1 : (txt_Solicitud_Examen_Buscar.Text).StartsWith(" ")
+                                ? -1 : (txt_Solicitud_Examen_Buscar.Text).EndsWith(" ")
+                                ? -1 : int.Parse(txt_Solicitud_Examen_Buscar.Text);
                         nuev.CodigoFacturador = codEmpleado;
                         nuev.CodigoMicrobiologo = cmb_Solicitud_Examen_Microbiologo.SelectedIndex + 1;
                         nuev.EstadoExamenMedico = 1;
@@ -198,6 +209,11 @@ namespace Clinica_Medica_Polanco
                         if (cont > 0) btn_Solicitud_Examen_Procesar_Orden.IsEnabled = true;
 
                     }
+                    txt_Solicitud_Examen_Buscar.Clear();
+                    txt_Solicitud_Examen_ID_Cliente.Clear();
+                    txt_Cantidad_Examen.Clear();
+
+
 
                 }
                 catch (FormatException error)
@@ -285,7 +301,8 @@ namespace Clinica_Medica_Polanco
             // Mouse events   
             block.MouseLeftButtonUp += (sender, e) =>
             {
-                txt_Solicitud_Examen_Buscar.Text = (sender as TextBlock).Text.Split("-")[0];
+                txt_Solicitud_Examen_Buscar.Text = ((sender as TextBlock).Text.Split("-")[0]).Trim();
+               
                 stc_InfoPaciente.Visibility = Visibility.Hidden;
                 scv_BuscarPaciente.Visibility = Visibility.Hidden;
                 brd_BuscarPaciente.Visibility = Visibility.Hidden;
