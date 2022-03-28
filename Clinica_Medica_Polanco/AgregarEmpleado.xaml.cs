@@ -50,6 +50,7 @@ namespace Clinica_Medica_Polanco
             try
             {
                 //Validación de datos
+                string direccionE = rtbAString(rtb_Direccion);
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = (txt_Nombre.Text).StartsWith(" ") ? null : (txt_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre.Text, "\\s+", " ");
                 empleados1.ApellidoEmpleado = (txt_Apellido.Text).StartsWith(" ") ? null : (txt_Apellido.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido.Text, "\\s+", " ");
@@ -57,9 +58,9 @@ namespace Clinica_Medica_Polanco
                 empleados1.TelefonoEmpleado = txt_Telefono.Text;
                 empleados1.FechaNacimientoEmpleado = string.IsNullOrEmpty(dtp_Nacimiento.Text)?DateTime.Now: Convert.ToDateTime(dtp_Nacimiento.Text);
                 empleados1.CorreoEmpleado = (txt_Correo.Text).StartsWith(" ") ? " " : (txt_Correo.Text).EndsWith(" ") ? " " : txt_Correo.Text;
-                empleados1.AlturaEmpleado = (txt_Altura.Text).StartsWith(" ")?0:(txt_Altura.Text).EndsWith(" ")?0:string.IsNullOrEmpty(txt_Altura.Text)?0: decimal.Parse(txt_Altura.Text);
+                empleados1.AlturaEmpleado = (txt_Altura.Text).StartsWith(" ")?0:(txt_Altura.Text).EndsWith(" ")?0:string.IsNullOrEmpty(txt_Altura.Text)?0: decimal.Parse(Regex.Replace(txt_Altura.Text, "\\s", ""));
                 empleados1.TipoSangreEmpleado = cmb_Tipo_Sangre.SelectedItem.ToString();
-                empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion)) ? null : rtbAString(rtb_Direccion);
+                empleados1.DireccionEmpleado = (direccionE).StartsWith(" ") ? null : (direccionE).EndsWith(" ") ? null : Regex.Replace(direccionE, "\\s+", " ");
                 empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo.Text) ? -1 : decimal.Parse(txt_Sueldo.Text);
                 empleados1.FechaPago = string.IsNullOrEmpty(dtp_Pago_Agregar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Pago_Agregar_Empleado.Text);
                 empleados1.FechaContratacion = string.IsNullOrEmpty(dtp_Ingreso_Agregar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Ingreso_Agregar_Empleado.Text);

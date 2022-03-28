@@ -188,7 +188,7 @@ namespace Clinica_Medica_Polanco.Empleados
           get => _direccionEmpleado;
           set
             {
-                if (string.IsNullOrEmpty(value) || (value.Length < 25 || value.Length > 255))
+                if (string.IsNullOrEmpty(value) || (value.Length < 10 || value.Length > 255))
                 {
                     throw new FormatException();
                 }

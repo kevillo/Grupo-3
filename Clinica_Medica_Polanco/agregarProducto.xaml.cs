@@ -37,8 +37,8 @@ namespace Clinica_Medica_Polanco
                 //Validación de datos
                 Insumos.Insumos nuevoInsumo = new();
                 nuevoInsumo.NombreInsumo = (txt_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Nombre_Producto.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Producto.Text, "\\s+", " ");
-                nuevoInsumo.NumeroSerie = txt_Numero_Serie.Text;
-                nuevoInsumo.PrecioUnitario =  string.IsNullOrEmpty(txt_Precio_Unitario.Text) ? -1 : decimal.Parse(txt_Precio_Unitario.Text);              
+                nuevoInsumo.NumeroSerie = (txt_Numero_Serie.Text).StartsWith(" ") ? null : (txt_Numero_Serie.Text).EndsWith(" ") ? null : Regex.Replace(txt_Numero_Serie.Text, "\\s+", " ");
+                nuevoInsumo.PrecioUnitario = (txt_Precio_Unitario.Text).StartsWith(" ") ? 0 : (txt_Precio_Unitario.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Precio_Unitario.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Precio_Unitario.Text, "\\s", ""));
                 nuevoInsumo.CodigoCategoriaInsumo = cmb_Tipo_Insumo.SelectedIndex+1;
                 nuevoInsumo.FechaExpiracion = string.IsNullOrEmpty(dtp_Fecha_Expiracion.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
                 nuevoInsumo.Estado = (bool)chb_Disponibilidad.IsChecked;

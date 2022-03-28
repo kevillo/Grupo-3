@@ -76,8 +76,9 @@ namespace Clinica_Medica_Polanco
             try
             {
                 if (!string.IsNullOrEmpty(txt_PacienteId.Text))
-                { 
+                {
                     //Validar datos
+                    string direccionP = rtbAString(rtb_Actualizar_Paciente_Direccion);
                     Pacient paciente1 = new();
                     paciente1.Codigo = PacientesDAL.ObtenerIdPaciente(txt_PacienteId.Text);
                     paciente1.Nombre = (txt_Actualizar_Paciente_Nombre.Text).StartsWith(" ") ? null : (txt_Actualizar_Paciente_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Actualizar_Paciente_Nombre.Text, "\\s+", " ");
@@ -86,9 +87,9 @@ namespace Clinica_Medica_Polanco
                     paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
                     paciente1.FechaNacimiento = string.IsNullOrEmpty(dtp_Actualizar_Paciente_FechaNac.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
                     paciente1.Correo = (txt_Actualizar_Paciente_CorreoE.Text).StartsWith(" ") ? " " : (txt_Actualizar_Paciente_CorreoE.Text).EndsWith(" ") ? " " : txt_Actualizar_Paciente_CorreoE.Text;
-                    paciente1.Altura = (txt_Actualizar_Paciente_Altura.Text).StartsWith(" ") ? 0 : (txt_Actualizar_Paciente_Altura.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.Parse(txt_Actualizar_Paciente_Altura.Text);
+                    paciente1.Altura = (txt_Actualizar_Paciente_Altura.Text).StartsWith(" ") ? 0 : (txt_Actualizar_Paciente_Altura.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Actualizar_Paciente_Altura.Text, "\\s", "");
                     paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
-                    paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(rtb_Actualizar_Paciente_Direccion)) ? null : rtbAString(rtb_Actualizar_Paciente_Direccion);
+                    paciente1.Direccion = (direccionP).StartsWith(" ") ? null : (direccionP).EndsWith(" ") ? null : Regex.Replace(direccionP, "\\s+", " ");
                     paciente1.Estado = (bool)chk_Actualizar_Paciente_EstadoPaciente.IsChecked;
 
                     //Validación de un correo duplicado en la base de datos

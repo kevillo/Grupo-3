@@ -40,8 +40,8 @@ namespace Clinica_Medica_Polanco
                     Insumos.Insumos nuevoInsumo = new();
                     nuevoInsumo.CodigoInsumo = int.Parse(txt_Gestionar_Insumos_Buscar.Text);
                     nuevoInsumo.NombreInsumo = (txt_Gestionar_Insumos_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Gestionar_Insumos_Nombre_Producto.Text).EndsWith(" ") ? null : Regex.Replace(txt_Gestionar_Insumos_Nombre_Producto.Text, "\\s+", " ");
-                    nuevoInsumo.NumeroSerie = txt_Gestionar_Insumos_Num_Serie.Text;
-                    nuevoInsumo.PrecioUnitario = string.IsNullOrEmpty(txt_Gestionar_Insumos_Precio.Text) ? -1 : decimal.Parse(txt_Gestionar_Insumos_Precio.Text);
+                    nuevoInsumo.NumeroSerie = (txt_Gestionar_Insumos_Num_Serie.Text).StartsWith(" ") ? null : (txt_Gestionar_Insumos_Num_Serie.Text).EndsWith(" ") ? null : Regex.Replace(txt_Gestionar_Insumos_Num_Serie.Text, "\\s+", " ");
+                    nuevoInsumo.PrecioUnitario = (txt_Gestionar_Insumos_Precio.Text).StartsWith(" ") ? 0 : (txt_Gestionar_Insumos_Precio.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Gestionar_Insumos_Precio.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Gestionar_Insumos_Precio.Text, "\\s", ""));
                     nuevoInsumo.CodigoCategoriaInsumo = cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex + 1;
                     nuevoInsumo.FechaExpiracion = string.IsNullOrEmpty(dtp_Fecha_Expiracion.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
                     nuevoInsumo.Estado = (bool)chk_Disponibilidad.IsChecked;

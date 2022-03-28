@@ -39,13 +39,14 @@ namespace Clinica_Medica_Polanco
                 if (!string.IsNullOrEmpty(txt_Codigo_Proveedor_Actualizar.Text))
                 {
                     int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
+                    string direccionPr = rtbAString(rtb_Direccion_Proveedor_Actualizar);
                     Proveedores.Proveedores proveedores1 = new();
                     proveedores1.CodigoProveedor = codProveedor;
                     proveedores1.NombreProveedor = (txt_Nombre_Proveedor_Actualizar.Text).StartsWith(" ") ? null : (txt_Nombre_Proveedor_Actualizar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Proveedor_Actualizar.Text, "\\s+", " ");
                     proveedores1.ApellidoProveedor = (txt_Apellido_Proveedor_Actualizar.Text).StartsWith(" ") ? null : (txt_Apellido_Proveedor_Actualizar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido_Proveedor_Actualizar.Text, "\\s+", " ");
                     proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Actualizar.Text;
                     proveedores1.CorreoProveedor = (txt_Correo_Proveedor_Actualizar.Text).StartsWith(" ") ? " " : (txt_Correo_Proveedor_Actualizar.Text).EndsWith(" ") ? " " : txt_Correo_Proveedor_Actualizar.Text;
-                    proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
+                    proveedores1.DireccionProveedor = (direccionPr).StartsWith(" ") ? null : (direccionPr).EndsWith(" ") ? null : Regex.Replace(direccionPr, "\\s+", " ");
                     proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
                     proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
 

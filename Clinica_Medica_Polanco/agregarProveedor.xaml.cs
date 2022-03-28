@@ -28,12 +28,13 @@ namespace Clinica_Medica_Polanco
             try
             {
                 //Validación de datos
+                string direccionPro = rtbAString(rtb_Direccion_Proveedor);
                 Proveedores.Proveedores proveedores1 = new();
                 proveedores1.NombreProveedor = (txt_Nombre_Proveedor_Agregar.Text).StartsWith(" ") ? null : (txt_Nombre_Proveedor_Agregar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Proveedor_Agregar.Text, "\\s+", " ");
                 proveedores1.ApellidoProveedor = (txt_Apellido_Proveedor_Agregar.Text).StartsWith(" ") ? null : (txt_Apellido_Proveedor_Agregar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido_Proveedor_Agregar.Text, "\\s+", " ");
                 proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Agregar.Text;
                 proveedores1.CorreoProveedor = (txt_Correo_Proveedor_Agregar.Text).StartsWith(" ") ? " " : (txt_Correo_Proveedor_Agregar.Text).EndsWith(" ") ? " " : txt_Correo_Proveedor_Agregar.Text;
-                proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor)) ? null : rtbAString(rtb_Direccion_Proveedor);
+                proveedores1.DireccionProveedor = (direccionPro).StartsWith(" ") ? null : (direccionPro).EndsWith(" ") ? null : Regex.Replace(direccionPro, "\\s+", " ");
                 proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex + 1;
 
                 //Validación de un correo o identidad duplicada en la base de datos

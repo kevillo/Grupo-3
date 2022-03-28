@@ -85,6 +85,7 @@ namespace Clinica_Medica_Polanco
                 {
                     //Validación de datos
                     int codEmpleado = empleadosDAL.traerCodigoEmpleado(txt_Identidad_Actualizar_Empleado.Text);
+                    string direccionE = rtbAString(rtb_Direccion_Actualizar_Empleado);
                     Empleados.Empleados empleados1 = new();
                     empleados1.CodigoEmpleado = codEmpleado;
                     empleados1.NombreEmpleado = (txt_Nombre_Actualizar_Empleado.Text).StartsWith(" ") ? null : (txt_Nombre_Actualizar_Empleado.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Actualizar_Empleado.Text, "\\s+", " ");
@@ -93,7 +94,7 @@ namespace Clinica_Medica_Polanco
                     empleados1.TelefonoEmpleado = txt_Telefono_Actualizar_Empleado.Text;
                     empleados1.FechaNacimientoEmpleado = string.IsNullOrEmpty(dtp_Nacimiento_Actualizar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Nacimiento_Actualizar_Empleado.Text);
                     empleados1.CorreoEmpleado = (txt_Correo_Actualizar_Empleado.Text).StartsWith(" ") ? " " : (txt_Correo_Actualizar_Empleado.Text).EndsWith(" ") ? " " : txt_Correo_Actualizar_Empleado.Text;
-                    empleados1.AlturaEmpleado = (txt_Altura_Actualizar_Empleado.Text).StartsWith(" ") ? 0 : (txt_Altura_Actualizar_Empleado.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : decimal.Parse(txt_Altura_Actualizar_Empleado.Text);
+                    empleados1.AlturaEmpleado = (txt_Altura_Actualizar_Empleado.Text).StartsWith(" ") ? 0 : (txt_Altura_Actualizar_Empleado.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Altura_Actualizar_Empleado.Text, "\\s", ""));
                     empleados1.TipoSangreEmpleado = cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem.ToString();
                     empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo_Actualizar_Empleado.Text) ? -1 : decimal.Parse(txt_Sueldo_Actualizar_Empleado.Text);
                     empleados1.CodigoPuesto = cmb_Actualizar_Empleado_Cargo.SelectedIndex + 1;
@@ -101,7 +102,7 @@ namespace Clinica_Medica_Polanco
                     empleados1.CodigoJornada = cmb_Actualizar_Empleado_Jornada.SelectedIndex + 1;
                     empleados1.FechaPago = string.IsNullOrEmpty(dtp_Pago_Actualizar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Pago_Actualizar_Empleado.Text);
                     empleados1.FechaContratacion = string.IsNullOrEmpty(dtp_Ingreso_Actulizar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Ingreso_Actulizar_Empleado.Text);
-                    empleados1.DireccionEmpleado = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Actualizar_Empleado)) ? null : rtbAString(rtb_Direccion_Actualizar_Empleado);
+                    empleados1.DireccionEmpleado = (direccionE).StartsWith(" ") ? null : (direccionE).EndsWith(" ") ? null : Regex.Replace(direccionE, "\\s+", " ");
                     empleados1.EstadoEmpleado = (bool)chb_Estado_Empleado.IsChecked;
 
                     //validacion de un correo o identidad duplicada en la base de datos
