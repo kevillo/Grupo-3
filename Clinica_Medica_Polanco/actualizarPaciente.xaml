@@ -172,7 +172,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Label Content="Código" HorizontalAlignment="Left" Margin="279,173,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
+        <Label Content="Código:" HorizontalAlignment="Left" Margin="279,173,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <TextBox TabIndex="1" x:Name="txt_Actualizar_Paciente_Codigo" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="203,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="35" FontFamily="Tahoma" FontSize="15" BorderBrush="Black" TextAlignment="Center" Background="{x:Null}" Foreground="Black" IsEnabled="False"/>
         <Label Content="Ingrese el ID del paciente:" HorizontalAlignment="Left" Margin="197,76,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <Button Style="{DynamicResource Style_btn_Buscar}" x:Name="btn_Actualizar_Paciente_Buscar" Content="Buscar" Cursor="Hand" HorizontalAlignment="Left" Margin="722,110,0,0" VerticalAlignment="Top" Width="100" FontFamily="Tahoma" FontSize="17" Background="#FF0D2D6F" Foreground="White" Height="35" Click="btn_Actualizar_Paciente_Buscar_Click"/>
@@ -189,7 +189,7 @@
         <Image HorizontalAlignment="Left" Height="114" Margin="0,-4,0,0" VerticalAlignment="Top" Width="126" Source="/aa.bmp" RenderTransformOrigin="0.412,-0.309"/>
         <Rectangle HorizontalAlignment="Center" Height="87" Stroke="#0D2D6F" VerticalAlignment="Top" Width="688" Fill="#FF0D2D6F" Margin="0,-4,0,0"/>
         <Label Content="Actualizar datos paciente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="423" Foreground="White" FontFamily="Tahoma" FontSize="37" Margin="349,14,0,0"/>
-        <Label Content="Altura (m):" HorizontalAlignment="Left" Margin="203,370,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
+        <Label Content="Altura (cm):" HorizontalAlignment="Left" Margin="203,370,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20" Foreground="Black" Background="{x:Null}" BorderBrush="Black"/>
         <Button Style="{DynamicResource Style_btn_Salir}" x:Name="btn_Actualizar_Paciente_Salir" Content="" HorizontalAlignment="Left" Cursor="Hand" Margin="22,538,0,0" VerticalAlignment="Top" Width="72" Height="60" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.538,-0.02" Click="btn_Actualizar_Paciente_Salir_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/logout.png" Stretch="Uniform"/>

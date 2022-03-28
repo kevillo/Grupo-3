@@ -139,7 +139,11 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("FechaNacimiento")) ValidarCampos(leyenda: "Fecha de nacimiento", dt: dtp_Fecha_Nacimiento_Paciente, refer: 2);
                 else if (error.StackTrace.Contains("TipoSangre")) ValidarCampos(leyenda: "Tipo de sangre", cmb: cmb_Tipo_Sangre_Paciente, refer: 3);
                 else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb:Rtb_direccion_Paciente,  leyenda: "Dirección",refer:4);
-            }           
+            }
+            catch (OverflowException errorS)
+            {
+                if (errorS.StackTrace.Contains("Altura")) ValidarCampos(txt_Altura_Paciente, leyenda: "Altura");
+            }
         }
         //Validar campos
         private void ValidarCampos([Optional] System.Windows.Controls.TextBox txts, [Optional] System.Windows.Controls.RichTextBox rtb, String leyenda,[Optional] DatePicker dt,[Optional] System.Windows.Controls.ComboBox cmb,[Optional] int refer)

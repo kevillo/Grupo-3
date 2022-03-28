@@ -127,7 +127,7 @@
         <Label Content="Teléfono" HorizontalAlignment="Left" Margin="664,173,0,0" VerticalAlignment="Top" Height="26" Width="124" FontFamily="Tahoma" PreviewTextInput="txt_Telefono_PreviewTextInput"/>
         <TextBox x:Name="txt_Telefono" TabIndex="3" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
         <Label Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="329,216,0,0" VerticalAlignment="Top" Height="31" Width="126" FontFamily="Tahoma"/>
-        <Label Content="Altura" HorizontalAlignment="Left" Margin="312,285,0,0" VerticalAlignment="Top" Height="28" Width="43" FontFamily="Tahoma"/>
+        <Label Content="Altura(cm)" HorizontalAlignment="Left" Margin="304,282,0,0" VerticalAlignment="Top" Height="28" Width="68" FontFamily="Tahoma"/>
         <Label Content="Tipo sangre" HorizontalAlignment="Left" Margin="405,285,0,0" VerticalAlignment="Top" Height="32" Width="72" RenderTransformOrigin="0.479,0.697" FontFamily="Tahoma"/>
         <Label Content="Dirección" HorizontalAlignment="Left" Margin="645,263,0,0" VerticalAlignment="Top" Height="23" Width="65" FontFamily="Tahoma"/>
         <RichTextBox TabIndex="8" x:Name="rtb_Direccion" Margin="566,288,294,260" FontFamily="Tahoma">

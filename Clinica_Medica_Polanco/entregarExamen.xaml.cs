@@ -97,11 +97,12 @@ namespace Clinica_Medica_Polanco
         }
         private void btn_Entrega_Examen_Buscar_Click(object sender, RoutedEventArgs e)
         {
-            string buscar_Examen = txt_Entrega_Examen_Buscar.Text;
-            if (!string.IsNullOrEmpty(buscar_Examen))
+            if (!string.IsNullOrEmpty(txt_Entrega_Examen_Buscar.Text))
             {
+
+                string buscar_Examen = txt_Entrega_Examen_Buscar.Text;
                 MessageBox.Show("Si no aparece nada en el recuadro de abajo,\nsignifica que ese paciente no tiene ningún examen listo para entregar.");
-                if (buscar_Examen.Length < 13)
+                if (buscar_Examen.Length < 13 && !string.IsNullOrEmpty(buscar_Examen))
                 {
                     int codFactura = int.Parse(buscar_Examen);
                     cargarDTGEntrega(codFactura);
