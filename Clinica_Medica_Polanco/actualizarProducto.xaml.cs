@@ -186,7 +186,7 @@ namespace Clinica_Medica_Polanco
         {
             string buscar_Insumo = txt_Gestionar_Insumos_Buscar.Text;
             
-            if (!string.IsNullOrEmpty(buscar_Insumo))
+            if (!string.IsNullOrEmpty(buscar_Insumo) && int.TryParse(txt_Gestionar_Insumos_Buscar.Text,out int _))
             {
                 insumoSeleccionado = Insumos.insumosDAL.BuscarInsumoPorNombreOId(int.Parse(buscar_Insumo));
                 txt_Gestionar_Insumos_Nombre_Producto.Text = insumoSeleccionado.NombreInsumo;

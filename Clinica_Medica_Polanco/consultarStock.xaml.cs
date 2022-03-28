@@ -109,7 +109,7 @@ namespace Clinica_Medica_Polanco
         private void btn_buscar_Click(object sender, RoutedEventArgs e)
         {
             int codInsumo = 0;
-            if(!string.IsNullOrEmpty(txt_Consultar_Stock_Codigo_Producto.Text))
+            if(!string.IsNullOrEmpty(txt_Consultar_Stock_Codigo_Producto.Text) && int.TryParse(txt_Consultar_Stock_Codigo_Producto.Text,out int _))
             {
                 codInsumo = int.Parse(txt_Consultar_Stock_Codigo_Producto.Text);
 

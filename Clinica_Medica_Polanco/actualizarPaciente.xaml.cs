@@ -87,7 +87,7 @@ namespace Clinica_Medica_Polanco
                     paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
                     paciente1.FechaNacimiento = string.IsNullOrEmpty(dtp_Actualizar_Paciente_FechaNac.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
                     paciente1.Correo = (txt_Actualizar_Paciente_CorreoE.Text).StartsWith(" ") ? " " : (txt_Actualizar_Paciente_CorreoE.Text).EndsWith(" ") ? " " : txt_Actualizar_Paciente_CorreoE.Text;
-                    paciente1.Altura = (txt_Actualizar_Paciente_Altura.Text).StartsWith(" ") ? 0 : (txt_Actualizar_Paciente_Altura.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Actualizar_Paciente_Altura.Text, "\\s", "");
+                    paciente1.Altura = (txt_Actualizar_Paciente_Altura.Text).StartsWith(" ") ? 0 : (txt_Actualizar_Paciente_Altura.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Actualizar_Paciente_Altura.Text, "\\s", ""));
                     paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
                     paciente1.Direccion = (direccionP).StartsWith(" ") ? null : (direccionP).EndsWith(" ") ? null : Regex.Replace(direccionP, "\\s+", " ");
                     paciente1.Estado = (bool)chk_Actualizar_Paciente_EstadoPaciente.IsChecked;
