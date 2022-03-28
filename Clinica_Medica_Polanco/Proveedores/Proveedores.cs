@@ -74,7 +74,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _direccionProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value) || (value.Length < 25 || value.Length > 255))
+                if (string.IsNullOrEmpty(value) || (value.Length < 10 || value.Length > 255))
                 {
                     throw new FormatException();
                 }
