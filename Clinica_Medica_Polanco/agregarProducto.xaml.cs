@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Clinica_Medica_Polanco.Insumos;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+
 namespace Clinica_Medica_Polanco
 {
     /// <summary>
@@ -34,11 +36,11 @@ namespace Clinica_Medica_Polanco
             {
                 //Validación de datos
                 Insumos.Insumos nuevoInsumo = new();
-                nuevoInsumo.NombreInsumo = txt_Nombre_Producto.Text;
+                nuevoInsumo.NombreInsumo = (txt_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Nombre_Producto.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Producto.Text, "\\s+", " ");
                 nuevoInsumo.NumeroSerie = txt_Numero_Serie.Text;
                 nuevoInsumo.PrecioUnitario =  string.IsNullOrEmpty(txt_Precio_Unitario.Text) ? -1 : decimal.Parse(txt_Precio_Unitario.Text);              
                 nuevoInsumo.CodigoCategoriaInsumo = cmb_Tipo_Insumo.SelectedIndex+1;
-                nuevoInsumo.FechaExpiracion = Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
+                nuevoInsumo.FechaExpiracion = string.IsNullOrEmpty(dtp_Fecha_Expiracion.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
                 nuevoInsumo.Estado = (bool)chb_Disponibilidad.IsChecked;
 
                 //Validación de número de serie duplicada en la base de datos

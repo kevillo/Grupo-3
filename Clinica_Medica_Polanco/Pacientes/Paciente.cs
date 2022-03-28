@@ -58,7 +58,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
-                if ( string.IsNullOrEmpty(value) || value.Length < 2 )
+                if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
                     throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
                 }
@@ -71,7 +71,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
 
                     throw new FormatException("Procure no dejar el Apellido con un formato incorrecto o vacío.");
@@ -86,7 +86,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13)
-                { 
+                {
                     throw new FormatException("Procure no dejar la Identidad con un formato incorrecto o vacío.");
                 }
                 else _identidad = value;
@@ -140,7 +140,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 //valida si la altura es positiva y si es un deciamal
-                if (value <= 0 || !decimal.TryParse(value.ToString(),out decimal _))
+                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length < 1 || value.ToString().Length > 3)
                 {
                     throw new FormatException("Procure no dejar la Altura con un formato incorrecto o vacío.");
                 }
@@ -152,9 +152,9 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _tipoSangre;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Procure no dejar el Tipo de Sangre con un formato incorrecto o vacío.");
+                    throw new FormatException();
                 }
                 else _tipoSangre = value;
             }
@@ -165,9 +165,9 @@ namespace Clinica_Medica_Polanco.Pacientes
             get => _direccion;
             set
             {
-                if (string.IsNullOrEmpty(value) || (value.Length >25 && value.Length<255))
+                if (string.IsNullOrEmpty(value) || (value.Length < 10 || value.Length > 255))
                 {
-                    throw new FormatException("Procure no dejar la Dirección con un formato incorrecto o vacío.");
+                    throw new FormatException();
                 }
                 else _direccion = value;
             }

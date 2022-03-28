@@ -139,7 +139,6 @@ namespace Clinica_Medica_Polanco
         {
             if (!string.IsNullOrEmpty(txt_Solicitud_Examen_ID_Cliente.Text))
             {
-
                 try
                 {
 

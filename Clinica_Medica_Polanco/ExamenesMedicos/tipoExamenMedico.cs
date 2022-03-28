@@ -18,7 +18,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             {
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
-                    throw new FormatException("Este campos esta vacio");
+                    throw new FormatException("Este campo está vacío");
                 }
                 else _DescripcionTipoExamen = value;
             }

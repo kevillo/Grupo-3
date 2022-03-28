@@ -15,6 +15,7 @@ using Clinica_Medica_Polanco.Proveedores;
 using System.Windows.Shapes;
 using Clinica_Medica_Polanco.Insumos;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -38,14 +39,13 @@ namespace Clinica_Medica_Polanco
                 {
                     Insumos.Insumos nuevoInsumo = new();
                     nuevoInsumo.CodigoInsumo = int.Parse(txt_Gestionar_Insumos_Buscar.Text);
-                    nuevoInsumo.NombreInsumo = txt_Gestionar_Insumos_Nombre_Producto.Text;
+                    nuevoInsumo.NombreInsumo = (txt_Gestionar_Insumos_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Gestionar_Insumos_Nombre_Producto.Text).EndsWith(" ") ? null : Regex.Replace(txt_Gestionar_Insumos_Nombre_Producto.Text, "\\s+", " ");
                     nuevoInsumo.NumeroSerie = txt_Gestionar_Insumos_Num_Serie.Text;
                     nuevoInsumo.PrecioUnitario = string.IsNullOrEmpty(txt_Gestionar_Insumos_Precio.Text) ? -1 : decimal.Parse(txt_Gestionar_Insumos_Precio.Text);
                     nuevoInsumo.CodigoCategoriaInsumo = cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex + 1;
-                    nuevoInsumo.FechaExpiracion = Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
+                    nuevoInsumo.FechaExpiracion = string.IsNullOrEmpty(dtp_Fecha_Expiracion.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Fecha_Expiracion.Text);
                     nuevoInsumo.Estado = (bool)chk_Disponibilidad.IsChecked;
-                    insumosDAL.ModificarInsumo(nuevoInsumo);
-                    
+                    insumosDAL.ModificarInsumo(nuevoInsumo);         
                 }
                 else
                 {
@@ -57,8 +57,6 @@ namespace Clinica_Medica_Polanco
                     brd_Insumo.Visibility = Visibility.Hidden;
                 }
                 reiniciarPantalla();
-
-
             }
             catch (FormatException error)
             {
@@ -69,7 +67,6 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("CodigoInsumo")) validarCampos(txt_Gestionar_Insumos_Buscar, leyenda: "Codigo de insumo");
                 else if (error.StackTrace.Contains("CodigoCategoriaInsumo")) validarCampos(cmb: cmb_Gestionar_Insumo_Tipo_Insumo, leyenda: "tipo insumo", refer: 3);
                 else if (error.StackTrace.Contains("FechaExpiracion")) validarCampos(dt: dtp_Fecha_Expiracion, leyenda: "Fecha expiracion", refer: 2);
-
             }
         }
         private void reiniciarPantalla()

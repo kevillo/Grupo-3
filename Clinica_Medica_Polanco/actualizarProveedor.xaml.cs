@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Proveedores;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -35,19 +36,34 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                if(!string.IsNullOrEmpty(txt_Codigo_Proveedor_Actualizar.Text))
+                if (!string.IsNullOrEmpty(txt_Codigo_Proveedor_Actualizar.Text))
                 {
                     int codProveedor = int.Parse(txt_Codigo_Proveedor_Actualizar.Text);
                     Proveedores.Proveedores proveedores1 = new();
                     proveedores1.CodigoProveedor = codProveedor;
-                    proveedores1.NombreProveedor = txt_Nombre_Proveedor_Actualizar.Text;
-                    proveedores1.ApellidoProveedor = txt_Apellido_Proveedor_Actualizar.Text;
+                    proveedores1.NombreProveedor = (txt_Nombre_Proveedor_Actualizar.Text).StartsWith(" ") ? null : (txt_Nombre_Proveedor_Actualizar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Proveedor_Actualizar.Text, "\\s+", " ");
+                    proveedores1.ApellidoProveedor = (txt_Apellido_Proveedor_Actualizar.Text).StartsWith(" ") ? null : (txt_Apellido_Proveedor_Actualizar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido_Proveedor_Actualizar.Text, "\\s+", " ");
                     proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Actualizar.Text;
-                    proveedores1.CorreoProveedor = txt_Correo_Proveedor_Actualizar.Text;
+                    proveedores1.CorreoProveedor = (txt_Correo_Proveedor_Actualizar.Text).StartsWith(" ") ? " " : (txt_Correo_Proveedor_Actualizar.Text).EndsWith(" ") ? " " : txt_Correo_Proveedor_Actualizar.Text;
                     proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor_Actualizar)) ? null : rtbAString(rtb_Direccion_Proveedor_Actualizar);
                     proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
                     proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
-                    ProveedoresDAL.ModificarProveedor(proveedores1);
+
+                    //validacion de un correo duplicado en la base de datos
+                    int validarCorreo = ProveedoresDAL.ValidarCorreoProveedor(proveedores1.CorreoProveedor);
+
+                    //Si el correo está duplicado, manda error
+                    if (validarCorreo < 1)
+                    {
+                        ProveedoresDAL.ModificarProveedor(proveedores1);
+                        reiniciarPantalla();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Correo repetido: Por favor, ingrese un correo diferente.");
+                        txt_Correo_Proveedor_Actualizar.Clear();
+                        txt_Correo_Proveedor_Actualizar.Focus();
+                    }
                 }
                 else
                 {
@@ -57,10 +73,7 @@ namespace Clinica_Medica_Polanco
                     stc_Proveedor.Visibility = Visibility.Hidden;
                     scv_Proveedor.Visibility = Visibility.Hidden;
                     brd_Proveedor.Visibility = Visibility.Hidden;
-
                 }
-                reiniciarPantalla();
-
             }
             catch (FormatException error)
             {

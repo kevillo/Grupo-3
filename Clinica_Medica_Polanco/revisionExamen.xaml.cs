@@ -73,9 +73,10 @@ namespace Clinica_Medica_Polanco
                 else
                 {
 
-                    this.Close();
+                   
                     AnalizarExamenMedico nuevoAnalisis = new(analisis);
                     nuevoAnalisis.ShowDialog();
+                    this.Close();
 
                 }
             }

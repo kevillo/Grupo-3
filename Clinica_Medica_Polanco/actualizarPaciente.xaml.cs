@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Interop;
 using Clinica_Medica_Polanco.Pacientes;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -79,27 +80,43 @@ namespace Clinica_Medica_Polanco
                     //Validar datos
                     Pacient paciente1 = new();
                     paciente1.Codigo = PacientesDAL.ObtenerIdPaciente(txt_PacienteId.Text);
-                    paciente1.Nombre = txt_Actualizar_Paciente_Nombre.Text;
-                    paciente1.Apellido = txt_Actualizar_Paciente_Apellido.Text;
+                    paciente1.Nombre = (txt_Actualizar_Paciente_Nombre.Text).StartsWith(" ") ? null : (txt_Actualizar_Paciente_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Actualizar_Paciente_Nombre.Text, "\\s+", " ");
+                    paciente1.Apellido = (txt_Actualizar_Paciente_Apellido.Text).StartsWith(" ") ? null : (txt_Actualizar_Paciente_Apellido.Text).EndsWith(" ") ? null : Regex.Replace(txt_Actualizar_Paciente_Apellido.Text, "\\s+", " ");
                     paciente1.Identidad = txt_PacienteId.Text;
                     paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
-                    paciente1.FechaNacimiento = Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
-                    paciente1.Correo = txt_Actualizar_Paciente_CorreoE.Text;
-                    paciente1.Altura = string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.TryParse(txt_Actualizar_Paciente_Altura.Text, out decimal _) ? decimal.Parse(txt_Actualizar_Paciente_Altura.Text) : 0;
+                    paciente1.FechaNacimiento = string.IsNullOrEmpty(dtp_Actualizar_Paciente_FechaNac.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
+                    paciente1.Correo = (txt_Actualizar_Paciente_CorreoE.Text).StartsWith(" ") ? " " : (txt_Actualizar_Paciente_CorreoE.Text).EndsWith(" ") ? " " : txt_Actualizar_Paciente_CorreoE.Text;
+                    paciente1.Altura = (txt_Actualizar_Paciente_Altura.Text).StartsWith(" ") ? 0 : (txt_Actualizar_Paciente_Altura.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.Parse(txt_Actualizar_Paciente_Altura.Text);
                     paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
                     paciente1.Direccion = string.IsNullOrWhiteSpace(rtbAString(rtb_Actualizar_Paciente_Direccion)) ? null : rtbAString(rtb_Actualizar_Paciente_Direccion);
                     paciente1.Estado = (bool)chk_Actualizar_Paciente_EstadoPaciente.IsChecked;
-                    PacientesDAL.ModificarPaciente(paciente1);
-                    this.Close();
+
+                    //Validación de un correo duplicado en la base de datos
+                    int validarCorreo = PacientesDAL.ValidarCorreoPaciente(paciente1.Correo);
+
+                    //Si el correo está duplicado, manda error
+                    if (validarCorreo < 1)
+                    {
+                        PacientesDAL.ModificarPaciente(paciente1);
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Correo repetido: Por favor, ingrese un correo diferente.");
+                        txt_Actualizar_Paciente_CorreoE.Clear();
+                        txt_Actualizar_Paciente_CorreoE.Focus();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Procure no dejar la Identidad del paciente con un formato incorrecto o vacío.");
                     txt_PacienteId.Clear();
                     txt_PacienteId.Focus();
+                    stc_Paciente.Visibility = Visibility.Hidden;
+                    scv_Paciente.Visibility = Visibility.Hidden;
+                    brd_Paciente.Visibility = Visibility.Hidden;
                 }
             }
-
             catch (FormatException error)
             { 
                 //Excepción que nos indicará si hay algún error
@@ -256,7 +273,6 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-
                 TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
                 textRange.Text = textoSet;
             }

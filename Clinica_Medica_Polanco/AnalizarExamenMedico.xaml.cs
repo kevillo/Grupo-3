@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -58,11 +59,10 @@ namespace Clinica_Medica_Polanco
         {
 
             string analisis = rtbAString(rtb_Diagnostico_Analisis);
-            if (!string.IsNullOrEmpty(analisis)  && !string.IsNullOrWhiteSpace(analisis))
+            if (!string.IsNullOrEmpty(analisis)  && !string.IsNullOrWhiteSpace(analisis) && !((analisis).StartsWith(" ") || (analisis).EndsWith(" ")))
             {
-
                 // aqui actualizamos el estado del examen dicho a 2: listo
-                ExamenesMedicos.ExamenesDAL.analizarExamenMedico(ventaAnalisis.CodFacturaVenta, ventaAnalisis.CodigoExamenMedico, analisis);
+                ExamenesMedicos.ExamenesDAL.analizarExamenMedico(ventaAnalisis.CodFacturaVenta, ventaAnalisis.CodigoExamenMedico, Regex.Replace(analisis, "\\s+", " "));
                 this.Close();
             }
             else MessageBox.Show("Procure no dejar el análisis del examen con un formato incorrecto o vacío.");

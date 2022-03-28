@@ -52,7 +52,6 @@ namespace Clinica_Medica_Polanco
                 //Validación de datos
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = (txt_Nombre.Text).StartsWith(" ") ? null : (txt_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre.Text, "\\s+", " ");
-                
                 empleados1.ApellidoEmpleado = (txt_Apellido.Text).StartsWith(" ") ? null : (txt_Apellido.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido.Text, "\\s+", " ");
                 empleados1.IdentidadEmpleado = txt_Identidad.Text;
                 empleados1.TelefonoEmpleado = txt_Telefono.Text;

@@ -65,7 +65,6 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Actualizar_Stock_Click(object sender, RoutedEventArgs e)
         {
-
             if((!string.IsNullOrEmpty(txt_Cantidad_Actualizar_Stock.Text) &&  int.TryParse(txt_Cantidad_Actualizar_Stock.Text,out int _)) && (!string.IsNullOrEmpty(txt_Codigo_Insumo_Actualizar_Stock.Text)&& int.TryParse(txt_Codigo_Insumo_Actualizar_Stock.Text, out int _)))
             {
                 int codigoInsumo = int.Parse(txt_Codigo_Insumo_Actualizar_Stock.Text);
@@ -92,8 +91,7 @@ namespace Clinica_Medica_Polanco
                 stc_Insumo.Visibility = Visibility.Hidden;
                 scv_Insumo.Visibility = Visibility.Hidden;
                 brd_Insumo.Visibility = Visibility.Hidden;
-            }
-            
+            }     
         }
 
         private void txt_Codigo_Insumo_Actualizar_Stock_KeyUp(object sender, KeyEventArgs e)

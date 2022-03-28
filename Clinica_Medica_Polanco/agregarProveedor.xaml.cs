@@ -6,6 +6,7 @@ using System.Windows.Interop;
 using Clinica_Medica_Polanco.Proveedores;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
+using System.Text.RegularExpressions;
 
 namespace Clinica_Medica_Polanco
 {
@@ -28,10 +29,10 @@ namespace Clinica_Medica_Polanco
             {
                 //Validación de datos
                 Proveedores.Proveedores proveedores1 = new();
-                proveedores1.NombreProveedor = txt_Nombre_Proveedor_Agregar.Text;
-                proveedores1.ApellidoProveedor = txt_Apellido_Proveedor_Agregar.Text;
+                proveedores1.NombreProveedor = (txt_Nombre_Proveedor_Agregar.Text).StartsWith(" ") ? null : (txt_Nombre_Proveedor_Agregar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Proveedor_Agregar.Text, "\\s+", " ");
+                proveedores1.ApellidoProveedor = (txt_Apellido_Proveedor_Agregar.Text).StartsWith(" ") ? null : (txt_Apellido_Proveedor_Agregar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido_Proveedor_Agregar.Text, "\\s+", " ");
                 proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Agregar.Text;
-                proveedores1.CorreoProveedor = txt_Correo_Proveedor_Agregar.Text;
+                proveedores1.CorreoProveedor = (txt_Correo_Proveedor_Agregar.Text).StartsWith(" ") ? " " : (txt_Correo_Proveedor_Agregar.Text).EndsWith(" ") ? " " : txt_Correo_Proveedor_Agregar.Text;
                 proveedores1.DireccionProveedor = string.IsNullOrWhiteSpace(rtbAString(rtb_Direccion_Proveedor)) ? null : rtbAString(rtb_Direccion_Proveedor);
                 proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex + 1;
 
@@ -51,7 +52,6 @@ namespace Clinica_Medica_Polanco
                         txt_Correo_Proveedor_Agregar.Focus();
                     }
                 }
-
             catch (FormatException error)
             {
                 //Excepción que nos indica de algún error
@@ -61,7 +61,6 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("Correo")) ValidarCampos(txt_Correo_Proveedor_Agregar, leyenda: "Correo");
                 else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb: rtb_Direccion_Proveedor, leyenda: "Dirección", refer: 4);
                 else if (error.StackTrace.Contains("Sucursal")) ValidarCampos(leyenda: "Sucursal", cmb: cmb_Area_Trabajo_Proveedor_Agregar, refer: 3);
-
             }
         }
 

@@ -33,7 +33,8 @@ namespace Clinica_Medica_Polanco.Proveedores
         public int CodigoAreaTrabajo
         {
             get => _codigoAreaTrabajo;
-            set {
+            set 
+            {
                 if (string.IsNullOrEmpty(value.ToString()) || value < 0)
                 {
                     throw new FormatException();
@@ -44,10 +45,12 @@ namespace Clinica_Medica_Polanco.Proveedores
         public string NombreProveedor
         {
             get => _nombreProveedor;
-            set {
-                if (string.IsNullOrEmpty(value.ToString()) || value.Length <2)
+            set 
+            {
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
-                    throw new FormatException();
+                    throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
                 }
                 else _nombreProveedor = value;
             }
@@ -57,9 +60,11 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _apellidoProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString())|| value.Length < 2)
+                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
-                    throw new FormatException();
+
+                    throw new FormatException("Procure no dejar el Apellido con un formato incorrecto o vacío.");
                 }
                 else _apellidoProveedor = value;
             }
@@ -69,7 +74,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _direccionProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value)|| (value.Length > 25 && value.Length < 255))
+                if (string.IsNullOrEmpty(value) || (value.Length < 25 || value.Length > 255))
                 {
                     throw new FormatException();
                 }
@@ -93,9 +98,10 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _telefonoProveedor;
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()) || validarTelefono(value) == false || value.Length !=8)
+                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8)
                 {
-                    throw new FormatException();
+                    throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
                 }
                 else _telefonoProveedor = value;
             }
