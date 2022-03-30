@@ -33,7 +33,7 @@ namespace Clinica_Medica_Polanco
             if(estado  != codigoError)
             {
                 menuPrincipal menu = new menuPrincipal(estado);
-                menu.Show(); 
+                menu.Show();
                 this.Close();
             }
             else

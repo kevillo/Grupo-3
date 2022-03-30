@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace Clinica_Medica_Polanco.Empleados
 {
@@ -105,7 +106,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13)
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13 || !IdentidadNoGenerica(value))
                 {
                     throw new FormatException("Procure no dejar la Identidad con un formato incorrecto o vacío.");
                 }
@@ -120,7 +121,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8)
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8 || !NumeroNoGenerico(value))
                 {
                     throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
                 }
@@ -288,7 +289,7 @@ namespace Clinica_Medica_Polanco.Empleados
         }
 
         // valida si el correo tiene un @, si hay algo antes y despues del @ y si tiene un .com o algo asi
-        public static bool validarEmail(string comprobarEmail)
+        private  bool validarEmail(string comprobarEmail)
         {
             string emailFormato;
             emailFormato = "\\w+([-+.']\\w+)*@\\w+([-+.']\\w+)*\\.\\w+([-+.']\\w+)*";
@@ -308,8 +309,54 @@ namespace Clinica_Medica_Polanco.Empleados
                 return false;
             }
         }
+
+        public bool IdentidadNoGenerica(string identidad)
+        {
+            Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
+            int max = -1;
+
+            foreach(char c in identidad)
+            {
+                if (contadorOcurrencias.TryGetValue(c, out int _))
+                {
+                    contadorOcurrencias[c] += 1; 
+                }
+                else contadorOcurrencias.Add(c, 1);
+            }
+
+            foreach( char c in contadorOcurrencias.Keys)
+            {
+                if (contadorOcurrencias[c] > max) max = contadorOcurrencias[c];
+            }
+            if (max > 9) return false;
+            return true;
+
+        }
+
+
+        public bool NumeroNoGenerico(string telefono)
+        {
+            Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
+            int max = -1;
+
+            foreach (char c in telefono)
+            {
+                if (contadorOcurrencias.TryGetValue(c, out int _))
+                {
+                    contadorOcurrencias[c] += 1;
+                }
+                else contadorOcurrencias.Add(c, 1);
+            }
+
+            foreach (char c in contadorOcurrencias.Keys)
+            {
+                if (contadorOcurrencias[c] > max) max = contadorOcurrencias[c];
+            }
+            if (max == 8) return false;
+            return true;
+        }
         //valida si el telefono empieza en 9 8 3 2 
-        public static bool validarTelefono(string telefono)
+        private  bool validarTelefono(string telefono)
         {
             if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))
             {

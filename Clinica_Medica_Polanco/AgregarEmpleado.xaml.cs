@@ -55,6 +55,7 @@ namespace Clinica_Medica_Polanco
                 empleados1.NombreEmpleado = (txt_Nombre.Text).StartsWith(" ") ? null : (txt_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre.Text, "\\s+", " ");
                 empleados1.ApellidoEmpleado = (txt_Apellido.Text).StartsWith(" ") ? null : (txt_Apellido.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido.Text, "\\s+", " ");
                 empleados1.IdentidadEmpleado = txt_Identidad.Text;
+                
                 empleados1.TelefonoEmpleado = txt_Telefono.Text;
                 empleados1.FechaNacimientoEmpleado = string.IsNullOrEmpty(dtp_Nacimiento.Text)?DateTime.Now: Convert.ToDateTime(dtp_Nacimiento.Text);
                 empleados1.CorreoEmpleado = (txt_Correo.Text).StartsWith(" ") ? " " : (txt_Correo.Text).EndsWith(" ") ? " " : txt_Correo.Text;

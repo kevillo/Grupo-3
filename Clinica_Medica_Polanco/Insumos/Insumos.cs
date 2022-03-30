@@ -64,7 +64,7 @@ namespace Clinica_Medica_Polanco.Insumos
             set
             {
                 // valida si la cadena esta vacia o si tiene una longitud menor a 2
-                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                if (string.IsNullOrEmpty(value) || value.Length < 2|| value.Length >50 || int.TryParse(NombreInsumo,out int _))
                 {
                     throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
                 }
@@ -77,7 +77,7 @@ namespace Clinica_Medica_Polanco.Insumos
             get => _fechaExpiracion;
             set
             {
-                if (value.ToShortDateString() == DateTime.Now.ToShortDateString()) throw new FormatException();
+                if (value.ToShortDateString() == DateTime.Now.ToShortDateString()||value < DateTime.Now ) throw new FormatException();
                 else _fechaExpiracion = value;
             }
         }
@@ -88,7 +88,7 @@ namespace Clinica_Medica_Polanco.Insumos
             set
             {
                 //valida si la altura es positiva y si es un deciamal
-                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _))
+                if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _)|| (value.ToString()).Length < 4|| (value.ToString()).Length > 10)
                 {
                     throw new FormatException("Procure no dejar el Precio Unitario con un formato incorrecto o vacío.");
                 }
@@ -103,7 +103,7 @@ namespace Clinica_Medica_Polanco.Insumos
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si está en un rango de 10 caracteres
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length > 10)
+                if (int.Parse(value) <=0 || string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length > 10)
                 {
                     throw new FormatException("Procure no dejar el Número de serie con un formato incorrecto o vacío.");
                 }

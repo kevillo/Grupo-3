@@ -85,7 +85,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13)
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13 || !IdentidadNoGenerica(value))
                 {
                     throw new FormatException("Procure no dejar la Identidad con un formato incorrecto o vacío.");
                 }
@@ -98,7 +98,7 @@ namespace Clinica_Medica_Polanco.Pacientes
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
-                if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _) || validarTelefono(value) == false || value.Length!=8)
+                if (string.IsNullOrEmpty(value)|| !Int64.TryParse(value,out long _) || validarTelefono(value) == false || value.Length!=8 || !NumeroNoGenerico(value))
                 {
                     throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
                 }
@@ -209,6 +209,51 @@ namespace Clinica_Medica_Polanco.Pacientes
                 System.Windows.MessageBox.Show("El número de telefóno debe comenzar por 2, 3, 8 o 9");
                 return false;
             }
+        }
+
+
+        private bool IdentidadNoGenerica(string identidad)
+        {
+            Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
+            int max = -1;
+
+            foreach (char c in identidad)
+            {
+                if (contadorOcurrencias.TryGetValue(c, out int _))
+                {
+                    contadorOcurrencias[c] += 1;
+                }
+                else contadorOcurrencias.Add(c, 1);
+            }
+
+            foreach (char c in contadorOcurrencias.Keys)
+            {
+                if (contadorOcurrencias[c] > max) max = contadorOcurrencias[c];
+            }
+            if (max > 9) return false;
+            return true;
+
+        }
+        private bool NumeroNoGenerico(string telefono)
+        {
+            Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
+            int max = -1;
+
+            foreach (char c in telefono)
+            {
+                if (contadorOcurrencias.TryGetValue(c, out int _))
+                {
+                    contadorOcurrencias[c] += 1;
+                }
+                else contadorOcurrencias.Add(c, 1);
+            }
+
+            foreach (char c in contadorOcurrencias.Keys)
+            {
+                if (contadorOcurrencias[c] > max) max = contadorOcurrencias[c];
+            }
+            if (max == 8) return false;
+            return true;
         }
     }
 }
