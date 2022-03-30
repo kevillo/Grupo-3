@@ -67,7 +67,7 @@
         <Rectangle HorizontalAlignment="Left" Height="352" Stroke="Black" VerticalAlignment="Top" Width="669" Margin="31,68,0,0"/>
         <Label Content="Información del producto" FontFamily="Tahoma" FontSize="19" HorizontalAlignment="Left" Margin="31,32,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre del producto" HorizontalAlignment="Left" Margin="84,78,0,0" VerticalAlignment="Top" Height="33" Width="182" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
-        <TextBox TabIndex="0" x:Name="txt_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="84,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox TabIndex="0" x:Name="txt_Nombre_Producto" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="84,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18" PreviewTextInput="txt_Nombre_Producto_PreviewTextInput"/>
         <Label Content="Número de serie (Número)" HorizontalAlignment="Left" Margin="410,78,0,0" VerticalAlignment="Top" Height="34" Width="221" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
         <TextBox TabIndex="1" x:Name="txt_Numero_Serie" HorizontalAlignment="Left" Margin="410,112,0,0" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Height="36" TextAlignment="Center" FontFamily="Tahoma" FontSize="18" PreviewTextInput="txt_Numero_Serie_PreviewTextInput"/>
         <Label Content="Precio unitario" HorizontalAlignment="Left" Margin="84,181,0,0" VerticalAlignment="Top" Height="34" Width="132" FontFamily="Tahoma" FontSize="17" RenderTransformOrigin="0.5,0.5" FontWeight="Normal" Foreground="#FF878F9E">
@@ -80,7 +80,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox TabIndex="2" x:Name="txt_Precio_Unitario" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="223,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="34" TextAlignment="Center" FontFamily="Tahoma" FontSize="18"/>
+        <TextBox TabIndex="2" x:Name="txt_Precio_Unitario" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="223,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="34" TextAlignment="Center" FontFamily="Tahoma" FontSize="18" PreviewTextInput="txt_Precio_Unitario_PreviewTextInput"/>
         <ComboBox TabIndex="3" x:Name="cmb_Tipo_Insumo" HorizontalAlignment="Left" Margin="410,203,0,0" VerticalAlignment="Top" Width="221" Height="28" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
         <DatePicker TabIndex="4" x:Name="dtp_Fecha_Expiracion" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="286,290,0,0" VerticalAlignment="Top" Height="32" Width="172" FontFamily="Tahoma" FontSize="15"/>
         <Label Content="Tipo de insumo" HorizontalAlignment="Left" Margin="410,164,0,0" VerticalAlignment="Top" Height="34" Width="139" FontFamily="Tahoma" FontSize="17" FontWeight="Normal" Foreground="#FF878F9E"/>
