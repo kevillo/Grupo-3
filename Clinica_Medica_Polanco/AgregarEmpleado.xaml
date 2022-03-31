@@ -117,13 +117,14 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="244" Margin="216,124,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <Rectangle HorizontalAlignment="Center" Height="98" Stroke="White" VerticalAlignment="Top"   Width="1080" Fill="#FFF3F3F3" Margin="0,-2,0,0"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="348,124,0,0" VerticalAlignment="Top" Height="23" Width="57" FontFamily="Tahoma"/>
         <TextBox x:Name="txt_Nombre" TabIndex="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="289,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Nombre_PreviewTextInput"/>
         <Label Content="Identidad" HorizontalAlignment="Left" Margin="343,174,0,0" VerticalAlignment="Top" Height="27" Width="124" FontFamily="Tahoma"/>
         <TextBox x:Name="txt_Identidad" TabIndex="2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="289,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Identidad_PreviewTextInput"/>
         <Label Content="Correo electrónico" HorizontalAlignment="Left" Margin="640,218,0,0" VerticalAlignment="Top" Height="31" Width="126" FontFamily="Tahoma"/>
-        <TextBox TabIndex="5" x:Name="txt_Correo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
+        <TextBox TabIndex="5" x:Name="txt_Correo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Correo_PreviewTextInput"/>
         <Label Content="Teléfono" HorizontalAlignment="Left" Margin="664,173,0,0" VerticalAlignment="Top" Height="26" Width="124" FontFamily="Tahoma" PreviewTextInput="txt_Telefono_PreviewTextInput"/>
         <TextBox x:Name="txt_Telefono" TabIndex="3" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="590,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="22" TextAlignment="Center" FontFamily="Tahoma"/>
         <Label Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="329,216,0,0" VerticalAlignment="Top" Height="31" Width="126" FontFamily="Tahoma"/>
@@ -138,7 +139,6 @@
             </FlowDocument>
         </RichTextBox>
         <Rectangle HorizontalAlignment="Left" Height="108" Margin="216,392,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
-
         <Label Content="Sueldo" HorizontalAlignment="Left" Margin="518,394,0,0" VerticalAlignment="Top" Height="34" Width="64" FontFamily="Tahoma"/>
         <TextBox TabIndex="10" x:Name="txt_Sueldo" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="22" TextAlignment="Center" FontFamily="Tahoma" PreviewTextInput="txt_Sueldo_PreviewTextInput"/>
         <Label Content="Jornada laboral" HorizontalAlignment="Left" Margin="303,443,0,0" VerticalAlignment="Top" Height="25" Width="92" FontFamily="Tahoma"/>
@@ -158,7 +158,6 @@
         <Image HorizontalAlignment="Left" Height="107" Margin="0,1,0,0" VerticalAlignment="Top" Width="139" Source="/aa.bmp"/>
         <ComboBox TabIndex="7" x:Name="cmb_Tipo_Sangre" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="403,308,0,0" VerticalAlignment="Top" Width="74" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
         <ComboBox TabIndex="11" x:Name="cmb_Cargo" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="22" Margin="645,416,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
-        <Rectangle HorizontalAlignment="Left" Height="244" Margin="216,124,0,0" Stroke="Black" VerticalAlignment="Top" Width="688"/>
         <ComboBox TabIndex="12" x:Name="cmb_Jornada_Laboral" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="272,468,0,0" VerticalAlignment="Top" Width="156" FontFamily="Tahoma" FontSize="15" SelectedIndex="0"/>
         <Label Content="Información Laboral" HorizontalAlignment="Left" Margin="211,371,0,0" VerticalAlignment="Top" Height="24" Width="126" FontFamily="Tahoma"/>
         <Label Content="Información Personal" HorizontalAlignment="Left" Margin="209,101,0,0" VerticalAlignment="Top" Height="23" Width="126" FontFamily="Tahoma"/>

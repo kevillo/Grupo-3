@@ -229,5 +229,14 @@ namespace Clinica_Medica_Polanco
 
             else e.Handled = true;
         }
+
+        private void txt_Gestionar_Insumos_Precio_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if (ascci >= 48 && ascci <= 57 || ascci == 46) e.Handled = false;
+
+            else e.Handled = true;
+        }
     }
 }

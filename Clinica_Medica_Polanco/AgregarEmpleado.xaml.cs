@@ -235,5 +235,16 @@ namespace Clinica_Medica_Polanco
 
             else e.Handled = true;
         }
+
+        private void txt_Correo_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+
+            if ((ascci >= 65 && ascci <= 90) || (ascci >= 97 && ascci <= 122) || (ascci >= 48 && ascci <= 57) || ascci == 64 || ascci == 95 || ascci == 46 || ascci == 45)
+
+                e.Handled = false;
+
+            else e.Handled = true;
+        }
     }
 }
