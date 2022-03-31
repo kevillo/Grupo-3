@@ -114,7 +114,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Gestionar_Proveedores_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string provBuscar = txt_Gestionar_Proveedores_Buscar.Text;
-            if (!string.IsNullOrEmpty(provBuscar) && int.TryParse(provBuscar, out int _))
+            if (!string.IsNullOrEmpty(provBuscar) && int.TryParse(provBuscar, out int _) && !provBuscar.StartsWith(" ")  && !provBuscar.EndsWith(" "))
             {
                 Proveedores.Proveedores provConsultar = ProveedoresDAL.BuscarProveedorPorId(int.Parse(provBuscar));
                 txt_Gestionar_Proveedores_Nombre.Text = provConsultar.NombreProveedor;
@@ -125,7 +125,7 @@ namespace Clinica_Medica_Polanco
                 txt_Gestionar_Proveedores_Telefono.Text = provConsultar.TelefonoProveedor;
                 cmb_Area_Trabajo.SelectedIndex = provConsultar.CodigoAreaTrabajo - 1;
                 chb_Disponibilidad.IsChecked = provConsultar.EstadoProveedor;
-                dtg_Gestionar_Proveedores_Consulta.ItemsSource = ProveedoresDAL.BuscarProveedor(provBuscar);
+                dtg_Gestionar_Proveedores_Consulta.ItemsSource = ProveedoresDAL.BuscarProveedor(provBuscar.Trim());
             }
             else
             {
@@ -143,8 +143,21 @@ namespace Clinica_Medica_Polanco
 
         private void strinARtb(RichTextBox rtb, string textoSet)
         {
-            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
-            textRange.Text = textoSet;
+            try
+            {
+                TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+                textRange.Text = textoSet;
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Error al recuperar la informacion del proveedor a buscar");
+                txt_Gestionar_Proveedores_Buscar.Clear();
+                txt_Gestionar_Proveedores_Buscar.Focus();
+                stc_InfoProveedor.Visibility = Visibility.Hidden;
+                scv_BuscarProveedor.Visibility = Visibility.Hidden;
+                brd_BuscarProveedor.Visibility = Visibility.Hidden;
+            }
+           
         }
     }
 }

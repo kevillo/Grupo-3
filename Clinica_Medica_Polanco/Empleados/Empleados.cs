@@ -310,7 +310,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        public bool IdentidadNoGenerica(string identidad)
+        private bool IdentidadNoGenerica(string identidad)
         {
             Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
             int max = -1;
@@ -334,7 +334,7 @@ namespace Clinica_Medica_Polanco.Empleados
         }
 
 
-        public bool NumeroNoGenerico(string telefono)
+        private bool NumeroNoGenerico(string telefono)
         {
             Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
             int max = -1;

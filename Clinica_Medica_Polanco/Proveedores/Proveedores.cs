@@ -99,7 +99,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             set
             {
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
-                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8)
+                if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8 || !NumeroNoGenerico(value))
                 {
                     throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
                 }
@@ -122,7 +122,27 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
         }
 
+        private bool NumeroNoGenerico(string telefono)
+        {
+            Dictionary<char, int> contadorOcurrencias = new Dictionary<char, int>();
+            int max = -1;
 
+            foreach (char c in telefono)
+            {
+                if (contadorOcurrencias.TryGetValue(c, out int _))
+                {
+                    contadorOcurrencias[c] += 1;
+                }
+                else contadorOcurrencias.Add(c, 1);
+            }
+
+            foreach (char c in contadorOcurrencias.Keys)
+            {
+                if (contadorOcurrencias[c] > max) max = contadorOcurrencias[c];
+            }
+            if (max ==8) return false;
+            return true;
+        }
         public static bool validarEmail(string comprobarEmail)
         {
             string emailFormato;

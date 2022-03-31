@@ -26,10 +26,9 @@ namespace Clinica_Medica_Polanco
         {
             InitializeComponent();
         }
-
+        private int codEliminar = 0;
         private void btn_Deshabilitar_proveedor_Click(object sender, RoutedEventArgs e)
         {
-            int codEliminar = !string.IsNullOrEmpty(txt_Codigo_Proveedor_Buscar.Text) ? int.Parse(txt_Codigo_Proveedor_Buscar.Text):0;
             if(codEliminar !=0)
                 ProveedoresDAL.EliminarProveedor(codEliminar);
             else
@@ -129,7 +128,7 @@ namespace Clinica_Medica_Polanco
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Buscar.Text;
 
-            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _))
+            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _) && !buscar_Proveedor.StartsWith(" ") && !buscar_Proveedor.EndsWith(" ") )
             {
 
                 proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
@@ -138,6 +137,9 @@ namespace Clinica_Medica_Polanco
                 txt_Apellido_Proveedor_Eliminar.Text = proveedorSeleccionado.ApellidoProveedor;
                 txt_Correo_Proveedor_Eliminar.Text = proveedorSeleccionado.CorreoProveedor;
                 txt_Telefono_Proveedor_Eliminar.Text = proveedorSeleccionado.TelefonoProveedor;
+                codEliminar = !string.IsNullOrEmpty(txt_Codigo_Proveedor_Buscar.Text) ? int.Parse(txt_Codigo_Proveedor_Buscar.Text) : 0;
+                txt_Codigo_Proveedor_Buscar.Clear();
+                txt_Codigo_Proveedor_Buscar.Focus();
             }
             else
             {

@@ -46,25 +46,11 @@ namespace Clinica_Medica_Polanco
                     proveedores1.ApellidoProveedor = (txt_Apellido_Proveedor_Actualizar.Text).StartsWith(" ") ? null : (txt_Apellido_Proveedor_Actualizar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido_Proveedor_Actualizar.Text, "\\s+", " ");
                     proveedores1.TelefonoProveedor = txt_Telefono_Proveedor_Actualizar.Text;
                     proveedores1.CorreoProveedor = (txt_Correo_Proveedor_Actualizar.Text).StartsWith(" ") ? " " : (txt_Correo_Proveedor_Actualizar.Text).EndsWith(" ") ? " " : txt_Correo_Proveedor_Actualizar.Text;
-                    proveedores1.DireccionProveedor = (direccionPr).StartsWith(" ") ? null : (direccionPr).EndsWith(" ") ? null : Regex.Replace(direccionPr, "\\s+", " ");
+                    proveedores1.DireccionProveedor = (direccionPr).StartsWith(" ") ? null : (direccionPr).EndsWith(" ") ? null : Regex.Replace(direccionPr.Trim(), "\\s+", " ");
                     proveedores1.CodigoAreaTrabajo = cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex + 1;
                     proveedores1.EstadoProveedor = (bool)chb_Disponibilidad_Proveedor_Actualizar.IsChecked;
-
-                    //validacion de un correo duplicado en la base de datos
-                    int validarCorreo = ProveedoresDAL.ValidarCorreoProveedor(proveedores1.CorreoProveedor);
-
-                    //Si el correo está duplicado, manda error
-                    if (validarCorreo < 1)
-                    {
-                        ProveedoresDAL.ModificarProveedor(proveedores1);
-                        reiniciarPantalla();
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show("Correo repetido: Por favor, ingrese un correo diferente.");
-                        txt_Correo_Proveedor_Actualizar.Clear();
-                        txt_Correo_Proveedor_Actualizar.Focus();
-                    }
+                    ProveedoresDAL.ModificarProveedor(proveedores1);
+                    reiniciarPantalla();
                 }
                 else
                 {
@@ -218,8 +204,21 @@ namespace Clinica_Medica_Polanco
         }
         private void setTextToRTB(RichTextBox rtb, string textoSet)
         {
-            TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
-            textRange.Text = textoSet;
+            try
+            {
+
+                TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
+                textRange.Text = textoSet;
+            }
+            catch(ArgumentNullException)
+            {
+                MessageBox.Show("Error al recuperar la informacion del proveedor ingresado");
+                txt_Codigo_Proveedor_Actualizar.Clear();
+                txt_Codigo_Proveedor_Actualizar.Focus();
+                stc_Proveedor.Visibility = Visibility.Hidden;
+                scv_Proveedor.Visibility = Visibility.Hidden;
+                brd_Proveedor.Visibility = Visibility.Hidden;
+            }
         }
         //Función para reinicar pantalla y a la vez limpiar los campos
         private void reiniciarPantalla()
@@ -230,6 +229,8 @@ namespace Clinica_Medica_Polanco
             txt_Correo_Proveedor_Actualizar.Clear();
             rtb_Direccion_Proveedor_Actualizar.Document.Blocks.Clear();
             cmb_Area_Trabajo_Proveedor_Actualizar.SelectedIndex = 0;
+            txt_Codigo_Proveedor_Actualizar.Clear();
+            txt_Codigo_Proveedor_Actualizar.Focus();
         }
 
         //validacion para que solo se pueda ingresar letras a un campo
