@@ -68,9 +68,16 @@ namespace Clinica_Medica_Polanco
         {
             string consultarExamen = txt_Consulta_Examen_Buscar.Text;
             
-            if (cmb_Sucursal_Buscar.SelectedIndex == 3)
+            if (cmb_Sucursal_Buscar.SelectedIndex == 3 )
             {
-                dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(consultarExamen);
+                if(!string.IsNullOrEmpty(consultarExamen) && int.TryParse(consultarExamen,out int _)&& !consultarExamen.StartsWith(" ")&& !consultarExamen.EndsWith(" "))
+                    dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(consultarExamen);
+                else
+                {
+                    MessageBox.Show("Eligió el modo global, por favor indique el examen a buscar");
+                    txt_Consulta_Examen_Buscar.Clear();
+                    txt_Consulta_Examen_Buscar.Focus();
+                }
             }
             else if (!string.IsNullOrEmpty(consultarExamen) && int.TryParse(consultarExamen,out int _))
             {

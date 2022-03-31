@@ -90,7 +90,7 @@ namespace Clinica_Medica_Polanco.Ventas
             get => _metodoPagoExamen;
             set
             {
-                if (value < 0) throw new FormatException();
+                if (value <= 0) throw new FormatException();
                 else _metodoPagoExamen = value;
             }
         }

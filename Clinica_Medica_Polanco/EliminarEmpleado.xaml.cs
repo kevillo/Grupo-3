@@ -73,7 +73,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Borrar_Empleado_Click(object sender, RoutedEventArgs e)
         {
-            int codEliminar = !string.IsNullOrEmpty(txt_ID_Eliminar_Empleado.Text) ? int.Parse(txt_ID_Eliminar_Empleado.Text) : 0;
+            int codEliminar = !string.IsNullOrEmpty(txt_Codigo_Eliminar_Empleado.Text) ? int.Parse(txt_Codigo_Eliminar_Empleado.Text) : 0;
             if (codEliminar != 0)
                 empleadosDAL.EliminarEmpleado(codEliminar);
             else
@@ -103,8 +103,8 @@ namespace Clinica_Medica_Polanco
                 cmb_Eliminar_Empleado_Tip_Sangre.SelectedItem = empleadoSeleccionado.TipoSangreEmpleado;
                 prueba(rtx_Direccion_Eliminar_Empleado, empleadoSeleccionado.DireccionEmpleado);
                 txt_Sueldo_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.SueldoBase);
-                cmb_Eliminar_Empleado_Cargo.SelectedIndex = empleadoSeleccionado.CodigoPuesto;
-                cmb_Eliminar_Empleado_Jornada.SelectedIndex = empleadoSeleccionado.CodigoJornada;
+                cmb_Eliminar_Empleado_Cargo.SelectedIndex = empleadoSeleccionado.CodigoPuesto-1;
+                cmb_Eliminar_Empleado_Jornada.SelectedIndex = empleadoSeleccionado.CodigoJornada-1;
                 dtp_Pago_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaPago);
                 dtp_Ingreso_Eliminar_Empleado.Text = Convert.ToString(empleadoSeleccionado.FechaContratacion);
             }

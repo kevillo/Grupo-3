@@ -72,6 +72,9 @@ namespace Clinica_Medica_Polanco
                 else if (error.StackTrace.Contains("Direccion")) ValidarCampos(rtb: rtb_Direccion_Proveedor_Actualizar, leyenda: "Dirección", refer: 4);
                 else if (error.StackTrace.Contains("AreaTrabajo")) ValidarCampos(leyenda: "Área de trabajo", cmb: cmb_Area_Trabajo_Proveedor_Actualizar, refer: 3);
             }
+            stc_Proveedor.Visibility = Visibility.Hidden;
+            scv_Proveedor.Visibility = Visibility.Hidden;
+            brd_Proveedor.Visibility = Visibility.Hidden;
         }
         //Validar campos tipo txt, rtb, dt, cmb
         private void ValidarCampos([Optional] TextBox txts, [Optional] RichTextBox rtb, String leyenda, [Optional] DatePicker dt, [Optional] ComboBox cmb, [Optional] int refer)
@@ -180,7 +183,7 @@ namespace Clinica_Medica_Polanco
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Actualizar.Text;
             
-            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _))
+            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _)&& !buscar_Proveedor.StartsWith(" ") && !buscar_Proveedor.EndsWith(" "))
             {
                 proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));
                 proveedorActual = proveedorSeleccionado;
