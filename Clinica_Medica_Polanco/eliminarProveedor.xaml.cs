@@ -128,7 +128,7 @@ namespace Clinica_Medica_Polanco
         {
             string buscar_Proveedor = txt_Codigo_Proveedor_Buscar.Text;
 
-            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _) && !buscar_Proveedor.StartsWith(" ") && !buscar_Proveedor.EndsWith(" ") )
+            if (!string.IsNullOrEmpty(buscar_Proveedor) && int.TryParse(buscar_Proveedor, out int _) && !buscar_Proveedor.StartsWith(" ") && !buscar_Proveedor.EndsWith(" ") && int.Parse(buscar_Proveedor)>0)
             {
 
                 proveedorSeleccionado = ProveedoresDAL.BuscarProveedorPorId(int.Parse(buscar_Proveedor));

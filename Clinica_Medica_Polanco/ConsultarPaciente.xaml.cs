@@ -66,9 +66,10 @@ namespace Clinica_Medica_Polanco
         {
             string consultar_paciente = txt_Consultar_Pacientes.Text;
 
-            if (!string.IsNullOrEmpty(consultar_paciente) && Int64.TryParse(consultar_paciente, out long _))
+            if (!string.IsNullOrEmpty(consultar_paciente) && Int64.TryParse(consultar_paciente, out long _)&& int.Parse(consultar_paciente)>0)
             {
                 dtg_Consultar_Pacientes.ItemsSource = PacientesDAL.ConsultarPaciente(consultar_paciente);
+
             }
             else
             {

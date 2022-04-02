@@ -61,7 +61,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Consultar_Empleados_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string consultar_empleado = txt_Consultar_Empleados_Buscar.Text;
-            if (!string.IsNullOrEmpty(consultar_empleado) && Int64.TryParse(txt_Consultar_Empleados_Buscar.Text, out long _))
+            if (!string.IsNullOrEmpty(consultar_empleado) && Int64.TryParse(txt_Consultar_Empleados_Buscar.Text, out long _) && int.Parse(consultar_empleado)>0)
                 dtg_Consultar_Empleados.ItemsSource = empleadosDAL.BuscarEmpleado(consultar_empleado);
             else
             {

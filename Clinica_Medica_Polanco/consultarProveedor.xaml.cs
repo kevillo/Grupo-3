@@ -114,7 +114,7 @@ namespace Clinica_Medica_Polanco
         private void btn_Gestionar_Proveedores_Buscar_Click(object sender, RoutedEventArgs e)
         {
             string provBuscar = txt_Gestionar_Proveedores_Buscar.Text;
-            if (!string.IsNullOrEmpty(provBuscar) && int.TryParse(provBuscar, out int _) && !provBuscar.StartsWith(" ")  && !provBuscar.EndsWith(" "))
+            if (!string.IsNullOrEmpty(provBuscar) && int.TryParse(provBuscar, out int _) && !provBuscar.StartsWith(" ")  && !provBuscar.EndsWith(" ")&& int.Parse(provBuscar)>0)
             {
                 Proveedores.Proveedores provConsultar = ProveedoresDAL.BuscarProveedorPorId(int.Parse(provBuscar));
                 txt_Gestionar_Proveedores_Nombre.Text = provConsultar.NombreProveedor;

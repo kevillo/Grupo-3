@@ -75,7 +75,10 @@ namespace Clinica_Medica_Polanco
         {
             int codEliminar = !string.IsNullOrEmpty(txt_Codigo_Eliminar_Empleado.Text) ? int.Parse(txt_Codigo_Eliminar_Empleado.Text) : 0;
             if (codEliminar != 0)
+            {
                 empleadosDAL.EliminarEmpleado(codEliminar);
+                this.Close();
+            }
             else
             {
                 MessageBox.Show("Ingrese un código de empleado para eliminar");

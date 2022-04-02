@@ -28,10 +28,11 @@ namespace Clinica_Medica_Polanco
         private void btn_Deshabilitar_Insumo_Click(object sender, RoutedEventArgs e)
         {
             int codEliminar = 0;
-            if (!string.IsNullOrEmpty(txt_Codigo_Insumo.Text) && int.TryParse(txt_Codigo_Insumo.Text,out int _))
+            if (!string.IsNullOrEmpty(txt_Codigo_Insumo.Text) && int.TryParse(txt_Codigo_Insumo.Text,out int _)&& int.Parse(txt_Codigo_Insumo.Text)>0)
             {
                 codEliminar = int.Parse(txt_Codigo_Insumo.Text);
                 Insumos.insumosDAL.EliminarInsumo(codEliminar);
+
             }
             else
             {
@@ -39,6 +40,8 @@ namespace Clinica_Medica_Polanco
                txt_Codigo_Insumo.Clear();
                txt_Codigo_Insumo.Focus();
             }
+
+
             reiniciarPantalla();
         }
         private void reiniciarPantalla()
@@ -48,6 +51,10 @@ namespace Clinica_Medica_Polanco
             txt_Nombre_Insumo.Clear();
             txt_Numero_de_serie.Clear();
             txt_Precio_Unitario.Clear();
+
+            stc_InfoProveedor.Visibility = Visibility.Hidden;
+            scv_BuscarProveedor.Visibility = Visibility.Hidden;
+            brd_BuscarProveedor.Visibility = Visibility.Hidden;
         }
 
         private void txt_Codigo_Insumo_KeyUp(object sender, KeyEventArgs e)
