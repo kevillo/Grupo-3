@@ -39,7 +39,7 @@ namespace Clinica_Medica_Polanco
                 {
                     Insumos.Insumos nuevoInsumo = new();
                     nuevoInsumo.CodigoInsumo = int.Parse(txt_Gestionar_Insumos_Buscar.Text);
-                    nuevoInsumo.NombreInsumo = (txt_Gestionar_Insumos_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Gestionar_Insumos_Nombre_Producto.Text).EndsWith(" ") ? null : Regex.Replace(txt_Gestionar_Insumos_Nombre_Producto.Text, "\\s+", " ");
+                    nuevoInsumo.NombreInsumo = (txt_Gestionar_Insumos_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Gestionar_Insumos_Nombre_Producto.Text).EndsWith(" ") ? null :int.TryParse(txt_Gestionar_Insumos_Nombre_Producto.Text,out int _)?null: Regex.Replace(txt_Gestionar_Insumos_Nombre_Producto.Text, "\\s+", " ");
                     nuevoInsumo.NumeroSerie = (txt_Gestionar_Insumos_Num_Serie.Text).StartsWith(" ") ? null : (txt_Gestionar_Insumos_Num_Serie.Text).EndsWith(" ") ? null : Regex.Replace(txt_Gestionar_Insumos_Num_Serie.Text, "\\s+", " ");
                     nuevoInsumo.PrecioUnitario = (txt_Gestionar_Insumos_Precio.Text).StartsWith(" ") ? 0 : (txt_Gestionar_Insumos_Precio.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Gestionar_Insumos_Precio.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Gestionar_Insumos_Precio.Text, "\\s", ""));
                     nuevoInsumo.CodigoCategoriaInsumo = cmb_Gestionar_Insumo_Tipo_Insumo.SelectedIndex + 1;

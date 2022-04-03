@@ -120,6 +120,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _telefonoEmpleado;
             set
             {
+                /// 23j int.parse(23j)
                 // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8 || !NumeroNoGenerico(value))
                 {

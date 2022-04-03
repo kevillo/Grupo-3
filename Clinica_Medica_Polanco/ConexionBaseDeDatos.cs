@@ -30,6 +30,7 @@ namespace Clinica_Medica_Polanco
 
         }
 
+
         public static void CerrarConexion()
         {
                 try
