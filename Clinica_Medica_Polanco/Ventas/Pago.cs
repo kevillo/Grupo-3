@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Ventas
 {
     class Pago
     {
+        //Estableciendo datos
         private decimal _iSV;
         private decimal _descuento;
         private decimal _totalVenta;
@@ -20,6 +21,7 @@ namespace Clinica_Medica_Polanco.Ventas
         private decimal _subtotal;
 
             
+        //Validación de datos
         public decimal ISV { get => _iSV; set => _iSV = value; }
         public decimal Descuento { get => _descuento; set => _descuento = value; }
         public decimal TotalVenta { get => _totalVenta; set => _totalVenta = value; }

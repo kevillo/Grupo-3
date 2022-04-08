@@ -35,6 +35,7 @@ namespace Clinica_Medica_Polanco
             cmd_Tipo_Sangre.Items.Add("B+");
         }
 
+        /// Funcion para evitar el movimiento del formulario
         private void EliminarPaciente_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -135,7 +136,7 @@ namespace Clinica_Medica_Polanco
             }
             catch(ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la dirección del paciente ingresado.");
+                MessageBox.Show("No se pudo recuperar la dirección del paciente debido a un error.");
                 txt_Buscar_Paciente.Clear();
                 txt_Buscar_Paciente.Focus();
                 stc_InfoPaciente.Visibility = Visibility.Hidden;

@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
 {
     public class ExamenesMedicos
     {
+        //Estableciendo datos
         private int _codigoExamen;
         private int _codSucursal;
         private string _nombreSucursal;
@@ -16,14 +17,17 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
         private decimal _precioUnitario;
         private bool _estado;
 
-        // validacion string: que no venga vacio
-        // validacion int: que no sea negativo ni que venga vacio
-        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+        // validación string: que no venga vacío
+        // validación int: que no sea negativo ni que venga vacío
+        // validación para strings que ocupan un número: que no esté vacío y que solo se ingrese un número
+
+        //Validación de datos
         public int CodigoExamen { get => _codigoExamen; set => _codigoExamen = value; }
         public string TipoExamen
         {
             get => _tipoExamen;
             set {
+                //Valida que la cadena no está vacía
                 if (string.IsNullOrEmpty(value)) throw new FormatException();
                 else _tipoExamen = value;
             }

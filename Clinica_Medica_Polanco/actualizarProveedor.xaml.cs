@@ -62,9 +62,8 @@ namespace Clinica_Medica_Polanco
                     brd_Proveedor.Visibility = Visibility.Hidden;
                 }
             }
-            catch (FormatException error)
+            catch (FormatException error) //Excepción que nos indicará si ocurre un error
             {
-                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Proveedor_Actualizar, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Apellido_Proveedor_Actualizar, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Telefono_Proveedor_Actualizar, leyenda: "Teléfono");
@@ -215,7 +214,7 @@ namespace Clinica_Medica_Polanco
             }
             catch(ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la informacion del proveedor ingresado");
+                MessageBox.Show("No se pudo recuperar la dirección del proveedor agregado debido a un error.");
                 txt_Codigo_Proveedor_Actualizar.Clear();
                 txt_Codigo_Proveedor_Actualizar.Focus();
                 stc_Proveedor.Visibility = Visibility.Hidden;

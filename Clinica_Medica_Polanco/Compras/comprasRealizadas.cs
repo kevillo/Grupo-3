@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Compras
 {
     class comprasRealizadas
     {
+        //Estableciendo datos en la clase
         private int _codFacturaCompra;
         private string _nombreSucursal;
         private string _nombreAdministrador;

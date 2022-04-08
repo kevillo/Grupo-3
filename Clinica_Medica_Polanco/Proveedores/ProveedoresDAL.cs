@@ -29,7 +29,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo comprobar si el correo del proveedor ya existe en la base de datos ");
+                MessageBox.Show("No se pudo comprobar si el correo del proveedor ya existe en la base de datos.");
                 return -1;
             }
             finally
@@ -41,7 +41,6 @@ namespace Clinica_Medica_Polanco.Proveedores
         {
             try
             {
-                //Validación datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Proveedores_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -53,11 +52,11 @@ namespace Clinica_Medica_Polanco.Proveedores
                 comando.Parameters.AddWithValue("Telefono_Proveedor", SqlDbType.VarChar).Value = proveedores.TelefonoProveedor;
                 comando.Parameters.AddWithValue("Estado_Proveedor", SqlDbType.Bit).Value = proveedores.EstadoProveedor;
                 comando.ExecuteReader();
-                MessageBox.Show("Proveedor agregado exitosamente");
+                MessageBox.Show("Proveedor agregado exitosamente.");
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al ingresar proveedor " + error.Message);
+                MessageBox.Show("No se pudo agregar proveedor debido a un error." + error.Message);
             }
             finally
             {
@@ -98,7 +97,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
             catch (Exception err)
             {
-                MessageBox.Show("Error al consultar" + err.Message);
+                MessageBox.Show("No se pudo consultar proveedor debido a un error." + err.Message);
                 return new List<proveedoresVentas>();
             }
             finally
@@ -134,7 +133,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al buscar el proveedor", error.Message);
+                MessageBox.Show("No se pudo buscar al proveedor debido a un error", error.Message);
                 return new Proveedores();
             }
             finally
@@ -160,7 +159,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             }
             catch (Exception error)
             {
-                MessageBox.Show("No se pudo encontrar el código del proveedor " + error.Message);
+                MessageBox.Show("No se pudo encontrar el código del proveedor debido a un error." + error.Message);
                 return -1;
             }
             finally
@@ -186,11 +185,11 @@ namespace Clinica_Medica_Polanco.Proveedores
                 comando.Parameters.AddWithValue("Telefono_Proveedor", SqlDbType.VarChar).Value = proveedores.TelefonoProveedor;
                 comando.Parameters.AddWithValue("Estado_Proveedor", SqlDbType.Bit).Value = proveedores.EstadoProveedor;
                 comando.ExecuteReader();
-                MessageBox.Show("Proveedor actualizado exitosamente");
+                MessageBox.Show("Proveedor actualizado exitosamente.");
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al actualizar proveedor", error.Message);
+                MessageBox.Show("No se pudo actualizar proveedor debido a un error.", error.Message);
             }
             finally
             {
@@ -206,11 +205,11 @@ namespace Clinica_Medica_Polanco.Proveedores
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_A_Eliminar", DbType.Int32).Value = codigoProveedor;
                 comando.ExecuteReader();
-                MessageBox.Show("Proveedor deshabilitado con éxito");
+                MessageBox.Show("Proveedor deshabilitado exitosamente.");
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al eliminar los datos ", error.Message);
+                MessageBox.Show("No se pudo deshabilitar proveedor debido a un error.", error.Message);
             }
             finally
             {

@@ -9,12 +9,12 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
 {
     class ExamenesDAL
     {
+        //Función para la solicitud de un examen médico
         public static void SolicitudExamen(ExamenesMedicos examenes)
         {
             try
             {
-                //Validación de datos
-                ConexionBaseDeDatos.ObtenerConexion();
+                ConexionBaseDeDatos.ObtenerConexion(); //Estableciendo conexión con la base de datos
                 SqlCommand comando = new SqlCommand("Examenes_Medicos_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_Tipo_Examen", SqlDbType.Int).Value = examenes.CodigoTipoExamen;
@@ -23,16 +23,17 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 comando.ExecuteReader();
                 MessageBox.Show("Exámenes solicitado exitosamente");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al solicitar examen" + error.Message);
-
+                MessageBox.Show("No se pudo solicitar el examen debido a un error." + error.Message);
             }
             finally
             {
-                ConexionBaseDeDatos.CerrarConexion();
+                ConexionBaseDeDatos.CerrarConexion(); //Cerrando conexión con la base de datos
             }
         }
+
+        //Creación de lista para buscar exámenes médicos
         public static List<ExamenesMedicos> BuscarExamen(string pDato)
         {
             List<ExamenesMedicos> Lista = new List<ExamenesMedicos>();
@@ -48,14 +49,14 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 eExamenes.Estado = reader.GetBoolean(3);
                 Lista.Add(eExamenes);
             }
-            return Lista;
-            
-        }
+            return Lista; //Se hace el retorno de la lista  
+        } 
+
+        //Función para buscar exámenes médicos por identidad
         public static ExamenesMedicos BuscarExamenPorId(Int64 pDato)
         {
             try
             {
-                //Validación de datos
                 ExamenesMedicos nuevoExamen = new();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Select Cod_Examen_Medico, Codigo_Tipo_Examen, Precio_Unitario, Estado From Examenes_Medicos WHERE Cod_Examen_Medico = @Cod_Examen", ConexionBaseDeDatos.conexion);
@@ -70,11 +71,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     eExamenes.Estado = reader.GetBoolean(3);
                     break;
                 }
-                return nuevoExamen;
+                return nuevoExamen; //Se hace retorno a nuevoExamen
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al buscar el examen", error.Message);
+                MessageBox.Show("No se pudo buscar el examen debido a un error.", error.Message);
                 return new ExamenesMedicos();
             }
             finally
@@ -82,10 +83,10 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-        //Función para cargar datos al combobox de microbiológo
+
+        //Función para cargar datos al combobox de microbiólogo
         public static void CargarMicrobiologo(ComboBox cmb_Solicitud_Examen_Microbiologo)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -99,7 +100,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     cmb_Solicitud_Examen_Microbiologo.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -108,10 +109,10 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
         //Función para cargar datos al combobox de enfermeros
         public static void CargarEnfermeros(ComboBox cmb_Solicitud_Examen_Enfermero)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -125,7 +126,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     cmb_Solicitud_Examen_Enfermero.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -134,10 +135,10 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
         //Función para cargar datos al combobox forma de entrega examen
         public static void CargarEntregaExamen(ComboBox cmb_Forma_Entrega)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -151,7 +152,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     cmb_Forma_Entrega.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -160,10 +161,10 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
         //Función para cargar datos al combobox de forma pago
         public static void CargarFormaPago(ComboBox cmb_Forma_Pago)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -177,7 +178,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     cmb_Forma_Pago.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -186,10 +187,10 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
         //Función para cargar datos al combobox de sucursal
         public static void CargarSucursal(ComboBox cmb_Sucursal_Buscar)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -203,7 +204,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     cmb_Sucursal_Buscar.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -213,6 +214,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
 
+        //Creación de lista para obtener la información del examen por medio de las sucursales, a través de cód. sucursal o cód. examen
         public static List<ExamenesMedicos> obtenerInforPorSucursalExamen(int codSucursal,int codExamen)
         {
             try
@@ -238,11 +240,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     nuevoExamennConsultar.Estado = dr.GetBoolean(6);
                     nuevoExamenConsultar.Add(nuevoExamennConsultar);
                 }
-                return nuevoExamenConsultar;
+                return nuevoExamenConsultar; //Se hace el retorno a la lista 
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen "+ error.Message);
+                MessageBox.Show("No se pudo encontrar el examen para esa sucursal."+ error.Message);
                 return new List<ExamenesMedicos>();
             }
             finally
@@ -250,6 +252,8 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        //Creación de lista para obtener la información del examen por medio de las sucursales, a través de cód. sucursal.
         public static List<ExamenesMedicos> obtenerInforPorSucursalExamen(int codSucursal)
         {
             try
@@ -274,11 +278,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     nuevoExamennConsultar.Estado = dr.GetBoolean(6);
                     nuevoExamenConsultar.Add(nuevoExamennConsultar);
                 }
-                return nuevoExamenConsultar;
-            }
-            catch (Exception error)
+                return nuevoExamenConsultar; //Se hace el retorno a la lista
+            } 
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen " + error.Message);
+                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen." + error.Message);
                 return new List<ExamenesMedicos>();
             }
             finally
@@ -286,6 +290,8 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        //Creación de lista para obtener la información del examen por medio de sucursales, a través del código de examen
         public static List<ExamenesMedicos> obtenerInforPorSucursalExamen(string codExamen)
         {
             try
@@ -310,11 +316,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     nuevoExamennConsultar.Estado = dr.GetBoolean(6);
                     nuevoExamenConsultar.Add(nuevoExamennConsultar);
                 }
-                return nuevoExamenConsultar;
+                return nuevoExamenConsultar; //Se hace el retorno a la lista
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen " + error.Message);
+                MessageBox.Show("No se pudo encontrar el examen para esa sucursal o examen." + error.Message);
                 return new List<ExamenesMedicos>();
             }
             finally
@@ -323,7 +329,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
 
-
+        //Creación de lista para obtener los exámenes listos a entregar
         public static List<Ventas.Ventas> obtenerExamenesParaEntregar(int codFactura)
         {
             try
@@ -350,11 +356,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     entregarV.EstadoExamenMedico = dr.GetInt32(11);
                     ventasEntregar.Add(entregarV);
                 }
-                return ventasEntregar;
+                return ventasEntregar; //Retorno de la lista
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al generar entrega ", error.Message);
+                MessageBox.Show("Error al generar entrega.", error.Message);
                 return new List<Ventas.Ventas>();
             }
             finally
@@ -363,6 +369,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
 
+        //Creación de lista para obtener los exámenes listos para entregar
         public static List<Ventas.Ventas> obtenerExamenesParaEntregar(string identidadPaciente )
         {
             try
@@ -390,18 +397,20 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     entregarV.EstadoExamenMedico = dr.GetInt32(11);
                     ventasEntregar.Add(entregarV);
                 }
-                return ventasEntregar;
+                return ventasEntregar; //Retorno de lista
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al generar entrega", error.Message);
+                MessageBox.Show("Error al generar entrega.", error.Message);
                 return new List<Ventas.Ventas>();
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-        }
+        } 
+
+        //Creación de lista para los servicios listos de entrega
         public static List<servicios.serviciosEntrega> analsisExamen()
         {
             try
@@ -431,11 +440,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                     entregarV.EstadoExamenMedico = dr.GetInt32(16);
                     ventasEntregar.Add(entregarV);
                 }
-                return ventasEntregar;
+                return ventasEntregar; //Retorno de lista
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al generar analsis", error.Message);
+                MessageBox.Show("Error al generar análsis.", error.Message);
                 return new List<servicios.serviciosEntrega>();
             }
             finally
@@ -444,6 +453,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
 
+        //Función para analizar los exámenes médicos
         public static void analizarExamenMedico(int codFactura,int CodExamen,string analisis)
         {
             try
@@ -458,12 +468,11 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Int).Value = 2;
                 comando.Parameters.AddWithValue("Diagnostico", SqlDbType.VarChar).Value = analisis;
                 comando.ExecuteReader();
-                MessageBox.Show("Informacion actualizada correctamente");
+                MessageBox.Show("Información actualizada correctamente.");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo terminar de guardar la informacion del examen analizado " + error.Message);
-                
+                MessageBox.Show("No se pudo terminar de guardar la información del examen analizado." + error.Message);  
             }
             finally
             {
@@ -471,7 +480,7 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
             }
         }
 
-
+        //Función para entregar los exámenes médicos
         public static void entregarExamenMedico(int codFactura)
         {
             try
@@ -483,21 +492,17 @@ namespace Clinica_Medica_Polanco.ExamenesMedicos
                 comando.Parameters.AddWithValue("Cod_Factura_Venta", SqlDbType.Int).Value = codFactura;
                 comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Int).Value = 3;
                 comando.ExecuteReader();
-                MessageBox.Show("Informacion actualizada correctamente");
+                MessageBox.Show("Información actualizada correctamente");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo terminar de guardar la informacion del examen a entregar " + error.Message);
-
+                MessageBox.Show("No se pudo terminar de guardar la información del examen a entregar." + error.Message);
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-
-
-
     }
 }
 

@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Ventas
 {
      public class Ventas
     {
+        //Estableciendo datos
         private int _codFacturaVenta;
         private int _codExamenMedico;
         private int _codFacturador;
@@ -21,9 +22,11 @@ namespace Clinica_Medica_Polanco.Ventas
         private int _cantidad;
         private int _estadoExamenMedico;
 
-        // validacion string: que no venga vacio
-        // validacion int: que no sea negativo ni que venga vacio
-        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+        // validación string: que no venga vacío
+        // validación int: que no sea negativo ni que venga vacío
+        // validación para strings que ocupan un número: que no este vacío y que solo se ingrese un número
+
+        //Validación de datos
         public int CodigoExamenMedico
         {
             get => _codExamenMedico;
@@ -69,6 +72,7 @@ namespace Clinica_Medica_Polanco.Ventas
             get => _codPaciente;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()) || value < 0) throw new FormatException();
                 else _codPaciente = value;
             }

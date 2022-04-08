@@ -39,6 +39,8 @@ namespace Clinica_Medica_Polanco
             cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("B-");
             cmb_Eliminar_Empleado_Tip_Sangre.Items.Add("B+");
         }
+
+        //Función para evitar el movimiento del form
         private void EliminarEmpleado_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -81,7 +83,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un código de empleado para eliminar");
+                MessageBox.Show("Por favor, ingrese un código de empleado a deshabilitar.");
                 txt_ID_Eliminar_Empleado.Focus();
             }
 
@@ -113,7 +115,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un id de empleado válido");
+                MessageBox.Show("Por favor, ingrese un código de empleado válido.");
                 txt_Codigo_Eliminar_Empleado.Clear();
                 txt_Codigo_Eliminar_Empleado.Focus();
 
@@ -133,7 +135,7 @@ namespace Clinica_Medica_Polanco
             }
             catch (ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la dirección del empleado ingresado");
+                MessageBox.Show("No se pudo recuperar la dirección del empleado debido a un error.");
                 txt_ID_Eliminar_Empleado.Clear();
                 txt_ID_Eliminar_Empleado.Focus();
                 stc_InfoEmpleado.Visibility = Visibility.Hidden;
@@ -182,7 +184,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoEmpleado.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de empleado." });
+                stc_InfoEmpleado.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de empleado." });
             }
         }
 

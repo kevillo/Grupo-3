@@ -9,13 +9,13 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     public class empleadosDAL
     {
-
+        //Función para validar la identidad del empleado, para verificar si ya o no existe en la base de datos
         public static int ValidarIdentidadEmpleado(string identidad)
         {
             try
             {
                 int coincidencias = 0;
-                ConexionBaseDeDatos.ObtenerConexion();
+                ConexionBaseDeDatos.ObtenerConexion(); //estableciendo conexión con la base de datos
                 SqlCommand comando = new(string.Format("select count(Codigo_Empleado) from Empleados where Identidad_Empleado = '{0}'", identidad), ConexionBaseDeDatos.conexion);
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
@@ -25,17 +25,18 @@ namespace Clinica_Medica_Polanco.Empleados
 
                 return coincidencias;
             }
-            catch (Exception)
+            catch (Exception) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo comprobar si la identidad del empleado ya existe en la base de datos ");
+                MessageBox.Show("No se pudo comprobar si la identidad del empleado ya existe en la base de datos.");
                 return -1;
             }
             finally
             {
-                ConexionBaseDeDatos.CerrarConexion();
+                ConexionBaseDeDatos.CerrarConexion(); //Se cierra la conexión con la base de datos
             }
         }
 
+        //Función para validar el correo del empleado y verificar si ya o no existe en la base de datos
         public static int validarCorreoEmpleado(string correo)
         {
             try
@@ -50,9 +51,9 @@ namespace Clinica_Medica_Polanco.Empleados
                 }
                 return coincidencias;
             }
-            catch (Exception)
+            catch (Exception) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo comprobar si el correo del empleado ya existe en la base de datos ");
+                MessageBox.Show("No se pudo comprobar si el correo del empleado ya existe en la base de datos.");
                 return -1;
             }
             finally
@@ -61,6 +62,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
+        //Función para agregar empleados
         public static void AgregarEmpleado(Empleados empleados)
         {
             try
@@ -86,11 +88,11 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.Parameters.AddWithValue("Sueldo_Base", SqlDbType.Money).Value=empleados.SueldoBase;
                 comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value= empleados.CodigoSucursal;
                 comando.ExecuteReader();
-                MessageBox.Show("Empleado agregado exitosamente");
+                MessageBox.Show("Empleado agregado exitosamente.");
             }
-            catch (Exception error)//excepción que indica error
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al ingresar empleado " + error.Message);
+                MessageBox.Show("No se pudo agregar empleado debido a un error." + error.Message);
                 
             }
             finally
@@ -99,11 +101,11 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
+        //Creación de lista para hacer la función de buscar empleado
         public static List<Empleados> BuscarEmpleado(string pDato)
         {
             try
             {
-
                 List<Empleados> Lista = new List<Empleados>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("select Empleados.*, Descripcion_Puesto,Descripcion_Jornada from Empleados"+ 
@@ -113,6 +115,7 @@ namespace Clinica_Medica_Polanco.Empleados
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
+                    //Validando datos
                     Empleados eEmpleados = new Empleados();
                     eEmpleados.CodigoEmpleado = reader.GetInt32(0);
                     eEmpleados.CodigoJornada = reader.GetInt32(1);
@@ -138,9 +141,9 @@ namespace Clinica_Medica_Polanco.Empleados
                 return Lista;
                
             }
-            catch (Exception err)
+            catch (Exception err) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al buscar empleados " + err.Message);
+                MessageBox.Show("No se pudo buscar al empleado debido a un error." + err.Message);
                 return new List<Empleados>();
             }
             finally
@@ -149,6 +152,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
+        //Función para buscar empleado por medio de la identidad 
         public static Empleados BuscarEmpleadoPorId(string pDato)
         {
             try
@@ -178,12 +182,11 @@ namespace Clinica_Medica_Polanco.Empleados
                     eEmpleados.FechaPago = reader.GetDateTime(15);
                     eEmpleados.SueldoBase = reader.GetDecimal(16);
                 }
-
                 return eEmpleados;
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al buscar el empleado", error.Message);
+                MessageBox.Show("No se pudo buscar al empleado debido a un error.", error.Message);
                 return new Empleados();
             }
             finally
@@ -192,6 +195,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
+        //Función para traer el código del empleado desde la base de datos
         public static  int traerCodigoEmpleado(string identidad)
         {
             try
@@ -206,17 +210,18 @@ namespace Clinica_Medica_Polanco.Empleados
                 }
                 return codEmpleado;
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo encontrar el código del empleado " + error.Message);
+                MessageBox.Show("No se pudo encontrar el código del empleado debido a un error." + error.Message);
                 return -1;
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
+        } 
 
-        }
+        //Función para modificar o actualizar empleado
         public static void ModificarEmpleado(Empleados empleados)
         {
             try
@@ -243,19 +248,20 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.Parameters.AddWithValue("Sueldo_Base", SqlDbType.Money).Value = empleados.SueldoBase;
                 comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value = empleados.CodigoSucursal;
                 comando.ExecuteReader();
-                MessageBox.Show("Empleado actualizado");
+                MessageBox.Show("Empleado actualizado exitosamente.");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al modificar empleados "+error.Message);
+                MessageBox.Show("No se pudo actualizar empleado debido a un error."+error.Message);
                 
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
+        } 
 
-        }
+        //Función para deshabilitar al empleado
         public static void EliminarEmpleado(int codigoEmpleado)
         {
             try
@@ -266,23 +272,22 @@ namespace Clinica_Medica_Polanco.Empleados
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_A_Eliminar",DbType.Int32).Value=codigoEmpleado;
                 comando.ExecuteReader();
-                MessageBox.Show("Empleado deshabilitado con exito");
+                MessageBox.Show("Empleado deshabilitado exitosamente.");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al eliminar los datos ", error.Message);
+                MessageBox.Show("No se pudo deshabilitar empleado debido a un error.", error.Message);
                 
             }
             finally
             {
-
                 ConexionBaseDeDatos.CerrarConexion();
             }
         } 
+
         //Función para cargar datos al combobox de Jornada Empleado
         public static void CargarJornada(ComboBox cmbJornada)
-        {
-            
+        {     
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -296,7 +301,7 @@ namespace Clinica_Medica_Polanco.Empleados
                     cmbJornada.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -305,13 +310,12 @@ namespace Clinica_Medica_Polanco.Empleados
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
         //Función para cargar datos desde la bd al combobox de Sucursal
         public static void CargarSucursal(ComboBox cmbSucursal)
-        {
-            
+        {   
             try
             {
-
                 ConexionBaseDeDatos.ObtenerConexion();
                 string Query = "Select Codigo_Sucursal, Nombre_Sucursal from Sucursales";
                 SqlCommand createCommand = new SqlCommand(cmdText: Query, ConexionBaseDeDatos.conexion);
@@ -322,9 +326,8 @@ namespace Clinica_Medica_Polanco.Empleados
                     string nombre = dr.GetString(1);
                     cmbSucursal.Items.Add(nombre);
                 }
-
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -351,7 +354,7 @@ namespace Clinica_Medica_Polanco.Empleados
                     cmbCargo.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }
@@ -360,7 +363,5 @@ namespace Clinica_Medica_Polanco.Empleados
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-
     }
-
 }

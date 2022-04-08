@@ -49,7 +49,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    MessageBox.Show("Procure no dejar la Identidad del Insumo con un formato incorrecto o vacío.");
+                    MessageBox.Show("Procure no dejar el código del Insumo con un formato incorrecto o vacío.");
                     txt_Gestionar_Insumos_Buscar.Clear();   
                     txt_Gestionar_Insumos_Buscar.Focus();
                     stc_Insumo.Visibility = Visibility.Hidden;
@@ -58,9 +58,8 @@ namespace Clinica_Medica_Polanco
                 }
                 reiniciarPantalla();
             }
-            catch (FormatException error)
-            {
-                //Excepción que nos indicará si ocurre un error
+            catch (FormatException error)//Excepción que nos indicará si ocurre un error
+            {   
                 if (error.StackTrace.Contains("NombreInsumo")) validarCampos(txt_Gestionar_Insumos_Nombre_Producto, leyenda: "Nombre insumo");
                 else if (error.StackTrace.Contains("NumeroSerie")) validarCampos(txt_Gestionar_Insumos_Num_Serie, leyenda: "Numero serie");
                 else if (error.StackTrace.Contains("PrecioUnitario")) validarCampos(txt_Gestionar_Insumos_Precio, leyenda: "precio unitario");
@@ -138,7 +137,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Insumo.Children.Add(new TextBlock() { Text = "No existe ese insumo o es inválido" });
+                stc_Insumo.Children.Add(new TextBlock() { Text = "No existe ese insumo o es inválido." });
             }
         }
 
@@ -198,7 +197,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Procure no dejar la Identidad de Insumo con un formato incorrecto o vacío.");
+                MessageBox.Show("Procure no dejar el código de Insumo con un formato incorrecto o vacío.");
                 txt_Gestionar_Insumos_Buscar.Clear();
                 txt_Gestionar_Insumos_Buscar.Focus();
                 stc_Insumo.Visibility = Visibility.Hidden;

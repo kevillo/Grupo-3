@@ -35,7 +35,7 @@ namespace Clinica_Medica_Polanco
 
         private void btn_Infor_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Sistema para Clinica Médica Polanco, hecho por el grupo más mera brga, grupo 3.", "Sobre nosotros");
+            MessageBox.Show("Sistema para Clinica Médica Polanco, hecho por el grupo 3.", "Sobre nosotros");
         }
 
         private void btn_Salir_Click(object sender, RoutedEventArgs e)

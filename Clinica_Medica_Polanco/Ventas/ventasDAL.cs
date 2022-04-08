@@ -12,13 +12,13 @@ namespace Clinica_Medica_Polanco.Ventas
     class ventasDAL
     {
 
-
+        //Función para traer el diagnóstico médico
         public static string traerDiagnostico(int codFactura,int codExamen)
         {
             try
             {
                 string diagnostico = "";
-                ConexionBaseDeDatos.ObtenerConexion();
+                ConexionBaseDeDatos.ObtenerConexion(); //Estableciendo conexión con la base de datos
                 SqlCommand comando = new(string.Format("select Diagnostico from Detalle_Factura_Venta where Cod_Factura_Venta = {0} and Cod_Examen_Medico = {1}", codFactura, codExamen),ConexionBaseDeDatos.conexion);
                 SqlDataReader dr = comando.ExecuteReader();
                 while(dr.Read())
@@ -28,9 +28,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 return diagnostico;
 
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al cargar el diagnostico: " + error.Message);
+                MessageBox.Show("No se pudo cargar el diagnóstico debido a un error." + error.Message);
                 return "";
             }
             finally
@@ -39,10 +39,9 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
-
+        //Función para cargar datos de pago
         public static Pago cargarDatosPago(int codFacturaVenta)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -61,9 +60,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 }
                 return nuevoPago;
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al generar factura ", error.Message);
+                MessageBox.Show("No se pudo generar la factura debido a un error.", error.Message);
                 return new Pago();
             }
             finally
@@ -72,6 +71,7 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
+        //Función para cargar datos de venta
         public static Pago cargarDatosVenta(int codFacturaVenta)
         {
             try
@@ -93,9 +93,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 }
                 return nuevoPago;
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al generar factura ", error.Message);
+                MessageBox.Show("No se pudo generar la factura debido a un error.", error.Message);
                 return new Pago();  
             }
             finally
@@ -103,6 +103,8 @@ namespace Clinica_Medica_Polanco.Ventas
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        //Función para obtener el código de venta
         public static int ObtenerIdVenta()
         {
             try
@@ -118,9 +120,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 }
                 return codFacturaVenta;
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al buscar el codigo de la factura venta ",error.Message);
+                MessageBox.Show("No se pudo buscar el código de la factura de la venta debido a un error.",error.Message);
                 return -1;
             }
             finally
@@ -129,6 +131,7 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
+        //Función para obtener el código de sucursal
         public static int obtenerIdSucursal(int codEmpleado)
         {
             try
@@ -143,9 +146,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 }
                 return codSucursal;
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al generar factura ", error.Message);
+                MessageBox.Show("No se pudo generar la factura debido a un error.", error.Message);
                 return -1;
             }
             finally
@@ -154,6 +157,8 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
+
+        //Función para generar la factura
         public static void GenerarFactura(int codSucursal)
         {
             try
@@ -164,9 +169,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 comando.Parameters.AddWithValue("Codigo_Sucursal", SqlDbType.Int).Value = codSucursal;
                 comando.ExecuteReader();
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al generar factura ",error.Message);
+                MessageBox.Show("No se pudo generar la factura debido a un error.", error.Message);
             }
             finally
             {
@@ -174,6 +179,7 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
+        //Función para registrar la venta
         public static void RegistrarVenta(Ventas nuevaVenta,int codVenta)
         {
             try
@@ -195,16 +201,17 @@ namespace Clinica_Medica_Polanco.Ventas
                 comando.Parameters.AddWithValue("Estado_Examen_Medico", SqlDbType.Bit).Value =1;    
                 comando.ExecuteReader();  
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al registrar venta ",error.Message);
+                MessageBox.Show("No se pudo registrar la venta debido a un error.",error.Message);
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-
+        
+        //Función para traer el código del paciente
         public static int TraerCodigoPaciente(string identidadEmpleado)
         {
             int codigoPaciente = 0;
@@ -219,9 +226,9 @@ namespace Clinica_Medica_Polanco.Ventas
                 }
                 return codigoPaciente;
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("Error al encontrar el codigo", error.Message);
+                MessageBox.Show("No se pudo encontrar el código del paciente debido a un error.", error.Message);
                 return -1;
             }
             finally
@@ -230,12 +237,11 @@ namespace Clinica_Medica_Polanco.Ventas
             }
         }
 
+        //Creación de lista para mostrar las ventas
         public static List<ventasRealizadas> MostrarVentas(int codSucursal)
         {
             try
             {  
-
-                //Validación de datos
                 List<ventasRealizadas> Lista = new List<ventasRealizadas>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand(String.Format("ventas_Realizadas"), ConexionBaseDeDatos.conexion);
@@ -255,13 +261,12 @@ namespace Clinica_Medica_Polanco.Ventas
                     nuevaVenta.DescuentoVenta = reader.GetDecimal(7);
                     nuevaVenta.TotalVenta = reader.GetDecimal(8);
                     Lista.Add(nuevaVenta);
-
                 }
-                return Lista;
+                return Lista; //Retorno de lista
             }
-            catch (Exception err)
+            catch (Exception err) //Excepción que nos indica si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("No hay ventas que mostrar" + err.Message);
+                MessageBox.Show("No hay ventas que mostrar." + err.Message);
                 return new List<ventasRealizadas>();
             }
             finally

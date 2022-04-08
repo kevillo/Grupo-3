@@ -10,6 +10,7 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     public class Empleados
     {
+        //Declarando datos en la clase
         private int _codigoEmpleado;
         private int _codigoJornada;
         private int _codigoPuesto;
@@ -35,12 +36,13 @@ namespace Clinica_Medica_Polanco.Empleados
         // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
 
 
-        
+       //Validación de datos 
         public int CodigoJornada 
         { 
             get => _codigoJornada;
             set
             {
+                //Valida si la cadena no está vacía o si tiene una longitud menor o igual a 0
                 if (string.IsNullOrEmpty(value.ToString()) || value <= 0)
                 {
                     throw new FormatException();
@@ -54,6 +56,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _codigoPuesto;
             set
             {
+                //Valida si la cadena no está vacía o si tiene una longitud menor o igual a 0
                 if (string.IsNullOrEmpty(value.ToString()) || value <= 0)
                 {
                     throw new FormatException();
@@ -65,7 +68,8 @@ namespace Clinica_Medica_Polanco.Empleados
         { 
             get => _idUsuario;
             set
-            {
+            { 
+                //Valida si la cadena no está vacía o si tiene una longitud menor o igual a 0
                 if (string.IsNullOrEmpty(value.ToString()) || value <= 0)
                 {
                     throw new FormatException();
@@ -78,7 +82,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _nombreEmpleado;
             set
             {
-                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                //Valida si la cadena no está vacía o si tiene una longitud menor a 2 y una longitud mayor a 51
                 if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
                     throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
@@ -91,7 +95,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _apellidoEmpleado;
             set
             {
-                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                //Valida si la cadena no está vacía o si tiene una longitud menor a 2 y una longitud mayor a 51
                 if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
 
@@ -105,7 +109,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _identidadEmpleado;
             set
             {
-                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 13 caracteres
+                //Valida si la cadena no está vacía, si es un número, y si tiene exactamente 13 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || value.Length != 13 || !IdentidadNoGenerica(value))
                 {
                     throw new FormatException("Procure no dejar la Identidad con un formato incorrecto o vacío.");
@@ -121,7 +125,7 @@ namespace Clinica_Medica_Polanco.Empleados
             set
             {
                 /// 23j int.parse(23j)
-                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
+                //Valida si la cadena no está vacía, si es un número, y si tiene exactamente 8 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8 || !NumeroNoGenerico(value))
                 {
                     throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
@@ -135,8 +139,8 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaNacimientoEmpleado;
             set
             {
-                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
-                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es mayor a la de hoy
+                //Valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                //Por ejemplo, no se puede poner una fecha como  15/04/2022 por que es mayor a la de hoy
                 if (value.ToShortDateString() == DateTime.Now.ToShortDateString() || value > DateTime.Now)
                 {
                     throw new FormatException();
@@ -149,7 +153,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _correoEmpleado;
             set
             {
-                // valida si el email es verdadero ( aqui se pone falso por que asi entrara en el catch de ser falso)
+                //Valida si el email es verdadero (aquí se pone falso porque así entrará en el catch de ser falso)
                 if (!validarEmail(value) )
                 {
                     throw new FormatException("Procure no dejar el Correo con un formato incorrecto o vacío.");
@@ -164,7 +168,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _alturaEmpleado;
             set
             {
-                //valida si la altura es positiva y si es un deciamal
+                //Valida si la altura es positiva y si es un deciamal
                 if (value <= 0 || !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length<1 || value.ToString().Length > 3)
                 {
                     throw new FormatException("Procure no dejar la Altura con un formato incorrecto o vacío.");
@@ -178,6 +182,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _tipoSangreEmpleado;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -190,6 +195,7 @@ namespace Clinica_Medica_Polanco.Empleados
           get => _direccionEmpleado;
           set
             {
+                //Valida si la cadena no está vacía y si tiene una longitud menor a 10 y una mayor a 255
                 if (string.IsNullOrEmpty(value) || (value.Length < 10 || value.Length > 255))
                 {
                     throw new FormatException();
@@ -202,6 +208,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _codigoSucursal;
             set
             {
+                //Valida si la cadena no está vacía o si tiene una longitud menor a 0
                 if (string.IsNullOrEmpty(value.ToString()) || value < 0)
                 {
                     throw new FormatException();
@@ -215,8 +222,8 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaPago; 
             set
             {
-                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
-                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
+                //Valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                //Por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
                 if (value.ToShortDateString() == DateTime.Now.ToShortDateString() )
                 {
                     throw new FormatException();
@@ -229,8 +236,8 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _fechaContratacion;
             set
             {
-                // valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
-                // por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
+                //Valida si la fecha no es la fecha de hoy y si la fecha no es mayor a la fecha de hoy: 
+                //Por ejemplo, no se puede poner una fecha como  15/04/2022 por que es menor a la de hoy
                 if (value.ToShortDateString() == DateTime.Now.ToShortDateString() )
                 {
                     throw new FormatException();
@@ -243,7 +250,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _sueldoBase; 
             set
             {
-                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 10 caracteres
+                //Valida si la cadena no está vacía, si es un número, y si tiene exactamente 10 caracteres
                 if ( value <=0 ||  string.IsNullOrEmpty(value.ToString())|| !decimal.TryParse(value.ToString(), out decimal _) || value.ToString().Length<4 || value.ToString().Length > 10)
                 {
                     throw new FormatException("Procure no dejar el Sueldo con un formato incorrecto o vacío.");
@@ -257,6 +264,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _codigoEmpleado; 
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString())) throw new FormatException();
                 else _codigoEmpleado = value;
             }
@@ -268,6 +276,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _cargoEmpleado;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -281,6 +290,7 @@ namespace Clinica_Medica_Polanco.Empleados
             get => _jornadaEmpleado;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -289,7 +299,7 @@ namespace Clinica_Medica_Polanco.Empleados
             }
         }
 
-        // valida si el correo tiene un @, si hay algo antes y despues del @ y si tiene un .com o algo asi
+        //Valida si el correo tiene un @, si hay algo antes y después del @ y si tiene un .com o algo así
         private  bool validarEmail(string comprobarEmail)
         {
             string emailFormato;
@@ -356,7 +366,8 @@ namespace Clinica_Medica_Polanco.Empleados
             if (max == 8) return false;
             return true;
         }
-        //valida si el telefono empieza en 9 8 3 2 
+
+        //Valida si el teléfono empieza en 9, 8, 3, 2 
         private  bool validarTelefono(string telefono)
         {
             if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))

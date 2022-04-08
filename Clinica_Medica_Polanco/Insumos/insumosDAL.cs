@@ -14,37 +14,37 @@ namespace Clinica_Medica_Polanco.Insumos
     class insumosDAL
     {
 
-
+        //Función para validar el número de serie del insumo
         public static int ValidadNumeroSerieInsumo(string numSerie)
         {
             try
             {
                 int coincidencias = 0;
-                ConexionBaseDeDatos.ObtenerConexion();
+                ConexionBaseDeDatos.ObtenerConexion(); //Estableciendo conexión con la base de datos
                 SqlCommand comando = new(string.Format("select count(Codigo_Insumo) from Insumos where Numero_Serie = '{0}'", numSerie), ConexionBaseDeDatos.conexion);
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
                 {
                     coincidencias = dr.GetInt32(0);
                 }
-
                 return coincidencias;
             }
-            catch (Exception)
+            catch (Exception) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo comprobar si el numero de serie ya existe en la base de datos ");
+                MessageBox.Show("No se pudo comprobar si el número de serie ya existe en la base de datos.");
                 return -1;
             }
             finally
             {
-                ConexionBaseDeDatos.CerrarConexion();
+                ConexionBaseDeDatos.CerrarConexion(); //Cerrando conexión con la base de datos
             }
         }
+
+        //Función para agregar nuevos insumos
         public static void AgregarInsumo(Insumos nuevoInsumo)
         {
             try
             {
-                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Insumos_Insert", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -55,19 +55,19 @@ namespace Clinica_Medica_Polanco.Insumos
                 comando.Parameters.AddWithValue("Numero_Serie", SqlDbType.VarChar).Value = nuevoInsumo.NumeroSerie;
                 comando.Parameters.AddWithValue("Estado_Insumo", SqlDbType.Bit).Value = nuevoInsumo.Estado;
                 comando.ExecuteReader();
-                MessageBox.Show("Insumo agregado exitosamente");
+                MessageBox.Show("Insumo agregado exitosamente.");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al ingresar insumo " + error.Message);
-
+                MessageBox.Show("No se pudo agregar el insumo debido a un error." + error.Message);
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
-
+        
+        //Función para obtener el código del insumo
         public static int obtenerIdInsumo(string numSerie)
         {
             int codInsumo = 0;
@@ -82,9 +82,9 @@ namespace Clinica_Medica_Polanco.Insumos
                 }
                 return codInsumo; 
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al buscar el id de insumo " + error.Message);
+                MessageBox.Show("No se pudo buscar el código del insumo debido a un error." + error.Message);
                 return -1;
             }
             finally
@@ -92,11 +92,12 @@ namespace Clinica_Medica_Polanco.Insumos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        //Creación de lista para buscar insumos
         public static List<Insumos> BuscarInsumos(string pDato)
         {
             try
             {
-                //Validación de datos
                 List<Insumos> Lista = new List<Insumos>();
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("SELECT Codigo_Insumo, Codigo_Categoria_Insumo, Nombre_Insumo, Fecha_Expiracion, Precio_Unitario, Numero_Serie, Estado_Insumo FROM Insumos WHERE Nombre_Insumo = @nombreInsumo OR Codigo_Insumo = @codInsumo");
@@ -115,11 +116,11 @@ namespace Clinica_Medica_Polanco.Insumos
                     nuevoInsumo.Estado = reader.GetBoolean(6);
                     Lista.Add(nuevoInsumo);
                 }
-                return Lista;
+                return Lista; //Retorno de lista
             }
-            catch (Exception err)
+            catch (Exception err) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al encontrar insumos" + err.Message);
+                MessageBox.Show("No se pudo encontrar el insumo debido a un error." + err.Message);
                 return new List<Insumos>();
             }
             finally
@@ -127,13 +128,12 @@ namespace Clinica_Medica_Polanco.Insumos
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        //Función para buscar el insumo por código
         public static Insumos BuscarInsumoPorNombreOId(int pDato)
         {
-
             try
             {
-                //Validación de datos
-
                 ConexionBaseDeDatos.ObtenerConexion();
                 Insumos consultaInsumos = new();
                 SqlCommand comando = new SqlCommand(String.Format("Select * from Insumos where Codigo_Insumo = {0}", pDato), ConexionBaseDeDatos.conexion);
@@ -148,11 +148,11 @@ namespace Clinica_Medica_Polanco.Insumos
                     consultaInsumos.NumeroSerie = reader.GetString(5);
                     consultaInsumos.Estado = reader.GetBoolean(6);
                 }
-                return consultaInsumos;
+                return consultaInsumos; 
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al buscar el insumo", error.Message);
+                MessageBox.Show("No se pudo buscar el insumo debido a un error.", error.Message);
                 return new Insumos();
             }
             finally
@@ -161,12 +161,11 @@ namespace Clinica_Medica_Polanco.Insumos
             }
         }
 
+        //Función para modificar o actulizar los insumos
         public static void ModificarInsumo(Insumos vInsumo)
         {
             try
-            {
-                //Validación de datos
-                
+            {  
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("Insumos_Update", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -178,20 +177,19 @@ namespace Clinica_Medica_Polanco.Insumos
                 comando.Parameters.AddWithValue("Numero_Serie", SqlDbType.VarChar).Value = vInsumo.NumeroSerie;
                 comando.Parameters.AddWithValue("Estado_Insumo", SqlDbType.Bit).Value = vInsumo.Estado;
                 comando.ExecuteReader();
-                MessageBox.Show("Insumo actualizado correctamente");
+                MessageBox.Show("Insumo actualizado correctamente.");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al modificar insumos", error.Message);
-                
+                MessageBox.Show("No se pudo actualizar insumo debido a un error.", error.Message);     
             }
             finally
             {
                 ConexionBaseDeDatos.CerrarConexion();
             }
-
         }
 
+        //Función para obtener la información del stock
         public static Insumos obtenerInfoStock(int codInsumo)
         {
             try
@@ -213,12 +211,11 @@ namespace Clinica_Medica_Polanco.Insumos
                     consultaInsumos.Existencia = reader.GetInt32(6);
                     consultaInsumos.PrecioUnitario = reader.GetDecimal(7);
                 }
-
                 return consultaInsumos;
             }
-            catch
+            catch //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se ha encontrado ningun producto");
+                MessageBox.Show("No se ha podido encontrar ningún insumo.");
                 return new Insumos();
             }
             finally
@@ -227,11 +224,11 @@ namespace Clinica_Medica_Polanco.Insumos
             }
         }
 
+        //Creación de lista para obtener la información del stock por sucursal
         public static List<String> obtenerInfoStockSucursal(int codInsumo)
         {
             try
             {
-                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 List<string> informacion = new();
                 SqlCommand comando = new SqlCommand("Stock_Info_Sucursal", ConexionBaseDeDatos.conexion);
@@ -242,46 +239,44 @@ namespace Clinica_Medica_Polanco.Insumos
                 {
                     informacion.Add(dr.GetString(1) + " -> " + dr.GetInt32(2));
                 }
-                return informacion;
+                return informacion; //Retorno de lista
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al eliminar los datos ", error.Message);
+                MessageBox.Show("No se pudo eliminar los datos debido a un error.", error.Message);
                 return new List<string>();
             }
             finally
             {
-
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
+
+        //Función para deshabilitar insumos
         public static void EliminarInsumo(int codigoInsumo)
         {
             try
             {
-                //Validación de datos
                 ConexionBaseDeDatos.ObtenerConexion();
                 SqlCommand comando = new SqlCommand("insumos_Delete", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("Codigo_Insumos", SqlDbType.Int).Value=codigoInsumo;
                 comando.ExecuteReader();
-                MessageBox.Show("Insumo deshabilitado exitosamente");
+                MessageBox.Show("Insumo deshabilitado exitosamente.");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción que indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("Error al eliminar los datos ", error.Message);
+                MessageBox.Show("No se pudo deshabilitar insumo debido a un error.", error.Message);
             }
             finally
             {
-
                 ConexionBaseDeDatos.CerrarConexion();
             }
         }
 
-
+        //Función para cargar el tipo de insumo
         public static void CargarTipoInsumo(ComboBox cmb_Tipo_Insumo)
         {
-
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
@@ -295,7 +290,7 @@ namespace Clinica_Medica_Polanco.Insumos
                     cmb_Tipo_Insumo.Items.Add(nombre);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) //Excepción que indicará si ocurre un error
             {
                 MessageBox.Show(ex.Message);
             }

@@ -29,6 +29,7 @@ namespace Clinica_Medica_Polanco
             
         }
 
+        //Función para poder adjuntar archivos de cualquier formato
         private void btn_Correo_Adjuntar_Click(object sender, RoutedEventArgs e)
         {
             try

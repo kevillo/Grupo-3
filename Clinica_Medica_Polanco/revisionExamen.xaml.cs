@@ -68,20 +68,16 @@ namespace Clinica_Medica_Polanco
                 servicios.serviciosEntrega analisis = (servicios.serviciosEntrega)dtg_Revision_Examen_Examenes.SelectedItem;
                 if (analisis == null)
                 {
-                    MessageBox.Show("seleccione al menos un examen para entregar.");
+                    MessageBox.Show("Por favor, seleccione al menos un examen para revisar.");
                 }
                 else
-                {
-
-                   
+                {  
                     AnalizarExamenMedico nuevoAnalisis = new(analisis);
                     nuevoAnalisis.ShowDialog();
                     this.Close();
-
                 }
             }
             else MessageBox.Show("No hay exámenes por revisar.");
         }
-
     }
 }

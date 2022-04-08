@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Proveedores
 {
     class proveedoresVentas
     {
+        //Estableciendo datos
         private int _codigoInsumo;
         private string _nombreInsumo;
         private string _nombreProveedor;
@@ -18,6 +19,7 @@ namespace Clinica_Medica_Polanco.Proveedores
         private int _mesInventario;
         private string _numeroLote;
 
+        //Validación de datos
         public int CodigoInsumo { get => _codigoInsumo; set => _codigoInsumo = value; }
         public string NombreInsumo { get => _nombreInsumo; set => _nombreInsumo = value; }
         public string NombreProveedor { get => _nombreProveedor; set => _nombreProveedor = value; }

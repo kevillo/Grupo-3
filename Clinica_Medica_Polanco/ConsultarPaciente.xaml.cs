@@ -29,6 +29,7 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += ConsultarPaciente_SourceInitialized;
         }
 
+        //Función para evitar el movimiento del form
         private void ConsultarPaciente_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -124,7 +125,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de paciente." });
             }
         }
 

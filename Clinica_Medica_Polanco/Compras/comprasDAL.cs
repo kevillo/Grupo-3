@@ -10,11 +10,12 @@ namespace Clinica_Medica_Polanco.Compras
 {
     class comprasDAL
     {
+        //Función de una lista para obtener la información de las compras realizadas 
         public static List<comprasRealizadas> obtenerInfoCompras(int codSucursal)
         {
             try
             {
-                ConexionBaseDeDatos.ObtenerConexion();
+                ConexionBaseDeDatos.ObtenerConexion(); //Estableciendo la conexión con la base de datos
                 List<comprasRealizadas> lista = new();
                 SqlCommand comando = new("compras_realizadas", ConexionBaseDeDatos.conexion);
                 comando.CommandType = CommandType.StoredProcedure;
@@ -32,19 +33,18 @@ namespace Clinica_Medica_Polanco.Compras
                     nuevCompra.TotalCompra = dr.GetDecimal(6);
                     lista.Add(nuevCompra);
                 }
-                return lista;
+                return lista; //Haciendo retorno de la lista
 
             }
-            catch(Exception error)
+            catch(Exception error) //Excepción indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pueden cargar las compras realizadas "+error.Message);
+                MessageBox.Show("No se pudo cargar las compras realizadas debido a un error."+error.Message);
                 return new List<comprasRealizadas>();
             }
             finally
             {
-                ConexionBaseDeDatos.CerrarConexion();
+                ConexionBaseDeDatos.CerrarConexion(); //Cerrando la conexión con la base de datos
             }
         }
-
     }
 }

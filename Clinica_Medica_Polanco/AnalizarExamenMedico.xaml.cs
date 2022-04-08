@@ -29,6 +29,7 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += AnalizarExamenMedico_SourceInitialized;
         }
 
+        /// Funcion para evitar el movimiento del formulario
         private void AnalizarExamenMedico_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -65,8 +66,7 @@ namespace Clinica_Medica_Polanco
                 ExamenesMedicos.ExamenesDAL.analizarExamenMedico(ventaAnalisis.CodFacturaVenta, ventaAnalisis.CodigoExamenMedico, Regex.Replace(analisis, "\\s+", " "));
                 this.Close();
             }
-            else MessageBox.Show("Procure no dejar el análisis del examen con un formato incorrecto o vacío.");
-            
+            else MessageBox.Show("Procure no dejar el análisis del examen con un formato incorrecto o vacío.");      
         }
 
 
@@ -89,7 +89,6 @@ namespace Clinica_Medica_Polanco
             txt_Correo_Analisis.Text = nuevoPaciente.Correo;
             txt_Nombre_Analisis.Text = nuevoPaciente.Nombre;
             txt_Fecha_Nacimiento_Analisis.Text = nuevoPaciente.FechaNacimiento.ToShortDateString();
-
         }
     }
 }

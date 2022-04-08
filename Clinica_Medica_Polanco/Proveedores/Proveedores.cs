@@ -10,6 +10,7 @@ namespace Clinica_Medica_Polanco.Proveedores
 
     public class Proveedores
     {
+        //Estableciendo datos
         private int _codigoProveedor;
         private int _codigoAreaTrabajo;
         private string _nombreProveedor;
@@ -19,13 +20,16 @@ namespace Clinica_Medica_Polanco.Proveedores
         private string _telefonoProveedor;
         private bool _estadoProveedor;
 
-        // validacion string: que no venga vacio
-        // validacion int: que no sea negativo ni que venga vacio
-        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+        // validación string: que no venga vacío
+        // validación int: que no sea negativo ni que venga vacío
+        // validación para strings que ocupan un número: que no este vacío y que solo se ingrese un número
+
+        //Validación de datos
         public int CodigoProveedor
         {
             get => _codigoProveedor;
             set {
+                //Valida si la cadena no está vacía
                 if (value <= 0) _codigoProveedor = 1;
                 else _codigoProveedor = value;
             }
@@ -35,6 +39,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _codigoAreaTrabajo;
             set 
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()) || value < 0)
                 {
                     throw new FormatException();
@@ -47,7 +52,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _nombreProveedor;
             set 
             {
-                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                //Valida si la cadena no está vacía o si tiene una longitud menor a 2
                 if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
                     throw new FormatException("Procure no dejar el Nombre con un formato incorrecto o vacío.");
@@ -60,7 +65,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _apellidoProveedor;
             set
             {
-                // valida si la cadena esta vacia o si tiene una longitud menor a 2
+                //Valida si la cadena no está vacía o si tiene una longitud menor a 2
                 if (string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 51)
                 {
 
@@ -74,6 +79,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _direccionProveedor;
             set
             {
+                //Valida si la cadena no está vacía o si tiene una longitud menor a 10 y una mayor a 255
                 if (string.IsNullOrEmpty(value) || (value.Length < 10 || value.Length > 255))
                 {
                     throw new FormatException();
@@ -86,6 +92,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _correoProveedor;
             set
             {
+                //Valida si el email es verdadero (aquí se pone falso porque así entrará en el catch de ser falso)
                 if (validarEmail(value) == false)
                 {
                     throw new FormatException();
@@ -98,7 +105,7 @@ namespace Clinica_Medica_Polanco.Proveedores
             get => _telefonoProveedor;
             set
             {
-                // valida si la cadena no esta vacia, si es un numero, y si tiene exactamente 8 caracteres
+                //Valida si la cadena no está vacía, si es un número, y si tiene exactamente 8 caracteres
                 if (string.IsNullOrEmpty(value) || !Int64.TryParse(value, out long _) || validarTelefono(value) == false || value.Length != 8 || !NumeroNoGenerico(value))
                 {
                     throw new FormatException("Procure no dejar el Teléfono con un formato incorrecto o vacío.");
@@ -108,7 +115,7 @@ namespace Clinica_Medica_Polanco.Proveedores
         }
         public bool EstadoProveedor { get => _estadoProveedor; set => _estadoProveedor = value; }
 
-
+        //Valida si el teléfono empieza en 9, 8, 3, 2 
         public static bool validarTelefono(string telefono)
         {
             if (telefono.StartsWith("9") || telefono.StartsWith("8") || telefono.StartsWith("3") || telefono.StartsWith("2"))
@@ -143,6 +150,8 @@ namespace Clinica_Medica_Polanco.Proveedores
             if (max ==8) return false;
             return true;
         }
+
+        //Valida si el correo tiene un @, si hay algo antes y después del @ y si tiene un .com o algo así
         public static bool validarEmail(string comprobarEmail)
         {
             string emailFormato;
@@ -163,6 +172,5 @@ namespace Clinica_Medica_Polanco.Proveedores
                 return false;
             }
         }
-
     }
 }

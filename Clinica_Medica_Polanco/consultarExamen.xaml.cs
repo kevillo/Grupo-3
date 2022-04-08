@@ -28,10 +28,13 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
             this.SourceInitialized += ConsultarExamen_SourceInitialized;
 
+            //Llamado a la función de carga de datos a los cmb
             ExamenesDAL.CargarSucursal(cmb_Sucursal_Buscar);
             cmb_Sucursal_Buscar.SelectedIndex = Ventas.ventasDAL.obtenerIdSucursal(codEmpleado) - 1;
             cmb_Sucursal_Buscar.Items.Add("Global");
         }
+
+        //Función para evitar el movimiento del form
         private void ConsultarExamen_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -74,7 +77,7 @@ namespace Clinica_Medica_Polanco
                     dtg_Consulta_Examen_Examenes.ItemsSource = ExamenesDAL.obtenerInforPorSucursalExamen(consultarExamen);
                 else
                 {
-                    MessageBox.Show("Eligió el modo global, por favor indique el examen a buscar");
+                    MessageBox.Show("Eligió el modo global, por favor indique el examen a buscar.");
                     txt_Consulta_Examen_Buscar.Clear();
                     txt_Consulta_Examen_Buscar.Focus();
                 }

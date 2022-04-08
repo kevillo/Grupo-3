@@ -77,7 +77,6 @@ namespace Clinica_Medica_Polanco
             {
                 if (!string.IsNullOrEmpty(txt_PacienteId.Text))
                 {
-                    //Validar datos
                     string direccionP = rtbAString(rtb_Actualizar_Paciente_Direccion);
                     Pacient paciente1 = new();
                     paciente1.Codigo = PacientesDAL.ObtenerIdPaciente(txt_PacienteId.Text);
@@ -87,6 +86,7 @@ namespace Clinica_Medica_Polanco
                     paciente1.Telefono = txt_Actualizar_Paciente_Telefono.Text;
                     paciente1.FechaNacimiento = string.IsNullOrEmpty(dtp_Actualizar_Paciente_FechaNac.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Actualizar_Paciente_FechaNac.Text);
                     paciente1.Correo = (txt_Actualizar_Paciente_CorreoE.Text).StartsWith(" ") ? " " : (txt_Actualizar_Paciente_CorreoE.Text).EndsWith(" ") ? " " : txt_Actualizar_Paciente_CorreoE.Text;
+                    // si esta vacio, devuelve 0, si no esta vacio, valida que sea un decimal convirtiendolo, si falla la conversion, devuelve un 0, sino lo que tenga el txt
                     paciente1.Altura = (txt_Actualizar_Paciente_Altura.Text).StartsWith(" ") ? 0 : (txt_Actualizar_Paciente_Altura.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Actualizar_Paciente_Altura.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Actualizar_Paciente_Altura.Text, "\\s", ""));
                     paciente1.TipoSangre = Convert.ToString(cmb_Actualizar_Paciente_TipoSangre.Text);
                     paciente1.Direccion = (direccionP).StartsWith(" ") ? null : (direccionP).EndsWith(" ") ? null : Regex.Replace(direccionP, "\\s+", " ");
@@ -118,9 +118,8 @@ namespace Clinica_Medica_Polanco
                     brd_Paciente.Visibility = Visibility.Hidden;
                 }
             }
-            catch (FormatException error)
+            catch (FormatException error)  //Excepción que nos indicará si hay algún error
             { 
-                //Excepción que nos indicará si hay algún error
                 if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Actualizar_Paciente_Nombre, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Actualizar_Paciente_Apellido, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Codigo")) ValidarCampos(txt_PacienteId, leyenda: "Codigo");
@@ -193,7 +192,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Paciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_Paciente.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de paciente." });
             }
         }
 
@@ -279,7 +278,7 @@ namespace Clinica_Medica_Polanco
             }
             catch (ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la dirección del paciente ingresado");
+                MessageBox.Show("No se pudo recuperar la dirección del paciente agregado debido a un error.");
                 txt_PacienteId.Clear();
                 txt_PacienteId.Focus();
                 stc_Paciente.Visibility = Visibility.Hidden;

@@ -32,7 +32,7 @@ namespace Clinica_Medica_Polanco
             Proveedores.ProveedoresDAL.cargarEmpleados(cmb_Administrador_Actualizar, codSucursal);
         }
 
-        // Funcion para no mover la ventana del form
+        // Función para no mover la ventana del form
         private void ActualizarStock_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -79,7 +79,7 @@ namespace Clinica_Medica_Polanco
                 }
                 else
                 {
-                    MessageBox.Show("Procure no dejar valores negativos");
+                    MessageBox.Show("Procure no dejar valores negativos.");
                     stc_Insumo.Visibility = Visibility.Hidden;
                     scv_Insumo.Visibility = Visibility.Hidden;
                     brd_Insumo.Visibility = Visibility.Hidden;
@@ -133,7 +133,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Insumo.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido" });
+                stc_Insumo.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido." });
             }
         }
 

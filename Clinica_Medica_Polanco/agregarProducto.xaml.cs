@@ -34,7 +34,6 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                //Validación de datos
                 Insumos.Insumos nuevoInsumo = new();
                 nuevoInsumo.NombreInsumo = (txt_Nombre_Producto.Text).StartsWith(" ") ? null : (txt_Nombre_Producto.Text).EndsWith(" ") ? null : int.TryParse(txt_Nombre_Producto.Text,out int _)? null : Regex.Replace(txt_Nombre_Producto.Text, "\\s+", " ");
                 nuevoInsumo.NumeroSerie = (txt_Numero_Serie.Text).StartsWith(" ") ? null : (txt_Numero_Serie.Text).EndsWith(" ") ? null : Regex.Replace(txt_Numero_Serie.Text, "\\s+", " ");
@@ -60,9 +59,8 @@ namespace Clinica_Medica_Polanco
                 }
 
             }
-            catch(FormatException error)
+            catch(FormatException error) //Excepción que nos indicará si ocurre un error
             {
-                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("NombreInsumo")) validarCampos(txt_Nombre_Producto,leyenda: "Nombre insumo" );
                 else if (error.StackTrace.Contains("NumeroSerie")) validarCampos(txt_Numero_Serie, leyenda: "Numero serie");
                 else if (error.StackTrace.Contains("PrecioUnitario")) validarCampos(txt_Precio_Unitario, leyenda: "precio unitario");
@@ -104,6 +102,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validación para que solo se pueda ingresar letras a un campo
         private void txt_Nombre_Producto_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -115,6 +114,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validación para que solo se pueda ingresar numeros a un campo
         private void txt_Precio_Unitario_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));

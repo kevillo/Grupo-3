@@ -25,12 +25,15 @@ namespace Clinica_Medica_Polanco
             InitializeComponent();
             this.SourceInitialized += InformeFactura_SourceInitialized;
         }
+
+        //Función para evitar el movimiento del form
         private void InformeFactura_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
             HwndSource souce = HwndSource.FromHwnd(helper.Handle);
             souce.AddHook(WndProc);
 
+            //Comando para poder mostrar el reporte de la factura
             this.Factura1.ReportPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Reportes\ReporteFactura.rdl");
             this.Factura1.RefreshReport();
         }

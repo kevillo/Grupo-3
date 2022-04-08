@@ -11,12 +11,13 @@ namespace Clinica_Medica_Polanco.servicios
 {
     class serviciosDAL
     {
+        //Función para traer el nombre del facturador
         public static string traerNombreFacturador(int codEmpleado)
         {
             try
             {
                 string nombre = "";
-                ConexionBaseDeDatos.ObtenerConexion();
+                ConexionBaseDeDatos.ObtenerConexion(); //Estableciendo conexión con la base de datos
                 Servicios nuevoServicios = new();
                 SqlCommand comando = new(string.Format("Select CONCAT(Empleados.Nombre_Empleado,' ',Empleados.Apellido_Empleado) from Empleados where Codigo_Empleado = {0}", codEmpleado), ConexionBaseDeDatos.conexion);
                 SqlDataReader dr = comando.ExecuteReader();
@@ -27,17 +28,18 @@ namespace Clinica_Medica_Polanco.servicios
                 return nombre;
 
             }
-            catch
+            catch //Excepción que nos indicará si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("No se puede cargar el nombre del Facturador");
+                MessageBox.Show("No se pudo cargar el nombre del facturador debido a un error.");
                 return "";
             }
             finally
             {
-                ConexionBaseDeDatos.CerrarConexion();
+                ConexionBaseDeDatos.CerrarConexion(); //Cerrando conexión con la base de datos
             }
         }
 
+        //Función para traer el nombre del paciente
         public static string traerNombrePaciente(int codPaciente)
         {
             try
@@ -54,9 +56,9 @@ namespace Clinica_Medica_Polanco.servicios
                 return nombre;
 
             }
-            catch
+            catch //Excepción que nos indicará si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("No se puede cargar el nombre del Paciente");
+                MessageBox.Show("No se pudo cargar el nombre del paciente debido a un error.");
                 return "";
             }
             finally
@@ -65,6 +67,7 @@ namespace Clinica_Medica_Polanco.servicios
             }
         }
 
+        //Función para traer el nombre del examen
         public static string traerNombreExamen(int codExamenMedico)
         {
             try
@@ -81,9 +84,9 @@ namespace Clinica_Medica_Polanco.servicios
                 return nombre;
 
             }
-            catch
+            catch //Excepción que nos indicará si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("No se puede cargar el nombre del examen médico");
+                MessageBox.Show("No se puede cargar el nombre del examen médico debido a un error.");
                 return "";
             }
             finally
@@ -92,6 +95,7 @@ namespace Clinica_Medica_Polanco.servicios
             }
         }
 
+        //Función para trtaer el nombre del método de entrega del examen
         public static string traerNombreMetodoEntrega(int codMetodoEntrega)
         {
             try
@@ -108,9 +112,9 @@ namespace Clinica_Medica_Polanco.servicios
                 return nombre;
 
             }
-            catch
+            catch //Excepción que nos indicará si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("No se puede cargar el nombre de método entrega");
+                MessageBox.Show("No se puede cargar el nombre de método entrega debido a un error.");
                 return "";
             }
             finally
@@ -119,6 +123,7 @@ namespace Clinica_Medica_Polanco.servicios
             }
         }
 
+        //Función para traer el nombre del método de pago
         public static string traerNombreMetodoPago(int codMetodoPago)
         {
             try
@@ -135,9 +140,9 @@ namespace Clinica_Medica_Polanco.servicios
                 return nombre;
 
             }
-            catch
+            catch //Excepción que nos indicará si hay un error, en caso de que sí, mostrará el siguiente mensaje
             {
-                MessageBox.Show("No se puede cargar el nombre de método pago");
+                MessageBox.Show("No se puede cargar el nombre de método pago debido a un error.");
                 return "";
             }
             finally

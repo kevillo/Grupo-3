@@ -35,6 +35,7 @@ namespace Clinica_Medica_Polanco
             this.Close();
         }
 
+        //Función para evitar el movimiento del form
         private void entregarExamen_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -74,7 +75,7 @@ namespace Clinica_Medica_Polanco
             {
 
                 ExamenesMedicos.ExamenesDAL.entregarExamenMedico(codEntrega);
-                MessageBox.Show("Exámen/es actualizado/s");
+                MessageBox.Show("Exámen/es actualizado/s.");
                 this.Close();
             }
         }
@@ -156,15 +157,14 @@ namespace Clinica_Medica_Polanco
                 entrega.NombreMetodoPago = nuevoServicio.NombreMetodoPago;
                 entrega.NombrePaciente = nuevoServicio.NombrePaciente;
                 entrega.FechaOrden = nuev.FechaOrden;
-
                 nuevaEntrega.Add(entrega);
             }
-
             dtg_Entrega_Examen_Examenes.ItemsSource = nuevaEntrega;
         }
+
+        //Función para cargar el datagridview de entrega de exámenes médicos
         private void cargarDTGEntrega(string facturaCod)
         {
-
             List<Ventas.Ventas> entregarVenta = ExamenesMedicos.ExamenesDAL.obtenerExamenesParaEntregar(facturaCod);
             servicios.Servicios nuevoServicio = new();
             List<servicios.serviciosEntrega> nuevaEntrega = new();
@@ -240,7 +240,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de paciente." });
             }
         }
 

@@ -150,14 +150,13 @@ namespace Clinica_Medica_Polanco
             }
             catch (ArgumentNullException)
             {
-                MessageBox.Show("Error al recuperar la informacion del proveedor a buscar");
+                MessageBox.Show("No se pudo recuperar la información del proveedor a busar debido a un error.");
                 txt_Gestionar_Proveedores_Buscar.Clear();
                 txt_Gestionar_Proveedores_Buscar.Focus();
                 stc_InfoProveedor.Visibility = Visibility.Hidden;
                 scv_BuscarProveedor.Visibility = Visibility.Hidden;
                 brd_BuscarProveedor.Visibility = Visibility.Hidden;
-            }
-           
+            }        
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Clinica_Medica_Polanco.servicios
 {
     public class serviciosEntrega
     {
-
+        //Estableciendo datos
         private int _codFacturaVenta;
         private int _codExamenMedico;
         private string _nombreExamen;
@@ -28,12 +28,13 @@ namespace Clinica_Medica_Polanco.servicios
      
         
         
-
+        //Validación de datos
         public string NombreExamen
         {
             get => _nombreExamen;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -46,6 +47,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _nombrePaciente;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -58,6 +60,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _nombreMetodoEntrega;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -70,6 +73,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _nombreMetodoPago;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException();
@@ -80,14 +84,16 @@ namespace Clinica_Medica_Polanco.servicios
 
         public string NombreEmpleado { get => _nombreEmpleado; set => _nombreEmpleado = value; }
 
-        // validacion string: que no venga vacio
-        // validacion int: que no sea negativo ni que venga vacio
-        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+        // validación string: que no venga vacío
+        // validación int: que no sea negativo ni que venga vacío
+        // validación para strings que ocupan un número: que no este vacío y que solo se ingrese un número
+
         public int CodigoExamenMedico
         {
             get => _codExamenMedico;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value < 0) throw new FormatException();
                 else _codExamenMedico = value;
             }
@@ -98,6 +104,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _codFacturador;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value <= 0) throw new FormatException();
                 else _codFacturador = value;
             }
@@ -108,6 +115,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _codMicrobiologo;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value < 0) throw new FormatException();
                 else _codMicrobiologo = value;
             }
@@ -118,6 +126,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _codEnfermero;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value < 0) throw new FormatException();
                 else _codEnfermero = value;
             }
@@ -128,6 +137,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _codPaciente;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()) || value < 0) throw new FormatException();
                 else _codPaciente = value;
             }
@@ -139,6 +149,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _metodoEntregaExamen;
             set
             {
+                //Valida si la cadena tiene una longitud menor a 0
                 if (value < 0) throw new FormatException();
                 else _metodoEntregaExamen = value;
             }
@@ -149,6 +160,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _metodoPagoExamen;
             set
             {
+                //Valida si la cadena tiene una longitud menor a 0
                 if (value < 0) throw new FormatException();
                 else _metodoPagoExamen = value;
             }
@@ -169,6 +181,7 @@ namespace Clinica_Medica_Polanco.servicios
             get => _estadoExamenMedico;
             set
             {
+                //Valida si la cadena tiene una longitud menor a 0
                 if (value < 0) throw new FormatException();
                 else _estadoExamenMedico = value;
             }

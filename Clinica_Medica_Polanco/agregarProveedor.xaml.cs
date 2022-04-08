@@ -27,7 +27,6 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                //Validación de datos
                 string direccionPro = rtbAString(rtb_Direccion_Proveedor);
                 Proveedores.Proveedores proveedores1 = new();
                 proveedores1.NombreProveedor = (txt_Nombre_Proveedor_Agregar.Text).StartsWith(" ") ? null : (txt_Nombre_Proveedor_Agregar.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Proveedor_Agregar.Text, "\\s+", " ");
@@ -53,9 +52,8 @@ namespace Clinica_Medica_Polanco
                         txt_Correo_Proveedor_Agregar.Focus();
                     }
                 }
-            catch (FormatException error)
+            catch (FormatException error) //Excepción que nos indica de algún error
             {
-                //Excepción que nos indica de algún error
                 if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Proveedor_Agregar, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Apellido_Proveedor_Agregar, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Telefono_Proveedor_Agregar, leyenda: "Teléfono");
@@ -95,6 +93,8 @@ namespace Clinica_Medica_Polanco
             rtb_Direccion_Proveedor.Document.Blocks.Clear();
             cmb_Area_Trabajo_Proveedor_Agregar.SelectedIndex = 0;
         }
+
+        //validacion para que solo se pueda ingresar letras a un campo
         private void txt_Nombre_Proveedor_Agregar_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -118,6 +118,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validacion para que solo se pueda ingresar letras a un campo
         private void txt_Correo_Proveedor_Agregar_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));

@@ -11,14 +11,14 @@ namespace Clinica_Medica_Polanco.Arqueo
 {
     class arqueoDAL
     {
-
+        //Función para traer el código de arqueo desde la base de datos, haciendo uso de una consulta
         public static int traerCodArqueo()
         {
             int codArqueo = 0;
             try
             {
-                ConexionBaseDeDatos.ObtenerConexion();
-                SqlCommand comando = new("select top(1)Cod_Arqueo  from Arqueos_Cajas order by Cod_Arqueo desc", ConexionBaseDeDatos.conexion);
+                ConexionBaseDeDatos.ObtenerConexion(); //estableciendo la conexión con la base de datos
+                SqlCommand comando = new("select top(1)Cod_Arqueo from Arqueos_Cajas order by Cod_Arqueo desc", ConexionBaseDeDatos.conexion);
                 SqlDataReader dr =  comando.ExecuteReader();
                 while(dr.Read())
                 {
@@ -26,17 +26,18 @@ namespace Clinica_Medica_Polanco.Arqueo
                 }
                 return codArqueo;   
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo traer el numero de arqueo: ", error.Message);
+                MessageBox.Show("No se pudo traer el número de arqueo debido a un error.", error.Message);
                 return -1;
             }
             finally
             {
-                ConexionBaseDeDatos.CerrarConexion();
+                ConexionBaseDeDatos.CerrarConexion(); //cerrando la conexión con la base de datos
             }
         }
 
+        //Función para generar el arqueo haciendo uso de un procedimiento almacenado
         public static void generarArqueo(int codEmpleado)
         {
             try
@@ -49,9 +50,9 @@ namespace Clinica_Medica_Polanco.Arqueo
                 comando.ExecuteReader();
                 MessageBox.Show("Arqueo realizado");
             }
-            catch (Exception error)
+            catch (Exception error) //Excepción indicará si ocurre un error, mostraría el mensaje siguiente
             {
-                MessageBox.Show("No se pudo realizar el arqueo debido a un error: ", error.Message);
+                MessageBox.Show("No se pudo realizar el arqueo debido a un error.", error.Message);
             }
             finally
             {
@@ -59,6 +60,7 @@ namespace Clinica_Medica_Polanco.Arqueo
             }
         }
     
+     //Función para trar un monto incial haciendo uso de un procedimiento almacenado
     public static decimal traerMontoInicial(int codArqueo)
     {
 
@@ -76,16 +78,15 @@ namespace Clinica_Medica_Polanco.Arqueo
           }
           return montoInicial;
        }
-       catch(Exception error)
-       {
-            MessageBox.Show("No se pudo traer el monto inicial ",error.Message);
+       catch(Exception error) //Excepción indicará si ocurre un error, mostraría el mensaje siguiente
+            {
+            MessageBox.Show("No se pudo traer el monto inicial debido a un error.",error.Message);
             return -1;
        }
        finally
-       {
+        {
           ConexionBaseDeDatos.CerrarConexion();
-       }
-
+        }
     }
   }
 }

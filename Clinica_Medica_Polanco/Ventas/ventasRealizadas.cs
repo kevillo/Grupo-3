@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Ventas
 {
     class ventasRealizadas
     {
+        //Estableciendo datos
         private int _codFactura;
         private string _nombreSucursal;
         private string _nombrePaciente;
@@ -18,6 +19,7 @@ namespace Clinica_Medica_Polanco.Ventas
         private decimal _descuentoVenta;
         private decimal _totalVenta;
 
+        //Validación de datos
         public int CodFactura { get => _codFactura; set => _codFactura = value; }
         public string NombreSucursal { get => _nombreSucursal; set => _nombreSucursal = value; }
         public string NombrePaciente { get => _nombrePaciente; set => _nombrePaciente = value; }

@@ -83,7 +83,6 @@ namespace Clinica_Medica_Polanco
             {
                 if (!string.IsNullOrEmpty(txt_Identidad_Actualizar_Empleado.Text))
                 {
-                    //Validación de datos
                     int codEmpleado = empleadosDAL.traerCodigoEmpleado(txt_Identidad_Actualizar_Empleado.Text);
                     string direccionE = rtbAString(rtb_Direccion_Actualizar_Empleado);
                     Empleados.Empleados empleados1 = new();
@@ -94,6 +93,7 @@ namespace Clinica_Medica_Polanco
                     empleados1.TelefonoEmpleado = txt_Telefono_Actualizar_Empleado.Text;
                     empleados1.FechaNacimientoEmpleado = string.IsNullOrEmpty(dtp_Nacimiento_Actualizar_Empleado.Text) ? DateTime.Now : Convert.ToDateTime(dtp_Nacimiento_Actualizar_Empleado.Text);
                     empleados1.CorreoEmpleado = (txt_Correo_Actualizar_Empleado.Text).StartsWith(" ") ? " " : (txt_Correo_Actualizar_Empleado.Text).EndsWith(" ") ? " " : txt_Correo_Actualizar_Empleado.Text;
+                    // si esta vacio, devuelve 0, si no esta vacio, valida que sea un decimal convirtiendolo, si falla la conversion, devuelve un 0, sino lo que tenga el txt
                     empleados1.AlturaEmpleado = (txt_Altura_Actualizar_Empleado.Text).StartsWith(" ") ? 0 : (txt_Altura_Actualizar_Empleado.Text).EndsWith(" ") ? 0 : string.IsNullOrEmpty(txt_Altura_Actualizar_Empleado.Text) ? 0 : decimal.Parse(Regex.Replace(txt_Altura_Actualizar_Empleado.Text, "\\s", ""));
                     empleados1.TipoSangreEmpleado = cmb_Actualizar_Empleado_Tipo_Sangre.SelectedItem.ToString();
                     empleados1.SueldoBase = string.IsNullOrEmpty(txt_Sueldo_Actualizar_Empleado.Text) ? -1 : decimal.Parse(txt_Sueldo_Actualizar_Empleado.Text);
@@ -105,7 +105,7 @@ namespace Clinica_Medica_Polanco
                     empleados1.DireccionEmpleado = (direccionE).StartsWith(" ") ? null : (direccionE).EndsWith(" ") ? null : Regex.Replace(direccionE, "\\s+", " ");
                     empleados1.EstadoEmpleado = (bool)chb_Estado_Empleado.IsChecked;
 
-                    //validacion de un correo o identidad duplicada en la base de datos
+                    //Validación de un correo o identidad duplicada en la base de datos
                     int validarIdentidad = empleadosDAL.ValidarIdentidadEmpleado(empleados1.IdentidadEmpleado);
                     int validarCorreo = empleadosDAL.validarCorreoEmpleado(empleados1.CorreoEmpleado);
                     empleadosDAL.ModificarEmpleado(empleados1);
@@ -144,9 +144,8 @@ namespace Clinica_Medica_Polanco
                     brd_Empleados.Visibility = Visibility.Hidden;
                 }    
             }
-            catch (FormatException error)
-            {
-                //Excepción que nos indicará si ocurre un error
+            catch (FormatException error) //Excepción que nos indicará si ocurre un error
+            {   
                 if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Actualizar_Empleado, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Identidad_Actualizar_Empleado, leyenda: "Identidad");
                 else if (error.StackTrace.Contains("Telefono")) ValidarCampos(txt_Telefono_Actualizar_Empleado, leyenda: "Teléfono");
@@ -226,9 +225,9 @@ namespace Clinica_Medica_Polanco
                 TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
                 textRange.Text = textoSet;
             }
-            catch (ArgumentNullException)
+            catch (ArgumentNullException) //Excepción que nos indicará si ocurre un error
             {
-                MessageBox.Show("Error al recuperar la dirección del empleado ingresado");
+                MessageBox.Show("No se pudo recuperar la dirección del empleado debido a un error.");
                 txt_Codigo_Actualizar_Empleado.Clear();
                 txt_Codigo_Actualizar_Empleado.Focus();
                 stc_Empleados.Visibility = Visibility.Hidden;
@@ -278,7 +277,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Empleados.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de empleado." });
+                stc_Empleados.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de empleado." });
             }
         }
 
@@ -320,7 +319,7 @@ namespace Clinica_Medica_Polanco
             stc_Empleados.Children.Add(block);
         }
 
-        //validacion para que solo se pueda ingresar letras a un campo
+        //Validación para que solo se pueda ingresar letras a un campo
         private void txt_Nombre_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -332,7 +331,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
-        //validacion para que solo se pueda ingresar numeros a un campo
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Identidad_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -342,7 +341,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
-        //validacion para que solo se pueda ingresar letras a un campo
+        //Validación para que solo se pueda ingresar letras a un campo
         private void txt_Apellido_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -354,7 +353,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
-        //validacion para que solo se pueda ingresar numeros a un campo
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Codigo_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -364,7 +363,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
-        //validacion para que solo se pueda ingresar numeros a un campo
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Telefono_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -374,6 +373,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Altura_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -383,6 +383,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Sueldo_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -392,6 +393,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //Validación para que solo se pueda ingresar letras a un campo
         private void txt_Correo_Actualizar_Empleado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));

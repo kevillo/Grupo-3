@@ -8,6 +8,7 @@ namespace Clinica_Medica_Polanco.Empleados
 {
     internal class PagoEmpleados
     {
+        //Estableciendo valores
         private int _codEmpleado;
         private int _mesPlantilla;
         private int _añoPlanilla;
@@ -19,6 +20,7 @@ namespace Clinica_Medica_Polanco.Empleados
         private decimal _rapPorcentaje;
         private decimal _seguroDeVidaPorcentaje;
 
+        //Validación de datos
         public int CodigoEmpleado
         {
             get => _codEmpleado;

@@ -33,7 +33,7 @@ namespace Clinica_Medica_Polanco
         {
             int codArqueo = Arqueo.arqueoDAL.traerCodArqueo();
             decimal cantidad = Arqueo.arqueoDAL.traerMontoInicial(codArqueo+1);
-            MessageBox.Show("Usted inicia con un monto de: "+ cantidad.ToString()+"\n\nSi el valor es negativo signfica que la anterior caja quedo con un saldo negativo\n\nSi el arqueo es 0 es por que no se hizo ni una venta o compra en el turno anterior");
+            MessageBox.Show("Usted inicia con un monto de: "+ cantidad.ToString()+"\n\nSi el valor es negativo signfica que la anterior caja quedó con un saldo negativo.\n\nSi el arqueo es 0 es por que no se hizo ni una venta o compra en el turno anterior.");
 
         }
 

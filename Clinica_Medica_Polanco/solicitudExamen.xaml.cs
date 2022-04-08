@@ -63,6 +63,8 @@ namespace Clinica_Medica_Polanco
 
             btn_Solicitud_Examen_Procesar_Orden.IsEnabled = false;
         }
+
+        //Función para evitar el movimiento del form
         private void SolicitudExamen_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -102,16 +104,14 @@ namespace Clinica_Medica_Polanco
                 
                 foreach (Ventas.Ventas v in nuevaVenta)
                 {
-
-                    Ventas.ventasDAL.RegistrarVenta(v, codigoFacturaVenta);
-                    
+                    Ventas.ventasDAL.RegistrarVenta(v, codigoFacturaVenta);     
                 }
 
                 pagarExamenMedico nuevopago = new pagarExamenMedico(nuevaVenta,codigoFacturaVenta);
                 nuevopago.ShowDialog();
                 this.Close();
             }
-            catch(FormatException error)
+            catch(FormatException error) //Excepción que nos indica si hay un error
             {
                 if (error.StackTrace.Contains("CodigoPaciente")) validarCampos("Paciente", txt_Solicitud_Examen_ID_Cliente, refer: 1);
                 else if (error.StackTrace.Contains("CodigoMicrobiologo")) validarCampos("Microbiólogo", cmb: cmb_Solicitud_Examen_Microbiologo, refer: 2);
@@ -123,7 +123,7 @@ namespace Clinica_Medica_Polanco
 
         private void validarCampos(string leyenda, [Optional]TextBox txt,[Optional]ComboBox cmb,[Optional] int refer)
         {
-            MessageBox.Show($"No se puede dejar {leyenda} vacío.");
+            MessageBox.Show($"No se puede dejar {leyenda} con un formato incorrecto o vacío.");
             if (refer == 1) txt.Focus();
             else if (refer == 2) cmb.Focus();
         }
@@ -189,7 +189,7 @@ namespace Clinica_Medica_Polanco
 
                         if (indice > -1)
                         {
-                            MessageBox.Show("El número del examen se repite, por favor ingrese otro número de examen médico.");
+                            MessageBox.Show("Número de examen repetido, por favor ingrese otro número de examen médico.");
                             txt_Solicitud_Examen_Buscar.Clear();
                             txt_Cantidad_Examen.Clear();
                             txt_Solicitud_Examen_Buscar.Focus();
@@ -216,9 +216,8 @@ namespace Clinica_Medica_Polanco
 
 
                 }
-                catch (FormatException error)
+                catch (FormatException error) //Excepción que nos indicará si hay algún error
                 {
-                    //Excepción que nos indicará si hay algún error
                     if (error.StackTrace.Contains("CodigoPaciente")) validarCampos("Paciente", txt_Solicitud_Examen_ID_Cliente, refer: 1);
                     else if (error.StackTrace.Contains("CodigoExamenMedico")) validarCampos("Examen medico", txt_Solicitud_Examen_Buscar, refer: 1);
                     else if (error.StackTrace.Contains("Cantidad")) validarCampos("Cantidad", txt_Cantidad_Examen, refer: 1);
@@ -281,7 +280,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoPaciente.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de paciente." });
             }
         }
 
@@ -366,7 +365,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoCliente.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de paciente." });
+                stc_InfoCliente.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de paciente." });
             }
         }
 
@@ -426,8 +425,6 @@ namespace Clinica_Medica_Polanco
             if (ascci >= 48 && ascci <= 57) e.Handled = false;
 
             else e.Handled = true;
-        }
-
-       
+        }    
     }
 }

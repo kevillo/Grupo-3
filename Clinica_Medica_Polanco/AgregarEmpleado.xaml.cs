@@ -49,16 +49,15 @@ namespace Clinica_Medica_Polanco
         {
             try
             {
-                //Validación de datos
                 string direccionE = rtbAString(rtb_Direccion);
                 Empleados.Empleados empleados1 = new();
                 empleados1.NombreEmpleado = (txt_Nombre.Text).StartsWith(" ") ? null : (txt_Nombre.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre.Text, "\\s+", " ");
                 empleados1.ApellidoEmpleado = (txt_Apellido.Text).StartsWith(" ") ? null : (txt_Apellido.Text).EndsWith(" ") ? null : Regex.Replace(txt_Apellido.Text, "\\s+", " ");
                 empleados1.IdentidadEmpleado = txt_Identidad.Text;
-                
                 empleados1.TelefonoEmpleado = txt_Telefono.Text;
                 empleados1.FechaNacimientoEmpleado = string.IsNullOrEmpty(dtp_Nacimiento.Text)?DateTime.Now: Convert.ToDateTime(dtp_Nacimiento.Text);
                 empleados1.CorreoEmpleado = (txt_Correo.Text).StartsWith(" ") ? " " : (txt_Correo.Text).EndsWith(" ") ? " " : txt_Correo.Text;
+                // si esta vacio, devuelve 0, si no esta vacio, valida que sea un decimal convirtiendolo, si falla la conversion, devuelve un 0, sino lo que tenga el txt
                 empleados1.AlturaEmpleado = (txt_Altura.Text).StartsWith(" ")?0:(txt_Altura.Text).EndsWith(" ")?0:string.IsNullOrEmpty(txt_Altura.Text)?0: decimal.Parse(Regex.Replace(txt_Altura.Text, "\\s", ""));
                 empleados1.TipoSangreEmpleado = cmb_Tipo_Sangre.SelectedItem.ToString();
                 empleados1.DireccionEmpleado = (direccionE).StartsWith(" ") ? null : (direccionE).EndsWith(" ") ? null : Regex.Replace(direccionE, "\\s+", " ");
@@ -97,9 +96,8 @@ namespace Clinica_Medica_Polanco
                 }
             }
 
-            catch (FormatException error)
+            catch (FormatException error) //Excepción que nos indicará si ocurre un error
             {
-                //Excepción que nos indicará si ocurre un error
                 if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Apellido, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Identidad, leyenda: "Identidad");
@@ -218,6 +216,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Altura_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -227,6 +226,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //Validación para que solo se pueda ingresar números a un campo
         private void txt_Sueldo_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -236,6 +236,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //Validación para que solo se pueda ingresar letras a un campo
         private void txt_Correo_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));

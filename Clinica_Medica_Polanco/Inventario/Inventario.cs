@@ -9,24 +9,27 @@ namespace Clinica_Medica_Polanco.Inventario
 {
     class Inventario
     {
+        //Estableciendo datos
         private int _CodigoInsumo;
         private int _InventarioMes;
         private int _InventarioAño;
         private int _CodigoProveedor;
         private int _CodigoSucursal;
         private DateTime _FechaIngreso;
-        
         private string _numerolote;
 
+        // validación string: que no venga vacío
+        // validación int: que no sea negativo ni que venga vacío
+        // validación para strings que ocupan un número: que no esté vacío y que solo se ingrese un número
 
-        // validacion string: que no venga vacio
-        // validacion int: que no sea negativo ni que venga vacio
-        // validacion para strings que ocupan un numero: que no este vacio y que solo se ingrese un numero
+
+        //Validación de datos
         public int InventarioMes
         {
             get => _InventarioMes;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException("Procure no dejar el Mes de Inventario con un formato incorrecto o vacío.");
@@ -40,6 +43,7 @@ namespace Clinica_Medica_Polanco.Inventario
             get => _InventarioAño;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException("Procure no dejar el Año de Inventario con un formato incorrecto o vacío.");
@@ -53,6 +57,7 @@ namespace Clinica_Medica_Polanco.Inventario
             get => _CodigoProveedor;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException("Procure no dejar el Código de Proveedor con un formato incorrecto o vacío.");
@@ -66,6 +71,7 @@ namespace Clinica_Medica_Polanco.Inventario
             get => _CodigoSucursal;
             set
             {
+                //Valida si la cadena no está vacía
                 if (value <= 0 || string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException("Procure no dejar el Código de Sucursal con un formato incorrecto o vacío.");
@@ -81,6 +87,7 @@ namespace Clinica_Medica_Polanco.Inventario
             get => _numerolote;
             set
             {
+                //Valida si la cadena no está vacía
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new FormatException("Procure no dejar el Número de Lote con un formato incorrecto o vacío.");

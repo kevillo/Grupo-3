@@ -46,8 +46,8 @@ namespace Clinica_Medica_Polanco
             cmb_Tipo_Sangre_Paciente.Items.Add("B+");
         }
 
-        
 
+        /// Funcion para evitar el movimiento del formulario
         private void AgregarPaciente_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -74,7 +74,6 @@ namespace Clinica_Medica_Polanco
             return IntPtr.Zero;
         }
 
-
         private void btn_salir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -85,7 +84,6 @@ namespace Clinica_Medica_Polanco
         {            
             try
             {
-                //Validación de datos
                 string direccionPa = rtbAString(Rtb_direccion_Paciente);
                 Pacientes.Pacient paciente1 = new();
                 paciente1.Nombre = (txt_Nombre_Paciente.Text).StartsWith(" ") ? null : (txt_Nombre_Paciente.Text).EndsWith(" ") ? null : Regex.Replace(txt_Nombre_Paciente.Text, "\\s+", " ");
@@ -128,9 +126,8 @@ namespace Clinica_Medica_Polanco
 
             }
 
-            catch (FormatException error)
-            {
-                //Excepción que nos indicará si ocurre un error
+            catch (FormatException error)  //Excepción que nos indicará si ocurre un error
+            {   
                 if (error.StackTrace.Contains("Apellido")) ValidarCampos(txt_Apellido_Paciente, leyenda: "Apellido");
                 else if (error.StackTrace.Contains("Nombre")) ValidarCampos(txt_Nombre_Paciente, leyenda: "Nombre");
                 else if (error.StackTrace.Contains("Identidad")) ValidarCampos(txt_Identidad_Paciente, leyenda: "Identidad");
@@ -200,6 +197,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validacion para que solo se pueda ingresar numeros a un campo
         private void txt_Altura_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -209,6 +207,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validacion para que solo se pueda ingresar numeros a un campo
         private void txt_Telefono_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -218,6 +217,7 @@ namespace Clinica_Medica_Polanco
             else e.Handled = true;
         }
 
+        //validacion para que solo se pueda ingresar letras a un campo
         private void txt_Correo_Paciente_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));

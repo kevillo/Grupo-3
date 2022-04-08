@@ -153,11 +153,11 @@ namespace Clinica_Medica_Polanco
             try
             {
                 ConexionBaseDeDatos.ObtenerConexion();
-                MessageBox.Show("Conexion establecida correctamente");
+                MessageBox.Show("Conexión establecida exitosamente.");
             }
             catch
             {
-                MessageBox.Show("Error al conectar a sql");
+                MessageBox.Show("No se pudo conectar a SQL debido a un error.");
             }
             
         }

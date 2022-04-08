@@ -35,6 +35,7 @@ namespace Clinica_Medica_Polanco
             this.Close();
         }
 
+        //Función para evitar el movimiento del form
         private void ConsultarComprasRealizadas_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);

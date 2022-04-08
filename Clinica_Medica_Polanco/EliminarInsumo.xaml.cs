@@ -44,6 +44,8 @@ namespace Clinica_Medica_Polanco
 
             reiniciarPantalla();
         }
+
+        //Función para limpiar los campos del form
         private void reiniciarPantalla()
         {
             txt_Codigo_Insumo.Clear();
@@ -97,7 +99,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido" });
+                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese producto o es inválido." });
             }
         }
 
@@ -157,7 +159,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Por favor ingrese un insumo válido.");
+                MessageBox.Show("Por favor, ingrese un insumo válido.");
                 txt_Codigo_Insumo.Clear();
                 txt_Codigo_Insumo.Focus();
                 stc_InfoProveedor.Visibility = Visibility.Hidden;
@@ -186,9 +188,6 @@ namespace Clinica_Medica_Polanco
             if (ascci >= 48 && ascci <= 57) e.Handled = false;
 
             else e.Handled = true;
-        }
-
-        //validacion para que solo se pueda ingresar numeros a un campo
-       
+        } 
     }
 }

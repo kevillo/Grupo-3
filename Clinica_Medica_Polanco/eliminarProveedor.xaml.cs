@@ -33,7 +33,7 @@ namespace Clinica_Medica_Polanco
                 ProveedoresDAL.EliminarProveedor(codEliminar);
             else
             {
-                MessageBox.Show("Ingrese un código de proveedor para eliminar");
+                MessageBox.Show("Por favor, ingrese un código de proveedor a deshabilitar.");
                 txt_Codigo_Proveedor_Buscar.Focus();
             }
             reiniciarPantalla();
@@ -79,7 +79,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de proveedor." });
+                stc_InfoProveedor.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de proveedor." });
             }
         }
 
@@ -143,7 +143,7 @@ namespace Clinica_Medica_Polanco
             }
             else
             {
-                MessageBox.Show("Ingrese un id de proveedor válido.");
+                MessageBox.Show("Por favor, ingrese un código de proveedor válido.");
                 txt_Codigo_Proveedor_Buscar.Clear();
                 txt_Codigo_Proveedor_Buscar.Focus();
             }
@@ -152,6 +152,8 @@ namespace Clinica_Medica_Polanco
             brd_BuscarProveedor.Visibility = Visibility.Hidden;
 
         }
+
+        //Función para limpiar los campos del form
         private void reiniciarPantalla()
         {
             txt_Codigo_Proveedor_Buscar.Clear();
@@ -160,9 +162,6 @@ namespace Clinica_Medica_Polanco
             txt_Telefono_Proveedor_Eliminar.Clear();
             txt_Correo_Proveedor_Eliminar.Clear();
         }
-
-        //validacion para que solo se pueda ingresar numeros a un campo
-        
 
         //validacion para que solo se pueda ingresar letras a un campo
         private void txt_Nombre_Proveedor_Eliminar_PreviewTextInput(object sender, TextCompositionEventArgs e)

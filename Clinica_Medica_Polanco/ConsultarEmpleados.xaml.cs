@@ -27,7 +27,7 @@ namespace Clinica_Medica_Polanco
             this.SourceInitialized += ConsultarEmpleados_SourceInitialized;
         }
 
-   
+        //Función para evitar el movimiento del form
         private void ConsultarEmpleados_SourceInitialized(object sender, EventArgs e)
         {
             WindowInteropHelper helper = new(this);
@@ -114,7 +114,7 @@ namespace Clinica_Medica_Polanco
 
             if (!found)
             {
-                stc_Empleados.Children.Add(new TextBlock() { Text = "No existe ese No. de Identidad de empleado." });
+                stc_Empleados.Children.Add(new TextBlock() { Text = "No existe ese número de identidad de empleado." });
             }
         }
 
