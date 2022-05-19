@@ -8,8 +8,6 @@
 | Kevin David Garcia Castillo | 1804200104269 |
 | Arnold David Mejía Tabora | 0419200100189 |
 | Leticia María Benavidez Diaz | 0601200103341   |
-| Amílcar Alfredo Hernández Nolasco |  0801199807729 |
-|María José Hernández Osorto | 0601200401028 |
 
 ## Descripcion del proyecto 🖱🖥⌨💻
 
